@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq1sdjanawggs"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_7hy6f"]
+[ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="1_tfuw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5apu"]
+size = Vector2(160, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jr0q"]
+size = Vector2(20, 673)
+
+[node name="World" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(605, 552)
+script = ExtResource("1_7hy6f")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+position = Vector2(-3, -3)
+texture = ExtResource("1_tfuw3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_u5apu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-9, 326.5)
+shape = SubResource("RectangleShape2D_1jr0q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1161, 320)
+shape = SubResource("RectangleShape2D_1jr0q")
