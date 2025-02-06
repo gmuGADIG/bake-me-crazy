@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkjpd7tuux3u0"]
+
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_3poh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4qhs"]
+size = Vector2(96, 106)
+
+[node name="Npc" type="StaticBody2D"]
+position = Vector2(792, 450)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k4qhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3poh1")
