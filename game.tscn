@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bigvdmn2chd8s"]
+
+[ext_resource type="PackedScene" uid="uid://bnwep4nm4eskm" path="res://shoes.tscn" id="1_bsbrk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6tet"]
+size = Vector2(2192, 98)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_bsbrk")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.515, 0.515)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 457)
+shape = SubResource("RectangleShape2D_t6tet")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(787, -131)
+rotation = -0.736307
+shape = SubResource("RectangleShape2D_t6tet")
