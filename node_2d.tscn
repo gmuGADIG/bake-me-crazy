@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbgfkxeyu078x"]
+
+[ext_resource type="Texture2D" uid="uid://dxjg4oxluip2q" path="res://temp_art/gartic/earth_yeet.png" id="1_rq1qt"]
+[ext_resource type="Texture2D" uid="uid://csaq273pycx6c" path="res://temp_art/gartic/big_shoe_big_sad.png" id="2_dyukn"]
+[ext_resource type="Texture2D" uid="uid://c40ew5c8y11rq" path="res://temp_art/gartic/im_steve.png" id="3_k0tup"]
+[ext_resource type="Script" path="res://player.gd" id="3_l4n77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m306t"]
+size = Vector2(354.5, 240.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjlf7"]
+size = Vector2(74, 699)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EarthYeet" type="Sprite2D" parent="."]
+position = Vector2(352, 187)
+texture = ExtResource("1_rq1qt")
+
+[node name="BigShoeBigSad2" type="Sprite2D" parent="EarthYeet"]
+position = Vector2(114, 290)
+texture = ExtResource("2_dyukn")
+
+[node name="BigShoeBigSad" type="Sprite2D" parent="EarthYeet"]
+position = Vector2(401, 115)
+texture = ExtResource("2_dyukn")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("3_l4n77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(521.75, 186.75)
+shape = SubResource("RectangleShape2D_m306t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(298, 330)
+texture = ExtResource("3_k0tup")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(27, 339.5)
+shape = SubResource("RectangleShape2D_hjlf7")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1137, 342)
+shape = SubResource("RectangleShape2D_hjlf7")
