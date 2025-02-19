@@ -23,8 +23,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={}
 directories/dtl_directory={}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://dialogue/dialogic_styles/main_style.tres"]
+layout/default_style="res://dialogue/styles/main_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -58,7 +58,18 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray"
+"res://addons/": "gray",
+"res://cooking/": "orange",
+"res://dialogue/": "blue",
+"res://dialogue/boss/": "blue",
+"res://dialogue/coworker/": "blue",
+"res://dialogue/salty/": "blue",
+"res://dialogue/savory/": "blue",
+"res://dialogue/sour/": "blue",
+"res://dialogue/sweet/": "blue",
+"res://dialogue/testing/": "gray",
+"res://free_roam/": "green",
+"res://menus/": "yellow"
 }
 
 [input]
