@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Bake Me Crazy"
+run/main_scene="res://dialogue/testing/dialogic_timeline_test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://temp_art/temp_game_icon.png"
 
@@ -21,7 +22,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
+}
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogue/dialogic_styles/main_style.tres"]
 layout/default_style="res://dialogue/styles/main_style.tres"
