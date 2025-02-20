@@ -1,142 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb6x37ixw6uxr"]
+[gd_scene load_steps=2 format=3 uid="uid://bb6x37ixw6uxr"]
 
-[sub_resource type="Animation" id="Animation_kuosw"]
-resource_name = "open_warning"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WarningPopup:anchor_top")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WarningPopup:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WarningPopup:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
+[ext_resource type="Script" path="res://menus/pause_menu/pause_script.gd" id="1_kvh1s"]
 
-[sub_resource type="Animation" id="Animation_ivvwc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WarningPopup:anchor_top")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WarningPopup:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WarningPopup:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
+[node name="PauseMenuScene" type="CanvasLayer"]
+process_mode = 3
 
-[sub_resource type="Animation" id="Animation_newso"]
-resource_name = "close_warning"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WarningPopup:anchor_top")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WarningPopup:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WarningPopup:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yl4km"]
-_data = {
-"RESET": SubResource("Animation_ivvwc"),
-"close_warning": SubResource("Animation_newso"),
-"open_warning": SubResource("Animation_kuosw")
-}
-
-[node name="PauseMenuLayer" type="CanvasLayer"]
-
-[node name="Control" type="Control" parent="."]
+[node name="PauseControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kvh1s")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="PauseControl"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -147,7 +25,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Pause Menu"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseControl"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -161,88 +39,36 @@ offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SaveGame" type="Button" parent="Control/VBoxContainer"]
+[node name="SaveGame" type="Button" parent="PauseControl/VBoxContainer"]
 layout_mode = 2
 text = "Save Game"
 
-[node name="LoadGame" type="Button" parent="Control/VBoxContainer"]
+[node name="LoadGame" type="Button" parent="PauseControl/VBoxContainer"]
 layout_mode = 2
 text = "Load Game"
 
-[node name="CloseMenu" type="Button" parent="Control/VBoxContainer"]
+[node name="CloseMenu" type="Button" parent="PauseControl/VBoxContainer"]
 layout_mode = 2
 text = "Return To Game"
 
-[node name="ReturnMainMenu" type="Button" parent="Control/VBoxContainer"]
+[node name="ReturnMainMenu" type="Button" parent="PauseControl/VBoxContainer"]
 layout_mode = 2
 text = "Return to Main Menu"
 
-[node name="Options" type="Button" parent="Control/VBoxContainer"]
+[node name="Options" type="Button" parent="PauseControl/VBoxContainer"]
 layout_mode = 2
 text = "Options"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
-libraries = {
-"": SubResource("AnimationLibrary_yl4km")
-}
-
-[node name="WarningPopup" type="ColorRect" parent="Control"]
+[node name="GameSavedIcon" type="Label" parent="PauseControl"]
 visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.556953, 0.556953, 0.556953, 1)
-
-[node name="QuitOptions" type="VBoxContainer" parent="Control/WarningPopup"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -81.5
-offset_top = -33.0
-offset_right = 81.5
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="QuitAndSave" type="Button" parent="Control/WarningPopup/QuitOptions"]
 layout_mode = 2
-text = "Save And Quit"
+offset_left = 490.0
+offset_top = 444.0
+offset_right = 663.0
+offset_bottom = 467.0
+text = "Game Saved"
 
-[node name="QuitWithoutSaving" type="Button" parent="Control/WarningPopup/QuitOptions"]
-layout_mode = 2
-text = "Quit Without Saving"
-
-[node name="GoBack" type="Button" parent="Control/WarningPopup"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -86.5
-offset_top = -50.0
-offset_right = 86.5
-offset_bottom = -19.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Cancel"
-
-[node name="Label2" type="Label" parent="Control/WarningPopup"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -193.5
-offset_top = 15.0
-offset_right = 193.5
-offset_bottom = 38.0
-grow_horizontal = 2
-text = "Do you want to save your progress?"
-horizontal_alignment = 1
+[connection signal="pressed" from="PauseControl/VBoxContainer/SaveGame" to="PauseControl" method="_on_save_game_pressed"]
+[connection signal="pressed" from="PauseControl/VBoxContainer/CloseMenu" to="PauseControl" method="_on_close_menu_pressed"]
+[connection signal="pressed" from="PauseControl/VBoxContainer/ReturnMainMenu" to="PauseControl" method="_on_return_main_menu_pressed"]
+[connection signal="pressed" from="PauseControl/VBoxContainer/Options" to="PauseControl" method="_on_options_pressed"]
