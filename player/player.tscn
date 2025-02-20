@@ -70,10 +70,10 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(574, 330)
 script = ExtResource("1_07cjt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(342, 241)
 shape = SubResource("CircleShape2D_qdone")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -83,5 +83,6 @@ texture = ExtResource("2_6wle6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(3.90757, 3.90757)
 sprite_frames = SubResource("SpriteFrames_vhbig")
 animation = &"walking"
