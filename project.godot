@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Bake Me Crazy"
+run/main_scene="res://BaseScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://temp_art/temp_game_icon.png"
 

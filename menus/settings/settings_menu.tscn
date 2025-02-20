@@ -1,0 +1,120 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgcj6pme3xasq"]
+
+[ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_k7ytp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjyrs"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7ytp")
+
+[node name="SettingsTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = 45.0
+offset_right = 31.0
+offset_bottom = 68.0
+grow_horizontal = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_vjyrs")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -88.0
+offset_right = 225.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 0)
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MasterVolSlider"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = 22.0
+offset_right = 59.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MusicVolSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MusicVolSlider"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = 22.0
+offset_right = 59.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="SFXVolSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SFXVolSlider"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = 22.0
+offset_right = 59.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -127.0
+offset_right = 82.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(82, 0)
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
