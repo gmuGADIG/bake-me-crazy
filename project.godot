@@ -17,6 +17,7 @@ config/icon="res://temp_art/temp_game_icon.png"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SceneTransition="*res://menus/scene transition/scene_transition.tscn"
 
 [dialogic]
 
