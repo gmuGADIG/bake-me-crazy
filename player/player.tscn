@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_07cjt"]
 [ext_resource type="Texture2D" uid="uid://bv5bu3ep6jpcq" path="res://temp_art/gartic/milk_dad.png" id="2_6wle6"]
-[ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://player/characters/player_1.tres" id="3_noei6"]
+[ext_resource type="SpriteFrames" uid="uid://tju4oeeuehmt" path="res://player/characters/player_2.tres" id="3_rpsi3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qdone"]
 
@@ -36,6 +36,7 @@ texture = ExtResource("2_6wle6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(3.90757, 3.90757)
-sprite_frames = ExtResource("3_noei6")
+sprite_frames = ExtResource("3_rpsi3")
 animation = &"idle"
+frame_progress = 0.9073
 script = SubResource("GDScript_kqmkl")
