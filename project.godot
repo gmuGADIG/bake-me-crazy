@@ -17,6 +17,7 @@ config/icon="res://temp_art/temp_game_icon.png"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PlayerData="*res://save/player_data.gd"
 
 [dialogic]
 
