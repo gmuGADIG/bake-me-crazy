@@ -19,3 +19,4 @@ func load(save_slot: String) -> void:
 	if not ResourceLoader.exists(save_slot):
 		return
 	var save_resource = ResourceLoader.load(save_slot)
+	
