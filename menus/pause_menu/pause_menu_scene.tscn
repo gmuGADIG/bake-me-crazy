@@ -25,7 +25,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Pause Menu"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseControl"]
+[node name="PauseContainer" type="VBoxContainer" parent="PauseControl"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,23 +39,23 @@ offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SaveGame" type="Button" parent="PauseControl/VBoxContainer"]
+[node name="SaveGame" type="Button" parent="PauseControl/PauseContainer"]
 layout_mode = 2
 text = "Save Game"
 
-[node name="LoadGame" type="Button" parent="PauseControl/VBoxContainer"]
+[node name="LoadGame" type="Button" parent="PauseControl/PauseContainer"]
 layout_mode = 2
 text = "Load Game"
 
-[node name="CloseMenu" type="Button" parent="PauseControl/VBoxContainer"]
+[node name="CloseMenu" type="Button" parent="PauseControl/PauseContainer"]
 layout_mode = 2
 text = "Return To Game"
 
-[node name="ReturnMainMenu" type="Button" parent="PauseControl/VBoxContainer"]
+[node name="ReturnMainMenu" type="Button" parent="PauseControl/PauseContainer"]
 layout_mode = 2
 text = "Return to Main Menu"
 
-[node name="Options" type="Button" parent="PauseControl/VBoxContainer"]
+[node name="Options" type="Button" parent="PauseControl/PauseContainer"]
 layout_mode = 2
 text = "Options"
 
@@ -68,7 +68,25 @@ offset_right = 663.0
 offset_bottom = 467.0
 text = "Game Saved"
 
-[connection signal="pressed" from="PauseControl/VBoxContainer/SaveGame" to="PauseControl" method="_on_save_game_pressed"]
-[connection signal="pressed" from="PauseControl/VBoxContainer/CloseMenu" to="PauseControl" method="_on_close_menu_pressed"]
-[connection signal="pressed" from="PauseControl/VBoxContainer/ReturnMainMenu" to="PauseControl" method="_on_return_main_menu_pressed"]
-[connection signal="pressed" from="PauseControl/VBoxContainer/Options" to="PauseControl" method="_on_options_pressed"]
+[node name="ConfirmQuitContainer" type="VBoxContainer" parent="PauseControl"]
+visible = false
+layout_mode = 2
+offset_left = 491.0
+offset_top = 425.0
+offset_right = 664.0
+offset_bottom = 491.0
+
+[node name="ConfirmQuit" type="Button" parent="PauseControl/ConfirmQuitContainer"]
+layout_mode = 2
+text = "Confirm Quit"
+
+[node name="ReturnPause" type="Button" parent="PauseControl/ConfirmQuitContainer"]
+layout_mode = 2
+text = "Go Back"
+
+[connection signal="pressed" from="PauseControl/PauseContainer/SaveGame" to="PauseControl" method="_on_save_game_pressed"]
+[connection signal="pressed" from="PauseControl/PauseContainer/CloseMenu" to="PauseControl" method="_on_close_menu_pressed"]
+[connection signal="pressed" from="PauseControl/PauseContainer/ReturnMainMenu" to="PauseControl" method="_on_return_main_menu_pressed"]
+[connection signal="pressed" from="PauseControl/PauseContainer/Options" to="PauseControl" method="_on_options_pressed"]
+[connection signal="pressed" from="PauseControl/ConfirmQuitContainer/ConfirmQuit" to="PauseControl" method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="PauseControl/ConfirmQuitContainer/ReturnPause" to="PauseControl" method="_on_return_pause_pressed"]
