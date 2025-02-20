@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgcj6pme3xasq"]
+[gd_scene load_steps=4 format=3 uid="uid://bgcj6pme3xasq"]
 
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_k7ytp"]
+[ext_resource type="AudioStream" uid="uid://oq0kffb81ncn" path="res://menus/settings/infiltration.mp3" id="2_r624d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjyrs"]
 
@@ -46,6 +47,8 @@ alignment = 1
 
 [node name="MasterVolSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+max_value = 1.2
+step = 0.01
 
 [node name="Label" type="Label" parent="VBoxContainer/MasterVolSlider"]
 layout_mode = 1
@@ -64,6 +67,8 @@ horizontal_alignment = 1
 
 [node name="MusicVolSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+max_value = 1.2
+step = 0.01
 
 [node name="Label" type="Label" parent="VBoxContainer/MusicVolSlider"]
 layout_mode = 1
@@ -82,6 +87,8 @@ horizontal_alignment = 1
 
 [node name="SFXVolSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
+max_value = 1.2
+step = 0.01
 
 [node name="Label" type="Label" parent="VBoxContainer/SFXVolSlider"]
 layout_mode = 1
@@ -113,6 +120,10 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(82, 0)
 text = "Back"
+
+[node name="Infiltration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r624d")
+autoplay = true
 
 [connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
