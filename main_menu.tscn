@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://6ysgmyx6gxsa"]
+
+[ext_resource type="Texture2D" uid="uid://dsi4qo5nvkj6n" path="res://temp_art/temp ui/Title screen template.png" id="1_0le3s"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_62hkl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7enec"]
+texture = ExtResource("1_0le3s")
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62hkl")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7enec")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -55.0
+offset_right = 153.0
+offset_bottom = 346.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="Load Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Load Game
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="Quit Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load Game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
