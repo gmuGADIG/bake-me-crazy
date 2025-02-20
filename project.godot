@@ -26,7 +26,7 @@ directories/dtl_directory={
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogue/dialogic_styles/main_style.tres"]
+layout/style_list=[]
 layout/default_style="res://dialogue/styles/main_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"

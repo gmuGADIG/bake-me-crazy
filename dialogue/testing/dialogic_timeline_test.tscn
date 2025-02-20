@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccnko7y3tnmsp"]
 
-[ext_resource type="Script" path="res://dialogue/testing/dialogic_timeline_test.gd" id="1_l5h22"]
+[ext_resource type="Script" path="res://dialogue/relationships.gd" id="1_khsvk"]
 
 [node name="dialogicTimelineTest" type="Node2D"]
-script = ExtResource("1_l5h22")
+script = ExtResource("1_khsvk")
