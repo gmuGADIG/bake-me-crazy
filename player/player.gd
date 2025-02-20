@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @export var speed := 500.0
+@export var skin := "player_1"
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	print("Hello World!")
+	sprite.sprite_frames = load("res://player/characters/" + skin + ".tres")
 
 func _process(delta: float) -> void:
 
