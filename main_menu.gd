@@ -12,19 +12,19 @@ func _process(delta: float) -> void:
 
 
 func _on_start_game_pressed() -> void:
-	pass # Replace with function body.
+	print("Game started") # Temporary code
 
 
 func _on_load_game_pressed() -> void:
-	pass # Replace with function body.
+	print("Loaded game") # Temporary code
 
 
 func _on_options_pressed() -> void:
-	pass # Replace with function body.
+	print("Options screen transition") # Temporary Code
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	print("GADIG made this game") # Temporary code
 
 
 func _on_quit_game_pressed() -> void:
