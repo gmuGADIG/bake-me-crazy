@@ -123,7 +123,7 @@ text = "Back"
 
 [node name="Infiltration" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_r624d")
-autoplay = true
+bus = &"SFX"
 
 [connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]

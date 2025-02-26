@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 
 
 func _on_master_vol_slider_value_changed(value: float) -> void:
-	print("Master Volume is ", linear_to_db(value))
+	print("Master Volume is ", value)
 	AudioServer.set_bus_volume_db(master_bus, linear_to_db(value))
 
 
