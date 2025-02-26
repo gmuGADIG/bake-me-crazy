@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjpyxl62mive1"]
+
+[ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
+[ext_resource type="Texture2D" uid="uid://bv5bu3ep6jpcq" path="res://temp_art/gartic/milk_dad.png" id="2_e1s4v"]
+
+[sub_resource type="Curve2D" id="Curve2D_p18d5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -66, 2, 0, 0, 0, 0, 38, 30, 0, 0, 0, 0, 155, 0, 0, 0, 0, 0, 338.493, 60, 0, 0, 0, 0, 441.493, 41)
+}
+point_count = 5
+
+[node name="Path2D" type="Path2D"]
+position = Vector2(272, 178)
+curve = SubResource("Curve2D_p18d5")
+
+[node name="Player" type="PathFollow2D" parent="."]
+position = Vector2(-66, 2)
+rotates = false
+loop = false
+script = ExtResource("1_jfd2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_e1s4v")
