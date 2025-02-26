@@ -14,7 +14,7 @@ position = Vector2(272, 178)
 curve = SubResource("Curve2D_p18d5")
 
 [node name="Player" type="PathFollow2D" parent="."]
-position = Vector2(-67, 2)
+position = Vector2(-66, 2)
 rotates = false
 loop = false
 script = ExtResource("1_jfd2d")
