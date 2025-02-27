@@ -1,0 +1,66 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://60amcli7h4yi"]
+
+[ext_resource type="Texture2D" uid="uid://dwoc18ot68nds" path="res://temp_art/bakeranimationbeta.png" id="1_w40xw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74x41"]
+atlas = ExtResource("1_w40xw")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7lmj"]
+atlas = ExtResource("1_w40xw")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gav3d"]
+atlas = ExtResource("1_w40xw")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohqid"]
+atlas = ExtResource("1_w40xw")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xlna"]
+atlas = ExtResource("1_w40xw")
+region = Rect2(128, 0, 32, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74x41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7lmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74x41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74x41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74x41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74x41")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gav3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xlna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohqid")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
