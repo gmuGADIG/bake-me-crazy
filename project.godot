@@ -18,6 +18,7 @@ config/icon="res://temp_art/temp_game_icon.png"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Relationships="*res://dialogue/relationships.gd"
 
 [dialogic]
 
@@ -28,7 +29,10 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style="res://dialogue/styles/main_style.tres"
-variables={}
+variables={
+"saltyHearts": 0,
+"saltyRP": 0
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
