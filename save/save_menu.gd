@@ -5,12 +5,16 @@ extends Panel
 func _ready() -> void:
 	PlayerData.data = SaveTemplate.new()
 
+
+
 func save_file(save_slot: String) -> void:
 	var result = ResourceSaver.save(PlayerData.data,"user://"+save_slot+".tres")
 	if result > 0:
 		push_error("Error: File did not save correctly\n"+result)
 	pass
-	
+
+
+
 func load_file(save_slot: String) -> void:
 	var path : String = "user://"+save_slot+".tres"
 	if not ResourceLoader.exists(path):

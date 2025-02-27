@@ -1,6 +1,6 @@
 class_name SaveTemplate extends Resource
 
-##This is the script that stores all data pertaining to the player, and saved progress.
+##This is the script/resource that stores all data pertaining to the player, and saved progress.
 ##When the game is saved, all variables are stored to disk, and can be reloaded.
 
 
