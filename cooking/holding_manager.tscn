@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://3401sxy2s32d"]
+
+[ext_resource type="Script" path="res://cooking/holding_manager.gd" id="1_5iguj"]
+
+[node name="HoldingManager" type="Node2D"]
+script = ExtResource("1_5iguj")
