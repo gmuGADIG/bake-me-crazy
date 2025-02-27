@@ -1,0 +1,119 @@
+[gd_scene load_steps=3 format=3 uid="uid://c001by107vn8g"]
+
+[ext_resource type="Texture2D" uid="uid://cgp0iy46gv5vr" path="res://temp_art/gartic/godot_cross.png" id="1_xq3ro"]
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_n7opr"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(575, 325)
+scale = Vector2(2.26, 1.48)
+texture = ExtResource("1_xq3ro")
+
+[node name="Book" type="Panel" parent="Control"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 30.0
+offset_right = 1075.0
+offset_bottom = 620.0
+
+[node name="page Left" type="Panel" parent="Control/Book"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 590.0
+
+[node name="Food Icon-Image" type="Sprite2D" parent="Control/Book/page Left"]
+position = Vector2(79, 74)
+texture = ExtResource("2_n7opr")
+
+[node name="Food name" type="Label" parent="Control/Book/page Left"]
+layout_mode = 0
+offset_left = 179.814
+offset_top = 21.0
+offset_right = 308.814
+offset_bottom = 44.0
+scale = Vector2(2, 1.72667)
+text = "TEST Food Name
+"
+
+[node name="Food Description" type="Label" parent="Control/Book/page Left"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 160.0
+offset_right = 475.0
+offset_bottom = 485.0
+text = "Description: Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! CrazCrazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! "
+autowrap_mode = 2
+
+[node name="Left Button" type="Button" parent="Control/Book/page Left"]
+layout_mode = 0
+offset_left = 15.0812
+offset_top = 504.0
+offset_right = 498.081
+offset_bottom = 909.0
+scale = Vector2(0.15, 0.15)
+text = "Left
+"
+icon = ExtResource("1_xq3ro")
+
+[node name="Bake Button" type="Button" parent="Control/Book/page Left"]
+layout_mode = 0
+offset_left = 131.09
+offset_top = 505.0
+offset_right = 431.09
+offset_bottom = 565.0
+text = "BAKE"
+
+[node name="page Right" type="Panel" parent="Control/Book"]
+layout_mode = 0
+offset_left = 500.0
+offset_right = 1000.0
+offset_bottom = 590.0
+
+[node name="Food Icon-Image" type="Sprite2D" parent="Control/Book/page Right"]
+position = Vector2(79, 74)
+texture = ExtResource("2_n7opr")
+
+[node name="Food name" type="Label" parent="Control/Book/page Right"]
+layout_mode = 0
+offset_left = 179.814
+offset_top = 21.0
+offset_right = 308.814
+offset_bottom = 44.0
+scale = Vector2(2, 1.72667)
+text = "TEST Food Name
+"
+
+[node name="Food Description" type="Label" parent="Control/Book/page Right"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 160.0
+offset_right = 475.0
+offset_bottom = 485.0
+text = "Description: Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! CrazCrazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! "
+autowrap_mode = 2
+
+[node name="Right Button" type="Button" parent="Control/Book/page Right"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 504.0
+offset_right = 873.0
+offset_bottom = 909.0
+scale = Vector2(0.15, 0.15)
+text = "Left
+"
+icon = ExtResource("1_xq3ro")
+
+[node name="Bake Button" type="Button" parent="Control/Book/page Right"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 505.0
+offset_right = 342.0
+offset_bottom = 565.0
+text = "BAKE"
