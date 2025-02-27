@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwmajolaxmv26"]
+
+[ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_ri8w5"]
+
+[node name="FoodMinigame" type="Node2D"]
+script = ExtResource("1_ri8w5")
