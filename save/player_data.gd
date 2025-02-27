@@ -1,32 +1,9 @@
-extends Resource
-
-##This is the script that stores all data pertaining to the player, and saved progress.
-##When the game is saved, all variables are stored to disk, and can be reloaded.
+extends Node
 
 
-enum DayPhase {
-  	EXPLORE,
-	MORNING,
-	BREAK,
-	RUSH,
-	CLOCKOUT,
-	HOME
-}
 
-@export_range(1,14) var day : int
-@export var day_phase : DayPhase
-@export var money : int
+static var data
 
-##TODO: Recipes data
-
-##TODO: Inventory/Items
-
-##TODO: CharacterData?
-	#name
-	#hearts
-	#DateSchedule
-	#texts [
-		#"afashfiasufhaieughaseig",
-		#"hi",
-		#"you bake be crazy"
-	#]
+# Called when the node enters the scene tree for the first time.
+func load_file(save_template : SaveTemplate) -> void:
+	data = save_template
