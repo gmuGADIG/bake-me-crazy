@@ -1,39 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8pscfxlcon7d"]
+[gd_scene load_steps=3 format=3 uid="uid://b8pscfxlcon7d"]
 
-[ext_resource type="PackedScene" uid="uid://djqg3w72kfa4" path="res://free_roam/interactables/npc.tscn" id="1_sin2s"]
-[ext_resource type="Script" path="res://free_roam/interactables/player_sample.gd" id="3_34hmn"]
-[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="3_nu4fq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_emt1q"]
-size = Vector2(441, 364)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxt1p"]
-size = Vector2(282, 247)
+[ext_resource type="PackedScene" uid="uid://dy3vus2mbh76f" path="res://free_roam/interactables/interactable.tscn" id="2_fomsg"]
+[ext_resource type="PackedScene" uid="uid://c5p3ifq0mrptf" path="res://free_roam/interactables/player_int_test.tscn" id="2_vklvo"]
 
 [node name="PlayerInteractTest" type="Node2D"]
 
-[node name="NPCNode" parent="." instance=ExtResource("1_sin2s")]
-position = Vector2(717, 137)
+[node name="PlayerIntTest" parent="." instance=ExtResource("2_vklvo")]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(255, 250)
-script = ExtResource("3_34hmn")
-
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
-position = Vector2(-18, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(17, 0)
-shape = SubResource("RectangleShape2D_emt1q")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-3, -0.999992)
-scale = Vector2(2.16406, 1.92188)
-texture = ExtResource("3_nu4fq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-2, 0)
-shape = SubResource("RectangleShape2D_hxt1p")
-
-[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_interact_area_entered"]
-[connection signal="area_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_interact_area_exited"]
+[node name="Interactable" parent="." instance=ExtResource("2_fomsg")]

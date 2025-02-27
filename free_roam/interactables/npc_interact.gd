@@ -1,4 +1,4 @@
-class_name Interactable extends Node2D
+class_name Interactable extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
