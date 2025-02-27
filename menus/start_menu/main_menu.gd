@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_game_pressed() -> void:
+func _on_start_pressed() -> void:
 	print("Game started") # Temporary code
 
 
@@ -20,8 +20,8 @@ func _on_load_game_pressed() -> void:
 
 
 func _on_options_pressed() -> void:
-	print("Options screen transition") # Temporary Code
-
+	var settings_menu: Node = load("res://menus/settings/settings_menu.tscn").instantiate()
+	add_child(settings_menu)
 
 func _on_credits_pressed() -> void:
 	print("GADIG made this game") # Temporary code
