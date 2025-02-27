@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://djqg3w72kfa4"]
+
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="1_xiar0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2n68"]
+size = Vector2(355.25, 265)
+
+[node name="NPCNode" type="Node2D"]
+
+[node name="NPCSprite" type="Sprite2D" parent="."]
+position = Vector2(177, 131)
+texture = ExtResource("1_xiar0")
+
+[node name="NPCInteractArea" type="Area2D" parent="NPCSprite"]
+position = Vector2(-177, -130)
+
+[node name="InteractShape" type="CollisionShape2D" parent="NPCSprite/NPCInteractArea"]
+position = Vector2(177, 132)
+shape = SubResource("RectangleShape2D_y2n68")
