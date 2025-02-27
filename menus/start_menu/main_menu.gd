@@ -10,10 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	time_passed += delta
 	for i in range($VBoxContainer.get_child_count()):
-		var button = $VBoxContainer.get_child(i)
-		var pivot = $VBoxContainer.get_child(i).get_pivot_offset()
+		var button = $VBoxContainer.get_child(i).get_child(0)
+		
 		if button is Button:
-			pivot = size / 2
 			var offset = i * 0.5  # Slight phase shift for each button
 			button.rotation_degrees = sin(time_passed * 5 + offset) * 5  # Wiggle effect
 	pass

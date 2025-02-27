@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0lluvp8jike4"]
+[gd_scene load_steps=6 format=3 uid="uid://b0lluvp8jike4"]
 
 [ext_resource type="Texture2D" uid="uid://dsi4qo5nvkj6n" path="res://temp_art/temp ui/Title screen template.png" id="1_0le3s"]
 [ext_resource type="Script" path="res://main_menu.gd" id="1_62hkl"]
 [ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="3_blshd"]
 [ext_resource type="Script" path="res://v_box_container.gd" id="4_xkuk8"]
-[ext_resource type="Script" path="res://start_game.gd" id="5_pvcbr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7enec"]
 texture = ExtResource("1_0le3s")
@@ -34,54 +33,79 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -140.5
-offset_top = -401.0
-offset_right = 140.5
+offset_left = -130.0
+offset_top = -19.0
+offset_right = 151.0
+offset_bottom = 602.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_blshd")
 theme_override_constants/separation = 18
 script = ExtResource("4_xkuk8")
 
-[node name="Start Game" type="Button" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Start Game" type="Button" parent="VBoxContainer/Control"]
+layout_mode = 2
+offset_top = -370.0
+offset_right = 281.0
+offset_bottom = -314.0
+pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
-[node name="Load Game" type="Button" parent="VBoxContainer"]
+[node name="Control2" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Load Game" type="Button" parent="VBoxContainer/Control2"]
+layout_mode = 2
+offset_top = -314.0
+offset_right = 281.0
+offset_bottom = -258.0
+pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Load Game
 "
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Control3" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Options" type="Button" parent="VBoxContainer/Control3"]
+layout_mode = 2
+offset_top = -258.0
+offset_right = 281.0
+offset_bottom = -202.0
+pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Options"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="Control4" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Credits" type="Button" parent="VBoxContainer/Control4"]
+layout_mode = 2
+offset_top = -202.0
+offset_right = 281.0
+offset_bottom = -146.0
+pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
-[node name="Quit Game" type="Button" parent="VBoxContainer"]
+[node name="Control5" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Quit Game" type="Button" parent="VBoxContainer/Control5"]
+layout_mode = 2
+offset_top = -146.0
+offset_right = 281.0
+offset_bottom = -90.0
+pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Quit Game"
 
-[node name="Start Game" type="Button" parent="."]
-offset_left = 729.0
-offset_top = 324.0
-offset_right = 900.0
-offset_bottom = 374.0
-pivot_offset = Vector2(82.3, 25.075)
-theme_override_font_sizes/font_size = 30
-text = "Start Game"
-script = ExtResource("5_pvcbr")
-
-[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Load Game" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control2/Load Game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control3/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control4/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control5/Quit Game" to="." method="_on_quit_game_pressed"]
