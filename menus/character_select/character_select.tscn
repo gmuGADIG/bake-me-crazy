@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://dby7eaymg6cw4"]
+
+[ext_resource type="Script" path="res://menus/character_select/character_select.gd" id="1_oknyd"]
+[ext_resource type="Texture2D" uid="uid://byp84ry7qd0k" path="res://menus/character_select/characters/BetterCat.png" id="2_fdlyh"]
+[ext_resource type="Texture2D" uid="uid://e06msbqv0nql" path="res://menus/character_select/characters/HoodGuy.png" id="3_g328w"]
+[ext_resource type="Texture2D" uid="uid://cyjulft62bqcl" path="res://menus/character_select/characters/Ogre.png" id="4_t5htp"]
+[ext_resource type="Texture2D" uid="uid://ea1dm8xn4io2" path="res://menus/character_select/characters/People1.png" id="5_7vxcr"]
+[ext_resource type="Texture2D" uid="uid://dolfwxmi5lck" path="res://menus/character_select/characters/People2.png" id="6_8l30e"]
+[ext_resource type="Texture2D" uid="uid://dc4h35cp46er6" path="res://menus/character_select/characters/Skele.png" id="7_ljyxm"]
+
+[node name="character_select" type="Control" node_paths=PackedStringArray("activeChar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oknyd")
+activeChar = NodePath("HBoxContainer/Sprite2D")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cat" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Cat"
+icon = ExtResource("2_fdlyh")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="cat" type="Sprite2D" parent="HBoxContainer/Cat"]
+visible = false
+texture = ExtResource("2_fdlyh")
+
+[node name="Hood" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Hood"
+icon = ExtResource("3_g328w")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Ogre" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Ogre"
+icon = ExtResource("4_t5htp")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="People" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Person 1"
+icon = ExtResource("5_7vxcr")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="People1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Person 2"
+icon = ExtResource("6_8l30e")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Skele" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Skele"
+icon = ExtResource("7_ljyxm")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(183, 203.5)
+scale = Vector2(8, 6.59375)
+
+[connection signal="button_up" from="HBoxContainer/Cat" to="." method="_on_cat_button_up"]
+[connection signal="button_up" from="HBoxContainer/Hood" to="." method="_on_hood_button_up"]
+[connection signal="button_up" from="HBoxContainer/Ogre" to="." method="_on_ogre_button_up"]
+[connection signal="button_up" from="HBoxContainer/People" to="." method="_on_people_button_up"]
+[connection signal="button_up" from="HBoxContainer/People1" to="." method="_on_people_1_button_up"]
+[connection signal="button_up" from="HBoxContainer/Skele" to="." method="_on_skele_button_up"]
