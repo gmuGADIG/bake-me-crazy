@@ -17,7 +17,6 @@ config/icon="res://temp_art/temp_game_icon.png"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-CharacterSelect="*res://menus/character_select/character_select.gd"
 
 [dialogic]
 

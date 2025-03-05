@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dby7eaymg6cw4"]
+[gd_scene load_steps=9 format=3 uid="uid://dby7eaymg6cw4"]
 
 [ext_resource type="Script" path="res://menus/character_select/character_select.gd" id="1_oknyd"]
-[ext_resource type="Texture2D" uid="uid://byp84ry7qd0k" path="res://menus/character_select/characters/BetterCat.png" id="2_fdlyh"]
-[ext_resource type="Texture2D" uid="uid://e06msbqv0nql" path="res://menus/character_select/characters/HoodGuy.png" id="3_g328w"]
-[ext_resource type="Texture2D" uid="uid://cyjulft62bqcl" path="res://menus/character_select/characters/Ogre.png" id="4_t5htp"]
-[ext_resource type="Texture2D" uid="uid://ea1dm8xn4io2" path="res://menus/character_select/characters/People1.png" id="5_7vxcr"]
-[ext_resource type="Texture2D" uid="uid://dolfwxmi5lck" path="res://menus/character_select/characters/People2.png" id="6_8l30e"]
-[ext_resource type="Texture2D" uid="uid://dc4h35cp46er6" path="res://menus/character_select/characters/Skele.png" id="7_ljyxm"]
+[ext_resource type="Texture2D" uid="uid://csaq273pycx6c" path="res://temp_art/gartic/big_shoe_big_sad.png" id="2_ruust"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="3_dqjn2"]
+[ext_resource type="Script" path="res://menus/character_select/character_select_button.gd" id="3_y3bse"]
+[ext_resource type="Texture2D" uid="uid://dt67wy2es4gxj" path="res://temp_art/gartic/sombrero_raccoon.png" id="4_gvmwu"]
+[ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="5_160cn"]
+[ext_resource type="Texture2D" uid="uid://c40ew5c8y11rq" path="res://temp_art/gartic/im_steve.png" id="6_qmpd5"]
+[ext_resource type="Texture2D" uid="uid://cys2fl7mlf1nw" path="res://temp_art/gartic/shadow.png" id="7_dosu7"]
 
-[node name="character_select" type="Control" node_paths=PackedStringArray("activeChar")]
+[node name="CharacterSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,66 +17,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oknyd")
-activeChar = NodePath("HBoxContainer/Sprite2D")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ButtonHBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -75.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Cat" type="Button" parent="HBoxContainer"]
+[node name="Char0" type="Button" parent="ButtonHBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Cat"
-icon = ExtResource("2_fdlyh")
+text = "Sad Shoe"
+icon = ExtResource("2_ruust")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_y3bse")
 
-[node name="cat" type="Sprite2D" parent="HBoxContainer/Cat"]
-visible = false
-texture = ExtResource("2_fdlyh")
-
-[node name="Hood" type="Button" parent="HBoxContainer"]
+[node name="Char1" type="Button" parent="ButtonHBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Hood"
-icon = ExtResource("3_g328w")
+text = "Divorce Woman"
+icon = ExtResource("3_dqjn2")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_y3bse")
+char_id = 1
 
-[node name="Ogre" type="Button" parent="HBoxContainer"]
+[node name="Char2" type="Button" parent="ButtonHBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Ogre"
-icon = ExtResource("4_t5htp")
+text = "Raccoon"
+icon = ExtResource("4_gvmwu")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_y3bse")
+char_id = 2
 
-[node name="People" type="Button" parent="HBoxContainer"]
+[node name="Char3" type="Button" parent="ButtonHBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Person 1"
-icon = ExtResource("5_7vxcr")
+text = "Forg"
+icon = ExtResource("5_160cn")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_y3bse")
+char_id = 3
 
-[node name="People1" type="Button" parent="HBoxContainer"]
+[node name="Char4" type="Button" parent="ButtonHBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Person 2"
-icon = ExtResource("6_8l30e")
+text = "Steve"
+icon = ExtResource("6_qmpd5")
 icon_alignment = 1
 vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_y3bse")
+char_id = 4
 
-[node name="Skele" type="Button" parent="HBoxContainer"]
+[node name="Char5" type="Button" parent="ButtonHBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Skele"
-icon = ExtResource("7_ljyxm")
+text = "Shadow"
+icon = ExtResource("7_dosu7")
 icon_alignment = 1
 vertical_icon_alignment = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(183, 203.5)
-scale = Vector2(8, 6.59375)
-
-[connection signal="button_up" from="HBoxContainer/Cat" to="." method="_on_cat_button_up"]
-[connection signal="button_up" from="HBoxContainer/Hood" to="." method="_on_hood_button_up"]
-[connection signal="button_up" from="HBoxContainer/Ogre" to="." method="_on_ogre_button_up"]
-[connection signal="button_up" from="HBoxContainer/People" to="." method="_on_people_button_up"]
-[connection signal="button_up" from="HBoxContainer/People1" to="." method="_on_people_1_button_up"]
-[connection signal="button_up" from="HBoxContainer/Skele" to="." method="_on_skele_button_up"]
+expand_icon = true
+script = ExtResource("3_y3bse")
+char_id = 5
