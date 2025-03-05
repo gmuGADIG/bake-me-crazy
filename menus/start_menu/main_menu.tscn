@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0lluvp8jike4"]
+[gd_scene load_steps=5 format=3 uid="uid://b0lluvp8jike4"]
 
-[ext_resource type="Texture2D" uid="uid://dsi4qo5nvkj6n" path="res://temp_art/temp ui/Title screen template.png" id="1_0le3s"]
-[ext_resource type="Script" path="res://main_menu.gd" id="1_62hkl"]
-[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="3_blshd"]
-[ext_resource type="Script" path="res://v_box_container.gd" id="4_xkuk8"]
+[ext_resource type="Script" path="res://menus/start_menu/main_menu.gd" id="1_e3ggy"]
+[ext_resource type="Texture2D" uid="uid://dsi4qo5nvkj6n" path="res://temp_art/temp ui/Title screen template.png" id="2_djj27"]
+[ext_resource type="Theme" uid="uid://cqst728xxipcw" path="res://addons/dialogic/Editor/Theme/MainTheme.tres" id="3_60afl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7enec"]
-texture = ExtResource("1_0le3s")
+texture = ExtResource("2_djj27")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -15,7 +14,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_62hkl")
+script = ExtResource("1_e3ggy")
+wiggle_degrees = 3.0
+wiggle_speed_mult = 3.0
+wiggle_offset = 0.34
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -34,77 +36,76 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -130.0
-offset_top = -19.0
+offset_top = -392.0
 offset_right = 151.0
-offset_bottom = 602.0
+offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("3_blshd")
+theme = ExtResource("3_60afl")
 theme_override_constants/separation = 18
-script = ExtResource("4_xkuk8")
 
 [node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 
 [node name="Start Game" type="Button" parent="VBoxContainer/Control"]
 layout_mode = 2
-offset_top = -370.0
 offset_right = 281.0
-offset_bottom = -314.0
+offset_bottom = 56.0
 pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
 [node name="Control2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 
 [node name="Load Game" type="Button" parent="VBoxContainer/Control2"]
 layout_mode = 2
-offset_top = -314.0
 offset_right = 281.0
-offset_bottom = -258.0
+offset_bottom = 56.0
 pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Load Game
 "
 
 [node name="Control3" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 
 [node name="Options" type="Button" parent="VBoxContainer/Control3"]
 layout_mode = 2
-offset_top = -258.0
 offset_right = 281.0
-offset_bottom = -202.0
+offset_bottom = 56.0
 pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Options"
 
 [node name="Control4" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 
 [node name="Credits" type="Button" parent="VBoxContainer/Control4"]
 layout_mode = 2
-offset_top = -202.0
 offset_right = 281.0
-offset_bottom = -146.0
+offset_bottom = 56.0
 pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Credits"
 
 [node name="Control5" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 
 [node name="Quit Game" type="Button" parent="VBoxContainer/Control5"]
 layout_mode = 2
-offset_top = -146.0
 offset_right = 281.0
-offset_bottom = -90.0
+offset_bottom = 56.0
 pivot_offset = Vector2(140, 30)
 theme_override_font_sizes/font_size = 30
 text = "Quit Game"
 
-[connection signal="pressed" from="VBoxContainer/Control/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/Start Game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control2/Load Game" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control3/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control4/Credits" to="." method="_on_credits_pressed"]

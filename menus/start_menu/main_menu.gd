@@ -1,30 +1,26 @@
 extends Control
 
 var time_passed := 0.0
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
+@export var wiggle_degrees: float
+@export var wiggle_speed_mult: float
+@export var wiggle_offset: float
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time_passed += delta
 	for i in range($VBoxContainer.get_child_count()):
-		var button = $VBoxContainer.get_child(i).get_child(0)
+		var button_container = $VBoxContainer.get_child(i) as Control
+		var button = button_container.get_child(0) as Button
+		assert(button != null)
 		
-		if button is Button:
-			var offset = i * 0.5  # Slight phase shift for each button
-			button.rotation_degrees = sin(time_passed * 5 + offset) * 5  # Wiggle effect
-	pass
-
+		var offset = i * wiggle_offset  # Slight phase shift for each button
+		button.rotation_degrees = sin(time_passed * wiggle_speed_mult + offset) * wiggle_degrees  # Wiggle effect
 
 func _on_start_pressed() -> void:
 	print("Game started") # Temporary code
 
-
 func _on_load_game_pressed() -> void:
 	print("Loaded game") # Temporary code
-
 
 func _on_options_pressed() -> void:
 	var settings_menu: Node = load("res://menus/settings/settings_menu.tscn").instantiate()
@@ -32,7 +28,6 @@ func _on_options_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	print("GADIG made this game") # Temporary code
-
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
