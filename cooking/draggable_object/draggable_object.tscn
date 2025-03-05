@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://u2v0gb5yo3pq"]
 
-[ext_resource type="Script" path="res://cooking/draggable_object.gd" id="1_ukbcm"]
+[ext_resource type="Script" path="res://cooking/draggable_object/draggable_object.gd" id="1_ukbcm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmsek"]
 radius = 75.326
