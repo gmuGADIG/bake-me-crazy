@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=11 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_n757x"]
+[ext_resource type="Texture2D" uid="uid://d0pfjeglw8p08" path="res://temp_art/IceCream.png" id="4_fggh0"]
+[ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="5_rqhqf"]
+[ext_resource type="Texture2D" uid="uid://c1dxbivc802cm" path="res://temp_art/Pizza.png" id="6_g3b14"]
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="7_4jp5m"]
+[ext_resource type="Texture2D" uid="uid://dp4t17cydtkb5" path="res://temp_art/Pesto.png" id="8_0vlu4"]
+[ext_resource type="Texture2D" uid="uid://b5j60fdegdpsp" path="res://temp_art/Ketchup.png" id="9_6f5vm"]
+[ext_resource type="Texture2D" uid="uid://b1waw2cj58wsi" path="res://temp_art/BlueberrySauce.png" id="10_nk5v2"]
 
 [node name="Lunchrush" type="Node2D"]
 script = ExtResource("1_8n1i3")
@@ -23,7 +30,8 @@ offset_bottom = 1478.0
 mouse_filter = 2
 color = Color(0.523475, 0.0212798, 0.407381, 1)
 
-[node name="TacoBucket" type="Sprite2D" parent="."]
+[node name="Taco" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(539, 545)
 scale = Vector2(2.66667, 5)
 texture = ExtResource("2_n757x")
@@ -39,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FoodSelect"]
 layout_mode = 1
@@ -53,21 +62,25 @@ offset_bottom = 206.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food1" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("4_fggh0")
 
-[node name="Button2" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food2" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("5_rqhqf")
 
-[node name="Button3" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food3" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("6_g3b14")
 
-[node name="Button4" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food4" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("7_4jp5m")
 
 [node name="FlavorSelect" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -76,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FlavorSelect"]
 layout_mode = 1
@@ -90,19 +104,25 @@ offset_bottom = 154.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Button2" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+[node name="Flavor1" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("8_0vlu4")
 
-[node name="Button3" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+[node name="Flavor2" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("9_6f5vm")
 
-[node name="Button4" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+[node name="Flavor3" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon = ExtResource("10_nk5v2")
 
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button" to="." method="_on_food_selected" binds= [0]]
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button2" to="." method="_on_food_selected" binds= [1]]
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button3" to="." method="_on_food_selected" binds= [2]]
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button4" to="." method="_on_food_selected" binds= [3]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food3" to="." method="_on_food_selected" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food4" to="." method="_on_food_selected" binds= [3]]
+[connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor1" to="." method="_on_flavor_selected" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor2" to="." method="_on_flavor_selected" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor3" to="." method="_on_flavor_selected" binds= [2]]

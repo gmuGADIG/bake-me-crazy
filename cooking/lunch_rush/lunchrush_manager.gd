@@ -1,11 +1,16 @@
 extends Node2D
 
 
-var foods : Array[String] = ["taco1","taco2","taco3","taco4"]
+
+#TODO: Replace these with the actual food items and flavors
+var foods : Array[String] = ["ice cream","salad","pizza","taco"]
 var flavors : Array[String] = ["pesto","ketchup","blueberry"]
 
 var requestedFood : String
 var requestedFlavor : String
+
+var selectedFood : String
+var selectedFlavor : String
 
 
 enum Stage {
@@ -18,8 +23,6 @@ var currentStage : Stage
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$CanvasLayer/FoodSelect.visible = true
-	$CanvasLayer/FlavorSelect.visible = false
 	
 	new_order()
 
@@ -68,12 +71,25 @@ func _on_food_selected(food_index: int) -> void:
 	
 	currentStage = Stage.FLAVOR_SELECT
 	
-	var food : String = foods[food_index]
-	print(food)
+	selectedFood = foods[food_index]
+	print(selectedFood)
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1162, 0.3	).set_trans(Tween.TRANS_QUAD)
+	#TODO: Make the food slide in at the same time as the food select disapears
+	
 	tween.tween_property($CanvasLayer/FlavorSelect/VBoxContainer, "position:x", 1052, 0.3).set_trans(Tween.TRANS_QUAD)
 
+
+##Each of the buttons in the inspector pass in an index argument for the flavours array
 func _on_flavor_selected(flavor_index: int) -> void:
+	if currentStage != Stage.FLAVOR_SELECT:
+		return
+	
+	currentStage = Stage.FLAVOR_TOWN
+	
+	selectedFlavor = flavors[flavor_index]
+	var tween = get_tree().create_tween()
+	tween.tween_property($CanvasLayer/FlavorSelect/VBoxContainer, "position:x", 1162, 0.3).set_trans(Tween.TRANS_QUAD)
+	
 	pass

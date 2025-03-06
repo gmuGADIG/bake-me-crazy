@@ -1,6 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cqst728xxipcw"]
-
-[ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="1_f3nco"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cqst728xxipcw"]
 
 [sub_resource type="FontVariation" id="FontVariation_n8uio"]
 
@@ -61,7 +59,7 @@ Button/constants/icon_max_width = 45
 Button/constants/outline_size = 2
 Button/font_sizes/font_size = 21
 Button/fonts/font = SubResource("FontVariation_n8uio")
-Button/icons/icon = ExtResource("1_f3nco")
+Button/icons/icon = null
 Button/styles/hover = SubResource("StyleBoxFlat_iy8yt")
 Button/styles/normal = SubResource("StyleBoxFlat_x2dkm")
 Button/styles/pressed = SubResource("StyleBoxFlat_7vc2w")
