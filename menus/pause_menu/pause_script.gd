@@ -1,6 +1,8 @@
 extends Control
 
 func _process(_delta: float) -> void:
+	#Checks if the player just pressed the input action labeled "pause" 
+	#(which is usually defined in the Input Map in Project Settings)
 	if Input.is_action_just_pressed("pause"):
 		$PauseContainer.visible = get_tree().paused;
 		get_tree().paused = not get_tree().paused;
