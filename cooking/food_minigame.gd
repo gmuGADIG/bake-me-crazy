@@ -11,6 +11,8 @@ func next_step(ingredient: FoodItem) -> void:
 		if step_ptr > 0:
 			var prev: FoodStep = steps[step_ptr]
 			prev.process_mode = Node.PROCESS_MODE_DISABLED
+			prev.hide() # TODO replace with polished animation.
+			prev.step_hide()
 		
 		var next: FoodStep = steps[step_ptr]
 		step_ptr += 1
@@ -19,6 +21,8 @@ func next_step(ingredient: FoodItem) -> void:
 		# Enable the step then call its start function.
 		next.process_mode = Node.PROCESS_MODE_INHERIT
 		next.start()
+		next.show() # TODO replace with polished animation
+		next.step_show()
 		
 		if ingredient != null:
 			# If we have an ingredient, reparent it to the new step.
@@ -31,11 +35,16 @@ func step_finished(score: float, ingredient: FoodItem) -> void:
 func _ready() -> void:
 	# Populate the steps with each FoodStep child.
 	for child in get_children():
+		print(child, " " , child is FoodStep)
 		if child is FoodStep:
 			steps.append(child)
 			
 			# All steps that are not the current step are disabled.
 			child.process_mode = Node.PROCESS_MODE_DISABLED
+			child.hide()
+			child.step_hide()
+			
+			print("hiding child ", child, " " , child.name)
 			
 	# Start the first step.
 	next_step(null)
