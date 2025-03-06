@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Bake Me Crazy"
-run/main_scene="res://BaseScene.tscn"
+run/main_scene="res://menus/start_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://temp_art/temp_game_icon.png"
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PlayerData="*res://save/player_data.gd"
 
 [dialogic]
 
@@ -161,6 +162,7 @@ open_menu={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="NPC"
+2d_physics/layer_4="CookingItems"
 
 [rendering]
 
