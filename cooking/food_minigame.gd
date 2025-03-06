@@ -9,7 +9,7 @@ func next_step() -> void:
 	if step_ptr < steps.size():
 		# If we have a previous step, disable it.
 		if step_ptr > 0:
-			var prev: FoodStep = steps[step_ptr]
+			var prev: FoodStep = steps[step_ptr - 1]
 			prev.process_mode = Node.PROCESS_MODE_DISABLED
 			prev.hide() # TODO replace with polished animation.
 		

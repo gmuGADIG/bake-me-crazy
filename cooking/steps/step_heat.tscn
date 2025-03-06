@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_uj0nr")
+heat_time = 15.0
 
 [node name="FullBar" type="ColorRect" parent="." index="0"]
 layout_mode = 1
@@ -44,3 +45,16 @@ offset_bottom = -143.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.881706, 0.31818, 1)
+
+[node name="HeatTimeLabel" type="Label" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -303.0
+offset_top = 18.0
+offset_right = -17.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Time left: 15s"
