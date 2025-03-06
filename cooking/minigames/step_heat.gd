@@ -5,12 +5,6 @@ class_name StepHeat
 
 var heat := 0.0
 
-func step_hide():
-	pass
-	
-func step_show():
-	pass
-
 func start():
 	pass
 
