@@ -14,8 +14,9 @@ func get_skin_filename(s: String) -> String:
 @export var skin := "player_1":
 	set(v):
 		skin = v
-		if FileAccess.file_exists(get_skin_filename(v)):
-			sprite.sprite_frames = load(get_skin_filename(v))
+		#The following breaks if you change the skin in the inspector.I don't know why its here
+		#if FileAccess.file_exists(get_skin_filename(v)):
+			#sprite.sprite_frames = load(get_skin_filename(v))
 
 func _ready() -> void:
 	sprite.sprite_frames = load(get_skin_filename(skin))
