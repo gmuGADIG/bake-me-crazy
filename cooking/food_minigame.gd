@@ -33,15 +33,12 @@ func step_finished(score: float, ingredient: FoodItem) -> void:
 func _ready() -> void:
 	# Populate the steps with each FoodStep child.
 	for child in get_children():
-		print(child, " " , child is FoodStep)
 		if child is FoodStep:
 			steps.append(child)
 			
 			# All steps that are not the current step are disabled.
 			child.process_mode = Node.PROCESS_MODE_DISABLED
 			child.hide()
-			
-			print("hiding child ", child, " " , child.name)
 			
 	# Start the first step.
 	next_step(null)
