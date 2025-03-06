@@ -9,8 +9,12 @@ var heat := 0.0
 ## How long the heating minigame should last.
 @export var heat_time: float = 15.0
 
+## Called before we are slid into the scene.
+func pre_animation():
+	heat_time_label.hide()
+
 func start():
-	pass
+	heat_time_label.show()
 
 func _process(delta: float) -> void:
 	heat -= delta * 0.25

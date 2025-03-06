@@ -17,3 +17,4 @@ heat_time = 4.0
 
 [node name="StepHeat3" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
+heat_time = 2.0
