@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=4 format=3 uid="uid://bkj7kns2dd0mc"]
 
+[ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_n757x"]
 
 [node name="Lunchrush" type="Node2D"]
+script = ExtResource("1_8n1i3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1289.0
 offset_bottom = 1175.0
+mouse_filter = 2
 
 [node name="DivorceWoman" type="Sprite2D" parent="."]
 position = Vector2(534, 273)
@@ -17,7 +20,8 @@ texture = ExtResource("1_buvuw")
 offset_top = 303.0
 offset_right = 1289.0
 offset_bottom = 1478.0
-color = Color(0.136826, 0.136826, 0.136826, 1)
+mouse_filter = 2
+color = Color(0.523475, 0.0212798, 0.407381, 1)
 
 [node name="TacoBucket" type="Sprite2D" parent="."]
 position = Vector2(539, 545)
@@ -26,5 +30,79 @@ texture = ExtResource("2_n757x")
 region_enabled = true
 region_rect = Rect2(42.5, 0, 90, 49.5)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FoodSelect" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FoodSelect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -206.0
+offset_right = 100.0
+offset_bottom = 206.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="FlavorSelect" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FlavorSelect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -154.0
+offset_right = 100.0
+offset_bottom = 154.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button" to="." method="_on_food_selected" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button2" to="." method="_on_food_selected" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button3" to="." method="_on_food_selected" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Button4" to="." method="_on_food_selected" binds= [3]]
