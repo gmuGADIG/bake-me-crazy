@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	# when it changes.
 	if heat_time > 0:
 		heat_time -= delta
-		heat_time_label.text = "Time left: %.2f" % [clamp(heat_time, 0.0, 15.0)]
+		heat_time_label.text = "Time left: %.2f" % [clamp(heat_time, 0.0, original_heat_time)]
 		
 		# If this if passes, this is THE FRAME when the timer expired.
 		if heat_time <= 0:
