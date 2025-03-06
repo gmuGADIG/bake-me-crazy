@@ -1,15 +1,6 @@
 class_name Interactable extends StaticBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
+##For all child classes, put any actions you want here!
 func _interact()->void:
-	print("Interacted!")
-	##Add implementation here! (NOTE: IN CHILD CLASSES!! hehehehe)
+	#print("Interacted!")
 	pass
