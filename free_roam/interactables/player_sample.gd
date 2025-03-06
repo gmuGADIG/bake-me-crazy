@@ -4,7 +4,6 @@ extends CharacterBody2D
 ##to delete the ready, process, and physics process functions when merging this into the actual player script.
 ##Don't forget the variables!
 
-##TODO: Add a data structure to keep track of the areas in, when E is pressed try the interact thing on each of them
 @export var speed = 500
 @export var our_area: Area2D = null
 @onready var area_array: Array = []
@@ -24,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 ##Checks if the player is pressing down on the interact button, if so, call the interactables' interact
-##function!
+##function on any overlapping static bodies!
 func monitor_interact()->void:
 	if(Input.is_action_just_pressed("interact")):
 		if(our_area.has_overlapping_bodies() != false):
