@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkj7kns2dd0mc"]
+
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
+[ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_n757x"]
+
+[node name="Lunchrush" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1289.0
+offset_bottom = 1175.0
+
+[node name="DivorceWoman" type="Sprite2D" parent="."]
+position = Vector2(534, 273)
+texture = ExtResource("1_buvuw")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_top = 303.0
+offset_right = 1289.0
+offset_bottom = 1478.0
+color = Color(0.136826, 0.136826, 0.136826, 1)
+
+[node name="TacoBucket" type="Sprite2D" parent="."]
+position = Vector2(539, 545)
+scale = Vector2(2.66667, 5)
+texture = ExtResource("2_n757x")
+region_enabled = true
+region_rect = Rect2(42.5, 0, 90, 49.5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
