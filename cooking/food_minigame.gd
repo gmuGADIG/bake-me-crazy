@@ -46,6 +46,7 @@ func next_step() -> void:
 	animate_slide()
 
 func step_finished(score: float) -> void:
+	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
 	# When we finish the last step, move on to the next one.
 	next_step()
 
