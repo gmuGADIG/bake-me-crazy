@@ -9,15 +9,15 @@
 
 [node name="StepHeat" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
-green_range = 0.5
+green_range = 0.05
 heat_time = 3.0
 
 [node name="StepHeat2" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
-green_range = 0.5
+green_range = 0.05
 heat_time = 4.0
 
 [node name="StepHeat3" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
-green_range = 0.5
-heat_time = 2.0
+green_range = 0.2
+heat_time = 1.0
