@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://diafusjtdd8qr"]
+[gd_scene load_steps=4 format=3 uid="uid://diafusjtdd8qr"]
 
 [ext_resource type="PackedScene" uid="uid://caawo4mukehlp" path="res://free_roam/player/player_character.tscn" id="1_xc8ah"]
+[ext_resource type="Script" path="res://test_scenes/change_player_skin.gd" id="2_h6lqi"]
 
 [sub_resource type="Curve2D" id="Curve2D_ds3v0"]
 _data = {
@@ -23,3 +24,7 @@ offset_top = 22.0
 offset_right = 82.0
 offset_bottom = 57.0
 text = "Change Skin"
+script = ExtResource("2_h6lqi")
+skins = Array[String](["player_1", "player_2"])
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -32,3 +32,7 @@ func _process(delta: float) -> void:
 	else:
 		sprite.play("idle")
 	
+func _set_sprite(skin_name: String) -> void:
+	print("Should change skin")
+	sprite.sprite_frames = load(get_skin_filename(skin_name))
+	pass
