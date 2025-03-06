@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=3 format=3 uid="uid://cx06e1lqkpenc"]
 
-[ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
-[ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
+[ext_resource type="PackedScene" uid="uid://caawo4mukehlp" path="res://free_roam/player/player_character.tscn" id="1_gwoa4"]
 
 [sub_resource type="Curve2D" id="Curve2D_p18d5"]
 _data = {
@@ -9,33 +8,8 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="GDScript" id="GDScript_4kekm"]
-script/source = "extends AnimatedSprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [node name="Path2D" type="Path2D"]
 position = Vector2(272, 178)
 curve = SubResource("Curve2D_p18d5")
 
-[node name="Player" type="PathFollow2D" parent="."]
-position = Vector2(-66, 2)
-rotates = false
-loop = false
-script = ExtResource("1_jfd2d")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-texture_filter = 1
-scale = Vector2(3.90757, 3.90757)
-sprite_frames = ExtResource("2_5iydo")
-animation = &"idle"
-script = SubResource("GDScript_4kekm")
+[node name="Player" parent="." instance=ExtResource("1_gwoa4")]
