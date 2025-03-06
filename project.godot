@@ -11,23 +11,29 @@ config_version=5
 [application]
 
 config/name="Bake Me Crazy"
-run/main_scene="res://menus/start_menu/main_menu.tscn"
+run/main_scene="res://BaseScene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://temp_art/temp_game_icon.png"
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-PlayerData="*res://save/player_data.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"testman1": "res://dialogue/testing/testman1.dch"
+}
+directories/dtl_directory={
+"npcclasstest": "res://dialogue/testing/npcclasstest.dtl",
+"testdialogueoscar": "res://dialogue/testing/testdialogueoscar.dtl"
+}
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogue/dialogic_styles/main_style.tres"]
-layout/default_style="res://dialogue/styles/main_style.tres"
-variables={}
+layout/style_list=[]
+layout/default_style=""
+variables={
+"likes_baked_goods": false
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -162,7 +168,6 @@ open_menu={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="NPC"
-2d_physics/layer_4="CookingItems"
 
 [rendering]
 

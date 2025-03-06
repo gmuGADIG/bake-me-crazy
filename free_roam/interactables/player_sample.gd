@@ -1,47 +1,30 @@
-@tool
-extends PathFollow2D
+extends CharacterBody2D
 
-func get_skin_filename(s: String) -> String:
-	return "res:///free_roam/player/characters/" + s + ".tres"
+##NOTE: THIS IS JUST A PLACEHOLDER! This is intended to test the interactions with objects, feel free
+##to delete the process and physics process functions when merging this into the actual player script.
+##Don't forget the variables!
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@export var speed := 500.0
+@export var speed = 500
 @export var our_area: Area2D = null
 @onready var area_array: Array = []
 @onready var closest_body: StaticBody2D = null
 @onready var closest_distance: float = 0.0
-@onready var talking: bool = false
-## The skin the player will be using.
-## The skins live in the folder [b]characters[/b] next to this script. [br]
-## In editor, the skin will automatically change, so if it doesn't change, 
-## that's an indicator you misspelled a name
-@export var skin := "player_1":
-	set(v):
-		skin = v
-		if FileAccess.file_exists(get_skin_filename(v)):
-			sprite.sprite_frames = load(get_skin_filename(v))
 
-func _ready() -> void:
-	sprite.sprite_frames = load(get_skin_filename(skin))
-
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Engine.is_editor_hint(): return
-	if !talking:
-		var input := Input.get_axis("move_left", "move_right")
-	
-		progress += input * speed * delta
-
-		if input != 0 and not (progress_ratio in [0., 1.]):
-			sprite.play("walking")
-			sprite.flip_h = input < 0
-		else:
-			sprite.play("idle")
 	monitor_interact()
-		
+	
+#Delete when merging into the player.gd script!
+func _physics_process(delta: float) -> void:
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down") 
+	velocity = input_direction * speed;
+	move_and_slide()
+	
+##Checks if the player is pressing down on the interact button, if so, call the interactables' interact
+##function on any overlapping static bodies!
 func monitor_interact()->void:
 	closest_body = null
-	
-	if(Input.is_action_just_pressed("interact") && !talking):
+	if(Input.is_action_just_pressed("interact")):
 		var body_array = our_area.get_overlapping_bodies() 
 		
 		#Finds the closest static body (interactable) that the player is near!
@@ -55,10 +38,6 @@ func monitor_interact()->void:
 		if(closest_body != null):				
 			if(closest_body is Interactable):
 				closest_body._interact()
-	if Dialogic.current_timeline == null:
-		talking = false
-	else:
-		talking = true
 	
 ##This takes two nodes, the player and another node, and if the other node is closer to the player than
 #the closest static body, sets the "other_node" to be the new closest body!
@@ -70,4 +49,3 @@ func overlapp_process(player_node: Node2D, other_node: Node2D)->void:
 	if(distance < closest_distance):
 		closest_distance = distance
 		closest_body = other_node
-	

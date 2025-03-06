@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxu0dsgsjd2xo"]
+
+[ext_resource type="Script" path="res://test_scenes/dialoguetestprogram.gd" id="1_lceke"]
+[ext_resource type="Resource" path="res://dialogue/testing/testdialogueoscar.dtl" id="2_n2xb7"]
+[ext_resource type="PackedScene" uid="uid://cx06e1lqkpenc" path="res://free_roam/player/player.tscn" id="3_qxi00"]
+[ext_resource type="Script" path="res://test_scenes/static_body_2d.gd" id="5_53b3m"]
+[ext_resource type="Resource" path="res://dialogue/testing/npcclasstest.dtl" id="6_ayhmi"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="6_b0acj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouop2"]
+size = Vector2(137, 140)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lceke")
+timeline = ExtResource("2_n2xb7")
+scene = ExtResource("3_qxi00")
+
+[node name="Path2D" parent="." instance=ExtResource("3_qxi00")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("5_53b3m")
+timeline = ExtResource("6_ayhmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(743, 218)
+shape = SubResource("RectangleShape2D_ouop2")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(729, 189)
+scale = Vector2(0.719697, 0.781768)
+texture = ExtResource("6_b0acj")
