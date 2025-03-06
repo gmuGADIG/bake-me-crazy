@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt3j7ssopbnjn"]
+
+[ext_resource type="Script" path="res://cooking/pour_flour.gd" id="1_4i01a"]
+[ext_resource type="Texture2D" uid="uid://c4muw6lk64hkg" path="res://temp_art/gartic/shoe_knife.png" id="2_eqvut"]
+[ext_resource type="PackedScene" uid="uid://u2v0gb5yo3pq" path="res://cooking/draggable_object/draggable_object.tscn" id="2_u3vmg"]
+[ext_resource type="PackedScene" uid="uid://3401sxy2s32d" path="res://cooking/draggable_object/holding_manager.tscn" id="3_p1eiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu5cl"]
+size = Vector2(103, 20)
+
+[node name="PourFlour" type="Node2D"]
+script = ExtResource("1_4i01a")
+
+[node name="FlourScale" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 87.0
+offset_right = 132.0
+offset_bottom = 110.0
+text = "
+"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(252.5, 134)
+shape = SubResource("RectangleShape2D_pu5cl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D/CollisionShape2D"]
+position = Vector2(56, -1)
+scale = Vector2(0.665217, 0.525424)
+texture = ExtResource("2_eqvut")
+
+[node name="DraggableObject" parent="." instance=ExtResource("2_u3vmg")]
+position = Vector2(-1, 0)
+
+[node name="HoldingManager" parent="." instance=ExtResource("3_p1eiu")]
