@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b5cfoniqf8085"]
+
+[node name="TestMinigame" type="Node2D"]
+
+[node name="Steps" type="Node2D" parent="."]
+
+[node name="MeasureStep" type="Node2D" parent="Steps"]
+
+[node name="PourStep" type="Node2D" parent="Steps"]
