@@ -1,15 +1,15 @@
 extends FoodStep
 class_name StepHeat
 
-@onready var arrow := $UILayer/FullBar/Arrow
+@onready var arrow := $FullBar/Arrow
 
 var heat := 0.0
 
 func step_hide():
-	$UILayer.hide()
+	pass
 	
 func step_show():
-	$UILayer.show()
+	pass
 
 func start():
 	pass

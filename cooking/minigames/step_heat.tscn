@@ -5,21 +5,25 @@
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_4xmly"]
 
 [node name="StepHeat" instance=ExtResource("1_25exc")]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_uj0nr")
 
-[node name="UILayer" type="CanvasLayer" parent="." index="0"]
-
-[node name="FullBar" type="ColorRect" parent="UILayer" index="0"]
+[node name="FullBar" type="ColorRect" parent="." index="0"]
+layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = 21.0
-offset_right = 52.0
-offset_bottom = -21.0
+offset_top = 23.0
+offset_right = 49.0
+offset_bottom = -23.0
 grow_vertical = 2
 color = Color(1, 0.0986208, 0.387233, 1)
 
-[node name="Arrow" type="TextureRect" parent="UILayer/FullBar" index="0"]
+[node name="Arrow" type="TextureRect" parent="FullBar" index="0"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.598
@@ -30,12 +34,13 @@ offset_right = 168.0
 offset_bottom = -7.508
 texture = ExtResource("3_4xmly")
 
-[node name="GreenBar" type="ColorRect" parent="UILayer" index="1"]
-anchors_preset = 9
+[node name="GreenBar" type="ColorRect" parent="FullBar" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = 195.0
-offset_right = 52.0
-offset_bottom = -195.0
+offset_top = 143.0
+offset_bottom = -143.0
+grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.881706, 0.31818, 1)
