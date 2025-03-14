@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://by4rqbp033pmb"]
+
+[ext_resource type="PackedScene" uid="uid://cx06e1lqkpenc" path="res://free_roam/player/player.tscn" id="1_4wa0d"]
+[ext_resource type="Script" path="res://menus/pause_menu/pause_opener.gd" id="2_24jda"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Path2D" parent="." instance=ExtResource("1_4wa0d")]
+position = Vector2(465, 307)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_24jda")
