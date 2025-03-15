@@ -80,6 +80,10 @@ folder_colors={
 "res://menus/": "yellow"
 }
 
+[gui]
+
+common/snap_controls_to_pixels=false
+
 [input]
 
 ui_left={

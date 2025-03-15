@@ -26,6 +26,7 @@ grow_horizontal = 2
 text = "Pause Menu"
 
 [node name="PauseContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -38,13 +39,9 @@ offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SaveGame" type="Button" parent="PauseContainer"]
+[node name="OpenSaves" type="Button" parent="PauseContainer"]
 layout_mode = 2
-text = "Save Game"
-
-[node name="LoadGame" type="Button" parent="PauseContainer"]
-layout_mode = 2
-text = "Load Game"
+text = "Save / Load"
 
 [node name="CloseMenu" type="Button" parent="PauseContainer"]
 layout_mode = 2
@@ -58,34 +55,8 @@ text = "Return to Main Menu"
 layout_mode = 2
 text = "Options"
 
-[node name="GameSavedIcon" type="Label" parent="."]
-visible = false
-offset_left = 490.0
-offset_top = 444.0
-offset_right = 663.0
-offset_bottom = 467.0
-text = "Game Saved"
-
-[node name="ConfirmQuitContainer" type="VBoxContainer" parent="."]
-visible = false
-offset_left = 491.0
-offset_top = 425.0
-offset_right = 664.0
-offset_bottom = 491.0
-
-[node name="ConfirmQuit" type="Button" parent="ConfirmQuitContainer"]
-layout_mode = 2
-text = "Confirm Quit"
-
-[node name="ReturnPause" type="Button" parent="ConfirmQuitContainer"]
-layout_mode = 2
-text = "Go Back"
-
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="PauseContainer/SaveGame" to="." method="_on_save_game_pressed"]
-[connection signal="pressed" from="PauseContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="PauseContainer/OpenSaves" to="." method="_on_open_saves_pressed"]
 [connection signal="pressed" from="PauseContainer/CloseMenu" to="." method="_on_close_menu_pressed"]
 [connection signal="pressed" from="PauseContainer/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
 [connection signal="pressed" from="PauseContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="ConfirmQuitContainer/ConfirmQuit" to="." method="_on_confirm_quit_pressed"]
-[connection signal="pressed" from="ConfirmQuitContainer/ReturnPause" to="." method="_on_return_pause_pressed"]

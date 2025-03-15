@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwhlnfpn8hjus"]
+
+[ext_resource type="Script" path="res://menus/save_menu/save_slot_ui.gd" id="1_64cum"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8eyec"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_342mj"]
+bg_color = Color(0.88, 0.740667, 0.66, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.71631, 0.525071, 0.411331, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -952.0
+offset_bottom = -448.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_8eyec")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
+script = ExtResource("1_64cum")
+
+[node name="SlotName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 9.0
+offset_bottom = 50.0
+grow_horizontal = 2
+mouse_filter = 1
+text = "Slot 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlotDesc" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+text = "12 Minutes Ago
+3rd Morning"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Empty" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+text = "EMPTY"
+horizontal_alignment = 1
+vertical_alignment = 1
