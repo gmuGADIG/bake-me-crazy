@@ -1,15 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=6 format=3 uid="uid://cx06e1lqkpenc"]
 
-[ext_resource type="PackedScene" uid="uid://caawo4mukehlp" path="res://free_roam/player/player_character.tscn" id="1_gwoa4"]
+[ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
+[ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
+[ext_resource type="Script" path="res://free_roam/player/player_interaction_area.gd" id="3_2njdd"]
 
-[sub_resource type="Curve2D" id="Curve2D_p18d5"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -66, 2, 0, 0, 0, 0, 38, 30, 0, 0, 0, 0, 155, 0, 0, 0, 0, 0, 338.493, 60, 0, 0, 0, 0, 441.493, 41)
-}
-point_count = 5
+[sub_resource type="GDScript" id="GDScript_4kekm"]
+script/source = "extends AnimatedSprite2D
 
-[node name="Path2D" type="Path2D"]
-position = Vector2(272, 178)
-curve = SubResource("Curve2D_p18d5")
 
-[node name="Player" parent="." instance=ExtResource("1_gwoa4")]
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jij"]
+size = Vector2(188, 259.916)
+
+[node name="Player" type="PathFollow2D" node_paths=PackedStringArray("our_area")]
+rotates = false
+loop = false
+script = ExtResource("1_jfd2d")
+our_area = NodePath("InteractionArea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -102.958)
+scale = Vector2(3.90757, 3.90757)
+sprite_frames = ExtResource("2_5iydo")
+animation = &"idle"
+script = SubResource("GDScript_4kekm")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -102.958)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_2njdd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_v2jij")

@@ -4,8 +4,8 @@ extends PathFollow2D
 func get_skin_filename(s: String) -> String:
 	return "res:///free_roam/player/characters/" + s + ".tres"
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var speed := 500.0
+@export var our_area: Area2D = null
 
 ## The skin the player will be using.
 ## The skins live in the folder [b]characters[/b] next to this script. [br]
@@ -18,15 +18,28 @@ func get_skin_filename(s: String) -> String:
 		#if FileAccess.file_exists(get_skin_filename(v)):
 			#sprite.sprite_frames = load(get_skin_filename(v))
 
+
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var interaction_area: PlayerInteractionArea = %InteractionArea
+
 func _ready() -> void:
 	sprite.sprite_frames = load(get_skin_filename(skin))
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
+	
+	# get input
 	var input := Input.get_axis("move_left", "move_right")
-	progress += input * speed * delta
+	if interaction_area.mid_interaction: input = 0 # override input to zero to prevent movement while talking
 
-	if input != 0 and not (progress_ratio in [0., 1.]):
+	# move player along the line
+	progress += input * speed * delta
+	
+	# animate player and flip left/right
+	var is_walking = input != 0
+	if progress_ratio in [0, 1]: is_walking = false # don't walk when already against the wall
+	
+	if is_walking:
 		sprite.play("walking")
 		sprite.flip_h = input < 0
 	else:
