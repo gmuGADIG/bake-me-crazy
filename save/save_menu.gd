@@ -45,3 +45,6 @@ func _on_load_2_pressed() -> void:
 
 func _on_load_3_pressed() -> void:
 	load_file("save3")
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://menus/start_menu/main_menu.tscn")
