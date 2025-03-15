@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Bake Me Crazy"
-run/main_scene="res://BaseScene.tscn"
+run/main_scene="res://menus/start_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://temp_art/temp_game_icon.png"
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PlayerData="*res://save/player_data.gd"
 
 [dialogic]
 
@@ -25,8 +26,7 @@ directories/dch_directory={
 "testman1": "res://dialogue/testing/testman1.dch"
 }
 directories/dtl_directory={
-"npcclasstest": "res://dialogue/testing/npcclasstest.dtl",
-"testdialogueoscar": "res://dialogue/testing/testdialogueoscar.dtl"
+"npcclasstest": "res://dialogue/testing/npcclasstest.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
