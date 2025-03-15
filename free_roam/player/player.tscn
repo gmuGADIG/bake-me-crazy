@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=6 format=3 uid="uid://cx06e1lqkpenc"]
 
 [ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
 [ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
+[ext_resource type="Script" path="res://free_roam/player/player_interaction_area.gd" id="3_2njdd"]
 
 [sub_resource type="GDScript" id="GDScript_4kekm"]
 script/source = "extends AnimatedSprite2D
@@ -24,7 +25,7 @@ size = Vector2(188, 259.916)
 rotates = false
 loop = false
 script = ExtResource("1_jfd2d")
-our_area = NodePath("Area2D")
+our_area = NodePath("InteractionArea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -34,8 +35,12 @@ sprite_frames = ExtResource("2_5iydo")
 animation = &"idle"
 script = SubResource("GDScript_4kekm")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="InteractionArea" type="Area2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, -102.958)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_2njdd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_v2jij")
