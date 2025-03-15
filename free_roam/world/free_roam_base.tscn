@@ -14,9 +14,5 @@ position = Vector2(132, 604)
 [node name="Camera2D" type="Camera2D" parent="PlayerPath/Player"]
 script = ExtResource("2_y05i1")
 
-[node name="PauseOpener" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PauseOpener" type="Node" parent="."]
 script = ExtResource("2_7hu1x")
