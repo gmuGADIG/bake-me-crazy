@@ -1,11 +1,11 @@
-extends Node
+class_name PlayerInventory extends Node
+
+### this is an AUTOLOAD/GLOBAL
 
 #Dictionary of <Item_Data, int (quantity)>
-var playerInventory = {}
+static var player_inventory = {}
 
-@export var money: int = 0:
-	get: return money
-	set(value): money = value
+@export var money: int = 0
 
 # Recipes and Items should be resources
 # Methods: buy, bake item, 
@@ -18,20 +18,20 @@ func _process(delta: float) -> void:
 	pass
 
 
-func add_item(item: Item_Data, quantity: int = 1) -> void:
-	if(playerInventory.has(item)):
-		playerInventory[item] += quantity
+func add_item(item: ItemData, quantity: int = 1) -> void:
+	if(player_inventory.has(item)):
+		player_inventory[item] += quantity
 	else:
-		playerInventory[item] = quantity
+		player_inventory[item] = quantity
 
-func remove_item(item: Item_Data, quantity: int = 1) -> void:
-	if(playerInventory.has(item) and playerInventory[item] >= quantity):
-		playerInventory[item] -= quantity
-	if(playerInventory[item]==0):
-		playerInventory.erase(item)
+func remove_item(item: ItemData, quantity: int = 1) -> void:
+	if(player_inventory.has(item) and player_inventory[item] >= quantity):
+		player_inventory[item] -= quantity
+	if(player_inventory[item]==0):
+		player_inventory.erase(item)
 
 #Possibly use boolean instead
-func buy_item(item: Item_Data, quantity: int = 1) -> void:
+func buy_item(item: ItemData, quantity: int = 1) -> void:
 	if(money>=item.price*quantity):
 		add_item(item, quantity)
 		money -= item.price*quantity
