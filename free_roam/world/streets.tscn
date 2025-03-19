@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwkpcolidvc0a"]
+[gd_scene load_steps=13 format=3 uid="uid://cwkpcolidvc0a"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_kr52v"]
 [ext_resource type="Texture2D" uid="uid://cb2o5nwjunabw" path="res://free_roam/world/streets_bg.png" id="2_dnht4"]
 [ext_resource type="Script" path="res://free_roam/interactables/test_interactable_printer.gd" id="3_r4sj2"]
+[ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="4_r2mm7"]
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="4_uf2h1"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
 [ext_resource type="Resource" path="res://dialogue/testing/npcclasstest.dtl" id="5_gxowf"]
+[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="5_rdsfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey8il"]
 size = Vector2(148, 178)
@@ -45,8 +47,8 @@ shape = SubResource("RectangleShape2D_ey8il")
 position = Vector2(2839, 382)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("3_r4sj2")
-interact_message = "You went in the bakery"
+script = ExtResource("4_r2mm7")
+change_to_scene = ExtResource("5_rdsfc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Bakery" index="0"]
 shape = SubResource("RectangleShape2D_ssn5p")
