@@ -3,7 +3,7 @@ class_name PlayerInventory extends Node
 ### this is an AUTOLOAD/GLOBAL
 
 #Dictionary of <Item_Data, int (quantity)>
-static var player_inventory = {}
+var player_inventory = {}
 
 @export var money: int = 0
 
