@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjymvlqhxre35"]
+
+[ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="1_a005h"]
+[ext_resource type="PackedScene" uid="uid://u2v0gb5yo3pq" path="res://cooking/draggable_object/draggable_object.tscn" id="2_8dxas"]
+[ext_resource type="Texture2D" uid="uid://dt67wy2es4gxj" path="res://temp_art/gartic/sombrero_raccoon.png" id="3_7rpvn"]
+[ext_resource type="PackedScene" uid="uid://3401sxy2s32d" path="res://cooking/draggable_object/holding_manager.tscn" id="4_64dnv"]
+
+[node name="DraggableObject_TestScene" type="Node2D"]
+
+[node name="DraggableObject" parent="." instance=ExtResource("2_8dxas")]
+position = Vector2(385, 254)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableObject"]
+texture = ExtResource("1_a005h")
+
+[node name="DraggableObject2" parent="." instance=ExtResource("2_8dxas")]
+position = Vector2(843, 262)
+
+[node name="Sprite2D" type="Sprite2D" parent="DraggableObject2"]
+position = Vector2(17, -6.00001)
+scale = Vector2(0.628342, 0.630081)
+texture = ExtResource("3_7rpvn")
+
+[node name="HoldingManager" parent="." instance=ExtResource("4_64dnv")]

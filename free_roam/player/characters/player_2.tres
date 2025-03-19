@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://tju4oeeuehmt"]
+
+[ext_resource type="Texture2D" uid="uid://m1nrvkvd0r5a" path="res://temp_art/baker2sheet.png" id="1_cp08e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yi0d"]
+atlas = ExtResource("1_cp08e")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsrx1"]
+atlas = ExtResource("1_cp08e")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgn48"]
+atlas = ExtResource("1_cp08e")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7etb"]
+atlas = ExtResource("1_cp08e")
+region = Rect2(96, 0, 32, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_5yi0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsrx1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgn48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7etb")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
