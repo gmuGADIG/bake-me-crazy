@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://u2v0gb5yo3pq"]
+
+[ext_resource type="Script" path="res://cooking/draggable_object/draggable_object.gd" id="1_ukbcm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmsek"]
+radius = 75.326
+
+[node name="DraggableObject" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_ukbcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cmsek")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
