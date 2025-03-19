@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b12qkrr2aijgv"]
+
+[ext_resource type="Script" path="res://menus/clock_out/clock_out.gd" id="1_wmgct"]
+[ext_resource type="Resource" path="res://dialogue/testing/clock_out_no_date_timeline.dtl" id="2_i3vma"]
+
+[node name="ClockOut" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmgct")
+no_date_timeline = ExtResource("2_i3vma")

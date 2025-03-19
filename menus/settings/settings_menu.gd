@@ -28,7 +28,6 @@ func _on_master_vol_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(master_bus, linear_to_db(value))
 
 
-
 func _on_music_vol_slider_value_changed(value: float) -> void:
 	print("Music Volume is ", value)
 	AudioServer.set_bus_volume_db(music_bus, linear_to_db(music_slider.value))
@@ -40,6 +39,5 @@ func _on_sfx_vol_slider_value_changed(value: float) -> void:
 
 
 func _on_back_button_pressed() -> void:
-	print("Exit Settings to previous screen")
 	queue_free()
-	pass # Replace with function body.
+	
