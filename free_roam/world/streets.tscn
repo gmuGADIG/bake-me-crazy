@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwkpcolidvc0a"]
+
+[ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_kr52v"]
+[ext_resource type="Texture2D" uid="uid://cb2o5nwjunabw" path="res://free_roam/world/streets_bg.png" id="2_dnht4"]
+[ext_resource type="Script" path="res://free_roam/interactables/test_interactable_printer.gd" id="3_r4sj2"]
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="4_uf2h1"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
+[ext_resource type="Resource" path="res://dialogue/testing/npcclasstest.dtl" id="5_gxowf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey8il"]
+size = Vector2(148, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn5p"]
+size = Vector2(238, 320)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rifyt"]
+size = Vector2(170, 287)
+
+[sub_resource type="Curve2D" id="Curve2D_5eqjp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 132, 604, 0, 0, 0, 0, 3342, 611)
+}
+point_count = 2
+
+[node name="Streets" instance=ExtResource("1_kr52v")]
+
+[node name="Background" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_dnht4")
+centered = false
+
+[node name="Interactables" type="Node2D" parent="." index="1"]
+
+[node name="House" type="StaticBody2D" parent="Interactables" index="0"]
+position = Vector2(498, 448)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_r4sj2")
+interact_message = "You went in your house"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/House" index="0"]
+shape = SubResource("RectangleShape2D_ey8il")
+
+[node name="Bakery" type="StaticBody2D" parent="Interactables" index="1"]
+position = Vector2(2839, 382)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_r4sj2")
+interact_message = "You went in the bakery"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Bakery" index="0"]
+shape = SubResource("RectangleShape2D_ssn5p")
+
+[node name="NPC" type="StaticBody2D" parent="Interactables" index="2"]
+position = Vector2(1078, 566)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4_uf2h1")
+timeline = ExtResource("5_gxowf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC" index="0"]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_rifyt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC" index="1"]
+position = Vector2(-13, -106)
+scale = Vector2(0.793333, 0.793333)
+texture = ExtResource("5_61bqb")
+
+[node name="PlayerPath" parent="." index="2"]
+curve = SubResource("Curve2D_5eqjp")
+
+[node name="Camera2D" parent="PlayerPath/Player" index="2"]
+limit_left = 0
+limit_top = 0
+limit_right = 3456
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true

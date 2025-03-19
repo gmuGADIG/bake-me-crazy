@@ -9,6 +9,6 @@ func _ready() -> void:
 		)
 
 func select_character(char_id: int) -> void:
-	PlayerData.data.selected_character = char_id
 	print("selected character: ", char_id)
-	# TODO: when a character is selected, go to a new scene
+	PlayerData.data.selected_character = char_id
+	get_tree().change_scene_to_file("res://free_roam/world/streets.tscn")

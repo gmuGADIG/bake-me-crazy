@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c08dkypdwjw3p"]
+[gd_scene load_steps=3 format=3 uid="uid://c08dkypdwjw3p"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
-[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="2_in8r1"]
-[ext_resource type="Script" path="res://test_scenes/test_food_minigame/steve_into_shoes.gd" id="3_3tdqt"]
+[ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="2_duf8a"]
 
-[node name="TestFoodMinigame" type="Node2D"]
+[node name="TestFoodMinigame" type="CanvasLayer"]
 
 [node name="FoodMinigame" parent="." instance=ExtResource("1_hk2jr")]
 
-[node name="FoodStep" parent="FoodMinigame" instance=ExtResource("2_in8r1")]
-script = ExtResource("3_3tdqt")
+[node name="StepHeat" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
+layout_mode = 1
+green_range = 0.05
+heat_time = 3.0
+
+[node name="StepHeat2" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
+layout_mode = 1
+green_range = 0.05
+heat_time = 4.0
+
+[node name="StepHeat3" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
+layout_mode = 1
+green_range = 0.2
+heat_time = 1.0
