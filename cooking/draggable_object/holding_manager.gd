@@ -4,4 +4,3 @@ class_name HoldingManager extends Node2D
 ##
 ## Used to make sure the player is only dragging one object at a time.
 var holding := false
-
