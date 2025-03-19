@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv5lryxpt2gw0"]
+
+[ext_resource type="Texture2D" uid="uid://bbea0efx0ybu7" path="res://addons/dialogic/Editor/Images/Resources/character.svg" id="1_vltw0"]
+[ext_resource type="PackedScene" uid="uid://c88oq78kawy4d" path="res://menus/scene transition/scene_transition.tscn" id="2_g7xos"]
+
+[node name="TransitionScene2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(615.5, 248.5)
+scale = Vector2(35.1875, 20.4375)
+texture = ExtResource("1_vltw0")
+
+[node name="SceneTransition" parent="." instance=ExtResource("2_g7xos")]
