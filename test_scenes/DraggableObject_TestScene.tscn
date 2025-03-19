@@ -7,6 +7,11 @@
 
 [node name="DraggableObject_TestScene" type="Node2D"]
 
+[node name="FrogSlot" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(384, 256)
+texture = ExtResource("1_a005h")
+
 [node name="DraggableObject" parent="." instance=ExtResource("2_8dxas")]
 position = Vector2(385, 254)
 
@@ -15,6 +20,7 @@ texture = ExtResource("1_a005h")
 
 [node name="DraggableObject2" parent="." instance=ExtResource("2_8dxas")]
 position = Vector2(843, 262)
+return_on_release = false
 
 [node name="Sprite2D" type="Sprite2D" parent="DraggableObject2"]
 position = Vector2(17, -6.00001)
