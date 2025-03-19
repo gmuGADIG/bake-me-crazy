@@ -52,6 +52,15 @@ func next_step() -> void:
 		
 		# This is also when we finally increase the step pointer.
 		step_ptr += 1
+	
+	# on the final step, handle the food being finished
+	var food_finished = next == null
+	if food_finished:
+		# TODO: handle this properly. there should be a final screen displaying your food.
+		# there should probably be a food_finished signal, which is handled by something else
+		# to either prepare the next food, or load the next scene.
+		# for now, just change to the lunch break
+		get_tree().change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
 
 func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")

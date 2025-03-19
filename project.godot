@@ -26,6 +26,7 @@ directories/dch_directory={
 "testman1": "res://dialogue/testing/testman1.dch"
 }
 directories/dtl_directory={
+"clock_out_no_date_timeline": "res://dialogue/testing/clock_out_no_date_timeline.dtl",
 "npcclasstest": "res://dialogue/testing/npcclasstest.dtl"
 }
 glossary/default_case_sensitive=true

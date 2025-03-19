@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://vjagi5yawk50"]
+
+[ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
+[ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="3_mp5ah"]
+[ext_resource type="Resource" path="res://dialogue/testing/npcclasstest.dtl" id="4_u3tyl"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_1b70k"]
+[ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="6_4yihm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fvyg"]
+size = Vector2(170, 287)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kar5v"]
+size = Vector2(206, 260)
+
+[sub_resource type="Curve2D" id="Curve2D_r20jp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 69, 600, 0, 0, 0, 0, 1609, 596)
+}
+point_count = 2
+
+[node name="LunchBreak" instance=ExtResource("1_edee5")]
+
+[node name="Background" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_407v2")
+centered = false
+
+[node name="Interactables" type="Node2D" parent="." index="1"]
+
+[node name="NPC" type="StaticBody2D" parent="Interactables" index="0"]
+position = Vector2(232, 557)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_mp5ah")
+timeline = ExtResource("4_u3tyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC" index="0"]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_8fvyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC" index="1"]
+position = Vector2(-13, -106)
+scale = Vector2(0.793333, 0.793333)
+texture = ExtResource("5_1b70k")
+
+[node name="NPC2" type="StaticBody2D" parent="Interactables" index="1"]
+position = Vector2(401, 543)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_mp5ah")
+timeline = ExtResource("4_u3tyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC2" index="0"]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_8fvyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC2" index="1"]
+position = Vector2(-13, -106)
+scale = Vector2(0.793333, 0.793333)
+texture = ExtResource("5_1b70k")
+
+[node name="NPC3" type="StaticBody2D" parent="Interactables" index="2"]
+position = Vector2(572, 561)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_mp5ah")
+timeline = ExtResource("4_u3tyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC3" index="0"]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_8fvyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC3" index="1"]
+position = Vector2(-13, -106)
+scale = Vector2(0.793333, 0.793333)
+texture = ExtResource("5_1b70k")
+flip_h = true
+
+[node name="NPC4" type="StaticBody2D" parent="Interactables" index="3"]
+position = Vector2(1024, 540)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_mp5ah")
+timeline = ExtResource("4_u3tyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC4" index="0"]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_8fvyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC4" index="1"]
+position = Vector2(-13, -106)
+scale = Vector2(0.793333, 0.793333)
+texture = ExtResource("5_1b70k")
+
+[node name="Kitchen" type="StaticBody2D" parent="Interactables" index="4"]
+position = Vector2(1386, 456)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("6_4yihm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Kitchen" index="0"]
+shape = SubResource("RectangleShape2D_kar5v")
+
+[node name="Label" type="Label" parent="Interactables/Kitchen" index="1"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -61.0
+offset_top = -43.0
+offset_right = 58.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 28
+text = "KITCHEN
+DOOR"
+horizontal_alignment = 1
+
+[node name="PlayerPath" parent="." index="2"]
+curve = SubResource("Curve2D_r20jp")
+
+[node name="Player" parent="PlayerPath" index="0"]
+position = Vector2(69, 600)
+
+[node name="Camera2D" parent="PlayerPath/Player" index="2"]
+limit_left = 0
+limit_top = 0
+limit_right = 1721
+limit_bottom = 648
