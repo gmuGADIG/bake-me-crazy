@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c08dkypdwjw3p"]
+[gd_scene load_steps=4 format=3 uid="uid://c08dkypdwjw3p"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="2_duf8a"]
+[ext_resource type="PackedScene" uid="uid://sa2qgbo1hv8u" path="res://cooking/steps/pour_flour.tscn" id="3_kov07"]
 
 [node name="TestFoodMinigame" type="CanvasLayer"]
 
@@ -12,12 +13,10 @@ layout_mode = 1
 green_range = 0.05
 heat_time = 3.0
 
+[node name="PourFlour" parent="FoodMinigame" instance=ExtResource("3_kov07")]
+layout_mode = 1
+
 [node name="StepHeat2" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
-green_range = 0.05
-heat_time = 4.0
-
-[node name="StepHeat3" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
-layout_mode = 1
 green_range = 0.2
-heat_time = 1.0
+heat_time = 2.0
