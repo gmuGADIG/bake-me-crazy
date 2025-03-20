@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://n5jhodx6cjex"]
+
+[ext_resource type="Texture2D" uid="uid://dt67wy2es4gxj" path="res://temp_art/gartic/sombrero_raccoon.png" id="1_j8lnx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j8lnx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j8lnx")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
