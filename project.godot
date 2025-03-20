@@ -25,16 +25,18 @@ PlayerData="*res://save/player_data.gd"
 [dialogic]
 
 directories/dch_directory={
-"testman1": "res://dialogue/testing/testman1.dch"
+"datealbecharacter": "res://menus/testing/datealbecharacter.dch",
+"testing/testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
-"clock_out_no_date_timeline": "res://dialogue/testing/clock_out_no_date_timeline.dtl",
-"npcclasstest": "res://dialogue/testing/npcclasstest.dtl"
+"clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
+"npcclasstest": "res://menus/testing/npcclasstest.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style=""
 variables={
+"date": "",
 "likes_baked_goods": false
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -78,9 +80,9 @@ folder_colors={
 "res://dialogue/savory/": "blue",
 "res://dialogue/sour/": "blue",
 "res://dialogue/sweet/": "blue",
-"res://dialogue/testing/": "gray",
 "res://free_roam/": "green",
-"res://menus/": "yellow"
+"res://menus/": "yellow",
+"res://menus/testing/": "gray"
 }
 
 [gui]
