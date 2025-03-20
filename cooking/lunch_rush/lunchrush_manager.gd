@@ -3,8 +3,8 @@ extends Node2D
 
 
 #TODO: Replace these with the actual food items and flavors
-var foods : Array[String] = ["ice cream","salad","pizza","taco"]
-var flavors : Array[String] = ["pesto","ketchup","blueberry"]
+var foods : Array[FoodItem] = ["ice cream","salad","pizza","taco"]
+var flavors : Array[FoodItem] = ["pesto","ketchup","blueberry"]
 
 var requestedFood : String
 var requestedFlavor : String
