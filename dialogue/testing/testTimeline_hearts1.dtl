@@ -1,0 +1,35 @@
+Would you like to increase or decrease RP?
+- Increase
+	Which character?
+	label incChar (incChar)
+	- Salty
+		set {saltyRP} += 1
+		jump incChar
+	- Savory
+		set {savoryRP} += 1
+		jump incChar
+	- Sour
+		set {sourRP} += 1
+		jump incChar
+	- Sweet
+		set {sweetRP} += 1
+		jump incChar
+	- Go back
+		jump 
+- Decrease
+	Which character?
+	label decChar (decChar)
+	- Salty
+		set {saltyRP} -= 1
+		jump decChar
+	- Savory
+		set {saltyRP} -= 1
+		jump decChar
+	- Sour
+		set {sourRP} -= 1
+		jump decChar
+	- Sweet
+		set {sweetRP} -= 1
+		jump decChar
+	- Go back
+		jump 
