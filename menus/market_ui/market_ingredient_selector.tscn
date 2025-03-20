@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
 
 [node name="IngredientSelector" type="Button"]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(180, 180)
 
 [node name="Food" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(120, 120)
