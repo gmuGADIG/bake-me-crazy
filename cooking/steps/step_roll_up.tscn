@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddduu8be5a824"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_28xqw"]
+[ext_resource type="Script" path="res://cooking/steps/roll_up.gd" id="2_wilwa"]
+[ext_resource type="Texture2D" uid="uid://bv5bu3ep6jpcq" path="res://temp_art/gartic/milk_dad.png" id="3_ddadv"]
+[ext_resource type="Texture2D" uid="uid://c40ew5c8y11rq" path="res://temp_art/gartic/im_steve.png" id="4_lkoka"]
+[ext_resource type="Texture2D" uid="uid://brufn1b0gmr0t" path="res://temp_art/gartic/iced_up_waluigi.png" id="5_0gb6g"]
+
+[node name="RollUp" instance=ExtResource("1_28xqw")]
+script = ExtResource("2_wilwa")
+sprites = Array[Texture2D]([ExtResource("3_ddadv"), ExtResource("4_lkoka"), ExtResource("5_0gb6g")])
+expectedSpeed = 500
+speedTolerance = 200
+progressTotal = 10000
+
+[node name="Food" type="Sprite2D" parent="." index="0"]
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label2" type="Label" parent="." index="2"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 50.0
+offset_right = 286.0
+offset_bottom = 73.0
