@@ -6,13 +6,13 @@ Would you like to increase or decrease RP?
 		set {saltyRP} += 1
 		jump incChar
 	- Savory
-		[signal arg="add_savory_1"]
+		set {savoryRP} += 1
 		jump incChar
 	- Sour
-		[signal arg="add_sour_1"]
+		set {sourRP} += 1
 		jump incChar
 	- Sweet
-		[signal arg="add_sweet_1"]
+		set {sweetRP} += 1
 		jump incChar
 	- Go back
 		jump 
@@ -20,16 +20,16 @@ Would you like to increase or decrease RP?
 	Which character?
 	label decChar (decChar)
 	- Salty
-		[signal arg="rm_salty_1"]
+		set {saltyRP} -= 1
 		jump decChar
 	- Savory
-		[signal arg="rm_savory_1"]
+		set {saltyRP} -= 1
 		jump decChar
 	- Sour
-		[signal arg="rm_sour_1"]
+		set {sourRP} -= 1
 		jump decChar
 	- Sweet
-		[signal arg="rm_sweet_1"]
+		set {sweetRP} -= 1
 		jump decChar
 	- Go back
 		jump 
