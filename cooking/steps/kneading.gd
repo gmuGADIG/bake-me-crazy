@@ -3,19 +3,24 @@ extends Node2D
 @export var maxStretch: float = 200
 @export var stretchPerFrame : float = 0.05
 @export var positionOffset: float = 0.1
-@export var spriteRect: NinePatchRect
+var spriteRect: NinePatchRect
+var meter: VSlider
 
 var mouseOver: bool = false
 var kneading: bool = false
+var startPos: Vector2 
 var centerY: float
 
 var kneadPoints: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var startPos: Vector2 = get_global_transform().get_origin()
+	spriteRect = $NinePatchRect
+	meter = $VSlider
+	var startPos = spriteRect.global_position
 	var size : float = get_canvas_transform().get_scale().y
 	print(size)
 	centerY = startPos.y
+	
 	pass # Replace with function body.
 
 var lastStretch: float = 0
@@ -29,18 +34,23 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("interact"):
 		kneading = false
 	if kneading:
-		
 		var stretch : float = lastPosY- get_global_mouse_position().y
 		if(stretch > 0 and get_global_mouse_position().y != lastPosY):
 			if(abs(stretch) <= maxStretch):
 				spriteRect.scale.y += stretchPerFrame
 				spriteRect.position.y -= positionOffset
+				meter.value += 3
 		elif(stretch < 0 and get_global_mouse_position().y != lastPosY):
 			if(abs(stretch) <= maxStretch):
 				spriteRect.scale.y += stretchPerFrame
-				spriteRect.position.y += stretchPerFrame
-
-		lastPosY = get_global_mouse_position().y
+				spriteRect.position.y += positionOffset
+				meter.value += 3
+		
+		lastPosY = get_global_mouse_position().y		
+	meter.value -= 1
+	if(spriteRect.scale.y >1):
+		spriteRect.scale.y -= stretchPerFrame/2
+		
 	pass
 
 
