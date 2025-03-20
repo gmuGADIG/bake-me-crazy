@@ -43,16 +43,6 @@ offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ItemQuantityTop" type="Panel" parent="Control/Panel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -183.0
-grow_horizontal = 2
-grow_vertical = 0
-
 [node name="TopStuff" type="Control" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = 10
@@ -86,10 +76,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
 
+[node name="QuantityLabel2" type="Label" parent="Control/Panel/TopStuff/Portrait"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_right = 97.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "The Cabbage Owner"
+horizontal_alignment = 1
+
 [node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 22.0
+offset_top = 52.0
 offset_right = 577.0
 offset_bottom = 409.0
 
@@ -110,30 +112,178 @@ metadata/_edit_lock_ = true
 
 [node name="IngredientSelector" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector2" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector3" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector4" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector5" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector6" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector7" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector8" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector9" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="IngredientSelector10" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="BottomStuff" type="Panel" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ItemDescriptionPanel" type="Panel" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = 9.0
+offset_right = -697.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/ItemDescriptionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Real Cabbage
+Item Description Item Description Item Description Item Description"
+
+[node name="Label" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.5
+offset_top = -30.0
+offset_right = 44.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You have: 0"
+
+[node name="ItemDescriptionPanel2" type="Panel" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 419.0
+offset_top = 9.0
+offset_right = -383.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_top = 8.0
+offset_right = 44.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Quantity"
+horizontal_alignment = 1
+
+[node name="QuantityNumber" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -62.0
+offset_right = 44.5
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 73
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalPrice" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel2"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -181.0
+offset_top = 125.0
+offset_right = -139.0
+offset_bottom = 148.0
+grow_horizontal = 0
+text = "$ 0.0"
+
+[node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 277.0
+offset_top = 43.0
+offset_right = 465.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "Buy"
+
+[node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 277.0
+offset_top = 96.0
+offset_right = 465.0
+offset_bottom = 143.0
+grow_horizontal = 2
+text = "Cancel"
+
+[node name="TotalPrice2" type="Label" parent="Control/Panel"]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 14.0
+offset_right = 129.0
+offset_bottom = 37.0
+text = "You have $0.0"
