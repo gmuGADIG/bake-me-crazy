@@ -2,27 +2,40 @@
 
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
 
-[node name="IngredientSelector" type="Button"]
+[node name="Control" type="ReferenceRect"]
 custom_minimum_size = Vector2(180, 180)
+offset_right = 180.0
+offset_bottom = 180.0
 
-[node name="Food" type="TextureRect" parent="."]
+[node name="IngredientSelector" type="Button" parent="."]
+custom_minimum_size = Vector2(160, 160)
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 180.0
+offset_bottom = 179.0
+
+[node name="Food" type="TextureRect" parent="IngredientSelector"]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 18.0
-offset_right = -15.0
-offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_kx34q")
 expand_mode = 1
 stretch_mode = 6
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="Food"]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 81.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 31.0
 text = "$50.00"

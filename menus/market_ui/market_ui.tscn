@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=8 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
-[ext_resource type="Texture2D" uid="uid://drvooagnh8pj4" path="res://temp_art/temp ui/wide_orange_person.png" id="2_7f0se"]
+[ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
+[ext_resource type="Texture2D" uid="uid://bgwn2bxbtjj08" path="res://temp_art/temp ui/test_nineslice.png" id="2_nq6ix"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3hfp"]
+texture = ExtResource("2_nq6ix")
+texture_margin_left = 150.0
+texture_margin_top = 150.0
+texture_margin_right = 150.0
+texture_margin_bottom = 150.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbns"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -16,11 +26,15 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4by0"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.345098)
+
 [node name="MarketUI" type="CanvasLayer"]
 
 [node name="TMP_BG" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
 texture = ExtResource("1_rr088")
 
 [node name="Control" type="Control" parent="."]
@@ -30,8 +44,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="Control"]
+self_modulate = Color(0.375005, 0.266502, 0.0763347, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,6 +58,7 @@ offset_right = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h3hfp")
 
 [node name="TopStuff" type="Control" parent="Control/Panel"]
 layout_mode = 1
@@ -49,6 +66,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 428.0
 grow_horizontal = 2
+metadata/_edit_lock_ = true
 
 [node name="Portrait" type="TextureRect" parent="Control/Panel/TopStuff"]
 layout_mode = 1
@@ -62,7 +80,7 @@ offset_top = -407.0
 offset_right = 540.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_7f0se")
+texture = ExtResource("2_aujpw")
 expand_mode = 1
 stretch_mode = 5
 
@@ -76,7 +94,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
 
-[node name="QuantityLabel2" type="Label" parent="Control/Panel/TopStuff/Portrait"]
+[node name="CharacterName" type="Label" parent="Control/Panel/TopStuff/Portrait"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -92,7 +110,7 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 21.0
 offset_top = 52.0
-offset_right = 577.0
+offset_right = 581.0
 offset_bottom = 409.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/TopStuff/IngredientList"]
@@ -159,6 +177,7 @@ anchor_bottom = 1.0
 offset_top = -183.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4by0")
 
 [node name="ItemDescriptionPanel" type="Panel" parent="Control/Panel/BottomStuff"]
 layout_mode = 1
@@ -201,7 +220,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "You have: 0"
 
-[node name="ItemDescriptionPanel2" type="Panel" parent="Control/Panel/BottomStuff"]
+[node name="ItemQuantityPanel" type="Panel" parent="Control/Panel/BottomStuff"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -213,7 +232,7 @@ offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel2"]
+[node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -226,7 +245,7 @@ grow_horizontal = 2
 text = "Quantity"
 horizontal_alignment = 1
 
-[node name="QuantityNumber" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel2"]
+[node name="QuantityNumber" type="Label" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -244,7 +263,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TotalPrice" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel2"]
+[node name="TotalPrice" type="Label" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -255,6 +274,22 @@ offset_right = -139.0
 offset_bottom = 148.0
 grow_horizontal = 0
 text = "$ 0.0"
+
+[node name="Button" type="Button" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 58.0
+offset_right = 110.0
+offset_bottom = 107.0
+text = "<="
+
+[node name="Button2" type="Button" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 58.0
+offset_right = 259.0
+offset_bottom = 108.0
+text = "=>"
 
 [node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
 layout_mode = 1
