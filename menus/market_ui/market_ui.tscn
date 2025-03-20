@@ -1,0 +1,133 @@
+[gd_scene load_steps=5 format=3 uid="uid://ksburhrk4icq"]
+
+[ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
+[ext_resource type="Texture2D" uid="uid://drvooagnh8pj4" path="res://temp_art/temp ui/wide_orange_person.png" id="2_7f0se"]
+[ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="3_jm4u6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbns"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="MarketUI" type="CanvasLayer"]
+
+[node name="TMP_BG" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rr088")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemQuantityTop" type="Panel" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TopStuff" type="Control" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 428.0
+grow_horizontal = 2
+
+[node name="Portrait" type="TextureRect" parent="Control/Panel/TopStuff"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -407.0
+offset_right = 540.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_7f0se")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Border" type="Panel" parent="Control/Panel/TopStuff/Portrait"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
+
+[node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 560.0
+offset_bottom = 409.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/TopStuff/IngredientList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Food" type="TextureRect" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer/Button"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 18.0
+offset_right = -15.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jm4u6")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer/Button/Food"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "$50.00"

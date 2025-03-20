@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkw2hrwx6ome0"]
+
+[ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
+
+[node name="IngredientSelector" type="Button"]
+custom_minimum_size = Vector2(200, 200)
+
+[node name="Food" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 18.0
+offset_right = -15.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kx34q")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Food"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "$50.00"
