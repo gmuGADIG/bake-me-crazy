@@ -3,14 +3,14 @@ extends Node2D
 
 
 #TODO: Replace these with the actual food items and flavors
-var foods : Array[FoodItem] = ["ice cream","salad","pizza","taco"]
-var flavors : Array[FoodItem] = ["pesto","ketchup","blueberry"]
+@export var foods : Array[FoodItem]
+@export var flavors : Array[FoodItem]
 
-var requestedFood : String
-var requestedFlavor : String
+var requestedFood : FoodItem
+var requestedFlavor : FoodItem
 
-var selectedFood : String
-var selectedFlavor : String
+var selectedFood : FoodItem
+var selectedFlavor : FoodItem
 
 
 enum Stage {
@@ -34,24 +34,40 @@ func new_order() -> void:
 	$CanvasLayer/FoodSelect/VBoxContainer.position.x = 1162
 	$CanvasLayer/FlavorSelect/VBoxContainer.position.x = 1162
 	
+	##Selects order
+	requestedFood = foods.pick_random()
+	requestedFlavor = flavors.pick_random()
+	
+	print("food: " + requestedFood.display_name)
+	print("flavour: " + requestedFlavor.display_name)
+	
+	
+	##Sets all of the images
+	$CanvasLayer/FoodSelect/VBoxContainer/Food1.icon = foods[0].image
+	$CanvasLayer/FoodSelect/VBoxContainer/Food2.icon = foods[1].image
+	$CanvasLayer/FoodSelect/VBoxContainer/Food3.icon = foods[2].image
+	$CanvasLayer/FoodSelect/VBoxContainer/Food4.icon = foods[3].image
+	
+	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor1.icon = flavors[0].image
+	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor2.icon = flavors[1].image
+	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor3.icon = flavors[2].image
+	
+	$FoodRequest/RequestedFood.texture = requestedFood.image
+	$FoodRequest/RequestedFlavor.texture = requestedFlavor.image
+	
 	
 	
 	
 	##Make new person visible
 	var tween = get_tree().create_tween()
 	tween.tween_property($DivorceWoman, "modulate:a", 1, 0.8).set_trans(Tween.TRANS_EXPO)
-	##Selects order
-	requestedFood = foods.pick_random()
-	requestedFlavor = flavors.pick_random()
 	
-	print("food: " + requestedFood)
-	print("flavour: " + requestedFlavor)
 	
 	##Request speech bubble appears
 	##TODO: This.
-	
+	tween.tween_property($FoodRequest, "modulate:a", 1, 0.8).set_trans(Tween.TRANS_EXPO)
 	##Food buttons slide in
-	tween.tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1052, 0.3	).set_trans(Tween.TRANS_QUAD)
+	tween.parallel().tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1052, 0.3).set_trans(Tween.TRANS_QUAD)
 	
 	
 	
