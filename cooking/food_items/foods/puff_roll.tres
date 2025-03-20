@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://cn3q0o25fqg7v"]
+
+[ext_resource type="Texture2D" uid="uid://c1dxbivc802cm" path="res://temp_art/Pizza.png" id="1_ngkf0"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_e5i2e"]
+
+[resource]
+script = ExtResource("2_e5i2e")
+type = 3
+display_name = "Puff Roll"
+image = ExtResource("1_ngkf0")

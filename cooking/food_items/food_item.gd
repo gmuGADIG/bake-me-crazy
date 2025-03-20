@@ -14,7 +14,11 @@ enum Type {
 	BAR,
 	BROWNIE,
 	MARACON,
-	SWEET_ROLL
+	SWEET_ROLL,
+	
+	PESTO,
+	BLUEBERRY_SAUCE,
+	KETCHUP
 }
 
 @export var type : Type
