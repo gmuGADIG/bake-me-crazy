@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=6 format=3 uid="uid://c001by107vn8g"]
 
+[ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="1_qwwkm"]
 [ext_resource type="Texture2D" uid="uid://cgp0iy46gv5vr" path="res://temp_art/gartic/godot_cross.png" id="1_xq3ro"]
+[ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="2_n4m5k"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_n7opr"]
+[ext_resource type="Script" path="res://left_button.gd" id="4_ax4tv"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -12,9 +15,9 @@ offset_right = 1150.0
 offset_bottom = 650.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(575, 325)
-scale = Vector2(2.26, 1.48)
-texture = ExtResource("1_xq3ro")
+position = Vector2(577, 322)
+scale = Vector2(0.177667, 0.190222)
+texture = ExtResource("2_n4m5k")
 
 [node name="Book" type="Panel" parent="Control"]
 layout_mode = 0
@@ -23,52 +26,81 @@ offset_top = 30.0
 offset_right = 1075.0
 offset_bottom = 620.0
 
+[node name="BookVisual" type="Sprite2D" parent="Control/Book"]
+position = Vector2(765, 293.5)
+scale = Vector2(0.271991, 0.254774)
+texture = ExtResource("1_qwwkm")
+
+[node name="BookVisual2" type="Sprite2D" parent="Control/Book"]
+position = Vector2(237.5, 297)
+scale = Vector2(-0.274, -0.256)
+texture = ExtResource("1_qwwkm")
+
 [node name="page Left" type="Panel" parent="Control/Book"]
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 590.0
 
 [node name="Food Icon-Image" type="Sprite2D" parent="Control/Book/page Left"]
-position = Vector2(79, 74)
+position = Vector2(105, 85)
 texture = ExtResource("2_n7opr")
 
 [node name="Food name" type="Label" parent="Control/Book/page Left"]
 layout_mode = 0
-offset_left = 179.814
-offset_top = 21.0
-offset_right = 308.814
-offset_bottom = 44.0
+offset_left = 19.0
+offset_top = 187.0
+offset_right = 134.0
+offset_bottom = 210.0
 scale = Vector2(2, 1.72667)
-text = "TEST Food Name
-"
+text = "Food Item One"
 
 [node name="Food Description" type="Label" parent="Control/Book/page Left"]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 160.0
-offset_right = 475.0
-offset_bottom = 485.0
-text = "Description: Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! CrazCrazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! "
+offset_left = 28.0
+offset_top = 259.0
+offset_right = 491.0
+offset_bottom = 503.0
+text = "This will list all the instructions
+
+1.
+2.
+3.
+4.
+5."
 autowrap_mode = 2
 
 [node name="Left Button" type="Button" parent="Control/Book/page Left"]
 layout_mode = 0
-offset_left = 15.0812
-offset_top = 504.0
-offset_right = 498.081
-offset_bottom = 909.0
+offset_left = 18.0
+offset_top = 518.0
+offset_right = 501.0
+offset_bottom = 923.0
 scale = Vector2(0.15, 0.15)
 text = "Left
 "
 icon = ExtResource("1_xq3ro")
+script = ExtResource("4_ax4tv")
 
 [node name="Bake Button" type="Button" parent="Control/Book/page Left"]
 layout_mode = 0
-offset_left = 131.09
-offset_top = 505.0
-offset_right = 431.09
-offset_bottom = 565.0
+offset_left = 133.0
+offset_top = 513.0
+offset_right = 433.0
+offset_bottom = 573.0
 text = "BAKE"
+
+[node name="Food Ingredients" type="Label" parent="Control/Book/page Left"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 32.0
+offset_right = 428.0
+offset_bottom = 178.0
+text = "This includes ingredients:
+- ABCDE
+- FGHIJ
+- KLMNO
+- PQRST
+- UUU"
 
 [node name="page Right" type="Panel" parent="Control/Book"]
 layout_mode = 0
@@ -77,34 +109,39 @@ offset_right = 1000.0
 offset_bottom = 590.0
 
 [node name="Food Icon-Image" type="Sprite2D" parent="Control/Book/page Right"]
-position = Vector2(79, 74)
+position = Vector2(76, 86)
 texture = ExtResource("2_n7opr")
 
 [node name="Food name" type="Label" parent="Control/Book/page Right"]
 layout_mode = 0
-offset_left = 179.814
-offset_top = 21.0
-offset_right = 308.814
-offset_bottom = 44.0
+offset_left = 33.0
+offset_top = 188.0
+offset_right = 162.0
+offset_bottom = 211.0
 scale = Vector2(2, 1.72667)
-text = "TEST Food Name
-"
+text = "Food Item Two"
 
 [node name="Food Description" type="Label" parent="Control/Book/page Right"]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 160.0
-offset_right = 475.0
-offset_bottom = 485.0
-text = "Description: Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! CrazCrazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! Crazy? I Was Crazy Once. They Locked Me In A Room. A Rubber Room. A Rubber Room With Rats. And Rats Make Me Crazy! "
+offset_left = 36.0
+offset_top = 258.0
+offset_right = 403.0
+offset_bottom = 472.0
+text = "This will list all the instructions
+
+1:
+2:
+3:
+4:
+5:"
 autowrap_mode = 2
 
 [node name="Right Button" type="Button" parent="Control/Book/page Right"]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 504.0
-offset_right = 873.0
-offset_bottom = 909.0
+offset_left = 404.0
+offset_top = 520.0
+offset_right = 887.0
+offset_bottom = 925.0
 scale = Vector2(0.15, 0.15)
 text = "Left
 "
@@ -112,8 +149,22 @@ icon = ExtResource("1_xq3ro")
 
 [node name="Bake Button" type="Button" parent="Control/Book/page Right"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 505.0
-offset_right = 342.0
-offset_bottom = 565.0
+offset_left = 66.0
+offset_top = 516.0
+offset_right = 366.0
+offset_bottom = 576.0
 text = "BAKE"
+
+[node name="Food Ingredients" type="Label" parent="Control/Book/page Right"]
+offset_left = 197.0
+offset_top = 26.0
+offset_right = 408.0
+offset_bottom = 163.0
+text = "This includes ingredients:
+- ABCDE
+- FGHIJ
+- KLMNO
+- PQRST
+- UUU"
+
+[connection signal="pressed" from="Control/Book/page Left/Left Button" to="Control/Book/page Left/Left Button" method="_on_pressed"]
