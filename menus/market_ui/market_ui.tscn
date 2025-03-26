@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
-[ext_resource type="Texture2D" uid="uid://bgwn2bxbtjj08" path="res://temp_art/temp ui/test_nineslice.png" id="2_nq6ix"]
+[ext_resource type="Texture2D" uid="uid://ct0makafegtu0" path="res://temp_art/temp ui/test_nineslice3'.png" id="2_ymuef"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3hfp"]
-texture = ExtResource("2_nq6ix")
-texture_margin_left = 150.0
-texture_margin_top = 150.0
-texture_margin_right = 150.0
-texture_margin_bottom = 150.0
+texture = ExtResource("2_ymuef")
+texture_margin_left = 30.0
+texture_margin_top = 30.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
@@ -168,6 +168,24 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 metadata/_edit_lock_ = true
 
+[node name="Panel" type="PanelContainer" parent="Control/Panel/TopStuff"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 13.0
+offset_right = 141.0
+offset_bottom = 46.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel/TopStuff/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 6
+metadata/_edit_lock_ = true
+
+[node name="TotalPrice2" type="Label" parent="Control/Panel/TopStuff/Panel/MarginContainer"]
+layout_mode = 2
+text = "You have $0.00000000000000000000000000000"
+metadata/_edit_lock_ = true
+
 [node name="BottomStuff" type="Panel" parent="Control/Panel"]
 layout_mode = 1
 anchors_preset = 12
@@ -314,11 +332,3 @@ offset_right = 465.0
 offset_bottom = 143.0
 grow_horizontal = 2
 text = "Cancel"
-
-[node name="TotalPrice2" type="Label" parent="Control/Panel"]
-layout_mode = 1
-offset_left = 22.0
-offset_top = 14.0
-offset_right = 129.0
-offset_bottom = 37.0
-text = "You have $0.0"

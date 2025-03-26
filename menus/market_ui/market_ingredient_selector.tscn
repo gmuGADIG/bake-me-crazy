@@ -9,6 +9,7 @@ offset_bottom = 180.0
 
 [node name="IngredientSelector" type="Button" parent="."]
 custom_minimum_size = Vector2(160, 160)
+layout_mode = 0
 offset_left = 20.0
 offset_top = 19.0
 offset_right = 180.0
