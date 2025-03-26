@@ -21,6 +21,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneTransition="*res://menus/scene transition/scene_transition.tscn"
 InventorySystem="*res://inventory_system.gd"
 PlayerData="*res://save/player_data.gd"
+Relationships="res://dialogue/relationships.gd"
 
 [dialogic]
 
@@ -30,14 +31,27 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
-"npcclasstest": "res://menus/testing/npcclasstest.dtl"
+"npcclasstest": "res://menus/testing/npcclasstest.dtl",
+"clock_out_no_date_timeline": "res://dialogue/testing/clock_out_no_date_timeline.dtl",
+"npcclasstest": "res://dialogue/testing/npcclasstest.dtl",
+"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style=""
 variables={
 "date": "",
-"likes_baked_goods": false
+"likes_baked_goods": false,
+"Var": 0,
+"likes_baked_goods": false,
+"saltyHearts": 0,
+"saltyRP": 0,
+"savoryHearts": 0,
+"savoryRP": 0,
+"sourHearts": 0,
+"sourRP": 0,
+"sweetHearts": 0,
+"sweetRP": 0
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
