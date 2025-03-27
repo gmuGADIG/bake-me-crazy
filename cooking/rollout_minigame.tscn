@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6qa813yh3lb7"]
+
+[ext_resource type="Script" path="res://cooking/rollout_minigame.gd" id="1_8miji"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="2_qtkrw"]
+
+[node name="rollout_minigame" type="Node2D"]
+script = ExtResource("1_8miji")
+
+[node name="FullBar" type="ColorRect" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 49.0
+offset_bottom = 625.0
+grow_vertical = 2
+color = Color(1, 0.0986208, 0.387233, 1)
+
+[node name="Arrow" type="TextureRect" parent="FullBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.598
+anchor_bottom = 0.598
+offset_left = 40.0
+offset_top = -64.0
+offset_right = 168.0
+offset_bottom = -7.508
+texture = ExtResource("2_qtkrw")
+
+[node name="GreenBar" type="ColorRect" parent="FullBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 69.0
+offset_bottom = -465.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.881706, 0.31818, 1)
+
+[node name="Yellowbar" type="ColorRect" parent="FullBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -533.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.780392, 0, 1)
+
+[node name="Yellowbar2" type="ColorRect" parent="FullBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 137.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.780392, 0, 1)
