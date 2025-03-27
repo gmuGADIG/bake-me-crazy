@@ -249,6 +249,7 @@ offset_right = -10.0
 offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 14
 text = "Real Cabbage
 Item Description Item Description Item Description Item Description"
 metadata/_edit_lock_ = true
