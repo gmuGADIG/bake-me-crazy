@@ -1,9 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=14 format=3 uid="uid://ksburhrk4icq"]
 
+[ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
+[ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
-[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
+[ext_resource type="Theme" uid="uid://lpkeby7s3dtq" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
+[ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="3_up5f4"]
+
+[sub_resource type="Resource" id="Resource_sdoge"]
+script = ExtResource("2_6ghu5")
+code_name = "lettuce"
+display_name = "Lettuce"
+quality = 1
+icon = ExtResource("3_up5f4")
+price = 15
+
+[sub_resource type="Resource" id="Resource_rnmr2"]
+script = ExtResource("2_6ghu5")
+code_name = "pork"
+display_name = "Pork"
+quality = 1
+icon = ExtResource("3_up5f4")
+price = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
 bg_color = Color(1, 1, 1, 1)
@@ -39,6 +58,8 @@ corner_radius_top_left = 16
 corner_radius_bottom_left = 16
 
 [node name="MarketUI" type="CanvasLayer"]
+script = ExtResource("1_exijc")
+items = Array[ExtResource("2_6ghu5")]([SubResource("Resource_sdoge"), SubResource("Resource_rnmr2"), SubResource("Resource_sdoge")])
 
 [node name="TMP_BG" type="TextureRect" parent="."]
 visible = false
@@ -121,49 +142,50 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="FlowContainer" type="FlowContainer" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer"]
+[node name="IngredientContainer" type="FlowContainer" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector2" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector2" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector3" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector3" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector4" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector4" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector5" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector5" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector6" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector6" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector7" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector7" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector8" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector8" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector9" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector9" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector10" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/FlowContainer" instance=ExtResource("3_ay0y5")]
+[node name="IngredientSelector10" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
 

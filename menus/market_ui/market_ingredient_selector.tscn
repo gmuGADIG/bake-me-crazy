@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkw2hrwx6ome0"]
+[gd_scene load_steps=8 format=3 uid="uid://bkw2hrwx6ome0"]
 
-[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
+[ext_resource type="Theme" uid="uid://lpkeby7s3dtq" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
+[ext_resource type="Script" path="res://menus/market_ui/market_item_ui.gd" id="2_lah3l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w7ge"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -51,13 +52,15 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Control" type="ReferenceRect"]
+[node name="MarketItemUI" type="ReferenceRect"]
 custom_minimum_size = Vector2(180, 180)
 offset_right = 180.0
 offset_bottom = 180.0
 theme = ExtResource("1_brkog")
+script = ExtResource("2_lah3l")
 
-[node name="IngredientSelector" type="Button" parent="."]
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(160, 160)
 layout_mode = 0
 offset_left = 20.0
@@ -70,7 +73,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xf62j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6mgyl")
 toggle_mode = true
 
-[node name="Food" type="TextureRect" parent="IngredientSelector"]
+[node name="FoodSprite" type="TextureRect" parent="Button"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 1
 anchors_preset = 15
@@ -88,7 +92,8 @@ layout_mode = 0
 offset_right = 81.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="PriceLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 13.0
 offset_top = 8.0
