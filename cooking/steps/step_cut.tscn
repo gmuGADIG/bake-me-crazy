@@ -1,46 +1,66 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgmqffo2go7p6"]
+[gd_scene load_steps=8 format=3 uid="uid://cgmqffo2go7p6"]
 
 [ext_resource type="Script" path="res://cooking/steps/step_cut.gd" id="1_y2f8k"]
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="2_nplut"]
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="3_oatch"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_oxcjp"]
-a = Vector2(15.4, 9.6)
-b = Vector2(15.6, -10.2)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jshwt"]
+a = Vector2(0.85, 49.6)
+b = Vector2(0.85, -0.6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bj35s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxti8"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jshwt"]
 
 [node name="StepCut" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 371.0
-offset_top = -3.0
-offset_right = 371.0
-offset_bottom = -3.0
+offset_left = 362.0
+offset_top = 82.0
+offset_right = 362.0
+offset_bottom = 82.0
 script = ExtResource("1_y2f8k")
 
 [node name="ToCut" type="Area2D" parent="."]
+collision_layer = 32768
 
 [node name="CutGuide" type="CollisionShape2D" parent="ToCut"]
-position = Vector2(-67, 146)
-scale = Vector2(5, 10)
+scale = Vector2(20, 10)
 shape = SubResource("SegmentShape2D_oxcjp")
-
-[node name="CutEnd" type="Area2D" parent="ToCut"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToCut/CutEnd"]
-position = Vector2(10, 240)
-shape = SubResource("CircleShape2D_jshwt")
+debug_color = Color(0.982908, 0, 0.357913, 0.42)
 
 [node name="Cutting" type="Line2D" parent="."]
-points = PackedVector2Array(-9, 157)
+points = PackedVector2Array(16, -17)
 default_color = Color(0, 1, 0, 1)
 
 [node name="LastCutArea" type="Area2D" parent="Cutting"]
-position = Vector2(-41, 101)
+position = Vector2(18, -6)
 
 [node name="LastCut" type="CollisionShape2D" parent="Cutting/LastCutArea"]
-position = Vector2(-39, 96)
 shape = SubResource("CircleShape2D_bj35s")
 
-[connection signal="area_shape_entered" from="ToCut/CutEnd" to="." method="_on_last_cut_area_area_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="Cutting/LastCutArea/LastCut"]
+scale = Vector2(0.40625, 0.210938)
+texture = ExtResource("3_oatch")
+
+[node name="CutChecker" type="ShapeCast2D" parent="Cutting"]
+position = Vector2(-18, -8)
+shape = SubResource("CircleShape2D_mxti8")
+target_position = Vector2(0, 0)
+collision_mask = 32768
+collide_with_areas = true
+
+[node name="CutEnd" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CutEnd"]
+position = Vector2(12, 493)
+shape = SubResource("CircleShape2D_jshwt")
+
+[node name="Sprite2D" type="Sprite2D" parent="CutEnd/CollisionShape2D"]
+scale = Vector2(0.230469, 0.25)
+texture = ExtResource("2_nplut")
+
+[connection signal="area_entered" from="CutEnd" to="." method="_on_cut_end_area_entered"]
