@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkw2hrwx6ome0"]
+[gd_scene load_steps=6 format=3 uid="uid://bkw2hrwx6ome0"]
 
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rse4"]
+bg_color = Color(1, 1, 1, 0.87451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_773it"]
 bg_color = Color(0, 0, 0, 0.87451)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mgyl"]
@@ -23,8 +26,9 @@ offset_top = 19.0
 offset_right = 180.0
 offset_bottom = 179.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_4rse4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4rse4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_773it")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6mgyl")
+toggle_mode = true
 
 [node name="Food" type="TextureRect" parent="IngredientSelector"]
 custom_minimum_size = Vector2(120, 120)

@@ -98,6 +98,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
 
 [node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
+self_modulate = Color(0.255659, 0.255659, 0.255659, 0.568627)
 layout_mode = 0
 offset_left = 21.0
 offset_top = 52.0
