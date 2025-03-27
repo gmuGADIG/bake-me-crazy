@@ -12,7 +12,7 @@ func _ready():
 	#This makes it so anytime a variable changes, the function that turns RP to hearts is ran
 	Dialogic.VAR.variable_changed.connect(heartCheck)
 	#This begins the test dialogue (temporary, but for testing it's here)
-	Dialogic.start('testTimeline_hearts1')
+	#Dialogic.start('testTimeline_hearts1')
 
 #This function checks for which variable changed (should be RP), then translates the value if enough RP can make a heart
 func heartCheck(changes):

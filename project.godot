@@ -30,19 +30,16 @@ directories/dch_directory={
 "testing/testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
-"clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
-"npcclasstest": "res://menus/testing/npcclasstest.dtl",
-"clock_out_no_date_timeline": "res://dialogue/testing/clock_out_no_date_timeline.dtl",
-"npcclasstest": "res://dialogue/testing/npcclasstest.dtl",
-"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
+"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
+"testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
+"testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style=""
 variables={
-"date": "",
-"likes_baked_goods": false,
 "Var": 0,
+"date": "",
 "likes_baked_goods": false,
 "saltyHearts": 0,
 "saltyRP": 0,
