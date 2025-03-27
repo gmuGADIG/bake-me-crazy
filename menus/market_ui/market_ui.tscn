@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=7 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
-[ext_resource type="Texture2D" uid="uid://ct0makafegtu0" path="res://temp_art/temp ui/test_nineslice3'.png" id="2_ymuef"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3hfp"]
-texture = ExtResource("2_ymuef")
-texture_margin_left = 30.0
-texture_margin_top = 30.0
-texture_margin_right = 30.0
-texture_margin_bottom = 30.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbns"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -58,7 +59,7 @@ offset_right = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_h3hfp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6sy5")
 
 [node name="TopStuff" type="Control" parent="Control/Panel"]
 layout_mode = 1
@@ -93,18 +94,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
-
-[node name="CharacterName" type="Label" parent="Control/Panel/TopStuff/Portrait"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -97.0
-offset_right = 97.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "The Cabbage Owner"
-horizontal_alignment = 1
 
 [node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
 layout_mode = 0
@@ -172,19 +161,18 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_left = 21.0
 offset_top = 13.0
-offset_right = 141.0
+offset_right = 149.0
 offset_bottom = 46.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Panel/TopStuff/Panel"]
 layout_mode = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_right = 6
-metadata/_edit_lock_ = true
 
 [node name="TotalPrice2" type="Label" parent="Control/Panel/TopStuff/Panel/MarginContainer"]
 layout_mode = 2
-text = "You have $0.00000000000000000000000000000"
-metadata/_edit_lock_ = true
+text = "You have $0.00
+"
 
 [node name="BottomStuff" type="Panel" parent="Control/Panel"]
 layout_mode = 1
@@ -196,20 +184,49 @@ offset_top = -183.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_p4by0")
+metadata/_edit_lock_ = true
 
-[node name="ItemDescriptionPanel" type="Panel" parent="Control/Panel/BottomStuff"]
+[node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 81.0
+offset_top = 68.0
+offset_right = 269.0
+offset_bottom = 115.0
+grow_horizontal = 2
+text = "Buy"
+
+[node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 273.0
+offset_top = 68.0
+offset_right = 461.0
+offset_bottom = 115.0
+grow_horizontal = 2
+text = "Cancel"
+
+[node name="Control" type="Control" parent="Control/Panel/BottomStuff"]
+anchors_preset = 0
+offset_left = 70.0
+offset_top = 22.0
+offset_right = 547.0
+offset_bottom = 160.0
+
+[node name="ItemDescriptionPanel" type="Panel" parent="Control/Panel/BottomStuff/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 105.0
-offset_top = 9.0
-offset_right = -697.0
-offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/ItemDescriptionPanel"]
+[node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -222,8 +239,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Real Cabbage
 Item Description Item Description Item Description Item Description"
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="Control/Panel/BottomStuff/ItemDescriptionPanel"]
+[node name="Label" type="Label" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -238,19 +256,17 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "You have: 0"
 
-[node name="ItemQuantityPanel" type="Panel" parent="Control/Panel/BottomStuff"]
+[node name="ItemQuantityPanel" type="Panel" parent="Control/Panel/BottomStuff/Control"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 419.0
-offset_top = 9.0
-offset_right = -383.0
-offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
+[node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -263,7 +279,7 @@ grow_horizontal = 2
 text = "Quantity"
 horizontal_alignment = 1
 
-[node name="QuantityNumber" type="Label" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
+[node name="QuantityNumber" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -281,54 +297,58 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TotalPrice" type="Label" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
+[node name="TotalPrice" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -181.0
-offset_top = 125.0
-offset_right = -139.0
-offset_bottom = 148.0
-grow_horizontal = 0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -36.0
+offset_right = 21.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "$ 0.0"
+horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
-layout_mode = 0
-offset_left = 52.0
-offset_top = 58.0
-offset_right = 110.0
-offset_bottom = 107.0
+[node name="Button" type="Button" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -24.5
+offset_right = 76.0
+offset_bottom = 24.5
+grow_vertical = 2
 text = "<="
 
-[node name="Button2" type="Button" parent="Control/Panel/BottomStuff/ItemQuantityPanel"]
-layout_mode = 0
-offset_left = 201.0
-offset_top = 58.0
-offset_right = 259.0
-offset_bottom = 108.0
+[node name="Button2" type="Button" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -25.0
+offset_right = -21.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
 text = "=>"
 
-[node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
+[node name="CharacterName" type="Label" parent="Control/Panel/BottomStuff"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 277.0
-offset_top = 43.0
-offset_right = 465.0
-offset_bottom = 90.0
+offset_left = 175.0
+offset_top = 12.0
+offset_right = 369.0
+offset_bottom = 35.0
 grow_horizontal = 2
-text = "Buy"
-
-[node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 277.0
-offset_top = 96.0
-offset_right = 465.0
-offset_bottom = 143.0
-grow_horizontal = 2
-text = "Cancel"
+text = "The Cabbage SHop"
+horizontal_alignment = 1
