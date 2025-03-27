@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
 [ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="3_mp5ah"]
-[ext_resource type="Resource" path="res://dialogue/testing/npcclasstest.dtl" id="4_u3tyl"]
+[ext_resource type="Resource" path="res://menus/testing/npcclasstest.dtl" id="4_u3tyl"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_1b70k"]
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="6_4yihm"]
 [ext_resource type="PackedScene" uid="uid://dxvby55qeyuei" path="res://test_scenes/lunch_rush_placeholder/lunch_rush_placeholder.tscn" id="7_tqpiw"]
