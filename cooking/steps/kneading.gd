@@ -3,23 +3,23 @@ extends Node2D
 @export var maxStretch: float = 200
 @export var stretchPerFrame : float = 0.05
 @export var positionOffset: float = 0.1
-var spriteRect: NinePatchRect
-var meter: VSlider
+@export var pointGain: int = 3
+
+@export var maxPoints: = 1000
+@onready var spriteRect: NinePatchRect = $CanvasLayer/NinePatchRect
+@onready var meter: VSlider =$CanvasLayer/VSlider
 
 var mouseOver: bool = false
+var canKnead: bool = true;
 var kneading: bool = false
-var startPos: Vector2 
 var centerY: float
 
 var kneadPoints: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	spriteRect = $NinePatchRect
-	meter = $VSlider
-	var startPos = spriteRect.global_position
+	meter.max_value = maxPoints
 	var size : float = get_canvas_transform().get_scale().y
 	print(size)
-	centerY = startPos.y
 	
 	pass # Replace with function body.
 
@@ -33,24 +33,28 @@ func _process(delta: float) -> void:
 		lastStretch = 0
 	if Input.is_action_just_released("interact"):
 		kneading = false
-	if kneading:
+		canKnead = false
+		print("FINAL Value " + str(meter.value/10))
+	if kneading and canKnead:
 		var stretch : float = lastPosY- get_global_mouse_position().y
 		if(stretch > 0 and get_global_mouse_position().y != lastPosY):
 			if(abs(stretch) <= maxStretch):
-				spriteRect.scale.y += stretchPerFrame
+				spriteRect.size.y += stretchPerFrame * delta
 				spriteRect.position.y -= positionOffset
-				meter.value += 3
+				meter.value += pointGain
 		elif(stretch < 0 and get_global_mouse_position().y != lastPosY):
 			if(abs(stretch) <= maxStretch):
-				spriteRect.scale.y += stretchPerFrame
+				spriteRect.size.y += stretchPerFrame * delta
 				spriteRect.position.y += positionOffset
-				meter.value += 3
+				meter.value += pointGain
+				
 		
-		lastPosY = get_global_mouse_position().y		
-	meter.value -= 1
-	if(spriteRect.scale.y >1):
-		spriteRect.scale.y -= stretchPerFrame/2
-		
+		if(meter.value > 400):
+			pointGain = 1
+		elif meter.value > 250:
+			pointGain = 3
+		lastPosY = get_global_mouse_position().y	
+			
 	pass
 
 
