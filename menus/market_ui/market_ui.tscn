@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=12 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
@@ -56,6 +56,12 @@ border_width_right = 1
 border_width_bottom = 2
 corner_radius_top_left = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rc7sd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_daq2f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vm8i"]
 
 [node name="MarketUI" type="CanvasLayer"]
 script = ExtResource("1_exijc")
@@ -360,7 +366,11 @@ offset_top = -24.5
 offset_right = 76.0
 offset_bottom = 24.5
 grow_vertical = 2
-text = "<="
+theme_override_font_sizes/font_size = 56
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rc7sd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_daq2f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8vm8i")
+text = "<-"
 
 [node name="Button2" type="Button" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
 layout_mode = 1
