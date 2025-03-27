@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkw2hrwx6ome0"]
+[gd_scene load_steps=8 format=3 uid="uid://bkw2hrwx6ome0"]
 
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
+[ext_resource type="Texture2D" uid="uid://niqnbcovxf54" path="res://temp_art/stars/star_3.svg" id="3_7cldi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w7ge"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -82,6 +83,27 @@ texture = ExtResource("1_kx34q")
 expand_mode = 1
 stretch_mode = 6
 metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="IngredientSelector/Food"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stars" type="TextureRect" parent="IngredientSelector/Food"]
+modulate = Color(1, 0.801866, 0.429936, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_7cldi")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
