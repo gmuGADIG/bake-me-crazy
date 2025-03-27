@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=17 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
