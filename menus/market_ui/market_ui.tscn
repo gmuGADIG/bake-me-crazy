@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=9 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
@@ -7,14 +7,12 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
 bg_color = Color(1, 1, 1, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-corner_radius_top_left = 16
+border_width_left = 1
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbns"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -30,6 +28,15 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4by0"]
 bg_color = Color(0.054902, 0.054902, 0.054902, 0.345098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lg80"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
 
 [node name="MarketUI" type="CanvasLayer"]
 
@@ -98,11 +105,11 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
 
 [node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
-self_modulate = Color(0.255659, 0.255659, 0.255659, 0.568627)
+self_modulate = Color(1, 1, 1, 0.2)
 layout_mode = 0
-offset_left = 21.0
+offset_left = 20.0
 offset_top = 52.0
-offset_right = 581.0
+offset_right = 593.0
 offset_bottom = 409.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/TopStuff/IngredientList"]
@@ -221,12 +228,14 @@ offset_right = 547.0
 offset_bottom = 160.0
 
 [node name="ItemDescriptionPanel" type="Panel" parent="Control/Panel/BottomStuff/Control"]
+self_modulate = Color(0, 0, 0, 0.294118)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lg80")
 metadata/_edit_lock_ = true
 
 [node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
@@ -260,6 +269,7 @@ grow_vertical = 0
 text = "You have: 0"
 
 [node name="ItemQuantityPanel" type="Panel" parent="Control/Panel/BottomStuff/Control"]
+self_modulate = Color(0, 0, 0, 0.294118)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -267,6 +277,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6sy5")
 metadata/_edit_lock_ = true
 
 [node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
