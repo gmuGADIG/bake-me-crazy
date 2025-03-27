@@ -9,10 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if phone_opened:
-		get_tree().paused = true
-	else:
-		get_tree().paused = false
+	#if phone_opened:
+	#	get_tree().paused = true
+	#else:
+	#	get_tree().paused = false
+	pass
 
 
 func _on_phone_top_pressed() -> void:
@@ -20,5 +21,8 @@ func _on_phone_top_pressed() -> void:
 	#TODO: Play animations
 	if phone_opened:
 		phone_opened = false
+		$Panel/AnimationPlayer.play("open_phone")
 	else:
+		print("opened")
 		phone_opened = true
+		$Panel/AnimationPlayer.play("RESET")
