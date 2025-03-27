@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=8 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
+[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
@@ -45,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_udxc2")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="Control"]
