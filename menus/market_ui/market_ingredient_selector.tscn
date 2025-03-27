@@ -1,16 +1,55 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkw2hrwx6ome0"]
+[gd_scene load_steps=7 format=3 uid="uid://bkw2hrwx6ome0"]
 
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rse4"]
-bg_color = Color(1, 1, 1, 0.87451)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w7ge"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.753984, 0.753984, 0.753984, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_773it"]
-bg_color = Color(0, 0, 0, 0.87451)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnxp8"]
+bg_color = Color(1, 1, 1, 0.490196)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf62j"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.384314)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mgyl"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Control" type="ReferenceRect"]
 custom_minimum_size = Vector2(180, 180)
@@ -25,8 +64,9 @@ offset_left = 20.0
 offset_top = 19.0
 offset_right = 180.0
 offset_bottom = 179.0
-theme_override_styles/hover = SubResource("StyleBoxFlat_4rse4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_773it")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5w7ge")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nnxp8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xf62j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6mgyl")
 toggle_mode = true
 
