@@ -1,10 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=10 format=3 uid="uid://c001by107vn8g"]
 
+[ext_resource type="Script" path="res://cooking/recipe_book.gd" id="1_5jpiq"]
 [ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="1_qwwkm"]
 [ext_resource type="Texture2D" uid="uid://cgp0iy46gv5vr" path="res://temp_art/gartic/godot_cross.png" id="1_xq3ro"]
 [ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="2_n4m5k"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_n7opr"]
+[ext_resource type="Script" path="res://cooking/recipe.gd" id="2_pwtii"]
 [ext_resource type="Script" path="res://left_button.gd" id="4_ax4tv"]
+
+[sub_resource type="Resource" id="Resource_oqry2"]
+script = ExtResource("2_pwtii")
+name = "Test Name"
+ingredients = {}
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_d3qea"]
+script = ExtResource("2_pwtii")
+name = ""
+ingredients = {}
+is_locked = false
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -13,6 +27,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
+script = ExtResource("1_5jpiq")
+recipes = Array[ExtResource("2_pwtii")]([SubResource("Resource_oqry2"), SubResource("Resource_d3qea")])
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(577, 322)
@@ -156,6 +172,7 @@ offset_bottom = 576.0
 text = "BAKE"
 
 [node name="Food Ingredients" type="Label" parent="Control/Book/page Right"]
+layout_mode = 0
 offset_left = 197.0
 offset_top = 26.0
 offset_right = 408.0
@@ -167,4 +184,6 @@ text = "This includes ingredients:
 - PQRST
 - UUU"
 
+[connection signal="draw" from="Control" to="Control" method="_on_draw"]
+[connection signal="draw" from="Control/Book/page Left/Food name" to="Control" method="_on_food_name_draw"]
 [connection signal="pressed" from="Control/Book/page Left/Left Button" to="Control/Book/page Left/Left Button" method="_on_pressed"]
