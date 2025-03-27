@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtfpjbxnjfn3m"]
+[gd_scene load_steps=5 format=3 uid="uid://dtfpjbxnjfn3m"]
 
 [ext_resource type="Script" path="res://cooking/steps/kneading.gd" id="1_llm4v"]
 [ext_resource type="Texture2D" uid="uid://cgp0iy46gv5vr" path="res://temp_art/gartic/godot_cross.png" id="1_u1j4f"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_23vti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usyqt"]
 size = Vector2(20, 34.0667)
@@ -10,10 +11,12 @@ size = Vector2(20, 34.0667)
 position = Vector2(513, 306)
 scale = Vector2(15, 15)
 script = ExtResource("1_llm4v")
-maxStretch = 80.0
+maxStretch = 150.0
 stretchPerFrame = 50.0
 positionOffset = 3.0
-pointGain = 6
+fastPointGain = 5
+midPointGain = 3
+slowPointGain = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -53,8 +56,44 @@ offset_top = 164.0
 offset_right = 217.0
 offset_bottom = 545.0
 scale = Vector2(3.025, 1.02)
+value = 40.0
 editable = false
 scrollable = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VSlider"]
+self_modulate = Color(0.742948, 0.589263, 3.85046e-07, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 141.0
+offset_right = 68.0
+offset_bottom = 379.0
+pivot_offset = Vector2(39.5207, 112.255)
+texture = ExtResource("3_23vti")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/VSlider"]
+self_modulate = Color(0.742948, 0.589263, 3.85046e-07, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 18.843
+offset_top = 5.88235
+offset_right = 68.843
+offset_bottom = 243.882
+pivot_offset = Vector2(39.5207, 112.255)
+texture = ExtResource("3_23vti")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/VSlider"]
+self_modulate = Color(0.236462, 0.382597, 0.0101678, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 16.8595
+offset_top = 84.3137
+offset_right = 66.8595
+offset_bottom = 297.314
+texture = ExtResource("3_23vti")
+expand_mode = 1
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

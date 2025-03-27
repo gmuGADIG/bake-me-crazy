@@ -3,11 +3,16 @@ extends Node2D
 @export var maxStretch: float = 200
 @export var stretchPerFrame : float = 0.05
 @export var positionOffset: float = 0.1
-@export var pointGain: int = 3
+@export var fastPointGain: int = 3
+@export var midPointGain: int = 2
+@export var slowPointGain: int = 1
+var pointGain:int
 
 @export var maxPoints: = 1000
+
 @onready var spriteRect: NinePatchRect = $CanvasLayer/NinePatchRect
 @onready var meter: VSlider =$CanvasLayer/VSlider
+@onready var finalScoreText = $CanvasLayer/Label
 
 var mouseOver: bool = false
 var canKnead: bool = true;
@@ -18,6 +23,8 @@ var kneadPoints: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	meter.max_value = maxPoints
+	pointGain = fastPointGain
+	finalScoreText.visible = false
 	var size : float = get_canvas_transform().get_scale().y
 	print(size)
 	
@@ -34,7 +41,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("interact"):
 		kneading = false
 		canKnead = false
-		print("FINAL Value " + str(meter.value/10))
+		finalScoreText.visible = true
+		finalScoreText.text = "FINAL VALUE " + str(meter.value/10)
+		
+		
 	if kneading and canKnead:
 		var stretch : float = lastPosY- get_global_mouse_position().y
 		if(stretch > 0 and get_global_mouse_position().y != lastPosY):
@@ -50,9 +60,9 @@ func _process(delta: float) -> void:
 				
 		
 		if(meter.value > 400):
-			pointGain = 1
+			pointGain = slowPointGain
 		elif meter.value > 250:
-			pointGain = 3
+			pointGain = midPointGain
 		lastPosY = get_global_mouse_position().y	
 			
 	pass
