@@ -125,6 +125,11 @@ func shaker(delta : float) -> void:
 		mouse_positions.pop_front()
 	
 	
+	if is_shaking_hard_enough():
+		pass
+	pass
+
+func is_shaking_hard_enough() -> bool:
 	##Runs if there is enough data to calculate jerk
 	if mouse_positions.size() == 4:
 		var mouse_vels : Array[MouseData]
@@ -139,10 +144,8 @@ func shaker(delta : float) -> void:
 			
 		var t : float = approx_derivative(mouse_accs[0],mouse_accs[1])
 		if t < -jerk_threshold and abs(mouse_accs[1].val) > acceleration_threshold and mouse_vels[2].val > 0:# Acc negative, velocity pos
-			print(t, " ",mouse_accs[1].val, " ",mouse_vels[2].val)
-		
-	pass
-
+			return true
+	return false
 
 ##Each of the buttons in the inspector pass in an index argument for the foods array
 func _on_food_selected(food_index: int) -> void:
