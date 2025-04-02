@@ -19,9 +19,9 @@ func _ready() -> void:
 func start_date():
 	if datescenes.has(Dialogic.VAR.date):
 		print(datescenes[Dialogic.VAR.date])
-		get_tree().change_scene_to_file(datescenes[Dialogic.VAR.date])
+		Dialogic.start(datescenes[Dialogic.VAR.date])
 		Dialogic.VAR.date = ""
 	else:
 		if Dialogic.VAR.date != "":
-			print("start_date received an invalid date variable in Dialogic!")
+			print("Invalid date! Dialogic.VAR.date = '%s'. This must have a matching entry in clock_out.tscn's dictionary." % Dialogic.VAR.date)
 		Dialogic.start(no_date_timeline)

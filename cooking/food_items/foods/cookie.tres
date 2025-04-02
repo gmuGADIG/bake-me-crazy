@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://bf1r52w24rfoc"]
+
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="1_0dhf3"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_a1uj0"]
+
+[resource]
+script = ExtResource("2_a1uj0")
+type = 6
+display_name = "Cookie"
+image = ExtResource("1_0dhf3")

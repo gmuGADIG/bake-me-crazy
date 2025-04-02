@@ -13,5 +13,5 @@ grow_vertical = 2
 script = ExtResource("1_wmgct")
 no_date_timeline = ExtResource("2_i3vma")
 datescenes = {
-"spicy1": "res://test_scenes/testdate.tscn"
+"salty1": "clock_out_test"
 }

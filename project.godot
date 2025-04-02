@@ -27,9 +27,12 @@ Relationships="res://dialogue/relationships.gd"
 
 directories/dch_directory={
 "datealbecharacter": "res://menus/testing/datealbecharacter.dch",
+"salty": "res://dialogue/salty/salty.dch",
 "testing/testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
+"clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
+"lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
 "testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
@@ -38,17 +41,24 @@ glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style=""
 variables={
-"Var": 0,
 "date": "",
-"likes_baked_goods": false,
-"saltyHearts": 0,
-"saltyRP": 0,
-"savoryHearts": 0,
-"savoryRP": 0,
-"sourHearts": 0,
-"sourRP": 0,
-"sweetHearts": 0,
-"sweetRP": 0
+"dateRP": 0,
+"hearts": {
+"salty": 0,
+"savory": 0,
+"sour": 0,
+"sweet": 0
+},
+"read_only": {
+"possible_date": 0,
+"repeat_talk": false
+},
+"rp": {
+"salty": 0,
+"savory": 0,
+"sour": 0,
+"sweet": 0
+}
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
