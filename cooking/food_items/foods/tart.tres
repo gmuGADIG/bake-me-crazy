@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://c5ritr15sb7fh"]
+
+[ext_resource type="Texture2D" uid="uid://c1dxbivc802cm" path="res://temp_art/Pizza.png" id="1_w3him"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_hh5if"]
+
+[resource]
+script = ExtResource("2_hh5if")
+type = 5
+display_name = "Tart"
+image = ExtResource("1_w3him")
