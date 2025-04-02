@@ -1,0 +1,14 @@
+As you clock out, you see salty waiting for you.
+salty: hii \:D
+you go to the pier, or something
+salty: would you still like me if i was a worm?
+- of course :)
+	set {dateRP} += 100
+	set {hearts.salty} += 1
+	salty: <3
+- i already don't like you
+	salty: D\:
+after the date you go to bed. good night!
+honk shoo
+honk shoo
+good morning!
