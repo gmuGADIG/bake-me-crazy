@@ -35,7 +35,11 @@ func _on_close_menu_pressed() -> void:
 	queue_free()
 
 func _on_return_main_menu_pressed() -> void:
-	print("TODO: go to main menu")
+	var optionsScene := preload("res://menus/start_menu/main_menu.tscn")
+	get_tree().root.add_child(optionsScene.instantiate())
+	get_tree().paused = false
+	self.queue_free()
+	#print("TODO: go to main menu")
 
 func _on_options_pressed() -> void:
-	print("TODO: open options")
+	open_submenu(load("res://menus/settings/settings_menu.tscn"))
