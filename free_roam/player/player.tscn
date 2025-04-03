@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=12 format=3 uid="uid://cx06e1lqkpenc"]
 
 [ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
 [ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
@@ -9,6 +9,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cvwi48esq2kna" path="res://free_roam/player/characters/player_4.tres" id="6_771df"]
 [ext_resource type="SpriteFrames" uid="uid://cvv5c5orq1xbu" path="res://free_roam/player/characters/player_5.tres" id="7_qfajt"]
 [ext_resource type="SpriteFrames" uid="uid://chnckqyyx6p7e" path="res://free_roam/player/characters/player_6.tres" id="8_0ulrd"]
+[ext_resource type="Texture2D" uid="uid://uq8joiv7p24c" path="res://temp_art/dialogueindicator.png" id="10_i78ey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jij"]
 size = Vector2(188, 259.916)
@@ -36,3 +37,12 @@ script = ExtResource("3_2njdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("RectangleShape2D_v2jij")
+
+[node name="Dialogueindicator" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-2.38419e-07, -257)
+scale = Vector2(1.28125, 1.28125)
+texture = ExtResource("10_i78ey")
+
+[connection signal="indicator" from="InteractionArea" to="." method="_on_interaction_area_indicator"]
