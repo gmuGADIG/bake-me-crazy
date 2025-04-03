@@ -22,9 +22,9 @@ anchors_preset = -1
 anchor_top = 0.598
 anchor_bottom = 0.598
 offset_left = 40.0
-offset_top = -64.0
+offset_top = 177.004
 offset_right = 168.0
-offset_bottom = -7.508
+offset_bottom = 305.004
 texture = ExtResource("2_qtkrw")
 
 [node name="GreenBar" type="ColorRect" parent="FullBar"]
