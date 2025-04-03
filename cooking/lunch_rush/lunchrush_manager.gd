@@ -47,6 +47,13 @@ enum Finisher {
 var current_stage : Stage
 var selected_finisher_type : Finisher
 
+## Elapsed time as food is made, for scoring
+var elapsed_time : float = 0.0
+## Controls when the timer is processed
+var timer_active : bool = false
+## The most any customer will tip, what the player earns for each item in the best case scenario
+@export var maximum_tip : float = 5.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -95,6 +102,8 @@ func new_order() -> void:
 	##Food buttons slide in
 	tween.parallel().tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1052, 0.8).set_trans(Tween.TRANS_QUAD)
 	
+	## Start timer!
+	timer_active = true
 	
 	
 
@@ -186,4 +195,34 @@ func select_finisher_type() -> Finisher:
 			return Finisher.SHAKER
 		_:
 			return -1
-		
+
+## This process function is only here for the timer, at least at the moment. It's not in physics process because that's bad practice, and the timer isn't directly in process because that's also bad practice.
+func _process(delta) -> void:
+	#TODO: add function to submit order that also sets timer_active to false
+	if timer_active: processTimer(delta)
+
+func processTimer(delta) -> void:
+	elapsed_time+=delta
+
+func scoreFood() -> float:
+	#	SCORE CRITERIA:
+	#	- TIME REMAINING
+	#	- ACCURACY TO REQUEST
+	#	- PROBABLY #TODO, COVERAGE OF SAUCE
+	## We start counting a penalty that we add to for everything the player got wrong.
+	var penalty: float = 0.0
+	
+	#TODO: Balance these penalties. Currently you start with $5.0, lose $2.0 for each broken request, and lose $.05 per second spent.
+	if selected_food.type!=requested_food.type: penalty += 2.0
+	if selected_flavor.type!=requested_flavor.type: penalty += 20.0
+	penalty+=elapsed_time/20
+
+	## We take the penalty we calculated and subtract it from how much the customer will tip. We assume each customer will ideally tip the same maximum_tip export variable.
+	var rewarded_tip: float = maximum_tip
+	rewarded_tip -= penalty
+	if rewarded_tip<0: rewarded_tip==0
+	## We take that final tip and return it wherever the function was called.
+	return rewarded_tip
+
+
+	
