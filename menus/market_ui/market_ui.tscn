@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://chdrt0r1i8gsg" path="res://menus/market_ui/Wood_Panel_Brown.webp" id="6_yylgi"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="9_8l3iy"]
 [ext_resource type="Texture2D" uid="uid://com110htrgu37" path="res://menus/market_ui/Arrows_Spritesheet.webp" id="10_prpwn"]
+[ext_resource type="Texture2D" uid="uid://bqgluk8njq02m" path="res://menus/market_ui/Wood_Panel_Greyscale.webp" id="10_pxk6v"]
 [ext_resource type="Texture2D" uid="uid://crqb6442tbnvh" path="res://menus/market_ui/Dollar_Sign.webp" id="11_88myq"]
 
 [sub_resource type="Resource" id="Resource_sdoge"]
@@ -43,11 +44,10 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h01h4"]
-blend_mode = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4by0"]
-bg_color = Color(0.560287, 0.652531, 0.758584, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tmsf"]
+texture = ExtResource("10_pxk6v")
+region_rect = Rect2(0, 139.782, 2021, 814.564)
+modulate_color = Color(0.37, 0.2886, 0.2072, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v2fpt"]
 blend_mode = 3
@@ -226,7 +226,7 @@ layout_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="BottomStuff" type="Panel" parent="Control/Panel"]
-material = SubResource("CanvasItemMaterial_h01h4")
+self_modulate = Color(2, 2, 2, 1)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -235,7 +235,7 @@ anchor_bottom = 1.0
 offset_top = -183.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_p4by0")
+theme_override_styles/panel = SubResource("StyleBoxTexture_0tmsf")
 metadata/_edit_lock_ = true
 
 [node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
@@ -427,6 +427,43 @@ offset_bottom = 35.0
 grow_horizontal = 2
 text = "The Cabbage SHop"
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.0784314, 0.054902, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Panel/BottomStuff"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_right = -1103.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.109804, 0.0941176, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control/Panel/BottomStuff"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1103.0
+offset_top = -4.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.109804, 0.0941176, 1)
 
 [node name="Panel2" type="Panel" parent="Control"]
 layout_mode = 0
