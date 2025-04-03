@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfqmbmrnum8ic"]
+[gd_scene load_steps=8 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
