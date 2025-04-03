@@ -47,6 +47,7 @@ func _ready() -> void:
 		if _purchase_quantity < 0:
 			_purchase_quantity = 0
 		_update_purchase_display()
+		_tween_quantity_number()
 	)
 	
 	%RightArrow.pressed.connect(func():
@@ -55,6 +56,7 @@ func _ready() -> void:
 			_purchase_quantity = ABSOLUTE_ITEM_MAX
 		# TODO: Is there a maximum quantity?
 		_update_purchase_display()
+		_tween_quantity_number()
 	)
 	
 	# Select one of the buttons. NOTE: This assumes that ingredient_container
@@ -71,6 +73,11 @@ func _ready() -> void:
 func _update_purchase_display():
 	quantity_number.text = str(_purchase_quantity)
 	total_price.text = str("$", _get_current_purchase_price())
+	
+func _tween_quantity_number() -> void:
+	var tween := create_tween()
+	tween.tween_property(quantity_number, "scale", Vector2.ONE * 1.14, 0.1)
+	tween.tween_property(quantity_number, "scale", Vector2.ONE       , 0.3)
 
 func select_item(item: ItemData) -> void:
 	print("selected item `%s`" % item.code_name)
