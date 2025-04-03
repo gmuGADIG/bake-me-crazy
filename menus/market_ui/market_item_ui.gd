@@ -6,4 +6,4 @@ class_name MarketItemUI extends ReferenceRect
 
 func set_item(item: ItemData) -> void:
 	food_sprite.texture = item.icon
-	price_label.text = str(item.price)
+	price_label.text = str("$", item.price)
