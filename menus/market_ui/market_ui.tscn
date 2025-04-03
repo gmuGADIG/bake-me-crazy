@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=28 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
@@ -43,6 +43,22 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sahb7"]
+bg_color = Color(0, 0, 0, 0.305882)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tmsf"]
 texture = ExtResource("10_pxk6v")
@@ -142,8 +158,8 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 36.0
-offset_top = -407.0
+offset_left = 67.0
+offset_top = -377.0
 offset_right = 540.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -162,12 +178,12 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
 
 [node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
-self_modulate = Color(1, 1, 1, 0.2)
 layout_mode = 0
-offset_left = 20.0
+offset_left = 47.0
 offset_top = 52.0
-offset_right = 593.0
+offset_right = 623.0
 offset_bottom = 409.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sahb7")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/TopStuff/IngredientList"]
 layout_mode = 1
