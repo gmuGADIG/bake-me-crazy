@@ -110,6 +110,7 @@ theme_override_constants/margin_right = 9
 script = ExtResource("2_1a7hx")
 
 [node name="Panel" type="Panel" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
