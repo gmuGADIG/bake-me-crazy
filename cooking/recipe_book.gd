@@ -7,10 +7,12 @@ var current_page = 0
 # Left page of Recipe book
 @onready var food_name_left = $"Book/page Left/Food name"
 @onready var food_description_left = $"Book/page Left/Food Description"
+@onready var food_icon_left = $"Book/page Left/Food Icon-Image"
 
 # Right page of Recipe book
 @onready var food_name_right = $"Book/page Right/Food name"
 @onready var food_description_right = $"Book/page Right/Food Description"
+@onready var food_icon_right = $"Book/page Right/Food Icon-Image"
 
 
 func _ready() -> void:
@@ -23,10 +25,12 @@ func update_displayed_recipes() -> void:
 	# Shows text on the page
 	food_name_left.text = left_recipe.name
 	food_description_left.text = left_recipe.instructions
+	food_icon_left.texture = left_recipe.food_image
 	
 	# Shows text on the right page
 	food_name_right.text = right_recipe.name
 	food_description_right.text = right_recipe.instructions
+	food_icon_right.texture = right_recipe.food_image
 
 func _on_left_button_pressed() -> void:
 	if current_page <= 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=21 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://cooking/recipe_book.gd" id="1_5jpiq"]
 [ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="1_qwwkm"]
@@ -6,16 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="2_n4m5k"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_n7opr"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_pwtii"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="3_artw4"]
+[ext_resource type="Texture2D" uid="uid://brufn1b0gmr0t" path="res://temp_art/gartic/iced_up_waluigi.png" id="4_y43au"]
 
 [sub_resource type="Resource" id="Resource_oqry2"]
 script = ExtResource("2_pwtii")
 name = "Croissant"
+food_image = ExtResource("3_artw4")
 instructions = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite. Croissants are beautiful when you slice them open, unraveling their layers to the harmony of the crips outside and light, airy center. This pastry is great for intermediate-level bakers, but can also be a challenge for beginners"
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_d3qea"]
 script = ExtResource("2_pwtii")
 name = "Food Item #2"
+food_image = ExtResource("4_y43au")
 instructions = "This will list all the instructions
 
 1. Help
