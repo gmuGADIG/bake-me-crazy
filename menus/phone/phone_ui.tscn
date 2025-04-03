@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=10 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
 [ext_resource type="Script" path="res://menus/phone/phone_screens.gd" id="2_1a7hx"]
 [ext_resource type="Texture2D" uid="uid://c54mcqibxeokk" path="res://temp_art/brightened_temp_game_icon.png" id="3_5sgex"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liewr"]
 border_width_left = 4
@@ -141,10 +142,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = -2
-theme_override_constants/v_separation = -12
+theme_override_constants/v_separation = -15
 columns = 2
 
 [node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
@@ -185,21 +187,13 @@ texture_normal = ExtResource("1_p0egn")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
+[node name="BackButton" type="TextureButton" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="TextureButton6" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-texture_normal = ExtResource("1_p0egn")
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("5_vvy46")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -221,4 +215,5 @@ grow_horizontal = 2
 
 [connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton" to="Panel/MarginContainer" method="_on_app_pressed" binds= [0]]
 [connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton2" to="Panel/MarginContainer" method="_on_app_pressed" binds= [1]]
+[connection signal="pressed" from="Panel/MarginContainer/BackButton" to="Panel/MarginContainer" method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/PhoneTop" to="." method="_on_phone_top_pressed"]

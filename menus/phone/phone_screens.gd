@@ -6,8 +6,10 @@ class_name PhoneScreen
 
 @onready var HomeScreen = %Screen
 @onready var TestScreen = %Panel
+@onready var BackButton = %BackButton
 
 func _ready() -> void:
+	BackButton.visible = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +20,7 @@ func close_screen() -> void:
 	pass
 	
 func open_screen() -> void:
+	BackButton.visible = false
 	pass
 
 
@@ -28,7 +31,14 @@ func _on_app_pressed(button_id: int) -> void:
 			print("button 0")
 			HomeScreen.visible = false
 			TestScreen.visible = true
-			
+			BackButton.visible = true
 		1:
 			pass
 	pass # Replace with function body.
+	
+func _on_back_pressed() -> void:
+	print("take it back now yall")
+	TestScreen.visible = false
+	HomeScreen.visible = true
+	BackButton.visible = false
+	pass
