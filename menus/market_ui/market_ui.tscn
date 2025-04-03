@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=23 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="3_up5f4"]
 [ext_resource type="Texture2D" uid="uid://chdrt0r1i8gsg" path="res://menus/market_ui/Wood_Panel_Brown.webp" id="6_yylgi"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="9_8l3iy"]
+[ext_resource type="Texture2D" uid="uid://bqgluk8njq02m" path="res://menus/market_ui/Wood_Panel_Greyscale.webp" id="10_pxk6v"]
+[ext_resource type="Texture2D" uid="uid://crqb6442tbnvh" path="res://menus/market_ui/Dollar_Sign.webp" id="11_88myq"]
 
 [sub_resource type="Resource" id="Resource_sdoge"]
 script = ExtResource("2_6ghu5")
@@ -68,12 +70,15 @@ corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8vm8i"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3aq8m"]
+texture = ExtResource("10_pxk6v")
+modulate_color = Color(0.98132, 0.896556, 0.869155, 1)
+
 [node name="MarketUI" type="CanvasLayer"]
 script = ExtResource("1_exijc")
 items = Array[ExtResource("2_6ghu5")]([SubResource("Resource_sdoge"), SubResource("Resource_rnmr2"), SubResource("Resource_sdoge")])
 
 [node name="TMP_BG" type="TextureRect" parent="."]
-visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_rr088")
@@ -89,6 +94,7 @@ theme = ExtResource("2_udxc2")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="Control"]
+clip_children = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,23 +204,6 @@ metadata/_edit_lock_ = true
 [node name="IngredientSelector10" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
 layout_mode = 2
 metadata/_edit_lock_ = true
-
-[node name="Panel" type="PanelContainer" parent="Control/Panel/TopStuff"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 13.0
-offset_right = 149.0
-offset_bottom = 46.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/Panel/TopStuff/Panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 6
-theme_override_constants/margin_right = 6
-
-[node name="TotalPrice2" type="Label" parent="Control/Panel/TopStuff/Panel/MarginContainer"]
-layout_mode = 2
-text = "You have $0.00
-"
 
 [node name="BottomStuff" type="Panel" parent="Control/Panel"]
 layout_mode = 1
@@ -407,3 +396,32 @@ offset_bottom = 35.0
 grow_horizontal = 2
 text = "The Cabbage SHop"
 horizontal_alignment = 1
+
+[node name="Container" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 13.0
+offset_right = 247.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3aq8m")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 6
+
+[node name="TotalPrice2" type="Label" parent="Control/Container/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.00"
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/Container/MarginContainer/TotalPrice2"]
+layout_mode = 0
+offset_left = -34.0
+offset_top = 6.0
+offset_right = 6.0
+offset_bottom = 46.0
+texture = ExtResource("11_88myq")
+expand_mode = 1
