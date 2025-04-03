@@ -1,7 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=27 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
-[ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
 [ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
@@ -113,11 +112,6 @@ corner_radius_bottom_left = 5
 [node name="MarketUI" type="CanvasLayer"]
 script = ExtResource("1_exijc")
 items = Array[ExtResource("2_6ghu5")]([SubResource("Resource_sdoge"), SubResource("Resource_rnmr2"), SubResource("Resource_sdoge")])
-
-[node name="TMP_BG" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_rr088")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
