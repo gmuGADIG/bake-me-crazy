@@ -6,10 +6,16 @@ class_name PhoneScreen
 
 @onready var HomeScreen = %Screen
 @onready var TestScreen = %Panel
+@onready var TestScreen2 = %Panel2
+@onready var TestScreen3 = %Panel3
+@onready var TestScreen4 = %Panel4
 @onready var BackButton = %BackButton
+
+var current_menu = null
 
 func _ready() -> void:
 	BackButton.visible = false
+	current_menu = HomeScreen #the current menu that is already open is the home screen of the phone
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,22 +29,44 @@ func open_screen() -> void:
 	BackButton.visible = false
 	pass
 
+func show_menu(menu): #parameter is the unique variable name of the panel screens on the phone
+	current_menu.visible = false #whatever screen is currently "open", it will "close" that
+	menu.visible = true # "Opens" the desired menu
+	current_menu = menu # makes the "open" menu the new current menu screen open
 
 func _on_app_pressed(button_id: int) -> void:
+	#var screen_list = [1, 2, 3]
+	#for i in range(screen_list.size()):
+	#for screen in screen_list:
+		#screen.name
+		#if i == opened_screen:
+			#screen_list[i].visble = true
+		#else:
+			#screen_list[i].visible = false
+	
+	
 	print(button_id)
 	match button_id:
-		0:
-			print("button 0")
-			HomeScreen.visible = false
-			TestScreen.visible = true
-			BackButton.visible = true
 		1:
-			pass
+			print("button 1")
+			show_menu(TestScreen)
+			BackButton.visible = true
+		2:
+			print("button 2")
+			show_menu(TestScreen2)
+			BackButton.visible = true
+		3:
+			print("button 3")
+			show_menu(TestScreen3)
+			BackButton.visible = true
+		4:
+			print("button 4")
+			show_menu(TestScreen4)
+			BackButton.visible = true
 	pass # Replace with function body.
 	
 func _on_back_pressed() -> void:
 	print("take it back now yall")
-	TestScreen.visible = false
-	HomeScreen.visible = true
+	show_menu(HomeScreen)
 	BackButton.visible = false
 	pass

@@ -124,6 +124,48 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.623529, 1, 1, 1)
 
+[node name="Panel2" type="Panel" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97766, 0.811356, 0.793624, 1)
+
+[node name="Panel3" type="Panel" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.628921, 0.96398, 0.418176, 1)
+
+[node name="Panel4" type="Panel" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.960114, 0.740453, 0.926453, 1)
+
 [node name="Screen" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
 clip_children = 1
@@ -166,6 +208,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture_normal = ExtResource("1_p0egn")
+texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -175,6 +218,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture_normal = ExtResource("1_p0egn")
+texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -184,6 +228,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture_normal = ExtResource("1_p0egn")
+texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -213,7 +258,9 @@ offset_right = 100.0
 offset_bottom = 30.0
 grow_horizontal = 2
 
-[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton" to="Panel/MarginContainer" method="_on_app_pressed" binds= [0]]
-[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton2" to="Panel/MarginContainer" method="_on_app_pressed" binds= [1]]
+[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton" to="Panel/MarginContainer" method="_on_app_pressed" binds= [1]]
+[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton2" to="Panel/MarginContainer" method="_on_app_pressed" binds= [2]]
+[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton3" to="Panel/MarginContainer" method="_on_app_pressed" binds= [3]]
+[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton4" to="Panel/MarginContainer" method="_on_app_pressed" binds= [4]]
 [connection signal="pressed" from="Panel/MarginContainer/BackButton" to="Panel/MarginContainer" method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/PhoneTop" to="." method="_on_phone_top_pressed"]
