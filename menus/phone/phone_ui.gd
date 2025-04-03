@@ -5,6 +5,7 @@ var phone_opened = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	phone_opened = false
+	$Panel/AnimationPlayer.play("open_phone")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,8 +22,8 @@ func _on_phone_top_pressed() -> void:
 	#TODO: Play animations
 	if phone_opened:
 		phone_opened = false
-		$Panel/AnimationPlayer.play("open_phone")
+		#$Panel/AnimationPlayer.play("open_phone")
 	else:
 		print("opened")
 		phone_opened = true
-		$Panel/AnimationPlayer.play("RESET")
+		#$Panel/AnimationPlayer.play("RESET")

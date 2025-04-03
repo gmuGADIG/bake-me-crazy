@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=9 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
+[ext_resource type="Script" path="res://menus/phone/phone_screens.gd" id="2_1a7hx"]
 [ext_resource type="Texture2D" uid="uid://c54mcqibxeokk" path="res://temp_art/brightened_temp_game_icon.png" id="3_5sgex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liewr"]
@@ -106,10 +107,33 @@ grow_vertical = 2
 theme_override_constants/margin_left = 9
 theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 9
+script = ExtResource("2_1a7hx")
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.623529, 1, 1, 1)
 
 [node name="Screen" type="Panel" parent="Panel/MarginContainer"]
+unique_name_in_owner = true
 clip_children = 1
 layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Screen"]
 layout_mode = 1
@@ -194,4 +218,6 @@ offset_right = 100.0
 offset_bottom = 30.0
 grow_horizontal = 2
 
+[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton" to="Panel/MarginContainer" method="_on_app_pressed" binds= [0]]
+[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton2" to="Panel/MarginContainer" method="_on_app_pressed" binds= [1]]
 [connection signal="pressed" from="Panel/PhoneTop" to="." method="_on_phone_top_pressed"]
