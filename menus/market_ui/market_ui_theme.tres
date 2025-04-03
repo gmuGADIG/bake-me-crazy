@@ -1,4 +1,29 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://lpkeby7s3dtq"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://bmusolgpsdt66"]
+
+[ext_resource type="Texture2D" uid="uid://yytg0qnv63ow" path="res://menus/market_ui/Gold_Button.webp" id="1_r51at"]
+[ext_resource type="Texture2D" uid="uid://bojg70okek4t8" path="res://menus/market_ui/scroll_bar_scaled.png" id="2_06rsr"]
+[ext_resource type="Texture2D" uid="uid://dlsolfijbixlp" path="res://menus/market_ui/Scroll_bar_bas.webp" id="2_ho58u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yoe4m"]
+texture = ExtResource("1_r51at")
+region_rect = Rect2(0, 113.024, 512, 257.025)
+modulate_color = Color(0.277528, 0.277528, 0.277528, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfyvm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fyvc"]
+texture = ExtResource("1_r51at")
+region_rect = Rect2(0, 113.024, 512, 257.025)
+modulate_color = Color(1.05, 1.05, 1.05, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiuc6"]
+texture = ExtResource("1_r51at")
+region_rect = Rect2(0, 113.024, 512, 257.025)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_htv0r"]
+texture = ExtResource("1_r51at")
+region_rect = Rect2(0, 113.024, 512, 257.025)
+modulate_color = Color(0.505344, 0.505344, 0.505344, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,22 +36,28 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbg3"]
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ni70k"]
+texture = ExtResource("2_06rsr")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goc3f"]
-content_margin_left = 7.0
-content_margin_right = 7.0
-bg_color = Color(0.223529, 0.223529, 0.223529, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltuvl"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+texture = ExtResource("2_ho58u")
 
 [resource]
+Button/colors/font_color = Color(0.180392, 0.109804, 0.0941176, 1)
+Button/colors/font_disabled_color = Color(0.712129, 0.712129, 0.712129, 1)
+Button/colors/font_focus_color = Color(0.257128, 0.164035, 0.143338, 1)
+Button/colors/font_hover_color = Color(0.180392, 0.109804, 0.0941176, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_yoe4m")
+Button/styles/focus = SubResource("StyleBoxEmpty_gfyvm")
+Button/styles/hover = SubResource("StyleBoxTexture_1fyvc")
+Button/styles/normal = SubResource("StyleBoxTexture_hiuc6")
+Button/styles/pressed = SubResource("StyleBoxTexture_htv0r")
 Panel/styles/panel = SubResource("StyleBoxFlat_g6sy5")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_0fbg3")
-VScrollBar/styles/scroll = SubResource("StyleBoxFlat_goc3f")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_ni70k")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_ltuvl")

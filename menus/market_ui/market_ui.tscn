@@ -1,12 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=20 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://dtl47n1djoprk" path="res://temp_art/temp ui/programmer-art-market-bg.png" id="1_rr088"]
 [ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
-[ext_resource type="Theme" uid="uid://lpkeby7s3dtq" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
+[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="3_up5f4"]
+[ext_resource type="Texture2D" uid="uid://chdrt0r1i8gsg" path="res://menus/market_ui/Wood_Panel_Brown.webp" id="6_yylgi"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="9_8l3iy"]
 
 [sub_resource type="Resource" id="Resource_sdoge"]
 script = ExtResource("2_6ghu5")
@@ -24,14 +26,8 @@ quality = 1
 icon = ExtResource("3_up5f4")
 price = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 1
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kuoe"]
+texture = ExtResource("6_yylgi")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbns"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -56,6 +52,15 @@ border_width_right = 1
 border_width_bottom = 2
 corner_radius_top_left = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rc7sd"]
 
@@ -84,7 +89,6 @@ theme = ExtResource("2_udxc2")
 metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="Control"]
-self_modulate = Color(0.375005, 0.266502, 0.0763347, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,7 +99,7 @@ offset_right = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_g6sy5")
+theme_override_styles/panel = SubResource("StyleBoxTexture_0kuoe")
 
 [node name="TopStuff" type="Control" parent="Control/Panel"]
 layout_mode = 1
@@ -234,7 +238,9 @@ offset_top = 68.0
 offset_right = 269.0
 offset_bottom = 115.0
 grow_horizontal = 2
+pivot_offset = Vector2(95, 24)
 text = "Buy"
+script = ExtResource("9_8l3iy")
 
 [node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
 layout_mode = 1
@@ -246,7 +252,9 @@ offset_top = 68.0
 offset_right = 461.0
 offset_bottom = 115.0
 grow_horizontal = 2
+pivot_offset = Vector2(96, 25)
 text = "Cancel"
+script = ExtResource("9_8l3iy")
 
 [node name="Control" type="Control" parent="Control/Panel/BottomStuff"]
 anchors_preset = 0
