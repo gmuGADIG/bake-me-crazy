@@ -1,14 +1,22 @@
-extends Node2D
+extends FoodStep
 
+##max value image can stretch in a single pull
 @export var maxStretch: float = 200
-@export var stretchPerFrame : float = 0.05
-@export var positionOffset: float = 0.1
+##how much the image is scaled over a second when being pulled
+@export var stretchPerSec : float = 0.05
+##Scale these to work with maxPoints, less points closer you get to center
+@export_group("Point gain parameters")
+##how many notches on the slider make multiple of 10, >= 100
+@export var maxPoints: = 1000
 @export var fastPointGain: int = 3
 @export var midPointGain: int = 2
 @export var slowPointGain: int = 1
-var pointGain:int
+##When point gain changes to mid
+@export var midThreshold: int = 3000
+##when point gain changes to slow
+@export var slowThreshold: int = 4000
 
-@export var maxPoints: = 1000
+var pointGain:int
 
 @onready var spriteRect: NinePatchRect = $CanvasLayer/NinePatchRect
 @onready var meter: VSlider =$CanvasLayer/VSlider
@@ -22,6 +30,7 @@ var centerY: float
 var kneadPoints: float
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spriteRect.pivot_offset = Vector2(spriteRect.size.x/2, spriteRect.size.y/2)
 	meter.max_value = maxPoints
 	pointGain = fastPointGain
 	finalScoreText.visible = false
@@ -42,26 +51,24 @@ func _process(delta: float) -> void:
 		kneading = false
 		canKnead = false
 		finalScoreText.visible = true
-		finalScoreText.text = "FINAL VALUE " + str(meter.value/10)
+		finalScoreText.text = "FINAL VALUE " + str(meter.value/(maxPoints/100))
 		
 		
 	if kneading and canKnead:
 		var stretch : float = lastPosY- get_global_mouse_position().y
 		if(stretch > 0 and get_global_mouse_position().y != lastPosY):
 			if(abs(stretch) <= maxStretch):
-				spriteRect.size.y += stretchPerFrame * delta
-				spriteRect.position.y -= positionOffset
+				spriteRect.scale.y += stretchPerSec * delta
 				meter.value += pointGain
 		elif(stretch < 0 and get_global_mouse_position().y != lastPosY):
 			if(abs(stretch) <= maxStretch):
-				spriteRect.size.y += stretchPerFrame * delta
-				spriteRect.position.y += positionOffset
+				spriteRect.scale.y += stretchPerSec * delta
 				meter.value += pointGain
 				
 		
-		if(meter.value > 400):
+		if(meter.value > slowThreshold):
 			pointGain = slowPointGain
-		elif meter.value > 250:
+		elif meter.value > midThreshold:
 			pointGain = midPointGain
 		lastPosY = get_global_mouse_position().y	
 			

@@ -7,16 +7,23 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_usyqt"]
 size = Vector2(20, 34.0667)
 
-[node name="Kneading" type="Node2D"]
-position = Vector2(513, 306)
+[node name="Kneading" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 513.0
+offset_top = 306.0
+offset_right = 513.0
+offset_bottom = 306.0
 scale = Vector2(15, 15)
 script = ExtResource("1_llm4v")
 maxStretch = 150.0
-stretchPerFrame = 50.0
-positionOffset = 3.0
-fastPointGain = 5
-midPointGain = 3
-slowPointGain = 2
+stretchPerSec = 0.1
+maxPoints = 10000
+fastPointGain = 30
+midPointGain = 15
+slowPointGain = 10
+midThreshold = 2000
+slowThreshold = 3000
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -38,6 +45,7 @@ offset_right = 78.9999
 offset_bottom = 143.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(130, 130)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_u1j4f")
