@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=19 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://cooking/recipe_book.gd" id="1_5jpiq"]
 [ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="1_qwwkm"]
@@ -6,18 +6,83 @@
 [ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="2_n4m5k"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_n7opr"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_pwtii"]
-[ext_resource type="Script" path="res://left_button.gd" id="4_ax4tv"]
 
 [sub_resource type="Resource" id="Resource_oqry2"]
 script = ExtResource("2_pwtii")
-name = "Test Name"
-ingredients = {}
+name = "Croissant"
+instructions = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite. Croissants are beautiful when you slice them open, unraveling their layers to the harmony of the crips outside and light, airy center. This pastry is great for intermediate-level bakers, but can also be a challenge for beginners"
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_d3qea"]
 script = ExtResource("2_pwtii")
-name = ""
-ingredients = {}
+name = "Food Item #2"
+instructions = "This will list all the instructions
+
+1. Help
+2. I
+3. r e q u i r e
+4. S U S T E N A N C E
+5. joe mama"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_82m3y"]
+script = ExtResource("2_pwtii")
+name = "Food Item #3"
+instructions = "e"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_piyw4"]
+script = ExtResource("2_pwtii")
+name = "Food Item #4"
+instructions = "f"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_bcias"]
+script = ExtResource("2_pwtii")
+name = "Food Item #5"
+instructions = "Joe mama"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_2j335"]
+script = ExtResource("2_pwtii")
+name = "Food Item #6"
+instructions = "your"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_mbxs7"]
+script = ExtResource("2_pwtii")
+name = "Food Item #7"
+instructions = "mom"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_152om"]
+script = ExtResource("2_pwtii")
+name = "Food Item #8"
+instructions = "eeeeeeeee"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_jy2si"]
+script = ExtResource("2_pwtii")
+name = "Food Item #9"
+instructions = "big bruh"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_nt2kn"]
+script = ExtResource("2_pwtii")
+name = "Food Item #10"
+instructions = "biggest bruh"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_2l5fl"]
+script = ExtResource("2_pwtii")
+name = "Food Item #11"
+instructions = "omg I can't take this anymore..."
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_36ugh"]
+script = ExtResource("2_pwtii")
+name = "Food Item #12"
+instructions = "boi if you don getcho pickle chin ahh boi affro head ahh boi if you dont calyo ahh boi stank ahh boi be like khlkhlkhkhlkhlhklhklhkhlfgflgkfglkhlhklhklhkhklh"
 is_locked = false
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -28,7 +93,7 @@ anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 650.0
 script = ExtResource("1_5jpiq")
-recipes = Array[ExtResource("2_pwtii")]([SubResource("Resource_oqry2"), SubResource("Resource_d3qea")])
+recipes = Array[ExtResource("2_pwtii")]([SubResource("Resource_oqry2"), SubResource("Resource_d3qea"), SubResource("Resource_82m3y"), SubResource("Resource_piyw4"), SubResource("Resource_bcias"), SubResource("Resource_2j335"), SubResource("Resource_mbxs7"), SubResource("Resource_152om"), SubResource("Resource_jy2si"), SubResource("Resource_nt2kn"), SubResource("Resource_2l5fl"), SubResource("Resource_36ugh")])
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(577, 322)
@@ -58,24 +123,24 @@ offset_right = 500.0
 offset_bottom = 590.0
 
 [node name="Food Icon-Image" type="Sprite2D" parent="Control/Book/page Left"]
-position = Vector2(105, 85)
+position = Vector2(228, 72)
 texture = ExtResource("2_n7opr")
 
 [node name="Food name" type="Label" parent="Control/Book/page Left"]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 187.0
-offset_right = 134.0
-offset_bottom = 210.0
+offset_left = 125.0
+offset_top = 149.0
+offset_right = 240.0
+offset_bottom = 172.0
 scale = Vector2(2, 1.72667)
 text = "Food Item One"
 
 [node name="Food Description" type="Label" parent="Control/Book/page Left"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 259.0
-offset_right = 491.0
-offset_bottom = 503.0
+offset_left = 26.0
+offset_top = 210.0
+offset_right = 425.0
+offset_bottom = 454.0
 text = "This will list all the instructions
 
 1.
@@ -95,7 +160,6 @@ scale = Vector2(0.15, 0.15)
 text = "Left
 "
 icon = ExtResource("1_xq3ro")
-script = ExtResource("4_ax4tv")
 
 [node name="Bake Button" type="Button" parent="Control/Book/page Left"]
 layout_mode = 0
@@ -105,19 +169,6 @@ offset_right = 433.0
 offset_bottom = 573.0
 text = "BAKE"
 
-[node name="Food Ingredients" type="Label" parent="Control/Book/page Left"]
-layout_mode = 0
-offset_left = 209.0
-offset_top = 32.0
-offset_right = 428.0
-offset_bottom = 178.0
-text = "This includes ingredients:
-- ABCDE
-- FGHIJ
-- KLMNO
-- PQRST
-- UUU"
-
 [node name="page Right" type="Panel" parent="Control/Book"]
 layout_mode = 0
 offset_left = 500.0
@@ -125,24 +176,24 @@ offset_right = 1000.0
 offset_bottom = 590.0
 
 [node name="Food Icon-Image" type="Sprite2D" parent="Control/Book/page Right"]
-position = Vector2(76, 86)
+position = Vector2(257, 84)
 texture = ExtResource("2_n7opr")
 
 [node name="Food name" type="Label" parent="Control/Book/page Right"]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 188.0
-offset_right = 162.0
-offset_bottom = 211.0
+offset_left = 128.0
+offset_top = 176.0
+offset_right = 257.0
+offset_bottom = 199.0
 scale = Vector2(2, 1.72667)
 text = "Food Item Two"
 
 [node name="Food Description" type="Label" parent="Control/Book/page Right"]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 258.0
-offset_right = 403.0
-offset_bottom = 472.0
+offset_left = 84.0
+offset_top = 244.0
+offset_right = 451.0
+offset_bottom = 458.0
 text = "This will list all the instructions
 
 1:
@@ -171,19 +222,7 @@ offset_right = 366.0
 offset_bottom = 576.0
 text = "BAKE"
 
-[node name="Food Ingredients" type="Label" parent="Control/Book/page Right"]
-layout_mode = 0
-offset_left = 197.0
-offset_top = 26.0
-offset_right = 408.0
-offset_bottom = 163.0
-text = "This includes ingredients:
-- ABCDE
-- FGHIJ
-- KLMNO
-- PQRST
-- UUU"
-
 [connection signal="draw" from="Control" to="Control" method="_on_draw"]
 [connection signal="draw" from="Control/Book/page Left/Food name" to="Control" method="_on_food_name_draw"]
-[connection signal="pressed" from="Control/Book/page Left/Left Button" to="Control/Book/page Left/Left Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/Book/page Left/Left Button" to="Control" method="_on_left_button_pressed"]
+[connection signal="pressed" from="Control/Book/page Right/Right Button" to="Control" method="_on_right_button_pressed"]
