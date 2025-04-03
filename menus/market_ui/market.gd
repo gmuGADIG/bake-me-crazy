@@ -56,6 +56,17 @@ func _ready() -> void:
 		# TODO: Is there a maximum quantity?
 		_update_purchase_display()
 	)
+	
+	# Select one of the buttons. NOTE: This assumes that ingredient_container
+	# has childrern, which is also the assumption made by the code above (essentially).
+	var first: MarketItemUI = ingredient_container.get_child(0)
+	if first.visible:
+		# Note: This WILL NOT also select the item! We have to manually do that,
+		# even though the signal is connected. TODO: Why doesn't the signal fire..?
+		first.button.button_pressed = true
+		# The cleanest way to do this is to just manually tell it to emit the pressed
+		# signal?
+		first.button.pressed.emit()
 
 func _update_purchase_display():
 	quantity_number.text = str(_purchase_quantity)
