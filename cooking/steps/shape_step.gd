@@ -1,12 +1,22 @@
 extends FoodStep
 class_name ShapeStep
+## Represents a [code]FoodStep[/code] in which you shape a piece of dough.
+##
+## This script detects applicable player motion and assess a score based on performance.
 
 enum {PENDING, IN_PROGRESS, FINISHED}
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+## The [Control] node that will be used as the central point.
+@export var origin : Control
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready() -> void:
+	pass
+
+func pre_animation():
+	pass
+	
+func start():
+	pass
+
 func _process(delta: float) -> void:
 	pass

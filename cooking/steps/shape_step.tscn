@@ -1,13 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://brd86xxykauvf"]
+[gd_scene load_steps=3 format=3 uid="uid://brd86xxykauvf"]
 
 [ext_resource type="Script" path="res://cooking/steps/shape_step.gd" id="1_q1w3t"]
+[ext_resource type="Texture2D" uid="uid://byl3qjsmifff3" path="res://temp_art/temp_shape_dough.png" id="2_k5uot"]
 
-[node name="shape_step" type="Control"]
+[node name="shape_step" type="Control" node_paths=PackedStringArray("origin")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_q1w3t")
+origin = NodePath("origin")
 
 [node name="origin" type="Control" parent="."]
 anchors_preset = 0
@@ -15,3 +17,8 @@ offset_left = 576.0
 offset_top = 324.0
 offset_right = 576.0
 offset_bottom = 324.0
+
+[node name="Dough" type="Sprite2D" parent="origin"]
+texture_filter = 1
+scale = Vector2(2.52, 2.52)
+texture = ExtResource("2_k5uot")

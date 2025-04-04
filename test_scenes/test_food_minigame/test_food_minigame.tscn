@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c08dkypdwjw3p"]
+[gd_scene load_steps=5 format=3 uid="uid://c08dkypdwjw3p"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="2_duf8a"]
+[ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="2_e6swe"]
 [ext_resource type="PackedScene" uid="uid://sa2qgbo1hv8u" path="res://cooking/steps/pour_flour.tscn" id="3_kov07"]
 
 [node name="TestFoodMinigame" type="CanvasLayer"]
 
 [node name="FoodMinigame" parent="." instance=ExtResource("1_hk2jr")]
+
+[node name="shape_step" parent="FoodMinigame" instance=ExtResource("2_e6swe")]
 
 [node name="StepHeat" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
