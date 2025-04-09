@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://feyopye254fc"]
+
+[ext_resource type="Script" path="res://menus/recipe_book/recipe_book_page.gd" id="1_bnpu1"]
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_0saai"]
+
+[node name="RecipeBookPage" type="Panel"]
+custom_minimum_size = Vector2(396, 360)
+size_flags_horizontal = 3
+script = ExtResource("1_bnpu1")
+
+[node name="FoodIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 34.0
+offset_top = 15.0
+offset_right = 140.0
+offset_bottom = 123.0
+texture = ExtResource("2_0saai")
+expand_mode = 1
+
+[node name="FoodName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -245.0
+offset_right = -31.0
+offset_bottom = -193.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Food Item One"
+
+[node name="FoodDesc" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -197.0
+offset_right = -28.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite."
+autowrap_mode = 2
