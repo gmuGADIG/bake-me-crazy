@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://j2r8wdetym7"]
+
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="1_rnf64"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_8ok2n"]
+
+[resource]
+script = ExtResource("2_8ok2n")
+type = 9
+display_name = "Brownie"
+image = ExtResource("1_rnf64")

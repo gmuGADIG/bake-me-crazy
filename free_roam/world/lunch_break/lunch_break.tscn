@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://vjagi5yawk50"]
+[gd_scene load_steps=12 format=3 uid="uid://vjagi5yawk50"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
 [ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="3_mp5ah"]
-[ext_resource type="Resource" path="res://dialogue/testing/npcclasstest.dtl" id="4_u3tyl"]
+[ext_resource type="Resource" path="res://menus/testing/npcclasstest.dtl" id="4_u3tyl"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_1b70k"]
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="6_4yihm"]
+[ext_resource type="Resource" path="res://dialogue/testing/lunch_break_timeline.dtl" id="6_yor0v"]
 [ext_resource type="PackedScene" uid="uid://dxvby55qeyuei" path="res://test_scenes/lunch_rush_placeholder/lunch_rush_placeholder.tscn" id="7_tqpiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fvyg"]
@@ -83,13 +84,15 @@ position = Vector2(1024, 540)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_mp5ah")
-timeline = ExtResource("4_u3tyl")
+timeline = ExtResource("6_yor0v")
+character_code_name = "salty"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC4" index="0"]
 position = Vector2(0, -117.5)
 shape = SubResource("RectangleShape2D_8fvyg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC4" index="1"]
+modulate = Color(0, 1, 0.2, 1)
 position = Vector2(-13, -106)
 scale = Vector2(0.793333, 0.793333)
 texture = ExtResource("5_1b70k")
