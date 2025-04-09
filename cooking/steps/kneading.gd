@@ -18,9 +18,9 @@ extends FoodStep
 
 var pointGain:int
 
-@onready var spriteRect: NinePatchRect = $CanvasLayer/NinePatchRect
-@onready var meter: VSlider =$CanvasLayer/VSlider
-@onready var finalScoreText = $CanvasLayer/Label
+@onready var spriteRect: NinePatchRect = %NinePatchRect
+@onready var meter: VSlider = %VSlider
+@onready var finalScoreText = %Label
 
 var mouseOver: bool = false
 var canKnead: bool = true;
@@ -35,7 +35,7 @@ func _ready() -> void:
 	pointGain = fastPointGain
 	finalScoreText.visible = false
 	var size : float = get_canvas_transform().get_scale().y
-	print(size)
+	# print(size)
 	
 	pass # Replace with function body.
 
@@ -50,8 +50,16 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("interact"):
 		kneading = false
 		canKnead = false
-		finalScoreText.visible = true
-		finalScoreText.text = "FINAL VALUE " + str(meter.value/(maxPoints/100))
+
+		# calculate score
+		var normalized := meter.value / meter.max_value # convert meter.value to [0, 1]
+		var dist := absf(.5 - normalized) # get distance from .5 on number line
+		var score = remap(dist, 0, .5, 3, 0) # score is a function of dist according to the gdd
+		
+		# finalScoreText.visible = true
+		# finalScoreText.text = "FINAL VALUE " + str(meter.value/(maxPoints/100))
+		
+		finished.emit(score)
 		
 		
 	if kneading and canKnead:
@@ -76,14 +84,14 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	print("mouse over")
+	# print("mouse over")
 	mouseOver = true
 	
 	pass # Replace with function body.
 
 
 func _on_area_2d_mouse_exited() -> void:
-	print("Mouse off")
-	print(spriteRect.scale.y)
+	# print("Mouse off")
+	# print(spriteRect.scale.y)
 	mouseOver = false
 	pass # Replace with function body.
