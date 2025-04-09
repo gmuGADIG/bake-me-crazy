@@ -11,7 +11,7 @@ var current_item: ItemData = null
 
 ## Keeps the purchase count from going above this value. This is potentially
 ## a decent idea because it means the game will never behave unpredictably.
-const ABSOLUTE_ITEM_MAX: int = 99
+const ABSOLUTE_ITEM_MAX: int = 9
 
 ## Gets the per-item price of the currently selected item, if there is one. If
 ## no item is selected, returns 0.
@@ -25,7 +25,7 @@ func _get_current_per_item_price() -> int:
 func _get_current_purchase_price() -> int:
 	return _get_current_per_item_price() * _purchase_quantity
 
-var _purchase_quantity: int = 0
+var _purchase_quantity: int = 1
 
 func _ready() -> void:
 	var button_group = ButtonGroup.new()
@@ -44,16 +44,14 @@ func _ready() -> void:
 	_update_purchase_display()
 	%LeftArrow.pressed.connect(func():
 		_purchase_quantity -= 1
-		if _purchase_quantity < 0:
-			_purchase_quantity = 0
+		_purchase_quantity = clamp(_purchase_quantity, 1, ABSOLUTE_ITEM_MAX)
 		_update_purchase_display()
 		_tween_quantity_number()
 	)
 	
 	%RightArrow.pressed.connect(func():
 		_purchase_quantity += 1
-		if _purchase_quantity > ABSOLUTE_ITEM_MAX:
-			_purchase_quantity = ABSOLUTE_ITEM_MAX
+		_purchase_quantity = clamp(_purchase_quantity, 1, ABSOLUTE_ITEM_MAX)
 		# TODO: Is there a maximum quantity?
 		_update_purchase_display()
 		_tween_quantity_number()
