@@ -9,6 +9,7 @@ bg_color = Color(0.75289, 0.52467, 0.614333, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_vjyrs"]
 
 [node name="SettingsMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,6 +135,7 @@ pivot_offset = Vector2(82, 0)
 text = "Back"
 
 [node name="Infiltration" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("2_r624d")
 bus = &"SFX"
 
