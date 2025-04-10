@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwmajolaxmv26"]
+[gd_scene load_steps=3 format=3 uid="uid://dwmajolaxmv26"]
 
 [ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_ri8w5"]
+[ext_resource type="PackedScene" uid="uid://011we18nsjdu" path="res://cooking/morning_results.tscn" id="2_2ctmu"]
 
 [node name="FoodMinigame" type="Control"]
 layout_mode = 3
@@ -11,3 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_ri8w5")
+
+[node name="MorningResults" parent="." instance=ExtResource("2_2ctmu")]
+visible = false
+layout_mode = 1
