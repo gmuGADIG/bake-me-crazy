@@ -1,12 +1,13 @@
 extends Control
 
 var phone_opened = false
-@onready var HomeScreen = %Panel
+#@onready var HomeScreen = %Contacts
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	phone_opened = false
-	$Panel/AnimationPlayer.play("open_phone")
+	print("gah")
+	#$Panel/AnimationPlayer.play("open_phone")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,11 +22,15 @@ func _process(delta: float) -> void:
 func _on_phone_top_pressed() -> void:  # when the button PhoneTop is pressed, this function should execute
 	#play phone open animation AND pause other input
 	#TODO: Play animations
-	if phone_opened: #change to maybe "if phone_opened == false: 
-		phone_opened = false
+	if phone_opened == false: #change to maybe "if phone_opened == false: 
+		phone_opened = true
+		print("ghryugryhy")
+		get_node("Panel/AnimationPlayer").play("open_phone")
+		
 		# try HomeScreen/AnimationPlayer.play("open_phone")
 		#$Panel/AnimationPlayer.play("open_phone")
 	else:
 		print("opened")
-		phone_opened = true #else if it's already opened, you should close the phone
+		get_node("Panel/AnimationPlayer").play("open_phone", -1, -1, true)
+		phone_opened = false #else if it's already opened, you should close the phone
 		#$Panel/AnimationPlayer.play("RESET")

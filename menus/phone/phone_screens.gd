@@ -5,7 +5,7 @@ class_name PhoneScreen
 ## When a button is clicked a signal will be passed
 
 @onready var HomeScreen = %Screen
-@onready var TestScreen = %Panel
+@onready var TestScreen = %Contacts
 @onready var TestScreen2 = %Panel2
 @onready var TestScreen3 = %Panel3
 @onready var TestScreen4 = %Panel4
@@ -34,6 +34,7 @@ func show_menu(menu): #parameter is the unique variable name of the panel screen
 	menu.visible = true # "Opens" the desired menu
 	current_menu = menu # makes the "open" menu the new current menu screen open
 
+# The 4 apps will be Contacts, Messages, Gallery, and Inventory
 func _on_app_pressed(button_id: int) -> void:
 	#var screen_list = [1, 2, 3]
 	#for i in range(screen_list.size()):

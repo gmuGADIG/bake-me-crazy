@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=11 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
 [ext_resource type="Script" path="res://menus/phone/phone_screens.gd" id="2_1a7hx"]
 [ext_resource type="Texture2D" uid="uid://c54mcqibxeokk" path="res://temp_art/brightened_temp_game_icon.png" id="3_5sgex"]
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="3_m70wx"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liewr"]
@@ -49,6 +50,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_fwirb"]
 resource_name = "open_phone"
+length = 0.75
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -59,7 +61,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(0.535887, 1),
 "update": 0,
-"values": [Vector2(909, 651), Vector2(841, 207)]
+"values": [Vector2(909, 630), Vector2(841, 207)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -110,12 +112,12 @@ theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 9
 script = ExtResource("2_1a7hx")
 
-[node name="Panel" type="Panel" parent="Panel/MarginContainer"]
+[node name="Contacts" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel"]
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Contacts"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,6 +125,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.623529, 1, 1, 1)
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Contacts"]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 297.0
+
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Contacts/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Contacts/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Contacts/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Contacts/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Contacts/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Panel2" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
@@ -138,6 +180,45 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.97766, 0.811356, 0.793624, 1)
 
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel2"]
+offset_right = 184.0
+offset_bottom = 297.0
+
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_m70wx")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="Panel3" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
 visible = false
@@ -151,6 +232,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.628921, 0.96398, 0.418176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/Panel3"]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 297.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel3/ScrollContainer"]
+custom_minimum_size = Vector2(184, 260)
+layout_mode = 2
+columns = 2
+
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Panel3/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("1_p0egn")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Panel4" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
