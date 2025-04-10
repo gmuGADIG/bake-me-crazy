@@ -9,6 +9,8 @@ extends CanvasLayer
 
 var current_item: ItemData = null
 
+@onready var description_box := %Description
+
 ## Keeps the purchase count from going above this value. This is potentially
 ## a decent idea because it means the game will never behave unpredictably.
 const ABSOLUTE_ITEM_MAX: int = 9
@@ -41,11 +43,11 @@ func _ready() -> void:
 			)
 			
 	# Initialize various displays.
-	_update_purchase_display()
+	_update_item_displays()
 	%LeftArrow.pressed.connect(func():
 		_purchase_quantity -= 1
 		_purchase_quantity = clamp(_purchase_quantity, 1, ABSOLUTE_ITEM_MAX)
-		_update_purchase_display()
+		_update_item_displays()
 		_tween_quantity_number()
 	)
 	
@@ -53,7 +55,7 @@ func _ready() -> void:
 		_purchase_quantity += 1
 		_purchase_quantity = clamp(_purchase_quantity, 1, ABSOLUTE_ITEM_MAX)
 		# TODO: Is there a maximum quantity?
-		_update_purchase_display()
+		_update_item_displays()
 		_tween_quantity_number()
 	)
 	
@@ -67,10 +69,16 @@ func _ready() -> void:
 		# The cleanest way to do this is to just manually tell it to emit the pressed
 		# signal?
 		first.button.pressed.emit()
-
-func _update_purchase_display():
+	
+func _update_item_displays():
+	# Update the item quantity
 	quantity_number.text = str(_purchase_quantity)
 	total_price.text = str("$", _get_current_purchase_price())
+	
+	# Update description box
+	description_box.text = "<nothing selected>"
+	if current_item != null:
+		description_box.text = current_item.display_name + "\n" + current_item.description
 	
 func _tween_quantity_number() -> void:
 	var tween := create_tween()
@@ -81,5 +89,5 @@ func select_item(item: ItemData) -> void:
 	print("selected item `%s`" % item.code_name)
 	current_item = item
 	# Must change the display when we change the item.
-	_update_purchase_display()
+	_update_item_displays()
 	

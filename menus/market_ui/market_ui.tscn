@@ -16,6 +16,7 @@
 script = ExtResource("2_6ghu5")
 code_name = "lettuce"
 display_name = "Lettuce"
+description = "Delicious lettuce"
 quality = 1
 icon = ExtResource("3_up5f4")
 price = 15
@@ -24,6 +25,7 @@ price = 15
 script = ExtResource("2_6ghu5")
 code_name = "pork"
 display_name = "Pork"
+description = "Just like the Minecraft movie"
 quality = 1
 icon = ExtResource("3_up5f4")
 price = 15
@@ -295,6 +297,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lg80")
 
 [node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
