@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
 [ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
 [ext_resource type="Script" path="res://menus/market_ui/market_item_ui.gd" id="2_lah3l"]
-[ext_resource type="Texture2D" uid="uid://niqnbcovxf54" path="res://temp_art/stars/star_3.svg" id="3_7cldi"]
+[ext_resource type="Texture2D" uid="uid://niqnbcovxf54" path="res://menus/market_ui/star_3.svg" id="3_7cldi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w7ge"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -88,12 +88,8 @@ expand_mode = 1
 stretch_mode = 6
 metadata/_edit_lock_ = true
 
-[node name="IngredientSelector_Food#TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="IngredientSelector_Food#Stars" type="TextureRect" parent="."]
+[node name="Stars" type="TextureRect" parent="."]
+unique_name_in_owner = true
 modulate = Color(1, 0.801866, 0.429936, 1)
 layout_mode = 1
 anchors_preset = 3
