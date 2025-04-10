@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn5xfkyv5it31"]
+
+[ext_resource type="Script" path="res://cooking/steps/piping_area.gd" id="1_phsmw"]
+[ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="2_nj7f3"]
+[ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="3_0vdmo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dxgi2"]
+radius = 91.0055
+
+[node name="pipping_area" type="Node2D" node_paths=PackedStringArray("sprite_node")]
+script = ExtResource("1_phsmw")
+pipping_sprite = ExtResource("2_nj7f3")
+sprite_node = NodePath("Sprite2D")
+
+[node name="PipingArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipingArea"]
+shape = SubResource("CircleShape2D_dxgi2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.95288, 0.637931)
+texture = ExtResource("3_0vdmo")
+
+[connection signal="mouse_entered" from="PipingArea" to="." method="_on_piping_area_mouse_entered"]
+[connection signal="mouse_exited" from="PipingArea" to="." method="_on_piping_area_mouse_exited"]
