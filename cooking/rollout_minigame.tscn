@@ -5,56 +5,67 @@
 
 [node name="rollout_minigame" type="Node2D"]
 script = ExtResource("1_8miji")
+rollAmount = null
+MAX_SCORE = null
 
 [node name="FullBar" type="ColorRect" parent="."]
-anchors_preset = 9
-anchor_bottom = 1.0
 offset_left = 21.0
 offset_top = 23.0
 offset_right = 49.0
 offset_bottom = 625.0
-grow_vertical = 2
 color = Color(1, 0.0986208, 0.387233, 1)
-
-[node name="Arrow" type="TextureRect" parent="FullBar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.598
-anchor_bottom = 0.598
-offset_left = 40.0
-offset_top = 177.004
-offset_right = 168.0
-offset_bottom = 305.004
-texture = ExtResource("2_qtkrw")
-
-[node name="GreenBar" type="ColorRect" parent="FullBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 69.0
-offset_bottom = -465.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.881706, 0.31818, 1)
 
 [node name="Yellowbar" type="ColorRect" parent="FullBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -533.0
+offset_bottom = -522.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 4.67424)
 color = Color(1, 0.780392, 0, 1)
+metadata/_edit_group_ = true
 
-[node name="Yellowbar2" type="ColorRect" parent="FullBar"]
+[node name="GreenBar" type="ColorRect" parent="FullBar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 137.0
-offset_bottom = -172.0
+offset_top = 223.0
+offset_bottom = -289.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.780392, 0, 1)
+scale = Vector2(1, 0.84)
+color = Color(0, 0.881706, 0.31818, 1)
+
+[node name="Arrow" type="Control" parent="FullBar"]
+anchors_preset = 0
+offset_left = 28.0
+offset_top = 602.0
+offset_right = 68.0
+offset_bottom = 642.0
+
+[node name="Arrow" type="TextureRect" parent="FullBar/Arrow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.714
+anchor_top = -0.04
+anchor_right = -0.714
+anchor_bottom = -0.04
+offset_left = 27.56
+offset_top = -63.4
+offset_right = 155.56
+offset_bottom = 64.6
+texture = ExtResource("2_qtkrw")
+
+[node name="RollingPin" type="Node2D" parent="."]
+position = Vector2(598, 325)
+
+[node name="ColorRect" type="ColorRect" parent="RollingPin"]
+offset_left = -150.0
+offset_top = -20.0
+offset_right = -110.0
+offset_bottom = 20.0
+scale = Vector2(7.88, 1)
+color = Color(1, 0.864101, 0.514702, 1)

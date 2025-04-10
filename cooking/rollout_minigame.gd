@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var arrow := $FullBar/Arrow
 @onready var bar := $FullBar
+@onready var rollingPin := $RollingPin
 
 var mouseHold := false
 @export var rollAmount := 0.0
@@ -13,16 +14,18 @@ var gameHasEnded := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rollAmount = 0.0
 	pass # Replace with function body.
 
 func update_arrow_position():
-	var bar_bottom = bar.position.y + bar.size.y
-	var bar_top = bar.position.y
+	var bar_bottom = bar.global_position.y + bar.size.y
+	var bar_top = bar.global_position.y
 	
 	# Interpolates the arrow's Y position based on rollAmount
-	var new_y = bar_bottom - ((rollAmount / MAX_SCORE) * (bar_bottom - bar_top))
+	var new_y = lerp(bar_bottom, bar_top, rollAmount / MAX_SCORE)
+	#var new_y = bar_bottom - ((rollAmount / MAX_SCORE) * (bar_bottom - bar_top))
 	#sets arrow position
-	arrow.position.y = new_y
+	arrow.global_position.y = new_y
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,14 +49,16 @@ func moveUpDown(event):
 			earningPoints()
 		if event.relative.y < 0:
 			print("Move up")
-			earningPoints
+			earningPoints()
 		
 		
-	# function called to earn points
+	# function called to earn points, additionally, the rolling pin will move up and down
 func earningPoints():
+	
+	
 	if rollAmount < MAX_SCORE:
 		rollAmount += 1
-		
+		rollingPin.global_position.y = get_global_mouse_position(y)
 	print ("current score: ", rollAmount)
 	update_arrow_position()
 	
@@ -62,10 +67,10 @@ func gameEnd():
 	gameHasEnded = true
 	
 	if rollAmount >= 0 and rollAmount < 300:
-		print("Quality: FAIL")
+		print("Score: ",rollAmount, " GRADE: C")
 	elif rollAmount >= 300 and rollAmount < 400:
-		print("Quality: OK")
+		print("Score: ",rollAmount, " GRADE: B!")
 	elif rollAmount >= 400 and rollAmount < 500:
-		print("Quality: EXCELLENT!!!!")
+		print("Score: ",rollAmount, " GRADE: A!!")
 	elif rollAmount >= 500:
-		print("Quality: OVERDONE")
+		print("Score: ",rollAmount - 200, " GRADE: B!")
