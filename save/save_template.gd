@@ -25,7 +25,7 @@ enum DayPhase {
 #- Recipes -#
 
 #- Inventory / Items -#
-@export var money : int
+@export var money : int = 250
 @export var inventory: Array[ItemData] = [] # handled in inventory_system
 
 #- Character Data -#
