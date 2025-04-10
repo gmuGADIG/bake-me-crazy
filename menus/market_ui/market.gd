@@ -69,6 +69,14 @@ func _ready() -> void:
 		_tween_box_scale(%YourMoneyDollar, 1.14)
 	)
 	
+	%CancelButton.pressed.connect(func():
+		# NOTE: This will also queue_free() the UI. Disable the cancel button
+		# so we can't press it again. (Also the buy button, because why not).
+		%CancelButton.disabled = true
+		%BuyButton.disabled = true
+		%AnimationPlayer.play("swipe_out")
+	)
+	
 	# Select one of the buttons. NOTE: This assumes that ingredient_container
 	# has childrern, which is also the assumption made by the code above (essentially).
 	var first: MarketItemUI = ingredient_container.get_child(0)

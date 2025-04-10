@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=30 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
@@ -113,7 +113,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Animation" id="Animation_tg8hl"]
 resource_name = "swipe_in"
-length = 0.6
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -121,8 +121,8 @@ tracks/0/path = NodePath(".:anchor_top")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(0.5, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.812252, 1),
 "update": 0,
 "values": [1.0, 0.0]
 }
@@ -133,7 +133,7 @@ tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(625, 325), Vector2(625, 51)]
@@ -166,53 +166,10 @@ tracks/1/keys = {
 "values": [Vector2(625, 51)]
 }
 
-[sub_resource type="Animation" id="Animation_bjio7"]
-resource_name = "swipe_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:anchor_top")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(625, 51), Vector2(625, 325)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r37fl"]
 _data = {
 "RESET": SubResource("Animation_025ws"),
-"swipe_in": SubResource("Animation_tg8hl"),
-"swipe_out": SubResource("Animation_bjio7")
+"swipe_in": SubResource("Animation_tg8hl")
 }
 
 [node name="MarketUI" type="CanvasLayer"]
@@ -632,7 +589,6 @@ texture = ExtResource("11_88myq")
 expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
-unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_r37fl")
 }
