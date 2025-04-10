@@ -57,6 +57,7 @@ corner_radius_bottom_left = 16
 custom_minimum_size = Vector2(180, 180)
 offset_right = 180.0
 offset_bottom = 180.0
+pivot_offset = Vector2(103, 103)
 theme = ExtResource("1_brkog")
 script = ExtResource("2_lah3l")
 
