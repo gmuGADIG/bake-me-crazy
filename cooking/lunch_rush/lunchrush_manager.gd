@@ -123,7 +123,7 @@ func _physics_process(delta: float) -> void:
 		
 func drizzle(delta : float) -> void:
 	if Input.is_mouse_button_pressed(1): # Left click
-		print()
+		print("Drizzle")
 	pass
 
 func shaker(delta : float) -> void:
@@ -135,8 +135,22 @@ func shaker(delta : float) -> void:
 	
 	
 	if is_shaking_hard_enough():
-		pass
+		if above_food():
+			print("Kaiden is awesome")
+			pass
 	pass
+	
+
+func above_food()-> bool:
+	var space_state = get_world_2d().direct_space_state
+	#use global coordinates, not local to node
+	var query = PhysicsRayQueryParameters2D.create(get_viewport().get_mouse_position(), get_viewport().get_mouse_position()+Vector2(0,100))
+	query.collide_with_areas = true
+	var result = space_state.intersect_ray(query)
+	if result.size() > 0:
+		return true
+	else:
+		return false
 
 func is_shaking_hard_enough() -> bool:
 	##Runs if there is enough data to calculate jerk
@@ -165,7 +179,7 @@ func _on_food_selected(food_index: int) -> void:
 	
 	selected_food = foods[food_index]
 	print(selected_food)
-	$FoodItem/Sprite2D.texture = selected_food.image
+	$FoodItem/FoodItemSprite.texture = selected_food.image
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1162, 0.3	).set_trans(Tween.TRANS_QUAD)

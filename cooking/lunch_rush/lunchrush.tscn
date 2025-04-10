@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=14 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
@@ -12,6 +12,9 @@
 [ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="9_uldua"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ldqc8"]
+radius = 31.8944
 
 [node name="Lunchrush" type="Node2D"]
 script = ExtResource("1_8n1i3")
@@ -44,7 +47,17 @@ z_index = 1
 position = Vector2(-112, 436)
 scale = Vector2(2, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="FoodItem"]
+[node name="Shaker" type="Sprite2D" parent="FoodItem"]
+
+[node name="Area2D" type="Area2D" parent="FoodItem/Shaker"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem/Shaker/Area2D"]
+shape = SubResource("CircleShape2D_ldqc8")
+
+[node name="RayCast2D" type="RayCast2D" parent="FoodItem/Shaker/Area2D/CollisionShape2D"]
+target_position = Vector2(-1, -105.5)
+
+[node name="FoodItemSprite" type="Sprite2D" parent="FoodItem"]
 texture = ExtResource("11_i352t")
 
 [node name="DivorceWoman" type="Sprite2D" parent="."]
