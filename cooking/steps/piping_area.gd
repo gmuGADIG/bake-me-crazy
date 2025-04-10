@@ -1,5 +1,6 @@
 extends Node2D
 
+signal pipping_done
 
 var mouse_over:bool = false
 var pipping: bool = false
@@ -24,6 +25,9 @@ func _process(delta: float) -> void:
 		sprite_node.scale += Vector2(pipping_speed, pipping_speed) * delta
 	if mouse_over and Input.is_action_just_released("interact"):
 		pipping = false
+		pipping_done.emit()
+		set_process(false)
+		
 	pass
 
 func _on_piping_area_mouse_entered() -> void:
