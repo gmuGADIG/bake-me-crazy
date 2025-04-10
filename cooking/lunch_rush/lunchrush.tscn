@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=15 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]

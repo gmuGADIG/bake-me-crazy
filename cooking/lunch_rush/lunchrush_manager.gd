@@ -19,6 +19,7 @@ class MouseData:
 @export var acceleration_threshold : int = 500
 ##Defines at what jerk (the change in acceleration) threshold should the shaker start working
 @export var jerk_threshold : int = 1000
+@export var finisher_raycast_length : int = 250 ## The length of the downward raycast when checking for drizzles and shakers
 
 ##Stores the position of the mouse for the past 8 frames 
 var mouse_positions : Array[MouseData]
@@ -132,6 +133,7 @@ func _physics_process(delta: float) -> void:
 func drizzle(delta : float) -> void:
 	if Input.is_mouse_button_pressed(1): # Left click
 		if above_food():
+			print("drizz")
 			move_toward(current_finisher_percentage, 100.0, percent_gained_per_drizzle)
 	pass
 
@@ -145,18 +147,15 @@ func shaker(delta : float) -> void:
 	
 	if is_shaking_hard_enough():
 		if above_food():
+			print("shake")
 			move_toward(current_finisher_percentage, 100.0, percent_gained_per_shake)
-	pass
-	
-func above_food() -> bool:
-	return true
 	pass
 	
 
 func above_food()-> bool:
 	var space_state = get_world_2d().direct_space_state
 	#use global coordinates, not local to node
-	var query = PhysicsRayQueryParameters2D.create(get_viewport().get_mouse_position(), get_viewport().get_mouse_position()+Vector2(0,100))
+	var query = PhysicsRayQueryParameters2D.create(get_viewport().get_mouse_position(), get_viewport().get_mouse_position()+Vector2(0,finisher_raycast_length))
 	query.collide_with_areas = true
 	var result = space_state.intersect_ray(query)
 	if result.size() > 0:
