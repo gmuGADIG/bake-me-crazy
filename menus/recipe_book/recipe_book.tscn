@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=25 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="3_tl42c"]
+[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="4_8ljyd"]
 [ext_resource type="Texture2D" uid="uid://brufn1b0gmr0t" path="res://temp_art/gartic/iced_up_waluigi.png" id="4_aimad"]
 [ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="5_1tayq"]
 [ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="6_p3kn6"]
@@ -15,6 +16,7 @@ script = ExtResource("2_8r5qq")
 name = "Croissant"
 food_image = ExtResource("3_tl42c")
 instructions = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite."
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_d3qea"]
@@ -26,66 +28,77 @@ instructions = "This will list all the instructions
 2. I
 3. r e q u i r e
 4. S U S T E N A N C E"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_82m3y"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #3"
 instructions = "e"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_piyw4"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #4"
 instructions = "f"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_bcias"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #5"
 instructions = "Joe mama"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_2j335"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #6"
 instructions = "your"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_mbxs7"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #7"
 instructions = "mom"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_152om"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #8"
 instructions = "eeeeeeeee"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_jy2si"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #9"
 instructions = "big bruh"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_nt2kn"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #10"
 instructions = "biggest bruh"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_2l5fl"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #11"
 instructions = "omg I can't take this anymore..."
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_36ugh"]
 script = ExtResource("2_8r5qq")
 name = "Food Item #12"
 instructions = "boi if you don getcho pickle chin ahh boi affro head ahh boi if you dont calyo ahh boi stank ahh boi be like khlkhlkhkhlkhlhklhklhkhlfgflgkfglkhlhklhklhkhklh"
+minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ndtw"]

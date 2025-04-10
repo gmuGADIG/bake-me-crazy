@@ -1,4 +1,4 @@
-extends Node
+class_name RecipeBook extends Node
 
 ## True during the morning shift, when the player has to select some recipes to bake.
 ## False if the player is just browsing their recipes whenever.
@@ -73,4 +73,4 @@ func _toggle_recipe_selection(recipe_idx: int) -> void:
 	update_displayed_recipes()
 
 func _on_finish_button_pressed() -> void:
-	recipes_selected.emit()
+	recipes_selected.emit(selected_recipes)

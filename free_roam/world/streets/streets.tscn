@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="4_uf2h1"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
 [ext_resource type="Resource" path="res://menus/testing/npcclasstest.dtl" id="5_gxowf"]
-[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="5_rdsfc"]
+[ext_resource type="PackedScene" uid="uid://6xw0fbrjfpjl" path="res://cooking/morning_shift/morning_shift.tscn" id="5_r4twl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ey8il"]
 size = Vector2(148, 178)
@@ -48,7 +48,7 @@ position = Vector2(2839, 382)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_r2mm7")
-change_to_scene = ExtResource("5_rdsfc")
+change_to_scene = ExtResource("5_r4twl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Bakery" index="0"]
 shape = SubResource("RectangleShape2D_ssn5p")
@@ -72,7 +72,7 @@ texture = ExtResource("5_61bqb")
 [node name="PlayerPath" parent="." index="2"]
 curve = SubResource("Curve2D_5eqjp")
 
-[node name="Camera2D" parent="PlayerPath/Player" index="2"]
+[node name="Camera2D" parent="PlayerPath/Player" index="3"]
 limit_left = 0
 limit_top = 0
 limit_right = 3456
