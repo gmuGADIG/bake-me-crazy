@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="9_uldua"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
+[ext_resource type="Texture2D" uid="uid://dp4t17cydtkb5" path="res://temp_art/Pesto.png" id="13_qavef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ldqc8"]
 radius = 31.8944
@@ -144,6 +145,9 @@ layout_mode = 2
 [node name="Flavor3" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+
+[node name="FinisherSprite" type="Sprite2D" parent="."]
+texture = ExtResource("13_qavef")
 
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]

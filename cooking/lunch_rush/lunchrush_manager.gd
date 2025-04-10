@@ -54,6 +54,14 @@ var timer_active : bool = false
 ## The most any customer will tip, what the player earns for each item in the best case scenario
 @export var maximum_tip : float = 5.0
 
+
+@export var percent_gained_per_shake : float 
+@export var percent_gained_per_drizzle : float 
+
+##End goal for the finishers is 100.0%
+var current_finisher_percentage : float
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -123,7 +131,8 @@ func _physics_process(delta: float) -> void:
 		
 func drizzle(delta : float) -> void:
 	if Input.is_mouse_button_pressed(1): # Left click
-		print("Drizzle")
+		if above_food():
+			move_toward(current_finisher_percentage, 100.0, percent_gained_per_drizzle)
 	pass
 
 func shaker(delta : float) -> void:
@@ -136,8 +145,11 @@ func shaker(delta : float) -> void:
 	
 	if is_shaking_hard_enough():
 		if above_food():
-			print("Kaiden is awesome")
-			pass
+			move_toward(current_finisher_percentage, 100.0, percent_gained_per_shake)
+	pass
+	
+func above_food() -> bool:
+	return true
 	pass
 	
 
