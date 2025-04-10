@@ -251,6 +251,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_0tmsf")
 metadata/_edit_lock_ = true
 
 [node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -265,6 +266,7 @@ text = "Buy"
 script = ExtResource("9_8l3iy")
 
 [node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -314,6 +316,7 @@ Item Description Item Description Item Description Item Description"
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -483,15 +486,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.180392, 0.109804, 0.0941176, 1)
 
-[node name="Panel2" type="Panel" parent="Control"]
+[node name="YourMoneyPanel" type="Panel" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 107.0
 offset_top = 9.0
 offset_right = 249.0
 offset_bottom = 47.0
+pivot_offset = Vector2(70, 18)
 theme_override_styles/panel = SubResource("StyleBoxFlat_i41wo")
 
-[node name="TotalPrice2" type="Label" parent="Control/Panel2"]
+[node name="YourMoney" type="Label" parent="Control/YourMoneyPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -507,7 +513,8 @@ text = "0.00"
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2"]
+[node name="YourMoneyDollar" type="TextureRect" parent="Control/YourMoneyPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -517,6 +524,6 @@ offset_top = -20.0
 offset_right = 35.0
 offset_bottom = 20.0
 grow_vertical = 2
+pivot_offset = Vector2(20, 19)
 texture = ExtResource("11_88myq")
 expand_mode = 1
-metadata/_edit_lock_ = true

@@ -10,6 +10,9 @@ extends CanvasLayer
 var current_item: ItemData = null
 
 @onready var description_box := %Description
+@onready var buy_button := %BuyButton
+
+@onready var your_money := %YourMoney
 
 ## Keeps the purchase count from going above this value. This is potentially
 ## a decent idea because it means the game will never behave unpredictably.
@@ -59,6 +62,13 @@ func _ready() -> void:
 		_tween_quantity_number()
 	)
 	
+	buy_button.pressed.connect(func():
+		PlayerInventory.buy_item(current_item, _purchase_quantity)
+		_update_item_displays()
+		_tween_box_scale(%YourMoneyPanel, 1.14)
+		_tween_box_scale(%YourMoneyDollar, 1.14)
+	)
+	
 	# Select one of the buttons. NOTE: This assumes that ingredient_container
 	# has childrern, which is also the assumption made by the code above (essentially).
 	var first: MarketItemUI = ingredient_container.get_child(0)
@@ -80,10 +90,18 @@ func _update_item_displays():
 	if current_item != null:
 		description_box.text = current_item.display_name + "\n" + current_item.description
 	
-func _tween_quantity_number() -> void:
+	# Update your money
+	your_money.text = str(PlayerData.data.money)
+	
+	buy_button.disabled = (PlayerData.data.money < _get_current_purchase_price())
+	
+func _tween_box_scale(node: Control, to_scale: float = 1.14) -> void:
 	var tween := create_tween()
-	tween.tween_property(quantity_number, "scale", Vector2.ONE * 1.14, 0.1)
-	tween.tween_property(quantity_number, "scale", Vector2.ONE       , 0.3)
+	tween.tween_property(node, "scale", Vector2.ONE * to_scale, 0.1)
+	tween.tween_property(node, "scale", Vector2.ONE           , 0.3)
+	
+func _tween_quantity_number() -> void:
+	_tween_box_scale(quantity_number, 1.14)
 
 func select_item(item: ItemData) -> void:
 	print("selected item `%s`" % item.code_name)
