@@ -6,27 +6,20 @@ class_name ButtonHover extends Button
 
 @onready var original_scale = scale
 
-func _ready() -> void:
-	mouse_entered.connect(func():
-		create_tween().tween_property(self, "scale", Vector2.ONE * hover_scale * original_scale, duration)\
-		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-	)
-	
-	mouse_exited.connect(func():
-		create_tween().tween_property(self, "scale", Vector2.ONE * original_scale, duration)\
-		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	)
-	
-	pressed.connect(func():
-		var t = create_tween()
-		t.tween_property(self, "scale", Vector2.ONE * pressed_scale * original_scale, duration)\
-			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-		t.tween_property(self, "scale", Vector2.ONE * original_scale, duration)\
-			.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	)
+var lambda: float = 0.0
 
-#func _process(delta: float) -> void:
-	#if is_hovered():
-		#create_tween().tween_property(self, "scale", Vector2.ONE * hover_scale, duration)
-	#else:
-		#create_tween().tween_property(self, "scale", Vector2.ONE, duration)
+func _ready() -> void:
+	# Compute lambda for correct framerate-independent
+	# lerp smoothing. See: https://pbs.twimg.com/media/GGUR6TVWQAATdwe?format=png&name=large
+	lambda = -duration / (log(0.01) / log(2))
+
+func _process(delta: float) -> void:
+	# NOTE: Kinda sad that we recompute this, ideally it gets cached somewhere.
+	var fac := 1.0 - pow(2.0, -delta / lambda)
+	var target_scale := 1.0
+	if button_pressed:
+		target_scale *= pressed_scale
+	elif is_hovered():
+		target_scale *= hover_scale
+	
+	scale = lerp(scale, original_scale * target_scale, fac)
