@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7gb11henqco7"]
+
+[ext_resource type="Script" path="res://cooking/steps/mix.gd" id="1_ixkw2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy44t"]
+size = Vector2(571.5, 331)
+
+[node name="Mix" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixkw2")
+
+[node name="Checkpoint1" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint1"]
+position = Vector2(286, 153)
+shape = SubResource("RectangleShape2D_dy44t")
+
+[node name="Checkpoint2" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2"]
+position = Vector2(872, 150)
+shape = SubResource("RectangleShape2D_dy44t")
+
+[node name="Checkpoint3" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3"]
+position = Vector2(870, 482)
+shape = SubResource("RectangleShape2D_dy44t")
+
+[node name="Checkpoint4" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4"]
+position = Vector2(287, 485)
+shape = SubResource("RectangleShape2D_dy44t")
