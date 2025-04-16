@@ -21,6 +21,9 @@ class MouseData:
 @export var jerk_threshold : int = 1000
 @export var finisher_raycast_length : int = 250 ## The length of the downward raycast when checking for drizzles and shakers
 
+##The length of the raycast made to check if the shaker is over the food
+@export var shaker_distance : int = 500
+
 ##Stores the position of the mouse for the past 8 frames 
 var mouse_positions : Array[MouseData]
 
@@ -31,6 +34,8 @@ var requested_flavor : FoodItem
 
 var selected_food : FoodItem
 var selected_flavor : FoodItem
+
+ 
 
 
 enum Stage {
@@ -124,6 +129,7 @@ func _physics_process(delta: float) -> void:
 	if current_stage != Stage.FLAVOR_TOWN:
 		return
 	
+	
 	match selected_finisher_type:
 		Finisher.SHAKER:
 			shaker(delta)
@@ -162,6 +168,8 @@ func above_food()-> bool:
 		return true
 	else:
 		return false
+
+
 
 func is_shaking_hard_enough() -> bool:
 	##Runs if there is enough data to calculate jerk
