@@ -62,7 +62,7 @@ func next_step() -> void:
 		# for now, just change to the lunch break
 		
 
-		$MorningResults.show_results(round(current_score / steps.size()))
+		%MorningResults.show_results(round(current_score / steps.size()))
 		#get_tree().change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
 
 func step_finished(score: float) -> void:

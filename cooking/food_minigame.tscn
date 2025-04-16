@@ -14,5 +14,6 @@ mouse_filter = 1
 script = ExtResource("1_ri8w5")
 
 [node name="MorningResults" parent="." instance=ExtResource("2_2ctmu")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
