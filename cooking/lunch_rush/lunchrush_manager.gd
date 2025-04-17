@@ -12,6 +12,9 @@ class MouseData:
 @export var foods : Array[FoodItem]
 @export var flavors : Array[FoodItem]
 
+##Number of customers in a single lunch rush
+@export var total_customers : int = 5
+
 #The amount of time in seconds for the UI to slide in/out
 @export var ui_transition_time : float = 0.8
 
@@ -35,6 +38,9 @@ var requested_flavor : FoodItem
 var selected_food : FoodItem
 var selected_flavor : FoodItem
 
+
+var current_customer : int = 0
+var total_tip : float
  
 
 
@@ -59,6 +65,7 @@ var elapsed_time : float = 0.0
 var timer_active : bool = false
 ## The most any customer will tip, what the player earns for each item in the best case scenario
 @export var maximum_tip : float = 5.0
+@export var penalty_per_mess_up : float = 2.0 ##The amount of $ for getting a food or finisher wrong
 
 
 @export var percent_gained_per_shake : float 
@@ -79,9 +86,12 @@ func new_order() -> void:
 	current_stage = Stage.FOOD_SELECT
 	selected_finisher_type = Finisher.NOT_SELECTED
 	
+	
+	$FoodItem.position.x = -150
 	$DivorceWoman.modulate.a = 0
 	$CanvasLayer/FoodSelect/VBoxContainer.position.x = 1162
 	$CanvasLayer/FlavorSelect/VBoxContainer.position.x = 1162
+	$CanvasLayer/FinishOrder.position.x = -100
 	
 	##Selects order
 	requested_food = foods.pick_random()
@@ -218,6 +228,7 @@ func _on_flavor_selected(flavor_index: int) -> void:
 	selected_finisher_type = select_finisher_type()
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/FlavorSelect/VBoxContainer, "position:x", 1162, 0.3).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel().tween_property($CanvasLayer/FinishOrder, "position:x", 0, 0.3).set_trans(Tween.TRANS_QUAD)
 	
 	pass
 	
@@ -249,8 +260,13 @@ func scoreFood() -> float:
 	var penalty: float = 0.0
 	
 	#TODO: Balance these penalties. Currently you start with $5.0, lose $2.0 for each broken request, and lose $.05 per second spent.
-	if selected_food.type!=requested_food.type: penalty += 2.0
-	if selected_flavor.type!=requested_flavor.type: penalty += 20.0
+	if selected_food.type!=requested_food.type: penalty += penalty_per_mess_up
+	
+	
+	if selected_flavor.type!=requested_flavor.type:
+		penalty += penalty_per_mess_up
+	else:##Ensure the chosen finisher is actually applied
+		penalty += maxf(0,((100.0-current_finisher_percentage)/100)*penalty_per_mess_up)
 	penalty+=elapsed_time/20
 
 	## We take the penalty we calculated and subtract it from how much the customer will tip. We assume each customer will ideally tip the same maximum_tip export variable.
@@ -262,3 +278,24 @@ func scoreFood() -> float:
 
 
 	
+
+
+func _on_finish_order() -> void:
+	if current_stage != Stage.FLAVOR_TOWN:
+		return
+		
+	total_tip += scoreFood()
+	current_customer+=1
+	print(current_customer)
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -100, 0.3).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel().tween_property($DivorceWoman, "modulate:a", 0, 0.8)
+	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_EXPO)
+	##When the player has done all 10 customers, end the lunch rush
+	if current_customer >= total_customers:
+		get_tree().change_scene_to_file("res://menus/start_menu/main_menu.tscn")
+		return
+		##end here
+	new_order()
+	pass # Replace with function body.
