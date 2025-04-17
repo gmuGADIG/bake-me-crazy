@@ -1,0 +1,15 @@
+join  center
+<Empty Text Event>
+<Empty Text Event>
+- 
+	<Empty Text Event>
+- 
+	<Empty Text Event>
+- 
+	<Empty Text Event>
+<Empty Text Event>
+set {dateRP} = 0
+if {dateRP} == 0:
+	<Empty Text Event>
+else:
+	<Empty Text Event>

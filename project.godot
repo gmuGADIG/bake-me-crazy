@@ -25,17 +25,15 @@ Relationships="res://dialogue/relationships.gd"
 
 [dialogic]
 
-directories/dch_directory={
-"datealbecharacter": "res://menus/testing/datealbecharacter.dch",
-"salty": "res://dialogue/salty/salty.dch",
-"testing/testman1": "res://menus/testing/testman1.dch"
-}
+directories/dch_directory={}
 directories/dtl_directory={
+"Timeline": "res://Timeline.dtl",
+"clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
-"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
-"testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
-"testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
+"npcclasstest": "res://menus/testing/npcclasstest.dtl",
+"spicy_test": "res://spicy_test.dtl",
+"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
