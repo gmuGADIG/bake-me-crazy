@@ -1,9 +1,9 @@
-class_name PlayerInventory extends Node
+extends Node
 
 ### this is an AUTOLOAD/GLOBAL
 
 #Dictionary of <Item_Data, int (quantity)>
-var player_inventory = {}
+@export var player_inventory = {}
 
 @export var money: int = 0
 
