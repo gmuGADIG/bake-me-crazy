@@ -126,7 +126,8 @@ func new_order() -> void:
 	##Food buttons slide in
 	tween.parallel().tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1052, 0.8).set_trans(Tween.TRANS_QUAD)
 	
-	## Start timer!
+	## Reset and start the timer!
+	elapsed_time = 0.0
 	timer_active = true
 	
 	
@@ -245,7 +246,6 @@ func select_finisher_type() -> Finisher:
 
 ## This process function is only here for the timer, at least at the moment. It's not in physics process because that's bad practice, and the timer isn't directly in process because that's also bad practice.
 func _process(delta) -> void:
-	#TODO: add function to submit order that also sets timer_active to false
 	if timer_active: processTimer(delta)
 
 func processTimer(delta) -> void:
@@ -253,9 +253,9 @@ func processTimer(delta) -> void:
 
 func scoreFood() -> float:
 	#	SCORE CRITERIA:
-	#	- TIME REMAINING
+	#	- TIME SPENT
 	#	- ACCURACY TO REQUEST
-	#	- PROBABLY #TODO, COVERAGE OF SAUCE
+	#	- COVERAGE OF SAUCE
 	## We start counting a penalty that we add to for everything the player got wrong.
 	var penalty: float = 0.0
 	
@@ -263,10 +263,13 @@ func scoreFood() -> float:
 	if selected_food.type!=requested_food.type: penalty += penalty_per_mess_up
 	
 	
+	## Penalize picking the wrong flavor.
 	if selected_flavor.type!=requested_flavor.type:
 		penalty += penalty_per_mess_up
-	else:##Ensure the chosen finisher is actually applied
+	else:
+		## It's not enough to pick the right flavor. Penalize based on how much coverage was missed.
 		penalty += maxf(0,((100.0-current_finisher_percentage)/100)*penalty_per_mess_up)
+	## Penalize for time, currently 5 cents per second. Currently, time is always being deducted. We could add a quick check and not penalize at all if the player is fast enough, but as it stands you're at least losing a few nickels.
 	penalty+=elapsed_time/20
 
 	## We take the penalty we calculated and subtract it from how much the customer will tip. We assume each customer will ideally tip the same maximum_tip export variable.
@@ -281,6 +284,8 @@ func scoreFood() -> float:
 
 
 func _on_finish_order() -> void:
+	## Stop the clock!
+	timer_active = false
 	if current_stage != Stage.FLAVOR_TOWN:
 		return
 		
@@ -292,10 +297,9 @@ func _on_finish_order() -> void:
 	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -100, 0.3).set_trans(Tween.TRANS_QUAD)
 	tween.set_parallel().tween_property($DivorceWoman, "modulate:a", 0, 0.8)
 	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_EXPO)
-	##When the player has done all 10 customers, end the lunch rush
+	## If the player has served all customers, end the lunch rush
 	if current_customer >= total_customers:
 		get_tree().change_scene_to_file("res://menus/start_menu/main_menu.tscn")
 		return
 		##end here
 	new_order()
-	pass # Replace with function body.
