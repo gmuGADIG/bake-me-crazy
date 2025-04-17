@@ -14,7 +14,7 @@ point_count = 2
 [node name="PierDateTheme" type="Node"]
 script = ExtResource("1_h7px7")
 loop_start = 123.0
-loop_end = 228.0
+loop_end = 227.9
 song_file = ExtResource("2_gcgi5")
 fade_period = 0.2
 fade_in_curve = SubResource("Curve_4mbqj")

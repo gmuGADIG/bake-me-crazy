@@ -66,6 +66,7 @@ func _sync_fields() -> void:
 func _connect_ui() -> void:
 	start_edit.text_changed.connect(_on_start_changed)
 	end_edit.text_changed.connect(_on_end_changed)
+	delta_edit.text_changed.connect(_on_delta_changed)
 	play_btn.pressed.connect(pl.play)
 	test_btn.pressed.connect(pl.test_loop)
 	reset_btn.pressed.connect(_reset_search)
@@ -79,6 +80,9 @@ func _on_start_changed(t: String) -> void:
 
 func _on_end_changed(t: String) -> void:
 	pl.current_song.loop_end = t.to_float()
+	
+func _on_delta_changed(t: String) -> void:
+	_reset_search()
 
 # progress bar
 func _update_progress() -> void:
