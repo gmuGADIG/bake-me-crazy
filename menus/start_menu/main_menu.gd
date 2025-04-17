@@ -8,8 +8,9 @@ var time_passed := 0.0
 
 func _process(delta: float) -> void:
 	time_passed += delta
-	for i in range($VBoxContainer.get_child_count()):
-		var button_container = $VBoxContainer.get_child(i) as Control
+	var button_containers = get_tree().get_nodes_in_group("button_container")
+	for i in range(button_containers.size()):
+		var button_container = button_containers[i]
 		var button = button_container.get_child(0) as Button
 		assert(button != null)
 		

@@ -1,11 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0lluvp8jike4"]
+[gd_scene load_steps=10 format=3 uid="uid://b0lluvp8jike4"]
 
 [ext_resource type="Script" path="res://menus/start_menu/main_menu.gd" id="1_e3ggy"]
 [ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="1_f1ged"]
-[ext_resource type="Texture2D" uid="uid://dsi4qo5nvkj6n" path="res://temp_art/temp ui/Title screen template.png" id="2_djj27"]
+[ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="3_xlmu6"]
+[ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_a352q"]
+[ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_bbip1"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="6_bs6qj"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7enec"]
-texture = ExtResource("2_djj27")
+[sub_resource type="Animation" id="Animation_ktyn4"]
+resource_name = "animate"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.03, 0.971), Vector2(0.971, 1.03)]
+}
+
+[sub_resource type="Animation" id="Animation_t8rc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 0.909)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbhx2"]
+_data = {
+"RESET": SubResource("Animation_t8rc3"),
+"animate": SubResource("Animation_ktyn4")
+}
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -16,97 +53,185 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_f1ged")
 script = ExtResource("1_e3ggy")
-wiggle_degrees = 3.0
+wiggle_degrees = 1.5
 wiggle_speed_mult = 3.0
 wiggle_offset = 0.34
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+texture_repeat = 2
+layout_mode = 0
+offset_left = -2817.0
+offset_top = -1618.0
+offset_right = 3985.0
+offset_bottom = 2283.0
+texture = ExtResource("3_xlmu6")
+stretch_mode = 1
+script = ExtResource("4_a352q")
+scroll_position = Vector2(500, -250)
+scroll_time = 15.0
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.0
+offset_top = -289.0
+offset_right = 359.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 0.909)
+pivot_offset = Vector2(296.5, 148)
+texture = ExtResource("4_bbip1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DropShadow" type="TextureRect" parent="Title"]
+modulate = Color(0, 0, 0, 0.45098)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.5
+offset_top = -128.0
+offset_right = 311.5
+offset_bottom = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_bbip1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+libraries = {
+"": SubResource("AnimationLibrary_qbhx2")
+}
+autoplay = "animate"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = 110.0
+offset_right = 245.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="HBoxContainer" groups=["button_container"]]
+custom_minimum_size = Vector2(230, 56)
+layout_mode = 2
+
+[node name="Start Game" type="Button" parent="HBoxContainer/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_7enec")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -130.0
-offset_top = -392.0
-offset_right = 151.0
-offset_bottom = 229.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 18
-
-[node name="Control" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 56)
-layout_mode = 2
-
-[node name="Start Game" type="Button" parent="VBoxContainer/Control"]
-layout_mode = 2
-offset_right = 281.0
-offset_bottom = 56.0
-pivot_offset = Vector2(140, 30)
+pivot_offset = Vector2(140, 26)
 theme_override_font_sizes/font_size = 30
 text = "Start Game"
+script = ExtResource("6_bs6qj")
 
-[node name="Control2" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 56)
+[node name="Control2" type="Control" parent="HBoxContainer" groups=["button_container"]]
+custom_minimum_size = Vector2(230, 56)
 layout_mode = 2
 
-[node name="Load Game" type="Button" parent="VBoxContainer/Control2"]
-layout_mode = 2
-offset_right = 281.0
-offset_bottom = 56.0
-pivot_offset = Vector2(140, 30)
+[node name="Load Game" type="Button" parent="HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 26)
 theme_override_font_sizes/font_size = 30
 text = "Load Game
 "
+script = ExtResource("6_bs6qj")
 
-[node name="Control3" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 56)
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = 204.0
+offset_right = 375.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Control3" type="Control" parent="HBoxContainer2" groups=["button_container"]]
+custom_minimum_size = Vector2(230, 56)
 layout_mode = 2
 
-[node name="Options" type="Button" parent="VBoxContainer/Control3"]
-layout_mode = 2
-offset_right = 281.0
-offset_bottom = 56.0
-pivot_offset = Vector2(140, 30)
+[node name="Options" type="Button" parent="HBoxContainer2/Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 26)
 theme_override_font_sizes/font_size = 30
 text = "Options"
+script = ExtResource("6_bs6qj")
 
-[node name="Control4" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 56)
+[node name="Control4" type="Control" parent="HBoxContainer2" groups=["button_container"]]
+custom_minimum_size = Vector2(230, 56)
 layout_mode = 2
 
-[node name="Credits" type="Button" parent="VBoxContainer/Control4"]
-layout_mode = 2
-offset_right = 281.0
-offset_bottom = 56.0
-pivot_offset = Vector2(140, 30)
+[node name="Credits" type="Button" parent="HBoxContainer2/Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 26)
 theme_override_font_sizes/font_size = 30
 text = "Credits"
+script = ExtResource("6_bs6qj")
 
-[node name="Control5" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 56)
+[node name="Control5" type="Control" parent="HBoxContainer2" groups=["button_container"]]
+custom_minimum_size = Vector2(230, 56)
 layout_mode = 2
 
-[node name="Quit Game" type="Button" parent="VBoxContainer/Control5"]
-layout_mode = 2
-offset_right = 281.0
-offset_bottom = 56.0
-pivot_offset = Vector2(140, 30)
+[node name="Quit Game" type="Button" parent="HBoxContainer2/Control5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 26)
 theme_override_font_sizes/font_size = 30
 text = "Quit Game"
+script = ExtResource("6_bs6qj")
 
-[connection signal="pressed" from="VBoxContainer/Control/Start Game" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Control2/Load Game" to="." method="_on_load_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Control3/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Control4/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="VBoxContainer/Control5/Quit Game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control/Start Game" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control2/Load Game" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Control3/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Control4/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Control5/Quit Game" to="." method="_on_quit_game_pressed"]
