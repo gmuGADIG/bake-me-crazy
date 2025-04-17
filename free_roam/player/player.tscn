@@ -1,18 +1,60 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=18 format=3 uid="uid://cx06e1lqkpenc"]
 
 [ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
 [ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
 [ext_resource type="Script" path="res://free_roam/player/player_interaction_area.gd" id="3_2njdd"]
 [ext_resource type="Script" path="res://free_roam/player/player_sprite.gd" id="3_suty0"]
 [ext_resource type="SpriteFrames" uid="uid://tju4oeeuehmt" path="res://free_roam/player/characters/player_2.tres" id="4_u5ibp"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_3.tres" id="5_noqi6"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_4.tres" id="6_771df"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_5.tres" id="7_qfajt"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_6.tres" id="8_0ulrd"]
+[ext_resource type="SpriteFrames" uid="uid://n5jhodx6cjex" path="res://free_roam/player/characters/player_3.tres" id="5_noqi6"]
+[ext_resource type="SpriteFrames" uid="uid://cvwi48esq2kna" path="res://free_roam/player/characters/player_4.tres" id="6_771df"]
+[ext_resource type="SpriteFrames" uid="uid://cvv5c5orq1xbu" path="res://free_roam/player/characters/player_5.tres" id="7_qfajt"]
+[ext_resource type="SpriteFrames" uid="uid://chnckqyyx6p7e" path="res://free_roam/player/characters/player_6.tres" id="8_0ulrd"]
 [ext_resource type="Texture2D" uid="uid://uq8joiv7p24c" path="res://temp_art/dialogueindicator.png" id="10_i78ey"]
+[ext_resource type="Shader" path="res://free_roam/player/player_palette.gdshader" id="11_c7reu"]
+[ext_resource type="Texture2D" uid="uid://lcqy8c2mdj5a" path="res://free_roam/player/MC_IdleSheet.png" id="11_ougso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jij"]
 size = Vector2(188, 259.916)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mky52"]
+shader = ExtResource("11_c7reu")
+
+[sub_resource type="Animation" id="Animation_l7qjp"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 9]
+}
+
+[sub_resource type="Animation" id="Animation_66uus"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tt4pm"]
+_data = {
+"RESET": SubResource("Animation_66uus"),
+"idle": SubResource("Animation_l7qjp")
+}
 
 [node name="Player" type="PathFollow2D"]
 rotates = false
@@ -44,5 +86,27 @@ texture_filter = 1
 position = Vector2(-2.38419e-07, -257)
 scale = Vector2(1.28125, 1.28125)
 texture = ExtResource("10_i78ey")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="McIdleSheet" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_mky52")
+position = Vector2(-7, -111)
+scale = Vector2(0.134332, 0.134332)
+texture = ExtResource("11_ougso")
+hframes = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="McIdleSheet"]
+libraries = {
+"": SubResource("AnimationLibrary_tt4pm")
+}
+autoplay = "idle"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.12549, 0.133333, 0.239216, 1)
 
 [connection signal="indicator" from="InteractionArea" to="." method="_on_interaction_area_indicator"]
