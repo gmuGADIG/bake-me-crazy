@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c72arimv36gti"]
+
+[ext_resource type="Script" path="res://music/song_node.gd" id="1_h7px7"]
+[ext_resource type="AudioStream" uid="uid://ciw1fmecs0vpb" path="res://music/env/pier/The Pier-Fix.mp3" id="2_gcgi5"]
+
+[sub_resource type="Curve" id="Curve_4mbqj"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ij8ns"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="PierDateTheme" type="Node"]
+script = ExtResource("1_h7px7")
+loop_start = 123.0
+loop_end = 228.0
+song_file = ExtResource("2_gcgi5")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_4mbqj")
+fade_out_curve = SubResource("Curve_ij8ns")
