@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://cksty3pu2ypy7"]
+
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_a4qbd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel3" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.628921, 0.96398, 0.418176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel3"]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 297.0
+
+[node name="GridContainer" type="GridContainer" parent="Panel3/ScrollContainer"]
+custom_minimum_size = Vector2(184, 260)
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Panel3/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_a4qbd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton2" type="TextureButton" parent="Panel3/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_a4qbd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton3" type="TextureButton" parent="Panel3/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_a4qbd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton4" type="TextureButton" parent="Panel3/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_a4qbd")
+ignore_texture_size = true
+stretch_mode = 4

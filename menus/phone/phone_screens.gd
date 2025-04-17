@@ -6,9 +6,9 @@ class_name PhoneScreen
 
 @onready var HomeScreen = %Screen
 @onready var TestScreen = %Contacts
-@onready var TestScreen2 = %Panel2
-@onready var TestScreen3 = %Panel3
-@onready var TestScreen4 = %Panel4
+@onready var TestScreen2 = %Messages
+@onready var TestScreen3 = %Gallery
+@onready var TestScreen4 = %Inventory
 @onready var BackButton = %BackButton
 
 var current_menu = null
@@ -35,16 +35,7 @@ func show_menu(menu): #parameter is the unique variable name of the panel screen
 	current_menu = menu # makes the "open" menu the new current menu screen open
 
 # The 4 apps will be Contacts, Messages, Gallery, and Inventory
-func _on_app_pressed(button_id: int) -> void:
-	#var screen_list = [1, 2, 3]
-	#for i in range(screen_list.size()):
-	#for screen in screen_list:
-		#screen.name
-		#if i == opened_screen:
-			#screen_list[i].visble = true
-		#else:
-			#screen_list[i].visible = false
-	
+func _on_app_pressed(button_id: int) -> void:	
 	
 	print(button_id)
 	match button_id:
