@@ -26,7 +26,11 @@ Relationships="res://dialogue/relationships.gd"
 [dialogic]
 
 directories/dch_directory={
+"callum": "res://dialogue/salty/callum.dch",
 "datealbecharacter": "res://menus/testing/datealbecharacter.dch",
+"millie": "res://dialogue/savory/millie.dch",
+"pepper": "res://dialogue/spicy/pepper.dch",
+"raymond": "res://dialogue/sweet/raymond.dch",
 "salty": "res://dialogue/salty/salty.dch",
 "testing/testman1": "res://menus/testing/testman1.dch"
 }
@@ -99,7 +103,7 @@ folder_colors={
 "res://dialogue/coworker/": "blue",
 "res://dialogue/salty/": "blue",
 "res://dialogue/savory/": "blue",
-"res://dialogue/sour/": "blue",
+"res://dialogue/spicy/": "blue",
 "res://dialogue/sweet/": "blue",
 "res://free_roam/": "green",
 "res://menus/": "yellow",
