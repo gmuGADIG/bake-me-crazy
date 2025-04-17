@@ -36,7 +36,14 @@ func open_market(market) -> void:
 	if market_scene is not PackedScene:
 		push_error("Incorrect market scene path. Be sure the path is correct.")
 		return
-	var the_market: Node = market_scene.instantiate()
-	add_child(the_market)
+	var the_market = market_scene.instantiate()
+	if the_market is not MarketUI:
+		push_error("Market UI should be an instance of MarketUI, otherwise the code will break.")
+		push_error("If we've added a market UI that shouldn't be a MarketUI, please make the relevant")
+		push_error("code chnages so it'll work.")
+		return
+	
+	# Add the market ui as a child of the current scene.
+	get_tree().current_scene.add_child(the_market)
 	
 	_current_market_ui = the_market
