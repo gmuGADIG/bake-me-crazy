@@ -86,9 +86,9 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1252.0
-offset_top = -21.0
-offset_right = 1.0
-offset_bottom = 675.0
+offset_left = -1254.0
+offset_top = -16.0
+offset_right = -1.0
+offset_bottom = 680.0
 mouse_filter = 2
 color = Color(1, 0.109804, 0.784314, 0)

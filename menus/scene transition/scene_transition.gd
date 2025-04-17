@@ -7,7 +7,7 @@ func move_to_scene() -> void:
 
 #call this function to move the scene!
 #SceneTransition.change_scene(pathtoscene)
-func change_scene(targetScene) -> void:
+func change_scene(targetScene: String) -> void:
 	targetScenePath = targetScene
 	$AnimationPlayer.play("swipe")
 	
