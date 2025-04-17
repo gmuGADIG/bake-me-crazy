@@ -78,6 +78,7 @@ _data = {
 }
 
 [node name="SceneTransition" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_pxxs4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
