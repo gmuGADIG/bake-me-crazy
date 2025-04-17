@@ -22,6 +22,7 @@ SceneTransition="*res://menus/scene transition/scene_transition.tscn"
 InventorySystem="*res://inventory/inventory_system.gd"
 PlayerData="*res://save/player_data.gd"
 Relationships="res://dialogue/relationships.gd"
+DialogManager="*res://dialogue/dialog_manager.gd"
 
 [dialogic]
 
@@ -34,6 +35,7 @@ directories/dtl_directory={
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
+"test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl",
 "testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
 }
