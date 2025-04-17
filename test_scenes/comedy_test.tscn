@@ -1,0 +1,1119 @@
+[gd_scene load_steps=4 format=3 uid="uid://sa0o13ni4en3"]
+
+[ext_resource type="Texture2D" uid="uid://c40ew5c8y11rq" path="res://temp_art/gartic/im_steve.png" id="1_fnryp"]
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="2_qveht"]
+[ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="3_wo1mc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ImSteve" type="Sprite2D" parent="."]
+position = Vector2(112, 517)
+texture = ExtResource("1_fnryp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 898.0
+offset_bottom = 374.0
+theme_override_constants/separation = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer7"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer9"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer10" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer10"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer10"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer10"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer10"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer10"]
+layout_mode = 2
+
+[node name="VBoxContainer11" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer11"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer11"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer11"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer11"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer11"]
+layout_mode = 2
+
+[node name="VBoxContainer12" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer12"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer12"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer12"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer12"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer12"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer13" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer13"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer13"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer13"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer13"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer13"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer14" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer14"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer14"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer14"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer14"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer14"]
+layout_mode = 2
+
+[node name="VBoxContainer15" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer15"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer15"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer15"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer15"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer15"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer16" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer16"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer16"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer16"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer16"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer16"]
+layout_mode = 2
+
+[node name="VBoxContainer17" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer17"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer17"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer17"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer17"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer17"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer18" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer18"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer18"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer18"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer18"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer18"]
+layout_mode = 2
+
+[node name="VBoxContainer19" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer19"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer19"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer19"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer19"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer19"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer20" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer20"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer20"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer20"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer20"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer20"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer21" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer21"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer21"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer21"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer21"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer21"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer22" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer22"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer22"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer22"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer22"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer22"]
+layout_mode = 2
+
+[node name="VBoxContainer23" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer23"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer23"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer23"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer23"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer23"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer24" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer24"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer24"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer24"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer24"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer24"]
+layout_mode = 2
+
+[node name="VBoxContainer25" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer25"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer25"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer25"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer25"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer/VBoxContainer25"]
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer26" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer26"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer26"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer26"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer26"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer26"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer27" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer27"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer27"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer27"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer27"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer27"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer28" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer28"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer28"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer28"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer28"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer28"]
+layout_mode = 2
+
+[node name="VBoxContainer29" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer29"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer29"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer29"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer29"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer29"]
+layout_mode = 2
+
+[node name="VBoxContainer30" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer30"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer30"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer30"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer30"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer30"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer31" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer31"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer31"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer31"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer31"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer31"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer32" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer32"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer32"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer32"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer32"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer32"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer33" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer33"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer33"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer33"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer33"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer33"]
+layout_mode = 2
+
+[node name="VBoxContainer34" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer34"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer34"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer34"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer34"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer34"]
+layout_mode = 2
+
+[node name="VBoxContainer35" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer35"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer35"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer35"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer35"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer35"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer36" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer36"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer36"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer36"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer36"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer36"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer37" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer37"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer37"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer37"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer37"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer37"]
+layout_mode = 2
+
+[node name="VBoxContainer38" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer38"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer38"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer38"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer38"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer38"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer39" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer39"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer39"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer39"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer39"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer39"]
+layout_mode = 2
+
+[node name="VBoxContainer40" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer40"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer40"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer40"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer40"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer40"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer41" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer41"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer41"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer41"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer41"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer41"]
+layout_mode = 2
+
+[node name="VBoxContainer42" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer42"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer42"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer42"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer42"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer42"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer43" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer43"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer43"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer43"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer43"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer43"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer44" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer44"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer44"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer44"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer44"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer44"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer45" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer45"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer45"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer45"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer45"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer45"]
+layout_mode = 2
+
+[node name="VBoxContainer46" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer46"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer46"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer46"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer46"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer46"]
+layout_mode = 2
+
+[node name="VBoxContainer47" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer47"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer47"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer47"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer47"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer47"]
+layout_mode = 2
+button_pressed = true
+
+[node name="VBoxContainer48" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer48"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer48"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer48"]
+layout_mode = 2
+button_pressed = true
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer48"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer48"]
+layout_mode = 2
+
+[node name="VBoxContainer49" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer49"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer49"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer49"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer49"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer49"]
+layout_mode = 2
+
+[node name="VBoxContainer50" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer50"]
+layout_mode = 2
+
+[node name="CheckBox2" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer50"]
+layout_mode = 2
+
+[node name="CheckBox3" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer50"]
+layout_mode = 2
+
+[node name="CheckBox4" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer50"]
+layout_mode = 2
+
+[node name="CheckBox5" type="CheckBox" parent="VBoxContainer/HBoxContainer2/VBoxContainer50"]
+layout_mode = 2
+
+[node name="Icon13" type="Sprite2D" parent="."]
+position = Vector2(680, 509)
+scale = Vector2(0.515625, 0.539063)
+texture = ExtResource("2_qveht")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(680, 509)
+scale = Vector2(0.515625, 0.539063)
+texture = ExtResource("2_qveht")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(677, 558.375)
+scale = Vector2(0.843751, 0.369141)
+texture = ExtResource("3_wo1mc")
+
+[node name="Icon10" type="Sprite2D" parent="."]
+position = Vector2(702, 563)
+scale = Vector2(0.843751, 0.254883)
+texture = ExtResource("3_wo1mc")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(610, 529)
+scale = Vector2(0.523438, 0.520508)
+texture = ExtResource("3_wo1mc")
+
+[node name="Icon5" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.396078, 0.32549, 1)
+position = Vector2(573, 539)
+scale = Vector2(0.523438, 0.1875)
+texture = ExtResource("2_qveht")
+
+[node name="Icon6" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.396078, 0.32549, 1)
+position = Vector2(654, 601)
+scale = Vector2(0.218749, 0.359375)
+texture = ExtResource("2_qveht")
+
+[node name="Icon7" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.396078, 0.32549, 1)
+position = Vector2(700, 600)
+scale = Vector2(0.218749, 0.359375)
+texture = ExtResource("2_qveht")
+
+[node name="Icon8" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.396078, 0.32549, 1)
+position = Vector2(644, 622)
+scale = Vector2(0.3125, 0.117187)
+texture = ExtResource("2_qveht")
+
+[node name="Icon9" type="Sprite2D" parent="."]
+modulate = Color(0.807843, 0.396078, 0.32549, 1)
+position = Vector2(686, 621)
+scale = Vector2(0.3125, 0.117187)
+texture = ExtResource("2_qveht")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.0333333, 1, 0, 1)
+position = Vector2(678, 426)
+texture = ExtResource("2_qveht")
+
+[node name="Icon11" type="Sprite2D" parent="."]
+modulate = Color(0.0333333, 1, 0, 1)
+position = Vector2(636, 510)
+scale = Vector2(0.539063, 0.164063)
+texture = ExtResource("2_qveht")
+
+[node name="Icon12" type="Sprite2D" parent="."]
+modulate = Color(0.832762, 0.251045, 0.673403, 1)
+position = Vector2(652, 551)
+scale = Vector2(0.171874, 0.300781)
+texture = ExtResource("2_qveht")
+
+[node name="Icon14" type="Sprite2D" parent="."]
+modulate = Color(0.832762, 0.251045, 0.673403, 1)
+position = Vector2(679, 551)
+scale = Vector2(0.171874, 0.300781)
+texture = ExtResource("2_qveht")
