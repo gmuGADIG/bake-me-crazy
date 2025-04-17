@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://bvgohtc5k5f6p"]
+
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="1_bjswq"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_ffkvx"]
+
+[resource]
+script = ExtResource("2_ffkvx")
+type = 11
+display_name = "Sweet Roll"
+image = ExtResource("1_bjswq")

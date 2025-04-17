@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkw2hrwx6ome0"]
+
+[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="1_brkog"]
+[ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="1_kx34q"]
+[ext_resource type="Script" path="res://menus/market_ui/market_item_ui.gd" id="2_lah3l"]
+[ext_resource type="Texture2D" uid="uid://niqnbcovxf54" path="res://menus/market_ui/star_3.svg" id="3_7cldi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5w7ge"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.753984, 0.753984, 0.753984, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnxp8"]
+bg_color = Color(1, 1, 1, 0.490196)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf62j"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.384314)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mgyl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="MarketItemUI" type="ReferenceRect"]
+custom_minimum_size = Vector2(180, 180)
+offset_right = 180.0
+offset_bottom = 180.0
+pivot_offset = Vector2(103, 103)
+theme = ExtResource("1_brkog")
+script = ExtResource("2_lah3l")
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 180.0
+offset_bottom = 179.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_5w7ge")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nnxp8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xf62j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6mgyl")
+toggle_mode = true
+
+[node name="FoodSprite" type="TextureRect" parent="Button"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kx34q")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="Stars" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.801866, 0.429936, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_7cldi")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 81.0
+offset_bottom = 40.0
+
+[node name="PriceLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "$50.00"

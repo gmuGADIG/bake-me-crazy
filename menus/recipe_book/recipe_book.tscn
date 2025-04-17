@@ -1,0 +1,272 @@
+[gd_scene load_steps=24 format=3 uid="uid://c001by107vn8g"]
+
+[ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
+[ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="3_tl42c"]
+[ext_resource type="Texture2D" uid="uid://brufn1b0gmr0t" path="res://temp_art/gartic/iced_up_waluigi.png" id="4_aimad"]
+[ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="5_1tayq"]
+[ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="6_p3kn6"]
+[ext_resource type="PackedScene" uid="uid://feyopye254fc" path="res://menus/recipe_book/recipe_book_page.tscn" id="7_ldrir"]
+[ext_resource type="Texture2D" uid="uid://cgp0iy46gv5vr" path="res://temp_art/gartic/godot_cross.png" id="9_54frf"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="10_7f2te"]
+
+[sub_resource type="Resource" id="Resource_oqry2"]
+script = ExtResource("2_8r5qq")
+name = "Croissant"
+food_image = ExtResource("3_tl42c")
+instructions = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite."
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_d3qea"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #2"
+food_image = ExtResource("4_aimad")
+instructions = "This will list all the instructions
+1. Help
+2. I
+3. r e q u i r e
+4. S U S T E N A N C E"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_82m3y"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #3"
+instructions = "e"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_piyw4"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #4"
+instructions = "f"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_bcias"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #5"
+instructions = "Joe mama"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_2j335"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #6"
+instructions = "your"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_mbxs7"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #7"
+instructions = "mom"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_152om"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #8"
+instructions = "eeeeeeeee"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_jy2si"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #9"
+instructions = "big bruh"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_nt2kn"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #10"
+instructions = "biggest bruh"
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_2l5fl"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #11"
+instructions = "omg I can't take this anymore..."
+is_locked = false
+
+[sub_resource type="Resource" id="Resource_36ugh"]
+script = ExtResource("2_8r5qq")
+name = "Food Item #12"
+instructions = "boi if you don getcho pickle chin ahh boi affro head ahh boi if you dont calyo ahh boi stank ahh boi be like khlkhlkhkhlkhlhklhklhkhlfgflgkfglkhlhklhklhkhklh"
+is_locked = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ndtw"]
+bg_color = Color(0.98, 0.825977, 0.7546, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.52, 0.3601, 0.286, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4nyj"]
+bg_color = Color(0.98, 0.825977, 0.7546, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.52, 0.3601, 0.286, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 10
+
+[node name="RecipeBook" type="CanvasLayer"]
+script = ExtResource("1_3psjk")
+recipes = Array[ExtResource("2_8r5qq")]([SubResource("Resource_oqry2"), SubResource("Resource_d3qea"), SubResource("Resource_82m3y"), SubResource("Resource_piyw4"), SubResource("Resource_bcias"), SubResource("Resource_2j335"), SubResource("Resource_mbxs7"), SubResource("Resource_152om"), SubResource("Resource_jy2si"), SubResource("Resource_nt2kn"), SubResource("Resource_2l5fl"), SubResource("Resource_36ugh")])
+
+[node name="BookBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(577, 322)
+scale = Vector2(0.177667, 0.190222)
+texture = ExtResource("5_1tayq")
+
+[node name="BookVisual" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(840, 323.5)
+scale = Vector2(0.271991, 0.254774)
+texture = ExtResource("6_p3kn6")
+
+[node name="BookVisual2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(312.5, 327)
+rotation = -3.14159
+scale = Vector2(0.274, 0.256)
+texture = ExtResource("6_p3kn6")
+
+[node name="BakingText" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectRecipesToBake" type="RichTextLabel" parent="BakingText"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][wave]Select two recipes to bake!"
+
+[node name="FinishButton" type="Button" parent="BakingText"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -84.0
+offset_right = 150.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(150, 32.5)
+text = "0/2 Recipes"
+script = ExtResource("10_7f2te")
+
+[node name="Book" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -180.0
+offset_right = 398.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pages" type="HBoxContainer" parent="Book"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PageLeft" parent="Book/Pages" instance=ExtResource("7_ldrir")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ndtw")
+
+[node name="PageRight" parent="Book/Pages" instance=ExtResource("7_ldrir")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4nyj")
+
+[node name="TurnPageLeft" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 146.0
+offset_top = -179.0
+offset_right = 632.0
+offset_bottom = 226.0
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+text = "Left
+"
+icon = ExtResource("9_54frf")
+
+[node name="BakeLeft" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -911.0
+offset_top = -170.0
+offset_right = -611.0
+offset_bottom = -110.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "BAKE"
+
+[node name="TurnPageRight" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -174.0
+offset_right = 263.0
+offset_bottom = 231.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.15, 0.15)
+text = "Left
+"
+icon = ExtResource("9_54frf")
+
+[node name="BakeRight" type="Button" parent="."]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 595.0
+offset_top = -169.0
+offset_right = 895.0
+offset_bottom = -109.0
+grow_vertical = 0
+text = "BAKE"
+
+[connection signal="pressed" from="BakingText/FinishButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="TurnPageLeft" to="." method="_on_turn_page_left_pressed"]
+[connection signal="pressed" from="BakeLeft" to="." method="_on_bake_left_pressed"]
+[connection signal="pressed" from="TurnPageRight" to="." method="_on_turn_page_right_pressed"]
+[connection signal="pressed" from="BakeRight" to="." method="_on_bake_right_pressed"]

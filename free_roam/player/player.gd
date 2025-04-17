@@ -11,3 +11,6 @@ func _process(delta: float) -> void:
 
 	# move player along the line
 	progress += input * speed * delta
+
+func _on_interaction_area_indicator(visible: bool) -> void:
+	$Dialogueindicator.visible = visible and Dialogic.current_timeline == null

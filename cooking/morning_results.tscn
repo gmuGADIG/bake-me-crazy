@@ -1,0 +1,98 @@
+[gd_scene load_steps=5 format=3 uid="uid://011we18nsjdu"]
+
+[ext_resource type="Script" path="res://cooking/morning_results.gd" id="1_sd3aw"]
+[ext_resource type="Texture2D" uid="uid://bv5bu3ep6jpcq" path="res://temp_art/gartic/milk_dad.png" id="2_0nes1"]
+[ext_resource type="Texture2D" uid="uid://c8w1v44m016u5" path="res://temp_art/gartic/godot_pedestal.png" id="2_5pri2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7snn"]
+font_size = 125
+
+[node name="MorningResults" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd3aw")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = -30.0
+offset_right = 576.0
+offset_bottom = 151.0
+grow_horizontal = 2
+text = "you cooked"
+label_settings = SubResource("LabelSettings_k7snn")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Food" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 306.0
+offset_top = 118.0
+offset_right = 884.0
+offset_bottom = 487.0
+texture = ExtResource("2_0nes1")
+
+[node name="StarContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.5
+offset_top = 20.0
+offset_right = 363.5
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Star" type="TextureRect" parent="StarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_5pri2")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="StarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_5pri2")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="StarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_5pri2")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -113.0
+offset_right = 96.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 56
+text = "Finish"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

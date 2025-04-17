@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfxymfwjw2r1f"]
+
+[ext_resource type="Script" path="res://flash_sprite.gd" id="1_s6pdf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5oxl4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jnkst"]
+size = Vector2(512, 512)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2x8ms"]
+blend_mode = 4
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_kq8as"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cjrvp"]
+gradient = SubResource("Gradient_kq8as")
+fill_from = Vector2(0.683486, 0)
+
+[node name="FlashSprite" type="Sprite2D"]
+clip_children = 2
+material = SubResource("CanvasItemMaterial_5oxl4")
+position = Vector2(435, 167)
+texture = SubResource("PlaceholderTexture2D_jnkst")
+script = ExtResource("1_s6pdf")
+
+[node name="Flash" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_2x8ms")
+position = Vector2(2.00002, -91)
+scale = Vector2(4.02308, 4.1875)
+texture = SubResource("GradientTexture2D_cjrvp")
