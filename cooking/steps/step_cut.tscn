@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgmqffo2go7p6"]
+[gd_scene load_steps=7 format=3 uid="uid://cgmqffo2go7p6"]
 
 [ext_resource type="Script" path="res://cooking/steps/step_cut.gd" id="1_y2f8k"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="2_nplut"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="3_oatch"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_oxcjp"]
-a = Vector2(0.85, 49.6)
-b = Vector2(0.85, -0.6)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bj35s"]
 
@@ -26,11 +22,6 @@ script = ExtResource("1_y2f8k")
 
 [node name="ToCut" type="Area2D" parent="."]
 collision_layer = 32768
-
-[node name="CutGuide" type="CollisionShape2D" parent="ToCut"]
-scale = Vector2(20, 10)
-shape = SubResource("SegmentShape2D_oxcjp")
-debug_color = Color(0.982908, 0, 0.357913, 0.42)
 
 [node name="Cutting" type="Line2D" parent="."]
 points = PackedVector2Array(16, -17)
@@ -54,9 +45,9 @@ collision_mask = 32768
 collide_with_areas = true
 
 [node name="CutEnd" type="Area2D" parent="."]
+position = Vector2(0, 127)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CutEnd"]
-position = Vector2(12, 493)
 shape = SubResource("CircleShape2D_jshwt")
 
 [node name="Sprite2D" type="Sprite2D" parent="CutEnd/CollisionShape2D"]
