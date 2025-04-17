@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ifnm35j8kb1y"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_y5w7l"]
+[ext_resource type="Script" path="res://cooking/steps/pipping_speed.gd" id="2_j7oa8"]
+
+[node name="pipping_speed" instance=ExtResource("1_y5w7l")]
+script = ExtResource("2_j7oa8")
+slow_threshold = 150.0
+mid_threshold = 500.0
+fast_threshold = 1500.0
+
+[node name="HSlider" type="HSlider" parent="." index="0"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 71.0
+offset_right = 580.0
+offset_bottom = 87.0
+max_value = 2000.0
+
+[node name="Label" type="Label" parent="." index="1"]
+layout_mode = 0
+offset_left = 386.0
+offset_top = 107.0
+offset_right = 426.0
+offset_bottom = 131.0
+text = "TEXT"
