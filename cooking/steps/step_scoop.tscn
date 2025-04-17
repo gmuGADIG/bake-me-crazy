@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1qo3dh7pfxpl"]
+[gd_scene load_steps=5 format=3 uid="uid://b1qo3dh7pfxpl"]
 
 [ext_resource type="Script" path="res://cooking/steps/step_scoop.gd" id="1_gwrga"]
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tyb4l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qd7r"]
+radius = 44.1814
 
 [node name="StepScoop" type="Control"]
 layout_mode = 3
@@ -37,5 +40,13 @@ position = Vector2(-0.452675, -1.27741)
 scale = Vector2(0.0948551, 0.0948551)
 texture = ExtResource("2_e4817")
 
+[node name="placePos" type="Area2D" parent="."]
+position = Vector2(148, 136)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="placePos"]
+shape = SubResource("CircleShape2D_4qd7r")
+
 [connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]
+[connection signal="body_entered" from="placePos" to="." method="_on_place_pos_body_entered"]
