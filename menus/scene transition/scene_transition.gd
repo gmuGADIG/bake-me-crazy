@@ -23,7 +23,6 @@ func change_scene_to_file(file_path: String) -> void:
 ## Call this to change the scene to a specific PackedScene value,
 ## similar to get_tree().change_scene_to_packed.
 func change_scene_to_packed(scene: PackedScene) -> void:
-	print("Change to scene: ", scene)
 	# Refuse to change scene if we're already in the middle of an animation.
 	if _next_scene != null:
 		return
