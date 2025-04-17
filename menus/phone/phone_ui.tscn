@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=11 format=3 uid="uid://shxtpelbre7g"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
@@ -166,12 +166,12 @@ texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Panel2" type="Panel" parent="Panel/MarginContainer"]
+[node name="Messages" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel2"]
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Messages"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -180,51 +180,52 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.97766, 0.811356, 0.793624, 1)
 
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel2"]
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Messages"]
+layout_mode = 0
 offset_right = 184.0
 offset_bottom = 297.0
 
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
 custom_minimum_size = Vector2(184, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
 custom_minimum_size = Vector2(184, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
 custom_minimum_size = Vector2(184, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
 custom_minimum_size = Vector2(184, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Panel2/GridContainer"]
+[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
 custom_minimum_size = Vector2(184, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Panel3" type="Panel" parent="Panel/MarginContainer"]
+[node name="Gallery" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel3"]
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Gallery"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -233,29 +234,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.628921, 0.96398, 0.418176, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/Panel3"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/Gallery"]
 layout_mode = 0
 offset_right = 186.0
 offset_bottom = 297.0
 
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Panel3/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Gallery/ScrollContainer"]
 custom_minimum_size = Vector2(184, 260)
 layout_mode = 2
 columns = 2
 
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Panel3/ScrollContainer/GridContainer"]
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("1_p0egn")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Panel4" type="Panel" parent="Panel/MarginContainer"]
+[node name="Inventory" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Panel4"]
+[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Inventory"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
