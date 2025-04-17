@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 #Populates ItemsContainer with items in player_inventory
 func populate_item_grid() -> void:
-	for item in PlayerInventory.player_inventory:
+	for item in InventorySystem.player_inventory:
 		var slot = item_slot.instantiate()
 		slot.set_item_slot_data(item)
 		items_container.add_child(slot)
