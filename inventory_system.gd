@@ -9,9 +9,6 @@ var player_inventory = {}
 
 # Recipes and Items should be resources
 # Methods: buy, bake item, 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
 func _process(delta: float) -> void:
@@ -30,12 +27,13 @@ func remove_item(item: ItemData, quantity: int = 1) -> void:
 	if(player_inventory[item]==0):
 		player_inventory.erase(item)
 
-#Possibly use boolean instead
 func buy_item(item: ItemData, quantity: int = 1) -> void:
 	if(money>=item.price*quantity):
 		add_item(item, quantity)
 		money -= item.price*quantity
 
-func bake_item() -> void:
-	
+###TODO Implement Recipe (as a resource?)
+### Once implemented, iterate the recipe and remove each of the ingredients from inventory
+### And add item to the inventory.
+func bake_item(item:ItemData) -> void:
 	pass

@@ -8,3 +8,5 @@ class_name ItemData extends Resource
 @export var icon: Texture2D
 #Price of the item for buying
 @export var price: int = 0
+
+###TODO: If the item is bakable add a recipe: @export var recipe: Recipe
