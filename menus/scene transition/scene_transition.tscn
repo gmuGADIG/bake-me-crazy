@@ -55,7 +55,7 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"move_to_scene"
+"method": &"_anim_move_to_scene"
 }]
 }
 tracks/1/type = "value"

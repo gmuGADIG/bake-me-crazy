@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxw1e0jon8w41"]
+[gd_scene load_steps=4 format=3 uid="uid://cxw1e0jon8w41"]
 
 [ext_resource type="Script" path="res://test_scenes/transition_scene_1.gd" id="1_d8jki"]
 [ext_resource type="Texture2D" uid="uid://t1roknwygcf3" path="res://addons/dialogic/Editor/Images/Dropdown/update.svg" id="2_a7rmw"]
+[ext_resource type="PackedScene" uid="uid://cv5lryxpt2gw0" path="res://test_scenes/transitionScene2.tscn" id="2_enlkv"]
 
 [node name="TransitionScene1" type="Node2D"]
 script = ExtResource("1_d8jki")
+target_scene = ExtResource("2_enlkv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(634, 347)
