@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn5xfkyv5it31"]
+[gd_scene load_steps=6 format=3 uid="uid://dn5xfkyv5it31"]
 
 [ext_resource type="Script" path="res://cooking/steps/piping_area.gd" id="1_phsmw"]
 [ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="2_nj7f3"]
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="3_0vdmo"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="4_1s3mf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dxgi2"]
 radius = 91.0055
@@ -22,6 +23,28 @@ shape = SubResource("CircleShape2D_dxgi2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.95288, 0.637931)
 texture = ExtResource("3_0vdmo")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = -63.0
+offset_top = 99.0
+offset_right = 66.0
+offset_bottom = 121.0
+max_value = 200.0
+
+[node name="TextureRect" type="TextureRect" parent="HSlider"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 36.5
+offset_top = 16.0
+offset_right = 107.5
+offset_bottom = 87.0
+grow_horizontal = 2
+rotation = 1.57079
+texture = ExtResource("4_1s3mf")
+expand_mode = 1
+stretch_mode = 4
 
 [connection signal="mouse_entered" from="PipingArea" to="." method="_on_piping_area_mouse_entered"]
 [connection signal="mouse_exited" from="PipingArea" to="." method="_on_piping_area_mouse_exited"]
