@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name Song
 
 @export var loop_start: float

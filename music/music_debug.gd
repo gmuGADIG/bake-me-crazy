@@ -3,18 +3,27 @@ class_name MusicPlayerDebug
 
 const EPS := 0.001
 
+@export var song_scanner: MusicScanner
+
 @onready var pl: MusicPlayer = $MusicPlayer
-@onready var start_edit: LineEdit = $VBoxContainer/LoopStartContainer/LoopStartEdit
-@onready var end_edit: LineEdit = $VBoxContainer/LoopEndContainer/LoopEndEdit
-@onready var delta_edit: LineEdit = $VBoxContainer/FineTuneContainer/StepEdit
-@onready var reset_btn: Button = $VBoxContainer/FineTuneContainer/ResetBtn
-@onready var s_rush_btn: Button = $VBoxContainer/StartTune/StartRushBtn
-@onready var s_drag_btn: Button = $VBoxContainer/StartTune/StartDragBtn
-@onready var e_rush_btn: Button = $VBoxContainer/EndTune/EndRushBtn
-@onready var e_drag_btn: Button = $VBoxContainer/EndTune/EndDragBtn
-@onready var play_btn: Button = $VBoxContainer/ButtonsContainer/PlayButton
-@onready var test_btn: Button = $VBoxContainer/ButtonsContainer/TestLoopButton
+@onready var start_edit: LineEdit = $VBoxContainer/Controls/PlayContainer/LoopStartContainer/LoopStartEdit
+@onready var end_edit: LineEdit = $VBoxContainer/Controls/PlayContainer/LoopEndContainer/LoopEndEdit
+@onready var delta_edit: LineEdit = $VBoxContainer/Controls/TweakContainer/FineTuneContainer/StepEdit
+@onready var reset_btn: Button = $VBoxContainer/Controls/TweakContainer/FineTuneContainer/ResetBtn
+@onready var s_rush_btn: Button = $VBoxContainer/Controls/TweakContainer/StartTune/StartRushBtn
+@onready var s_drag_btn: Button = $VBoxContainer/Controls/TweakContainer/StartTune/StartDragBtn
+@onready var e_rush_btn: Button = $VBoxContainer/Controls/TweakContainer/EndTune/EndRushBtn
+@onready var e_drag_btn: Button = $VBoxContainer/Controls/TweakContainer/EndTune/EndDragBtn
+@onready var play_btn: Button = $VBoxContainer/Controls/PlayContainer/ButtonsContainer/PlayButton
+@onready var test_btn: Button = $VBoxContainer/Controls/PlayContainer/ButtonsContainer/TestLoopButton
+@onready var stop_btn: Button = $VBoxContainer/Controls/PlayContainer/ButtonsContainer/StopButton
+@onready var play_from_loop_start: Button = $VBoxContainer/Controls/PlayContainer/ButtonsContainer/PlayLoopStartButton
 @onready var time_lbl: Label = $VBoxContainer/ProgressContainer/TimeLabel
+@onready var time_slider: HSlider = $VBoxContainer/ProgressContainer/ProgressSlider
+@onready var file_select: OptionButton = $VBoxContainer/LoadFileContainer/FileSelect
+@onready var load_button: Button = $VBoxContainer/LoadFileContainer/LoadSongBtn
+@onready var save_button: Button = $VBoxContainer/SaveFileContainer/SaveSongBtn
+@onready var save_line_edit: LineEdit = $VBoxContainer/SaveFileContainer/FilePath
 
 var s_lo: float
 var s_hi: float
@@ -22,7 +31,9 @@ var e_lo: float
 var e_hi: float
 
 func _ready() -> void:
+	song_scanner.index_all_sound_files_in_root_directory()
 	_sync_fields()
+	_setup_file_options()
 	_connect_ui()
 	_reset_search()
 
@@ -62,18 +73,53 @@ func _disable_when_done() -> void:
 func _sync_fields() -> void:
 	start_edit.text = str(pl.current_song.loop_start)
 	end_edit.text   = str(pl.current_song.loop_end)
+	
+func _setup_file_options() -> void:
+	for file in song_scanner.sound_files:
+		file_select.add_item(file.resource_path)
 
 func _connect_ui() -> void:
 	start_edit.text_changed.connect(_on_start_changed)
 	end_edit.text_changed.connect(_on_end_changed)
 	delta_edit.text_changed.connect(_on_delta_changed)
 	play_btn.pressed.connect(pl.play)
+	stop_btn.pressed.connect(pl.stop)
 	test_btn.pressed.connect(pl.test_loop)
+	play_from_loop_start.pressed.connect(_on_loop_start_play)
 	reset_btn.pressed.connect(_reset_search)
 	s_rush_btn.pressed.connect(_s_rush)
 	s_drag_btn.pressed.connect(_s_drag)
 	e_rush_btn.pressed.connect(_e_rush)
 	e_drag_btn.pressed.connect(_e_drag)
+	load_button.pressed.connect(_load_file)
+	save_button.pressed.connect(_save_song_to_resource)
+	time_slider.value_changed.connect(_on_progress_slider_change)
+	
+func _on_progress_slider_change(value: float):
+	pl._start_from(value * pl.get_length())
+	
+func _save_song_to_resource():
+	var save_location: String = save_line_edit.text
+	if save_location != '':
+		ResourceSaver.save(pl.current_song, save_location)
+	
+func _on_loop_start_play():
+	pl._start_from(pl.current_song.loop_start)
+	
+func _load_file():
+	if file_select.selected == -1:
+		return
+	var song_file: Resource = load(file_select.get_item_text(file_select.selected))
+	if song_file is Song:
+		pl.current_song = song_file
+		save_line_edit.text = file_select.get_item_text(file_select.selected)
+	else:
+		pl.current_song.song_file = song_file
+		pl.current_song.loop_end = pl.get_length()
+		pl.current_song.loop_start = 0
+	_sync_fields()
+	_reset_search()
+	pl.play()
 
 func _on_start_changed(t: String) -> void:
 	pl.current_song.loop_start = t.to_float()
@@ -88,13 +134,16 @@ func _on_delta_changed(t: String) -> void:
 func _update_progress() -> void:
 	if not pl.is_playing():
 		time_lbl.text = "--:-- / --:--"
+		time_slider.set_value_no_signal(0)
 		return
 	var pos = pl.get_position()
 	var len = pl.get_length()
 	if len <= 0:
 		time_lbl.text = "--:-- / --:--"
+		time_slider.set_value_no_signal(0)
 		return
 	time_lbl.text = "%02d:%02d / %02d:%02d" % [
 		int(pos / 60), int(pos) % 60,
 		int(len / 60), int(len) % 60
 	]
+	time_slider.set_value_no_signal(pos/len)
