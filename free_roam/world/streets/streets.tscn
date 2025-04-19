@@ -73,7 +73,7 @@ texture = ExtResource("5_61bqb")
 [node name="PlayerPath" parent="." index="2"]
 curve = SubResource("Curve2D_5eqjp")
 
-[node name="Camera2D" parent="PlayerPath/Player" index="3"]
+[node name="Camera2D" parent="PlayerPath/Player" index="6"]
 limit_left = 0
 limit_top = 0
 limit_right = 3456

@@ -201,3 +201,22 @@ open_recipes={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+player_skin={
+"type": "color",
+"value": Color(0.783313, 0.735528, 0.912678, 1)
+}
+player_shirt={
+"type": "color",
+"value": Color(0.278136, 0.548473, 1, 1)
+}
+player_apron={
+"type": "color",
+"value": Color(0.752507, 0.75462, 0.537034, 1)
+}
+player_hair={
+"type": "color",
+"value": Color(0.484476, 0.363811, 0.116402, 1)
+}
