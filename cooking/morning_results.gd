@@ -22,4 +22,4 @@ func show_results(score: int) -> void:
 	visible = true
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
+	SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")

@@ -63,7 +63,7 @@ func next_step() -> void:
 		
 
 		%MorningResults.show_results(round(current_score / steps.size()))
-		#get_tree().change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
+		#SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
 
 func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
