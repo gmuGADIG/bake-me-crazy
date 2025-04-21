@@ -4,11 +4,11 @@
 [ext_resource type="AudioStream" uid="uid://ciw1fmecs0vpb" path="res://music/env/pier/The Pier-Fix.mp3" id="2_4ahbf"]
 
 [sub_resource type="Curve" id="Curve_ccw1l"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 3.54419, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_dyrl4"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 3.52335, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [resource]
