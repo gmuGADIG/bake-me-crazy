@@ -8,8 +8,6 @@ var sound_files: Array[Resource] = []
 func index_all_sound_files_in_root_directory() -> void:
 	sound_files.clear()
 	_scan_folder(root_path)
-	for file in sound_files:
-		print(file.resource_path)
 
 func _scan_folder(path: String) -> void:
 	var dir = DirAccess.open(path)

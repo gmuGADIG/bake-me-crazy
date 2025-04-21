@@ -24,6 +24,7 @@ const EPS := 0.001
 @onready var load_button: Button = $VBoxContainer/LoadFileContainer/LoadSongBtn
 @onready var save_button: Button = $VBoxContainer/SaveFileContainer/SaveSongBtn
 @onready var save_line_edit: LineEdit = $VBoxContainer/SaveFileContainer/FilePath
+@onready var volume_slider: HSlider = $VBoxContainer/VolumeContainer/VolumeSlider
 
 var s_lo: float
 var s_hi: float
@@ -48,7 +49,6 @@ func _reset_search() -> void:
 	s_lo = s0 - d;  s_hi = s0 + d
 	e_lo = e0 - d;  e_hi = e0 + d
 	_apply_midpoints()
-	pl.test_loop()
 
 func _apply_midpoints() -> void:
 	pl.current_song.loop_start = (s_lo + s_hi) * 0.5
@@ -56,10 +56,13 @@ func _apply_midpoints() -> void:
 	_sync_fields()
 	_disable_when_done()
 
-func _s_rush(): s_lo = (s_lo + s_hi) * 0.5; _apply_midpoints(); pl.test_loop()
-func _s_drag(): s_hi = (s_lo + s_hi) * 0.5; _apply_midpoints(); pl.test_loop()
-func _e_rush(): e_lo = (e_lo + e_hi) * 0.5; _apply_midpoints(); pl.test_loop()
-func _e_drag(): e_hi = (e_lo + e_hi) * 0.5; _apply_midpoints(); pl.test_loop()
+func _s_rush(): s_lo = (s_lo + s_hi) * 0.5; _apply_midpoints(); _test_loop()
+func _s_drag(): s_hi = (s_lo + s_hi) * 0.5; _apply_midpoints(); _test_loop()
+func _e_rush(): e_lo = (e_lo + e_hi) * 0.5; _apply_midpoints(); _test_loop()
+func _e_drag(): e_hi = (e_lo + e_hi) * 0.5; _apply_midpoints(); _test_loop()
+
+func _test_loop():
+	pl.play(pl.current_song.loop_end - 3.0)
 
 func _disable_when_done() -> void:
 	var s_done = (s_hi - s_lo) < EPS
@@ -73,6 +76,7 @@ func _disable_when_done() -> void:
 func _sync_fields() -> void:
 	start_edit.text = str(pl.current_song.loop_start)
 	end_edit.text   = str(pl.current_song.loop_end)
+	volume_slider.set_value_no_signal(1.0)
 	
 func _setup_file_options() -> void:
 	for file in song_scanner.sound_files:
@@ -84,7 +88,7 @@ func _connect_ui() -> void:
 	delta_edit.text_changed.connect(_on_delta_changed)
 	play_btn.pressed.connect(pl.play)
 	stop_btn.pressed.connect(pl.stop)
-	test_btn.pressed.connect(pl.test_loop)
+	test_btn.pressed.connect(_test_loop)
 	play_from_loop_start.pressed.connect(_on_loop_start_play)
 	reset_btn.pressed.connect(_reset_search)
 	s_rush_btn.pressed.connect(_s_rush)
@@ -94,9 +98,13 @@ func _connect_ui() -> void:
 	load_button.pressed.connect(_load_file)
 	save_button.pressed.connect(_save_song_to_resource)
 	time_slider.value_changed.connect(_on_progress_slider_change)
+	volume_slider.value_changed.connect(_on_volume_slider_change)
 	
 func _on_progress_slider_change(value: float):
-	pl._start_from(value * pl.get_length())
+	pl.play(value * pl.get_length())
+	
+func _on_volume_slider_change(value: float):
+	pl.set_volume(value)
 	
 func _save_song_to_resource():
 	var save_location: String = save_line_edit.text
@@ -104,22 +112,24 @@ func _save_song_to_resource():
 		ResourceSaver.save(pl.current_song, save_location)
 	
 func _on_loop_start_play():
-	pl._start_from(pl.current_song.loop_start)
+	pl.play(pl.current_song.loop_start)
 	
 func _load_file():
 	if file_select.selected == -1:
 		return
 	var song_file: Resource = load(file_select.get_item_text(file_select.selected))
 	if song_file is Song:
-		pl.current_song = song_file
+		pl.transition_to_song(song_file)
 		save_line_edit.text = file_select.get_item_text(file_select.selected)
 	else:
-		pl.current_song.song_file = song_file
-		pl.current_song.loop_end = pl.get_length()
-		pl.current_song.loop_start = 0
+		var song: Song = Song.new()
+		song.song_file = song_file
+		song.loop_end = song_file.get_length()
+		song.loop_start = 0
+		pl.transition_to_song(song)
 	_sync_fields()
 	_reset_search()
-	pl.play()
+	
 
 func _on_start_changed(t: String) -> void:
 	pl.current_song.loop_start = t.to_float()
