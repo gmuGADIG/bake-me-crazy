@@ -87,6 +87,16 @@ func set_volume(level: float) -> void:
 			target_db,
 			VOLUME_TRANSITION_TIME
 		)
+		
+func pause() -> void:
+	for player in players:
+		if player.playing and not player.playback_paused:
+			player.playback_paused = true
+
+func resume() -> void:
+	for player in players:
+		if player.playing and player.playback_paused:
+			player.playback_paused = false
 
 # Internal handlers
 func _handle_song_transition(delta: float) -> void:
