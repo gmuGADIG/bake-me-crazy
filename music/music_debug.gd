@@ -128,6 +128,7 @@ func _load_file():
 		song.loop_start = 0
 		pl.transition_to_song(song)
 	_sync_fields()
+	_update_progress()
 	_reset_search()
 	
 

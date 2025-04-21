@@ -16,7 +16,6 @@ var active_idx: int = 0
 var in_loop_crossfade: bool = false
 var is_song_transition: bool = false
 var transition_time_elapsed: float = 0.0
-var next_song: Song
 
 var volume_tween: Tween
 
@@ -57,11 +56,10 @@ func get_length() -> float:
 	return 0.0
 
 func transition_to_song(song: Song, at_point: float = 0.0) -> void:
+	current_song = song
 	if not _any_playing():
-		current_song = song
 		play(at_point)
 		return
-	next_song = song
 	is_song_transition = true
 	transition_time_elapsed = 0.0
 	var inactive = _inactive()
