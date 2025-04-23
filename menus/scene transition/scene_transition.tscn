@@ -207,6 +207,7 @@ shader = ExtResource("2_8b8ol")
 shader = ExtResource("3_f8f1p")
 
 [node name="SceneTransition" type="CanvasLayer"]
+layer = 10
 script = ExtResource("1_pxxs4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
