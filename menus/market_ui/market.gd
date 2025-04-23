@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name MarketUI
 
 @export var items: Array[ItemData]
 

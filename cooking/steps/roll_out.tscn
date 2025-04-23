@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://1kn7jln1tm7y"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_ww7xc"]
+[ext_resource type="Script" path="res://cooking/steps/roll_out.gd" id="2_f3gfe"]
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="3_vtj68"]
+[ext_resource type="Texture2D" uid="uid://cgnv78dp1gqni" path="res://temp_art/rollingpintemp.png" id="4_r2qgg"]
+[ext_resource type="Script" path="res://cooking/steps/sprite_2d.gd" id="5_wopcp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sq7h3"]
+
+[node name="FoodStep" instance=ExtResource("1_ww7xc")]
+script = ExtResource("2_f3gfe")
+target_size = 3.0
+roll_speed = 1.0
+
+[node name="dough" type="Area2D" parent="." index="0"]
+position = Vector2(602, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" index="0"]
+visible = false
+scale = Vector2(13.7902, 13.9094)
+shape = SubResource("CircleShape2D_sq7h3")
+
+[node name="Sprite2D" type="Sprite2D" parent="dough" index="1"]
+position = Vector2(1.14441e-05, 2)
+scale = Vector2(4.89062, 1.55469)
+texture = ExtResource("3_vtj68")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(599, 494)
+scale = Vector2(3.45313, 3.45313)
+texture = ExtResource("4_r2qgg")
+script = ExtResource("5_wopcp")
+
+[node name="SizeHint" type="ColorRect" parent="." index="2"]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 0
+offset_left = 288.0
+offset_top = 33.0
+offset_right = 917.0
+offset_bottom = 614.0
+color = Color(1, 1, 0, 0.0588235)
