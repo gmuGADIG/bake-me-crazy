@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		button.rotation_degrees = sin(time_passed * wiggle_speed_mult + offset) * wiggle_degrees  # Wiggle effect
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://menus/character_select/character_select.tscn")
+	SceneTransition.change_scene_to_file("res://menus/character_select/character_select.tscn")
 
 func _on_load_game_pressed() -> void:
 	var saves_menu = load("res://menus/save_menu/save_menu.tscn").instantiate()
