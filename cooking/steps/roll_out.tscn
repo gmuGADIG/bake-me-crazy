@@ -33,7 +33,8 @@ scale = Vector2(3.45313, 3.45313)
 texture = ExtResource("4_r2qgg")
 script = ExtResource("5_wopcp")
 
-[node name="ColorRect" type="ColorRect" parent="." index="2"]
+[node name="SizeHint" type="ColorRect" parent="." index="2"]
+unique_name_in_owner = true
 z_index = -1
 layout_mode = 0
 offset_left = 288.0
