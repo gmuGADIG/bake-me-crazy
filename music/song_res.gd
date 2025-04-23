@@ -6,6 +6,7 @@ class_name Song
 @export var song_file: Resource
 @export var fade_period: float
 @export var fade_in_curve: Curve
+#NOTE: This curve is sampled in reverse
 @export var fade_out_curve: Curve
 
 func _init(l_start = 0.0, l_end = 0.0, f_period=0.2):

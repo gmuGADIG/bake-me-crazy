@@ -4,10 +4,10 @@ class_name MusicPlayer
 @export var current_song: Song
 @export var bus_name: String = "Music"
 @export var song_transition_curve: Curve
+@export var song_transition_duration: float
 
 const FULL_DB: float = 0.0
 const MUTE_DB: float = -64.0
-const TRANSITION_TIME: float = 2.0
 const VOLUME_TRANSITION_TIME: float = 0.5
 
 @onready var players: Array[AudioStreamPlayer] = [$AudioStreamPlayerA, $AudioStreamPlayerB]
@@ -103,14 +103,15 @@ func _handle_song_transition(delta: float) -> void:
 	if not is_song_transition:
 		return
 	transition_time_elapsed += delta
-	var t = min(transition_time_elapsed / TRANSITION_TIME, 1.0)
+	var t = min(transition_time_elapsed / song_transition_duration, 1.0)
 	var fade_in = song_transition_curve.sample(t)
-	var fade_out = song_transition_curve.sample(1.0 - t)
+	# Fade out curve sampled in reverse (so the curve has the same shape as the fade in)
+	var fade_out = song_transition_curve.sample(1.0 - t) 
 	var inactive = _inactive()
 	var active = _active()
 	inactive.volume_db = MUTE_DB + (-MUTE_DB) * fade_in
 	active.volume_db   = MUTE_DB + (-MUTE_DB) * fade_out
-	if transition_time_elapsed >= TRANSITION_TIME:
+	if transition_time_elapsed >= song_transition_duration:
 		active.stop()
 		active.stream = null
 		active_idx = 1 - active_idx

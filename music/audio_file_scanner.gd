@@ -36,4 +36,4 @@ func _scan_folder(path: String) -> void:
 # Helper to filter by extension
 func _is_sound_file(name: String) -> bool:
 	var ext := name.get_extension().to_lower()
-	return ext in ["wav", "ogg", "mp3", "flac", "tres"]
+	return ext in ["wav", "ogg", "mp3", "tres"]
