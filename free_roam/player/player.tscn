@@ -21,6 +21,7 @@ scale = Vector2(0.292631, 0.292631)
 sprite_frames = ExtResource("2_5iydo")
 animation = &"walking"
 frame_progress = 0.713436
+flip_h = true
 script = ExtResource("3_suty0")
 
 [node name="InteractionArea" type="Area2D" parent="."]
