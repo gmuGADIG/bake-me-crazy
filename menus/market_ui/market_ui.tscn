@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=31 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
@@ -16,7 +16,8 @@
 script = ExtResource("2_6ghu5")
 code_name = "lettuce"
 display_name = "Lettuce"
-quality = 1
+description = "Delicious lettuce"
+quality = 4
 icon = ExtResource("3_up5f4")
 price = 15
 
@@ -24,7 +25,8 @@ price = 15
 script = ExtResource("2_6ghu5")
 code_name = "pork"
 display_name = "Pork"
-quality = 1
+description = "Just like the Minecraft movie"
+quality = 2
 icon = ExtResource("3_up5f4")
 price = 15
 
@@ -109,6 +111,110 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="Animation" id="Animation_tg8hl"]
+resource_name = "swipe_in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(625, 325), Vector2(625, 51)]
+}
+
+[sub_resource type="Animation" id="Animation_025ws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(625, 51)]
+}
+
+[sub_resource type="Animation" id="Animation_bjio7"]
+resource_name = "swipe_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(625, 51), Vector2(625, 325)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r37fl"]
+_data = {
+"RESET": SubResource("Animation_025ws"),
+"swipe_in": SubResource("Animation_tg8hl"),
+"swipe_out": SubResource("Animation_bjio7")
+}
+
 [node name="MarketUI" type="CanvasLayer"]
 script = ExtResource("1_exijc")
 items = Array[ExtResource("2_6ghu5")]([SubResource("Resource_sdoge"), SubResource("Resource_rnmr2"), SubResource("Resource_sdoge")])
@@ -121,7 +227,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_udxc2")
-metadata/_edit_lock_ = true
 
 [node name="Panel" type="Panel" parent="Control"]
 clip_children = 2
@@ -136,6 +241,7 @@ offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_0kuoe")
+metadata/_edit_lock_ = true
 
 [node name="TopStuff" type="Control" parent="Control/Panel"]
 layout_mode = 1
@@ -147,7 +253,7 @@ metadata/_edit_lock_ = true
 
 [node name="Portrait" type="TextureRect" parent="Control/Panel/TopStuff"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -249,6 +355,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_0tmsf")
 metadata/_edit_lock_ = true
 
 [node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -263,6 +370,7 @@ text = "Buy"
 script = ExtResource("9_8l3iy")
 
 [node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -295,6 +403,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7lg80")
 
 [node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -311,6 +420,7 @@ Item Description Item Description Item Description Item Description"
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -480,15 +590,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.180392, 0.109804, 0.0941176, 1)
 
-[node name="Panel2" type="Panel" parent="Control"]
+[node name="YourMoneyPanel" type="Panel" parent="Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 107.0
 offset_top = 9.0
 offset_right = 249.0
 offset_bottom = 47.0
+pivot_offset = Vector2(70, 18)
 theme_override_styles/panel = SubResource("StyleBoxFlat_i41wo")
 
-[node name="TotalPrice2" type="Label" parent="Control/Panel2"]
+[node name="YourMoney" type="Label" parent="Control/YourMoneyPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -504,7 +617,8 @@ text = "0.00"
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel2"]
+[node name="YourMoneyDollar" type="TextureRect" parent="Control/YourMoneyPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -514,6 +628,13 @@ offset_top = -20.0
 offset_right = 35.0
 offset_bottom = 20.0
 grow_vertical = 2
+pivot_offset = Vector2(20, 19)
 texture = ExtResource("11_88myq")
 expand_mode = 1
-metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_r37fl")
+}
+autoplay = "swipe_in"
