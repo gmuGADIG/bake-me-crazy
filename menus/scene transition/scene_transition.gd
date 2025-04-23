@@ -30,5 +30,6 @@ func change_scene_to_packed(scene: PackedScene) -> void:
 	_next_scene = scene
 	# Stop the animation player to always reset the animation.
 	$AnimationPlayer.stop()
+	Dialogic.end_timeline()
 	$AnimationPlayer.play("swipe")
 	
