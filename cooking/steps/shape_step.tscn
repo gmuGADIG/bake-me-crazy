@@ -3,22 +3,16 @@
 [ext_resource type="Script" path="res://cooking/steps/shape_step.gd" id="1_q1w3t"]
 [ext_resource type="Texture2D" uid="uid://byl3qjsmifff3" path="res://temp_art/temp_shape_dough.png" id="2_k5uot"]
 
-[node name="shape_step" type="Control" node_paths=PackedStringArray("origin")]
+[node name="shape_step" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_q1w3t")
-origin = NodePath("origin")
+origin = Vector2(576, 324)
 
-[node name="origin" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 576.0
-offset_top = 324.0
-offset_right = 576.0
-offset_bottom = 324.0
-
-[node name="Dough" type="Sprite2D" parent="origin"]
+[node name="Dough" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(576, 324)
 scale = Vector2(2.52, 2.52)
 texture = ExtResource("2_k5uot")

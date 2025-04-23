@@ -12,6 +12,7 @@
 [node name="FoodMinigame" parent="." instance=ExtResource("1_hk2jr")]
 
 [node name="shape_step" parent="FoodMinigame" instance=ExtResource("2_e6swe")]
+origin = Vector2(0, 0)
 
 [node name="StepHeat" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
 layout_mode = 1
