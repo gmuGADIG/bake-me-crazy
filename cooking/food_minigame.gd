@@ -10,7 +10,7 @@ var step_slide_timer: float = 0.0
 
 const STEP_SLIDE_DURATION: float = 1.0
 const SCREEN_WIDTH := 1152.0
-
+var current_score :float= 0
 func next_step() -> void:
 	# get the previous and next step (each may be null)
 	var prev: FoodStep
@@ -60,10 +60,14 @@ func next_step() -> void:
 		# there should probably be a food_finished signal, which is handled by something else
 		# to either prepare the next food, or load the next scene.
 		# for now, just change to the lunch break
-		get_tree().change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
+		
+
+		%MorningResults.show_results(round(current_score / steps.size()))
+		#get_tree().change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
 
 func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
+	current_score += score
 	# When we finish the last step, move on to the next one.
 	next_step()
 

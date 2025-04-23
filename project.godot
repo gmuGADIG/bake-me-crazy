@@ -19,7 +19,7 @@ config/icon="res://temp_art/temp_game_icon.png"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneTransition="*res://menus/scene transition/scene_transition.tscn"
-InventorySystem="*res://inventory_system.gd"
+InventorySystem="*res://inventory/inventory_system.gd"
 PlayerData="*res://save/player_data.gd"
 Relationships="res://dialogue/relationships.gd"
 
@@ -109,6 +109,7 @@ folder_colors={
 [gui]
 
 common/snap_controls_to_pixels=false
+theme/custom_font="res://menus/fonts/KiwiMaru-Medium.ttf"
 
 [input]
 

@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtfpjbxnjfn3m"]
+
+[ext_resource type="Script" path="res://cooking/steps/kneading.gd" id="1_llm4v"]
+[ext_resource type="Texture2D" uid="uid://cgp0iy46gv5vr" path="res://temp_art/gartic/godot_cross.png" id="1_u1j4f"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_23vti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usyqt"]
+size = Vector2(263, 296)
+
+[node name="Kneading" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_llm4v")
+maxStretch = 150.0
+stretchPerSec = 0.1
+maxPoints = 10000
+fastPointGain = 30
+midPointGain = 15
+slowPointGain = 10
+midThreshold = 2000
+slowThreshold = 3000
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(595, 306)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12.5, 31)
+shape = SubResource("RectangleShape2D_usyqt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 477.0
+offset_top = 204.0
+offset_right = 737.0
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(130, 130)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_u1j4f")
+region_rect = Rect2(0, 0, 431.406, 391.988)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 574.0
+offset_top = 37.0
+offset_right = 620.0
+offset_bottom = 60.0
+text = "DONE"
+
+[node name="VSlider" type="VSlider" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 216.0
+offset_top = 164.0
+offset_right = 299.0
+offset_bottom = 545.0
+scale = Vector2(3.025, 1.02)
+value = 40.0
+editable = false
+scrollable = false
+
+[node name="TextureRect" type="TextureRect" parent="VSlider"]
+self_modulate = Color(0.742948, 0.589263, 3.85046e-07, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 141.0
+offset_right = 68.0
+offset_bottom = 379.0
+pivot_offset = Vector2(39.5207, 112.255)
+texture = ExtResource("3_23vti")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="VSlider"]
+self_modulate = Color(0.742948, 0.589263, 3.85046e-07, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 18.843
+offset_top = 5.88235
+offset_right = 68.843
+offset_bottom = 243.882
+pivot_offset = Vector2(39.5207, 112.255)
+texture = ExtResource("3_23vti")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="VSlider"]
+self_modulate = Color(0.236462, 0.382597, 0.0101678, 1)
+z_index = -1
+layout_mode = 0
+offset_left = 16.8595
+offset_top = 84.3137
+offset_right = 66.8595
+offset_bottom = 297.314
+texture = ExtResource("3_23vti")
+expand_mode = 1
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

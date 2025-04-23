@@ -1,0 +1,640 @@
+[gd_scene load_steps=31 format=3 uid="uid://ksburhrk4icq"]
+
+[ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
+[ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
+[ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
+[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
+[ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
+[ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="3_up5f4"]
+[ext_resource type="Texture2D" uid="uid://chdrt0r1i8gsg" path="res://menus/market_ui/Wood_Panel_Brown.webp" id="6_yylgi"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="9_8l3iy"]
+[ext_resource type="Texture2D" uid="uid://com110htrgu37" path="res://menus/market_ui/Arrows_Spritesheet.webp" id="10_prpwn"]
+[ext_resource type="Texture2D" uid="uid://bqgluk8njq02m" path="res://menus/market_ui/Wood_Panel_Greyscale.webp" id="10_pxk6v"]
+[ext_resource type="Texture2D" uid="uid://crqb6442tbnvh" path="res://menus/market_ui/Dollar_Sign.webp" id="11_88myq"]
+
+[sub_resource type="Resource" id="Resource_sdoge"]
+script = ExtResource("2_6ghu5")
+code_name = "lettuce"
+display_name = "Lettuce"
+description = "Delicious lettuce"
+quality = 4
+icon = ExtResource("3_up5f4")
+price = 15
+
+[sub_resource type="Resource" id="Resource_rnmr2"]
+script = ExtResource("2_6ghu5")
+code_name = "pork"
+display_name = "Pork"
+description = "Just like the Minecraft movie"
+quality = 2
+icon = ExtResource("3_up5f4")
+price = 15
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kuoe"]
+texture = ExtResource("6_yylgi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbns"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sahb7"]
+bg_color = Color(0, 0, 0, 0.305882)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tmsf"]
+texture = ExtResource("10_pxk6v")
+region_rect = Rect2(0, 139.782, 2021, 814.564)
+modulate_color = Color(0.37, 0.2886, 0.2072, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v2fpt"]
+blend_mode = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lg80"]
+bg_color = Color(0.711538, 0.604173, 0.72896, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i17og"]
+blend_mode = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6sy5"]
+bg_color = Color(0.711538, 0.604173, 0.72896, 1)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_csa1r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ki7qx"]
+texture = ExtResource("10_prpwn")
+region_rect = Rect2(598, 674, 474, 362.718)
+modulate_color = Color(1.05, 1.05, 1.05, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mfmem"]
+texture = ExtResource("10_prpwn")
+region_rect = Rect2(598, 674, 474, 362.718)
+modulate_color = Color(0.509286, 0.509286, 0.509286, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4d31u"]
+texture = ExtResource("10_prpwn")
+region_rect = Rect2(598, 674, 474, 362.718)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i41wo"]
+bg_color = Color(0.688018, 0.5287, 0.458238, 1)
+skew = Vector2(-0.525, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id="Animation_tg8hl"]
+resource_name = "swipe_in"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(625, 325), Vector2(625, 51)]
+}
+
+[sub_resource type="Animation" id="Animation_025ws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(625, 51)]
+}
+
+[sub_resource type="Animation" id="Animation_bjio7"]
+resource_name = "swipe_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(625, 51), Vector2(625, 325)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r37fl"]
+_data = {
+"RESET": SubResource("Animation_025ws"),
+"swipe_in": SubResource("Animation_tg8hl"),
+"swipe_out": SubResource("Animation_bjio7")
+}
+
+[node name="MarketUI" type="CanvasLayer"]
+script = ExtResource("1_exijc")
+items = Array[ExtResource("2_6ghu5")]([SubResource("Resource_sdoge"), SubResource("Resource_rnmr2"), SubResource("Resource_sdoge")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_udxc2")
+
+[node name="Panel" type="Panel" parent="Control"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0kuoe")
+metadata/_edit_lock_ = true
+
+[node name="TopStuff" type="Control" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 428.0
+grow_horizontal = 2
+metadata/_edit_lock_ = true
+
+[node name="Portrait" type="TextureRect" parent="Control/Panel/TopStuff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_top = -377.0
+offset_right = 540.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_aujpw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Border" type="Panel" parent="Control/Panel/TopStuff/Portrait"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpbns")
+
+[node name="IngredientList" type="Panel" parent="Control/Panel/TopStuff"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 52.0
+offset_right = 623.0
+offset_bottom = 409.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sahb7")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel/TopStuff/IngredientList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientContainer" type="FlowContainer" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector2" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector3" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector4" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector5" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector6" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector7" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector8" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector9" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="IngredientSelector10" parent="Control/Panel/TopStuff/IngredientList/ScrollContainer/IngredientContainer" instance=ExtResource("3_ay0y5")]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="BottomStuff" type="Panel" parent="Control/Panel"]
+self_modulate = Color(2, 2, 2, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0tmsf")
+metadata/_edit_lock_ = true
+
+[node name="BuyButton" type="Button" parent="Control/Panel/BottomStuff"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 81.0
+offset_top = 68.0
+offset_right = 269.0
+offset_bottom = 115.0
+grow_horizontal = 2
+pivot_offset = Vector2(95, 24)
+text = "Buy"
+script = ExtResource("9_8l3iy")
+
+[node name="CancelButton" type="Button" parent="Control/Panel/BottomStuff"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 273.0
+offset_top = 68.0
+offset_right = 461.0
+offset_bottom = 115.0
+grow_horizontal = 2
+pivot_offset = Vector2(96, 25)
+text = "Cancel"
+script = ExtResource("9_8l3iy")
+
+[node name="Control" type="Control" parent="Control/Panel/BottomStuff"]
+anchors_preset = 0
+offset_left = 70.0
+offset_top = 22.0
+offset_right = 547.0
+offset_bottom = 160.0
+
+[node name="ItemDescriptionPanel" type="Panel" parent="Control/Panel/BottomStuff/Control"]
+material = SubResource("CanvasItemMaterial_v2fpt")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = -1.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7lg80")
+
+[node name="Description" type="RichTextLabel" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 14
+text = "Real Cabbage
+Item Description Item Description Item Description Item Description"
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Control/Panel/BottomStuff/Control/ItemDescriptionPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.5
+offset_top = -30.0
+offset_right = 44.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You have: 0"
+
+[node name="ItemQuantityPanel" type="Panel" parent="Control/Panel/BottomStuff/Control"]
+material = SubResource("CanvasItemMaterial_i17og")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g6sy5")
+
+[node name="QuantityLabel" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_top = 8.0
+offset_right = 44.5
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Quantity"
+horizontal_alignment = 1
+
+[node name="QuantityNumber" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -66.0
+offset_right = 44.5
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(44.5, 65)
+theme_override_font_sizes/font_size = 53
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalPrice" type="Label" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -36.0
+offset_right = 21.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$ 0.0"
+horizontal_alignment = 1
+
+[node name="LeftArrow" type="Button" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -25.0
+offset_right = -162.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(30, 24)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_csa1r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ki7qx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mfmem")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4d31u")
+script = ExtResource("9_8l3iy")
+
+[node name="RightArrow" type="Button" parent="Control/Panel/BottomStuff/Control/ItemQuantityPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -25.0
+offset_right = -21.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(30, 24)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_csa1r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ki7qx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mfmem")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4d31u")
+script = ExtResource("9_8l3iy")
+
+[node name="CharacterName" type="Label" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 175.0
+offset_top = 12.0
+offset_right = 369.0
+offset_bottom = 35.0
+grow_horizontal = 2
+text = "The Cabbage SHop"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Control/Panel/BottomStuff"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.0784314, 0.054902, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control/Panel/BottomStuff"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_right = -1103.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.109804, 0.0941176, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control/Panel/BottomStuff"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1103.0
+offset_top = -4.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.109804, 0.0941176, 1)
+
+[node name="YourMoneyPanel" type="Panel" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 107.0
+offset_top = 9.0
+offset_right = 249.0
+offset_bottom = 47.0
+pivot_offset = Vector2(70, 18)
+theme_override_styles/panel = SubResource("StyleBoxFlat_i41wo")
+
+[node name="YourMoney" type="Label" parent="Control/YourMoneyPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 29.0
+offset_top = -12.5
+offset_right = 180.0
+offset_bottom = 12.5
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.00"
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="YourMoneyDollar" type="TextureRect" parent="Control/YourMoneyPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 35.0
+offset_bottom = 20.0
+grow_vertical = 2
+pivot_offset = Vector2(20, 19)
+texture = ExtResource("11_88myq")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_r37fl")
+}
+autoplay = "swipe_in"
