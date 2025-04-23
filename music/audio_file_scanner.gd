@@ -5,6 +5,9 @@ var root_path: String = "res://music/"
 var sound_files: Array[Resource] = []
 var song_dict: Dictionary = {}
 
+func _ready() -> void:
+	index_all_sound_files_in_root_directory()
+
 # Recursively scan `root_path` and fill both sound_files and song_dict
 func index_all_sound_files_in_root_directory() -> void:
 	sound_files.clear()

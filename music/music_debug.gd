@@ -3,8 +3,6 @@ class_name MusicPlayerDebug
 
 const EPS := 0.001
 
-@export var song_scanner: MusicScanner
-
 @onready var pl: MusicPlayer = $MusicPlayer
 @onready var start_edit: LineEdit = $VBoxContainer/Controls/PlayContainer/LoopStartContainer/LoopStartEdit
 @onready var end_edit: LineEdit = $VBoxContainer/Controls/PlayContainer/LoopEndContainer/LoopEndEdit
@@ -32,7 +30,6 @@ var e_lo: float
 var e_hi: float
 
 func _ready() -> void:
-	song_scanner.index_all_sound_files_in_root_directory()
 	_sync_fields()
 	_setup_file_options()
 	_connect_ui()
@@ -79,7 +76,7 @@ func _sync_fields() -> void:
 	volume_slider.set_value_no_signal(1.0)
 	
 func _setup_file_options() -> void:
-	for file in song_scanner.sound_files:
+	for file in SongScanner.sound_files:
 		file_select.add_item(file.resource_path)
 
 func _connect_ui() -> void:

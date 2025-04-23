@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://8anyinpimvx2"]
 
+[ext_resource type="PackedScene" uid="uid://c4qae2ry8qdl4" path="res://music/song_scanner.tscn" id="1_cmtgh"]
 [ext_resource type="Script" path="res://music/music_debug.gd" id="1_s6n1t"]
 [ext_resource type="PackedScene" uid="uid://3lris5j0nmj4" path="res://music/music_player/music_player.tscn" id="3_6yfmu"]
-[ext_resource type="Script" path="res://music/audio_file_scanner.gd" id="4_bmwd3"]
 [ext_resource type="Resource" uid="uid://n7kwolshtjnv" path="res://music/default_song.tres" id="4_wsf3p"]
 
 [sub_resource type="Curve" id="Curve_jp8ki"]
@@ -11,18 +11,16 @@ point_count = 2
 
 [node name="MusicTestScene" type="Node2D"]
 
-[node name="SongScanner" type="Node" parent="."]
-script = ExtResource("4_bmwd3")
+[node name="SongScanner" parent="." instance=ExtResource("1_cmtgh")]
 
 [node name="InputListener" type="Node" parent="."]
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("song_scanner")]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("1_s6n1t")
-song_scanner = NodePath("../SongScanner")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0

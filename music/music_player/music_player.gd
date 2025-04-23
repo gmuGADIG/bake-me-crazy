@@ -6,9 +6,6 @@ class_name MusicPlayer
 @export var song_transition_curve: Curve
 @export var song_transition_duration: float
 
-# MOTE: TEMP VARIABLE UNTIL AUTOLOAD
-var music_scanner: MusicScanner
-
 const FULL_DB: float = 0.0
 const MUTE_DB: float = -64.0
 const VOLUME_TRANSITION_TIME: float = 0.5
@@ -37,7 +34,7 @@ func _process(delta: float) -> void:
 # Public method to transition to a song given its string filename `example_song.tres`, for example.
 func transition_to_song_by_filename(filename: String, at_point: float = 0.0):
 	# NOTE: Currently, this will crash as music_scanner is null
-	var song: Song = music_scanner.get_song_by_filename(filename)
+	var song: Song = SongScanner.get_song_by_filename(filename)
 	if not song:
 		return
 	current_song = song

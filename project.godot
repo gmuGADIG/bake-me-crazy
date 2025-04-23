@@ -22,6 +22,8 @@ SceneTransition="*res://menus/scene transition/scene_transition.tscn"
 InventorySystem="*res://inventory/inventory_system.gd"
 PlayerData="*res://save/player_data.gd"
 Relationships="res://dialogue/relationships.gd"
+MainMusicPlayer="*res://music/music_player/music_player.tscn"
+SongScanner="*res://music/song_scanner.tscn"
 
 [dialogic]
 
