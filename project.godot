@@ -22,18 +22,31 @@ SceneTransition="*res://menus/scene transition/scene_transition.tscn"
 InventorySystem="*res://inventory/inventory_system.gd"
 PlayerData="*res://save/player_data.gd"
 Relationships="res://dialogue/relationships.gd"
+SongScanner="*res://music/song_scanner.tscn"
+MainMusicPlayer="*res://music/music_player/music_player.tscn"
+DialogManager="*res://dialogue/dialog_manager.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"callum": "res://dialogue/salty/callum.dch",
+"datealbecharacter": "res://menus/testing/datealbecharacter.dch",
+"millie": "res://dialogue/savory/millie.dch",
+"pepper": "res://dialogue/spicy/pepper.dch",
+"raymond": "res://dialogue/sweet/raymond.dch",
+"salty": "res://dialogue/salty/salty.dch",
+"testing/testman1": "res://menus/testing/testman1.dch"
+}
+
 directories/dtl_directory={
 "Timeline": "res://Timeline.dtl",
 "clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
-"npcclasstest": "res://menus/testing/npcclasstest.dtl",
-"spicy_test": "res://spicy_test.dtl",
-"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
+"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
+"test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl",
+"testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
+"testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
@@ -97,7 +110,7 @@ folder_colors={
 "res://dialogue/coworker/": "blue",
 "res://dialogue/salty/": "blue",
 "res://dialogue/savory/": "blue",
-"res://dialogue/sour/": "blue",
+"res://dialogue/spicy/": "blue",
 "res://dialogue/sweet/": "blue",
 "res://free_roam/": "green",
 "res://menus/": "yellow",
@@ -194,6 +207,7 @@ open_recipes={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="NPC"
+2d_physics/layer_16="CutCheckerLayer"
 
 [rendering]
 

@@ -6,5 +6,5 @@ var data := SaveTemplate.new()
 
 func load_file(save_template : SaveTemplate) -> void:
 	data = save_template
-	get_tree().change_scene_to_file("res://free_roam/world/streets.tscn")
+	SceneTransition.change_scene_to_file("res://free_roam/world/streets.tscn")
 	# TODO: include the current scene in the save and go there

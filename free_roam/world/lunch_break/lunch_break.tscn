@@ -124,7 +124,7 @@ curve = SubResource("Curve2D_r20jp")
 [node name="Player" parent="PlayerPath" index="0"]
 position = Vector2(69, 600)
 
-[node name="Camera2D" parent="PlayerPath/Player" index="2"]
+[node name="Camera2D" parent="PlayerPath/Player" index="3"]
 limit_left = 0
 limit_top = 0
 limit_right = 1721
