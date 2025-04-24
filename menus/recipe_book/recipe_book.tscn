@@ -21,83 +21,81 @@ is_locked = false
 
 [sub_resource type="Resource" id="Resource_d3qea"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #2"
+name = "Cookies"
 food_image = ExtResource("4_aimad")
-instructions = "This will list all the instructions
-1. Help
-2. I
-3. r e q u i r e
-4. S U S T E N A N C E"
+instructions = "A baked dessert shaped to be small, flat, and made with love. The butter dough mixed with sweet ingredients gives each bite a memorable sensation. A cookie’s texture varies from crisp and crunchy to soft and chewy depending on the techniques used."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_82m3y"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #3"
-instructions = "e"
+name = "Cake"
+instructions = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors. Cake is a classic treat that pairs well with a frosting of choice to blend a rich or delicate taste. What makes a good cake is not only in taste but also in appearance, as a cake can be shaped into many things, left to the human imagination."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_piyw4"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #4"
-instructions = "f"
+name = "Sweet Roll"
+instructions = "This treat is perfect for breakfast or brunch as it's a light, flaky dough that surrounds a filling of choice. Compared to regular bread dough, sweet roll dough generally has higher levels of sugar, fat, eggs, and yeast. They are often round or have a spiral center."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_bcias"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #5"
-instructions = "Joe mama"
+name = "Brownie"
+instructions = "A sweet that can reach true perfection as it is glossy and filled with rich flavor. Brownies come in a variety of forms and may be either fudgy or cakey, depending on their density. Top quality brownies are super fudgy and slightly gooey middles that taste intensely, depending on what you put in, with gorgeous crackly tops."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_2j335"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #6"
-instructions = "your"
+name = "Macaron"
+instructions = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside, giving it a balance of crunch and softness! As well as having a vibrant selection of colors."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_mbxs7"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #7"
-instructions = "mom"
+name = "Scones"
+instructions = "Similar to a biscuit, this type of pastry has a crumbly exterior with a buttery flavor, and a wide selection of toppings, from creamy melted cheese or zesty orange."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_152om"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #8"
-instructions = "eeeeeeeee"
+name = "Puff Roll"
+instructions = "The pastry’s equivalent of a burrito! Sporting a soft yet slightly crunchy exterior, having enough space inside to fill up on the delicious choices of fillings, such as savory sausages or sweet chocolate filling!"
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_jy2si"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #9"
-instructions = "big bruh"
+name = "Tart"
+instructions = "A versatile crust with a crumbly yet soft texture that can handle all kinds of
+juicy fruits and other toppings in a pie-like shape. From refreshing
+strawberries to thick and sweet chocolate."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_nt2kn"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #10"
-instructions = "biggest bruh"
+name = "Bread"
+instructions = "A staple for all bakeries, an incredibly versatile pastry that sports a cloudy soft inside and a firm and strong exterior. Bread has a wheat flavor that is not too overwhelming, which adds a great little touch to the overall flavor."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_2l5fl"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #11"
-instructions = "omg I can't take this anymore..."
+name = "Cannelle"
+instructions = "A small and soft pastry that has a rich caramelized exterior, which is contrasted with a pillowy soft custardy center, additionally, it can support different types of flavors, from vanilla bean to savory cheese."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
 [sub_resource type="Resource" id="Resource_36ugh"]
 script = ExtResource("2_8r5qq")
-name = "Food Item #12"
-instructions = "boi if you don getcho pickle chin ahh boi affro head ahh boi if you dont calyo ahh boi stank ahh boi be like khlkhlkhkhlkhlhklhklhkhlfgflgkfglkhlhklhklhkhklh"
+name = "Bar"
+instructions = "A rectangular thick pastry similar to that of a brownie, this type of dessert is defined by its toppings, having a wide array of customizability, and there is an abundant number of variants that you can make."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
 
