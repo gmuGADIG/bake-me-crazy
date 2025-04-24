@@ -44,7 +44,7 @@ directories/dtl_directory={
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
 "test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl",
 "testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
-"testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
+"testing/npcclasstest": "res://menus/testing/npcclasstest.dtl",
 "LukasBrockman_test": "res://dialogue/testing/LukasBrockman_test.dtl",
 "Sweet_Date1_timeline": "res://dialogue/sweet/Sweet_Date1_timeline.dtl",
 "clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
