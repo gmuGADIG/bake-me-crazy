@@ -566,9 +566,9 @@ text = "Cancel"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 0
-offset_left = 281.0
+offset_left = 252.0
 offset_top = 81.0
-offset_right = 564.0
+offset_right = 562.0
 offset_bottom = 573.0
 
 [node name="VariantButton" parent="ColorRect/VBoxContainer" instance=ExtResource("28_8q60k")]
@@ -589,9 +589,9 @@ metadata/_edit_lock_ = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 0
-offset_left = 577.0
+offset_left = 582.0
 offset_top = 81.0
-offset_right = 860.0
+offset_right = 892.0
 offset_bottom = 573.0
 
 [node name="VariantButton" parent="ColorRect/VBoxContainer2" instance=ExtResource("28_8q60k")]
