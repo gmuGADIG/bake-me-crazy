@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgmqffo2go7p6"]
+
+[ext_resource type="Script" path="res://cooking/steps/step_cut.gd" id="1_y2f8k"]
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="3_oatch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bj35s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxti8"]
+radius = 1.0
+
+[node name="StepCut" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 362.0
+offset_top = 82.0
+offset_right = 362.0
+offset_bottom = 82.0
+script = ExtResource("1_y2f8k")
+
+[node name="ToCut" type="Area2D" parent="."]
+collision_layer = 32768
+
+[node name="Cutting" type="Line2D" parent="."]
+unique_name_in_owner = true
+points = PackedVector2Array(16, -17)
+default_color = Color(0, 1, 0, 1)
+
+[node name="LastCutArea" type="Area2D" parent="Cutting"]
+position = Vector2(18, -6)
+
+[node name="LastCut" type="CollisionShape2D" parent="Cutting/LastCutArea"]
+shape = SubResource("CircleShape2D_bj35s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cutting/LastCutArea/LastCut"]
+position = Vector2(65, -7)
+rotation = 1.5708
+texture = ExtResource("3_oatch")
+
+[node name="CutChecker" type="ShapeCast2D" parent="Cutting"]
+unique_name_in_owner = true
+position = Vector2(-18, -8)
+shape = SubResource("CircleShape2D_mxti8")
+target_position = Vector2(0, 0)
+collision_mask = 32768
+collide_with_areas = true
