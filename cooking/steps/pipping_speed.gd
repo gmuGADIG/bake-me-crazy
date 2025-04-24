@@ -5,10 +5,12 @@ extends FoodStep
 @export var fast_threshold : float
 
 @onready var speed_text := $Label
+@onready var accuracy_text := $Accuracy
 @onready var slider := $HSlider
 
 var mouse_over : bool 
 var pipping: bool
+var game_done: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -26,14 +28,9 @@ func _process(delta: float) -> void:
 		fastPoints = 0
 	if Input.is_action_just_released("interact"):
 		pipping = false
-		var totalPoints: float = slowPoints + rightPoints + fastPoints
-		print("Slow: " + str(slowPoints))
-		print("RIGHT: " + str(rightPoints))
-		print("Fast: " + str(fastPoints))
-		var right_ratio := rightPoints/totalPoints
-		print("RIGHT RATIO: " + str(right_ratio))
-	if pipping:
-		var speed :float = abs(Input.get_last_mouse_velocity().y)
+		
+	if pipping and !game_done:
+		var speed :float = Input.get_last_mouse_velocity().y
 		if speed < 10:
 			speed_text.text = "NOT MOVING"
 		elif speed < slow_threshold:
@@ -57,4 +54,16 @@ func _on_character_body_2d_mouse_entered() -> void:
 
 func _on_character_body_2d_mouse_exited() -> void:
 	mouse_over = false
+	pass # Replace with function body.
+
+func _on_end_point_mouse_entered() -> void:
+	print("END")
+	var totalPoints: float = slowPoints + rightPoints + fastPoints
+	print("Slow: " + str(slowPoints))
+	print("RIGHT: " + str(rightPoints))
+	print("Fast: " + str(fastPoints))
+	var right_ratio : int = (rightPoints/totalPoints) * 100
+	print("RIGHT RATIO: " + str(right_ratio))
+	accuracy_text.text = "Accuracy: " + str(right_ratio) + "%"
+	game_done = true
 	pass # Replace with function body.
