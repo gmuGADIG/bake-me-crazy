@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://c6hvm1ahi2u64" path="res://recipes/Bread_Sourdough.png" id="21_q13c5"]
 [ext_resource type="Texture2D" uid="uid://buxkx0dky3jmm" path="res://recipes/Bar_Strawberry.png" id="26_mb8qh"]
 [ext_resource type="Texture2D" uid="uid://d4cvrxp22ejf8" path="res://recipes/Bar_Billionaire.png" id="27_x6el4"]
-[ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
+[ext_resource type="Script" path="res://menus/recipe_book/recipe_variant_selection.gd" id="33_amgaq"]
 
 [sub_resource type="Resource" id="Resource_dkqhj"]
 script = ExtResource("5_p52jp")
@@ -503,15 +503,17 @@ offset_bottom = -73.0
 grow_vertical = 0
 text = "BAKE"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="RecipeVariantSelection" type="ColorRect" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.643665, 0.539271, 0.449243, 1)
+script = ExtResource("33_amgaq")
 
-[node name="SelectRecipesToBake" type="RichTextLabel" parent="ColorRect"]
+[node name="SelectRecipesToBake" type="RichTextLabel" parent="RecipeVariantSelection"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -525,14 +527,14 @@ theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "[center][wave]Select recipe variants!"
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="RecipeVariantSelection"]
 layout_mode = 0
 offset_left = 125.0
 offset_top = 121.0
 offset_right = 432.0
 offset_bottom = 344.0
 
-[node name="Label2" type="Label" parent="ColorRect"]
+[node name="Label2" type="Label" parent="RecipeVariantSelection"]
 layout_mode = 0
 offset_left = 302.0
 offset_top = 50.0
@@ -540,7 +542,7 @@ offset_right = 493.0
 offset_bottom = 74.0
 text = "Select variant for Cake"
 
-[node name="Label3" type="Label" parent="ColorRect"]
+[node name="Label3" type="Label" parent="RecipeVariantSelection"]
 layout_mode = 0
 offset_left = 758.0
 offset_top = 58.0
@@ -548,7 +550,7 @@ offset_right = 949.0
 offset_bottom = 82.0
 text = "Select variant for Bar"
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Button" type="Button" parent="RecipeVariantSelection"]
 layout_mode = 0
 offset_left = 386.0
 offset_top = 595.0
@@ -556,7 +558,7 @@ offset_right = 557.0
 offset_bottom = 627.0
 text = "Confirm!"
 
-[node name="Button2" type="Button" parent="ColorRect"]
+[node name="Button2" type="Button" parent="RecipeVariantSelection"]
 layout_mode = 0
 offset_left = 575.0
 offset_top = 595.0
@@ -564,51 +566,21 @@ offset_right = 746.0
 offset_bottom = 627.0
 text = "Cancel"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VariantsLeft" type="VBoxContainer" parent="RecipeVariantSelection"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 252.0
 offset_top = 81.0
 offset_right = 562.0
 offset_bottom = 573.0
 
-[node name="VariantButton" parent="ColorRect/VBoxContainer" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VariantButton2" parent="ColorRect/VBoxContainer" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VariantButton3" parent="ColorRect/VBoxContainer" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VariantButton4" parent="ColorRect/VBoxContainer" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
+[node name="VariantsRight" type="VBoxContainer" parent="RecipeVariantSelection"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 582.0
 offset_top = 81.0
 offset_right = 892.0
 offset_bottom = 573.0
-
-[node name="VariantButton" parent="ColorRect/VBoxContainer2" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VariantButton2" parent="ColorRect/VBoxContainer2" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VariantButton3" parent="ColorRect/VBoxContainer2" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="VariantButton4" parent="ColorRect/VBoxContainer2" instance=ExtResource("28_8q60k")]
-layout_mode = 2
-metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="BakingText/FinishButton" to="." method="_on_finish_button_pressed"]
 [connection signal="pressed" from="TurnPageLeft" to="." method="_on_turn_page_left_pressed"]
