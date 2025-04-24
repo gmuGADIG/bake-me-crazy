@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=58 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
@@ -21,7 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://dy5gahy1h5kjp" path="res://recipes/PuffRoll_Sausage.png" id="14_c0tbc"]
 [ext_resource type="Texture2D" uid="uid://hvy3ajjxlrfl" path="res://recipes/PuffRoll_Spinach.png" id="15_6pv8f"]
 [ext_resource type="Texture2D" uid="uid://jepgpp4q36k0" path="res://recipes/Bar_Butter.png" id="16_hq24v"]
+[ext_resource type="Texture2D" uid="uid://bt8ow64g2bleh" path="res://recipes/Canelle_Vanilla.png" id="16_k40gs"]
 [ext_resource type="Texture2D" uid="uid://6kxx1jobd4yy" path="res://recipes/Bar_Lemon.png" id="17_vlxkb"]
+[ext_resource type="Texture2D" uid="uid://c1o4q2iwfbmsl" path="res://recipes/Canelle_Chocolate.png" id="17_wms51"]
 
 [sub_resource type="Resource" id="Resource_dkqhj"]
 script = ExtResource("5_p52jp")
@@ -197,7 +199,13 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_3ww61")])
 
 [sub_resource type="Resource" id="Resource_1qepa"]
 script = ExtResource("5_p52jp")
-texture = ExtResource("5_2erxo")
+texture = ExtResource("16_k40gs")
+key_ingredient = &""
+key_ingredient_requirement = 0
+
+[sub_resource type="Resource" id="Resource_n7rbc"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("17_wms51")
 key_ingredient = &""
 key_ingredient_requirement = 0
 
@@ -207,7 +215,7 @@ name = "Cannelle"
 instructions = "A small and soft pastry that has a rich caramelized exterior, which is contrasted with a pillowy soft custardy center, additionally, it can support different types of flavors, from vanilla bean to savory cheese."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
-variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_1qepa")])
+variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_1qepa"), SubResource("Resource_n7rbc")])
 
 [sub_resource type="Resource" id="Resource_x3fre"]
 script = ExtResource("5_p52jp")
