@@ -30,5 +30,5 @@ func populate_item_grid() -> void:
 
 #To be called before populate_item_grid() when UI opens
 func clear_item_grid() -> void:
-	for child in items_container:
+	for child in items_container.get_children():
 		child.queue_free()

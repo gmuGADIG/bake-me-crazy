@@ -13,6 +13,7 @@ grow_vertical = 2
 [node name="Panel3" type="Panel" parent="."]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 
 [node name="ColorRect" type="ColorRect" parent="Panel3"]
 layout_mode = 1

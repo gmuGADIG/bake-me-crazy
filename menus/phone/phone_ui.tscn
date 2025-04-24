@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=17 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
@@ -7,11 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="3_m70wx"]
 [ext_resource type="Script" path="res://menus/phone/contacts_app.gd" id="3_rv7fq"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="4_wsq33"]
+[ext_resource type="Script" path="res://menus/phone/inventory_scene.gd" id="5_7dqal"]
 [ext_resource type="Texture2D" uid="uid://qst2473t8kgd" path="res://temp_art/4ea.jpg" id="5_j01br"]
 [ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="5_r6x37"]
-[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
-[ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="7_ia0ob"]
-[ext_resource type="Script" path="res://menus/phone/inventory_scene.gd" id="5_7dqal"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
 [ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="6_sjcrr"]
 
@@ -354,7 +352,7 @@ stretch_mode = 4
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 6
-texture_normal = ExtResource("7_ia0ob")
+texture_normal = ExtResource("6_sjcrr")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -368,6 +366,7 @@ stretch_mode = 4
 
 [node name="Inventory" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 script = ExtResource("5_7dqal")
 
@@ -437,7 +436,6 @@ size_flags_horizontal = 3
 
 [node name="Screen" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 clip_children = 1
 layout_mode = 2
 
