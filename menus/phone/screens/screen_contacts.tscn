@@ -1,0 +1,121 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd2w2nps17xal"]
+
+[ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="1_r6l74"]
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="2_xpkdb"]
+[ext_resource type="Script" path="res://menus/phone/contacts_app.gd" id="3_4ish7"]
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="4_kbwgh"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_iayrh"]
+
+[node name="ScreenContacts" type="Panel"]
+custom_minimum_size = Vector2(184, 297)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.623529, 1, 1, 1)
+
+[node name="Contact1" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(184, 275)
+layout_mode = 2
+offset_right = 184.0
+
+[node name="ColorRect" type="ColorRect" parent="Contact1"]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 298.0
+
+[node name="TextureRect" type="TextureRect" parent="Contact1"]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 174.0
+texture = ExtResource("1_r6l74")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Contact2" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(184, 275)
+layout_mode = 2
+offset_right = 184.0
+
+[node name="ColorRect" type="ColorRect" parent="Contact2"]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 298.0
+color = Color(0.655981, 0.135346, 0.674231, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Contact2"]
+layout_mode = 0
+offset_right = 185.0
+offset_bottom = 148.0
+texture = ExtResource("2_xpkdb")
+
+[node name="ContactScreen" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 270.0
+
+[node name="GridContainer" type="GridContainer" parent="ContactScreen"]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 297.0
+script = ExtResource("3_4ish7")
+
+[node name="TextureButton" type="TextureButton" parent="ContactScreen/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_kbwgh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="ContactScreen/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_kbwgh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="ContactScreen/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_kbwgh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="ContactScreen/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_kbwgh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton5" type="TextureButton" parent="ContactScreen/GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_kbwgh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ContactsBackButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -6.10352e-05
+offset_top = 255.0
+offset_right = 49.9999
+offset_bottom = 305.0
+texture_normal = ExtResource("5_iayrh")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[connection signal="pressed" from="ContactScreen/GridContainer/TextureButton" to="ContactScreen/GridContainer" method="_on_texture_button_pressed" binds= [1]]
+[connection signal="pressed" from="ContactScreen/GridContainer/TextureButton2" to="ContactScreen/GridContainer" method="_on_texture_button_pressed" binds= [2]]
+[connection signal="pressed" from="ContactsBackButton" to="ContactScreen/GridContainer" method="_on_contacts_back_button_pressed"]

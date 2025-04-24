@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bguwgjkxwabsm"]
+
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_kk0mo"]
+[ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="2_4dwdw"]
+[ext_resource type="Texture2D" uid="uid://qst2473t8kgd" path="res://temp_art/4ea.jpg" id="3_fn2ir"]
+[ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="4_kklq1"]
+
+[node name="ScreenGallery" type="Panel"]
+custom_minimum_size = Vector2(184, 297)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.628921, 0.96398, 0.418176, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 297.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(184, 260)
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="TextureButton" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_kk0mo")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("2_4dwdw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("3_fn2ir")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_kk0mo")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton5" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_kk0mo")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TextureButton6" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("4_kklq1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton7" type="TextureButton" parent="ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("1_kk0mo")
+ignore_texture_size = true
+stretch_mode = 4

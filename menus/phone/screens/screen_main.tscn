@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxso1ka8o2f5"]
+
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_nbnca"]
+[ext_resource type="Texture2D" uid="uid://c54mcqibxeokk" path="res://temp_art/brightened_temp_game_icon.png" id="2_4pf4v"]
+
+[node name="ScreenMain" type="Panel"]
+clip_children = 1
+custom_minimum_size = Vector2(184, 297)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = -2
+theme_override_constants/v_separation = -15
+columns = 2
+
+[node name="TextureButton" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("1_nbnca")
+texture_pressed = ExtResource("1_nbnca")
+texture_hover = ExtResource("2_4pf4v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("1_nbnca")
+texture_hover = ExtResource("2_4pf4v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton3" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("1_nbnca")
+texture_hover = ExtResource("2_4pf4v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton4" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture_normal = ExtResource("1_nbnca")
+texture_hover = ExtResource("2_4pf4v")
+ignore_texture_size = true
+stretch_mode = 5

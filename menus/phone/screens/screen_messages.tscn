@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://sn0kgbkvxwpu"]
+
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="1_ko816"]
+
+[node name="ScreenMessages" type="Panel"]
+custom_minimum_size = Vector2(184, 297)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97766, 0.811356, 0.793624, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 297.0
+
+[node name="TextureButton" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("1_ko816")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("1_ko816")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("1_ko816")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton4" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("1_ko816")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton5" type="TextureButton" parent="GridContainer"]
+custom_minimum_size = Vector2(184, 40)
+layout_mode = 2
+texture_normal = ExtResource("1_ko816")
+ignore_texture_size = true
+stretch_mode = 0
