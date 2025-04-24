@@ -5,35 +5,71 @@
 
 [node name="RecipeBookPage" type="Panel"]
 custom_minimum_size = Vector2(396, 360)
+offset_right = 396.0
+offset_bottom = 506.0
 size_flags_horizontal = 3
 script = ExtResource("1_bnpu1")
 
 [node name="FoodIcon" type="TextureRect" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 34.0
-offset_top = 15.0
-offset_right = 140.0
-offset_bottom = 123.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 14.0
+offset_right = 53.0
+offset_bottom = 122.0
+grow_horizontal = 2
 texture = ExtResource("2_0saai")
 expand_mode = 1
 
 [node name="FoodName" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -245.0
-offset_right = -31.0
-offset_bottom = -193.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_top = 130.0
+offset_right = 190.0
+offset_bottom = 182.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Food Item One"
+horizontal_alignment = 1
+
+[node name="FoodVariants" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.0
+offset_top = 184.0
+offset_right = -59.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "- Chocolate 
+- Pistachio
+"
+
+[node name="FoodVariants2" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -3.0
+offset_top = 184.0
+offset_right = 107.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "- Ice Cream
+- Hot Sauce"
 
 [node name="FoodDesc" type="Label" parent="."]
 unique_name_in_owner = true
@@ -43,11 +79,11 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 28.0
-offset_top = -197.0
+offset_top = -263.0
 offset_right = -28.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite."
+text = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors. Cake is a classic treat that pairs well with a frosting of choice to blend a rich or delicate taste. What makes a good cake is not only in taste but also in appearance, as a cake can be shaped into many things, left to the human imagination."
 autowrap_mode = 2

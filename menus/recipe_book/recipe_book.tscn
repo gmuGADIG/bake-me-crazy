@@ -306,44 +306,6 @@ rotation = -3.14159
 scale = Vector2(0.274, 0.256)
 texture = ExtResource("6_p3kn6")
 
-[node name="BakingText" type="Control" parent="."]
-unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SelectRecipesToBake" type="RichTextLabel" parent="BakingText"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 30.0
-offset_bottom = 124.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 40
-bbcode_enabled = true
-text = "[center][wave]Select two recipes to bake!"
-
-[node name="FinishButton" type="Button" parent="BakingText"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -84.0
-offset_right = 150.0
-offset_bottom = -19.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(150, 32.5)
-text = "0/2 Recipes"
-script = ExtResource("10_7f2te")
-
 [node name="Book" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -363,6 +325,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -129.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -370,11 +334,52 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2ndtw")
+metadata/_edit_lock_ = true
 
 [node name="PageRight" parent="Book/Pages" instance=ExtResource("7_ldrir")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x4nyj")
+metadata/_edit_lock_ = true
+
+[node name="BakingText" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectRecipesToBake" type="RichTextLabel" parent="BakingText"]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 14.0
+offset_bottom = 108.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][wave]Select two recipes to bake!"
+
+[node name="FinishButton" type="Button" parent="BakingText"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -58.0
+offset_right = 150.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(150, 32.5)
+text = "0/2 Recipes"
+script = ExtResource("10_7f2te")
 
 [node name="TurnPageLeft" type="Button" parent="."]
 unique_name_in_owner = true
@@ -382,9 +387,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 146.0
-offset_top = -179.0
+offset_top = -139.0
 offset_right = 632.0
-offset_bottom = 226.0
+offset_bottom = 266.0
 grow_vertical = 0
 scale = Vector2(0.15, 0.15)
 text = "Left
@@ -399,9 +404,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -911.0
-offset_top = -170.0
+offset_top = -134.0
 offset_right = -611.0
-offset_bottom = -110.0
+offset_bottom = -74.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "BAKE"
@@ -414,9 +419,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -223.0
-offset_top = -174.0
+offset_top = -134.0
 offset_right = 263.0
-offset_bottom = 231.0
+offset_bottom = 271.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.15, 0.15)
@@ -430,9 +435,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 595.0
-offset_top = -169.0
+offset_top = -133.0
 offset_right = 895.0
-offset_bottom = -109.0
+offset_bottom = -73.0
 grow_vertical = 0
 text = "BAKE"
 
