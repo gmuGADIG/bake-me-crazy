@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=23 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
@@ -11,7 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://qst2473t8kgd" path="res://temp_art/4ea.jpg" id="5_j01br"]
 [ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="5_r6x37"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
+[ext_resource type="Texture2D" uid="uid://ccyadgmvjfjo2" path="res://Bio_Portrait.png" id="6_pdhip"]
 [ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="6_sjcrr"]
+[ext_resource type="Texture2D" uid="uid://dkfpblh3iw05s" path="res://contacts_icon.png" id="12_kv8e5"]
+[ext_resource type="Texture2D" uid="uid://qa7616vk2odt" path="res://messaging_app.png" id="14_2dlto"]
+[ext_resource type="Texture2D" uid="uid://b5nsknbxyjgkx" path="res://inventory.png" id="15_6b8sl"]
+[ext_resource type="Texture2D" uid="uid://d3gjggefdqm6p" path="res://PhoneBackArrow.png" id="16_lpc83"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liewr"]
 border_width_left = 4
@@ -26,6 +31,8 @@ corner_radius_bottom_left = 10
 expand_margin_left = 3.0
 expand_margin_right = 3.0
 expand_margin_bottom = 3.0
+
+[sub_resource type="Theme" id="Theme_tnnuu"]
 
 [sub_resource type="Animation" id="Animation_1tc4a"]
 length = 0.001
@@ -187,6 +194,7 @@ script = ExtResource("3_rv7fq")
 [node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Contacts/ContactScreen/GridContainer"]
 custom_minimum_size = Vector2(184, 40)
 layout_mode = 2
+theme = SubResource("Theme_tnnuu")
 texture_normal = ExtResource("3_m70wx")
 ignore_texture_size = true
 stretch_mode = 0
@@ -250,40 +258,38 @@ layout_mode = 0
 offset_right = 184.0
 offset_bottom = 297.0
 
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
+[node name="Button" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
+custom_minimum_size = Vector2(184, 50)
 layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
+text = "Pepper"
+icon = ExtResource("6_pdhip")
+alignment = 0
+expand_icon = true
 
-[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
+[node name="Button2" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
+custom_minimum_size = Vector2(184, 50)
 layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
+text = "Millie"
+icon = ExtResource("6_pdhip")
+alignment = 0
+expand_icon = true
 
-[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
+[node name="Button3" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
+custom_minimum_size = Vector2(184, 50)
 layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
+text = "Ray
+"
+icon = ExtResource("6_pdhip")
+alignment = 0
+expand_icon = true
 
-[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
+[node name="Button4" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
+custom_minimum_size = Vector2(184, 50)
 layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
+text = "Callum"
+icon = ExtResource("6_pdhip")
+alignment = 0
+expand_icon = true
 
 [node name="Gallery" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
@@ -463,7 +469,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-texture_normal = ExtResource("1_p0egn")
+texture_normal = ExtResource("12_kv8e5")
 texture_pressed = ExtResource("1_p0egn")
 texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
@@ -474,7 +480,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-texture_normal = ExtResource("1_p0egn")
+texture_normal = ExtResource("14_2dlto")
 texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
@@ -494,7 +500,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-texture_normal = ExtResource("1_p0egn")
+texture_normal = ExtResource("15_6b8sl")
 texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
@@ -506,7 +512,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture_normal = ExtResource("5_vvy46")
+texture_normal = ExtResource("16_lpc83")
 ignore_texture_size = true
 stretch_mode = 5
 

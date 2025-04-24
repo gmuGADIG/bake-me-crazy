@@ -16,6 +16,11 @@ var current_menu = null
 func _ready() -> void:
 	BackButton.visible = false
 	current_menu = HomeScreen #the current menu that is already open is the home screen of the phone
+	current_menu.visible = true
+	TestScreen.visible = false
+	TestScreen2.visible = false
+	TestScreen3.visible = false
+	TestScreen4.visible = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

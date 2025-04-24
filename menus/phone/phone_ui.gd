@@ -32,5 +32,11 @@ func _on_phone_top_pressed() -> void:  # when the button PhoneTop is pressed, th
 	else:
 		print("opened")
 		get_node("Panel/AnimationPlayer").play("open_phone", -1, -1, true)
+		#get_node("Panel/MarginContainer/Screen").visible = true
+		#get_node("Panel/MarginContainer/Contacts").visible = false
+		#get_node("Panel/MarginContainer/Messages").visible = false
+		#get_node("Panel/MarginContainer/Gallery").visible = false
+		#get_node("Panel/MarginContainer/Inventory").visible = false
+		# these are for when closing the phone it should go back to the main screen ^
 		phone_opened = false #else if it's already opened, you should close the phone
 		#$Panel/AnimationPlayer.play("RESET")
