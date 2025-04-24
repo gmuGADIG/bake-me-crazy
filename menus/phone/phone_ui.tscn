@@ -173,6 +173,7 @@ texture = ExtResource("4_wsq33")
 
 [node name="ContactScreen" type="Panel" parent="Panel/MarginContainer/Contacts"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_right = 184.0
 offset_bottom = 270.0
@@ -366,7 +367,6 @@ stretch_mode = 4
 
 [node name="Inventory" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 script = ExtResource("5_7dqal")
 
@@ -429,13 +429,12 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 columns = 4
 
-[node name="Panel" type="Panel" parent="Panel/MarginContainer/Inventory/VBoxContainer/InventoryGrid"]
-custom_minimum_size = Vector2(0, 50)
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Inventory/VBoxContainer/InventoryGrid"]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="Screen" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 clip_children = 1
 layout_mode = 2
 

@@ -23,9 +23,10 @@ func on_app_toggle() -> void:
 
 #Populates ItemsContainer with items in player_inventory
 func populate_item_grid() -> void:
-	for item in InventorySystem.player_inventory:
-		var icon = TextureRect.new()
+	for item in PlayerData.data.inventory:
+		var icon = TextureButton.new()
 		icon.texture = item.icon
+		icon.focus_entered.connect(set_selected(item))
 		items_container.add_child(icon)
 
 #To be called before populate_item_grid() when UI opens
