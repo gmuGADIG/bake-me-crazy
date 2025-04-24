@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=75 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
@@ -17,9 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://recipes/Cake_Chocolate.png" id="10_r4e3l"]
 [ext_resource type="Texture2D" uid="uid://b16ppgiltuawr" path="res://recipes/CinnamonRoll.png" id="11_fbwbw"]
 [ext_resource type="Texture2D" uid="uid://daf2fqlqruief" path="res://recipes/SweetRollUpdated.png" id="12_lr2h2"]
+[ext_resource type="Texture2D" uid="uid://c1hoxmyh44c8x" path="res://recipes/OrangeSweetRoll.png" id="13_5plmv"]
 [ext_resource type="Texture2D" uid="uid://2dq1wvjmq8e4" path="res://recipes/Macaron_Pistachio.png" id="13_mbgsr"]
 [ext_resource type="Texture2D" uid="uid://bgvakkuj05g85" path="res://recipes/Macaron_Chocolate.png" id="14_677iu"]
 [ext_resource type="Texture2D" uid="uid://dy5gahy1h5kjp" path="res://recipes/PuffRoll_Sausage.png" id="14_c0tbc"]
+[ext_resource type="Texture2D" uid="uid://d30ilv3ml857l" path="res://recipes/PistachioSweetRoll.png" id="14_p63qq"]
 [ext_resource type="Texture2D" uid="uid://hvy3ajjxlrfl" path="res://recipes/PuffRoll_Spinach.png" id="15_6pv8f"]
 [ext_resource type="Texture2D" uid="uid://b8x55iqxi6mbo" path="res://recipes/Macaron_EarlGrey.png" id="15_sbiu4"]
 [ext_resource type="Texture2D" uid="uid://ciw5n6nmwrh8y" path="res://recipes/Macaron_Strawberry.png" id="16_1bym5"]
@@ -27,6 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://bt8ow64g2bleh" path="res://recipes/Canelle_Vanilla.png" id="16_k40gs"]
 [ext_resource type="Texture2D" uid="uid://6kxx1jobd4yy" path="res://recipes/Bar_Lemon.png" id="17_vlxkb"]
 [ext_resource type="Texture2D" uid="uid://c1o4q2iwfbmsl" path="res://recipes/Canelle_Chocolate.png" id="17_wms51"]
+[ext_resource type="Texture2D" uid="uid://c6hvm1ahi2u64" path="res://recipes/Bread_Sourdough.png" id="21_q13c5"]
+[ext_resource type="Texture2D" uid="uid://buxkx0dky3jmm" path="res://recipes/Bar_Strawberry.png" id="26_mb8qh"]
+[ext_resource type="Texture2D" uid="uid://d4cvrxp22ejf8" path="res://recipes/Bar_Billionaire.png" id="27_x6el4"]
 [ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
 
 [sub_resource type="Resource" id="Resource_dkqhj"]
@@ -95,13 +100,6 @@ minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_bsmck"), SubResource("Resource_kn0ph"), SubResource("Resource_sqp4r"), SubResource("Resource_3rsb0")])
 
-[sub_resource type="Resource" id="Resource_jpjy6"]
-script = ExtResource("5_p52jp")
-texture = ExtResource("11_fbwbw")
-key_ingredient = &""
-key_ingredient_requirement = 0
-name = "Cinammon Roll"
-
 [sub_resource type="Resource" id="Resource_gqpuj"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("12_lr2h2")
@@ -109,13 +107,34 @@ key_ingredient = &""
 key_ingredient_requirement = 0
 name = "Honey Bun"
 
+[sub_resource type="Resource" id="Resource_jpjy6"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("11_fbwbw")
+key_ingredient = &""
+key_ingredient_requirement = 0
+name = "Cinammon Roll"
+
+[sub_resource type="Resource" id="Resource_t63it"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("13_5plmv")
+key_ingredient = &""
+key_ingredient_requirement = 0
+name = "Orange"
+
+[sub_resource type="Resource" id="Resource_0et6n"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("14_p63qq")
+key_ingredient = &""
+key_ingredient_requirement = 0
+name = "Pistachio"
+
 [sub_resource type="Resource" id="Resource_piyw4"]
 script = ExtResource("2_8r5qq")
 name = "Sweet Roll"
 instructions = "This treat is perfect for breakfast or brunch as it's a light, flaky dough that surrounds a filling of choice. Compared to regular bread dough, sweet roll dough generally has higher levels of sugar, fat, eggs, and yeast. They are often round or have a spiral center."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
-variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_jpjy6"), SubResource("Resource_gqpuj")])
+variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_gqpuj"), SubResource("Resource_jpjy6"), SubResource("Resource_t63it"), SubResource("Resource_0et6n")])
 
 [sub_resource type="Resource" id="Resource_s66os"]
 script = ExtResource("5_p52jp")
@@ -231,10 +250,10 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_t0ncx")])
 
 [sub_resource type="Resource" id="Resource_3ww61"]
 script = ExtResource("5_p52jp")
-texture = ExtResource("5_2erxo")
+texture = ExtResource("21_q13c5")
 key_ingredient = &""
 key_ingredient_requirement = 0
-name = ""
+name = "Sourdough"
 
 [sub_resource type="Resource" id="Resource_nt2kn"]
 script = ExtResource("2_8r5qq")
@@ -271,14 +290,28 @@ script = ExtResource("5_p52jp")
 texture = ExtResource("16_hq24v")
 key_ingredient = &""
 key_ingredient_requirement = 0
-name = "Butter Bar"
+name = "Butter"
 
 [sub_resource type="Resource" id="Resource_3dcra"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("17_vlxkb")
 key_ingredient = &""
 key_ingredient_requirement = 0
-name = "Lemon Bar"
+name = "Lemon"
+
+[sub_resource type="Resource" id="Resource_00l7m"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("26_mb8qh")
+key_ingredient = &""
+key_ingredient_requirement = 0
+name = "Strawberry"
+
+[sub_resource type="Resource" id="Resource_djkst"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("27_x6el4")
+key_ingredient = &""
+key_ingredient_requirement = 0
+name = "Billionaire"
 
 [sub_resource type="Resource" id="Resource_36ugh"]
 script = ExtResource("2_8r5qq")
@@ -286,7 +319,7 @@ name = "Bar"
 instructions = "A rectangular thick pastry similar to that of a brownie, this type of dessert is defined by its toppings, having a wide array of customizability, and there is an abundant number of variants that you can make."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
-variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_x3fre"), SubResource("Resource_3dcra")])
+variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_x3fre"), SubResource("Resource_3dcra"), SubResource("Resource_00l7m"), SubResource("Resource_djkst")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ndtw"]
 bg_color = Color(0.98, 0.825977, 0.7546, 1)
