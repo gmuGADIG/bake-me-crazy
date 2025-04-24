@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="384"
+   height="128"
+   viewBox="0 0 101.6 33.866666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="star_1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.0564115"
+     inkscape:cx="136.92528"
+     inkscape:cy="121.87495"
+     inkscape:window-width="2560"
+     inkscape:window-height="1494"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="fill:#ffffff;stroke:#f4f4f4;stroke-width:2.257;stroke-opacity:1"
+       id="path1"
+       inkscape:flatsided="false"
+       sodipodi:sides="5"
+       sodipodi:cx="15.792663"
+       sodipodi:cy="16.955688"
+       sodipodi:r1="16.060507"
+       sodipodi:r2="8.0302534"
+       sodipodi:arg1="-0.89069829"
+       sodipodi:arg2="-0.26237976"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 25.892622,4.4684666 23.548084,14.872805 30.789775,22.702556 20.17016,23.687886 14.961429,32.99467 10.742683,23.199299 0.28181938,21.121456 8.2941063,14.082254 7.0376679,3.491293 16.208279,8.9361977 Z"
+       inkscape:transform-center-x="0.23862991"
+       inkscape:transform-center-y="1.1959054"
+       transform="matrix(0.92900795,0,0,0.92900795,69.887363,0.57305993)" />
+  </g>
+</svg>
