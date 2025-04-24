@@ -7,6 +7,7 @@
 custom_minimum_size = Vector2(310, 120)
 offset_right = 310.0
 offset_bottom = 120.0
+toggle_mode = true
 script = ExtResource("1_lnngo")
 
 [node name="FoodTexture" type="TextureRect" parent="."]

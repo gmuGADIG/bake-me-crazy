@@ -10,7 +10,7 @@ var variant: RecipeVariant
 
 func _ready() -> void:
 	if variant == null:
-		push_error("Recipe book variant button had null variant!")
+		push_warning("Recipe book variant button had null variant!")
 		
 		# Set up a dummy RecipeVariant for testing purposes.
 		variant = RecipeVariant.new()
