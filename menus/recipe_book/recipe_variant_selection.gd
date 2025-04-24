@@ -15,6 +15,15 @@ var button_group_right: ButtonGroup = null
 func _ready():
 	hide()
 	
+	# When the cancel button is pressed, hide so we can select a new
+	# set of recipes
+	$CancelButton.pressed.connect(func():
+		hide()
+		# Also, disable the confirm button just to make sure that 
+		# we can't accidentally confirm random hidden recipes.
+		confirm_button.disabled = true
+	)
+	
 ## Recomputes whether the confirm button can be pressed. It can only be pressed
 ## if both ButtonGroups have a selected button.
 func _update_confirm_button() -> void:

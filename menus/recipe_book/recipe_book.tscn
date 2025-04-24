@@ -554,7 +554,7 @@ offset_right = 557.0
 offset_bottom = 627.0
 text = "Confirm!"
 
-[node name="Button2" type="Button" parent="RecipeVariantSelection"]
+[node name="CancelButton" type="Button" parent="RecipeVariantSelection"]
 layout_mode = 0
 offset_left = 575.0
 offset_top = 595.0
