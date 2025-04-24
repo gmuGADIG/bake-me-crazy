@@ -7,6 +7,10 @@ class_name RecipeBookPage extends Panel
 func display_recipe(recipe: Recipe, is_selected: bool) -> void:
 	food_name.text = recipe.name
 	food_desc.text = recipe.instructions
-	food_icon.texture = recipe.food_image
+	# Find a texture from one of the variants.
+	if recipe.variants.is_empty():
+		push_error("Recipe doesn't have any variants!")
+		return
+	food_icon.texture = recipe.variants[0].texture
 	
 	modulate.a = 0.5 if is_selected else 1.0
