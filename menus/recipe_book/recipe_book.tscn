@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=65 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
@@ -17,9 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://recipes/Cake_Chocolate.png" id="10_r4e3l"]
 [ext_resource type="Texture2D" uid="uid://b16ppgiltuawr" path="res://recipes/CinnamonRoll.png" id="11_fbwbw"]
 [ext_resource type="Texture2D" uid="uid://daf2fqlqruief" path="res://recipes/SweetRollUpdated.png" id="12_lr2h2"]
+[ext_resource type="Texture2D" uid="uid://2dq1wvjmq8e4" path="res://recipes/Macaron_Pistachio.png" id="13_mbgsr"]
 [ext_resource type="Texture2D" uid="uid://dml75s4v7v8nc" path="res://recipes/PuffRoll_Baclava.png" id="13_tva36"]
+[ext_resource type="Texture2D" uid="uid://bgvakkuj05g85" path="res://recipes/Macaron_Chocolate.png" id="14_677iu"]
 [ext_resource type="Texture2D" uid="uid://dy5gahy1h5kjp" path="res://recipes/PuffRoll_Sausage.png" id="14_c0tbc"]
 [ext_resource type="Texture2D" uid="uid://hvy3ajjxlrfl" path="res://recipes/PuffRoll_Spinach.png" id="15_6pv8f"]
+[ext_resource type="Texture2D" uid="uid://b8x55iqxi6mbo" path="res://recipes/Macaron_EarlGrey.png" id="15_sbiu4"]
+[ext_resource type="Texture2D" uid="uid://ciw5n6nmwrh8y" path="res://recipes/Macaron_Strawberry.png" id="16_1bym5"]
 [ext_resource type="Texture2D" uid="uid://jepgpp4q36k0" path="res://recipes/Bar_Butter.png" id="16_hq24v"]
 [ext_resource type="Texture2D" uid="uid://bt8ow64g2bleh" path="res://recipes/Canelle_Vanilla.png" id="16_k40gs"]
 [ext_resource type="Texture2D" uid="uid://6kxx1jobd4yy" path="res://recipes/Bar_Lemon.png" id="17_vlxkb"]
@@ -121,7 +125,25 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_s66os")])
 
 [sub_resource type="Resource" id="Resource_hjstx"]
 script = ExtResource("5_p52jp")
-texture = ExtResource("5_2erxo")
+texture = ExtResource("13_mbgsr")
+key_ingredient = &""
+key_ingredient_requirement = 0
+
+[sub_resource type="Resource" id="Resource_gg7nm"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("14_677iu")
+key_ingredient = &""
+key_ingredient_requirement = 0
+
+[sub_resource type="Resource" id="Resource_h6a0h"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("15_sbiu4")
+key_ingredient = &""
+key_ingredient_requirement = 0
+
+[sub_resource type="Resource" id="Resource_3lv1d"]
+script = ExtResource("5_p52jp")
+texture = ExtResource("16_1bym5")
 key_ingredient = &""
 key_ingredient_requirement = 0
 
@@ -131,7 +153,7 @@ name = "Macaron"
 instructions = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside, giving it a balance of crunch and softness! As well as having a vibrant selection of colors."
 minigame = ExtResource("4_8ljyd")
 is_locked = false
-variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_hjstx")])
+variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_hjstx"), SubResource("Resource_gg7nm"), SubResource("Resource_h6a0h"), SubResource("Resource_3lv1d")])
 
 [sub_resource type="Resource" id="Resource_mbxs7"]
 script = ExtResource("2_8r5qq")
