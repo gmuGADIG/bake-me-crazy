@@ -35,7 +35,7 @@ directories/dch_directory={
 "pepper": "res://dialogue/spicy/pepper.dch",
 "raymond": "res://dialogue/sweet/raymond.dch",
 "salty": "res://dialogue/salty/salty.dch",
-"testing/testman1": "res://menus/testing/testman1.dch"
+"testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
 "RAYMOND_DATE_2": "res://dialogue/sweet/RAYMOND_DATE_2.dtl",
@@ -45,6 +45,12 @@ directories/dtl_directory={
 "test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl",
 "testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
+"LukasBrockman_test": "res://dialogue/testing/LukasBrockman_test.dtl",
+"Sweet_Date1_timeline": "res://dialogue/sweet/Sweet_Date1_timeline.dtl",
+"clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
+"lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
+"npcclasstest": "res://menus/testing/npcclasstest.dtl",
+"testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
