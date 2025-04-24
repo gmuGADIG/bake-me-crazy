@@ -7,10 +7,25 @@ class_name RecipeVariantSelection
 @onready var select_for_left  := $SelectForLeft
 @onready var select_for_right := $SelectForRight
 
+@onready var confirm_button := $ConfirmButton
+
+var button_group_left : ButtonGroup = null
+var button_group_right: ButtonGroup = null
+
 func _ready():
 	hide()
+	
+## Recomputes whether the confirm button can be pressed. It can only be pressed
+## if both ButtonGroups have a selected button.
+func _update_confirm_button() -> void:
+	var enabled = true
+	if button_group_left.get_pressed_button() == null:
+		enabled = false
+	if button_group_right.get_pressed_button() == null:
+		enabled = false
+	confirm_button.disabled = not enabled
 
-func populate(container: VBoxContainer, recipe: Recipe):
+func populate(container: VBoxContainer, recipe: Recipe) -> ButtonGroup:
 	# Clear existing children	
 	for child in container.get_children():
 		child.queue_free()
@@ -30,10 +45,13 @@ func populate(container: VBoxContainer, recipe: Recipe):
 		if not button.disabled and not has_selected_button:
 			button.button_pressed = true
 			has_selected_button = true
+			
+	return button_group
 
 func show_variants(recipe1: Recipe, recipe2: Recipe):
-	populate(variants_left , recipe1)
-	populate(variants_right, recipe2)
+	button_group_left  = populate(variants_left , recipe1)
+	button_group_right = populate(variants_right, recipe2)
 	select_for_left.text  = "Select variant for " + recipe1.name
 	select_for_right.text = "Select variant for " + recipe2.name
+	_update_confirm_button()
 	show()
