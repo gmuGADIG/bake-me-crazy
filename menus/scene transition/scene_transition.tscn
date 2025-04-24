@@ -252,7 +252,7 @@ mouse_filter = 2
 color = Color(1, 0.822239, 0.929257, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-anchors_preset = -1
+anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_top = -53.0

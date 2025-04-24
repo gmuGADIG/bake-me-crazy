@@ -1,7 +1,7 @@
 class_name ItemData extends Resource
 
 ## Name used in code, e.g. "cake_chocolate"
-@export var code_name: String
+@export var code_name: StringName
 
 ## Name displayed to the user, e.g. "Chocolate Cake"
 @export var display_name: String
