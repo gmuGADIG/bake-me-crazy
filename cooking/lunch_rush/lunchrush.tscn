@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=17 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
@@ -11,11 +11,10 @@
 [ext_resource type="Resource" uid="uid://qdu6j6ogexeg" path="res://cooking/food_items/toppings/ketchup.tres" id="7_bj863"]
 [ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="9_uldua"]
+[ext_resource type="PackedScene" uid="uid://g2k6cx260kwp" path="res://cooking/lunch_rush/shaker_particles.tscn" id="10_86e4i"]
+[ext_resource type="PackedScene" uid="uid://d1i177bdpvrs7" path="res://cooking/lunch_rush/drizzle_particles.tscn" id="11_e61kw"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
-[ext_resource type="Texture2D" uid="uid://dp4t17cydtkb5" path="res://temp_art/Pesto.png" id="13_qavef"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ldqc8"]
-radius = 31.8944
+[ext_resource type="Texture2D" uid="uid://1ynufi5ur5i" path="res://cooking/lunch_rush/dust.png" id="14_rbkm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
 size = Vector2(76, 39)
@@ -24,11 +23,27 @@ size = Vector2(76, 39)
 script = ExtResource("1_8n1i3")
 foods = Array[ExtResource("2_d5ipb")]([ExtResource("2_ht3hp"), ExtResource("3_dvqv6"), ExtResource("4_8teuu"), ExtResource("5_ya6sg")])
 flavors = Array[ExtResource("2_d5ipb")]([ExtResource("6_0baax"), ExtResource("7_bj863"), ExtResource("8_jcw3l")])
+shaker_particle = ExtResource("10_86e4i")
+drizzle_particle = ExtResource("11_e61kw")
+percent_gained_per_shake = 5.0
+percent_gained_per_drizzle = 0.75
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 offset_right = 1289.0
 offset_bottom = 1175.0
 mouse_filter = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="DivorceWoman" type="Sprite2D" parent="."]
+position = Vector2(534, 273)
+texture = ExtResource("1_buvuw")
+
+[node name="Table" type="ColorRect" parent="."]
+offset_top = 303.0
+offset_right = 1289.0
+offset_bottom = 1478.0
+mouse_filter = 2
+color = Color(0.523475, 0.0212798, 0.407381, 1)
 
 [node name="FoodRequest" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -51,18 +66,19 @@ z_index = 1
 position = Vector2(-150, 446)
 scale = Vector2(2, 2)
 
-[node name="Shaker" type="Sprite2D" parent="FoodItem"]
-
-[node name="Area2D" type="Area2D" parent="FoodItem/Shaker"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem/Shaker/Area2D"]
-shape = SubResource("CircleShape2D_ldqc8")
-
-[node name="RayCast2D" type="RayCast2D" parent="FoodItem/Shaker/Area2D/CollisionShape2D"]
-target_position = Vector2(-1, -105.5)
-
 [node name="FoodItemSprite" type="Sprite2D" parent="FoodItem"]
+clip_children = 2
 texture = ExtResource("11_i352t")
+
+[node name="Sauce" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-1, -29)
+texture = ExtResource("14_rbkm8")
+
+[node name="Dust" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
+position = Vector2(-1.5, -28.5)
+texture = ExtResource("14_rbkm8")
 
 [node name="Area2D" type="Area2D" parent="FoodItem"]
 
@@ -70,16 +86,8 @@ texture = ExtResource("11_i352t")
 position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_pa8sg")
 
-[node name="DivorceWoman" type="Sprite2D" parent="."]
-position = Vector2(534, 273)
-texture = ExtResource("1_buvuw")
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_top = 303.0
-offset_right = 1289.0
-offset_bottom = 1478.0
-mouse_filter = 2
-color = Color(0.523475, 0.0212798, 0.407381, 1)
+[node name="FinisherSprite" type="Sprite2D" parent="."]
+rotation = -3.14159
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -171,9 +179,6 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 text = "Finish
 Order"
-
-[node name="FinisherSprite" type="Sprite2D" parent="."]
-texture = ExtResource("13_qavef")
 
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]

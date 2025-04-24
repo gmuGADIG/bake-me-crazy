@@ -12,6 +12,9 @@ class MouseData:
 @export var foods : Array[FoodItem]
 @export var flavors : Array[FoodItem]
 
+@export var shaker_particle : PackedScene
+@export var drizzle_particle : PackedScene
+
 ##Number of customers in a single lunch rush
 @export var total_customers : int = 5
 
@@ -86,7 +89,7 @@ func new_order() -> void:
 	current_stage = Stage.FOOD_SELECT
 	selected_finisher_type = Finisher.NOT_SELECTED
 	
-	
+	$FinisherSprite.texture = null
 	$FoodItem.position.x = -150
 	$DivorceWoman.modulate.a = 0
 	$CanvasLayer/FoodSelect/VBoxContainer.position.x = 1162
@@ -114,7 +117,9 @@ func new_order() -> void:
 	$FoodRequest/RequestedFood.texture = requested_food.image
 	$FoodRequest/RequestedFlavor.texture = requested_flavor.image
 	
-	
+	$FoodItem/FoodItemSprite/Sauce.visible = false
+	$FoodItem/FoodItemSprite/Dust.visible = false
+	current_finisher_percentage = 0.0
 	
 	
 	##Make new person visible
@@ -140,6 +145,8 @@ func _physics_process(delta: float) -> void:
 	if current_stage != Stage.FLAVOR_TOWN:
 		return
 	
+	##Make the shaker follow the mouse
+	$FinisherSprite.position = get_viewport().get_mouse_position()
 	
 	match selected_finisher_type:
 		Finisher.SHAKER:
@@ -149,9 +156,19 @@ func _physics_process(delta: float) -> void:
 		
 func drizzle(delta : float) -> void:
 	if Input.is_mouse_button_pressed(1): # Left click
+		
+		##Create Drizzle Particle
+		var new_particle : GPUParticles2D = drizzle_particle.instantiate()
+		$FinisherSprite.add_child(new_particle)
+		new_particle.emitting = true
+		
 		if above_food():
 			print("drizz")
-			move_toward(current_finisher_percentage, 100.0, percent_gained_per_drizzle)
+			current_finisher_percentage = move_toward(current_finisher_percentage, 100.0, percent_gained_per_drizzle)
+			
+			##Visible Sauce application feedback
+			$FoodItem/FoodItemSprite/Sauce.visible = true
+			$FoodItem/FoodItemSprite/Sauce.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
 	pass
 
 func shaker(delta : float) -> void:
@@ -163,9 +180,20 @@ func shaker(delta : float) -> void:
 	
 	
 	if is_shaking_hard_enough():
+		##Create the particle effect
+		var new_particle : GPUParticles2D = shaker_particle.instantiate()
+		$FinisherSprite.add_child(new_particle)
+		new_particle.emitting = true
+		
 		if above_food():
 			print("shake")
-			move_toward(current_finisher_percentage, 100.0, percent_gained_per_shake)
+			current_finisher_percentage = move_toward(current_finisher_percentage, 100.0, percent_gained_per_shake)
+			
+			##Visible Sauce application feedback
+			$FoodItem/FoodItemSprite/Dust.visible = true
+			print(current_finisher_percentage)
+			$FoodItem/FoodItemSprite/Dust.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
+				
 	pass
 	
 
@@ -225,7 +253,9 @@ func _on_flavor_selected(flavor_index: int) -> void:
 	
 	current_stage = Stage.FLAVOR_TOWN
 	
+	
 	selected_flavor = flavors[flavor_index]
+	$FinisherSprite.texture = selected_flavor.image
 	selected_finisher_type = select_finisher_type()
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/FlavorSelect/VBoxContainer, "position:x", 1162, 0.3).set_trans(Tween.TRANS_QUAD)
@@ -278,7 +308,6 @@ func scoreFood() -> float:
 	if rewarded_tip<0: rewarded_tip==0
 	## We take that final tip and return it wherever the function was called.
 	return rewarded_tip
-
 
 	
 
