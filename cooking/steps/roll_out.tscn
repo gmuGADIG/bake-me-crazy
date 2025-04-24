@@ -1,12 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://1kn7jln1tm7y"]
+[gd_scene load_steps=12 format=3 uid="uid://1kn7jln1tm7y"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_ww7xc"]
 [ext_resource type="Script" path="res://cooking/steps/roll_out.gd" id="2_f3gfe"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="3_vtj68"]
-[ext_resource type="Texture2D" uid="uid://cgnv78dp1gqni" path="res://temp_art/rollingpintemp.png" id="4_r2qgg"]
+[ext_resource type="Texture2D" uid="uid://cspwsjgm6d5yb" path="res://cooking/art/rollingpinsheet.png" id="4_2i2er"]
 [ext_resource type="Script" path="res://cooking/steps/sprite_2d.gd" id="5_wopcp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sq7h3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t7gh"]
+atlas = ExtResource("4_2i2er")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kuhk"]
+atlas = ExtResource("4_2i2er")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgwip"]
+atlas = ExtResource("4_2i2er")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj8g1"]
+atlas = ExtResource("4_2i2er")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjd8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t7gh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kuhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgwip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj8g1")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}]
 
 [node name="FoodStep" instance=ExtResource("1_ww7xc")]
 script = ExtResource("2_f3gfe")
@@ -26,11 +62,14 @@ position = Vector2(1.14441e-05, 2)
 scale = Vector2(4.89062, 1.55469)
 texture = ExtResource("3_vtj68")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
-position = Vector2(599, 494)
-scale = Vector2(3.45313, 3.45313)
-texture = ExtResource("4_r2qgg")
+position = Vector2(553, 563)
+scale = Vector2(4.23438, 4.23438)
+sprite_frames = SubResource("SpriteFrames_vjd8s")
+animation = &"roll"
+frame = 2
+frame_progress = 0.236549
 script = ExtResource("5_wopcp")
 
 [node name="SizeHint" type="ColorRect" parent="." index="2"]

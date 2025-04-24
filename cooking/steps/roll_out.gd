@@ -28,5 +28,7 @@ func _process(delta: float) -> void:
 			done = true
 
 		rolling = false
+		$Sprite2D.stop()
 	if rolling == true :
 		$dough.scale.y += clamp((mouse_vert_velocity * 0.001 * delta), 0, 0.01)
+		$Sprite2D.play("roll")
