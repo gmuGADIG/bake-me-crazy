@@ -5,6 +5,7 @@
 
 [node name="TransitionScene1" type="Node2D"]
 script = ExtResource("1_d8jki")
+target_scene = "res://test_scenes/transitionScene2.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(634, 347)
