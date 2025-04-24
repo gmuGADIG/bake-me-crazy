@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tyb4l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qd7r"]
-radius = 44.1814
+radius = 45.0
 
 [node name="StepScoop" type="Control"]
 layout_mode = 3
@@ -41,7 +41,7 @@ scale = Vector2(0.0948551, 0.0948551)
 texture = ExtResource("2_e4817")
 
 [node name="placePos" type="Area2D" parent="."]
-position = Vector2(148, 136)
+position = Vector2(148, 168)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="placePos"]
