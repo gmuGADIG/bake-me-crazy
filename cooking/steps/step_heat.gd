@@ -27,15 +27,12 @@ func _ready() -> void:
 
 ## Called before we are slid into the scene.
 func pre_animation():
-	# set timer text and arrow position
-	heat_time_label.text = "Time left: %.2f" % [original_heat_time]
-	
-	var anchor: float = 1.0 - ((clamp(heat, -1.0, 1.0) + 1.0) * 0.5)
-	arrow.anchor_top = anchor
-	arrow.anchor_bottom = anchor 
+	heat_time_label.hide()
+	arrow.hide()
 
 func start():
-	pass
+	heat_time_label.show()
+	arrow.show()
 
 func _process(delta: float) -> void:
 	heat -= delta * 0.25

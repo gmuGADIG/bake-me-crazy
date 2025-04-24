@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://dber13hwc1k4l"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
+[ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
+[ext_resource type="PackedScene" uid="uid://u2v0gb5yo3pq" path="res://cooking/draggable_object/draggable_object.tscn" id="2_u3vmg"]
+[ext_resource type="PackedScene" uid="uid://3401sxy2s32d" path="res://cooking/draggable_object/holding_manager.tscn" id="3_p1eiu"]
+[ext_resource type="Texture2D" uid="uid://dt27721ff43r2" path="res://cooking/cooking_art/Minigame_MixingBowl.png" id="3_yphet"]
+[ext_resource type="Texture2D" uid="uid://bddmmieici4ii" path="res://cooking/cooking_art/Minigame_Scale.png" id="4_dildu"]
+[ext_resource type="Texture2D" uid="uid://bfbc61gfc86an" path="res://cooking/cooking_art/Minigame_HandCursorPoint.png" id="6_7xhu1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8n05"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
+size = Vector2(103, 287.5)
+
+[sub_resource type="Gradient" id="Gradient_bixkh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_icf4r"]
+gradient = SubResource("Gradient_bixkh")
+width = 4
+height = 4
+fill_to = Vector2(0, 0.0723684)
+
+[node name="PourFlour" instance=ExtResource("1_0kwik")]
+script = ExtResource("1_4i01a")
+target_amount = 300.0
+pour_speed = 200.0
+
+[node name="FlourScale" type="Label" parent="." index="0"]
+top_level = true
+layout_mode = 0
+offset_left = 456.0
+offset_top = 515.0
+offset_right = 553.0
+offset_bottom = 543.0
+text = "
+"
+label_settings = SubResource("LabelSettings_q8n05")
+horizontal_alignment = 1
+
+[node name="BowlArea" type="Area2D" parent="." index="1"]
+unique_name_in_owner = true
+position = Vector2(19, 152)
+
+[node name="BowlShape" type="CollisionShape2D" parent="BowlArea" index="0"]
+position = Vector2(497, 198)
+shape = SubResource("RectangleShape2D_2cau4")
+
+[node name="BowlSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="0"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 72)
+scale = Vector2(0.187292, 0.187292)
+texture = ExtResource("3_yphet")
+
+[node name="ScaleSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="1"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-3.05176e-05, 151)
+scale = Vector2(0.34082, 0.34082)
+texture = ExtResource("4_dildu")
+
+[node name="HoldingManager" parent="." index="2" instance=ExtResource("3_p1eiu")]
+position = Vector2(19, 152)
+
+[node name="FlourPourer" parent="." index="3" instance=ExtResource("2_u3vmg")]
+unique_name_in_owner = true
+position = Vector2(232, 358)
+collision_layer = 9
+script = null
+
+[node name="HandSprite" type="Sprite2D" parent="FlourPourer" index="1"]
+position = Vector2(3, -3)
+scale = Vector2(0.188889, 0.188889)
+texture = ExtResource("6_7xhu1")
+
+[node name="Powder" type="CPUParticles2D" parent="FlourPourer/HandSprite" index="0"]
+show_behind_parent = true
+clip_children = 2
+amount = 24
+texture = SubResource("GradientTexture2D_icf4r")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+
+[node name="TextureRect" type="TextureRect" parent="." index="4"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
