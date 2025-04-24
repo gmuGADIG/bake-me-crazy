@@ -1,0 +1,116 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqiuapp2ar2pr"]
+
+[ext_resource type="PackedScene" uid="uid://cgmqffo2go7p6" path="res://cooking/steps/base_step_cut.tscn" id="1_t6cv2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5een"]
+size = Vector2(59, 278)
+
+[sub_resource type="Gradient" id="Gradient_fv8kv"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.179283, 0.346614, 0.737052)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q65ui"]
+gradient = SubResource("Gradient_fv8kv")
+width = 10
+height = 1
+
+[node name="StepCut" instance=ExtResource("1_t6cv2")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToCut" index="0"]
+position = Vector2(359, 200)
+shape = SubResource("RectangleShape2D_g5een")
+
+[node name="Line2D" type="Line2D" parent="ToCut/CollisionShape2D" index="0"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -139)
+points = PackedVector2Array(0, 0, 0, 278)
+width = 5.0
+texture = SubResource("GradientTexture2D_q65ui")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ToCut" index="1"]
+position = Vector2(448, 200)
+shape = SubResource("RectangleShape2D_g5een")
+
+[node name="Line2D" type="Line2D" parent="ToCut/CollisionShape2D2" index="0"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -139)
+points = PackedVector2Array(0, 0, 0, 278)
+width = 5.0
+texture = SubResource("GradientTexture2D_q65ui")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ToCut" index="2"]
+position = Vector2(535, 200)
+shape = SubResource("RectangleShape2D_g5een")
+
+[node name="Line2D" type="Line2D" parent="ToCut/CollisionShape2D3" index="0"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -139)
+points = PackedVector2Array(0, 0, 0, 278)
+width = 5.0
+texture = SubResource("GradientTexture2D_q65ui")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ToCut" index="3"]
+position = Vector2(623, 200)
+shape = SubResource("RectangleShape2D_g5een")
+
+[node name="Line2D" type="Line2D" parent="ToCut/CollisionShape2D4" index="0"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -139)
+points = PackedVector2Array(0, 0, 0, 278)
+width = 5.0
+texture = SubResource("GradientTexture2D_q65ui")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ToCut" index="4"]
+position = Vector2(715, 200)
+shape = SubResource("RectangleShape2D_g5een")
+
+[node name="Line2D" type="Line2D" parent="ToCut/CollisionShape2D5" index="0"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -139)
+points = PackedVector2Array(0, 0, 0, 278)
+width = 5.0
+texture = SubResource("GradientTexture2D_q65ui")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ToCut" index="5"]
+position = Vector2(809, 200)
+shape = SubResource("RectangleShape2D_g5een")
+
+[node name="Line2D" type="Line2D" parent="ToCut/CollisionShape2D6" index="0"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -139)
+points = PackedVector2Array(0, 0, 0, 278)
+width = 5.0
+texture = SubResource("GradientTexture2D_q65ui")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Cutting" parent="." index="1"]
+position = Vector2(-5, 2)
+points = PackedVector2Array()
+
+[node name="LastCutArea" parent="Cutting" index="0"]
+position = Vector2(38, 266)
+
+[node name="CutChecker" parent="Cutting" index="1"]
+position = Vector2(157, 107)
