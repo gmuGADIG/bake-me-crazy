@@ -1,33 +1,28 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cdneek1am28a6"]
-
-[ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="1_f3nco"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://margarita"]
 
 [sub_resource type="FontVariation" id="FontVariation_n8uio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy8yt"]
-bg_color = Color(0.451393, 0.691722, 0.96136, 1)
-skew = Vector2(0.185, 0)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.944264, 0.703906, 0.958506, 1)
+bg_color = Color(0.996078, 0.901961, 0.701961, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2dkm"]
-bg_color = Color(0.331684, 0.512537, 0.848615, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.826041, 0.449048, 0.900403, 1)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
+bg_color = Color(0.27451, 0.184314, 0.152941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.996078, 0.901961, 0.701961, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.458824)
+shadow_size = 1
+shadow_offset = Vector2(10.59, 8.76)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vc2w"]
 bg_color = Color(0.451255, 0.326019, 0.811645, 1)
@@ -51,17 +46,15 @@ default_font_size = 21
 Button/colors/font_color = Color(0.947199, 0.947199, 0.947199, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.813066, 0.838779, 0.42922, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0.163442, 0.707179, 0.513037, 1)
 Button/colors/icon_hover_color = Color(1, 1, 0.505882, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/colors/icon_pressed_color = Color(1, 0.686275, 1, 1)
 Button/constants/h_separation = 0
 Button/constants/icon_max_width = 45
-Button/constants/outline_size = 2
 Button/font_sizes/font_size = 21
 Button/fonts/font = SubResource("FontVariation_n8uio")
-Button/icons/icon = ExtResource("1_f3nco")
 Button/styles/hover = SubResource("StyleBoxFlat_iy8yt")
 Button/styles/normal = SubResource("StyleBoxFlat_x2dkm")
 Button/styles/pressed = SubResource("StyleBoxFlat_7vc2w")
