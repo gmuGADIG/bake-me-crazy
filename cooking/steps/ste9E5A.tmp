@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1qo3dh7pfxpl"]
+
+[ext_resource type="Script" path="res://cooking/steps/step_scoop.gd" id="1_gwrga"]
+[ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyb4l"]
+
+[node name="StepScoop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwrga")
+
+[node name="gameTimer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 3.0
+offset_right = 1105.0
+offset_bottom = 26.0
+scale = Vector2(1.34402, 1.34402)
+text = "Time limit: 15.00"
+
+[node name="Bowl" type="Area2D" parent="."]
+position = Vector2(996, 545)
+scale = Vector2(15.4636, 10.1769)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl"]
+shape = SubResource("CircleShape2D_tyb4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bowl"]
+position = Vector2(-0.452675, -1.27741)
+scale = Vector2(0.0948551, 0.0948551)
+texture = ExtResource("2_e4817")
+
+[connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
+[connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]
