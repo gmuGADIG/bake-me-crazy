@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce2sn4cb2r407"]
+
+[ext_resource type="Script" path="res://sfx/sfx_dispatcher.gd" id="1_ddg1u"]
+[ext_resource type="Script" path="res://sfx/event_sfx_mapping.gd" id="2_rk27y"]
+
+[sub_resource type="Resource" id="Resource_ctuoi"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+event_name = "mouse_entered"
+sfx_id = "hover_sfx.wav"
+
+[sub_resource type="Resource" id="Resource_lwk0c"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+event_name = "pressed"
+sfx_id = "ui_select.wav"
+
+[node name="SFXDispatcher" type="Node"]
+script = ExtResource("1_ddg1u")
+event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_lwk0c")])
