@@ -1,4 +1,4 @@
-extends Control
+extends FoodStep
 
 @onready var gameTimer: Label = $gameTimer
 @onready var bowl: Area2D = $Bowl
@@ -29,7 +29,6 @@ func _ready() -> void:
 
 #A finish function that returns the score
 func finish() -> int:
-	isFinished = true
 	print("------------ FINISH! ------------")
 	print("You scored: ", score, "/36")
 	#Disable scooping
@@ -37,6 +36,11 @@ func finish() -> int:
 	isScooped = false
 	#Get the time at finish
 	finishTime = timeLimit
+
+	if not isFinished:
+		finished.emit((score / 36.) * 3)
+		isFinished = true
+
 	return score
 
 # Called every frame. 'delta' is the elapsed time since the previous frame
