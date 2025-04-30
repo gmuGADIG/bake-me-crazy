@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Song" load_steps=5 format=3 uid="uid://8trqr7er3rqs"]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_q1eos"]
+[ext_resource type="AudioStream" uid="uid://ciw1fmecs0vpb" path="res://music/dates/The Pier-Fix.mp3" id="2_4ahbf"]
+
+[sub_resource type="Curve" id="Curve_ccw1l"]
+_data = [Vector2(0, 0), 0.0, 3.54419, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_dyrl4"]
+_data = [Vector2(0, 0), 0.0, 3.52335, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_q1eos")
+loop_start = 123.0
+loop_end = 227.9
+song_file = ExtResource("2_4ahbf")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_ccw1l")
+fade_out_curve = SubResource("Curve_dyrl4")

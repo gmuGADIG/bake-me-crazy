@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=18 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_d5ipb"]
 [ext_resource type="Resource" uid="uid://bvbn2iyovtuc5" path="res://cooking/food_items/foods/cake.tres" id="2_ht3hp"]
-[ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_n757x"]
 [ext_resource type="Resource" uid="uid://blh6k7g2jwce2" path="res://cooking/food_items/foods/cannelle.tres" id="3_dvqv6"]
 [ext_resource type="Resource" uid="uid://bqmmx232ckmi7" path="res://cooking/food_items/foods/croissant.tres" id="4_8teuu"]
 [ext_resource type="Resource" uid="uid://cn3q0o25fqg7v" path="res://cooking/food_items/foods/puff_roll.tres" id="5_ya6sg"]
@@ -11,16 +11,40 @@
 [ext_resource type="Resource" uid="uid://qdu6j6ogexeg" path="res://cooking/food_items/toppings/ketchup.tres" id="7_bj863"]
 [ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="9_uldua"]
+[ext_resource type="PackedScene" uid="uid://g2k6cx260kwp" path="res://cooking/lunch_rush/shaker_particles.tscn" id="10_86e4i"]
+[ext_resource type="PackedScene" uid="uid://d1i177bdpvrs7" path="res://cooking/lunch_rush/drizzle_particles.tscn" id="11_e61kw"]
+[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="13_qy27j"]
+[ext_resource type="Texture2D" uid="uid://1ynufi5ur5i" path="res://cooking/lunch_rush/dust.png" id="14_rbkm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
+size = Vector2(76, 39)
 
 [node name="Lunchrush" type="Node2D"]
 script = ExtResource("1_8n1i3")
-foods = Array[Object]([ExtResource("2_ht3hp"), ExtResource("3_dvqv6"), ExtResource("4_8teuu"), ExtResource("5_ya6sg")])
-flavors = Array[Object]([ExtResource("6_0baax"), ExtResource("7_bj863"), ExtResource("8_jcw3l")])
+foods = Array[ExtResource("2_d5ipb")]([ExtResource("2_ht3hp"), ExtResource("3_dvqv6"), ExtResource("4_8teuu"), ExtResource("5_ya6sg")])
+flavors = Array[ExtResource("2_d5ipb")]([ExtResource("6_0baax"), ExtResource("7_bj863"), ExtResource("8_jcw3l")])
+shaker_particle = ExtResource("10_86e4i")
+drizzle_particle = ExtResource("11_e61kw")
+percent_gained_per_shake = 5.0
+percent_gained_per_drizzle = 0.75
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 offset_right = 1289.0
 offset_bottom = 1175.0
 mouse_filter = 2
+color = Color(1, 1, 1, 0.360784)
+
+[node name="DivorceWoman" type="Sprite2D" parent="."]
+position = Vector2(534, 273)
+texture = ExtResource("1_buvuw")
+
+[node name="Table" type="ColorRect" parent="."]
+offset_top = 303.0
+offset_right = 1289.0
+offset_bottom = 1478.0
+mouse_filter = 2
+color = Color(0.523475, 0.0212798, 0.407381, 1)
 
 [node name="FoodRequest" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -38,24 +62,33 @@ position = Vector2(0, -50)
 z_index = 1
 position = Vector2(0, 50)
 
-[node name="DivorceWoman" type="Sprite2D" parent="."]
-position = Vector2(534, 273)
-texture = ExtResource("1_buvuw")
+[node name="FoodItem" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(-150, 446)
+scale = Vector2(2, 2)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_top = 303.0
-offset_right = 1289.0
-offset_bottom = 1478.0
-mouse_filter = 2
-color = Color(0.523475, 0.0212798, 0.407381, 1)
+[node name="FoodItemSprite" type="Sprite2D" parent="FoodItem"]
+clip_children = 2
+texture = ExtResource("11_i352t")
 
-[node name="Taco" type="Sprite2D" parent="."]
+[node name="Sauce" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
 visible = false
-position = Vector2(539, 545)
-scale = Vector2(2.66667, 5)
-texture = ExtResource("2_n757x")
-region_enabled = true
-region_rect = Rect2(42.5, 0, 90, 49.5)
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-1, -29)
+texture = ExtResource("14_rbkm8")
+
+[node name="Dust" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
+position = Vector2(-1.5, -28.5)
+texture = ExtResource("14_rbkm8")
+
+[node name="Area2D" type="Area2D" parent="FoodItem"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem/Area2D"]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_pa8sg")
+
+[node name="FinisherSprite" type="Sprite2D" parent="."]
+rotation = -3.14159
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -131,6 +164,26 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
+[node name="FinishOrder" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = -60.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/FinishOrder"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+text = "Finish
+Order"
+
+[node name="PlaySongForScene" parent="." instance=ExtResource("13_qy27j")]
+song_name = "lunch_rush.tres"
+
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food3" to="." method="_on_food_selected" binds= [2]]
@@ -138,3 +191,4 @@ layout_mode = 2
 [connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor1" to="." method="_on_flavor_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor2" to="." method="_on_flavor_selected" binds= [1]]
 [connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor3" to="." method="_on_flavor_selected" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/FinishOrder/Button" to="." method="_on_finish_order"]
