@@ -9,6 +9,7 @@
 [ext_resource type="Resource" path="res://dialogue/testing/lunch_break_timeline.dtl" id="6_yor0v"]
 [ext_resource type="PackedScene" uid="uid://dxvby55qeyuei" path="res://test_scenes/lunch_rush_placeholder/lunch_rush_placeholder.tscn" id="7_tqpiw"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_7b54g"]
+[ext_resource type="PackedScene" uid="uid://bkj7kns2dd0mc" path="res://cooking/lunch_rush/lunchrush.tscn" id="8_r8e4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fvyg"]
 size = Vector2(170, 287)
@@ -103,7 +104,7 @@ position = Vector2(1386, 456)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("6_4yihm")
-change_to_scene = ExtResource("7_tqpiw")
+change_to_scene = ExtResource("8_r8e4w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Kitchen" index="0"]
 shape = SubResource("RectangleShape2D_kar5v")
