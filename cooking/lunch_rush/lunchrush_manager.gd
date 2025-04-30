@@ -319,7 +319,7 @@ func _on_finish_order() -> void:
 		return
 		
 	total_tip += scoreFood()
-	current_customer+=1
+	current_customer += 1
 	print(current_customer)
 	
 	var tween = get_tree().create_tween()
@@ -328,7 +328,8 @@ func _on_finish_order() -> void:
 	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_EXPO)
 	## If the player has served all customers, end the lunch rush
 	if current_customer >= total_customers:
-		get_tree().change_scene_to_file("res://menus/start_menu/main_menu.tscn")
+		SceneTransition.change_scene_to_file("res://menus/clock_out/clock_out.tscn")
 		return
 		##end here
+
 	new_order()
