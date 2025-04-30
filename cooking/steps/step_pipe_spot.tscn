@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3o1ok3dj2q50"]
 
-[ext_resource type="Script" path="res://cooking/steps/pipping_spot.gd" id="1_i5evd"]
-[ext_resource type="PackedScene" uid="uid://dn5xfkyv5it31" path="res://cooking/steps/piping_area.tscn" id="2_jfkfs"]
+[ext_resource type="Script" path="res://cooking/steps/pipping_spot.gd" id="1_m47dj"]
+[ext_resource type="PackedScene" uid="uid://dn5xfkyv5it31" path="res://cooking/piping_area.tscn" id="2_viuau"]
 
 [node name="pipping_spot" type="Control"]
 layout_mode = 3
@@ -11,17 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-script = ExtResource("1_i5evd")
+script = ExtResource("1_m47dj")
 
 [node name="PipingParent" type="Node2D" parent="."]
 
-[node name="pipping_area" parent="PipingParent" instance=ExtResource("2_jfkfs")]
+[node name="pipping_area" parent="PipingParent" instance=ExtResource("2_viuau")]
 position = Vector2(385, 432)
 
-[node name="pipping_area2" parent="PipingParent" instance=ExtResource("2_jfkfs")]
+[node name="pipping_area2" parent="PipingParent" instance=ExtResource("2_viuau")]
 position = Vector2(834, 411)
 
-[node name="pipping_area3" parent="PipingParent" instance=ExtResource("2_jfkfs")]
+[node name="pipping_area3" parent="PipingParent" instance=ExtResource("2_viuau")]
 position = Vector2(536, 185)
 
 [node name="Label" type="Label" parent="."]

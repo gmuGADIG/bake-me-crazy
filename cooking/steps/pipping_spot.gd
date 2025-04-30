@@ -13,8 +13,6 @@ func _ready() -> void:
 	for i in num_to_pipe:
 		piping_spots[i].pipping_done.connect(_pipped_spot)
 
-	pass # Replace with function body.
-
 func _pipped_spot() -> void:
 	num_to_pipe -= 1
 	if(num_to_pipe <= 0):
@@ -28,8 +26,4 @@ func _pipped_spot() -> void:
 		var final_score :int = added_scores/piping_spots.size()
 		final_percent_text.text = str(final_score) + "%"
 		print("Final Score " + str(final_score))
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+		finished.emit((final_score / 100.) * 3)

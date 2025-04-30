@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="2_duf8a"]
 [ext_resource type="PackedScene" uid="uid://sa2qgbo1hv8u" path="res://cooking/steps/pour_flour.tscn" id="3_kov07"]
 [ext_resource type="PackedScene" uid="uid://ddduu8be5a824" path="res://cooking/steps/step_roll_up.tscn" id="4_fpntb"]
-[ext_resource type="PackedScene" path="res://cooking/steps/kneading.tscn" id="4_nt0hk"]
+[ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="4_nt0hk"]
 
 [node name="TestFoodMinigame" type="CanvasLayer"]
 

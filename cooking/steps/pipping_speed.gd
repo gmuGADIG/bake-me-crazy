@@ -66,4 +66,5 @@ func _on_end_point_mouse_entered() -> void:
 	print("RIGHT RATIO: " + str(right_ratio))
 	accuracy_text.text = "Accuracy: " + str(right_ratio) + "%"
 	game_done = true
-	pass # Replace with function body.
+
+	finished.emit((right_ratio / 100.) * 3)
