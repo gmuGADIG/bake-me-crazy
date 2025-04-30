@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jepgpp4q36k0"
-path="res://.godot/imported/Bar_Butter.png-e2566cd1f23d1bc677dc4cee5bd2f6cc.ctex"
+uid="uid://c1hoxmyh44c8x"
+path="res://.godot/imported/OrangeSweetRoll.png-e3be1301f3296d7076fb781c55b22ddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Bar_Butter.png"
-dest_files=["res://.godot/imported/Bar_Butter.png-e2566cd1f23d1bc677dc4cee5bd2f6cc.ctex"]
+source_file="res://items/foods/art/OrangeSweetRoll.png"
+dest_files=["res://.godot/imported/OrangeSweetRoll.png-e3be1301f3296d7076fb781c55b22ddd.ctex"]
 
 [params]
 

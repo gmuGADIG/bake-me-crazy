@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hvy3ajjxlrfl"
-path="res://.godot/imported/PuffRoll_Spinach.png-b9907c3d036df4522e464ebcdad5c83a.ctex"
+uid="uid://c6yh4gj33wf6o"
+path="res://.godot/imported/chocolate.png-962256e5da6880e2773e43bc137ce7b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/PuffRoll_Spinach.png"
-dest_files=["res://.godot/imported/PuffRoll_Spinach.png-b9907c3d036df4522e464ebcdad5c83a.ctex"]
+source_file="res://items/ingredients/art/chocolate.png"
+dest_files=["res://.godot/imported/chocolate.png-962256e5da6880e2773e43bc137ce7b8.ctex"]
 
 [params]
 

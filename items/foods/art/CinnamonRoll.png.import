@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d30ilv3ml857l"
-path="res://.godot/imported/PistachioSweetRoll.png-38b20dfc23455ba1f24ea41d05336962.ctex"
+uid="uid://b16ppgiltuawr"
+path="res://.godot/imported/CinnamonRoll.png-ce69def9b79520f5bdaec9e2299fd812.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/PistachioSweetRoll.png"
-dest_files=["res://.godot/imported/PistachioSweetRoll.png-38b20dfc23455ba1f24ea41d05336962.ctex"]
+source_file="res://items/foods/art/CinnamonRoll.png"
+dest_files=["res://.godot/imported/CinnamonRoll.png-ce69def9b79520f5bdaec9e2299fd812.ctex"]
 
 [params]
 

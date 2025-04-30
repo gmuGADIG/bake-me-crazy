@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6kxx1jobd4yy"
-path="res://.godot/imported/Bar_Lemon.png-70f5cf61e11efc171da17f95bf125ae3.ctex"
+uid="uid://buxkx0dky3jmm"
+path="res://.godot/imported/Bar_Strawberry.png-7f3f517898fb2739c95e7eacf3b1bd03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Bar_Lemon.png"
-dest_files=["res://.godot/imported/Bar_Lemon.png-70f5cf61e11efc171da17f95bf125ae3.ctex"]
+source_file="res://items/foods/art/Bar_Strawberry.png"
+dest_files=["res://.godot/imported/Bar_Strawberry.png-7f3f517898fb2739c95e7eacf3b1bd03.ctex"]
 
 [params]
 

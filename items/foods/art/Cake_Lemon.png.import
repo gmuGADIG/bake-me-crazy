@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciw5n6nmwrh8y"
-path="res://.godot/imported/Macaron_Strawberry.png-16a6250972ec375dbbcaec6cdc8b7f8f.ctex"
+uid="uid://cvmk88s6vodej"
+path="res://.godot/imported/Cake_Lemon.png-431027e4e184087d1947dc5f0f1d3544.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Macaron_Strawberry.png"
-dest_files=["res://.godot/imported/Macaron_Strawberry.png-16a6250972ec375dbbcaec6cdc8b7f8f.ctex"]
+source_file="res://items/foods/art/Cake_Lemon.png"
+dest_files=["res://.godot/imported/Cake_Lemon.png-431027e4e184087d1947dc5f0f1d3544.ctex"]
 
 [params]
 

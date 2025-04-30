@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daf2fqlqruief"
-path="res://.godot/imported/SweetRollUpdated.png-23d650565ddfcaa007881806332027c8.ctex"
+uid="uid://c6hvm1ahi2u64"
+path="res://.godot/imported/Bread_Sourdough.png-f2955bd7c10be8b06df80d9d00be2a0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/SweetRollUpdated.png"
-dest_files=["res://.godot/imported/SweetRollUpdated.png-23d650565ddfcaa007881806332027c8.ctex"]
+source_file="res://items/foods/art/Bread_Sourdough.png"
+dest_files=["res://.godot/imported/Bread_Sourdough.png-f2955bd7c10be8b06df80d9d00be2a0e.ctex"]
 
 [params]
 

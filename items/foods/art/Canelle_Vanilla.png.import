@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buxkx0dky3jmm"
-path="res://.godot/imported/Bar_Strawberry.png-d33870aaf0d25116a9246ee471c7b894.ctex"
+uid="uid://bt8ow64g2bleh"
+path="res://.godot/imported/Canelle_Vanilla.png-df724b5ffd9173ac85d2684acae8d07d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Bar_Strawberry.png"
-dest_files=["res://.godot/imported/Bar_Strawberry.png-d33870aaf0d25116a9246ee471c7b894.ctex"]
+source_file="res://items/foods/art/Canelle_Vanilla.png"
+dest_files=["res://.godot/imported/Canelle_Vanilla.png-df724b5ffd9173ac85d2684acae8d07d.ctex"]
 
 [params]
 

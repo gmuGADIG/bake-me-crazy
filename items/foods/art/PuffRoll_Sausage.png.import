@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b16ppgiltuawr"
-path="res://.godot/imported/CinnamonRoll.png-0dbe852d7850e2d1c0cbe318f509d952.ctex"
+uid="uid://dy5gahy1h5kjp"
+path="res://.godot/imported/PuffRoll_Sausage.png-76d3fec95e15de0b88692a7a994df81d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/CinnamonRoll.png"
-dest_files=["res://.godot/imported/CinnamonRoll.png-0dbe852d7850e2d1c0cbe318f509d952.ctex"]
+source_file="res://items/foods/art/PuffRoll_Sausage.png"
+dest_files=["res://.godot/imported/PuffRoll_Sausage.png-76d3fec95e15de0b88692a7a994df81d.ctex"]
 
 [params]
 

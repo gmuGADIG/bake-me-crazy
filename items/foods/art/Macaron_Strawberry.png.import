@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1hoxmyh44c8x"
-path="res://.godot/imported/OrangeSweetRoll.png-600ebea607083e5cffd618d0e66bc0e4.ctex"
+uid="uid://ciw5n6nmwrh8y"
+path="res://.godot/imported/Macaron_Strawberry.png-054f532c062939cd5cfc34e365f548b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/OrangeSweetRoll.png"
-dest_files=["res://.godot/imported/OrangeSweetRoll.png-600ebea607083e5cffd618d0e66bc0e4.ctex"]
+source_file="res://items/foods/art/Macaron_Strawberry.png"
+dest_files=["res://.godot/imported/Macaron_Strawberry.png-054f532c062939cd5cfc34e365f548b0.ctex"]
 
 [params]
 

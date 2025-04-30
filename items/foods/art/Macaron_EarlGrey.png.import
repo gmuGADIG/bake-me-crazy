@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1o4q2iwfbmsl"
-path="res://.godot/imported/Canelle_Chocolate.png-9d309c03afcbaac0c68823bcd57b6bd1.ctex"
+uid="uid://b8x55iqxi6mbo"
+path="res://.godot/imported/Macaron_EarlGrey.png-22ab6cb1c94dfddd4220d5229ccd67dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Canelle_Chocolate.png"
-dest_files=["res://.godot/imported/Canelle_Chocolate.png-9d309c03afcbaac0c68823bcd57b6bd1.ctex"]
+source_file="res://items/foods/art/Macaron_EarlGrey.png"
+dest_files=["res://.godot/imported/Macaron_EarlGrey.png-22ab6cb1c94dfddd4220d5229ccd67dd.ctex"]
 
 [params]
 

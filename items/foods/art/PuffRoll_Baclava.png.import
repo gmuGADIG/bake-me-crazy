@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6hvm1ahi2u64"
-path="res://.godot/imported/Bread_Sourdough.png-f6a304828a7f9f8699547464b9a084bd.ctex"
+uid="uid://dml75s4v7v8nc"
+path="res://.godot/imported/PuffRoll_Baclava.png-6def4b85a9fb399655c91b5014f86bfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Bread_Sourdough.png"
-dest_files=["res://.godot/imported/Bread_Sourdough.png-f6a304828a7f9f8699547464b9a084bd.ctex"]
+source_file="res://items/foods/art/PuffRoll_Baclava.png"
+dest_files=["res://.godot/imported/PuffRoll_Baclava.png-6def4b85a9fb399655c91b5014f86bfc.ctex"]
 
 [params]
 

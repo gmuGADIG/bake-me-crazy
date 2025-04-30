@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvmk88s6vodej"
-path="res://.godot/imported/Cake_Lemon.png-18541b0c9a8f538ad12f562ee1d4452a.ctex"
+uid="uid://daf2fqlqruief"
+path="res://.godot/imported/SweetRollUpdated.png-5249bce26d0f524b6062da085f355438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Cake_Lemon.png"
-dest_files=["res://.godot/imported/Cake_Lemon.png-18541b0c9a8f538ad12f562ee1d4452a.ctex"]
+source_file="res://items/foods/art/SweetRollUpdated.png"
+dest_files=["res://.godot/imported/SweetRollUpdated.png-5249bce26d0f524b6062da085f355438.ctex"]
 
 [params]
 

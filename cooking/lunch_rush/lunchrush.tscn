@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=18 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
@@ -11,10 +11,10 @@
 [ext_resource type="Resource" uid="uid://qdu6j6ogexeg" path="res://cooking/food_items/toppings/ketchup.tres" id="7_bj863"]
 [ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="9_uldua"]
-[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="13_qy27j"]
 [ext_resource type="PackedScene" uid="uid://g2k6cx260kwp" path="res://cooking/lunch_rush/shaker_particles.tscn" id="10_86e4i"]
 [ext_resource type="PackedScene" uid="uid://d1i177bdpvrs7" path="res://cooking/lunch_rush/drizzle_particles.tscn" id="11_e61kw"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="13_qy27j"]
 [ext_resource type="Texture2D" uid="uid://1ynufi5ur5i" path="res://cooking/lunch_rush/dust.png" id="14_rbkm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
@@ -164,8 +164,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="PlaySongForScene" parent="." instance=ExtResource("13_qy27j")]
-song_name = "lunch_rush.tres"
 [node name="FinishOrder" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 4
@@ -182,6 +180,9 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 text = "Finish
 Order"
+
+[node name="PlaySongForScene" parent="." instance=ExtResource("13_qy27j")]
+song_name = "lunch_rush.tres"
 
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dy5gahy1h5kjp"
-path="res://.godot/imported/PuffRoll_Sausage.png-3b65182f0a5f595d344b1810afd05212.ctex"
+uid="uid://6kxx1jobd4yy"
+path="res://.godot/imported/Bar_Lemon.png-7f61a8d1000b4fc3b771cb4ff0d3f782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/PuffRoll_Sausage.png"
-dest_files=["res://.godot/imported/PuffRoll_Sausage.png-3b65182f0a5f595d344b1810afd05212.ctex"]
+source_file="res://items/foods/art/Bar_Lemon.png"
+dest_files=["res://.godot/imported/Bar_Lemon.png-7f61a8d1000b4fc3b771cb4ff0d3f782.ctex"]
 
 [params]
 

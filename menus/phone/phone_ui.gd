@@ -9,34 +9,17 @@ func _ready() -> void:
 	print("gah")
 	#$Panel/AnimationPlayer.play("open_phone")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#if phone_opened:
-	#	get_tree().paused = true
-	#else:
-	#	get_tree().paused = false
-	pass
-
-
-func _on_phone_top_pressed() -> void:  # when the button PhoneTop is pressed, this function should execute
-	#play phone open animation AND pause other input
-	#TODO: Play animations
+# when the button PhoneTop is pressed, this function should execute
+func _on_phone_top_pressed() -> void:
 	if phone_opened == false: #change to maybe "if phone_opened == false: 
-		phone_opened = true
-		print("ghryugryhy")
-		get_node("Panel/AnimationPlayer").play("open_phone")
+		if get_tree().paused: return # don't open the phone of the game is currently paused (e.g. if the pause screen is open)
 		
-		# try HomeScreen/AnimationPlayer.play("open_phone")
-		#$Panel/AnimationPlayer.play("open_phone")
-	else:
-		print("opened")
-		get_node("Panel/AnimationPlayer").play("open_phone", -1, -1, true)
-		#get_node("Panel/MarginContainer/Screen").visible = true
-		#get_node("Panel/MarginContainer/Contacts").visible = false
-		#get_node("Panel/MarginContainer/Messages").visible = false
-		#get_node("Panel/MarginContainer/Gallery").visible = false
-		#get_node("Panel/MarginContainer/Inventory").visible = false
-		# these are for when closing the phone it should go back to the main screen ^
-		phone_opened = false #else if it's already opened, you should close the phone
-		#$Panel/AnimationPlayer.play("RESET")
+		phone_opened = true
+		get_tree().paused = true
+		
+		get_node("Panel/AnimationPlayer").play("open_phone")
+	else:	
+		get_tree().paused = false
+		phone_opened = false
+		
+		get_node("Panel/AnimationPlayer").play_backwards("open_phone")

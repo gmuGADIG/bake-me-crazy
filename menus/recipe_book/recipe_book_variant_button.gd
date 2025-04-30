@@ -17,7 +17,7 @@ func _ready() -> void:
 		variant.key_ingredient = "chocolate"
 		variant.key_ingredient_requirement = 3
 		variant.name = "Chocolate"
-		variant.texture = preload("res://recipes/Cake_Chocolate.png")
+		variant.texture = preload("res://items/foods/art/Cake_Chocolate.png")
 	# If we don't have a requirement, we're always available, and
 	# we can make our requirement name "Nothing!"
 	if variant.key_ingredient_requirement <= 0 or variant.key_ingredient == null:

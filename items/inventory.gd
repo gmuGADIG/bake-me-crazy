@@ -11,12 +11,18 @@ static func can_afford_item(shop_item: ShopItem, quantity: int) -> bool:
 static func buy_item(shop_item: ShopItem, quantity: int) -> void:
 	assert(can_afford_item(shop_item, quantity))
 	for _i in range(quantity):
-		var item_instance = ItemInstance.new()
-		item_instance.setup(shop_item.data, quantity)
-		PlayerData.data.inventory.append(item_instance)
+		add_item(shop_item.data, shop_item.quality)
 		PlayerData.data.money -= shop_item.price
 
-## Takes an item of the given name out of the inventory.
+## Adds a single instance of an item to the player's inventory.
+## Doesn't care about money.
+## This is intended to be called when the player makes a food and adds it to their inventory.
+static func add_item(item_data: ItemData, quality: int) -> void:
+	var item_instance = ItemInstance.new()
+	item_instance.setup(item_data, quality)
+	PlayerData.data.inventory.append(item_instance)
+
+## Takes an item of the given type out of the inventory.
 ## If multiple of this item are present, returns the one with the highest quality.
 ## If none are present, returns null.
 static func pop_item(item_data: ItemData) -> ItemInstance:

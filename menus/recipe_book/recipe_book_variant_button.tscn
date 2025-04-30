@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dykiajohmtf56"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_variant_button.gd" id="1_lnngo"]
-[ext_resource type="Texture2D" uid="uid://cvmk88s6vodej" path="res://recipes/Cake_Lemon.png" id="1_w6gbt"]
+[ext_resource type="Texture2D" uid="uid://cvmk88s6vodej" path="res://items/foods/art/Cake_Lemon.png" id="1_w6gbt"]
 
 [node name="VariantButton" type="Button"]
 custom_minimum_size = Vector2(310, 120)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8crq3jkpven1"
-path="res://.godot/imported/Cookie_Snickerdoodle.png-0c248563fb28067132270606efaaca56.ctex"
+uid="uid://c1o4q2iwfbmsl"
+path="res://.godot/imported/Canelle_Chocolate.png-c54b6b317cadcafb1c4825ff82be9c77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Cookie_Snickerdoodle.png"
-dest_files=["res://.godot/imported/Cookie_Snickerdoodle.png-0c248563fb28067132270606efaaca56.ctex"]
+source_file="res://items/foods/art/Canelle_Chocolate.png"
+dest_files=["res://.godot/imported/Canelle_Chocolate.png-c54b6b317cadcafb1c4825ff82be9c77.ctex"]
 
 [params]
 

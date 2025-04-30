@@ -96,6 +96,7 @@ _data = {
 }
 
 [node name="PhoneUi" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -399,12 +400,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="SelectedItemIcon" type="TextureRect" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 8.80316
 offset_top = 7.77771
 offset_right = 67.8032
 offset_bottom = 66.7777
-texture = ExtResource("6_sjcrr")
 expand_mode = 3
 
 [node name="SelectedItemName" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
@@ -414,7 +415,8 @@ offset_left = 79.9999
 offset_top = 7.0
 offset_right = 160.0
 offset_bottom = 30.0
-text = "SALAD"
+text = "select an
+item"
 
 [node name="SelectedItemDescription" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
 unique_name_in_owner = true
@@ -424,7 +426,6 @@ offset_top = 30.294
 offset_right = 167.039
 offset_bottom = 68.294
 theme_override_font_sizes/font_size = 10
-text = "meowmeoomeowmo"
 autowrap_mode = 1
 clip_text = true
 
@@ -433,10 +434,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
-columns = 4
-
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Inventory/VBoxContainer/InventoryGrid"]
-layout_mode = 2
+theme_override_constants/h_separation = 15
+columns = 3
 
 [node name="Screen" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true

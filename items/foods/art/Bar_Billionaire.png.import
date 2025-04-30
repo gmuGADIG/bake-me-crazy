@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2dmxvvovf1no"
-path="res://.godot/imported/Cake_Strawberry.png-3f718d4eaa9a2cc8d20cb9d78a6cc4a4.ctex"
+uid="uid://d4cvrxp22ejf8"
+path="res://.godot/imported/Bar_Billionaire.png-c6e588fea21387ab68cb87b320c6d6fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Cake_Strawberry.png"
-dest_files=["res://.godot/imported/Cake_Strawberry.png-3f718d4eaa9a2cc8d20cb9d78a6cc4a4.ctex"]
+source_file="res://items/foods/art/Bar_Billionaire.png"
+dest_files=["res://.godot/imported/Bar_Billionaire.png-c6e588fea21387ab68cb87b320c6d6fb.ctex"]
 
 [params]
 

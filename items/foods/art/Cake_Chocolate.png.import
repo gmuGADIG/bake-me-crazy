@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2dq1wvjmq8e4"
-path="res://.godot/imported/Macaron_Pistachio.png-cfef0800e444bf87d236d8ff72be57c2.ctex"
+uid="uid://d3ll4kbjcsp1f"
+path="res://.godot/imported/Cake_Chocolate.png-d38ff6545e806f968a0e996363139be0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Macaron_Pistachio.png"
-dest_files=["res://.godot/imported/Macaron_Pistachio.png-cfef0800e444bf87d236d8ff72be57c2.ctex"]
+source_file="res://items/foods/art/Cake_Chocolate.png"
+dest_files=["res://.godot/imported/Cake_Chocolate.png-d38ff6545e806f968a0e996363139be0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8x55iqxi6mbo"
-path="res://.godot/imported/Macaron_EarlGrey.png-839975e715aa7030afb618ffd7a05bc6.ctex"
+uid="uid://jepgpp4q36k0"
+path="res://.godot/imported/Bar_Butter.png-0e3a1984641dc73d2ddb7c670b078617.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Macaron_EarlGrey.png"
-dest_files=["res://.godot/imported/Macaron_EarlGrey.png-839975e715aa7030afb618ffd7a05bc6.ctex"]
+source_file="res://items/foods/art/Bar_Butter.png"
+dest_files=["res://.godot/imported/Bar_Butter.png-0e3a1984641dc73d2ddb7c670b078617.ctex"]
 
 [params]
 

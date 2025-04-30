@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt8ow64g2bleh"
-path="res://.godot/imported/Canelle_Vanilla.png-6f2d98bd2d240f3159ae315a336a5857.ctex"
+uid="uid://2dq1wvjmq8e4"
+path="res://.godot/imported/Macaron_Pistachio.png-a521ac076c9a25b4a9070ae2e6a52f74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://recipes/Canelle_Vanilla.png"
-dest_files=["res://.godot/imported/Canelle_Vanilla.png-6f2d98bd2d240f3159ae315a336a5857.ctex"]
+source_file="res://items/foods/art/Macaron_Pistachio.png"
+dest_files=["res://.godot/imported/Macaron_Pistachio.png-a521ac076c9a25b4a9070ae2e6a52f74.ctex"]
 
 [params]
 
