@@ -1,0 +1,17 @@
+if {read_only.repeat_talk} == true:
+	salty: did you need something else?
+if {read_only.possible_date} == 1:
+	salty: hey~\
+wanna hang out later?
+	- yes
+		set {date} = "salty1"
+		salty: yay \:)\
+see you later tonight!
+	- no
+		salty: oh.. ok!
+else:
+	salty: hey! what's up?
+	- i like you (+80 RP)
+		set {rp.salty} += 80
+		salty: aww thanks <3
+		(hearts = {hearts.salty}, rp = {rp.salty})

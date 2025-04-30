@@ -1,13 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://dby7eaymg6cw4"]
+[gd_scene load_steps=11 format=3 uid="uid://dby7eaymg6cw4"]
 
 [ext_resource type="Script" path="res://menus/character_select/character_select.gd" id="1_oknyd"]
-[ext_resource type="Texture2D" uid="uid://csaq273pycx6c" path="res://temp_art/gartic/big_shoe_big_sad.png" id="2_ruust"]
-[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="3_dqjn2"]
+[ext_resource type="Texture2D" uid="uid://dwoc18ot68nds" path="res://temp_art/bakeranimationbeta.png" id="2_fp4ui"]
 [ext_resource type="Script" path="res://menus/character_select/character_select_button.gd" id="3_y3bse"]
+[ext_resource type="Texture2D" uid="uid://m1nrvkvd0r5a" path="res://temp_art/baker2sheet.png" id="4_08jt0"]
 [ext_resource type="Texture2D" uid="uid://dt67wy2es4gxj" path="res://temp_art/gartic/sombrero_raccoon.png" id="4_gvmwu"]
 [ext_resource type="Texture2D" uid="uid://codyxwsf4suak" path="res://temp_art/gartic/forg.png" id="5_160cn"]
 [ext_resource type="Texture2D" uid="uid://c40ew5c8y11rq" path="res://temp_art/gartic/im_steve.png" id="6_qmpd5"]
 [ext_resource type="Texture2D" uid="uid://cys2fl7mlf1nw" path="res://temp_art/gartic/shadow.png" id="7_dosu7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkfxm"]
+atlas = ExtResource("2_fp4ui")
+region = Rect2(0, 0, 30.6552, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r3fr"]
+atlas = ExtResource("4_08jt0")
+region = Rect2(0, 0, 31.0092, 64)
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -33,8 +41,8 @@ alignment = 1
 [node name="Char0" type="Button" parent="ButtonHBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Sad Shoe"
-icon = ExtResource("2_ruust")
+text = "the man"
+icon = SubResource("AtlasTexture_fkfxm")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
@@ -43,8 +51,8 @@ script = ExtResource("3_y3bse")
 [node name="Char1" type="Button" parent="ButtonHBoxContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-text = "Divorce Woman"
-icon = ExtResource("3_dqjn2")
+text = "the woman"
+icon = SubResource("AtlasTexture_6r3fr")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true

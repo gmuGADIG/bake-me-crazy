@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://docgr3runo3a"]
+
+[ext_resource type="PackedScene" uid="uid://cx06e1lqkpenc" path="res://free_roam/player/player.tscn" id="1_8gurn"]
+[ext_resource type="Script" path="res://menus/pause_menu/pause_opener.gd" id="2_7hu1x"]
+[ext_resource type="Script" path="res://free_roam/world/free_roam_camera.gd" id="2_y05i1"]
+
+[node name="FreeRoamBase" type="Node2D"]
+
+[node name="PlayerPath" type="Path2D" parent="."]
+
+[node name="Player" parent="PlayerPath" instance=ExtResource("1_8gurn")]
+position = Vector2(132, 604)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerPath/Player"]
+script = ExtResource("2_y05i1")
+
+[node name="PauseOpener" type="Node" parent="."]
+script = ExtResource("2_7hu1x")
