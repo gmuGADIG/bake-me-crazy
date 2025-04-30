@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=14 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://qdu6j6ogexeg" path="res://cooking/food_items/toppings/ketchup.tres" id="7_bj863"]
 [ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
 [ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="9_uldua"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="13_qy27j"]
 
 [node name="Lunchrush" type="Node2D"]
 script = ExtResource("1_8n1i3")
@@ -131,6 +132,9 @@ layout_mode = 2
 [node name="Flavor3" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+
+[node name="PlaySongForScene" parent="." instance=ExtResource("13_qy27j")]
+song_name = "lunch_rush.tres"
 
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]

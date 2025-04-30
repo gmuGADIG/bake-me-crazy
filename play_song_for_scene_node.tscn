@@ -4,4 +4,4 @@
 
 [node name="PlaySongForScene" type="Node"]
 script = ExtResource("1_mamib")
-song_name = "pier_theme.tres"
+song_name = "default_song.tres"
