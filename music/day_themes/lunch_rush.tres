@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Song" load_steps=5 format=3 uid="uid://dbkkhempc4cjp"]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_ay8jt"]
+[ext_resource type="AudioStream" uid="uid://c4moiuts0jf36" path="res://music/day_themes/OST_LunchRush_FullTrack_Xander.wav" id="2_ixjbi"]
+
+[sub_resource type="Curve" id="Curve_yelal"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_xuwwg"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_ay8jt")
+loop_start = 20.0
+loop_end = 131.8
+song_file = ExtResource("2_ixjbi")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_yelal")
+fade_out_curve = SubResource("Curve_xuwwg")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1qo3dh7pfxpl"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_1pduj"]
+[ext_resource type="Script" path="res://cooking/steps/step_scoop.gd" id="1_gwrga"]
+[ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
+[ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="3_rsoc1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i70qp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkt58"]
+radius = 45.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0vec"]
+shader = ExtResource("3_rsoc1")
+
+[sub_resource type="Gradient" id="Gradient_1r282"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_unpg6"]
+gradient = SubResource("Gradient_1r282")
+
+[node name="StepScoop" instance=ExtResource("1_1pduj")]
+mouse_filter = 2
+script = ExtResource("1_gwrga")
+
+[node name="gameTimer" type="Label" parent="." index="0"]
+offset_left = 965.0
+offset_top = 3.0
+offset_right = 1105.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 21
+text = "Time limit: 15.00"
+
+[node name="Bowl" type="Area2D" parent="." index="1"]
+position = Vector2(996, 545)
+scale = Vector2(15.4636, 10.1769)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" index="0"]
+shape = SubResource("CircleShape2D_i70qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bowl" index="1"]
+position = Vector2(-0.452675, -1.27741)
+scale = Vector2(0.0948551, 0.0948551)
+texture = ExtResource("2_e4817")
+
+[node name="placePos" type="Area2D" parent="." index="2"]
+position = Vector2(148, 168)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="placePos" index="0"]
+shape = SubResource("CircleShape2D_vkt58")
+
+[node name="Sprite2D" type="Sprite2D" parent="placePos" index="1"]
+material = SubResource("ShaderMaterial_j0vec")
+texture = SubResource("GradientTexture2D_unpg6")
+
+[connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
+[connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]
+[connection signal="body_entered" from="placePos" to="." method="_on_place_pos_body_entered"]
