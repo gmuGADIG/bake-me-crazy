@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vjagi5yawk50"]
+[gd_scene load_steps=13 format=3 uid="uid://vjagi5yawk50"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
 [ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_1b70k"]
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="6_4yihm"]
 [ext_resource type="Resource" path="res://dialogue/testing/lunch_break_timeline.dtl" id="6_yor0v"]
+[ext_resource type="PackedScene" uid="uid://dxvby55qeyuei" path="res://test_scenes/lunch_rush_placeholder/lunch_rush_placeholder.tscn" id="7_tqpiw"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_7b54g"]
 [ext_resource type="PackedScene" uid="uid://bkj7kns2dd0mc" path="res://cooking/lunch_rush/lunchrush.tscn" id="8_r8e4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fvyg"]
@@ -129,3 +131,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 1721
 limit_bottom = 648
+
+[node name="PlaySongForScene" parent="." index="4" instance=ExtResource("9_7b54g")]
+song_name = "pre_lunch_rush.tres"
