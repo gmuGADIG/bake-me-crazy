@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Song" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_uygq6"]
+[ext_resource type="AudioStream" path="res://music/dates/CarnivalDateTheme.wav" id="2_26ysj"]
+
+[sub_resource type="Curve" id="Curve_er6oj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_8piww"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_uygq6")
+loop_start = 1.6
+loop_end = 83.3937
+song_file = ExtResource("2_26ysj")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_er6oj")
+fade_out_curve = SubResource("Curve_8piww")

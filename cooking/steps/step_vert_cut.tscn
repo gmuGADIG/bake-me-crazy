@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqiuapp2ar2pr"]
+[gd_scene load_steps=8 format=3 uid="uid://bqiuapp2ar2pr"]
 
 [ext_resource type="PackedScene" uid="uid://cgmqffo2go7p6" path="res://cooking/steps/base_step_cut.tscn" id="1_t6cv2"]
+[ext_resource type="Texture2D" uid="uid://dbm84fs41k1yn" path="res://cooking/art/Minigame_Dough.png" id="2_7pok8"]
+[ext_resource type="Texture2D" uid="uid://4p08bggtflm3" path="res://cooking/art/knife.png" id="2_wyfqc"]
+[ext_resource type="Texture2D" uid="uid://demxad4xjetim" path="res://cooking/art/Minigame_WoodCuttingBoard.png" id="3_eslki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5een"]
 size = Vector2(59, 278)
@@ -20,6 +23,11 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="MinigameDough" type="Sprite2D" parent="." index="0"]
+position = Vector2(600, 219.5)
+scale = Vector2(7.02344, 3.71094)
+texture = ExtResource("2_7pok8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToCut" index="0"]
 position = Vector2(359, 200)
@@ -105,12 +113,23 @@ texture = SubResource("GradientTexture2D_q65ui")
 texture_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="Cutting" parent="." index="1"]
+[node name="Cutting" parent="." index="2"]
 position = Vector2(-5, 2)
 points = PackedVector2Array()
 
 [node name="LastCutArea" parent="Cutting" index="0"]
 position = Vector2(38, 266)
 
+[node name="Sprite2D" parent="Cutting/LastCutArea/LastCut" index="0"]
+position = Vector2(115, -90)
+scale = Vector2(1.246, -1.246)
+texture = ExtResource("2_wyfqc")
+
 [node name="CutChecker" parent="Cutting" index="1"]
 position = Vector2(157, 107)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+z_index = -1
+position = Vector2(578, 254)
+scale = Vector2(1.01685, 1.01685)
+texture = ExtResource("3_eslki")

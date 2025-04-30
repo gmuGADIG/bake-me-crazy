@@ -48,6 +48,7 @@ glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style=""
 variables={
+"Var": 0,
 "date": "",
 "dateRP": 0,
 "hearts": {
