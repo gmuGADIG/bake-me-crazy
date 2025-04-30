@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://g2k6cx260kwp"]
+
+[ext_resource type="Script" path="res://cooking/lunch_rush/kill_particle_on_finished.gd" id="1_o3hqd"]
+[ext_resource type="Material" uid="uid://duktpbqe8777w" path="res://cooking/lunch_rush/shaker_particles.tres" id="1_xx3lk"]
+
+[node name="ShakerParticles" type="GPUParticles2D"]
+z_index = 50
+rotation = 3.14159
+emitting = false
+amount = 20
+process_material = ExtResource("1_xx3lk")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("1_o3hqd")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
