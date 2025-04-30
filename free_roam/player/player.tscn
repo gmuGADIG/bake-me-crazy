@@ -1,14 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=7 format=3 uid="uid://cx06e1lqkpenc"]
 
 [ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
 [ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
 [ext_resource type="Script" path="res://free_roam/player/player_interaction_area.gd" id="3_2njdd"]
 [ext_resource type="Script" path="res://free_roam/player/player_sprite.gd" id="3_suty0"]
-[ext_resource type="SpriteFrames" uid="uid://tju4oeeuehmt" path="res://free_roam/player/characters/player_2.tres" id="4_u5ibp"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_3.tres" id="5_noqi6"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_4.tres" id="6_771df"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_5.tres" id="7_qfajt"]
-[ext_resource type="SpriteFrames" path="res://free_roam/player/characters/player_6.tres" id="8_0ulrd"]
 [ext_resource type="Texture2D" uid="uid://uq8joiv7p24c" path="res://temp_art/dialogueindicator.png" id="10_i78ey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jij"]
@@ -22,11 +17,12 @@ script = ExtResource("1_jfd2d")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -102.958)
-scale = Vector2(3.90757, 3.90757)
+scale = Vector2(0.292631, 0.292631)
 sprite_frames = ExtResource("2_5iydo")
 animation = &"walking"
+frame_progress = 0.713436
+flip_h = true
 script = ExtResource("3_suty0")
-character_frames = Array[SpriteFrames]([ExtResource("2_5iydo"), ExtResource("4_u5ibp"), ExtResource("5_noqi6"), ExtResource("6_771df"), ExtResource("7_qfajt"), ExtResource("8_0ulrd")])
 
 [node name="InteractionArea" type="Area2D" parent="."]
 unique_name_in_owner = true

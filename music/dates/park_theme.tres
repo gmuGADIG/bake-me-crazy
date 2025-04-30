@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Song" load_steps=5 format=3 uid="uid://dl35rsnmgthin"]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_dfkii"]
+[ext_resource type="AudioStream" uid="uid://c0ive20c8wvsj" path="res://music/dates/OST_ParkTheme_Sami.ogg" id="2_xgrum"]
+
+[sub_resource type="Curve" id="Curve_fjroe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_05wqp"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_dfkii")
+loop_start = 35.6
+loop_end = 106.9
+song_file = ExtResource("2_xgrum")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_fjroe")
+fade_out_curve = SubResource("Curve_05wqp")
