@@ -1,4 +1,4 @@
-extends Node
+class_name RecipeBook extends Node
 
 ## True during the morning shift, when the player has to select some recipes to bake.
 ## False if the player is just browsing their recipes whenever.
@@ -73,4 +73,10 @@ func _toggle_recipe_selection(recipe_idx: int) -> void:
 	update_displayed_recipes()
 
 func _on_finish_button_pressed() -> void:
-	recipes_selected.emit()
+	# Load the variant selection at this time.
+	var first : Recipe = recipes[selected_recipes[0]]
+	var second: Recipe = recipes[selected_recipes[1]]
+	%RecipeVariantSelection.show_variants(first, second)
+	
+	# TODO: Move this to the new variant selection menu?
+	#recipes_selected.emit(selected_recipes)

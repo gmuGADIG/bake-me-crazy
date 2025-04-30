@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://d3cy6xm2m0ly8"]
+
+[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="1_khnpj"]
+[ext_resource type="Texture2D" uid="uid://b0wejwm1707v5" path="res://items/foods/art/Cake_Vanilla.png" id="1_w6140"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_blrry"]
+[ext_resource type="Resource" uid="uid://0nwwupoe48k4" path="res://items/ingredients/vanilla.tres" id="2_s5jdi"]
+
+[resource]
+script = ExtResource("2_blrry")
+cooking_minigame = ExtResource("1_khnpj")
+ingredient = ExtResource("2_s5jdi")
+display_name = "Vanilla Cake"
+image = ExtResource("1_w6140")

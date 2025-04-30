@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddduu8be5a824"]
+[gd_scene load_steps=9 format=3 uid="uid://bhr08sd4y1yuy"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_28xqw"]
 [ext_resource type="Script" path="res://cooking/steps/roll_up.gd" id="2_wilwa"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c40ew5c8y11rq" path="res://temp_art/gartic/im_steve.png" id="4_lkoka"]
 [ext_resource type="Texture2D" uid="uid://brufn1b0gmr0t" path="res://temp_art/gartic/iced_up_waluigi.png" id="5_0gb6g"]
 [ext_resource type="Texture2D" uid="uid://dy6un7t41fypj" path="res://cooking/steps/Arrow.png" id="6_pjaac"]
-[ext_resource type="PackedScene" uid="uid://dfxymfwjw2r1f" path="res://cooking/flash_sprite.tscn" id="7_hcrbj"]
+[ext_resource type="PackedScene" path="res://cooking/flash_sprite.tscn" id="7_hcrbj"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rq52m"]
 size = Vector2(256, 256)

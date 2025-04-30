@@ -1,14 +1,14 @@
 extends CanvasLayer
 class_name MarketUI
 
-@export var items: Array[ItemData]
+@export var items: Array[ShopItem]
 
 @onready var ingredient_container: FlowContainer = %IngredientContainer
 
 @onready var quantity_number := %QuantityNumber
 @onready var total_price := %TotalPrice
 
-var current_item: ItemData = null
+var current_item: ShopItem = null
 
 @onready var description_box := %Description
 @onready var buy_button := %BuyButton
@@ -64,7 +64,7 @@ func _ready() -> void:
 	)
 	
 	buy_button.pressed.connect(func():
-		PlayerInventory.buy_item(current_item, _purchase_quantity)
+		Inventory.buy_item(current_item, _purchase_quantity)
 		_update_item_displays()
 		_tween_box_scale(%YourMoneyPanel, 1.14)
 		_tween_box_scale(%YourMoneyDollar, 1.14)
@@ -97,7 +97,7 @@ func _update_item_displays():
 	# Update description box
 	description_box.text = "<nothing selected>"
 	if current_item != null:
-		description_box.text = current_item.display_name + "\n" + current_item.description
+		description_box.text = current_item.data.display_name + "\n" + current_item.data.description
 	
 	# Update your money
 	your_money.text = str(PlayerData.data.money)
@@ -112,8 +112,8 @@ func _tween_box_scale(node: Control, to_scale: float = 1.14) -> void:
 func _tween_quantity_number() -> void:
 	_tween_box_scale(quantity_number, 1.14)
 
-func select_item(item: ItemData) -> void:
-	print("selected item `%s`" % item.code_name)
+func select_item(item: ShopItem) -> void:
+	print("selected item `%s`" % item.data.display_name)
 	current_item = item
 	# Must change the display when we change the item.
 	_update_item_displays()
