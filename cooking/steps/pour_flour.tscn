@@ -13,7 +13,7 @@ font_size = 20
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
-size = Vector2(103, 287.5)
+size = Vector2(155.5, 608)
 
 [sub_resource type="Gradient" id="Gradient_bixkh"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -32,10 +32,10 @@ pour_speed = 200.0
 [node name="FlourScale" type="Label" parent="." index="0"]
 top_level = true
 layout_mode = 0
-offset_left = 456.0
-offset_top = 515.0
-offset_right = 553.0
-offset_bottom = 543.0
+offset_left = 432.0
+offset_top = 551.0
+offset_right = 529.0
+offset_bottom = 579.0
 text = "
 "
 label_settings = SubResource("LabelSettings_q8n05")
@@ -46,20 +46,20 @@ unique_name_in_owner = true
 position = Vector2(19, 152)
 
 [node name="BowlShape" type="CollisionShape2D" parent="BowlArea" index="0"]
-position = Vector2(497, 198)
+position = Vector2(470.75, 174)
 shape = SubResource("RectangleShape2D_2cau4")
 
 [node name="BowlSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="0"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0, 72)
+position = Vector2(0.25, 121)
 scale = Vector2(0.187292, 0.187292)
 texture = ExtResource("3_yphet")
 
 [node name="ScaleSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="1"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-3.05176e-05, 151)
+position = Vector2(4.25, 212)
 scale = Vector2(0.34082, 0.34082)
 texture = ExtResource("4_dildu")
 
@@ -80,7 +80,9 @@ texture = ExtResource("6_7xhu1")
 [node name="Powder" type="CPUParticles2D" parent="FlourPourer/HandSprite" index="0"]
 show_behind_parent = true
 clip_children = 2
+z_index = -1
 amount = 24
+randomness = 0.1
 texture = SubResource("GradientTexture2D_icf4r")
 emission_shape = 1
 emission_sphere_radius = 128.0
