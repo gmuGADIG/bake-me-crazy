@@ -78,28 +78,28 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_61yaj")])
 script = ExtResource("5_p52jp")
 texture = ExtResource("7_faben")
 key_ingredient = ExtResource("8_hpqel")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Vanilla Cake"
 
 [sub_resource type="Resource" id="Resource_kn0ph"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("8_lxrge")
 key_ingredient = ExtResource("10_q7wc5")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Lemon Cake"
 
 [sub_resource type="Resource" id="Resource_sqp4r"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("9_s3h02")
 key_ingredient = ExtResource("12_a6ul0")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Strawberry Cake"
 
 [sub_resource type="Resource" id="Resource_3rsb0"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("10_r4e3l")
 key_ingredient = ExtResource("10_ssy3s")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Chocolate Cake"
 
 [sub_resource type="Resource" id="Resource_82m3y"]
@@ -120,21 +120,21 @@ name = "Honey Bun"
 script = ExtResource("5_p52jp")
 texture = ExtResource("11_fbwbw")
 key_ingredient = ExtResource("6_7ob8o")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Cinammon Roll"
 
 [sub_resource type="Resource" id="Resource_t63it"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("13_5plmv")
 key_ingredient = ExtResource("18_3fbmo")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Orange"
 
 [sub_resource type="Resource" id="Resource_0et6n"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("14_p63qq")
 key_ingredient = ExtResource("20_o8bp8")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Pistachio"
 
 [sub_resource type="Resource" id="Resource_piyw4"]
@@ -163,28 +163,28 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_s66os")])
 script = ExtResource("5_p52jp")
 texture = ExtResource("13_mbgsr")
 key_ingredient = ExtResource("20_o8bp8")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Pistachio Macaron"
 
 [sub_resource type="Resource" id="Resource_gg7nm"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("14_677iu")
 key_ingredient = ExtResource("10_ssy3s")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Chocolate Macaron"
 
 [sub_resource type="Resource" id="Resource_h6a0h"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("15_sbiu4")
 key_ingredient = ExtResource("24_kd7r4")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Earl Grey Macaron"
 
 [sub_resource type="Resource" id="Resource_3lv1d"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("16_1bym5")
 key_ingredient = ExtResource("12_a6ul0")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Strawberry Macaron"
 
 [sub_resource type="Resource" id="Resource_2j335"]
@@ -213,21 +213,21 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_lr1jb")])
 script = ExtResource("5_p52jp")
 texture = ExtResource("14_c0tbc")
 key_ingredient = ExtResource("27_q8otq")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Sausage Puff Roll"
 
 [sub_resource type="Resource" id="Resource_e6jpc"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("15_6pv8f")
 key_ingredient = ExtResource("29_coqy3")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Spinach Puff Roll"
 
 [sub_resource type="Resource" id="Resource_nje3k"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("15_6pv8f")
 key_ingredient = ExtResource("20_o8bp8")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Baclava Puff Roll"
 
 [sub_resource type="Resource" id="Resource_152om"]
@@ -257,7 +257,7 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_t0ncx")])
 [sub_resource type="Resource" id="Resource_3ww61"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("21_q13c5")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Sourdough"
 
 [sub_resource type="Resource" id="Resource_nt2kn"]
@@ -272,14 +272,14 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_3ww61")])
 script = ExtResource("5_p52jp")
 texture = ExtResource("16_k40gs")
 key_ingredient = ExtResource("8_hpqel")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Vanilla Canelle"
 
 [sub_resource type="Resource" id="Resource_n7rbc"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("17_wms51")
 key_ingredient = ExtResource("10_ssy3s")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Chocolate Canelle"
 
 [sub_resource type="Resource" id="Resource_2l5fl"]
@@ -300,21 +300,21 @@ name = "Butter"
 script = ExtResource("5_p52jp")
 texture = ExtResource("17_vlxkb")
 key_ingredient = ExtResource("10_q7wc5")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Lemon"
 
 [sub_resource type="Resource" id="Resource_00l7m"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("26_mb8qh")
 key_ingredient = ExtResource("12_a6ul0")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Strawberry"
 
 [sub_resource type="Resource" id="Resource_djkst"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("27_x6el4")
 key_ingredient = ExtResource("10_ssy3s")
-key_ingredient_requirement = 0
+key_ingredient_requirement = 1
 name = "Billionaire"
 
 [sub_resource type="Resource" id="Resource_36ugh"]

@@ -25,15 +25,16 @@ func _ready() -> void:
 		quantity_requirement.hide()
 	else:
 		# TODO: Look this up through the item system
-		var actual_erquirement_name = "Chocolate"
+		var actual_requirement_name = variant.key_ingredient.display_name
 		# TODO: Look this up through the inventory system
-		var we_have: int = 5
-		
-		# Set the image & the text on each field.
-		food_texture.texture = variant.texture
-		variant_name.text = variant.name
-		requirement_name.text = actual_erquirement_name
+		var we_have: int = Inventory.get_item_count(variant.key_ingredient)
+
+		requirement_name.text = actual_requirement_name
 		quantity_requirement.text = str(we_have, "/", variant.key_ingredient_requirement)
 		
 		# Disable this button if we don't meet the requirement.
 		disabled = variant.key_ingredient_requirement > we_have
+		
+	# Set the image & the text on each field.	
+	food_texture.texture = variant.texture
+	variant_name.text = variant.name
