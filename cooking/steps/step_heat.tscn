@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs2tul8n3xvnn"]
 
-[ext_resource type="PackedScene" path="res://cooking/food_step.tscn" id="1_25exc"]
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_25exc"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="2_uj0nr"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_4xmly"]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c08dkypdwjw3p"]
+[gd_scene load_steps=7 format=3 uid="uid://c08dkypdwjw3p"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="2_duf8a"]
+[ext_resource type="Texture2D" uid="uid://bquoeqxt3sdaf" path="res://temp_art/ovinthecoldfood.png" id="3_flbob"]
 [ext_resource type="PackedScene" uid="uid://sa2qgbo1hv8u" path="res://cooking/steps/pour_flour.tscn" id="3_kov07"]
 [ext_resource type="PackedScene" uid="uid://ddduu8be5a824" path="res://cooking/steps/step_roll_up.tscn" id="4_fpntb"]
-[ext_resource type="PackedScene" path="res://cooking/steps/kneading.tscn" id="4_nt0hk"]
+[ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="4_nt0hk"]
 
 [node name="TestFoodMinigame" type="CanvasLayer"]
 
@@ -14,6 +15,16 @@
 layout_mode = 1
 green_range = 0.05
 heat_time = 3.0
+
+[node name="BAKE" parent="FoodMinigame" instance=ExtResource("2_duf8a")]
+layout_mode = 1
+green_range = 0.2
+heat_time = 2.0
+
+[node name="OvenSprite" type="Sprite2D" parent="FoodMinigame/BAKE"]
+position = Vector2(583, 246)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_flbob")
 
 [node name="PourFlour" parent="FoodMinigame" instance=ExtResource("3_kov07")]
 layout_mode = 1
@@ -27,3 +38,11 @@ heat_time = 2.0
 layout_mode = 1
 
 [node name="Kneading" parent="FoodMinigame" instance=ExtResource("4_nt0hk")]
+maxStretch = 200.0
+stretchPerSec = 0.05
+maxPoints = 1000
+fastPointGain = 3
+midPointGain = 2
+slowPointGain = 1
+midThreshold = 3000
+slowThreshold = 4000
