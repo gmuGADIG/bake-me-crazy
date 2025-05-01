@@ -34,6 +34,9 @@ func _try_connect_node(node):
 			# Connect to the specified event if it exists
 			if node.has_signal(mapping.event_name):
 				# Avoid duplicate connections
+				if mapping.node_group != "":
+					if not node.is_in_group(mapping.node_group):
+						continue
 				if not node.is_connected(mapping.event_name, _on_event_triggered.bind(mapping.sfx_id)):
 					node.connect(mapping.event_name, _on_event_triggered.bind(mapping.sfx_id))
 
