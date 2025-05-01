@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_ww7xc"]
 [ext_resource type="Script" path="res://cooking/steps/roll_out.gd" id="2_f3gfe"]
-[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="3_vtj68"]
+[ext_resource type="Texture2D" uid="uid://crjpqod60y357" path="res://cooking/art/Minigame_Dough.png" id="3_pysd8"]
 [ext_resource type="Texture2D" uid="uid://cspwsjgm6d5yb" path="res://cooking/art/rollingpinsheet.png" id="4_2i2er"]
 [ext_resource type="Script" path="res://cooking/steps/sprite_2d.gd" id="5_wopcp"]
 
@@ -58,9 +58,9 @@ scale = Vector2(13.7902, 13.9094)
 shape = SubResource("CircleShape2D_sq7h3")
 
 [node name="Sprite2D" type="Sprite2D" parent="dough" index="1"]
-position = Vector2(1.14441e-05, 2)
-scale = Vector2(4.89062, 1.55469)
-texture = ExtResource("3_vtj68")
+position = Vector2(0, 14)
+scale = Vector2(4.891, 2)
+texture = ExtResource("3_pysd8")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1

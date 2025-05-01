@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 			var dist = absf(%SizeHint.size.y - (128 * 1.555 * $dough.scale.y))
 			finished.emit(clampf(remap(dist, 0, 100, 3, 0), 0, 3))
 			done = true
-
 		rolling = false
 		$Sprite2D.stop()
 	if rolling == true :
 		$dough.scale.y += clamp((mouse_vert_velocity * 0.001 * delta), 0, 0.01)
 		$Sprite2D.play("roll")
+		$Sprite2D.speed_scale = Input.get_last_mouse_velocity().y * 0.15 * delta
