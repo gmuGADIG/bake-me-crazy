@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://fjabv8qvpnkb"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_iodab"]
+[ext_resource type="Script" path="res://cooking/steps/step_pour.gd" id="2_l18ah"]
+[ext_resource type="Texture2D" uid="uid://c4muw6lk64hkg" path="res://temp_art/gartic/shoe_knife.png" id="3_6srty"]
+[ext_resource type="PackedScene" uid="uid://3401sxy2s32d" path="res://cooking/draggable_object/holding_manager.tscn" id="4_2v25l"]
+[ext_resource type="PackedScene" uid="uid://u2v0gb5yo3pq" path="res://cooking/draggable_object/draggable_object.tscn" id="5_3k21k"]
+[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="6_rm6oe"]
+[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="7_ggwui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
+size = Vector2(103, 287.5)
+
+[sub_resource type="GDScript" id="GDScript_3iggj"]
+resource_name = "arrow_bar"
+script/source = "extends ColorRect
+
+@onready var arrow := $Arrow
+@onready var green_bar := $GreenBar
+var heat := 0.0
+
+var seconds_in_green := 0.0
+
+## What portion of the heat bar is green. Between 0 and 1.
+@export var green_range := 0.5
+
+@export var value: float = 0.0
+@export var min_value: float = 0.0
+@export var max_value: float = 1.0
+
+func _ready() -> void:
+	green_range = clamp(green_range, 0.0, 1.0)
+	# We set the size of the green bar based on the green range.
+	green_bar.anchor_top    = 0.5 - green_range * 0.5
+	green_bar.anchor_bottom = 0.5 + green_range * 0.5
+
+## Called before we are slid into the scene.
+func pre_animation():
+	
+	var anchor: float = 1.0 - ((clamp(heat, -1.0, 1.0) + 1.0) * 0.5)
+	arrow.anchor_top = anchor
+	arrow.anchor_bottom = anchor 
+
+func get_ratio() -> float:
+	return clamp((value-min_value) / (max_value - min_value), 0, 1)
+func set_arrow_pos(ratio:float) -> void:
+	arrow.anchor_top = 1 - ratio
+	arrow.anchor_bottom = 1 - ratio
+
+
+func _process(delta: float) -> void:
+	set_arrow_pos(get_ratio())
+"
+
+[node name="StepPour" instance=ExtResource("1_iodab")]
+script = ExtResource("2_l18ah")
+target_amount = 300.0
+pour_speed = 200.0
+
+[node name="FlourScale" type="Label" parent="." index="0"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 50.0
+offset_right = 113.0
+offset_bottom = 73.0
+text = "
+"
+
+[node name="BowlArea" type="Area2D" parent="." index="1"]
+unique_name_in_owner = true
+
+[node name="BowlShape" type="CollisionShape2D" parent="BowlArea" index="0"]
+position = Vector2(497, 198)
+shape = SubResource("RectangleShape2D_2cau4")
+
+[node name="BowlSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="0"]
+position = Vector2(56, -1)
+scale = Vector2(0.665217, 0.525424)
+texture = ExtResource("3_6srty")
+
+[node name="HoldingManager" parent="." index="2" instance=ExtResource("4_2v25l")]
+
+[node name="PouringTool" parent="." index="3" instance=ExtResource("5_3k21k")]
+unique_name_in_owner = true
+position = Vector2(216, 182)
+collision_layer = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="PouringTool" index="1"]
+texture = ExtResource("6_rm6oe")
+
+[node name="FullBar" type="ColorRect" parent="." index="4"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 49.0
+offset_bottom = -23.0
+grow_vertical = 2
+color = Color(1, 0.0986208, 0.387233, 1)
+script = SubResource("GDScript_3iggj")
+value = 50.0
+max_value = 1000.0
+
+[node name="Arrow" type="TextureRect" parent="FullBar" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.382
+anchor_bottom = 0.458
+offset_left = 40.0
+offset_top = -64.0
+offset_right = 168.0
+offset_bottom = -7.508
+texture = ExtResource("7_ggwui")
+
+[node name="GreenBar" type="ColorRect" parent="FullBar" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.881706, 0.31818, 1)
