@@ -37,6 +37,7 @@ directories/dch_directory={
 "testing/testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
+"callum_date_1": "res://dialogue/salty/callum_date_1.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",

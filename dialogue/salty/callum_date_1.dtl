@@ -1,0 +1,7 @@
+You and Callum walk into the Carnival. Callum is visibly excited as he looks around. He looks over to you and smiles.
+join callum (excited) center [animation="Fade In"]
+callum (excited): I’ve never visited the carnival here. I used to go to one when I was younger back in Cali, it was great. I’m hoping this one will be just as good, but I have my doubts.
+- "Is there anything you want to do first?"
+callum (neutral): Honestly, I’m down for anything. How about this, I’ll let you choose what we do first. 
+- Ballon dart throw
+- Bean bag toss
