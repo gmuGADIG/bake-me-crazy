@@ -1,8 +1,7 @@
-[gd_scene load_steps=92 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=91 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
-[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="4_8ljyd"]
 [ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="5_1tayq"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="5_2erxo"]
 [ext_resource type="Script" path="res://cooking/recipe_variant.gd" id="5_p52jp"]
@@ -55,7 +54,6 @@ name = ""
 script = ExtResource("2_8r5qq")
 name = "Croissant"
 instructions = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_dkqhj")])
 
@@ -70,7 +68,6 @@ name = "Snickerdoodle"
 script = ExtResource("2_8r5qq")
 name = "Cookies"
 instructions = "A baked dessert shaped to be small, flat, and made with love. The butter dough mixed with sweet ingredients gives each bite a memorable sensation. A cookie’s texture varies from crisp and crunchy to soft and chewy depending on the techniques used."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_61yaj")])
 
@@ -106,7 +103,6 @@ name = "Chocolate Cake"
 script = ExtResource("2_8r5qq")
 name = "Cake"
 instructions = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors. Cake is a classic treat that pairs well with a frosting of choice to blend a rich or delicate taste. What makes a good cake is not only in taste but also in appearance, as a cake can be shaped into many things, left to the human imagination."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_bsmck"), SubResource("Resource_kn0ph"), SubResource("Resource_sqp4r"), SubResource("Resource_3rsb0")])
 
@@ -141,7 +137,6 @@ name = "Pistachio"
 script = ExtResource("2_8r5qq")
 name = "Sweet Roll"
 instructions = "This treat is perfect for breakfast or brunch as it's a light, flaky dough that surrounds a filling of choice. Compared to regular bread dough, sweet roll dough generally has higher levels of sugar, fat, eggs, and yeast. They are often round or have a spiral center."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_gqpuj"), SubResource("Resource_jpjy6"), SubResource("Resource_t63it"), SubResource("Resource_0et6n")])
 
@@ -155,7 +150,6 @@ name = ""
 script = ExtResource("2_8r5qq")
 name = "Brownie"
 instructions = "A sweet that can reach true perfection as it is glossy and filled with rich flavor. Brownies come in a variety of forms and may be either fudgy or cakey, depending on their density. Top quality brownies are super fudgy and slightly gooey middles that taste intensely, depending on what you put in, with gorgeous crackly tops."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_s66os")])
 
@@ -191,7 +185,6 @@ name = "Strawberry Macaron"
 script = ExtResource("2_8r5qq")
 name = "Macaron"
 instructions = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside, giving it a balance of crunch and softness! As well as having a vibrant selection of colors."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_hjstx"), SubResource("Resource_gg7nm"), SubResource("Resource_h6a0h"), SubResource("Resource_3lv1d")])
 
@@ -205,7 +198,6 @@ name = ""
 script = ExtResource("2_8r5qq")
 name = "Scones"
 instructions = "Similar to a biscuit, this type of pastry has a crumbly exterior with a buttery flavor, and a wide selection of toppings, from creamy melted cheese or zesty orange."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_lr1jb")])
 
@@ -234,7 +226,6 @@ name = "Baclava Puff Roll"
 script = ExtResource("2_8r5qq")
 name = "Puff Roll"
 instructions = "The pastry’s equivalent of a burrito! Sporting a soft yet slightly crunchy exterior, having enough space inside to fill up on the delicious choices of fillings, such as savory sausages or sweet chocolate filling!"
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_rmkvf"), SubResource("Resource_e6jpc"), SubResource("Resource_nje3k")])
 
@@ -250,7 +241,6 @@ name = "Tart"
 instructions = "A versatile crust with a crumbly yet soft texture that can handle all kinds of
 juicy fruits and other toppings in a pie-like shape. From refreshing
 strawberries to thick and sweet chocolate."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_t0ncx")])
 
@@ -264,7 +254,6 @@ name = "Sourdough"
 script = ExtResource("2_8r5qq")
 name = "Bread"
 instructions = "A staple for all bakeries, an incredibly versatile pastry that sports a cloudy soft inside and a firm and strong exterior. Bread has a wheat flavor that is not too overwhelming, which adds a great little touch to the overall flavor."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_3ww61")])
 
@@ -286,7 +275,6 @@ name = "Chocolate Canelle"
 script = ExtResource("2_8r5qq")
 name = "Cannelle"
 instructions = "A small and soft pastry that has a rich caramelized exterior, which is contrasted with a pillowy soft custardy center, additionally, it can support different types of flavors, from vanilla bean to savory cheese."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_1qepa"), SubResource("Resource_n7rbc")])
 
@@ -321,7 +309,6 @@ name = "Billionaire"
 script = ExtResource("2_8r5qq")
 name = "Bar"
 instructions = "A rectangular thick pastry similar to that of a brownie, this type of dessert is defined by its toppings, having a wide array of customizability, and there is an abundant number of variants that you can make."
-minigame = ExtResource("4_8ljyd")
 is_locked = false
 variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_x3fre"), SubResource("Resource_3dcra"), SubResource("Resource_00l7m"), SubResource("Resource_djkst")])
 

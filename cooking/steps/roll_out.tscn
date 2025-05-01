@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://1kn7jln1tm7y"]
+[gd_scene load_steps=7 format=3 uid="uid://c5s126gsrnt73"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_ww7xc"]
 [ext_resource type="Script" path="res://cooking/steps/roll_out.gd" id="2_f3gfe"]

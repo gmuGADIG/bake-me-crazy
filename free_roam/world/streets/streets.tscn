@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="4_r2mm7"]
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="4_uf2h1"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
-[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="5_rdsfc"]
+[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame_BAD.tscn" id="5_rdsfc"]
 [ext_resource type="Resource" path="res://dialogue/testing/test_market_timeline.dtl" id="7_p6mop"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
 

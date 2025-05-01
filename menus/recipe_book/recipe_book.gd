@@ -19,7 +19,7 @@ class_name RecipeBook extends Node
 var current_page = 0
 var selected_recipes: Array[int] = [] ## List of indices that have been selected to bake
 
-signal recipes_selected(recipes: Array[Recipe])
+signal recipes_selected(variants: Array[RecipeVariant])
 
 func _ready() -> void:
 	update_displayed_recipes()
@@ -79,4 +79,4 @@ func _on_finish_button_pressed() -> void:
 	%RecipeVariantSelection.show_variants(first, second)
 	
 	# TODO: Move this to the new variant selection menu?
-	#recipes_selected.emit(selected_recipes)
+	#

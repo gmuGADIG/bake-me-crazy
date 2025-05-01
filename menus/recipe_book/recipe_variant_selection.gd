@@ -9,6 +9,8 @@ class_name RecipeVariantSelection
 
 @onready var confirm_button := $ConfirmButton
 
+var recipe1: Recipe = null
+var recipe2: Recipe = null
 var button_group_left : ButtonGroup = null
 var button_group_right: ButtonGroup = null
 
@@ -22,6 +24,24 @@ func _ready():
 		# Also, disable the confirm button just to make sure that 
 		# we can't accidentally confirm random hidden recipes.
 		confirm_button.disabled = true
+	)
+	
+	confirm_button.pressed.connect(func():
+		# Emit the selected recipes signal.
+		var left_button = button_group_left.get_pressed_button()
+		if left_button == null: return
+		var right_button = button_group_right.get_pressed_button()
+		if right_button == null: return
+		
+		# Make sure that each variant knows what its parent is. This seems like
+		# the easiest way to keep this data in sync.
+		var left_variant = left_button.variant
+		left_variant.parent = recipe1
+		
+		var right_variant = right_button.variant
+		right_variant.parent = recipe2
+		
+		get_parent().recipes_selected.emit([left_variant, right_variant])
 	)
 	
 ## Recomputes whether the confirm button can be pressed. It can only be pressed
@@ -62,5 +82,7 @@ func show_variants(recipe1: Recipe, recipe2: Recipe):
 	button_group_right = populate(variants_right, recipe2)
 	select_for_left.text  = "Select variant for " + recipe1.name
 	select_for_right.text = "Select variant for " + recipe2.name
+	self.recipe1 = recipe1
+	self.recipe2 = recipe2
 	_update_confirm_button()
 	show()

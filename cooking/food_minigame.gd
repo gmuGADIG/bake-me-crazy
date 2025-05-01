@@ -11,6 +11,10 @@ var step_slide_timer: float = 0.0
 const STEP_SLIDE_DURATION: float = 1.0
 const SCREEN_WIDTH := 1152.0
 var current_score :float= 0
+
+
+signal all_minigames_done()
+
 func next_step() -> void:
 	# get the previous and next step (each may be null)
 	var prev: FoodStep
@@ -63,6 +67,11 @@ func next_step() -> void:
 		
 
 		%MorningResults.show_results(round(current_score / steps.size()))
+		await %MorningResults.results_done
+		
+		# Wait for the morning results to hide? Then next minigame?
+		
+		all_minigames_done.emit()
 		#SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
 
 func step_finished(score: float) -> void:

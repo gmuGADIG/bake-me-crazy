@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://c08dkypdwjw3p"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_7otae"]
+[ext_resource type="PackedScene" uid="uid://b1qo3dh7pfxpl" path="res://cooking/steps/step_scoop.tscn" id="2_tm6dd"]
+[ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="3_l786d"]
+[ext_resource type="PackedScene" path="res://cooking/steps/step_measure.tscn" id="4_spr1e"]
+[ext_resource type="PackedScene" uid="uid://bhr08sd4y1yuy" path="res://cooking/steps/step_roll_up.tscn" id="5_ruh3j"]
+[ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="6_o0eqo"]
+[ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="7_uivp3"]
+[ext_resource type="PackedScene" uid="uid://bqiuapp2ar2pr" path="res://cooking/steps/step_vert_cut.tscn" id="8_rgoi0"]
+[ext_resource type="PackedScene" uid="uid://c5s126gsrnt73" path="res://cooking/steps/roll_out.tscn" id="9_05ecv"]
+
+[node name="TestFoodMinigame" type="CanvasLayer"]
+
+[node name="FoodMinigame" parent="." instance=ExtResource("1_7otae")]
+
+[node name="StepScoop" parent="FoodMinigame" instance=ExtResource("2_tm6dd")]
+layout_mode = 1
+
+[node name="StepHeat" parent="FoodMinigame" instance=ExtResource("3_l786d")]
+layout_mode = 1
+green_range = 0.05
+heat_time = 3.0
+
+[node name="PourFlour" parent="FoodMinigame" instance=ExtResource("4_spr1e")]
+layout_mode = 1
+
+[node name="RollUp" parent="FoodMinigame" instance=ExtResource("5_ruh3j")]
+layout_mode = 1
+
+[node name="Kneading" parent="FoodMinigame" instance=ExtResource("6_o0eqo")]
+
+[node name="StepCut" parent="FoodMinigame" instance=ExtResource("7_uivp3")]
+
+[node name="StepCut2" parent="FoodMinigame" instance=ExtResource("8_rgoi0")]
+
+[node name="FoodStep" parent="FoodMinigame" instance=ExtResource("9_05ecv")]
+layout_mode = 1
