@@ -32,4 +32,9 @@ func _ready() -> void:
 		
 		# TODO: Here we probably want to show a menu showing the finished food?
 		# Then await for that menu being hidden?
+		
+	# Once we reach here, we have awaited for all the sub-menus, and are ready
+	# to move on to the next step.
+	# According to what I can find, this is the lunch break?
+	SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
 	
