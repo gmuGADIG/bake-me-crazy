@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=92 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Script" path="res://cooking/recipe.gd" id="2_8r5qq"]
@@ -6,15 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="5_1tayq"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="5_2erxo"]
 [ext_resource type="Script" path="res://cooking/recipe_variant.gd" id="5_p52jp"]
+[ext_resource type="Resource" uid="uid://bgg3p5ee7mfuv" path="res://items/ingredients/cinnamon.tres" id="6_7ob8o"]
 [ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="6_p3kn6"]
 [ext_resource type="Texture2D" uid="uid://b0wejwm1707v5" path="res://items/foods/art/Cake_Vanilla.png" id="7_faben"]
 [ext_resource type="Texture2D" uid="uid://8crq3jkpven1" path="res://items/foods/art/Cookie_Snickerdoodle.png" id="7_l7dol"]
 [ext_resource type="PackedScene" uid="uid://feyopye254fc" path="res://menus/recipe_book/recipe_book_page.tscn" id="7_ldrir"]
+[ext_resource type="Resource" uid="uid://0nwwupoe48k4" path="res://items/ingredients/vanilla.tres" id="8_hpqel"]
 [ext_resource type="Texture2D" uid="uid://cvmk88s6vodej" path="res://items/foods/art/Cake_Lemon.png" id="8_lxrge"]
 [ext_resource type="Texture2D" uid="uid://d2dmxvvovf1no" path="res://items/foods/art/Cake_Strawberry.png" id="9_s3h02"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="10_7f2te"]
+[ext_resource type="Resource" uid="uid://biw16s27hi36y" path="res://items/ingredients/lemon.tres" id="10_q7wc5"]
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="10_r4e3l"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="10_ssy3s"]
 [ext_resource type="Texture2D" uid="uid://b16ppgiltuawr" path="res://items/foods/art/CinnamonRoll.png" id="11_fbwbw"]
+[ext_resource type="Resource" uid="uid://ncul60wovroo" path="res://items/ingredients/strawberry.tres" id="12_a6ul0"]
 [ext_resource type="Texture2D" uid="uid://daf2fqlqruief" path="res://items/foods/art/SweetRollUpdated.png" id="12_lr2h2"]
 [ext_resource type="Texture2D" uid="uid://c1hoxmyh44c8x" path="res://items/foods/art/OrangeSweetRoll.png" id="13_5plmv"]
 [ext_resource type="Texture2D" uid="uid://2dq1wvjmq8e4" path="res://items/foods/art/Macaron_Pistachio.png" id="13_mbgsr"]
@@ -28,17 +33,21 @@
 [ext_resource type="Texture2D" uid="uid://bt8ow64g2bleh" path="res://items/foods/art/Canelle_Vanilla.png" id="16_k40gs"]
 [ext_resource type="Texture2D" uid="uid://6kxx1jobd4yy" path="res://items/foods/art/Bar_Lemon.png" id="17_vlxkb"]
 [ext_resource type="Texture2D" uid="uid://c1o4q2iwfbmsl" path="res://items/foods/art/Canelle_Chocolate.png" id="17_wms51"]
+[ext_resource type="Resource" uid="uid://dlcm7m0yeyb0d" path="res://items/ingredients/orange.tres" id="18_3fbmo"]
+[ext_resource type="Resource" uid="uid://d27qlixlhrm2l" path="res://items/ingredients/pistaschio.tres" id="20_o8bp8"]
 [ext_resource type="Texture2D" uid="uid://c6hvm1ahi2u64" path="res://items/foods/art/Bread_Sourdough.png" id="21_q13c5"]
+[ext_resource type="Resource" uid="uid://bcjm032lps0e7" path="res://items/ingredients/tea.tres" id="24_kd7r4"]
 [ext_resource type="Texture2D" uid="uid://buxkx0dky3jmm" path="res://items/foods/art/Bar_Strawberry.png" id="26_mb8qh"]
+[ext_resource type="Resource" uid="uid://cnuuuomy00hxl" path="res://items/ingredients/pork.tres" id="27_q8otq"]
 [ext_resource type="Texture2D" uid="uid://d4cvrxp22ejf8" path="res://items/foods/art/Bar_Billionaire.png" id="27_x6el4"]
 [ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
+[ext_resource type="Resource" uid="uid://c7qq5te66x2sh" path="res://items/ingredients/cheese.tres" id="29_coqy3"]
 [ext_resource type="Texture2D" uid="uid://bjtf32jw05iq5" path="res://menus/recipe_book/Right_arrow_curve.webp" id="32_wttob"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_variant_selection.gd" id="33_amgaq"]
 
 [sub_resource type="Resource" id="Resource_dkqhj"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("5_2erxo")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = ""
 
@@ -53,7 +62,7 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_dkqhj")])
 [sub_resource type="Resource" id="Resource_61yaj"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("7_l7dol")
-key_ingredient = &""
+key_ingredient = ExtResource("6_7ob8o")
 key_ingredient_requirement = 0
 name = "Snickerdoodle"
 
@@ -68,28 +77,28 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_61yaj")])
 [sub_resource type="Resource" id="Resource_bsmck"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("7_faben")
-key_ingredient = &""
+key_ingredient = ExtResource("8_hpqel")
 key_ingredient_requirement = 0
 name = "Vanilla Cake"
 
 [sub_resource type="Resource" id="Resource_kn0ph"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("8_lxrge")
-key_ingredient = &""
+key_ingredient = ExtResource("10_q7wc5")
 key_ingredient_requirement = 0
 name = "Lemon Cake"
 
 [sub_resource type="Resource" id="Resource_sqp4r"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("9_s3h02")
-key_ingredient = &""
+key_ingredient = ExtResource("12_a6ul0")
 key_ingredient_requirement = 0
 name = "Strawberry Cake"
 
 [sub_resource type="Resource" id="Resource_3rsb0"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("10_r4e3l")
-key_ingredient = &""
+key_ingredient = ExtResource("10_ssy3s")
 key_ingredient_requirement = 0
 name = "Chocolate Cake"
 
@@ -104,28 +113,27 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_bsmck"), SubReso
 [sub_resource type="Resource" id="Resource_gqpuj"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("12_lr2h2")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = "Honey Bun"
 
 [sub_resource type="Resource" id="Resource_jpjy6"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("11_fbwbw")
-key_ingredient = &""
+key_ingredient = ExtResource("6_7ob8o")
 key_ingredient_requirement = 0
 name = "Cinammon Roll"
 
 [sub_resource type="Resource" id="Resource_t63it"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("13_5plmv")
-key_ingredient = &""
+key_ingredient = ExtResource("18_3fbmo")
 key_ingredient_requirement = 0
 name = "Orange"
 
 [sub_resource type="Resource" id="Resource_0et6n"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("14_p63qq")
-key_ingredient = &""
+key_ingredient = ExtResource("20_o8bp8")
 key_ingredient_requirement = 0
 name = "Pistachio"
 
@@ -140,7 +148,6 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_gqpuj"), SubReso
 [sub_resource type="Resource" id="Resource_s66os"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("5_2erxo")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = ""
 
@@ -155,28 +162,28 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_s66os")])
 [sub_resource type="Resource" id="Resource_hjstx"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("13_mbgsr")
-key_ingredient = &""
+key_ingredient = ExtResource("20_o8bp8")
 key_ingredient_requirement = 0
 name = "Pistachio Macaron"
 
 [sub_resource type="Resource" id="Resource_gg7nm"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("14_677iu")
-key_ingredient = &""
+key_ingredient = ExtResource("10_ssy3s")
 key_ingredient_requirement = 0
 name = "Chocolate Macaron"
 
 [sub_resource type="Resource" id="Resource_h6a0h"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("15_sbiu4")
-key_ingredient = &""
+key_ingredient = ExtResource("24_kd7r4")
 key_ingredient_requirement = 0
 name = "Earl Grey Macaron"
 
 [sub_resource type="Resource" id="Resource_3lv1d"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("16_1bym5")
-key_ingredient = &""
+key_ingredient = ExtResource("12_a6ul0")
 key_ingredient_requirement = 0
 name = "Strawberry Macaron"
 
@@ -191,7 +198,6 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_hjstx"), SubReso
 [sub_resource type="Resource" id="Resource_lr1jb"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("5_2erxo")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = ""
 
@@ -206,21 +212,21 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_lr1jb")])
 [sub_resource type="Resource" id="Resource_rmkvf"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("14_c0tbc")
-key_ingredient = &""
+key_ingredient = ExtResource("27_q8otq")
 key_ingredient_requirement = 0
 name = "Sausage Puff Roll"
 
 [sub_resource type="Resource" id="Resource_e6jpc"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("15_6pv8f")
-key_ingredient = &""
+key_ingredient = ExtResource("29_coqy3")
 key_ingredient_requirement = 0
 name = "Spinach Puff Roll"
 
 [sub_resource type="Resource" id="Resource_nje3k"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("15_6pv8f")
-key_ingredient = &""
+key_ingredient = ExtResource("20_o8bp8")
 key_ingredient_requirement = 0
 name = "Baclava Puff Roll"
 
@@ -235,7 +241,6 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_rmkvf"), SubReso
 [sub_resource type="Resource" id="Resource_t0ncx"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("5_2erxo")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = ""
 
@@ -252,7 +257,6 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_t0ncx")])
 [sub_resource type="Resource" id="Resource_3ww61"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("21_q13c5")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = "Sourdough"
 
@@ -267,14 +271,14 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_3ww61")])
 [sub_resource type="Resource" id="Resource_1qepa"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("16_k40gs")
-key_ingredient = &""
+key_ingredient = ExtResource("8_hpqel")
 key_ingredient_requirement = 0
 name = "Vanilla Canelle"
 
 [sub_resource type="Resource" id="Resource_n7rbc"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("17_wms51")
-key_ingredient = &""
+key_ingredient = ExtResource("10_ssy3s")
 key_ingredient_requirement = 0
 name = "Chocolate Canelle"
 
@@ -289,28 +293,27 @@ variants = Array[ExtResource("5_p52jp")]([SubResource("Resource_1qepa"), SubReso
 [sub_resource type="Resource" id="Resource_x3fre"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("16_hq24v")
-key_ingredient = &""
 key_ingredient_requirement = 0
 name = "Butter"
 
 [sub_resource type="Resource" id="Resource_3dcra"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("17_vlxkb")
-key_ingredient = &""
+key_ingredient = ExtResource("10_q7wc5")
 key_ingredient_requirement = 0
 name = "Lemon"
 
 [sub_resource type="Resource" id="Resource_00l7m"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("26_mb8qh")
-key_ingredient = &""
+key_ingredient = ExtResource("12_a6ul0")
 key_ingredient_requirement = 0
 name = "Strawberry"
 
 [sub_resource type="Resource" id="Resource_djkst"]
 script = ExtResource("5_p52jp")
 texture = ExtResource("27_x6el4")
-key_ingredient = &""
+key_ingredient = ExtResource("10_ssy3s")
 key_ingredient_requirement = 0
 name = "Billionaire"
 

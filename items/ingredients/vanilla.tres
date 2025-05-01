@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_ych4h")
-description = "yay vanilla :)"
-display_name = "vanilla"
+description = "Yay vanilla :)"
+display_name = "Vanilla"
 image = ExtResource("1_ngdr0")

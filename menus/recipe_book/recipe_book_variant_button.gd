@@ -14,7 +14,7 @@ func _ready() -> void:
 		
 		# Set up a dummy RecipeVariant for testing purposes.
 		variant = RecipeVariant.new()
-		variant.key_ingredient = "chocolate"
+		variant.key_ingredient = preload("res://items/ingredients/chocolate.tres")
 		variant.key_ingredient_requirement = 3
 		variant.name = "Chocolate"
 		variant.texture = preload("res://items/foods/art/Cake_Chocolate.png")
