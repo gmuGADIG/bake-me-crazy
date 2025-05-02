@@ -97,6 +97,12 @@ func stop_sound(sfx: SoundEffect) -> void:
 	if active_sounds.has(stream_path):
 		active_sounds[stream_path].stop()
 		active_sounds.erase(stream_path)
+		
+func stop_by_id(sfx_id: String):
+	var sfx: SoundEffect = SFXScanner.get_effect_by_filename(sfx_id)
+	if not sfx:
+		return
+	stop_sound(sfx)
 
 # Stop all sound effects
 func stop_all() -> void:

@@ -98,8 +98,8 @@ func _try_connect_node(node):
 				
 			# Connect to the specified event if it exists
 			if node.has_signal(mapping.event_name):
-				if not node.is_connected(mapping.event_name, _on_event_triggered.bind(mapping.sfx_id)):
-					node.connect(mapping.event_name, _on_event_triggered.bind(mapping.sfx_id))
+				if not node.is_connected(mapping.event_name, _on_event_triggered.bind(mapping.sfx_id, mapping.stop_sfx)):
+					node.connect(mapping.event_name, _on_event_triggered.bind(mapping.sfx_id, mapping.stop_sfx))
 	
 	# Connect animation players for animation SFX mappings
 	if node is AnimationPlayer and animation_sfx_mappings.size() > 0:
@@ -128,6 +128,7 @@ func _try_connect_animation_player(player: AnimationPlayer):
 			_connected_animation_players[player] = true
 
 func _on_animation_started(anim_name: String, player: AnimationPlayer):
+	# Find matching animation mapping
 	for mapping in animation_sfx_mappings:
 		# Check if this mapping applies to the player by name
 		if mapping.node_name != "" and mapping.node_name != player.name:
@@ -139,10 +140,18 @@ func _on_animation_started(anim_name: String, player: AnimationPlayer):
 			
 		# Check if animation name matches
 		if mapping.animation_name == anim_name:
-			MainSFXPlayer.play_from_id(mapping.sfx_id)
-			return
+			# Either play or stop the associated sound effect
+			if mapping.stop_sfx:
+				MainSFXPlayer.stop_by_id(mapping.sfx_id)
+			else:
+				MainSFXPlayer.play_from_id(mapping.sfx_id)
+			
+			# Continue checking - we might have both a play and stop mapping for the same animation
+			# Don't return early
 
-func _on_event_triggered(sfx_id: String):
-	# Play the associated sound effect using the autoloaded SFX player
-	print(sfx_id)
-	MainSFXPlayer.play_from_id(sfx_id)
+func _on_event_triggered(sfx_id: String, stop_sfx: bool = false):
+	# Either play or stop the associated sound effect using the autoloaded SFX player
+	if stop_sfx:
+		MainSFXPlayer.stop_by_id(sfx_id)
+	else:
+		MainSFXPlayer.play_from_id(sfx_id)

@@ -8,9 +8,10 @@
 script = ExtResource("2_rk27y")
 node_type = "Button"
 node_group = ""
-node_name = null
+node_name = ""
 event_name = "mouse_entered"
 sfx_id = "hover_sfx.tres"
+stop_sfx = false
 
 [sub_resource type="Resource" id="Resource_2i6c7"]
 script = ExtResource("2_rk27y")
@@ -19,6 +20,7 @@ node_group = ""
 node_name = "TurnPageRight"
 event_name = "pressed"
 sfx_id = "page_flip.tres"
+stop_sfx = false
 
 [sub_resource type="Resource" id="Resource_w77q6"]
 script = ExtResource("2_rk27y")
@@ -27,6 +29,7 @@ node_group = ""
 node_name = "TurnPageLeft"
 event_name = "pressed"
 sfx_id = "page_flip.tres"
+stop_sfx = false
 
 [sub_resource type="Resource" id="Resource_lwk0c"]
 script = ExtResource("2_rk27y")
@@ -35,6 +38,7 @@ node_group = ""
 node_name = ""
 event_name = "pressed"
 sfx_id = "ui_select.tres"
+stop_sfx = false
 
 [sub_resource type="Resource" id="Resource_x466h"]
 script = ExtResource("3_p45uh")
@@ -42,6 +46,7 @@ animation_name = "swipe"
 player_group = ""
 node_name = ""
 sfx_id = "page_flip.tres"
+stop_sfx = false
 
 [node name="SFXDispatcher" type="Node"]
 script = ExtResource("1_ddg1u")
