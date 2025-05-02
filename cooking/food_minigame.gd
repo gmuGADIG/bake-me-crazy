@@ -8,66 +8,45 @@ var step_ptr: int = 0
 ## Timer for animating the steps in. Decreases from LENGTH to 0.
 var step_slide_timer: float = 0.0
 
-const STEP_SLIDE_DURATION: float = 1.0
-const SCREEN_WIDTH := 1152.0
-var current_score :float= 0
+const STEP_SLIDE_LENGTH: float = 0.3
+
+func animate_slide():
+	var t := step_slide_timer / STEP_SLIDE_LENGTH
+	t = 1.0 - t
+	
+	if step_ptr > 0 and not steps.is_empty():
+		var prev: FoodStep = steps[step_ptr - 1]
+		prev.anchor_left  = lerp(0.0, -1.0, t)
+		prev.anchor_right = lerp(1.0,  0.0, t)
+		
+	if step_ptr < steps.size():
+		var cur: FoodStep = steps[step_ptr]
+		cur.anchor_left  = lerp(1.0, 0.0, t)
+		cur.anchor_right = lerp(2.0, 1.0, t)
+
 func next_step() -> void:
-	# get the previous and next step (each may be null)
-	var prev: FoodStep
-	var next: FoodStep
-	if step_ptr > 0 and not steps.is_empty(): prev = steps[step_ptr - 1]
-	if step_ptr < steps.size(): next = steps[step_ptr]
-	
-	# disable prev (it remains visible until off-screen)
-	if prev != null:
+	# If we have a previous step, disable it.
+	if step_ptr > 0:
+		var prev: FoodStep = steps[step_ptr - 1]
 		prev.process_mode = Node.PROCESS_MODE_DISABLED
+		#prev.hide() # TODO replace with polished animation.
 	
-	# prepare next step
-	if next != null:
+	if step_ptr < steps.size():
+		var next: FoodStep = steps[step_ptr]
+		# Pre animation step.
 		next.pre_animation()
-		next.visible = true
-	
-	# animate them swiping across the screen
-	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_parallel()
-	if prev != null:
-		prev.position.x = 0
-		tween.tween_property(prev, "position:x", -SCREEN_WIDTH, STEP_SLIDE_DURATION)
-	
-	if next != null:
-		next.position.x = SCREEN_WIDTH
-		tween.tween_property(next, "position:x", 0, STEP_SLIDE_DURATION)
-
-	await tween.finished # wait for animation to finish
-	
-	# hide previous step now that it's off screen
-	if prev != null:
-		prev.visible = false
+		# All we do before the step is slid in is show it.
+		next.show()
 		
-	# start next step
-	if next != null:
-		next.process_mode = Node.PROCESS_MODE_INHERIT
-		next.start()
-		
-		next.finished.connect(step_finished)
-		
-		# This is also when we finally increase the step pointer.
-		step_ptr += 1
+	# Start the slide animation. We do this even for the last step so that
+	# it goes away. TODO Add like a final screen or whatever
+	step_slide_timer = STEP_SLIDE_LENGTH
 	
-	# on the final step, handle the food being finished
-	var food_finished = next == null
-	if food_finished:
-		# TODO: handle this properly. there should be a final screen displaying your food.
-		# there should probably be a food_finished signal, which is handled by something else
-		# to either prepare the next food, or load the next scene.
-		# for now, just change to the lunch break
-		
-
-		%MorningResults.show_results(round(current_score / steps.size()))
-		#SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
+	# We must animate_slide() to start to put everything off screen.
+	animate_slide()
 
 func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
-	current_score += score
 	# When we finish the last step, move on to the next one.
 	next_step()
 
@@ -109,3 +88,16 @@ func slide_finished():
 		
 		# This is also when we finally increase the step pointer.
 		step_ptr += 1
+	
+func _process(delta: float) -> void:
+	if step_slide_timer > 0.0:
+		step_slide_timer -= delta
+		animate_slide()
+		
+		# Once the timer expires, we start the next step and hide the previous
+		# one for real. (or queue_free it).
+		if step_slide_timer <= 0.0:
+			slide_finished()
+			
+	
+	

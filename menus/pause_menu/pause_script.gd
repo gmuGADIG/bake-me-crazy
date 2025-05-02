@@ -35,7 +35,7 @@ func _on_close_menu_pressed() -> void:
 	queue_free()
 
 func _on_return_main_menu_pressed() -> void:
-	SceneTransition.change_scene_to_file("res://menus/start_menu/main_menu.tscn")
+	print("TODO: go to main menu")
 
 func _on_options_pressed() -> void:
-	open_submenu(load("res://menus/settings/settings_menu.tscn"))
+	print("TODO: open options")

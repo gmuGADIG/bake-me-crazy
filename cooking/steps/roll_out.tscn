@@ -45,7 +45,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FoodStep" instance=ExtResource("1_ww7xc")]
+[node name="RollOut" instance=ExtResource("1_ww7xc")]
 script = ExtResource("2_f3gfe")
 target_size = 3.0
 roll_speed = 1.0
