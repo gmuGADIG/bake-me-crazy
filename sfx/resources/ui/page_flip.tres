@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://cbpntr7nrd0gw"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_vn00m"]
+[ext_resource type="AudioStream" uid="uid://c2ngjaf1ixrnw" path="res://sfx/audio/ui/Pageflip.wav" id="2_bp6rw"]
+
+[resource]
+script = ExtResource("1_vn00m")
+interrupt = true
+sound_file = ExtResource("2_bp6rw")

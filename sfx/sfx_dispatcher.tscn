@@ -1,22 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce2sn4cb2r407"]
+[gd_scene load_steps=9 format=3 uid="uid://ce2sn4cb2r407"]
 
 [ext_resource type="Script" path="res://sfx/sfx_dispatcher.gd" id="1_ddg1u"]
 [ext_resource type="Script" path="res://sfx/event_sfx_mapping.gd" id="2_rk27y"]
+[ext_resource type="Script" path="res://sfx/animation_sfx_mapping.gd" id="3_p45uh"]
 
 [sub_resource type="Resource" id="Resource_ctuoi"]
 script = ExtResource("2_rk27y")
 node_type = "Button"
 node_group = ""
+node_name = null
 event_name = "mouse_entered"
 sfx_id = "hover_sfx.tres"
+
+[sub_resource type="Resource" id="Resource_2i6c7"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+node_group = ""
+node_name = "TurnPageRight"
+event_name = "pressed"
+sfx_id = "page_flip.tres"
+
+[sub_resource type="Resource" id="Resource_w77q6"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+node_group = ""
+node_name = "TurnPageLeft"
+event_name = "pressed"
+sfx_id = "page_flip.tres"
 
 [sub_resource type="Resource" id="Resource_lwk0c"]
 script = ExtResource("2_rk27y")
 node_type = "Button"
 node_group = ""
+node_name = ""
 event_name = "pressed"
 sfx_id = "ui_select.tres"
 
+[sub_resource type="Resource" id="Resource_x466h"]
+script = ExtResource("3_p45uh")
+animation_name = "swipe"
+player_group = ""
+node_name = null
+sfx_id = "page_flip.tres"
+
 [node name="SFXDispatcher" type="Node"]
 script = ExtResource("1_ddg1u")
-event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_lwk0c")])
+event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_2i6c7"), SubResource("Resource_w77q6"), SubResource("Resource_lwk0c")])
+animation_sfx_mappings = Array[ExtResource("3_p45uh")]([SubResource("Resource_x466h")])

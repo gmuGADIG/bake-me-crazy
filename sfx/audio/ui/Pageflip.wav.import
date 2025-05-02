@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://btom7jd1l680r"
-path="res://.godot/imported/hover_sfx.wav-599fbd52b5a5396338f75cac638da0be.sample"
+uid="uid://c2ngjaf1ixrnw"
+path="res://.godot/imported/Pageflip.wav-255fa1ac6034d31a044b3455952f1bf0.sample"
 
 [deps]
 
-source_file="res://sfx/audio/hover_sfx.wav"
-dest_files=["res://.godot/imported/hover_sfx.wav-599fbd52b5a5396338f75cac638da0be.sample"]
+source_file="res://sfx/audio/ui/Pageflip.wav"
+dest_files=["res://.godot/imported/Pageflip.wav-255fa1ac6034d31a044b3455952f1bf0.sample"]
 
 [params]
 
