@@ -19,6 +19,7 @@ var seconds_in_green := 0.0
 ## not be modified after _ready.
 @onready var original_heat_time: float = heat_time
 
+
 func _ready() -> void:
 	green_range = clamp(green_range, 0.0, 1.0)
 	# We set the size of the green bar based on the green range.
