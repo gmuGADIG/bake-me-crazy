@@ -40,7 +40,7 @@ sfx_id = "ui_select.tres"
 script = ExtResource("3_p45uh")
 animation_name = "swipe"
 player_group = ""
-node_name = null
+node_name = ""
 sfx_id = "page_flip.tres"
 
 [node name="SFXDispatcher" type="Node"]

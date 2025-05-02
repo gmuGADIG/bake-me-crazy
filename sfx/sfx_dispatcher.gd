@@ -128,7 +128,6 @@ func _try_connect_animation_player(player: AnimationPlayer):
 			_connected_animation_players[player] = true
 
 func _on_animation_started(anim_name: String, player: AnimationPlayer):
-	# Find matching animation mapping
 	for mapping in animation_sfx_mappings:
 		# Check if this mapping applies to the player by name
 		if mapping.node_name != "" and mapping.node_name != player.name:
@@ -140,7 +139,6 @@ func _on_animation_started(anim_name: String, player: AnimationPlayer):
 			
 		# Check if animation name matches
 		if mapping.animation_name == anim_name:
-			# Play the associated sound effect
 			MainSFXPlayer.play_from_id(mapping.sfx_id)
 			return
 
