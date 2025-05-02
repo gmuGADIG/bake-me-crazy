@@ -99,6 +99,7 @@ folder_colors={
 [gui]
 
 common/snap_controls_to_pixels=false
+theme/custom_font="res://menus/fonts/KiwiMaru-Medium.ttf"
 
 [input]
 
