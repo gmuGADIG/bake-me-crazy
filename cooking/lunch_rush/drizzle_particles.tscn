@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1i177bdpvrs7"]
+
+[ext_resource type="Script" path="res://cooking/lunch_rush/kill_particle_on_finished.gd" id="1_ilbsa"]
+[ext_resource type="Material" uid="uid://chfhajvviqdgk" path="res://cooking/lunch_rush/drizzle_particles.tres" id="1_wvgnf"]
+
+[node name="DrizzleParticle" type="GPUParticles2D"]
+z_index = 50
+rotation = 3.14159
+emitting = false
+amount = 1
+process_material = ExtResource("1_wvgnf")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("1_ilbsa")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

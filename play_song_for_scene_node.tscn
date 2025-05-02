@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://x74o8rwcody2"]
+
+[ext_resource type="Script" path="res://music/play_song_for_scene.gd" id="1_mamib"]
+
+[node name="PlaySongForScene" type="Node"]
+script = ExtResource("1_mamib")
+song_name = "default_song.tres"

@@ -1,34 +1,53 @@
-[gd_scene load_steps=31 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=36 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
-[ext_resource type="Script" path="res://inventory/item_data.gd" id="2_6ghu5"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
+[ext_resource type="Script" path="res://items/shop_item.gd" id="2_bpq38"]
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="2_udxc2"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="3_aeb46"]
 [ext_resource type="PackedScene" uid="uid://bkw2hrwx6ome0" path="res://menus/market_ui/market_ingredient_selector.tscn" id="3_ay0y5"]
-[ext_resource type="Texture2D" uid="uid://cy1ahh7a5mekp" path="res://temp_art/temp ui/food.png" id="3_up5f4"]
+[ext_resource type="Resource" uid="uid://0nwwupoe48k4" path="res://items/ingredients/vanilla.tres" id="4_pdc2p"]
 [ext_resource type="Texture2D" uid="uid://chdrt0r1i8gsg" path="res://menus/market_ui/Wood_Panel_Brown.webp" id="6_yylgi"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="9_8l3iy"]
 [ext_resource type="Texture2D" uid="uid://com110htrgu37" path="res://menus/market_ui/Arrows_Spritesheet.webp" id="10_prpwn"]
 [ext_resource type="Texture2D" uid="uid://bqgluk8njq02m" path="res://menus/market_ui/Wood_Panel_Greyscale.webp" id="10_pxk6v"]
 [ext_resource type="Texture2D" uid="uid://crqb6442tbnvh" path="res://menus/market_ui/Dollar_Sign.webp" id="11_88myq"]
 
-[sub_resource type="Resource" id="Resource_sdoge"]
-script = ExtResource("2_6ghu5")
-code_name = "lettuce"
-display_name = "Lettuce"
-description = "Delicious lettuce"
-quality = 4
-icon = ExtResource("3_up5f4")
-price = 15
+[sub_resource type="Resource" id="Resource_lpd5b"]
+script = ExtResource("2_bpq38")
+price = 10
+quality = 1
+data = ExtResource("3_aeb46")
 
-[sub_resource type="Resource" id="Resource_rnmr2"]
-script = ExtResource("2_6ghu5")
-code_name = "pork"
-display_name = "Pork"
-description = "Just like the Minecraft movie"
-quality = 2
-icon = ExtResource("3_up5f4")
+[sub_resource type="Resource" id="Resource_6mt3q"]
+script = ExtResource("2_bpq38")
 price = 15
+quality = 2
+data = ExtResource("3_aeb46")
+
+[sub_resource type="Resource" id="Resource_qj4qc"]
+script = ExtResource("2_bpq38")
+price = 20
+quality = 3
+data = ExtResource("3_aeb46")
+
+[sub_resource type="Resource" id="Resource_dcp7k"]
+script = ExtResource("2_bpq38")
+price = 10
+quality = 1
+data = ExtResource("4_pdc2p")
+
+[sub_resource type="Resource" id="Resource_mf27g"]
+script = ExtResource("2_bpq38")
+price = 15
+quality = 2
+data = ExtResource("4_pdc2p")
+
+[sub_resource type="Resource" id="Resource_qoeq8"]
+script = ExtResource("2_bpq38")
+price = 20
+quality = 3
+data = ExtResource("4_pdc2p")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kuoe"]
 texture = ExtResource("6_yylgi")
@@ -111,6 +130,33 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="Animation" id="Animation_025ws"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(625, 51)]
+}
+
 [sub_resource type="Animation" id="Animation_tg8hl"]
 resource_name = "swipe_in"
 length = 0.6
@@ -137,33 +183,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(625, 325), Vector2(625, 51)]
-}
-
-[sub_resource type="Animation" id="Animation_025ws"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:anchor_top")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Panel/TopStuff/Portrait:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(625, 51)]
 }
 
 [sub_resource type="Animation" id="Animation_bjio7"]
@@ -217,7 +236,7 @@ _data = {
 
 [node name="MarketUI" type="CanvasLayer"]
 script = ExtResource("1_exijc")
-items = Array[ExtResource("2_6ghu5")]([SubResource("Resource_sdoge"), SubResource("Resource_rnmr2"), SubResource("Resource_sdoge")])
+items = Array[ExtResource("2_bpq38")]([SubResource("Resource_lpd5b"), SubResource("Resource_6mt3q"), SubResource("Resource_qj4qc"), SubResource("Resource_dcp7k"), SubResource("Resource_mf27g"), SubResource("Resource_qoeq8")])
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

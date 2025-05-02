@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bh0233f3346f"]
+
+[ext_resource type="PackedScene" uid="uid://c08dkypdwjw3p" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="1_56xuc"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="1_mqc5w"]
+[ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="1_tvbq0"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="2_j4o07"]
+
+[resource]
+script = ExtResource("1_mqc5w")
+cooking_minigame = ExtResource("1_56xuc")
+ingredient = ExtResource("2_j4o07")
+display_name = "Chocolate Cake"
+image = ExtResource("1_tvbq0")
