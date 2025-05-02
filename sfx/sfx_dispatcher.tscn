@@ -8,14 +8,14 @@ script = ExtResource("2_rk27y")
 node_type = "Button"
 node_group = ""
 event_name = "mouse_entered"
-sfx_id = "hover_sfx.wav"
+sfx_id = "hover_sfx.tres"
 
 [sub_resource type="Resource" id="Resource_lwk0c"]
 script = ExtResource("2_rk27y")
 node_type = "Button"
 node_group = ""
 event_name = "pressed"
-sfx_id = "ui_select.wav"
+sfx_id = "ui_select.tres"
 
 [node name="SFXDispatcher" type="Node"]
 script = ExtResource("1_ddg1u")

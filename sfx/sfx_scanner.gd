@@ -31,7 +31,8 @@ func _scan_folder(path: String) -> void:
 				var res: Resource = ResourceLoader.load(full_path)
 				if res:
 					sound_files.append(res)
-					effect_dict[name] = res
+					if res is SoundEffect:
+						effect_dict[name] = res
 				else:
 					push_warning("SFXScanner: could not load '%s'" % full_path)
 		name = dir.get_next()

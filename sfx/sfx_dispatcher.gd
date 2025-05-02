@@ -7,6 +7,9 @@ const EventSFXMapping = preload("res://sfx/event_sfx_mapping.gd")
 @export var event_sfx_mappings: Array[EventSFXMapping] = []
 
 func _ready():
+	# Sort mappings by specificity
+	_sort_mappings_by_specificity()
+	
 	# Setup the mappings at runtime
 	if event_sfx_mappings.size() > 0:
 		# Connect to node_added to catch new nodes
@@ -14,7 +17,19 @@ func _ready():
 		
 		# Process existing nodes
 		_process_existing_nodes(get_tree().root)
-
+		
+func _sort_mappings_by_specificity():
+	# Sort the mappings from most specific to least specific
+	event_sfx_mappings.sort_custom(func(a, b):
+		# If one has a group and the other doesn't, the one with a group is more specific
+		if a.node_group != "" and b.node_group == "":
+			return true
+		elif a.node_group == "" and b.node_group != "":
+			return false
+			
+		# If both have groups or both don't have groups, consider them equal
+		return false
+	)
 func _process_existing_nodes(node):
 	_try_connect_node(node)
 	
