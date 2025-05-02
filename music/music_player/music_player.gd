@@ -8,7 +8,7 @@ class_name MusicPlayer
 
 const FULL_DB: float = 0.0
 const MUTE_DB: float = -64.0
-const VOLUME_TRANSITION_TIME: float = 0.5
+const VOLUME_TRANSITION_TIME: float = 0.2
 
 @onready var players: Array[AudioStreamPlayer] = [$AudioStreamPlayerA, $AudioStreamPlayerB]
 var active_idx: int = 0
