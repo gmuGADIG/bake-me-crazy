@@ -8,6 +8,8 @@ var step_ptr: int = 0
 ## Timer for animating the steps in. Decreases from LENGTH to 0.
 var step_slide_timer: float = 0.0
 
+signal food_step_started
+
 const STEP_SLIDE_DURATION: float = 1.0
 const SCREEN_WIDTH := 1152.0
 var current_score :float= 0
@@ -47,7 +49,7 @@ func next_step() -> void:
 	if next != null:
 		next.process_mode = Node.PROCESS_MODE_INHERIT
 		next.start()
-		
+		food_step_started.emit()
 		next.finished.connect(step_finished)
 		
 		# This is also when we finally increase the step pointer.
@@ -87,6 +89,7 @@ func _ready() -> void:
 		steps[0].process_mode = Node.PROCESS_MODE_INHERIT
 		steps[0].finished.connect(step_finished)
 		steps[0].show()
+		food_step_started.emit()
 		steps[0].start()
 		
 		# Our next step will be the 2 element in the array.

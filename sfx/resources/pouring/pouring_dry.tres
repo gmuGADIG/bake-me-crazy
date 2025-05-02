@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dt1xsv7s83oob"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_0o1gx"]
+[ext_resource type="AudioStream" uid="uid://dxtwn7bv6dtqc" path="res://sfx/audio/pouring/DryPour2.mp3" id="2_bjfc0"]
+
+[resource]
+script = ExtResource("1_0o1gx")
+interrupt = false
+sound_file = ExtResource("2_bjfc0")
+expiration_time = 0.2
