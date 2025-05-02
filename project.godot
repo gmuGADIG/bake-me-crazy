@@ -19,7 +19,7 @@ config/icon="res://temp_art/temp_game_icon.png"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneTransition="*res://menus/scene transition/scene_transition.tscn"
-InventorySystem="*res://inventory/inventory_system.gd"
+PlayerData="*res://save/player_data.gd"
 Relationships="res://dialogue/relationships.gd"
 SongScanner="*res://music/song_scanner.tscn"
 MainMusicPlayer="*res://music/music_player/music_player.tscn"
