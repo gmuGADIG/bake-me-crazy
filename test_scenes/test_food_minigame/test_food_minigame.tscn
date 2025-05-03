@@ -33,6 +33,7 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="Kneading" parent="." index="7" instance=ExtResource("4_nt0hk")]
+layout_mode = 1
 
 [node name="StepCut" parent="." index="8" instance=ExtResource("6_25ily")]
 layout_mode = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbm84fs41k1yn"
-path="res://.godot/imported/Minigame_Dough.png-8c6582533d4e8c97b07f26f6c47d8719.ctex"
+uid="uid://cfmj7i53id43a"
+path="res://.godot/imported/BigDoughBallLong.png-e6830a490c3da96b6aee08af52809b5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cooking/art/Minigame_Dough.png"
-dest_files=["res://.godot/imported/Minigame_Dough.png-8c6582533d4e8c97b07f26f6c47d8719.ctex"]
+source_file="res://cooking/art/BigDoughBallLong.png"
+dest_files=["res://.godot/imported/BigDoughBallLong.png-e6830a490c3da96b6aee08af52809b5d.ctex"]
 
 [params]
 

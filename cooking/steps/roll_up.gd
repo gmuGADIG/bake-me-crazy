@@ -1,6 +1,6 @@
 extends FoodStep
 
-@export var sprites: Array[Texture2D]
+@export var sprites: Array[Sprite2D]
 @export var expected_speed = 500
 @export var speed_tolerance = 200
 @export var progress_total := 10000.
@@ -13,12 +13,17 @@ var done := false
 func percent_process() -> float:
 	return cur_progress / progress_total
 
+func hide_all_sprites() -> void:
+	for sprite in sprites:
+		sprite.hide()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if len(sprites) == 0: 
 		print("No sprites set in RollUp step")
 		return
-	food_sprite.texture = sprites[0]
+	hide_all_sprites()
+	sprites[0].show()
 
 func _input(event: InputEvent) -> void:
 	#if holding and speed is in range, add to progress.
@@ -43,8 +48,9 @@ func process_mouse_motion(event: InputEventMouseMotion):
 	if is_holding and in_tolerance(vel, expected_speed, speed_tolerance):
 		cur_progress += vel
 
-		var desired_sprite := int(percent_process() * len(sprites))
-		food_sprite.texture = sprites[min(desired_sprite, len(sprites) - 1)]
+		var idx := int(percent_process() * len(sprites))
+		hide_all_sprites()
+		sprites[min(idx, len(sprites) - 1)].show()
 		if percent_process() >= 1. and not done:
 			done = true
 			finished.emit(3.)
