@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0hkux4r4af46"]
 
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/lunch_break_npc.gd" id="1_4f33t"]
-[ext_resource type="Resource" path="res://dialogue/salty/daily_conversations/salty_main.dtl" id="2_5lr7h"]
+[ext_resource type="Resource" path="res://dialogue/salty/lunch_break/salty_main.dtl" id="2_5lr7h"]
 [ext_resource type="Texture2D" uid="uid://diuojcxym5ce0" path="res://dialogue/salty/full_body/Callum_Overworld.png" id="3_17yfq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6l8ad"]
