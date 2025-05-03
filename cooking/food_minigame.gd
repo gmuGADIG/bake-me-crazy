@@ -8,47 +8,73 @@ var step_ptr: int = 0
 ## Timer for animating the steps in. Decreases from LENGTH to 0.
 var step_slide_timer: float = 0.0
 
-const STEP_SLIDE_LENGTH: float = 0.3
+const STEP_SLIDE_DURATION: float = 1.0
+const SCREEN_WIDTH := 1152.0
+var current_score :float= 0
 
-signal food_step_started
 
-func animate_slide():
-	var t := step_slide_timer / STEP_SLIDE_LENGTH
-	t = 1.0 - t
-	
-	if step_ptr > 0 and not steps.is_empty():
-		var prev: FoodStep = steps[step_ptr - 1]
-		prev.anchor_left  = lerp(0.0, -1.0, t)
-		prev.anchor_right = lerp(1.0,  0.0, t)
-		
-	if step_ptr < steps.size():
-		var cur: FoodStep = steps[step_ptr]
-		cur.anchor_left  = lerp(1.0, 0.0, t)
-		cur.anchor_right = lerp(2.0, 1.0, t)
+signal all_minigames_done()
 
 func next_step() -> void:
-	# If we have a previous step, disable it.
-	if step_ptr > 0:
-		var prev: FoodStep = steps[step_ptr - 1]
+	# get the previous and next step (each may be null)
+	var prev: FoodStep
+	var next: FoodStep
+	if step_ptr > 0 and not steps.is_empty(): prev = steps[step_ptr - 1]
+	if step_ptr < steps.size(): next = steps[step_ptr]
+	
+	# disable prev (it remains visible until off-screen)
+	if prev != null:
 		prev.process_mode = Node.PROCESS_MODE_DISABLED
-		#prev.hide() # TODO replace with polished animation.
 	
-	if step_ptr < steps.size():
-		var next: FoodStep = steps[step_ptr]
-		# Pre animation step.
+	# prepare next step
+	if next != null:
 		next.pre_animation()
-		# All we do before the step is slid in is show it.
-		next.show()
-		
-	# Start the slide animation. We do this even for the last step so that
-	# it goes away. TODO Add like a final screen or whatever
-	step_slide_timer = STEP_SLIDE_LENGTH
+		next.visible = true
 	
-	# We must animate_slide() to start to put everything off screen.
-	animate_slide()
+	# animate them swiping across the screen
+	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_parallel()
+	if prev != null:
+		prev.position.x = 0
+		tween.tween_property(prev, "position:x", -SCREEN_WIDTH, STEP_SLIDE_DURATION)
+	
+	if next != null:
+		next.position.x = SCREEN_WIDTH
+		tween.tween_property(next, "position:x", 0, STEP_SLIDE_DURATION)
+
+	await tween.finished # wait for animation to finish
+	
+	# hide previous step now that it's off screen
+	if prev != null:
+		prev.visible = false
+		
+	# start next step
+	if next != null:
+		next.process_mode = Node.PROCESS_MODE_INHERIT
+		next.start()
+		
+		next.finished.connect(step_finished)
+		
+		# This is also when we finally increase the step pointer.
+		step_ptr += 1
+	
+	# on the final step, handle the food being finished
+	var food_finished = next == null
+	if food_finished:
+		# Show the results and then wait for the results screen to be exited.
+		# At that point, this entire set of minigames is considered done, so
+		# we emite the all_minigames_done signal.
+		#
+		# The MorningShift will wait for this signal so that it can load the
+		# next part of the UI flow.
+		%MorningResults.show_results(round(current_score / steps.size()))
+		await %MorningResults.results_done
+		
+		# Wait for the morning results to hide? Then next minigame?
+		all_minigames_done.emit()
 
 func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
+	current_score += score
 	# When we finish the last step, move on to the next one.
 	next_step()
 
@@ -68,7 +94,6 @@ func _ready() -> void:
 		steps[0].process_mode = Node.PROCESS_MODE_INHERIT
 		steps[0].finished.connect(step_finished)
 		steps[0].show()
-		food_step_started.emit()
 		steps[0].start()
 		
 		# Our next step will be the 2 element in the array.
@@ -85,23 +110,9 @@ func slide_finished():
 		var next: FoodStep = steps[step_ptr]
 		# At this point, we ACTUALLY start() the step and let it start processing.
 		next.process_mode = Node.PROCESS_MODE_INHERIT
-		food_step_started.emit()
 		next.start()
 		
 		next.finished.connect(step_finished)
 		
 		# This is also when we finally increase the step pointer.
 		step_ptr += 1
-	
-func _process(delta: float) -> void:
-	if step_slide_timer > 0.0:
-		step_slide_timer -= delta
-		animate_slide()
-		
-		# Once the timer expires, we start the next step and hide the previous
-		# one for real. (or queue_free it).
-		if step_slide_timer <= 0.0:
-			slide_finished()
-			
-	
-	
