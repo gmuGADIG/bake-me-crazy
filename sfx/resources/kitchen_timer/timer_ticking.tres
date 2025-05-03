@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://ebhupc5dpgvo"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_qnrq5"]
+[ext_resource type="AudioStream" uid="uid://dmmrthntvmdfx" path="res://sfx/audio/kitchen_timer/kitchen_timerTicking_loop_jan_01.wav" id="2_abju7"]
+
+[resource]
+script = ExtResource("1_qnrq5")
+interrupt = false
+sound_file = ExtResource("2_abju7")
+looping = true
+expiration_time = 0.0

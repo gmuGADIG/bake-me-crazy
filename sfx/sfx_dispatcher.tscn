@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckpmts7amvo6q"]
+
+[ext_resource type="Script" path="res://sfx/sfx_dispatcher.gd" id="1_ddg1u"]
+[ext_resource type="Script" path="res://sfx/event_sfx_mapping.gd" id="2_rk27y"]
+[ext_resource type="Script" path="res://sfx/animation_sfx_mapping.gd" id="3_p45uh"]
+
+[sub_resource type="Resource" id="Resource_ctuoi"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+node_group = ""
+node_name = ""
+event_name = "mouse_entered"
+sfx_id = "hover_sfx.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_2i6c7"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+node_group = ""
+node_name = "TurnPageRight"
+event_name = "pressed"
+sfx_id = "page_flip.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_w77q6"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+node_group = ""
+node_name = "TurnPageLeft"
+event_name = "pressed"
+sfx_id = "page_flip.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_lwk0c"]
+script = ExtResource("2_rk27y")
+node_type = "Button"
+node_group = ""
+node_name = ""
+event_name = "pressed"
+sfx_id = "ui_select.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_7m6ny"]
+script = ExtResource("2_rk27y")
+node_type = "Node2D"
+node_group = ""
+node_name = ""
+event_name = "drizzle_started"
+sfx_id = "pouring_dry.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_5t5ta"]
+script = ExtResource("2_rk27y")
+node_type = "Control"
+node_group = ""
+node_name = ""
+event_name = "dough_spawned"
+sfx_id = "dough_8.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_mapta"]
+script = ExtResource("2_rk27y")
+node_type = "Control"
+node_group = ""
+node_name = ""
+event_name = "food_step_started"
+sfx_id = "timer_ticking.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_2u5oj"]
+script = ExtResource("2_rk27y")
+node_type = "Control"
+node_group = ""
+node_name = ""
+event_name = "all_minigames_done"
+sfx_id = "timer_ticking.tres"
+stop_sfx = true
+
+[sub_resource type="Resource" id="Resource_x466h"]
+script = ExtResource("3_p45uh")
+animation_name = "swipe"
+player_group = ""
+node_name = ""
+sfx_id = "page_flip.tres"
+stop_sfx = false
+
+[node name="SFXDispatcher" type="Node"]
+script = ExtResource("1_ddg1u")
+event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_2i6c7"), SubResource("Resource_w77q6"), SubResource("Resource_lwk0c"), SubResource("Resource_7m6ny"), SubResource("Resource_5t5ta"), SubResource("Resource_mapta"), SubResource("Resource_2u5oj")])
+animation_sfx_mappings = Array[ExtResource("3_p45uh")]([SubResource("Resource_x466h")])
