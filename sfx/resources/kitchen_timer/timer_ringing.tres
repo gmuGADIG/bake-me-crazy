@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://cgm8r5gxhnf0p"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_hwdru"]
+[ext_resource type="AudioStream" uid="uid://jyyvbi2xj6hu" path="res://sfx/audio/kitchen_timer/kitchen_timer_ringing_jan_01.wav" id="2_jy4ew"]
+
+[resource]
+script = ExtResource("1_hwdru")
+interrupt = true
+sound_file = ExtResource("2_jy4ew")
+looping = false
+expiration_time = 0.0

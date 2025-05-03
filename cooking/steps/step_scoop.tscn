@@ -23,6 +23,7 @@ mouse_filter = 2
 script = ExtResource("1_gwrga")
 
 [node name="gameTimer" type="Label" parent="." index="0"]
+layout_mode = 0
 offset_left = 965.0
 offset_top = 3.0
 offset_right = 1105.0

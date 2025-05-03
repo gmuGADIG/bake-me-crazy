@@ -12,6 +12,7 @@ const STEP_SLIDE_DURATION: float = 1.0
 const SCREEN_WIDTH := 1152.0
 var current_score :float= 0
 
+signal food_step_started
 
 signal all_minigames_done()
 
@@ -50,6 +51,7 @@ func next_step() -> void:
 	# start next step
 	if next != null:
 		next.process_mode = Node.PROCESS_MODE_INHERIT
+		food_step_started.emit()
 		next.start()
 		
 		next.finished.connect(step_finished)
@@ -94,6 +96,7 @@ func _ready() -> void:
 		steps[0].process_mode = Node.PROCESS_MODE_INHERIT
 		steps[0].finished.connect(step_finished)
 		steps[0].show()
+		food_step_started.emit()
 		steps[0].start()
 		
 		# Our next step will be the 2 element in the array.

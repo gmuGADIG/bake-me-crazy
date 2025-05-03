@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://d216nq2dwoji"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_2abnc"]
+[ext_resource type="AudioStream" uid="uid://br2kvd681w0it" path="res://sfx/audio/ui/ui_denyselect_01_jan.wav" id="2_0qg4h"]
+
+[resource]
+script = ExtResource("1_2abnc")
+interrupt = true
+sound_file = ExtResource("2_0qg4h")

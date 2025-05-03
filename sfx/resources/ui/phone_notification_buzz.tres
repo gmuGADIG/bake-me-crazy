@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://b5tyc5w3s4gu8"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_h8w27"]
+[ext_resource type="AudioStream" uid="uid://1yxxwuwrap42" path="res://sfx/audio/ui/phone_noification_buzz_1.wav" id="2_u3eto"]
+
+[resource]
+script = ExtResource("1_h8w27")
+interrupt = true
+sound_file = ExtResource("2_u3eto")
