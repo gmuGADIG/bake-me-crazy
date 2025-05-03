@@ -1,7 +1,16 @@
-You and Callum walk into the Carnival. Callum is visibly excited as he looks around. He looks over to you and smiles.
-join callum (excited) center [animation="Fade In"]
+do MainMusicPlayer.transition_to_song_by_filename("carnival_theme.tres")
+[background arg="res://dialogue/date_backgrounds/date_carnival_TEMP.png" fade="2.0"]
+You and Callum walk into the Carnival. Callum is visibly excited as he looks around. His eyes eventually land on you, and he smiles.
+join callum (excited) center [animation="Fade In" length="1.5" wait="true"]
 callum (excited): I’ve never visited the carnival here. I used to go to one when I was younger back in Cali, it was great. I’m hoping this one will be just as good, but I have my doubts.
 - "Is there anything you want to do first?"
-callum (neutral): Honestly, I’m down for anything. How about this, I’ll let you choose what we do first. 
+callum (neutral): Honestly, I’m down for anything. How about this, I’ll let you choose what we do first.
 - Ballon dart throw
+	jump callum_date_1_dartballoons/
 - Bean bag toss
+label next game
+- Wheel of fortune
+	jump callum_date_1_wheeloffortune/
+- Fishing game
+label ferris wheel
+callum (neutral): Hey, let's do one more thing tonight before we split like bananas.

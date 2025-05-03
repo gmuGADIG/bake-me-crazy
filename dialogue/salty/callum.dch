@@ -26,7 +26,7 @@
 },
 "disgusted": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_disgusted.png\""
+"image": "\"res://dialogue/salty/callum_portraits/callum_shocked.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -80,7 +80,7 @@
 },
 "shocked": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_shocked.png\""
+"image": "\"res://dialogue/salty/callum_portraits/callum_disgusted.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

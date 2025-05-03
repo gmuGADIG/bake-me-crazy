@@ -1,0 +1,17 @@
+The two of you approach the Wheel of Fortune. Callum seems excited.
+join callum (excited) center
+callum (neutral): Are you ready to test your luck? Gosh, I love a good game of chance!
+- "I want to spin! That! Wheel!"
+	callum (excited): That's the spirit!
+- "This hardly counts as a game..."
+	callum (excited): So, what? It's fun! Come on.
+You walk up to spin the wheel. [n+] Callums seems to expect a lot from you here.
+- Spin the wheel as hard as you can!
+The wheel spins... [n+] and spins... [n+] and spins... [n+] and then, abruptly, falls off its axis, flat on the pier.\
+[n] The attendant gets angry, and shoos you two away...
+callum (excited): Wow, you seriously did a number on that wheel!
+- "I’m sorry, I knew you were looking forward to it."
+	Are you kidding? The look on the attendant's face was priceless. That was well worth it.
+- "And we didn’t even get a prize!"
+	callum (neutral): I know, right? I mean, you literally broke the wheel. That should win us every prize.
+jump callum_date_1/ferris wheel

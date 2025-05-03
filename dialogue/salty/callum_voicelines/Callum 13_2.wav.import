@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc13sfviuotr2"
+path="res://.godot/imported/Callum 13_2.wav-d3032824676f663c8b5fed7fc03e0304.sample"
+
+[deps]
+
+source_file="res://dialogue/salty/callum_voicelines/Callum 13_2.wav"
+dest_files=["res://.godot/imported/Callum 13_2.wav-d3032824676f663c8b5fed7fc03e0304.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
