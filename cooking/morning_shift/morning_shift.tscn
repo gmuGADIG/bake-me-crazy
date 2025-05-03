@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://cooking/morning_shift/morning_shift.gd" id="1_dy2v6"]
 
-[node name="MorningShift" type="Node2D"]
+[node name="MorningShift" type="CanvasLayer"]
 script = ExtResource("1_dy2v6")
