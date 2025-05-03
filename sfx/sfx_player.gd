@@ -2,110 +2,124 @@ extends Node
 class_name SFXPlayer
 
 @export var bus_name: String = "SFX"
-@export var initial_player_count: int = 3 # Start with a few players in the pool
+@export var initial_player_count: int = 3
 
-# Array to track all available audio players
-var audio_players: Array[AudioStreamPlayer] = []
+# Pool of audio players
+var _players: Array[AudioStreamPlayer] = []
 
-# Dictionary to track which players are playing which sound effects
-# Format: { stream_filename: player_instance }
-var active_sounds: Dictionary = {}
+# Active sounds by resource path
+var _active := {}  # Dictionary mapping resource path to AudioStreamPlayer
 
-func _ready():
-	# Initialize the initial pool of audio players
+# Expiration timers: { path: { player: AudioStreamPlayer, timer: float } }
+var _timers := {}  # Dictionary mapping resource path to info dict
+
+func _ready() -> void:
+	# Pre-fill the pool
 	for i in range(initial_player_count):
-		_create_audio_player()
+		_add_player()
 
-# Creates a new audio player and adds it to the pool
-func _create_audio_player() -> AudioStreamPlayer:
-	var player = AudioStreamPlayer.new()
-	player.bus = bus_name
-	add_child(player)
-	audio_players.append(player)
-	
-	# Connect to the finished signal to know when a player becomes available
-	player.finished.connect(_on_audio_finished.bind(player))
-	
-	return player
+func _process(delta: float) -> void:
+	# Tick down expiration timers
+	for path in _timers.keys().duplicate():
+		_timers[path].timer -= delta
+		if _timers[path].timer <= 0:
+			_stop_by_path(path)
 
-# Called when an audio player finishes playing
-func _on_audio_finished(player: AudioStreamPlayer) -> void:
-	# Remove this player from the active_sounds dictionary
-	for sound_name in active_sounds.keys():
-		if active_sounds[sound_name] == player:
-			active_sounds.erase(sound_name)
-			break
-
-# Find an available audio player or create a new one if necessary
-func _get_audio_player() -> AudioStreamPlayer:
-	# First, check for any unused players
-	for player in audio_players:
-		if not player.playing:
-			return player
-	
-	# If no available players, create a new one
-	return _create_audio_player()
-
-# Public method to play a sound effect given its string filename
-func play_from_id(filename: String, volume: float = 1.0) -> void:
+# Play by filename lookup
+func play_from_id(filename: String, volume := 1.0) -> void:
 	var sfx: SoundEffect = SFXScanner.get_effect_by_filename(filename)
-	if not sfx:
-		return
-	play(sfx, volume)
+	if sfx:
+		play(sfx, volume)
 
-# Public API to play a sound effect
-func play(sfx: SoundEffect, volume: float = 1.0) -> void:
+# Stop by filename lookup
+func stop_by_id(filename: String) -> void:
+	var sfx: SoundEffect = SFXScanner.get_effect_by_filename(filename)
+	if sfx and sfx.sound_file:
+		_stop_by_path(sfx.sound_file.resource_path)
+
+# Main play method
+func play(sfx: SoundEffect, volume := 1.0) -> void:
 	if not sfx or not sfx.sound_file:
-		push_error("Invalid sound effect or missing sound file")
+		push_error("Invalid sound effect or missing file")
 		return
-	
-	var stream: AudioStream = sfx.sound_file
-	var stream_path = stream.resource_path
-	
-	# Check if this sound is already playing
-	if active_sounds.has(stream_path):
-		var current_player = active_sounds[stream_path]
-		
-		# If the sound is already playing and interrupt is false, do nothing
+
+	var path := sfx.sound_file.resource_path
+
+	# If already playing and not interruptible, just refresh timer
+	if _active.has(path):
+		var existing = _active[path]
 		if not sfx.interrupt:
+			if sfx.expiration_time > 0 and _timers.has(path):
+				_timers[path].timer = sfx.expiration_time
 			return
-		
-		# If interrupt is true, stop the current player and start over
-		current_player.stop()
-		current_player.stream = stream
-		current_player.volume_db = linear_to_db(volume)
-		current_player.play()
-		return
-	
-	# Get an available player or create a new one
-	var player = _get_audio_player()
-	
-	# Set up the player
-	player.stream = stream
-	player.volume_db = linear_to_db(volume)
-	player.play()
-	
-	# Mark this sound as active with this player
-	active_sounds[stream_path] = player
+		# Interrupt: stop and clean up
+		_stop_player(existing, path)
 
-# Stop a specific sound if it's playing
-func stop_sound(sfx: SoundEffect) -> void:
+	# Acquire a free player
+	var player = _get_player()
+
+	# Assign the imported stream directly
+	player.stream = sfx.sound_file
+	player.volume_db = linear_to_db(volume)
+
+	# Reconnect finished signal only if non-looping
+	_disconnect_finished(player)
+	if not sfx.looping:
+		player.finished.connect(self._on_finished.bind(player, path))
+
+	player.play()
+
+	# Track active and timers
+	_active[path] = player
+	if sfx.expiration_time > 0:
+		_timers[path] = {"player": player, "timer": sfx.expiration_time}
+
+# Stop a specific sound
+func stop(sfx: SoundEffect) -> void:
 	if not sfx or not sfx.sound_file:
 		return
-		
-	var stream_path = sfx.sound_file.resource_path
-	if active_sounds.has(stream_path):
-		active_sounds[stream_path].stop()
-		active_sounds.erase(stream_path)
-		
-func stop_by_id(sfx_id: String):
-	var sfx: SoundEffect = SFXScanner.get_effect_by_filename(sfx_id)
-	if not sfx:
-		return
-	stop_sound(sfx)
+	_stop_by_path(sfx.sound_file.resource_path)
 
-# Stop all sound effects
+# Stop all sounds
 func stop_all() -> void:
-	for player in audio_players:
-		player.stop()
-	active_sounds.clear()
+	for p in _players:
+		p.stop()
+	_active.clear()
+	_timers.clear()
+
+# Called when a non-looping player finishes
+func _on_finished(player: AudioStreamPlayer, path: String) -> void:
+	if _active.has(path):
+		_active.erase(path)
+	if _timers.has(path):
+		_timers.erase(path)
+
+# Internal helpers
+func _stop_by_path(path: String) -> void:
+	if _active.has(path):
+		_stop_player(_active[path], path)
+
+func _stop_player(player: AudioStreamPlayer, path: String) -> void:
+	player.stop()
+	_active.erase(path)
+	_timers.erase(path)
+	_disconnect_finished(player)
+
+func _get_player() -> AudioStreamPlayer:
+	for p in _players:
+		if not p.playing:
+			return p
+	return _add_player()
+
+func _add_player() -> AudioStreamPlayer:
+	var p = AudioStreamPlayer.new()
+	p.bus = bus_name
+	add_child(p)
+	_players.append(p)
+	return p
+
+func _disconnect_finished(player: AudioStreamPlayer) -> void:
+	for conn in player.finished.get_connections():
+		var cb = conn.callable
+		if cb.get_object() == self and cb.get_method() == "_on_finished":
+			player.finished.disconnect(cb)

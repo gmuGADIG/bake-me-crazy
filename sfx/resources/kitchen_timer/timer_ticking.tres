@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_qnrq5")
-interrupt = true
+interrupt = false
 sound_file = ExtResource("2_abju7")
 looping = true
 expiration_time = 0.0

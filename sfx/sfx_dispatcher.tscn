@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ce2sn4cb2r407"]
+[gd_scene load_steps=13 format=3 uid="uid://ckpmts7amvo6q"]
 
 [ext_resource type="Script" path="res://sfx/sfx_dispatcher.gd" id="1_ddg1u"]
 [ext_resource type="Script" path="res://sfx/event_sfx_mapping.gd" id="2_rk27y"]
@@ -67,15 +67,6 @@ event_name = "food_step_started"
 sfx_id = "timer_ticking.tres"
 stop_sfx = false
 
-[sub_resource type="Resource" id="Resource_iy615"]
-script = ExtResource("2_rk27y")
-node_type = "Control"
-node_group = ""
-node_name = ""
-event_name = "finished"
-sfx_id = "timer_ticking.tres"
-stop_sfx = true
-
 [sub_resource type="Resource" id="Resource_2u5oj"]
 script = ExtResource("2_rk27y")
 node_type = "Control"
@@ -95,5 +86,5 @@ stop_sfx = false
 
 [node name="SFXDispatcher" type="Node"]
 script = ExtResource("1_ddg1u")
-event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_2i6c7"), SubResource("Resource_w77q6"), SubResource("Resource_lwk0c"), SubResource("Resource_7m6ny"), SubResource("Resource_5t5ta"), SubResource("Resource_mapta"), SubResource("Resource_iy615"), SubResource("Resource_2u5oj")])
+event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_2i6c7"), SubResource("Resource_w77q6"), SubResource("Resource_lwk0c"), SubResource("Resource_7m6ny"), SubResource("Resource_5t5ta"), SubResource("Resource_mapta"), SubResource("Resource_2u5oj")])
 animation_sfx_mappings = Array[ExtResource("3_p45uh")]([SubResource("Resource_x466h")])
