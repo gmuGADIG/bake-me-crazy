@@ -41,6 +41,12 @@ directories/dch_directory={
 "testing/testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
+"callum_date_1": "res://dialogue/salty/callum_date_1.dtl",
+"callum_date_1_dartballoons": "res://dialogue/salty/callum_date_1_dartballoons.dtl",
+"callum_date_1_failstate": "res://dialogue/salty/callum_date_1_failstate.dtl",
+"callum_date_1_wheeloffortune": "res://dialogue/salty/callum_date_1_wheeloffortune.dtl",
+"callum_date_3": "res://dialogue/salty/callum_date_3.dtl",
+"callum_date_confession": "res://dialogue/salty/callum_date_confession.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "salty_days": "res://dialogue/salty/lunch_break/salty_days.dtl",
@@ -82,7 +88,7 @@ variables={
 }
 }
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.05
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
