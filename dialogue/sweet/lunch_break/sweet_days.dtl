@@ -1,0 +1,4 @@
+do BreakNPCSystem.start_daily_chat()
+label day0
+raymond: Oh, hello. Uhh,uhh, w…w… what do you want.
+return

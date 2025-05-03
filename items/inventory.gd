@@ -44,7 +44,10 @@ static func pop_item(item_data: ItemData) -> ItemInstance:
 static func pop_item_at(index: int) -> ItemInstance:
 	assert(index >= 0 and PlayerData.data.inventory.size() > index)
 	return PlayerData.data.inventory.pop_at(index)
-	
+
+static func remove_specific_item(item_instance: ItemInstance) -> void:
+	PlayerData.data.inventory.remove_at(PlayerData.data.inventory.find(item_instance))
+
 ## Gets the count of how many of a specific item we have in the inventory.
 static func get_item_count(item_data: ItemData) -> int:
 	var count := 0

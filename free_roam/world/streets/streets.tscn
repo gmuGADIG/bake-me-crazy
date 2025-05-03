@@ -1,17 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwkpcolidvc0a"]
+[gd_scene load_steps=11 format=3 uid="uid://cwkpcolidvc0a"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_kr52v"]
 [ext_resource type="Texture2D" uid="uid://cb2o5nwjunabw" path="res://free_roam/world/streets/streets_bg.png" id="2_dnht4"]
-[ext_resource type="Script" path="res://free_roam/interactables/test_interactable_printer.gd" id="3_r4sj2"]
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="4_r2mm7"]
-[ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="4_uf2h1"]
 [ext_resource type="PackedScene" uid="uid://6xw0fbrjfpjl" path="res://cooking/morning_shift/morning_shift.tscn" id="5_3i5as"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
-[ext_resource type="Resource" path="res://dialogue/testing/test_market_timeline.dtl" id="7_p6mop"]
-[ext_resource type="PackedScene" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ey8il"]
-size = Vector2(148, 178)
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/simple_npc.gd" id="5_r5mtj"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn5p"]
 size = Vector2(238, 320)
@@ -34,17 +29,7 @@ centered = false
 
 [node name="Interactables" type="Node2D" parent="." index="1"]
 
-[node name="House" type="StaticBody2D" parent="Interactables" index="0"]
-position = Vector2(498, 448)
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("3_r4sj2")
-interact_message = "You went in your house"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/House" index="0"]
-shape = SubResource("RectangleShape2D_ey8il")
-
-[node name="Bakery" type="StaticBody2D" parent="Interactables" index="1"]
+[node name="Bakery" type="StaticBody2D" parent="Interactables" index="0"]
 position = Vector2(2839, 382)
 collision_layer = 4
 collision_mask = 0
@@ -54,12 +39,11 @@ change_to_scene = ExtResource("5_3i5as")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Bakery" index="0"]
 shape = SubResource("RectangleShape2D_ssn5p")
 
-[node name="NPC" type="StaticBody2D" parent="Interactables" index="2"]
+[node name="NPC" type="StaticBody2D" parent="Interactables" index="1"]
 position = Vector2(1078, 566)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("4_uf2h1")
-timeline = ExtResource("7_p6mop")
+script = ExtResource("5_r5mtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC" index="0"]
 position = Vector2(0, -117.5)

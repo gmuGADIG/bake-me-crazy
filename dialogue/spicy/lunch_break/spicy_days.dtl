@@ -1,0 +1,4 @@
+do BreakNPCSystem.start_daily_chat()
+label day0
+pepper: Hey!
+return

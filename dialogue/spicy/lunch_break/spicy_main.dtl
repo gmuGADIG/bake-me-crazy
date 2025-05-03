@@ -1,0 +1,27 @@
+- Give Gift
+	# Temporary lines; replace them later
+	pepper: What do you have? *
+	do BreakNPCSystem.prompt_gift()
+	if {read_only.gift_response} == "canceled":
+		pepper: Oh, ok. *
+	elif {read_only.gift_response} in ["orange", "pistachio", "cinnamon"]:
+		set {rp.salty} += 60
+		pepper (Excited): This is perfect!! *
+	elif false:
+		# if salty has any flavor dislikes, that condition would be used. currently, this never happens
+		pepper (Pensive): I don't like this...
+	else:
+		set {rp.salty} += 40
+		pepper: This is pretty good!
+		pepper: This is pretty good!
+		pepper: This is pretty good!
+- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait 'til the next day)"]
+	jump spicy_days/
+- Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
+	[end_timeline]
+if {read_only.possible_date} == 1:
+	set {date} = "savory1"
+elif {read_only.possible_date} == 2:
+	set {date} = "savory2"
+elif {read_only.possible_date} == 3:
+	set {date} = "savory3"
