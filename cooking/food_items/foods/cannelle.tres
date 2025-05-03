@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://blh6k7g2jwce2"]
 
-[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="1_2juys"]
+[ext_resource type="Texture2D" uid="uid://c1o4q2iwfbmsl" path="res://items/foods/art/Canelle_Chocolate.png" id="1_qe4uq"]
 [ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_ssrk1"]
 
 [resource]
 script = ExtResource("2_ssrk1")
 type = 2
 display_name = "Cannelle"
-image = ExtResource("1_2juys")
+image = ExtResource("1_qe4uq")

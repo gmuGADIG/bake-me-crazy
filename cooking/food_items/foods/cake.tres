@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://bvbn2iyovtuc5"]
 
-[ext_resource type="Texture2D" uid="uid://c1dxbivc802cm" path="res://temp_art/Pizza.png" id="1_xoibg"]
+[ext_resource type="Texture2D" uid="uid://b0wejwm1707v5" path="res://items/foods/art/Cake_Vanilla.png" id="1_8ji81"]
 [ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_kggok"]
 
 [resource]
 script = ExtResource("2_kggok")
 type = 0
 display_name = "Cake"
-image = ExtResource("1_xoibg")
+image = ExtResource("1_8ji81")

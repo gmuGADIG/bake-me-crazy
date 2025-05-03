@@ -106,9 +106,13 @@ func new_order() -> void:
 	
 	##Sets all of the images
 	$CanvasLayer/FoodSelect/VBoxContainer/Food1.icon = foods[0].image
+	$CanvasLayer/FoodSelect/VBoxContainer/Food1.icon = foods[0].image
 	$CanvasLayer/FoodSelect/VBoxContainer/Food2.icon = foods[1].image
 	$CanvasLayer/FoodSelect/VBoxContainer/Food3.icon = foods[2].image
 	$CanvasLayer/FoodSelect/VBoxContainer/Food4.icon = foods[3].image
+
+	for child in $CanvasLayer/FoodSelect/VBoxContainer.get_children():
+		child.expand_icon = true
 	
 	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor1.icon = flavors[0].image
 	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor2.icon = flavors[1].image
