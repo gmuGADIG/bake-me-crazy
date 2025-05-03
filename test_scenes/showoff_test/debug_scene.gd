@@ -10,10 +10,10 @@ func _ready() -> void:
 	)
 
 func _on_salty_1_pressed() -> void:
-	pass
+	Dialogic.start(load("res://dialogue/salty/callum_date_1.dtl"))
 
 func _on_salty_2_pressed() -> void:
-	pass # Replace with function body.
+	Dialogic.start(load("res://dialogue/salty/callum_date_3.dtl"))
 
 func _on_salty_confession_pressed() -> void:
-	pass # Replace with function body.
+	Dialogic.start(load("res://dialogue/salty/callum_date_confession.dtl"))
