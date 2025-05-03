@@ -42,7 +42,9 @@ directories/dch_directory={
 directories/dtl_directory={
 "callum_date_1": "res://dialogue/salty/callum_date_1.dtl",
 "callum_date_1_dartballoons": "res://dialogue/salty/callum_date_1_dartballoons.dtl",
+"callum_date_1_failstate": "res://dialogue/salty/callum_date_1_failstate.dtl",
 "callum_date_1_wheeloffortune": "res://dialogue/salty/callum_date_1_wheeloffortune.dtl",
+"callum_date_3": "res://dialogue/salty/callum_date_3.dtl",
 "callum_date_confession": "res://dialogue/salty/callum_date_confession.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
