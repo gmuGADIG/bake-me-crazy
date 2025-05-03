@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwmajolaxmv26"]
 
 [ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_ri8w5"]
-[ext_resource type="PackedScene" uid="uid://011we18nsjdu" path="res://cooking/morning_results.tscn" id="2_2ctmu"]
+[ext_resource type="PackedScene" uid="uid://83sg17i2w6gw" path="res://cooking/morning_results.tscn" id="2_2ctmu"]
 
 [node name="FoodMinigame" type="Control"]
 layout_mode = 3

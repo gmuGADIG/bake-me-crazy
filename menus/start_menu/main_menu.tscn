@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0lluvp8jike4"]
+[gd_scene load_steps=11 format=3 uid="uid://b0lluvp8jike4"]
 
 [ext_resource type="Script" path="res://menus/start_menu/main_menu.gd" id="1_e3ggy"]
 [ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="1_f1ged"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_a352q"]
 [ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_bbip1"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="6_bs6qj"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="7_lcsls"]
 
 [sub_resource type="Animation" id="Animation_t8rc3"]
 length = 0.001
@@ -229,6 +230,9 @@ pivot_offset = Vector2(140, 26)
 theme_override_font_sizes/font_size = 30
 text = "Quit Game"
 script = ExtResource("6_bs6qj")
+
+[node name="PlaySongForScene" parent="." instance=ExtResource("7_lcsls")]
+song_name = "pre_lunch_rush.tres"
 
 [connection signal="pressed" from="HBoxContainer/Control/Start Game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/Control2/Load Game" to="." method="_on_load_game_pressed"]

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Song" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_cod4n"]
+[ext_resource type="AudioStream" path="res://music/char/OST_SweetTheme_Sami.ogg" id="2_x6rcx"]
+
+[sub_resource type="Curve" id="Curve_1jafa"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_i613p"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_cod4n")
+loop_start = 0.0
+loop_end = 145.0
+song_file = ExtResource("2_x6rcx")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_1jafa")
+fade_out_curve = SubResource("Curve_i613p")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://bcjm032lps0e7"]
+
+[ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_kxklu"]
+
+[resource]
+script = ExtResource("1_kxklu")
+description = "It's hot!"
+display_name = "Tea"

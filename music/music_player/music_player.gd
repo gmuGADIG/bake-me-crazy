@@ -8,7 +8,7 @@ class_name MusicPlayer
 
 const FULL_DB: float = 0.0
 const MUTE_DB: float = -64.0
-const VOLUME_TRANSITION_TIME: float = 0.5
+const VOLUME_TRANSITION_TIME: float = 0.2
 
 @onready var players: Array[AudioStreamPlayer] = [$AudioStreamPlayerA, $AudioStreamPlayerB]
 var active_idx: int = 0
@@ -154,7 +154,11 @@ func _handle_loop_crossfade() -> void:
 		active.volume_db   = MUTE_DB + (-MUTE_DB) * current_song.fade_out_curve.sample(1.0 - t)
 		inactive.volume_db = MUTE_DB + (-MUTE_DB) * current_song.fade_in_curve .sample(t)
 
-	if pos >= current_song.loop_end:
+	if pos >= current_song.loop_end or not active.playing:
+		if not in_loop_crossfade:
+			inactive.stream = current_song.song_file
+			inactive.volume_db = MUTE_DB
+			inactive.play(current_song.loop_start)
 		active.stop()
 		active.stream = null
 		active_idx = 1 - active_idx

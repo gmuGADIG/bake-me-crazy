@@ -3,6 +3,8 @@ class_name MusicPlayerDebug
 
 const EPS := 0.001
 
+const default_song_path = "res://music/default_song.tres"
+
 @onready var pl: MusicPlayer = $MusicPlayer
 @onready var start_edit: LineEdit = $VBoxContainer/Controls/PlayContainer/LoopStartContainer/LoopStartEdit
 @onready var end_edit: LineEdit = $VBoxContainer/Controls/PlayContainer/LoopEndContainer/LoopEndEdit
@@ -119,7 +121,7 @@ func _load_file():
 		pl.transition_to_song(song_file)
 		save_line_edit.text = file_select.get_item_text(file_select.selected)
 	else:
-		var song: Song = Song.new()
+		var song: Song = load(default_song_path)
 		song.song_file = song_file
 		song.loop_end = song_file.get_length()
 		song.loop_start = 0

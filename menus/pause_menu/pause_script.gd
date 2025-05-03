@@ -6,6 +6,7 @@ var submenu: Control = null # the currently open sub-menu, e.g. the saves or opt
 
 func _ready() -> void:
 	get_tree().paused = true # this is reset to false in _on_tree_exiting
+	MainMusicPlayer.set_volume(0.3)
 
 func _process(_delta: float) -> void:
 	if submenu != null: return # wait for the sub-menu to close first
@@ -26,6 +27,7 @@ func _on_submenu_close() -> void:
 
 func _on_tree_exiting() -> void:
 	get_tree().paused = false
+	MainMusicPlayer.set_volume(1.0)
 
 func _on_open_saves_pressed() -> void:
 	open_submenu(load("res://menus/save_menu/save_menu.tscn"))
@@ -35,7 +37,7 @@ func _on_close_menu_pressed() -> void:
 	queue_free()
 
 func _on_return_main_menu_pressed() -> void:
-	print("TODO: go to main menu")
+	SceneTransition.change_scene_to_file("res://menus/start_menu/main_menu.tscn")
 
 func _on_options_pressed() -> void:
-	print("TODO: open options")
+	open_submenu(load("res://menus/settings/settings_menu.tscn"))
