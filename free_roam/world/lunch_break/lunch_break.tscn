@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://vjagi5yawk50"]
+[gd_scene load_steps=14 format=3 uid="uid://vjagi5yawk50"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
 [ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
-[ext_resource type="Script" path="res://free_roam/interactables/NPCs/npc.gd" id="3_mp5ah"]
-[ext_resource type="Resource" path="res://menus/testing/npcclasstest.dtl" id="4_u3tyl"]
+[ext_resource type="PackedScene" uid="uid://d0hkux4r4af46" path="res://free_roam/interactables/NPCs/scenes/salty_npc.tscn" id="3_m7bti"]
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/lunch_break_npc.gd" id="3_mp5ah"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_1b70k"]
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="6_4yihm"]
-[ext_resource type="Resource" path="res://dialogue/testing/lunch_break_timeline.dtl" id="6_yor0v"]
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/simple_npc.gd" id="6_6t6yb"]
+[ext_resource type="Resource" path="res://dialogue/testing/lunch_break_timeline.dtl" id="7_yqqcm"]
 [ext_resource type="PackedScene" uid="uid://bkj7kns2dd0mc" path="res://cooking/lunch_rush/lunchrush.tscn" id="8_r8e4w"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_7b54g"]
 
@@ -18,7 +19,7 @@ size = Vector2(206, 260)
 
 [sub_resource type="Curve2D" id="Curve2D_r20jp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 69, 600, 0, 0, 0, 0, 1609, 596)
+"points": PackedVector2Array(0, 0, 0, 0, 89, 658, 0, 0, 0, 0, 1410, 647)
 }
 point_count = 2
 
@@ -31,28 +32,14 @@ centered = false
 
 [node name="Interactables" type="Node2D" parent="." index="1"]
 
-[node name="NPC" type="StaticBody2D" parent="Interactables" index="0"]
-position = Vector2(232, 557)
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("3_mp5ah")
-timeline = ExtResource("4_u3tyl")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC" index="0"]
-position = Vector2(0, -117.5)
-shape = SubResource("RectangleShape2D_8fvyg")
-
-[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC" index="1"]
-position = Vector2(-13, -106)
-scale = Vector2(0.793333, 0.793333)
-texture = ExtResource("5_1b70k")
+[node name="SaltyNPC" parent="Interactables" index="0" instance=ExtResource("3_m7bti")]
+position = Vector2(759, 578)
 
 [node name="NPC2" type="StaticBody2D" parent="Interactables" index="1"]
 position = Vector2(401, 543)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_mp5ah")
-timeline = ExtResource("4_u3tyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC2" index="0"]
 position = Vector2(0, -117.5)
@@ -68,7 +55,6 @@ position = Vector2(572, 561)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_mp5ah")
-timeline = ExtResource("4_u3tyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC3" index="0"]
 position = Vector2(0, -117.5)
@@ -84,9 +70,8 @@ flip_h = true
 position = Vector2(1024, 540)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("3_mp5ah")
-timeline = ExtResource("6_yor0v")
-character_code_name = "salty"
+script = ExtResource("6_6t6yb")
+timeline = ExtResource("7_yqqcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC4" index="0"]
 position = Vector2(0, -117.5)
@@ -123,7 +108,7 @@ horizontal_alignment = 1
 curve = SubResource("Curve2D_r20jp")
 
 [node name="Player" parent="PlayerPath" index="0"]
-position = Vector2(69, 600)
+position = Vector2(89, 658)
 
 [node name="Camera2D" parent="PlayerPath/Player" index="3"]
 limit_left = 0

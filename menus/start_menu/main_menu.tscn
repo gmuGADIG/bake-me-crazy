@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_a352q"]
 [ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_bbip1"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="6_bs6qj"]
-[ext_resource type="PackedScene" path="res://play_song_for_scene_node.tscn" id="7_lcsls"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="7_lcsls"]
 
 [sub_resource type="Animation" id="Animation_t8rc3"]
 length = 0.001

@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://buxkx0dky3jmm" path="res://items/foods/art/Bar_Strawberry.png" id="26_mb8qh"]
 [ext_resource type="Resource" uid="uid://cnuuuomy00hxl" path="res://items/ingredients/pork.tres" id="27_q8otq"]
 [ext_resource type="Texture2D" uid="uid://d4cvrxp22ejf8" path="res://items/foods/art/Bar_Billionaire.png" id="27_x6el4"]
-[ext_resource type="PackedScene" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
+[ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
 [ext_resource type="Resource" uid="uid://c7qq5te66x2sh" path="res://items/ingredients/cheese.tres" id="29_coqy3"]
 [ext_resource type="Texture2D" uid="uid://bjtf32jw05iq5" path="res://menus/recipe_book/Right_arrow_curve.webp" id="32_wttob"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_variant_selection.gd" id="33_amgaq"]
