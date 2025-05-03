@@ -13,8 +13,7 @@ const SCREEN_WIDTH := 1152.0
 var current_score :float= 0
 
 signal food_step_started
-
-signal all_minigames_done()
+signal all_minigames_done
 
 func next_step() -> void:
 	# get the previous and next step (each may be null)
@@ -23,10 +22,6 @@ func next_step() -> void:
 	if step_ptr > 0 and not steps.is_empty(): prev = steps[step_ptr - 1]
 	if step_ptr < steps.size(): next = steps[step_ptr]
 	
-	# disable prev (it remains visible until off-screen)
-	if prev != null:
-		prev.process_mode = Node.PROCESS_MODE_DISABLED
-	
 	# prepare next step
 	if next != null:
 		next.pre_animation()
@@ -34,15 +29,27 @@ func next_step() -> void:
 	
 	# animate them swiping across the screen
 	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_parallel()
-	if prev != null:
+	var animating := false
+	if prev != null and next != null:
+		prev.process_mode = Node.PROCESS_MODE_DISABLED
+		animating = true
+		print("prev animation")
 		prev.position.x = 0
 		tween.tween_property(prev, "position:x", -SCREEN_WIDTH, STEP_SLIDE_DURATION)
 	
 	if next != null:
+		animating = true
 		next.position.x = SCREEN_WIDTH
 		tween.tween_property(next, "position:x", 0, STEP_SLIDE_DURATION)
 
-	await tween.finished # wait for animation to finish
+	if animating:
+		await tween.finished # wait for animation to finish
+	# else:
+	# 	await get_tree().create_timer(.5, false).timeout
+
+	# disable prev (it remains visible until off-screen)
+	if prev != null:
+		prev.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# hide previous step now that it's off screen
 	if prev != null:

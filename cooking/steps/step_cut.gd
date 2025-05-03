@@ -52,10 +52,10 @@ func _grade_cutting_points() -> float:
 
 var done := false
 func _process(delta: float) -> void:
-	if done: return
-
 	# TODO: change the cursor instead
 	$Cutting/LastCutArea.position = get_local_mouse_position();
+
+	if done: return
 
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		var pos := get_local_mouse_position()

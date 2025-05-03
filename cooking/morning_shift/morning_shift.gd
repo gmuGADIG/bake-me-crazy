@@ -1,4 +1,7 @@
+class_name MorningShift
 extends Node
+
+static var instance: MorningShift
 
 var recipe_book = preload("res://menus/recipe_book/recipe_book.tscn")
 var backup_minigame = preload("res://test_scenes/test_food_minigame/test_food_minigame.tscn") 
@@ -6,6 +9,9 @@ var backup_minigame = preload("res://test_scenes/test_food_minigame/test_food_mi
 var variants: Array[RecipeVariant] = []
 
 var current_recipe: RecipeVariant
+
+func _init() -> void:
+	instance = self
 
 func _ready() -> void:
 	var select_recipe: RecipeBook = recipe_book.instantiate()
