@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://c7qq5te66x2sh"]
+
+[ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_tydwf"]
+
+[resource]
+script = ExtResource("1_tydwf")
+description = "Cheddar or so"
+display_name = "Cheese"

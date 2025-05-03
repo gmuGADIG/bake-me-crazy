@@ -22,6 +22,8 @@ var finishTime = 0
 #primarily used to trigger finish() only once when time runs out
 var isFinished = false
 
+signal dough_spawned
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	nextX = place_pos.position[0]
@@ -80,6 +82,9 @@ func _input(event: InputEvent) -> void:
 		var texture = load("res://temp_art/gartic/forg.png")
 		doughSprite.position = get_local_mouse_position()
 		doughSprite.set_texture(texture)
+		
+		dough_spawned.emit()
+		
 		add_child(doughSprite)
 		
 		#Collision-stuff

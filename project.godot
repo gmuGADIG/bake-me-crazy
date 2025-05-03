@@ -24,6 +24,9 @@ Relationships="res://dialogue/relationships.gd"
 SongScanner="*res://music/song_scanner.tscn"
 MainMusicPlayer="*res://music/music_player/music_player.tscn"
 DialogManager="*res://dialogue/dialog_manager.gd"
+SFXScanner="*res://sfx/sfx_scanner.tscn"
+MainSFXPlayer="*res://sfx/sfx_player.tscn"
+SFXDispatcher="*res://sfx/sfx_dispatcher.tscn"
 
 [dialogic]
 

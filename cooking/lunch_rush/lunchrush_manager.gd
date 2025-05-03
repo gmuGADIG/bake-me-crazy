@@ -45,7 +45,7 @@ var selected_flavor : FoodItem
 var current_customer : int = 0
 var total_tip : float
  
-
+signal drizzle_started
 
 enum Stage {
 	FOOD_SELECT,
@@ -158,6 +158,7 @@ func drizzle(delta : float) -> void:
 	if Input.is_mouse_button_pressed(1): # Left click
 		
 		##Create Drizzle Particle
+		drizzle_started.emit()
 		var new_particle : GPUParticles2D = drizzle_particle.instantiate()
 		$FinisherSprite.add_child(new_particle)
 		new_particle.emitting = true
