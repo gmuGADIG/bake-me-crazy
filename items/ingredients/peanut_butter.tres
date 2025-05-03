@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://brttxq285l2lr"]
+
+[ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_yaw0c"]
+
+[resource]
+script = ExtResource("1_yaw0c")
+description = "It's sandwich"
+display_name = "Peanut Butter"

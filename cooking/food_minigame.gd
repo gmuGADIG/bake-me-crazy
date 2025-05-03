@@ -11,6 +11,10 @@ var step_slide_timer: float = 0.0
 const STEP_SLIDE_DURATION: float = 1.0
 const SCREEN_WIDTH := 1152.0
 var current_score :float= 0
+
+
+signal all_minigames_done()
+
 func next_step() -> void:
 	# get the previous and next step (each may be null)
 	var prev: FoodStep
@@ -56,14 +60,17 @@ func next_step() -> void:
 	# on the final step, handle the food being finished
 	var food_finished = next == null
 	if food_finished:
-		# TODO: handle this properly. there should be a final screen displaying your food.
-		# there should probably be a food_finished signal, which is handled by something else
-		# to either prepare the next food, or load the next scene.
-		# for now, just change to the lunch break
-		
-
+		# Show the results and then wait for the results screen to be exited.
+		# At that point, this entire set of minigames is considered done, so
+		# we emite the all_minigames_done signal.
+		#
+		# The MorningShift will wait for this signal so that it can load the
+		# next part of the UI flow.
 		%MorningResults.show_results(round(current_score / steps.size()))
-		#SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
+		await %MorningResults.results_done
+		
+		# Wait for the morning results to hide? Then next minigame?
+		all_minigames_done.emit()
 
 func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
