@@ -23,8 +23,12 @@ func _process(delta: float) -> void:
 	else:
 		if rolling == true:
 			print("roll out done")
-			var dist = absf(%SizeHint.size.y - (128 * 1.555 * $dough.scale.y))
-			finished.emit(clampf(remap(dist, 0, 100, 3, 0), 0, 3))
+			var _score = $dough.scale.y
+			var dist := absf($dough.scale.y - 3)
+			if (dist < 0.5): dist = 0
+			var score := remap(dist, 0, 3, 3, 0)
+			print(score)
+			finished.emit(clampf(score, 0, 3))
 			done = true
 		rolling = false
 		$Sprite2D.stop()
