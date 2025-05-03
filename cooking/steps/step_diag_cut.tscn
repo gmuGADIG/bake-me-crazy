@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvkexsscuam4t"]
+[gd_scene load_steps=9 format=3 uid="uid://bvkexsscuam4t"]
 
-[ext_resource type="PackedScene" uid="uid://cgmqffo2go7p6" path="res://cooking/steps/base_step_cut.tscn" id="1_mf85h"]
+[ext_resource type="PackedScene" uid="uid://bthmkwq5lu0kl" path="res://cooking/steps/base_step_cut.tscn" id="1_mf85h"]
+[ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="2_00atf"]
 [ext_resource type="Texture2D" uid="uid://4p08bggtflm3" path="res://cooking/art/knife.png" id="2_cob0c"]
-[ext_resource type="Texture2D" uid="uid://dbm84fs41k1yn" path="res://cooking/art/Minigame_Dough.png" id="2_r1xrm"]
 [ext_resource type="Texture2D" uid="uid://demxad4xjetim" path="res://cooking/art/Minigame_WoodCuttingBoard.png" id="3_rswos"]
+[ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="5_7wkoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5een"]
 size = Vector2(59, 278)
@@ -19,15 +20,20 @@ width = 10
 height = 1
 
 [node name="StepCut" instance=ExtResource("1_mf85h")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MinigameDough" type="Sprite2D" parent="." index="0"]
 position = Vector2(593.5, 241)
-scale = Vector2(8.61719, 4.57812)
-texture = ExtResource("2_r1xrm")
+scale = Vector2(2.154, 1.144)
+texture = ExtResource("2_00atf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToCut" index="0"]
 position = Vector2(270, 200)
@@ -120,7 +126,6 @@ texture_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="Cutting" parent="." index="2"]
-position = Vector2(-5, 2)
 points = PackedVector2Array()
 
 [node name="LastCutArea" parent="Cutting" index="0"]
@@ -139,3 +144,15 @@ z_index = -1
 position = Vector2(578, 254)
 scale = Vector2(1.01685, 1.01685)
 texture = ExtResource("3_rswos")
+
+[node name="TextureRect" type="TextureRect" parent="." index="4"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_7wkoo")
+expand_mode = 1
+stretch_mode = 5

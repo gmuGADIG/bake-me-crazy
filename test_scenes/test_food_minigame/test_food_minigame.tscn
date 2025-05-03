@@ -24,6 +24,7 @@ green_range = 0.05
 heat_time = 3.0
 
 [node name="StepCut2" parent="." index="4" instance=ExtResource("7_1p0xy")]
+layout_mode = 1
 
 [node name="PourFlour" parent="." index="5" instance=ExtResource("4_ea6bv")]
 layout_mode = 1
@@ -34,3 +35,4 @@ layout_mode = 1
 [node name="Kneading" parent="." index="7" instance=ExtResource("4_nt0hk")]
 
 [node name="StepCut" parent="." index="8" instance=ExtResource("6_25ily")]
+layout_mode = 1

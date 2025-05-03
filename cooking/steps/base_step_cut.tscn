@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgmqffo2go7p6"]
+[gd_scene load_steps=5 format=3 uid="uid://bthmkwq5lu0kl"]
 
 [ext_resource type="Script" path="res://cooking/steps/step_cut.gd" id="1_y2f8k"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="3_oatch"]
@@ -23,7 +23,7 @@ collision_layer = 32768
 [node name="Cutting" type="Line2D" parent="."]
 unique_name_in_owner = true
 points = PackedVector2Array(16, -17)
-default_color = Color(0, 1, 0, 1)
+default_color = Color(0, 0, 0, 1)
 
 [node name="LastCutArea" type="Area2D" parent="Cutting"]
 position = Vector2(18, -6)
