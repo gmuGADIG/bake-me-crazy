@@ -23,6 +23,7 @@ func _scan_folder(path: String) -> void:
 	dir.list_dir_begin()
 	var name: String = dir.get_next()
 	while name != "":
+		name = name.trim_suffix(".remap")
 		var full_path = path.path_join(name)
 		if dir.current_is_dir():
 			_scan_folder(full_path + "/")
