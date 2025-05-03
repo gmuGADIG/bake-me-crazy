@@ -20,17 +20,19 @@ layout_mode = 1
 green_range = 0.05
 heat_time = 3.0
 
-[node name="PourFlour" parent="." index="3" instance=ExtResource("4_ea6bv")]
+[node name="StepCut2" parent="." index="3" instance=ExtResource("7_1p0xy")]
+
+[node name="PourFlour" parent="." index="4" instance=ExtResource("4_ea6bv")]
+layout_mode = 1
+target_amount = null
+pour_speed = null
+
+[node name="RollUp" parent="." index="5" instance=ExtResource("4_fpntb")]
 layout_mode = 1
 
-[node name="RollUp" parent="." index="4" instance=ExtResource("4_fpntb")]
-layout_mode = 1
+[node name="Kneading" parent="." index="6" instance=ExtResource("4_nt0hk")]
 
-[node name="Kneading" parent="." index="5" instance=ExtResource("4_nt0hk")]
-
-[node name="StepCut" parent="." index="6" instance=ExtResource("6_25ily")]
-
-[node name="StepCut2" parent="." index="7" instance=ExtResource("7_1p0xy")]
+[node name="StepCut" parent="." index="7" instance=ExtResource("6_25ily")]
 
 [node name="FoodStep" parent="." index="8" instance=ExtResource("8_fv5op")]
 layout_mode = 1

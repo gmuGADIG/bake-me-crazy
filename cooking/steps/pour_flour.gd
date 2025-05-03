@@ -12,24 +12,25 @@ var done := false
 @onready var bowl_area: Area2D = %BowlArea
 @onready var flour_pourer: CharacterBody2D = %FlourPourer
 
-@onready var hand_open = load("res://cooking/cooking_art/Minigame_HandCursorPoint.png")
-@onready var hand_closed = load("res://cooking/cooking_art/Minigame_HandCursorGrab.png")
+@onready var pointer_sprite: Sprite2D = %PointerSprite
+@onready var grab_sprite: Sprite2D = %GrabSprite
+
+@onready var particles: CPUParticles2D = %Powder
+
 
 func _process(delta: float) -> void:
 	if done: return
 	
-	flour_pourer.position = get_global_mouse_position();
-	
-	#var bool mouseDown = 
+	flour_pourer.position = get_global_mouse_position()
 	
 	if(Input.is_mouse_button_pressed(1)):
-		$FlourPourer/HandSprite.texture = hand_closed
-		$FlourPourer/HandSprite/Powder.emitting = true;
+		pointer_sprite.hide()
+		grab_sprite.show()
+		particles.emitting = true
 	else:
-		$FlourPourer/HandSprite.texture = hand_open
-		$FlourPourer/HandSprite/Powder.emitting = false;
-		
-	
+		pointer_sprite.show()
+		grab_sprite.hide()
+		particles.emitting = false
 
 	var in_bowl_area = bowl_area.overlaps_body(flour_pourer)
 	
