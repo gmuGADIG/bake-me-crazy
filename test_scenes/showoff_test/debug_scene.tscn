@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://bftq0mv6k6e4x"]
+
+[ext_resource type="Script" path="res://test_scenes/showoff_test/debug_scene.gd" id="1_bcwe2"]
+
+[node name="DebugScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bcwe2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_top = 55.0
+offset_right = 28.0
+offset_bottom = 79.0
+grow_horizontal = 2
+scale = Vector2(1.52939, 1.52939)
+text = "DEBUG SCENE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -172.0
+offset_top = 174.0
+offset_right = 172.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Salty1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Salty Date 1"
+
+[node name="Salty2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Salty Date 2"
+
+[node name="SaltyConfession" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Salty Confession"
+
+[connection signal="pressed" from="VBoxContainer/Salty1" to="." method="_on_salty_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salty2" to="." method="_on_salty_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/SaltyConfession" to="." method="_on_salty_confession_pressed"]

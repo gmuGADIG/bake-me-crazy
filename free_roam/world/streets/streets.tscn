@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwkpcolidvc0a"]
+[gd_scene load_steps=12 format=3 uid="uid://cwkpcolidvc0a"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_kr52v"]
 [ext_resource type="Texture2D" uid="uid://cb2o5nwjunabw" path="res://free_roam/world/streets/streets_bg.png" id="2_dnht4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6xw0fbrjfpjl" path="res://cooking/morning_shift/morning_shift.tscn" id="5_3i5as"]
 [ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/simple_npc.gd" id="5_r5mtj"]
+[ext_resource type="Resource" path="res://dialogue/testing/test_market_timeline.dtl" id="6_8q1kx"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn5p"]
@@ -44,6 +45,7 @@ position = Vector2(1078, 566)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("5_r5mtj")
+timeline = ExtResource("6_8q1kx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC" index="0"]
 position = Vector2(0, -117.5)

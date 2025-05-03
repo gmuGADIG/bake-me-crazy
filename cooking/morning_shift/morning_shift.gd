@@ -4,7 +4,7 @@ extends Node
 static var instance: MorningShift
 
 var recipe_book = preload("res://menus/recipe_book/recipe_book.tscn")
-var backup_minigame = preload("res://test_scenes/test_food_minigame/test_food_minigame.tscn") 
+var backup_minigame = load("res://test_scenes/test_food_minigame/test_food_minigame.tscn") 
 
 var variants: Array[RecipeVariant] = []
 
