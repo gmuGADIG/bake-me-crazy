@@ -1,11 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1qo3dh7pfxpl"]
+[gd_scene load_steps=15 format=3 uid="uid://b1qo3dh7pfxpl"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_1pduj"]
 [ext_resource type="Script" path="res://cooking/steps/step_scoop.gd" id="1_gwrga"]
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_8uj2r"]
 [ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="3_rsoc1"]
+[ext_resource type="Texture2D" uid="uid://bnqstvih1ok8r" path="res://cooking/art/Snickerdoodle_Cookie_Dough.png" id="4_rolkp"]
+[ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="6_1c4gu"]
+[ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="6_65nad"]
+[ext_resource type="Texture2D" uid="uid://vodrqcfckd01" path="res://cooking/art/Cookie_Sheet.png" id="8_n7naa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i70qp"]
+radius = 120.204
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkt58"]
 radius = 45.0
@@ -19,10 +25,29 @@ shader = ExtResource("3_rsoc1")
 gradient = SubResource("Gradient_1r282")
 
 [node name="StepScoop" instance=ExtResource("1_1pduj")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 mouse_filter = 2
 script = ExtResource("1_gwrga")
 
-[node name="gameTimer" type="Label" parent="." index="0"]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8uj2r")
+
+[node name="CookieSheet" type="Sprite2D" parent="." index="1"]
+position = Vector2(377, 294)
+rotation = -0.00126775
+texture = ExtResource("8_n7naa")
+
+[node name="gameTimer" type="Label" parent="." index="2"]
 layout_mode = 0
 offset_left = 965.0
 offset_top = 3.0
@@ -31,21 +56,110 @@ offset_bottom = 27.0
 theme_override_font_sizes/font_size = 21
 text = "Time limit: 15.00"
 
-[node name="Bowl" type="Area2D" parent="." index="1"]
-position = Vector2(996, 545)
-scale = Vector2(15.4636, 10.1769)
+[node name="Bowl" type="Area2D" parent="." index="3"]
+position = Vector2(999, 370)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" index="0"]
 shape = SubResource("CircleShape2D_i70qp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Bowl" index="1"]
+visible = false
 position = Vector2(-0.452675, -1.27741)
 scale = Vector2(0.0948551, 0.0948551)
 texture = ExtResource("2_e4817")
 
-[node name="placePos" type="Area2D" parent="." index="2"]
-position = Vector2(148, 168)
+[node name="SnickerdoodleCookieDough" type="Sprite2D" parent="Bowl" index="2"]
+rotation = 1.27686
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough2" type="Sprite2D" parent="Bowl" index="3"]
+position = Vector2(33, 35)
+rotation = -0.75887
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough3" type="Sprite2D" parent="Bowl" index="4"]
+position = Vector2(57, -32)
+rotation = 0.898043
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough4" type="Sprite2D" parent="Bowl" index="5"]
+position = Vector2(-22, -48)
+rotation = -1.45152
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough5" type="Sprite2D" parent="Bowl" index="6"]
+position = Vector2(-66, 1)
+rotation = 1.05941
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough6" type="Sprite2D" parent="Bowl" index="7"]
+position = Vector2(-36, 50)
+rotation = -1.34842
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough7" type="Sprite2D" parent="Bowl" index="8"]
+position = Vector2(22, 71)
+rotation = -0.55163
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough8" type="Sprite2D" parent="Bowl" index="9"]
+position = Vector2(87, 43)
+rotation = 1.43541
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough9" type="Sprite2D" parent="Bowl" index="10"]
+position = Vector2(85, -4)
+rotation = -1.40708
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough10" type="Sprite2D" parent="Bowl" index="11"]
+position = Vector2(28, -69)
+rotation = -0.848931
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough11" type="Sprite2D" parent="Bowl" index="12"]
+position = Vector2(-73, -56)
+rotation = 1.58879
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough12" type="Sprite2D" parent="Bowl" index="13"]
+position = Vector2(-91, 39)
+rotation = -0.894763
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough13" type="Sprite2D" parent="Bowl" index="14"]
+position = Vector2(-36, 86)
+rotation = 1.71478
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough14" type="Sprite2D" parent="Bowl" index="15"]
+position = Vector2(18, 99)
+rotation = -1.83034
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough15" type="Sprite2D" parent="Bowl" index="16"]
+position = Vector2(18, 99)
+rotation = 1.85186
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="placePos" type="Area2D" parent="." index="4"]
+position = Vector2(163, 192)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="placePos" index="0"]
@@ -54,6 +168,190 @@ shape = SubResource("CircleShape2D_vkt58")
 [node name="Sprite2D" type="Sprite2D" parent="placePos" index="1"]
 material = SubResource("ShaderMaterial_j0vec")
 texture = SubResource("GradientTexture2D_unpg6")
+
+[node name="FollowCursor" type="Node2D" parent="." index="5"]
+rotation = -0.00126775
+script = ExtResource("6_1c4gu")
+
+[node name="MinigameSpoon" type="Sprite2D" parent="FollowCursor" index="0"]
+position = Vector2(38.0443, -34.9518)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_65nad")
+
+[node name="SpoonCookie" type="Sprite2D" parent="FollowCursor" index="1"]
+unique_name_in_owner = true
+visible = false
+rotation = 0.00126775
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_rolkp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="6"]
+visible = false
+layout_mode = 0
+offset_left = 91.0
+offset_top = 104.0
+offset_right = 683.0
+offset_bottom = 461.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/Control2" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/Control3" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="Control4" type="Control" parent="VBoxContainer/HBoxContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer/Control4" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2/Control" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2/Control2" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer2" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2/Control3" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
+
+[node name="Control4" type="Control" parent="VBoxContainer/HBoxContainer2" index="3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer2/Control4" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -0.5
+offset_right = 0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.433333, 1, 0, 1)
 
 [connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]

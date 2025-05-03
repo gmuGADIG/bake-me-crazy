@@ -1,5 +1,6 @@
 extends FoodStep
 
+@onready var spoon_cookie: Sprite2D = %SpoonCookie
 @onready var gameTimer: Label = $gameTimer
 @onready var bowl: Area2D = $Bowl
 @onready var place_pos: Area2D = $placePos
@@ -32,7 +33,7 @@ func _ready() -> void:
 #A finish function that returns the score
 func finish() -> int:
 	print("------------ FINISH! ------------")
-	print("You scored: ", score, "/36")
+	print("You scored: ", score, "/24")
 	#Disable scooping
 	bowl.get_child(0).disabled = true
 	isScooped = false
@@ -40,7 +41,7 @@ func finish() -> int:
 	finishTime = timeLimit
 
 	if not isFinished:
-		finished.emit((score / 36.) * 3)
+		finished.emit((score / 24.) * 3)
 		isFinished = true
 
 	return score
@@ -69,19 +70,25 @@ func _process(delta: float) -> void:
 #This code should detect when the bowl is clicked, and scoops a new scoop of cookie dough
 func _input(event: InputEvent) -> void:
 	if event.is_action("interact") && mouseAtBowl == true && isScooped == false:
-		isScooped = true;
+		isScooped = true
+		spoon_cookie.show()
+		spoon_cookie.rotation = randf() * TAU
+		spoon_cookie.scale = Vector2.ONE * randf_range(.1, .125)
 	elif event.is_action("interact") && mouseAtBowl == false && isScooped == true:
 		#Re-enable the ability to scoop & increment number of scoops done
-		isScooped = false;
-		numScoop += 1;
+		isScooped = false
+		numScoop += 1
+		spoon_cookie.hide()
 
 		
 		#Spawns cookie dough
 		#Art-stuff
 		var doughSprite = Sprite2D.new()
-		var texture = load("res://temp_art/gartic/forg.png")
+		var texture = load("res://cooking/art/Snickerdoodle_Cookie_Dough.png")
 		doughSprite.position = get_local_mouse_position()
 		doughSprite.set_texture(texture)
+		doughSprite.scale = spoon_cookie.scale
+		doughSprite.rotation = spoon_cookie.rotation
 		
 		dough_spawned.emit()
 		
@@ -121,14 +128,14 @@ func _input(event: InputEvent) -> void:
 			score += 1
 		
 		#Setting up next goal
-		if numScoop == 12: #If 12 scoops have been placed, then the game ends
+		if numScoop == 8: #If 12 scoops have been placed, then the game ends
 			finish()
 		else:
-			if numScoop % 6 == 0: #If 6 scoops have been placed, the next goal goes to a new row
-				nextX -= 150 * (numScoop - 1)
-				nextY += 150
+			if numScoop % 4 == 0: #If 6 scoops have been placed, the next goal goes to a new row
+				nextX -= 148 * (numScoop - 1)
+				nextY += 180
 			else:
-				nextX += 150
+				nextX += 148
 				
 			place_pos.position = Vector2(nextX, nextY)
 
