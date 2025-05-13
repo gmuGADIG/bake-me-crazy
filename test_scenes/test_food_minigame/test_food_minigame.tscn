@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbtuev8kmswbi"]
+[gd_scene load_steps=10 format=3 uid="uid://cbtuev8kmswbi"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
+[ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="2_bndm2"]
 [ext_resource type="PackedScene" uid="uid://bqiuapp2ar2pr" path="res://cooking/steps/step_vert_cut.tscn" id="4_nxen1"]
 [ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="5_qmntb"]
 [ext_resource type="PackedScene" uid="uid://d1v5q0dylibsk" path="res://cooking/steps/pour_flour.tscn" id="6_y6r7u"]
@@ -11,23 +12,25 @@
 
 [node name="FoodMinigame" instance=ExtResource("1_hk2jr")]
 
-[node name="RollOut" parent="." index="1" instance=ExtResource("8_fv5op")]
+[node name="shape_step" parent="." index="1" instance=ExtResource("2_bndm2")]
+
+[node name="RollOut" parent="." index="2" instance=ExtResource("8_fv5op")]
 layout_mode = 1
 
-[node name="StepScoop" parent="." index="2" instance=ExtResource("9_ttoy5")]
+[node name="StepScoop" parent="." index="3" instance=ExtResource("9_ttoy5")]
 layout_mode = 1
 
-[node name="StepCut2" parent="." index="3" instance=ExtResource("4_nxen1")]
+[node name="StepCut2" parent="." index="4" instance=ExtResource("4_nxen1")]
 layout_mode = 1
 
-[node name="StepCut" parent="." index="4" instance=ExtResource("5_qmntb")]
+[node name="StepCut" parent="." index="5" instance=ExtResource("5_qmntb")]
 layout_mode = 1
 
-[node name="PourFlour" parent="." index="5" instance=ExtResource("6_y6r7u")]
+[node name="PourFlour" parent="." index="6" instance=ExtResource("6_y6r7u")]
 layout_mode = 1
 
-[node name="Kneading" parent="." index="6" instance=ExtResource("7_fjpuf")]
+[node name="Kneading" parent="." index="7" instance=ExtResource("7_fjpuf")]
 layout_mode = 1
 
-[node name="RollUp" parent="." index="7" instance=ExtResource("8_xa1bs")]
+[node name="RollUp" parent="." index="8" instance=ExtResource("8_xa1bs")]
 layout_mode = 1
