@@ -14,7 +14,8 @@ func _ready() -> void:
 	await Dialogic.timeline_ended
 	
 	PlayerData.data.day += 1
-	SceneTransition.change_scene_to_file("res://free_roam/world/streets/streets.tscn")
+	#SceneTransition.change_scene_to_file("res://free_roam/world/streets/streets.tscn")
+	SceneTransition.change_scene_to_packed(load("res://test_scenes/showoff_test/debug_scene.tscn"))
 
 func start_date():
 	if datescenes.has(Dialogic.VAR.date):

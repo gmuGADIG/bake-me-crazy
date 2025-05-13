@@ -20,7 +20,6 @@ var pointGain:int
 
 @onready var spriteRect: NinePatchRect = %NinePatchRect
 @onready var meter: VSlider = %VSlider
-@onready var finalScoreText = %Label
 
 var mouseOver: bool = false
 var canKnead: bool = true;
@@ -33,11 +32,6 @@ func _ready() -> void:
 	spriteRect.pivot_offset = Vector2(spriteRect.size.x/2, spriteRect.size.y/2)
 	meter.max_value = maxPoints
 	pointGain = fastPointGain
-	finalScoreText.visible = false
-	var size : float = get_canvas_transform().get_scale().y
-	# print(size)
-	
-	pass # Replace with function body.
 
 var lastStretch: float = 0
 var lastPosY: float
@@ -56,9 +50,7 @@ func _process(delta: float) -> void:
 		var dist := absf(.5 - normalized) # get distance from .5 on number line
 		var score = remap(dist, 0, .5, 3, 0) # score is a function of dist according to the gdd
 		
-		# finalScoreText.visible = true
-		# finalScoreText.text = "FINAL VALUE " + str(meter.value/(maxPoints/100))
-		
+		print(score)
 		finished.emit(score)
 		
 		

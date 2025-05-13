@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbm84fs41k1yn"
-path="res://.godot/imported/Minigame_Dough.png-8c6582533d4e8c97b07f26f6c47d8719.ctex"
+uid="uid://dcnamp0ss32qn"
+path="res://.godot/imported/callum_neutral.png-26a28c9f3dadef72eae5882b65056b17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cooking/art/Minigame_Dough.png"
-dest_files=["res://.godot/imported/Minigame_Dough.png-8c6582533d4e8c97b07f26f6c47d8719.ctex"]
+source_file="res://dialogue/salty/callum_portraits/callum_neutral.png"
+dest_files=["res://.godot/imported/callum_neutral.png-26a28c9f3dadef72eae5882b65056b17.ctex"]
 
 [params]
 

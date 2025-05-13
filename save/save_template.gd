@@ -26,7 +26,9 @@ enum DayPhase {
 
 #- Inventory / Items -#
 @export var money : int = 250
-@export var inventory: Array[ItemInstance] = [] # handled in inventory_system
+@export var inventory: Array[ItemInstance] = [
+	ItemInstance.new().setup(preload("res://items/foods/cake_chocolate.tres"), 3)
+] # handled in inventory_system
 
 #- Character Data -#
 @export var selected_character: int ## Currently selected character, from 0 to 5. Set from the character select screen.

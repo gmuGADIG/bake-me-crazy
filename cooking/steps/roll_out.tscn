@@ -1,44 +1,92 @@
-[gd_scene load_steps=7 format=3 uid="uid://1kn7jln1tm7y"]
+[gd_scene load_steps=14 format=3 uid="uid://1kn7jln1tm7y"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_ww7xc"]
 [ext_resource type="Script" path="res://cooking/steps/roll_out.gd" id="2_f3gfe"]
-[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="3_vtj68"]
-[ext_resource type="Texture2D" uid="uid://cgnv78dp1gqni" path="res://temp_art/rollingpintemp.png" id="4_r2qgg"]
+[ext_resource type="Texture2D" uid="uid://vn2dc2dgwtki" path="res://cooking/art/rollingpinsheet.png" id="4_q04tl"]
+[ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="4_sejwi"]
 [ext_resource type="Script" path="res://cooking/steps/sprite_2d.gd" id="5_wopcp"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="6_peecy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sq7h3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4gec"]
+atlas = ExtResource("4_q04tl")
+region = Rect2(0, 47, 256, 134)
 
-[node name="FoodStep" instance=ExtResource("1_ww7xc")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_grcbv"]
+atlas = ExtResource("4_q04tl")
+region = Rect2(256, 47, 256, 134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh70u"]
+atlas = ExtResource("4_q04tl")
+region = Rect2(512, 47, 256, 134)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hptj4"]
+atlas = ExtResource("4_q04tl")
+region = Rect2(768, 47, 256, 134)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ty84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4gec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grcbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh70u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hptj4")
+}],
+"loop": true,
+"name": &"roll",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ta18n"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.49004)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aalxq"]
+gradient = SubResource("Gradient_ta18n")
+width = 10
+
+[node name="RollOut" instance=ExtResource("1_ww7xc")]
 script = ExtResource("2_f3gfe")
 target_size = 3.0
 roll_speed = 1.0
 
-[node name="dough" type="Area2D" parent="." index="0"]
-position = Vector2(602, 320)
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_peecy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" index="0"]
-visible = false
-scale = Vector2(13.7902, 13.9094)
-shape = SubResource("CircleShape2D_sq7h3")
+[node name="dough" type="Node2D" parent="." index="1"]
+position = Vector2(566.306, 227)
 
-[node name="Sprite2D" type="Sprite2D" parent="dough" index="1"]
-position = Vector2(1.14441e-05, 2)
-scale = Vector2(4.89062, 1.55469)
-texture = ExtResource("3_vtj68")
+[node name="Sprite2D" type="Sprite2D" parent="dough" index="0"]
+position = Vector2(0, 12)
+scale = Vector2(1.223, 0.389)
+texture = ExtResource("4_sejwi")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="2"]
 texture_filter = 1
-position = Vector2(599, 494)
-scale = Vector2(3.45313, 3.45313)
-texture = ExtResource("4_r2qgg")
+position = Vector2(527.306, 464)
+scale = Vector2(3.72895, 3.72895)
+sprite_frames = SubResource("SpriteFrames_2ty84")
+animation = &"roll"
 script = ExtResource("5_wopcp")
 
-[node name="SizeHint" type="ColorRect" parent="." index="2"]
-unique_name_in_owner = true
-z_index = -1
-layout_mode = 0
-offset_left = 288.0
-offset_top = 33.0
-offset_right = 917.0
-offset_bottom = 614.0
-color = Color(1, 1, 0, 0.0588235)
+[node name="Line2D" type="Line2D" parent="." index="3"]
+texture_filter = 1
+texture_repeat = 2
+points = PackedVector2Array(881, 50, 565.84, 50, 350.084, 50, 277.648, 50, 254.627, 50, 252, 50, 252, 66.8569, 252, 80.3113, 252, 95.4474, 252, 165.001, 252, 377.012, 252, 433.947, 252, 450.882, 252, 464, 255.986, 464, 263.559, 464, 284.907, 464, 307.382, 464, 365.067, 464, 703.684, 464, 852.017, 464, 865.361, 464, 881, 464, 881, 461, 881, 440.69, 881, 406.229, 881, 50)
+width = 5.0
+texture = SubResource("GradientTexture1D_aalxq")
+texture_mode = 1

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b36stbyap3x8r"]
+
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/lunch_break_npc.gd" id="1_6ryh2"]
+[ext_resource type="Resource" path="res://dialogue/sweet/lunch_break/sweet_main.dtl" id="2_qjdsb"]
+[ext_resource type="Texture2D" uid="uid://cnxwyxiv7tkxg" path="res://dialogue/sweet/full_body/Ray_Overworld.png" id="3_s7qb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l8ad"]
+size = Vector2(170, 287)
+
+[node name="SweetNPC" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_6ryh2")
+character_code_name = "sweet"
+main_timeline = ExtResource("2_qjdsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_6l8ad")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -126)
+scale = Vector2(0.427122, 0.427122)
+texture = ExtResource("3_s7qb5")

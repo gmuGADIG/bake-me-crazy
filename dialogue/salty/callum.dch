@@ -8,70 +8,79 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "Neutral",
+"default_portrait": "confused",
 "description": "",
-"display_name": "callum",
+"display_name": "Callum",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"Excited": {
+"confused": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_confused.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Flustered": {
+"disgusted": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_shocked.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Frustrated": {
+"excited": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_excited.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Happy": {
+"flustered": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_flustered.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Neutral": {
+"frustrated": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_frustrated.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Pensive": {
+"neutral": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Shocked": {
+"pensive": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/salty/callum_portraits/callum_pensive.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"shocked": {
+"export_overrides": {
+"image": "\"res://dialogue/salty/callum_portraits/callum_disgusted.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://dlcm7m0yeyb0d"]
+
+[ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_p6dwp"]
+
+[resource]
+script = ExtResource("1_p6dwp")
+description = "Citrus fruit that is orange"
+display_name = "Orange"

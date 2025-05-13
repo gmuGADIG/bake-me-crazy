@@ -1,0 +1,100 @@
+do MainMusicPlayer.transition_to_song_by_filename("sweet_theme.tres")
+You approach Callum to spend time at the Culture Festival. [n+] You spend a busy, blurry day together, and then retire to the pier.
+[background arg="res://dialogue/date_backgrounds/date_pier.png" fade="2.0" transition="Simple Fade"]
+join callum (neutral) center [animation="Fade In" length="1.5" wait="true"]
+- "Why are we here?"
+[voice path="res://dialogue/salty/callum_voicelines/Callum 1.wav" volume="6.0"]
+callum (confused): You know… this is the first time I’ll say the square was too crowded for me. I needed a breather.
+- "Are you serious?"
+	[voice path="res://dialogue/salty/callum_voicelines/Callum 2a.wav" volume="6.0"]
+	callum (excited): I know! I can’t believe it either. Plus, I wanted to talk in private.
+- "I totally understand."
+	[voice path="res://dialogue/salty/callum_voicelines/Callum 2b.wav" volume="6.0"]
+	callum (neutral): I’m glad you agree. Anyway, I’ve been meaning to tell you something.
+label 
+- "What's up?"
+[voice path="res://dialogue/salty/callum_voicelines/Callum 3.wav" volume="6.0"]
+callum (neutral): This place is starting to grow on me.
+- "...The pier?"
+[voice path="res://dialogue/salty/callum_voicelines/CAllum 4_1.wav" volume="6.0"]
+callum (excited): The whole town, actually.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 4_2.wav" volume="6.0"]
+callum (neutral): I think I'm starting to understand how things work around here.
+callum (pensive): . . .
+[voice path="res://dialogue/salty/callum_voicelines/Callum 5_1.wav" volume="6.0"]
+callum (pensive): When I had to move here, I wanted to be forgotten.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 5_2.wav" volume="6.0"]
+callum (pensive): I didn't think I deserved to be happy.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 5_3.wav" volume="6.0"]
+callum (frustrated): Every day was another miserable reminder of my failures.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 6_1.wav" volume="6.0"]
+callum (pensive): I hated the town, the people, and the rocky beach.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 6_2.wav" volume="6.0"]
+callum (pensive): It helped distract me from how I failed myself.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 6_3.wav" volume="6.0"]
+callum (pensive): I gave up on achieving anything, and threw that baggage on everyone else’s lives.
+# breaks choice tree
+[voice path="res://dialogue/salty/callum_voicelines/Callum 7.wav" volume="6.0"]
+callum (frustrated): What good did that do for me?
+- "Nothing, I guess."
+- "Is that rhetorical?"
+- "What matters is that we have something to look forward to now."
+update callum (confused)
+Callum can't help but chuckle at that.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 8_1.wav" volume="6.0"]
+callum (frustrated): At the time, I couldn’t see any positives to this small life.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 8_2.wav" volume="6.0"]
+callum (pensive): But that was yesterday.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 9.wav" volume="6.0"]
+callum (neutral): I don’t think you realize how much it means to me that I met someone like you.
+- "I do now."
+update callum (flustered)
+[wait time="1.0"]
+[voice path="res://dialogue/salty/callum_voicelines/Callum 10_1.wav" volume="6.0"]
+callum (flustered): It isn’t like me to say this, but I wanted you to know how much you mean to me.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 10_2.wav" volume="6.0"]
+callum (flustered): You’re kinda like my hero I guess.
+- "So, you're doing better?"
+[voice path="res://dialogue/salty/callum_voicelines/Callum 11_1.wav" volume="6.0"]
+callum (excited): I’m doing better than better. I feel like the weight of the world has been lifted off my shoulders.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 11_2.wav" volume="6.0"]
+callum (neutral): I’ve been getting to know everyone, little by little. Ray and I have become friends, and I understand him more.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 11_3.wav" volume="6.0"]
+callum (neutral): I don’t mind that the streets aren’t crowded by tons of people.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 11_4.wav" volume="6.0"]
+callum (excited): It makes it easier to see the people that matter to you most.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 11_5.wav" volume="6.0"]
+callum (confused): Also, it's nice not having to wait in line at Ivy’s.
+- "I’m happy that you’re building yourself back up."
+	[voice path="res://dialogue/salty/callum_voicelines/Callum 12a.wav" volume="6.0"]
+	callum (neutral): It’s all thanks to you, really. You were there for me when I needed to talk.
+- "As long as I’m working at Ivy’s, you’ll never have to wait in line."
+	[voice path="res://dialogue/salty/callum_voicelines/Callum 12b.wav" volume="6.0"]
+	callum (neutral): Then I’ll make sure to visit every day. I love your cooking. It tastes even better when you’re there to talk with.
+# breaks choice tree
+- "All I did was make your favorite dishes."
+[voice path="res://dialogue/salty/callum_voicelines/Callum 13_1.wav" volume="6.0"]
+callum (neutral): And you gave me reasons to believe in myself.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 13_2.wav" volume="6.0"]
+callum (confused): That’s worth more than any dish.
+The two of you stare at one another.
+[wait time="2.0"]
+- "I’ve been meaning to tell you something, too."
+[voice path="res://dialogue/salty/callum_voicelines/Callum 14_1.wav" volume="6.0"]
+callum (flustered): Oh my gosh! I’m so sorry, I didn’t mean to hold the spotlight.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 14_2.wav" volume="6.0"]
+callum (neutral): Ask away.
+- "You mean a lot to me as well."
+[wait time="2.0"]
+- "I love you."
+[voice path="res://dialogue/salty/callum_voicelines/Callum 15.wav" volume="6.0"]
+callum (excited): Aw, you beat me to it. I was just about to say the same thing!
+Callum wraps you in his arms.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 16.wav" volume="6.0"]
+callum (neutral): I can confidently say that I’m looking forward to the future. Especially with you by my side. I feel like anything is possible.
+- "So, what's the first step we'll take together?"
+[voice path="res://dialogue/salty/callum_voicelines/Callum 17_1.wav" volume="6.0"]
+callum (neutral): I want to enjoy this moment a bit longer.
+[voice path="res://dialogue/salty/callum_voicelines/Callum 17_2.wav" volume="6.0"]
+callum (neutral): Can we watch the sunset some more?
+The two of you spend the rest of evening together, enjoying each other's company.

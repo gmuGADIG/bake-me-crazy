@@ -20,10 +20,10 @@ func _ready() -> void:
 		
 	$ToCut.add_child(collision_shapes[0])
 
-# but ¯\_(ツ)_/¯
 func _grade_cutting_points() -> float:
 	# test accuracy
 	# TODO: there's probably a more performant way to do this
+	# but ¯\_(ツ)_/¯
 	var hit := 0.
 	for point in cut_line.points:
 		cut_checker.position = point
@@ -52,10 +52,10 @@ func _grade_cutting_points() -> float:
 
 var done := false
 func _process(delta: float) -> void:
-	if done: return
-
 	# TODO: change the cursor instead
 	$Cutting/LastCutArea.position = get_local_mouse_position();
+
+	if done: return
 
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		var pos := get_local_mouse_position()
@@ -67,10 +67,16 @@ func _process(delta: float) -> void:
 
 	# if player done cutting
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not $Cutting.points.is_empty():
+		var new_line := Line2D.new()
+		new_line.default_color = Color.BLACK
+		new_line.points = $Cutting.points
+		add_child(new_line)
+
 		grades.push_back(_grade_cutting_points())
 		print("grade = %.2f" % grades[-1])
 		$Cutting.clear_points()
 		active_child_idx += 1
+
 
 		if active_child_idx == collision_shapes.size():
 			# godot doesn't have a sum or mean function >:(

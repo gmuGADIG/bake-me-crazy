@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfks7gghwvtbw"
+path="res://.godot/imported/CAllum 4_1.wav-ce6f065a4b43f07aa62e073e66261c97.sample"
+
+[deps]
+
+source_file="res://dialogue/salty/callum_voicelines/CAllum 4_1.wav"
+dest_files=["res://.godot/imported/CAllum 4_1.wav-ce6f065a4b43f07aa62e073e66261c97.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

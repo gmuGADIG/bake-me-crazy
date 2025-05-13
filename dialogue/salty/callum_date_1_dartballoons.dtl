@@ -1,0 +1,40 @@
+The two of you walk up to the dart balloons stall.
+join callum (pensive) center
+Callum seems nervous...
+callum (neutral): Oh my gosh, I forgot about this. I was never able to play this game because I got too scared whenever the balloons popped.
+- "We can go somewhere else if you want."
+	callum (confused): What? No, I’m fine. I can do this. 
+	update callum (pensive)
+	Callum glances away, embarrassed.
+- "How old were you when you last went to a carnival?"
+	callum (disgusted): That would be two years ago. Look, loud noises startle me. But, you know, new town, new me.
+	Callum looks annoyed at you...
+	set {dateRP} -= 15
+- "I get that. Balloons are scary."
+	callum (disgusted): I am not scared of balloons! I just don'’t like the loud noises they make when they pop.
+	set {dateRP} += 10
+Callum walks up to attempt the game. [n+] He hits... [n+] nothing.
+callum (confused): Are all of these games rigged? Oh, whatever, I should be relieved none of them popped... [n+] Go ahead, your turn. I bet you can do better.
+leave callum
+- Concentrate on your form...
+	- Throw!
+		You miss!
+	# breaks choice tree
+	- Throw!
+		You miss again, but you're getting closer...
+	# breaks choice tree
+	- Throw!
+		You hit it!
+		callum: AHHH!
+		join callum (shocked) center
+		callum (shocked): Sorry! That was...louder than expected. 
+		The stall manager hands you a small reward! Nice.
+- Unleash you special move!
+	You throw all darts at once. You win zero points for flashiness, and zero for hitting balloons... [n+] You hear Callum sigh with relief.
+- Imagine the darts are forks, and the balloons are pies...
+	You lean forward and try to scoop the balloons with the darts. [n+] The stall manager asks you to leave...
+	join callum (confused) center
+	callum (confused): Were you nervous to throw, or something? Ah, whatever.
+callum (disgusted): This place was a bust. Come on, let's figure out something else to do.
+leave callum
+jump callum_date_1/next game

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://hrlusjpjobun"]
+
+[ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="1_n4cfq"]
+[ext_resource type="PackedScene" uid="uid://bkj7kns2dd0mc" path="res://cooking/lunch_rush/lunchrush.tscn" id="2_keapd"]
+[ext_resource type="Texture2D" uid="uid://dxk0o06ogr34y" path="res://dialogue/boss/full_body/boss_neutral.png" id="3_qv2vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l8ad"]
+size = Vector2(170, 287)
+
+[node name="BossNPC" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_n4cfq")
+change_to_scene = ExtResource("2_keapd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_6l8ad")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-13, -86)
+scale = Vector2(0.154226, 0.154226)
+texture = ExtResource("3_qv2vd")

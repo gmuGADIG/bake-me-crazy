@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=24 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ccyadgmvjfjo2" path="res://Bio_Portrait.png" id="6_pdhip"]
 [ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="6_sjcrr"]
 [ext_resource type="Texture2D" uid="uid://dkfpblh3iw05s" path="res://contacts_icon.png" id="12_kv8e5"]
+[ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="13_1vomg"]
 [ext_resource type="Texture2D" uid="uid://qa7616vk2odt" path="res://messaging_app.png" id="14_2dlto"]
 [ext_resource type="Texture2D" uid="uid://b5nsknbxyjgkx" path="res://inventory.png" id="15_6b8sl"]
 [ext_resource type="Texture2D" uid="uid://d3gjggefdqm6p" path="res://PhoneBackArrow.png" id="16_lpc83"]
@@ -436,6 +437,14 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 theme_override_constants/h_separation = 15
 columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/Inventory/VBoxContainer/InventoryGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("13_1vomg")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Screen" type="Panel" parent="Panel/MarginContainer"]
 unique_name_in_owner = true

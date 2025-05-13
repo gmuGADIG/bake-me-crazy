@@ -18,7 +18,9 @@ var data: ItemData:
 
 @export var quality: int
 
-func setup(item_data: ItemData, item_quality: int) -> void:
+func setup(item_data: ItemData, item_quality: int) -> ItemInstance:
 	data = item_data
 	_data_resource_path = _data_resource_path
 	quality = item_quality
+	
+	return self

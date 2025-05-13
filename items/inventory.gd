@@ -27,9 +27,12 @@ static func add_item(item_data: ItemData, quality: int) -> void:
 ## If none are present, returns null.
 static func pop_item(item_data: ItemData) -> ItemInstance:
 	var items := PlayerData.data.inventory
-	var best_index = 0
+	var best_index = -1
 	for i in range(1, items.size()):
 		if items[i].data != item_data: continue
+		if best_index == -1:
+			best_index = i
+			continue
 		if items[i].quality > items[best_index].quality:
 			best_index = i
 	
@@ -41,3 +44,15 @@ static func pop_item(item_data: ItemData) -> ItemInstance:
 static func pop_item_at(index: int) -> ItemInstance:
 	assert(index >= 0 and PlayerData.data.inventory.size() > index)
 	return PlayerData.data.inventory.pop_at(index)
+
+static func remove_specific_item(item_instance: ItemInstance) -> void:
+	PlayerData.data.inventory.remove_at(PlayerData.data.inventory.find(item_instance))
+
+## Gets the count of how many of a specific item we have in the inventory.
+static func get_item_count(item_data: ItemData) -> int:
+	var count := 0
+	var items := PlayerData.data.inventory
+	for i in range(items.size()):
+		if items[i].data == item_data:
+			count += 1
+	return count

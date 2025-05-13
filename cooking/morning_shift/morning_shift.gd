@@ -1,12 +1,46 @@
-extends Node2D
+class_name MorningShift
+extends Node
+
+static var instance: MorningShift
 
 var recipe_book = preload("res://menus/recipe_book/recipe_book.tscn")
-var food_minigame = preload("res://test_scenes/test_food_minigame/test_food_minigame.tscn") 
+var backup_minigame = load("res://test_scenes/test_food_minigame/test_food_minigame.tscn") 
+
+var variants: Array[RecipeVariant] = []
+
+var current_recipe: RecipeVariant
+
+func _init() -> void:
+	instance = self
 
 func _ready() -> void:
 	var select_recipe: RecipeBook = recipe_book.instantiate()
 	add_child(select_recipe)
-	var recipes_selected = await select_recipe.recipes_selected
-	select_recipe.queue_free()
-	var play_minigame = food_minigame.instantiate()
-	add_child(play_minigame)
+	# Godot won't let us use a typed array here. Lame!
+	var recipes_selected: Array = await select_recipe.recipes_selected
+	while not recipes_selected.is_empty():
+		current_recipe = recipes_selected.pop_front()
+		
+		# Remove current children
+		for child in get_children():
+			child.queue_free()
+			
+		var minigame = current_recipe.parent.minigame
+		if minigame == null:
+			push_error("Recipe ", current_recipe.parent.name, " doesn't have a minigame")
+			minigame = backup_minigame
+			
+		var instance = minigame.instantiate()
+		add_child(instance)
+		
+		# Wait until the food is done.
+		await instance.all_minigames_done
+		
+		# TODO: Here we probably want to show a menu showing the finished food?
+		# Then await for that menu being hidden?
+		
+	# Once we reach here, we have awaited for all the sub-menus, and are ready
+	# to move on to the next step.
+	# According to what I can find, this is the lunch break?
+	SceneTransition.change_scene_to_file("res://free_roam/world/lunch_break/lunch_break.tscn")
+	

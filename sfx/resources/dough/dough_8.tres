@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dnr1vngtgt4d3"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_pq4ie"]
+[ext_resource type="AudioStream" uid="uid://wgfd36unv04k" path="res://sfx/audio/dough/sfx_dough8_AlexDugan.wav" id="2_f5j4a"]
+
+[resource]
+script = ExtResource("1_pq4ie")
+interrupt = true
+sound_file = ExtResource("2_f5j4a")
+expiration_time = 0.0

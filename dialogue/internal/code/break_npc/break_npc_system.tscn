@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c724q2pkipdqk"]
+
+[ext_resource type="Script" path="res://dialogue/internal/code/break_npc/break_npc_system.gd" id="1_cmpbp"]
+
+[node name="BreakNPCSystem" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_cmpbp")

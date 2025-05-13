@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1v5q0dylibsk"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
+[ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
+[ext_resource type="PackedScene" uid="uid://u2v0gb5yo3pq" path="res://cooking/draggable_object/draggable_object.tscn" id="2_u3vmg"]
+[ext_resource type="PackedScene" uid="uid://3401sxy2s32d" path="res://cooking/draggable_object/holding_manager.tscn" id="3_p1eiu"]
+[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="3_x1sjv"]
+[ext_resource type="Texture2D" uid="uid://dt27721ff43r2" path="res://cooking/cooking_art/Minigame_MixingBowl.png" id="3_yphet"]
+[ext_resource type="Texture2D" uid="uid://bddmmieici4ii" path="res://cooking/cooking_art/Minigame_Scale.png" id="4_dildu"]
+[ext_resource type="Texture2D" uid="uid://bfbc61gfc86an" path="res://cooking/cooking_art/Minigame_HandCursorPoint.png" id="6_7xhu1"]
+[ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
+[ext_resource type="Shader" path="res://cooking/steps/pour_flour.gdshader" id="10_1oh4q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8n05"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
+size = Vector2(155.5, 608)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mwux"]
+shader = ExtResource("10_1oh4q")
+
+[sub_resource type="Gradient" id="Gradient_bixkh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_icf4r"]
+gradient = SubResource("Gradient_bixkh")
+width = 4
+height = 4
+fill_to = Vector2(0, 0.0723684)
+
+[node name="PourFlour" instance=ExtResource("1_0kwik")]
+script = ExtResource("1_4i01a")
+target_amount = null
+pour_speed = null
+
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_x1sjv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FlourScale" type="Label" parent="." index="1"]
+top_level = true
+layout_mode = 0
+offset_left = 432.0
+offset_top = 551.0
+offset_right = 529.0
+offset_bottom = 579.0
+text = "
+"
+label_settings = SubResource("LabelSettings_q8n05")
+horizontal_alignment = 1
+
+[node name="BowlArea" type="Area2D" parent="." index="2"]
+unique_name_in_owner = true
+position = Vector2(19, 152)
+
+[node name="BowlShape" type="CollisionShape2D" parent="BowlArea" index="0"]
+position = Vector2(470.75, 174)
+shape = SubResource("RectangleShape2D_2cau4")
+
+[node name="BowlSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="0"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0.25, 121)
+scale = Vector2(0.187292, 0.187292)
+texture = ExtResource("3_yphet")
+
+[node name="ScaleSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="1"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(4.25, 212)
+scale = Vector2(0.34082, 0.34082)
+texture = ExtResource("4_dildu")
+
+[node name="HoldingManager" parent="." index="3" instance=ExtResource("3_p1eiu")]
+position = Vector2(19, 152)
+
+[node name="FlourPourer" parent="." index="4" instance=ExtResource("2_u3vmg")]
+unique_name_in_owner = true
+position = Vector2(232, 358)
+collision_layer = 9
+script = null
+
+[node name="PointerSprite" type="Sprite2D" parent="FlourPourer" index="1"]
+unique_name_in_owner = true
+position = Vector2(23, 38)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("6_7xhu1")
+
+[node name="GrabSprite" type="Sprite2D" parent="FlourPourer" index="2"]
+unique_name_in_owner = true
+position = Vector2(23, 38)
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("9_ns6fm")
+
+[node name="Powder" type="CPUParticles2D" parent="FlourPourer" index="3"]
+unique_name_in_owner = true
+show_behind_parent = true
+clip_children = 2
+z_index = -1
+material = SubResource("ShaderMaterial_4mwux")
+position = Vector2(23, 41)
+scale = Vector2(0.095, 0.095)
+amount = 24
+randomness = 0.1
+texture = SubResource("GradientTexture2D_icf4r")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+
+[node name="TextureRect" type="TextureRect" parent="." index="5"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
