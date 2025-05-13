@@ -9,7 +9,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_q1w3t")
-origin = Vector2(576, 324)
 
 [node name="Dough" type="Sprite2D" parent="."]
 texture_filter = 1
