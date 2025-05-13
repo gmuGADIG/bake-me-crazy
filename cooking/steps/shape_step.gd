@@ -15,10 +15,17 @@ enum {BEFORE, START_FRAME, MIDDLE, END_FRAME, AFTER} # what stage the actual sha
 @export var max_radius : float = 300.0
 
 @export_group("Scoring")
-@export var red_yellow_threshold = 20
-@export var yellow_green_threshold = 40
-@export var green_yellow_threshold = 60
-@export var yellow_red_threshold = 80
+@export var red_yellow_threshold : float = 20
+@export var yellow_green_threshold : float = 40
+@export var green_yellow_threshold : float = 60
+@export var yellow_red_threshold : float = 80
+
+@onready var progress_bar : Sprite2D = $"GoodnessBar"
+@onready var progress_pointer : Sprite2D = $"GoodnessPointer"
+
+var progress_top_px : int = 75
+var progress_bottom_px : int = 575
+var progress_height = 50
 
 var progress := PENDING
 var previous_progress := PENDING
@@ -30,9 +37,10 @@ var previous_net_rotation := 0.0
 var initial_direction := 0 # to account for people starting CCW vs CW
 
 func _ready() -> void:
-	# Ensure radius values are valid
 	min_radius = max(min_radius, 0.0)
 	max_radius = max(max_radius, min_radius + 1.0)
+	
+	progress_pointer.position.y = progress_bottom_px
 
 func pre_animation():
 	pass
@@ -87,7 +95,7 @@ func _process(delta: float) -> void:
 			progress = FINISHED
 		
 		var current_score = get_current_score()
-		# TODO: make progress bar
+		progress_pointer.position.y = progress_bottom_px - ((current_score / 10) * progress_height)
 
 	elif stage == END_FRAME:
 		var score = assess_score()
