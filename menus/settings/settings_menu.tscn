@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgcj6pme3xasq"]
+[gd_scene load_steps=6 format=3 uid="uid://bgcj6pme3xasq"]
 
+[ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="1_6o8dw"]
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_k7ytp"]
 [ext_resource type="AudioStream" uid="uid://oq0kffb81ncn" path="res://menus/settings/infiltration.mp3" id="2_r624d"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="3_ad6og"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjyrs"]
+font_size = 36
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -13,7 +16,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6o8dw")
 script = ExtResource("1_k7ytp")
+metadata/_edit_lock_ = true
 
 [node name="Panel" type="ColorRect" parent="."]
 layout_mode = 1
@@ -22,18 +27,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.33383, 0.239804, 0.468423, 1)
+color = Color(0.32, 0.24256, 0.2144, 1)
+metadata/_edit_lock_ = true
 
 [node name="SettingsTitle" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -31.0
-offset_top = 45.0
-offset_right = 31.0
-offset_bottom = 68.0
+offset_left = -108.0
+offset_top = 136.0
+offset_right = 108.0
+offset_bottom = 189.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 1
 text = "Settings"
 label_settings = SubResource("LabelSettings_vjyrs")
 horizontal_alignment = 1
@@ -46,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -225.0
-offset_top = -88.0
+offset_top = -108.0
 offset_right = 225.0
-offset_bottom = 88.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(225, 0)
@@ -123,13 +130,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -82.0
-offset_top = -127.0
+offset_top = -195.0
 offset_right = 82.0
-offset_bottom = -96.0
+offset_bottom = -147.0
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(82, 0)
+pivot_offset = Vector2(82, 21)
 text = "Back"
+script = ExtResource("3_ad6og")
 
 [node name="Infiltration" type="AudioStreamPlayer" parent="."]
 process_mode = 3
