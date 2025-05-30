@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cbtuev8kmswbi"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
-[ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="2_bndm2"]
+[ext_resource type="PackedScene" path="res://cooking/steps/shape_step.tscn" id="2_bndm2"]
 [ext_resource type="PackedScene" uid="uid://bqiuapp2ar2pr" path="res://cooking/steps/step_vert_cut.tscn" id="4_nxen1"]
 [ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="5_qmntb"]
 [ext_resource type="PackedScene" uid="uid://d1v5q0dylibsk" path="res://cooking/steps/pour_flour.tscn" id="6_y6r7u"]
