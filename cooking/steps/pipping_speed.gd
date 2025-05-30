@@ -21,12 +21,12 @@ var rightPoints: float
 var fastPoints: float
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if mouse_over and Input.is_action_just_pressed("interact"):
+	if mouse_over and Input.is_action_just_pressed("minigame_interact"):
 		pipping = true
 		slowPoints = 0
 		rightPoints = 0
 		fastPoints = 0
-	if Input.is_action_just_released("interact"):
+	if Input.is_action_just_released("minigame_interact"):
 		pipping = false
 		
 	if pipping and !game_done:

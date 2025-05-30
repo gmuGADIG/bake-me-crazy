@@ -18,7 +18,7 @@ var done := false
 func _process(delta: float) -> void:
 	if done: return 
 	mouse_vert_velocity = abs(Input.get_last_mouse_velocity().y)
-	if Input.is_action_pressed("interact") and mouse_vert_velocity > 0:
+	if Input.is_action_pressed("minigame_interact") and mouse_vert_velocity > 0:
 		rolling = true
 	else:
 		if rolling == true:

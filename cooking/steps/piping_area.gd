@@ -17,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if mouse_over and Input.is_action_just_pressed("interact"):
+	if mouse_over and Input.is_action_just_pressed("minigame_interact"):
 		pipping = true
 		sprite_node.scale = Vector2(0.1, 0.1)
 		sprite_node.texture = pipping_sprite
@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if pipping == true:
 		sprite_node.scale += Vector2(pipping_speed, pipping_speed) * delta
 		slider.value = sprite_node.scale.x * 100
-	if mouse_over and Input.is_action_just_released("interact"):
+	if mouse_over and Input.is_action_just_released("minigame_interact"):
 		pipping = false
 		print(sprite_node.scale)
 		pipping_done.emit()

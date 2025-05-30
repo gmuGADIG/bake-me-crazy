@@ -69,12 +69,12 @@ func _process(delta: float) -> void:
 #Bowl Code
 #This code should detect when the bowl is clicked, and scoops a new scoop of cookie dough
 func _input(event: InputEvent) -> void:
-	if event.is_action("interact") && mouseAtBowl == true && isScooped == false:
+	if event.is_action("minigame_interact") && mouseAtBowl == true && isScooped == false:
 		isScooped = true
 		spoon_cookie.show()
 		spoon_cookie.rotation = randf() * TAU
 		spoon_cookie.scale = Vector2.ONE * randf_range(.1, .125)
-	elif event.is_action("interact") && mouseAtBowl == false && isScooped == true:
+	elif event.is_action("minigame_interact") && mouseAtBowl == false && isScooped == true:
 		#Re-enable the ability to scoop & increment number of scoops done
 		isScooped = false
 		numScoop += 1
