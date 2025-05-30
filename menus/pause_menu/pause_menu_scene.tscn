@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb6x37ixw6uxr"]
+[gd_scene load_steps=4 format=3 uid="uid://bb6x37ixw6uxr"]
 
 [ext_resource type="Script" path="res://menus/pause_menu/pause_script.gd" id="1_kvh1s"]
+[ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="2_2rdll"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj4ya"]
+bg_color = Color(0.26, 0.19565, 0.1742, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="PauseMenuScene" type="CanvasLayer"]
 process_mode = 3
@@ -13,51 +21,70 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.286275)
+color = Color(0, 0, 0, 0.368627)
 
-[node name="PauseMenuTitle" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -47.5
-offset_top = 33.0
-offset_right = 47.5
-offset_bottom = 56.0
-grow_horizontal = 2
-text = "Pause Menu"
-
-[node name="PauseContainer" type="VBoxContainer" parent="."]
-unique_name_in_owner = true
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -86.5
-offset_top = -85.5
-offset_right = 86.5
-offset_bottom = 85.5
+offset_left = -176.0
+offset_top = -193.0
+offset_right = 176.0
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pj4ya")
 
-[node name="OpenSaves" type="Button" parent="PauseContainer"]
+[node name="PauseMenuTitle" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 43.0
+offset_right = 112.5
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Pause Menu"
+
+[node name="PauseContainer" type="VBoxContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -62.5
+offset_right = 138.0
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2rdll")
+theme_override_constants/separation = 15
+
+[node name="OpenSaves" type="Button" parent="Panel/PauseContainer"]
 layout_mode = 2
 text = "Save / Load"
 
-[node name="CloseMenu" type="Button" parent="PauseContainer"]
+[node name="CloseMenu" type="Button" parent="Panel/PauseContainer"]
 layout_mode = 2
 text = "Return To Game"
 
-[node name="ReturnMainMenu" type="Button" parent="PauseContainer"]
+[node name="ReturnMainMenu" type="Button" parent="Panel/PauseContainer"]
 layout_mode = 2
 text = "Return to Main Menu"
 
-[node name="Options" type="Button" parent="PauseContainer"]
+[node name="Options" type="Button" parent="Panel/PauseContainer"]
 layout_mode = 2
 text = "Options"
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="PauseContainer/OpenSaves" to="." method="_on_open_saves_pressed"]
-[connection signal="pressed" from="PauseContainer/CloseMenu" to="." method="_on_close_menu_pressed"]
-[connection signal="pressed" from="PauseContainer/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
-[connection signal="pressed" from="PauseContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/PauseContainer/OpenSaves" to="." method="_on_open_saves_pressed"]
+[connection signal="pressed" from="Panel/PauseContainer/CloseMenu" to="." method="_on_close_menu_pressed"]
+[connection signal="pressed" from="Panel/PauseContainer/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
+[connection signal="pressed" from="Panel/PauseContainer/Options" to="." method="_on_options_pressed"]
