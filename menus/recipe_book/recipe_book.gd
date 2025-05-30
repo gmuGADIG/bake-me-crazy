@@ -35,10 +35,22 @@ func _ready() -> void:
 func update_displayed_recipes() -> void:
 	var left_idx = current_page*2
 	var right_idx = left_idx + 1
-	page_left.display_recipe(recipes[left_idx], left_idx in selected_recipes)
-	page_right.display_recipe(recipes[right_idx], right_idx in selected_recipes)
+	if left_idx < recipes.size():
+		page_left.display_recipe(recipes[left_idx], left_idx in selected_recipes)
+		bake_left.visible = true
+	else:
+		page_left.display_empty_page()
+		bake_left.visible = false
 	
-	var max_page = (recipes.size() / 2) - 1
+	if right_idx < recipes.size():
+		page_right.display_recipe(recipes[right_idx], right_idx in selected_recipes)
+		bake_right.visible = true
+	else:
+		page_right.display_empty_page()
+		bake_right.visible = false
+	
+	#var max_page = (recipes.size() - 1) / 2
+	var max_page = 12
 	turn_page_left.disabled  = current_page <= 0
 	turn_page_right.disabled = current_page >= max_page
 	
