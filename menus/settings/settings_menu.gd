@@ -1,7 +1,7 @@
 extends Control
-@onready var master_slider:= $VBoxContainer/MasterVolSlider
-@onready var music_slider := $VBoxContainer/MusicVolSlider
-@onready var sfx_slider := $VBoxContainer/SFXVolSlider
+@onready var master_slider:= %MasterVolSlider
+@onready var music_slider := %MusicVolSlider
+@onready var sfx_slider := %SFXVolSlider
 
 var master_bus := AudioServer.get_bus_index("Master")
 var music_bus := AudioServer.get_bus_index("Music")
