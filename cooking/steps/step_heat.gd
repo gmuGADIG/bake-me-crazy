@@ -41,7 +41,7 @@ func start():
 func _process(delta: float) -> void:
 	heat -= delta * 0.25
 	
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_pressed("minigame_interact"):
 		heat += delta * 2.0
 		
 	heat = clamp(heat, -1.0, 1.0)
