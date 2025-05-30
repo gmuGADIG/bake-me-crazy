@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb6x37ixw6uxr"]
+[gd_scene load_steps=5 format=3 uid="uid://bb6x37ixw6uxr"]
 
 [ext_resource type="Script" path="res://menus/pause_menu/pause_script.gd" id="1_kvh1s"]
 [ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="2_2rdll"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="3_uahsc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj4ya"]
 bg_color = Color(0.26, 0.19565, 0.1742, 1)
@@ -35,6 +36,7 @@ offset_right = 176.0
 offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_2rdll")
 theme_override_styles/panel = SubResource("StyleBoxFlat_pj4ya")
 
 [node name="PauseMenuTitle" type="Label" parent="Panel"]
@@ -50,41 +52,48 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 36
 text = "Pause Menu"
 
-[node name="PauseContainer" type="VBoxContainer" parent="Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -62.5
-offset_right = 138.0
-offset_bottom = 146.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_2rdll")
-theme_override_constants/separation = 15
-
-[node name="OpenSaves" type="Button" parent="Panel/PauseContainer"]
+[node name="OpenSaves" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 38.0
+offset_top = 127.0
+offset_right = 314.0
+offset_bottom = 168.0
+pivot_offset = Vector2(138, 20)
 text = "Save / Load"
+script = ExtResource("3_uahsc")
 
-[node name="CloseMenu" type="Button" parent="Panel/PauseContainer"]
+[node name="CloseMenu" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 38.0
+offset_top = 183.0
+offset_right = 314.0
+offset_bottom = 224.0
+pivot_offset = Vector2(143, 21)
 text = "Return To Game"
+script = ExtResource("3_uahsc")
 
-[node name="ReturnMainMenu" type="Button" parent="Panel/PauseContainer"]
+[node name="ReturnMainMenu" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 38.0
+offset_top = 239.0
+offset_right = 314.0
+offset_bottom = 280.0
+pivot_offset = Vector2(143, 22)
 text = "Return to Main Menu"
+script = ExtResource("3_uahsc")
 
-[node name="Options" type="Button" parent="Panel/PauseContainer"]
+[node name="Options" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 38.0
+offset_top = 295.0
+offset_right = 314.0
+offset_bottom = 336.0
+pivot_offset = Vector2(142, 22)
 text = "Options"
+script = ExtResource("3_uahsc")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="Panel/PauseContainer/OpenSaves" to="." method="_on_open_saves_pressed"]
-[connection signal="pressed" from="Panel/PauseContainer/CloseMenu" to="." method="_on_close_menu_pressed"]
-[connection signal="pressed" from="Panel/PauseContainer/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
-[connection signal="pressed" from="Panel/PauseContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/OpenSaves" to="." method="_on_open_saves_pressed"]
+[connection signal="pressed" from="Panel/CloseMenu" to="." method="_on_close_menu_pressed"]
+[connection signal="pressed" from="Panel/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
+[connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]

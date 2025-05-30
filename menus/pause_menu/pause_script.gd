@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var pause_container: VBoxContainer = %PauseContainer
+#@onready var pause_container: VBoxContainer = %PauseContainer
 
 var submenu: Control = null # the currently open sub-menu, e.g. the saves or options menu
 
@@ -19,11 +19,12 @@ func open_submenu(submenu_scene: PackedScene) -> void:
 	submenu = submenu_scene.instantiate()
 	add_child(submenu)
 	
-	pause_container.visible = false
+	#pause_container.visible = false
 	submenu.tree_exiting.connect(_on_submenu_close)
 
 func _on_submenu_close() -> void:
-	pause_container.visible = true
+	pass
+	#pause_container.visible = true
 
 func _on_tree_exiting() -> void:
 	get_tree().paused = false
