@@ -71,7 +71,7 @@ variables={
 "hearts": {
 "salty": 0,
 "savory": 0,
-"sour": 0,
+"spicy": 0,
 "sweet": 0
 },
 "read_only": {
@@ -83,7 +83,7 @@ variables={
 "rp": {
 "salty": 0,
 "savory": 0,
-"sour": 0,
+"spicy": 0,
 "sweet": 0
 }
 }

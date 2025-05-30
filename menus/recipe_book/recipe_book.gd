@@ -5,7 +5,7 @@ class_name RecipeBook extends Node
 ## The 'Bake' buttons and certain text is only visible when this is true.
 @export var allow_baking := true
 
-@export var recipes : Array[Recipe]
+var recipes : Array[FoodGroup]
 
 @onready var page_left: RecipeBookPage = %PageLeft
 @onready var page_right: RecipeBookPage = %PageRight
@@ -19,9 +19,12 @@ class_name RecipeBook extends Node
 var current_page = 0
 var selected_recipes: Array[int] = [] ## List of indices that have been selected to bake
 
-signal recipes_selected(variants: Array[RecipeVariant])
+signal recipes_selected(variants: Array[FoodData])
 
 func _ready() -> void:
+	for recipe_path in PlayerData.data.unlocked_recipe_paths:
+		recipes.append(load(recipe_path))
+	
 	update_displayed_recipes()
 	
 	if not allow_baking:
@@ -74,8 +77,8 @@ func _toggle_recipe_selection(recipe_idx: int) -> void:
 
 func _on_finish_button_pressed() -> void:
 	# Load the variant selection at this time.
-	var first : Recipe = recipes[selected_recipes[0]]
-	var second: Recipe = recipes[selected_recipes[1]]
+	var first : FoodGroup = recipes[selected_recipes[0]]
+	var second: FoodGroup = recipes[selected_recipes[1]]
 	%RecipeVariantSelection.show_variants(first, second)
 	
 	# TODO: Move this to the new variant selection menu?

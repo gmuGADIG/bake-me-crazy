@@ -6,9 +6,9 @@ static var instance: MorningShift
 var recipe_book = preload("res://menus/recipe_book/recipe_book.tscn")
 var backup_minigame = load("res://test_scenes/test_food_minigame/test_food_minigame.tscn") 
 
-var variants: Array[RecipeVariant] = []
+var variants: Array[FoodData] = []
 
-var current_recipe: RecipeVariant
+var current_recipe: FoodData
 
 func _init() -> void:
 	instance = self
@@ -25,9 +25,9 @@ func _ready() -> void:
 		for child in get_children():
 			child.queue_free()
 			
-		var minigame = current_recipe.parent.minigame
+		var minigame = current_recipe.cooking_minigame
 		if minigame == null:
-			push_error("Recipe ", current_recipe.parent.name, " doesn't have a minigame")
+			push_error("Food ", current_recipe.display_name, " doesn't have a minigame")
 			minigame = backup_minigame
 			
 		var instance = minigame.instantiate()

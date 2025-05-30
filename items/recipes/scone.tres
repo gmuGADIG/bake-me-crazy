@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://qf8uh2b21bsx"]
+
+[ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_t8yms"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_qyyms"]
+
+[resource]
+script = ExtResource("1_t8yms")
+display_name = "Scone"
+instructions = "<todo>"
+variants = Array[ExtResource("2_qyyms")]([])
