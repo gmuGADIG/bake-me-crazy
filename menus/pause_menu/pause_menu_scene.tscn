@@ -24,7 +24,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.368627)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="CenterPanelParent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2rdll")
+
+[node name="CenterPanel" type="Panel" parent="CenterPanelParent"]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -36,10 +53,11 @@ offset_right = 176.0
 offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(174, 195)
 theme = ExtResource("2_2rdll")
 theme_override_styles/panel = SubResource("StyleBoxFlat_pj4ya")
 
-[node name="PauseMenuTitle" type="Label" parent="Panel"]
+[node name="PauseMenuTitle" type="Label" parent="CenterPanelParent/CenterPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -52,48 +70,52 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 36
 text = "Pause Menu"
 
-[node name="OpenSaves" type="Button" parent="Panel"]
-layout_mode = 2
-offset_left = 38.0
-offset_top = 127.0
-offset_right = 314.0
-offset_bottom = 168.0
+[node name="OpenSaves" type="Button" parent="CenterPanelParent"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -118.0
+offset_top = -46.0
+offset_right = 158.0
+offset_bottom = -5.0
 pivot_offset = Vector2(138, 20)
 text = "Save / Load"
 script = ExtResource("3_uahsc")
 
-[node name="CloseMenu" type="Button" parent="Panel"]
-layout_mode = 2
-offset_left = 38.0
-offset_top = 183.0
-offset_right = 314.0
-offset_bottom = 224.0
+[node name="CloseMenu" type="Button" parent="CenterPanelParent"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -118.0
+offset_top = 10.0
+offset_right = 158.0
+offset_bottom = 51.0
 pivot_offset = Vector2(143, 21)
 text = "Return To Game"
 script = ExtResource("3_uahsc")
 
-[node name="ReturnMainMenu" type="Button" parent="Panel"]
-layout_mode = 2
-offset_left = 38.0
-offset_top = 239.0
-offset_right = 314.0
-offset_bottom = 280.0
+[node name="ReturnMainMenu" type="Button" parent="CenterPanelParent"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -118.0
+offset_top = 66.0
+offset_right = 158.0
+offset_bottom = 107.0
 pivot_offset = Vector2(143, 22)
 text = "Return to Main Menu"
 script = ExtResource("3_uahsc")
 
-[node name="Options" type="Button" parent="Panel"]
-layout_mode = 2
-offset_left = 38.0
-offset_top = 295.0
-offset_right = 314.0
-offset_bottom = 336.0
+[node name="Options" type="Button" parent="CenterPanelParent"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -118.0
+offset_top = 122.0
+offset_right = 158.0
+offset_bottom = 163.0
 pivot_offset = Vector2(142, 22)
 text = "Options"
 script = ExtResource("3_uahsc")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="Panel/OpenSaves" to="." method="_on_open_saves_pressed"]
-[connection signal="pressed" from="Panel/CloseMenu" to="." method="_on_close_menu_pressed"]
-[connection signal="pressed" from="Panel/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
-[connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CenterPanelParent/OpenSaves" to="." method="_on_open_saves_pressed"]
+[connection signal="pressed" from="CenterPanelParent/CloseMenu" to="." method="_on_close_menu_pressed"]
+[connection signal="pressed" from="CenterPanelParent/ReturnMainMenu" to="." method="_on_return_main_menu_pressed"]
+[connection signal="pressed" from="CenterPanelParent/Options" to="." method="_on_options_pressed"]

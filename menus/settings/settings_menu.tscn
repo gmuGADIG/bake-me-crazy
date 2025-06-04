@@ -42,6 +42,7 @@ metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="ClipBg"]
 texture_repeat = 2
+layout_mode = 0
 offset_left = -2817.0
 offset_top = -1618.0
 offset_right = 3985.0
