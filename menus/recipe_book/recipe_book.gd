@@ -5,6 +5,9 @@ class_name RecipeBook extends Node
 ## The 'Bake' buttons and certain text is only visible when this is true.
 @export var allow_baking := true
 
+## True if the user can close the recipe book when the player presses R or esc.
+@export var user_closable := true
+
 @export var recipes : Array[Recipe]
 
 @onready var page_left: RecipeBookPage = %PageLeft
@@ -33,7 +36,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") || Input.is_action_just_pressed("open_recipes"):
-		queue_free()
+		if user_closable: queue_free()
 
 func update_displayed_recipes() -> void:
 	var left_idx = current_page*2
