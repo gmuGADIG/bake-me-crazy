@@ -5,6 +5,9 @@ class_name RecipeBook extends Node
 ## The 'Bake' buttons and certain text is only visible when this is true.
 @export var allow_baking := true
 
+## True if the user can close the recipe book when the player presses R or esc.
+@export var user_closable := true
+
 @export var recipes : Array[Recipe]
 
 @onready var page_left: RecipeBookPage = %PageLeft
@@ -22,12 +25,18 @@ var selected_recipes: Array[int] = [] ## List of indices that have been selected
 signal recipes_selected(variants: Array[RecipeVariant])
 
 func _ready() -> void:
+	get_tree().paused = true # this is reset to false in _on_tree_exiting
+	MainMusicPlayer.set_volume(0.3)
 	update_displayed_recipes()
 	
 	if not allow_baking:
 		bake_left.visible = false
 		bake_right.visible = false
 		baking_text.visible = false
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause") || Input.is_action_just_pressed("open_recipes"):
+		if user_closable: queue_free()
 
 func update_displayed_recipes() -> void:
 	var left_idx = current_page*2
@@ -80,3 +89,6 @@ func _on_finish_button_pressed() -> void:
 	
 	# TODO: Move this to the new variant selection menu?
 	#
+func _on_tree_exiting() -> void:
+	get_tree().paused = false
+	MainMusicPlayer.set_volume(1.0)
