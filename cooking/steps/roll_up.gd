@@ -33,9 +33,9 @@ func _input(event: InputEvent) -> void:
 		process_mouse_motion(event)
 
 func process_mouse_button(event: InputEventMouseButton):
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("minigame_interact"):
 		is_holding = true
-	elif event.is_action_released("interact"):
+	elif event.is_action_released("minigame_interact"):
 		is_holding = false
 
 func process_mouse_motion(event: InputEventMouseMotion):
