@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddaktmmuf27ak"]
+
+[ext_resource type="PackedScene" uid="uid://c001by107vn8g" path="res://menus/recipe_book/recipe_book.tscn" id="1_gpdym"]
+
+[node name="RecipeBook" instance=ExtResource("1_gpdym")]
+
+[node name="FinishButton" parent="BakingText" index="1"]
+visible = false
+
+[node name="BakeLeft" parent="." index="5"]
+visible = false
+
+[node name="BakeRight" parent="." index="8"]
+visible = false

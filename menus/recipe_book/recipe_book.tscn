@@ -53,6 +53,7 @@ region_rect = Rect2(26, 61, 252, 167)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upkg4"]
 
 [node name="RecipeBook" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_3psjk")
 
 [node name="BookBack" type="Sprite2D" parent="."]
@@ -151,6 +152,7 @@ script = ExtResource("10_7f2te")
 
 [node name="BakeLeft" type="Button" parent="."]
 unique_name_in_owner = true
+z_index = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -226,6 +228,7 @@ script = ExtResource("10_7f2te")
 [node name="RecipeVariantSelection" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -308,6 +311,7 @@ offset_bottom = 573.0
 [node name="VariantButton2" parent="RecipeVariantSelection/VariantsRight" instance=ExtResource("28_8q60k")]
 layout_mode = 2
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="BakingText/FinishButton" to="." method="_on_finish_button_pressed"]
 [connection signal="pressed" from="BakeLeft" to="." method="_on_bake_left_pressed"]
 [connection signal="pressed" from="TurnPageRight" to="." method="_on_turn_page_right_pressed"]

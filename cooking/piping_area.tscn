@@ -9,6 +9,7 @@
 radius = 91.0055
 
 [node name="pipping_area" type="Node2D" node_paths=PackedStringArray("sprite_node")]
+position = Vector2(555, 298)
 script = ExtResource("1_phsmw")
 pipping_sprite = ExtResource("2_nj7f3")
 sprite_node = NodePath("Sprite2D")
@@ -30,6 +31,7 @@ offset_top = 99.0
 offset_right = 66.0
 offset_bottom = 121.0
 max_value = 200.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="HSlider"]
 layout_mode = 1
@@ -45,6 +47,7 @@ rotation = 1.57079
 texture = ExtResource("4_1s3mf")
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="PipingArea" to="." method="_on_piping_area_mouse_entered"]
 [connection signal="mouse_exited" from="PipingArea" to="." method="_on_piping_area_mouse_exited"]
