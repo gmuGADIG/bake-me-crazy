@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://vjagi5yawk50"]
+[gd_scene load_steps=10 format=3 uid="uid://vjagi5yawk50"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
 [ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
 [ext_resource type="PackedScene" uid="uid://d0hkux4r4af46" path="res://free_roam/interactables/NPCs/scenes/salty_npc.tscn" id="3_m7bti"]
 [ext_resource type="PackedScene" uid="uid://hrlusjpjobun" path="res://free_roam/interactables/NPCs/scenes/boss_npc.tscn" id="4_ibe2d"]
 [ext_resource type="PackedScene" uid="uid://cnxead63d1lt2" path="res://free_roam/interactables/NPCs/scenes/spicy_npc.tscn" id="5_n35qi"]
-[ext_resource type="Script" path="res://free_roam/interactables/NPCs/lunch_break_npc.gd" id="5_ppo8y"]
 [ext_resource type="PackedScene" uid="uid://cp8oihby02jnw" path="res://free_roam/interactables/NPCs/scenes/savory_npc.tscn" id="6_nm6yq"]
 [ext_resource type="PackedScene" uid="uid://b36stbyap3x8r" path="res://free_roam/interactables/NPCs/scenes/sweet_npc.tscn" id="7_cnq0i"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_7b54g"]
@@ -28,20 +27,17 @@ centered = false
 [node name="SaltyNPC" parent="Interactables" index="0" instance=ExtResource("3_m7bti")]
 position = Vector2(759, 578)
 
-[node name="BossNPC" parent="Interactables" index="1" instance=ExtResource("4_ibe2d")]
-position = Vector2(1255, 579)
-script = ExtResource("5_ppo8y")
-character_code_name = ""
-main_timeline = null
-
-[node name="SpicyNPC" parent="Interactables" index="2" instance=ExtResource("5_n35qi")]
+[node name="SpicyNPC" parent="Interactables" index="1" instance=ExtResource("5_n35qi")]
 position = Vector2(421, 604)
 
-[node name="SavoryNPC" parent="Interactables" index="3" instance=ExtResource("6_nm6yq")]
+[node name="SavoryNPC" parent="Interactables" index="2" instance=ExtResource("6_nm6yq")]
 position = Vector2(977, 585)
 
-[node name="SweetNPC" parent="Interactables" index="4" instance=ExtResource("7_cnq0i")]
+[node name="SweetNPC" parent="Interactables" index="3" instance=ExtResource("7_cnq0i")]
 position = Vector2(566, 595)
+
+[node name="BossNPC" parent="Interactables" index="4" instance=ExtResource("4_ibe2d")]
+position = Vector2(1319, 587)
 
 [node name="PlayerPath" parent="." index="2"]
 curve = SubResource("Curve2D_r20jp")
