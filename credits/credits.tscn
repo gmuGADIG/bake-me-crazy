@@ -1,0 +1,282 @@
+[gd_scene load_steps=9 format=3 uid="uid://vmpkwlugc1x1"]
+
+[ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="1_oh3yc"]
+[ext_resource type="Script" path="res://credits/credits.gd" id="1_s7w40"]
+[ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="2_8a6fe"]
+[ext_resource type="Script" path="res://credits/scroller.gd" id="3_h2xfm"]
+[ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_vidm0"]
+
+[sub_resource type="Animation" id="Animation_t8rc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 0.909)]
+}
+
+[sub_resource type="Animation" id="Animation_ktyn4"]
+resource_name = "animate"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.03, 0.971), Vector2(0.971, 1.03)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbhx2"]
+_data = {
+"RESET": SubResource("Animation_t8rc3"),
+"animate": SubResource("Animation_ktyn4")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s7w40")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+offset_left = -2817.0
+offset_top = -1618.0
+offset_right = 3985.0
+offset_bottom = 2283.0
+texture = ExtResource("1_oh3yc")
+stretch_mode = 1
+script = ExtResource("2_8a6fe")
+unique = true
+started = false
+scroll_position = Vector2(0, -250)
+scroll_time = 6.0
+
+[node name="Control" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Scroller" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_h2xfm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Scroller"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 99.0
+offset_top = 648.0
+offset_right = -143.0
+offset_bottom = 6653.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
+	Art Director Jonah Kassoy
+	Assistant Art Director Joan Palacios
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Artist[/wave][/font_size]
+		Ally Estabillo
+		Finch Spear
+		Jesse P
+		Liam Tikoyan
+		Maya Banks 
+		Nathan Caruso
+		Nicole Tiongon (ThermiteFe8)
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Environmental Artist[/wave][/font_size]
+		Breeana Rivera 
+		Jordan Tatum
+		Michael Ozan Bailey
+		Nicole Tiongon (ThermiteFe8)
+		Ryan Cobleigh
+		Veronica Mayfield
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Food Artist[/wave][/font_size]
+		Breeana Rivera 
+		Ivory Jemmott
+		Jordan McGill
+		Kshaunish Shaik
+		Maya Banks 
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UI [/wave][/font_size]
+		Andrew Zhan
+		Benjamin Wall
+		Connor Harrison
+		Nicole Tiongon (ThermiteFe8)
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Design[/wave][/font_size]
+	Design Director Brenden Choi
+	Assistant Design Director Andrew McGaffic
+	Assistant Design Director Ethan Hayes
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Cooking [/wave][/font_size]
+		Alex Xayavong
+		Andrew Zhan
+		Ivory Jemmott
+		Jordan McGill
+		Justin Adjodha 
+		Kshaunish Shaik
+		Maya Banks 
+		Michael Ozan Bailey
+		Zachary Kim
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Dates System [/wave][/font_size]
+		Kshaunish Shaik
+		Michael Ozan Bailey
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Narrative Designer & Scriptwriter [/wave][/font_size]
+		EY
+		Jordan D'Andre Myers
+		Jordan McGill
+		Lukas Brockman
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]QA Tester[/wave][/font_size]
+		Alex Xayavong
+		Andrew Zhan
+		Connor Harrison
+		Kshaunish Shaik
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Relationship System [/wave][/font_size]
+		Connor Harrison
+		Kshaunish Shaik
+		Michael Ozan Bailey
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UX Design [/wave][/font_size]
+		Alex Xayavong
+		Jordan McGill
+		Kshaunish Shaik
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Programming[/wave][/font_size]
+	Programming Co-director Michael Campbell
+	Programming Co-director Justin Langdon
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Cooking [/wave][/font_size]
+		Benjamin Wall
+		Carlin (CJ) Jasper
+		Cian Barrett
+		Emily Hansen
+		Kaiden Zamora-Soon
+		Oscar Angleberger
+		Rayan Qadri
+		Shakeeb Uddin
+		Toby Schultz
+		Tushar Rangaswamy
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Free roam [/wave][/font_size]
+		Cian Barrett
+		Emily Hansen
+		Oscar Angleberger
+		Rayan Qadri
+		Toby Schultz
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UI [/wave][/font_size]
+		Benjamin Wall
+		Carlin (CJ) Jasper
+		Khalid Moosa
+		Mira MacLennan
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Sound[/wave][/font_size]
+	Sound Director Miles Tison
+	Assistant Sound Director Daniel Irchai
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Music [/wave][/font_size]
+		Alexander Edralin
+		Becs Neuman
+		Christopher Taylor
+		Connor Hayes
+		Nathan Caruso
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]SFX [/wave][/font_size]
+		Alex Dugan
+		Connor Hayes
+		Jan Deichmann
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Voice Acting [/wave][/font_size]
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Admin[/wave][/font_size]
+	Co-president Matthew Neri
+	Co-president & Social Media Manager Khalid Moosa
+	Vice President Maia Ocampo
+	Production Manager Alex James
+	Secretary John McGuire
+	Treasurer Zachary Kim
+	Web Master Evan Kusko
+
+
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Title" type="TextureRect" parent="Scroller"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -180.0
+offset_right = 361.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 0.909)
+pivot_offset = Vector2(296.5, 148)
+texture = ExtResource("4_vidm0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DropShadow" type="TextureRect" parent="Scroller/Title"]
+modulate = Color(0, 0, 0, 0.45098)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.045
+offset_top = -158.513
+offset_right = 377.955
+offset_bottom = 201.487
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vidm0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scroller/Title"]
+libraries = {
+"": SubResource("AnimationLibrary_qbhx2")
+}
+autoplay = "animate"
