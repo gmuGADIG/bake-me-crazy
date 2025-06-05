@@ -33,13 +33,19 @@ func _ready():
 		var right_button = button_group_right.get_pressed_button()
 		if right_button == null: return
 		
+		# Replacing " " with _
+		var first = recipe1.name.replace(" ", "_")
+		var second = recipe2.name.replace(" ", "_")
+		
 		# Make sure that each variant knows what its parent is. This seems like
 		# the easiest way to keep this data in sync.
 		var left_variant = left_button.variant
 		left_variant.parent = recipe1
+		left_variant.parent.minigame = load("res://cooking/food_items_recipes/" + first +".tscn")
 		
 		var right_variant = right_button.variant
 		right_variant.parent = recipe2
+		right_variant.parent.minigame = load("res://cooking/food_items_recipes/" + second +".tscn")
 		
 		get_parent().recipes_selected.emit([left_variant, right_variant])
 	)
