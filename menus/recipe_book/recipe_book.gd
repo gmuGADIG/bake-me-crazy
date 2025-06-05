@@ -8,8 +8,6 @@ class_name RecipeBook extends Node
 ## True if the user can close the recipe book when the player presses R or esc.
 @export var user_closable := true
 
-@export var recipes : Array[Recipe]
-
 @onready var page_left: RecipeBookPage = %PageLeft
 @onready var page_right: RecipeBookPage = %PageRight
 @onready var bake_left: Button = %BakeLeft
@@ -19,14 +17,19 @@ class_name RecipeBook extends Node
 @onready var turn_page_left: Button = %TurnPageLeft
 @onready var turn_page_right: Button = %TurnPageRight
 
+var recipes : Array[FoodGroup]
+
 var current_page = 0
 var selected_recipes: Array[int] = [] ## List of indices that have been selected to bake
 
-signal recipes_selected(variants: Array[RecipeVariant])
+signal recipes_selected(variants: Array[FoodData])
 
 func _ready() -> void:
 	get_tree().paused = true # this is reset to false in _on_tree_exiting
 	MainMusicPlayer.set_volume(0.3)
+
+	for recipe_path in PlayerData.data.unlocked_recipe_paths:
+		recipes.append(load(recipe_path))
 	update_displayed_recipes()
 	
 	if not allow_baking:
@@ -41,10 +44,22 @@ func _process(delta: float) -> void:
 func update_displayed_recipes() -> void:
 	var left_idx = current_page*2
 	var right_idx = left_idx + 1
-	page_left.display_recipe(recipes[left_idx], left_idx in selected_recipes)
-	page_right.display_recipe(recipes[right_idx], right_idx in selected_recipes)
+	if left_idx < recipes.size():
+		page_left.display_recipe(recipes[left_idx], left_idx in selected_recipes)
+		bake_left.visible = true
+	else:
+		page_left.display_empty_page()
+		bake_left.visible = false
 	
-	var max_page = (recipes.size() / 2) - 1
+	if right_idx < recipes.size():
+		page_right.display_recipe(recipes[right_idx], right_idx in selected_recipes)
+		bake_right.visible = true
+	else:
+		page_right.display_empty_page()
+		bake_right.visible = false
+	
+	#var max_page = (recipes.size() - 1) / 2
+	var max_page = 12
 	turn_page_left.disabled  = current_page <= 0
 	turn_page_right.disabled = current_page >= max_page
 	
@@ -83,8 +98,8 @@ func _toggle_recipe_selection(recipe_idx: int) -> void:
 
 func _on_finish_button_pressed() -> void:
 	# Load the variant selection at this time.
-	var first : Recipe = recipes[selected_recipes[0]]
-	var second: Recipe = recipes[selected_recipes[1]]
+	var first : FoodGroup = recipes[selected_recipes[0]]
+	var second: FoodGroup = recipes[selected_recipes[1]]
 	%RecipeVariantSelection.show_variants(first, second)
 	
 	# TODO: Move this to the new variant selection menu?

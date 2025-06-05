@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	# get input
 	var input := Input.get_axis("move_left", "move_right")
 	# override input to zero to prevent movement while talking
-	if DialogManager.is_mid_interaction(): input = 0 
+	if DialogueManager.is_mid_interaction(): input = 0 
 
 	# move player along the line
 	progress += input * speed * delta

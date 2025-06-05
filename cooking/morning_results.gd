@@ -24,7 +24,7 @@ func num_active() -> int:
 		0)
 func show_results(score: int) -> void:
 	if MorningShift.instance != null:
-		%Food.texture = MorningShift.instance.current_recipe.texture
+		%Food.texture = MorningShift.instance.current_recipe.image
 
 	set_active(clamp(score, 0, len(stars)))
 	visible = true

@@ -23,7 +23,7 @@ PlayerData="*res://save/player_data.gd"
 Relationships="res://dialogue/relationships.gd"
 SongScanner="*res://music/song_scanner.tscn"
 MainMusicPlayer="*res://music/music_player/music_player.tscn"
-DialogManager="*res://dialogue/dialog_manager.gd"
+DialogueManager="*res://dialogue/dialogue_manager.gd"
 SFXScanner="*res://sfx/sfx_scanner.tscn"
 MainSFXPlayer="*res://sfx/sfx_player.tscn"
 SFXDispatcher="*res://sfx/sfx_dispatcher.tscn"
@@ -32,6 +32,7 @@ BreakNPCSystem="*res://dialogue/internal/code/break_npc/break_npc_system.tscn"
 [dialogic]
 
 directories/dch_directory={
+"boss": "res://dialogue/boss/boss.dch",
 "callum": "res://dialogue/salty/callum.dch",
 "datealbecharacter": "res://menus/testing/datealbecharacter.dch",
 "millie": "res://dialogue/savory/millie.dch",
@@ -41,6 +42,7 @@ directories/dch_directory={
 "testing/testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
+"boss_lunch_break": "res://dialogue/boss/boss_lunch_break.dtl",
 "callum_date_1": "res://dialogue/salty/callum_date_1.dtl",
 "callum_date_1_dartballoons": "res://dialogue/salty/callum_date_1_dartballoons.dtl",
 "callum_date_1_failstate": "res://dialogue/salty/callum_date_1_failstate.dtl",
@@ -71,7 +73,7 @@ variables={
 "hearts": {
 "salty": 0,
 "savory": 0,
-"sour": 0,
+"spicy": 0,
 "sweet": 0
 },
 "read_only": {
@@ -83,7 +85,7 @@ variables={
 "rp": {
 "salty": 0,
 "savory": 0,
-"sour": 0,
+"spicy": 0,
 "sweet": 0
 }
 }

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	elif closest_interactable == null:
 		emit_signal("indicator", false)
 
-	last_frame_mid_interaction = DialogManager.is_mid_interaction()
+	last_frame_mid_interaction = DialogueManager.is_mid_interaction()
 	
 func _get_nearest_interactable() -> Interactable:
 	var closest_interactable: Interactable = null
