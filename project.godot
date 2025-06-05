@@ -71,7 +71,7 @@ variables={
 "date": "",
 "dateRP": 0,
 "hearts": {
-"salty": 2,
+"salty": 0,
 "savory": 0,
 "spicy": 0,
 "sweet": 0
@@ -83,7 +83,7 @@ variables={
 "repeat_talk": false
 },
 "rp": {
-"salty": 80,
+"salty": 0,
 "savory": 0,
 "spicy": 0,
 "sweet": 0
