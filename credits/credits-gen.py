@@ -17,11 +17,13 @@ teams = [
 
 # sorted by team then alphabetically
 category_to_team = {
+    "Character Design (art)": "Art",
     "Character Artist": "Art",
     "Environmental Artist": "Art",
     "Food Artist": "Art",
     "UI (art)": "Art",
 
+    "Character Design (design)": "Design",
     "Cooking (design)": "Design",
     "Dates System (design)": "Design",
     "Narrative Designer & Scriptwriter (design)": "Design",
@@ -33,6 +35,7 @@ category_to_team = {
     "Free roam (programming)": "Programming",
     "UI (programming)": "Programming",
 
+    "Character Design (sound)": "Sound",
     "Music (sound)": "Sound",
     "SFX (sound)": "Sound",
     "Voice Acting (sound)": "Sound",
@@ -53,6 +56,7 @@ class Person:
     name: str
     categories: list[str]
     team: str
+    character_name: str | None
 
 people: list[Person] = []
 
@@ -64,8 +68,10 @@ with open('gdignored/credits.csv', newline='') as csvfile:
     for row in i:
         name = row[1]
         categories = re.split(regex, row[3])
+        character_name = row[5]
+        if character_name in ["", "N/A"]: character_name = None
 
-        people.append(Person(name, categories, category_to_team[categories[0]]))
+        people.append(Person(name, categories, category_to_team[categories[0]], character_name))
 people.sort(key = lambda p: p.name)
 
 @dataclass
@@ -103,8 +109,14 @@ prologue_people = {
         ],
 }
 
+epilogues = {
+    "Sound": "Thank you to GMU Voice Acting Club!"
+}
+
 TEAM_FONT_SIZE = 75
 CATEGORY_FONT_SIZE = 50
+EPILOGUE_FONT_SIZE = 35
+CHARACTER_NAME_FONT_SIZE = 32
 
 for team in teams:
     print(f"[font_size={TEAM_FONT_SIZE}][wave amp=50.0 freq=4.0 connected=0]{team}[/wave][/font_size]")
@@ -117,7 +129,14 @@ for team in teams:
         display_category = re.sub(r"\([^)]*\)", "", category)
         print(f"\t[font_size={CATEGORY_FONT_SIZE}][wave amp=35.0 freq=4.0 connected=0]{display_category}[/wave][/font_size]")
         for person in [p for p in people if category in p.categories]:
-            print(f"\t\t{person.name}")
+            if person.character_name != None:
+                print(f"\t\t[i][font_size={CHARACTER_NAME_FONT_SIZE}]{person.character_name}[/font_size][/i]:    {person.name}")
+            else:
+                print(f"\t\t{person.name}")
+
         print()
+
+    if team in epilogues:
+        print(f"\t[center][font_size={EPILOGUE_FONT_SIZE}][wave amp=35.0 freq=4.0 connected=0]{epilogues[team]}[/wave][/font_size][/center]")
     print()
 

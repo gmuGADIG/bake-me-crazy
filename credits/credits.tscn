@@ -55,6 +55,7 @@ script = ExtResource("1_s7w40")
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
 texture_repeat = 2
+layout_mode = 0
 offset_left = -2817.0
 offset_top = -1618.0
 offset_right = 3985.0
@@ -99,6 +100,12 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 	Art Director Jonah Kassoy
 	Assistant Art Director Joan Palacios
 
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
+		Finch Spear
+		Jesse P
+		Liam Tikoyan
+		Nicole Tiongon (ThermiteFe8)
+
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Artist[/wave][/font_size]
 		Ally Estabillo
 		Finch Spear
@@ -134,6 +141,9 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 	Design Director Brenden Choi
 	Assistant Design Director Andrew McGaffic
 	Assistant Design Director Ethan Hayes
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
+		Jordan McGill
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Cooking [/wave][/font_size]
 		Alex Xayavong
@@ -207,6 +217,9 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 	Sound Director Miles Tison
 	Assistant Sound Director Daniel Irchai
 
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
+		Nathan Caruso
+
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Music [/wave][/font_size]
 		Alexander Edralin
 		Becs Neuman
@@ -220,7 +233,12 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Jan Deichmann
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Voice Acting [/wave][/font_size]
+		[i][font_size=32]Callum[/font_size][/i]:    Edward (Eddie) Crawley
+		[i][font_size=32]Millie[/font_size][/i]:    Fiona Brown
+		[i][font_size=32]Pepper[/font_size][/i]:    Kelly Leach
+		[i][font_size=32]Raymond[/font_size][/i]:    Robbie Albritton
 
+	[center][font_size=35][wave amp=35.0 freq=4.0 connected=0]Thank you to GMU Voice Acting Club![/wave][/font_size][/center]
 
 [font_size=75][wave amp=50.0 freq=4.0 connected=0]Admin[/wave][/font_size]
 	Co-president Matthew Neri
