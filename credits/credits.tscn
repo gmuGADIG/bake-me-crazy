@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://vmpkwlugc1x1"]
+[gd_scene load_steps=11 format=3 uid="uid://vmpkwlugc1x1"]
 
 [ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="1_oh3yc"]
 [ext_resource type="Script" path="res://credits/credits.gd" id="1_s7w40"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="2_8a6fe"]
 [ext_resource type="Script" path="res://credits/scroller.gd" id="3_h2xfm"]
 [ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_vidm0"]
+[ext_resource type="Script" path="res://credits/thanks_label.gd" id="6_moxr0"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="7_a1pke"]
 
 [sub_resource type="Animation" id="Animation_t8rc3"]
 length = 0.001
@@ -51,6 +53,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s7w40")
+start_pause = 1.254
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -66,7 +69,7 @@ script = ExtResource("2_8a6fe")
 unique = true
 started = false
 scroll_position = Vector2(0, -250)
-scroll_time = 6.0
+scroll_time = 10.0
 
 [node name="Control" type="Control" parent="Background"]
 anchors_preset = 0
@@ -162,6 +165,7 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Narrative Designer & Scriptwriter [/wave][/font_size]
 		EY
+		Edward (Eddie) Crawley
 		Jordan D'Andre Myers
 		Jordan McGill
 		Lukas Brockman
@@ -214,8 +218,8 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 
 
 [font_size=75][wave amp=50.0 freq=4.0 connected=0]Sound[/wave][/font_size]
-	Sound Director Miles Tison
-	Assistant Sound Director Daniel Irchai
+	Sound Co-director Miles Tison
+	Sound Co-director Daniel Irchai
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
 		Nathan Caruso
@@ -298,3 +302,22 @@ libraries = {
 "": SubResource("AnimationLibrary_qbhx2")
 }
 autoplay = "animate"
+
+[node name="ThanksLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 7523.0
+offset_bottom = 7589.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][wave amp=30 connected=0 freq=5]Thank you for playing![/wave][/center]"
+fit_content = true
+script = ExtResource("6_moxr0")
+
+[node name="PlaySongForScene" parent="." instance=ExtResource("7_a1pke")]
+song_name = "pre_lunch_rush.tres"

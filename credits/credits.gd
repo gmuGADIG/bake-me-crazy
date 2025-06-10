@@ -1,3 +1,4 @@
+class_name Credits
 extends Control
 
 signal scrolling_started

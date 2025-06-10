@@ -95,8 +95,8 @@ prologue_people = {
             ProloguePerson("Justin Langdon", "Programming Co-director"),
         ],
         "Sound": [
-            ProloguePerson("Miles Tison", "Sound Director"),
-            ProloguePerson("Daniel Irchai", "Assistant Sound Director"),
+            ProloguePerson("Miles Tison", "Sound Co-director"),
+            ProloguePerson("Daniel Irchai", "Sound Co-director"),
         ],
         "Admin": [
             ProloguePerson("Matthew Neri", "Co-president"),
@@ -129,7 +129,7 @@ for team in teams:
         display_category = re.sub(r"\([^)]*\)", "", category)
         print(f"\t[font_size={CATEGORY_FONT_SIZE}][wave amp=35.0 freq=4.0 connected=0]{display_category}[/wave][/font_size]")
         for person in [p for p in people if category in p.categories]:
-            if person.character_name != None:
+            if person.character_name != None and category == "Voice Acting (sound)":
                 print(f"\t\t[i][font_size={CHARACTER_NAME_FONT_SIZE}]{person.character_name}[/font_size][/i]:    {person.name}")
             else:
                 print(f"\t\t{person.name}")
