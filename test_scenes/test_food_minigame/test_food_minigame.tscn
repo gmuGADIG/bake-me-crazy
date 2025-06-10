@@ -34,12 +34,3 @@ layout_mode = 1
 
 [node name="RollUp" parent="." index="8" instance=ExtResource("8_xa1bs")]
 layout_mode = 1
-
-[node name="SpinnyStar" parent="StepResults/Control/VBoxContainer/StarContainer/Star1" index="0"]
-rotation = 36.5714
-
-[node name="SpinnyStar" parent="StepResults/Control/VBoxContainer/StarContainer/Star2" index="0"]
-rotation = 31.9962
-
-[node name="SpinnyStar" parent="StepResults/Control/VBoxContainer/StarContainer/Star3" index="0"]
-rotation = 36.3221
