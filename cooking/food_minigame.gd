@@ -25,6 +25,7 @@ func next_step(score : float) -> void:
 	
 	##Play the step completion screen
 	if prev != null:
+		prev.process_mode = Node.PROCESS_MODE_DISABLED
 		$StepResults.display_results(score)
 		await $StepResults.finised
 	
