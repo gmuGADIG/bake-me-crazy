@@ -63,7 +63,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.239216)
 metadata/_edit_lock_ = true
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="CenterPanel" type="Panel" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,10 +77,11 @@ offset_right = 179.0
 offset_bottom = 217.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(179, 201.5)
 theme = ExtResource("1_6o8dw")
 theme_override_styles/panel = SubResource("StyleBoxFlat_dm1bm")
 
-[node name="SettingsTitle" type="Label" parent="Panel2"]
+[node name="SettingsTitle" type="Label" parent="CenterPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -94,7 +96,7 @@ text = "Settings"
 label_settings = SubResource("LabelSettings_vjyrs")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -111,13 +113,13 @@ pivot_offset = Vector2(225, 0)
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="MasterVolSlider" type="HSlider" parent="Panel2/VBoxContainer"]
+[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.2
 step = 0.01
 
-[node name="Label" type="Label" parent="Panel2/VBoxContainer/MasterVolSlider"]
+[node name="Label" type="Label" parent="VBoxContainer/MasterVolSlider"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -132,13 +134,13 @@ grow_vertical = 2
 text = "Master Volume"
 horizontal_alignment = 1
 
-[node name="MusicVolSlider" type="HSlider" parent="Panel2/VBoxContainer"]
+[node name="MusicVolSlider" type="HSlider" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.2
 step = 0.01
 
-[node name="Label" type="Label" parent="Panel2/VBoxContainer/MusicVolSlider"]
+[node name="Label" type="Label" parent="VBoxContainer/MusicVolSlider"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -153,13 +155,13 @@ grow_vertical = 2
 text = "Music"
 horizontal_alignment = 1
 
-[node name="SFXVolSlider" type="HSlider" parent="Panel2/VBoxContainer"]
+[node name="SFXVolSlider" type="HSlider" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.2
 step = 0.01
 
-[node name="Label" type="Label" parent="Panel2/VBoxContainer/SFXVolSlider"]
+[node name="Label" type="Label" parent="VBoxContainer/SFXVolSlider"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -174,7 +176,7 @@ grow_vertical = 2
 text = "SFX"
 horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="Panel2"]
+[node name="BackButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -182,9 +184,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -82.0
-offset_top = -88.0
+offset_top = -194.5
 offset_right = 82.0
-offset_bottom = -40.0
+offset_bottom = -146.5
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(82, 21)
@@ -196,7 +198,7 @@ process_mode = 3
 stream = ExtResource("2_r624d")
 bus = &"SFX"
 
-[connection signal="value_changed" from="Panel2/VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
-[connection signal="value_changed" from="Panel2/VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
-[connection signal="value_changed" from="Panel2/VBoxContainer/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
-[connection signal="pressed" from="Panel2/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

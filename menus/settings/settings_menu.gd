@@ -10,6 +10,10 @@ var sfx_bus := AudioServer.get_bus_index("SFX")
 const BOTTOM_Y = 660
 var open_close_tween: Tween = null
 
+# for animating the panel scale
+var scale_theta: float = 0.0
+@onready var center_panel := %CenterPanel
+
 func animate_open_close(open: bool):
 	if open_close_tween:
 		open_close_tween.kill()
@@ -37,7 +41,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	scale_theta += TAU * delta * 0.7
+	scale_theta = fmod(scale_theta, TAU)
+	center_panel.scale.y = 1 + 0.01 * sin(scale_theta)
+	center_panel.scale.x = 1 - 0.01 * cos(scale_theta)
 
 
 func _on_master_vol_slider_value_changed(value: float) -> void:
