@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1qo3dh7pfxpl"]
+[gd_scene load_steps=16 format=3 uid="uid://b1qo3dh7pfxpl"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_1pduj"]
 [ext_resource type="Script" path="res://cooking/steps/step_scoop.gd" id="1_gwrga"]
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_8uj2r"]
 [ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="3_rsoc1"]
+[ext_resource type="PackedScene" uid="uid://p7jlq2812llw" path="res://cooking/steps/instructions_panel.tscn" id="3_v27x2"]
 [ext_resource type="Texture2D" uid="uid://bnqstvih1ok8r" path="res://cooking/art/Snickerdoodle_Cookie_Dough.png" id="4_rolkp"]
 [ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="6_1c4gu"]
 [ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="6_65nad"]
@@ -32,7 +33,14 @@ offset_bottom = 0.0
 mouse_filter = 2
 script = ExtResource("1_gwrga")
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
+[node name="InstructionsPanel" parent="." index="0" instance=ExtResource("3_v27x2")]
+z_index = 1
+offset_top = 446.0
+offset_bottom = 446.0
+minigame_title = "SCOOP COOKIES"
+instructions = "Use the spoon to pick up the dough and plop it on to the cookie tray."
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
 z_index = -10
 layout_mode = 1
 anchors_preset = 15
@@ -42,12 +50,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_8uj2r")
 
-[node name="CookieSheet" type="Sprite2D" parent="." index="1"]
+[node name="CookieSheet" type="Sprite2D" parent="." index="2"]
 position = Vector2(377, 294)
 rotation = -0.00126775
 texture = ExtResource("8_n7naa")
 
-[node name="gameTimer" type="Label" parent="." index="2"]
+[node name="gameTimer" type="Label" parent="." index="3"]
 layout_mode = 0
 offset_left = 965.0
 offset_top = 3.0
@@ -56,7 +64,7 @@ offset_bottom = 27.0
 theme_override_font_sizes/font_size = 21
 text = "Time limit: 15.00"
 
-[node name="Bowl" type="Area2D" parent="." index="3"]
+[node name="Bowl" type="Area2D" parent="." index="4"]
 position = Vector2(999, 370)
 metadata/_edit_group_ = true
 
@@ -158,7 +166,7 @@ rotation = 1.85186
 scale = Vector2(0.131723, 0.131723)
 texture = ExtResource("4_rolkp")
 
-[node name="placePos" type="Area2D" parent="." index="4"]
+[node name="placePos" type="Area2D" parent="." index="5"]
 position = Vector2(163, 192)
 metadata/_edit_group_ = true
 
@@ -169,7 +177,7 @@ shape = SubResource("CircleShape2D_vkt58")
 material = SubResource("ShaderMaterial_j0vec")
 texture = SubResource("GradientTexture2D_unpg6")
 
-[node name="FollowCursor" type="Node2D" parent="." index="5"]
+[node name="FollowCursor" type="Node2D" parent="." index="6"]
 rotation = -0.00126775
 script = ExtResource("6_1c4gu")
 
@@ -185,7 +193,7 @@ rotation = 0.00126775
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_rolkp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="6"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="7"]
 visible = false
 layout_mode = 0
 offset_left = 91.0
