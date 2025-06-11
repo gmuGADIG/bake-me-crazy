@@ -11,17 +11,12 @@ gradient = SubResource("Gradient_avq53")
 
 [node name="InstructionsPanel" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_y88w7")
 minigame_title = "Minigame Title"
 instructions = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
 offset_left = 236.0
 offset_right = 492.0
 offset_bottom = 236.0
@@ -30,14 +25,10 @@ texture = SubResource("GradientTexture1D_kp1bc")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -514.0
-offset_top = 12.0
-offset_right = -409.0
-offset_bottom = 36.0
-grow_horizontal = 2
+offset_left = 50.0
+offset_top = 15.0
+offset_right = 176.0
+offset_bottom = 39.0
 text = "Minigame Title"
 horizontal_alignment = 1
 

@@ -1,5 +1,5 @@
 @tool
-extends Control
+extends Node
 
 @onready var title_box: Label = $Title
 @onready var text_box : Label = $Title/InstructionsText
