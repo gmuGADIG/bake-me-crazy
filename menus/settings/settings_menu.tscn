@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgcj6pme3xasq"]
+[gd_scene load_steps=8 format=3 uid="uid://bgcj6pme3xasq"]
 
 [ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="1_6o8dw"]
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_k7ytp"]
-[ext_resource type="AudioStream" uid="uid://oq0kffb81ncn" path="res://menus/settings/infiltration.mp3" id="2_r624d"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="3_ad6og"]
 [ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="3_f0ln0"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_7fknj"]
@@ -192,11 +191,6 @@ grow_vertical = 0
 pivot_offset = Vector2(82, 21)
 text = "Back"
 script = ExtResource("3_ad6og")
-
-[node name="Infiltration" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("2_r624d")
-bus = &"SFX"
 
 [connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
