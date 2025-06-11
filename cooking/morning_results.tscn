@@ -65,7 +65,7 @@ metadata/_edit_group_ = true
 [node name="SpinnyStar" type="Sprite2D" parent="StarContainer"]
 self_modulate = Color(1, 0.858, 0.29, 1)
 position = Vector2(478.5, 170)
-rotation = 2.72646
+rotation = 5.00754
 texture = ExtResource("4_h8wh0")
 region_enabled = true
 region_rect = Rect2(254, 0, 130, 128)
@@ -74,7 +74,7 @@ script = ExtResource("5_u7iby")
 [node name="SpinnyStar2" type="Sprite2D" parent="StarContainer"]
 self_modulate = Color(1, 0.858, 0.29, 1)
 position = Vector2(629.5, 160)
-rotation = 4.38448
+rotation = 4.87759
 scale = Vector2(1.2138, 1.2138)
 texture = ExtResource("4_h8wh0")
 region_enabled = true
@@ -84,7 +84,7 @@ script = ExtResource("5_u7iby")
 [node name="SpinnyStar3" type="Sprite2D" parent="StarContainer"]
 self_modulate = Color(1, 0.858, 0.29, 1)
 position = Vector2(807.5, 150)
-rotation = 4.21302
+rotation = 2.34988
 scale = Vector2(1.5568, 1.5568)
 texture = ExtResource("4_h8wh0")
 region_enabled = true

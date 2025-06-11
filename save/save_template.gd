@@ -23,6 +23,13 @@ enum DayPhase {
 @export var day_phase : DayPhase
 
 #- Recipes -#
+@export var unlocked_recipe_paths: Array[String] = [
+	"res://items/recipes/cake.tres",
+	"res://items/recipes/croissant.tres",
+	"res://items/recipes/bread.tres",
+	"res://items/recipes/brownie.tres"
+]
+@export var queued_recipe_unlocks: Array[String]
 
 #- Inventory / Items -#
 @export var money : int = 250

@@ -9,8 +9,8 @@ class_name RecipeVariantSelection
 
 @onready var confirm_button := $ConfirmButton
 
-var recipe1: Recipe = null
-var recipe2: Recipe = null
+var recipe1: FoodGroup = null
+var recipe2: FoodGroup = null
 var button_group_left : ButtonGroup = null
 var button_group_right: ButtonGroup = null
 
@@ -33,13 +33,8 @@ func _ready():
 		var right_button = button_group_right.get_pressed_button()
 		if right_button == null: return
 		
-		# Make sure that each variant knows what its parent is. This seems like
-		# the easiest way to keep this data in sync.
 		var left_variant = left_button.variant
-		left_variant.parent = recipe1
-		
 		var right_variant = right_button.variant
-		right_variant.parent = recipe2
 		
 		get_parent().recipes_selected.emit([left_variant, right_variant])
 	)
@@ -54,7 +49,7 @@ func _update_confirm_button() -> void:
 		enabled = false
 	confirm_button.disabled = not enabled
 
-func populate(container: VBoxContainer, recipe: Recipe) -> ButtonGroup:
+func populate(container: VBoxContainer, recipe: FoodGroup) -> ButtonGroup:
 	# Clear existing children	
 	for child in container.get_children():
 		child.queue_free()
@@ -77,11 +72,11 @@ func populate(container: VBoxContainer, recipe: Recipe) -> ButtonGroup:
 			
 	return button_group
 
-func show_variants(recipe1: Recipe, recipe2: Recipe):
+func show_variants(recipe1: FoodGroup, recipe2: FoodGroup):
 	button_group_left  = populate(variants_left , recipe1)
 	button_group_right = populate(variants_right, recipe2)
-	select_for_left.text  = "Select variant for " + recipe1.name
-	select_for_right.text = "Select variant for " + recipe2.name
+	select_for_left.text  = "Select variant for " + recipe1.display_name
+	select_for_right.text = "Select variant for " + recipe2.display_name
 	self.recipe1 = recipe1
 	self.recipe2 = recipe2
 	_update_confirm_button()

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://pl8q7s5xreim"]
+
+[ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_l30b8"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_hxeqm"]
+
+[resource]
+script = ExtResource("1_l30b8")
+display_name = "Puff Roll"
+instructions = "<todo>"
+variants = Array[ExtResource("2_hxeqm")]([])
