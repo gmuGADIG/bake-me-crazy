@@ -1,0 +1,289 @@
+[gd_scene load_steps=14 format=3 uid="uid://30taoyrhlj21"]
+
+[ext_resource type="Script" path="res://menus/new_recipe_pop_up/new_recipe_pop_up.gd" id="1_wkv6m"]
+[ext_resource type="Texture2D" uid="uid://b7143yny23gt" path="res://menus/new_recipe_pop_up/glow_spinner.png" id="2_b3iw4"]
+[ext_resource type="Texture2D" uid="uid://6kxx1jobd4yy" path="res://items/foods/art/Bar_Lemon.png" id="3_psxxd"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="4_hgp2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svs0o"]
+bg_color = Color(0.93, 0.80507, 0.6882, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnehn"]
+bg_color = Color(0, 0, 0, 0.14902)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weona"]
+bg_color = Color(0.66, 0.4752, 0.2904, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.662475, 0.478759, 0.294154, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eq2hd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4uuom"]
+bg_color = Color(0.968627, 0.913725, 0.862745, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.968627, 0.913725, 0.862745, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gatt"]
+bg_color = Color(0.929412, 0.803922, 0.686275, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_qbj68"]
+resource_name = "enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(0.183011, 1),
+"update": 0,
+"values": [Vector2(467, 263), Vector2(467, 193)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OkButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.366667, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0350j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(467, 193)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OkButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6kp7i"]
+_data = {
+"RESET": SubResource("Animation_0350j"),
+"enter": SubResource("Animation_qbj68")
+}
+
+[node name="NewRecipeUnlock" type="CanvasLayer"]
+script = ExtResource("1_wkv6m")
+
+[node name="Header" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -218.0
+offset_top = 38.0
+offset_right = 218.0
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[center][b][wave]New Recipe Unlocked!"
+fit_content = true
+
+[node name="Panel" type="Panel" parent="."]
+clip_children = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -130.999
+offset_right = 109.0
+offset_bottom = 131.001
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_svs0o")
+
+[node name="GlowSpinner" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -117.0
+offset_top = -96.0008
+offset_right = 329.0
+offset_bottom = 349.999
+pivot_offset = Vector2(223, 223)
+texture = ExtResource("2_b3iw4")
+expand_mode = 1
+
+[node name="FoodImage" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 15.9992
+offset_right = 206.0
+offset_bottom = 211.999
+texture = ExtResource("3_psxxd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FoodName" type="RichTextLabel" parent="Panel"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+offset_top = -56.0
+offset_right = -100.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[center][b][wave]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="AreaDarken" type="Panel" parent="Panel/FoodName"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 5.0
+offset_right = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qnehn")
+
+[node name="Outline" type="Panel" parent="Panel"]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -131.0
+offset_right = 109.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_weona")
+
+[node name="OkButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -166.0
+offset_right = 48.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(48, 18)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eq2hd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4uuom")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3gatt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3gatt")
+script = ExtResource("4_hgp2u")
+
+[node name="FoodName" type="RichTextLabel" parent="OkButton"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[center][b]OK"
+fit_content = true
+autowrap_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6kp7i")
+}
+autoplay = "enter"
+
+[connection signal="pressed" from="OkButton" to="." method="_on_ok_button_pressed"]

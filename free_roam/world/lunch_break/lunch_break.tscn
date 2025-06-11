@@ -27,17 +27,17 @@ centered = false
 [node name="SaltyNPC" parent="Interactables" index="0" instance=ExtResource("3_m7bti")]
 position = Vector2(759, 578)
 
-[node name="BossNPC" parent="Interactables" index="1" instance=ExtResource("4_ibe2d")]
-position = Vector2(1255, 579)
-
-[node name="SpicyNPC" parent="Interactables" index="2" instance=ExtResource("5_n35qi")]
+[node name="SpicyNPC" parent="Interactables" index="1" instance=ExtResource("5_n35qi")]
 position = Vector2(421, 604)
 
-[node name="SavoryNPC" parent="Interactables" index="3" instance=ExtResource("6_nm6yq")]
+[node name="SavoryNPC" parent="Interactables" index="2" instance=ExtResource("6_nm6yq")]
 position = Vector2(977, 585)
 
-[node name="SweetNPC" parent="Interactables" index="4" instance=ExtResource("7_cnq0i")]
+[node name="SweetNPC" parent="Interactables" index="3" instance=ExtResource("7_cnq0i")]
 position = Vector2(566, 595)
+
+[node name="BossNPC" parent="Interactables" index="4" instance=ExtResource("4_ibe2d")]
+position = Vector2(1319, 587)
 
 [node name="PlayerPath" parent="." index="2"]
 curve = SubResource("Curve2D_r20jp")

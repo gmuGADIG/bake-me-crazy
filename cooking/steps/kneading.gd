@@ -37,11 +37,11 @@ var lastStretch: float = 0
 var lastPosY: float
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if mouseOver and Input.is_action_just_pressed("interact"):
+	if mouseOver and Input.is_action_just_pressed("minigame_interact"):
 		lastPosY = get_global_mouse_position().y
 		kneading = true
 		lastStretch = 0
-	if Input.is_action_just_released("interact"):
+	if Input.is_action_just_released("minigame_interact"):
 		kneading = false
 		canKnead = false
 

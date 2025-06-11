@@ -14,14 +14,14 @@ var return_tween: Tween # tween used while the object is returning on release
 
 func _process(_delta: float) -> void:
 	#check to see if mouse is hovering, clicked on and not holding something else
-	if selectable and Input.is_action_just_pressed("interact") and not holding_manager.holding:
+	if selectable and Input.is_action_just_pressed("minigame_interact") and not holding_manager.holding:
 		selected = true
 		holding_manager.holding = true
 		var mouse_pos := get_viewport().get_mouse_position()
 		offset = mouse_pos - position 
 		
 		if return_tween != null: return_tween.kill()
-	if selected and Input.is_action_just_released("interact"):
+	if selected and Input.is_action_just_released("minigame_interact"):
 		holding_manager.holding = false
 		selected = false
 		

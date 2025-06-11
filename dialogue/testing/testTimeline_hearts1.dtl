@@ -9,7 +9,7 @@ Would you like to increase or decrease RP?
 		set {rp.savory} += 1
 		jump incChar
 	- Sour
-		set {rp.sour} += 1
+		set {rp.spicy} += 1
 		jump incChar
 	- Sweet
 		set {rp.sweet} += 1
@@ -26,7 +26,7 @@ Would you like to increase or decrease RP?
 		set {rp.salty} -= 1
 		jump decChar
 	- Sour
-		set {rp.sour} -= 1
+		set {rp.spicy} -= 1
 		jump decChar
 	- Sweet
 		set {rp.sweet} -= 1
