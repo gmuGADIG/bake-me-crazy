@@ -1,12 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://vmpkwlugc1x1"]
+[gd_scene load_steps=16 format=3 uid="uid://vmpkwlugc1x1"]
 
 [ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="1_oh3yc"]
 [ext_resource type="Script" path="res://credits/credits.gd" id="1_s7w40"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="2_8a6fe"]
+[ext_resource type="Shader" path="res://credits/credits.gdshader" id="2_qvt80"]
 [ext_resource type="Script" path="res://credits/scroller.gd" id="3_h2xfm"]
 [ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_vidm0"]
 [ext_resource type="Script" path="res://credits/thanks_label.gd" id="6_moxr0"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="7_a1pke"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxo0d"]
+shader = ExtResource("2_qvt80")
+shader_parameter/brightness = 1.0
+shader_parameter/blurriness = 0.0
 
 [sub_resource type="Animation" id="Animation_t8rc3"]
 length = 0.001
@@ -45,6 +51,44 @@ _data = {
 "animate": SubResource("Animation_ktyn4")
 }
 
+[sub_resource type="Animation" id="Animation_rarw4"]
+resource_name = "darken_and_blur"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.425]
+}
+
+[sub_resource type="Animation" id="Animation_g78u7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3e4st"]
+_data = {
+"RESET": SubResource("Animation_g78u7"),
+"darken_and_blur": SubResource("Animation_rarw4")
+}
+
 [node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -57,7 +101,9 @@ start_pause = 1.254
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
+texture_filter = 3
 texture_repeat = 2
+material = SubResource("ShaderMaterial_kxo0d")
 layout_mode = 0
 offset_left = -2817.0
 offset_top = -1618.0
@@ -100,7 +146,7 @@ theme_override_constants/outline_size = 20
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
-	Art Director Jonah Kassoy
+	Art Director Jonah Kossoy
 	Assistant Art Director Joan Palacios
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
@@ -195,8 +241,10 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Benjamin Wall
 		Carlin (CJ) Jasper
 		Cian Barrett
+		Clancy Mahoney
 		Emily Hansen
 		Kaiden Zamora-Soon
+		Maximilian Fowlkes
 		Oscar Angleberger
 		Rayan Qadri
 		Shakeeb Uddin
@@ -229,7 +277,10 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Becs Neuman
 		Christopher Taylor
 		Connor Hayes
+		Grace Dorl
+		Justin Lam
 		Nathan Caruso
+		Sami Rao
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]SFX [/wave][/font_size]
 		Alex Dugan
@@ -249,6 +300,7 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 	Co-president & Social Media Manager Khalid Moosa
 	Vice President Maia Ocampo
 	Production Manager Alex James
+	Assistant Production Manager Joan Palacios
 	Secretary John McGuire
 	Treasurer Zachary Kim
 	Web Master Evan Kusko
@@ -308,8 +360,8 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 7523.0
-offset_bottom = 7589.0
+offset_top = 7780.0
+offset_bottom = 7846.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
@@ -321,3 +373,9 @@ script = ExtResource("6_moxr0")
 
 [node name="PlaySongForScene" parent="." instance=ExtResource("7_a1pke")]
 song_name = "pre_lunch_rush.tres"
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_3e4st")
+}

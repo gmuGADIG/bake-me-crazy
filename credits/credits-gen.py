@@ -82,7 +82,7 @@ class ProloguePerson:
 # little over-engineered but ¯\_(ツ)_/¯
 prologue_people = {
         "Art": [
-            ProloguePerson("Jonah Kassoy", "Art Director"),
+            ProloguePerson("Jonah Kossoy", "Art Director"),
             ProloguePerson("Joan Palacios", "Assistant Art Director"),
         ],
         "Design": [
@@ -103,6 +103,7 @@ prologue_people = {
             ProloguePerson("Khalid Moosa", "Co-president & Social Media Manager"),
             ProloguePerson("Maia Ocampo", "Vice President"),
             ProloguePerson("Alex James", "Production Manager"),
+            ProloguePerson("Joan Palacios", "Assistant Production Manager"),
             ProloguePerson("John McGuire", "Secretary"),
             ProloguePerson("Zachary Kim", "Treasurer"),
             ProloguePerson("Evan Kusko", "Web Master"),
