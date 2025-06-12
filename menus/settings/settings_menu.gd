@@ -17,6 +17,9 @@ func animate_open_close(open: bool):
 		.set_ease(Tween.EASE_IN_OUT)
 	if not open:
 		open_close_tween.tween_callback(queue_free)
+		
+		# When closing the menu, also save the data.
+		PlayerData.save_auxilary_data()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
