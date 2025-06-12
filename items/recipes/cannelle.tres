@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://bld4lqrmvrfxh"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=7 format=3 uid="uid://bld4lqrmvrfxh"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_0lymt"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_nfgrc"]
+[ext_resource type="Resource" uid="uid://c477xnuxsu1d8" path="res://items/foods/cannelle_vanilla.tres" id="3_5ha2f"]
+[ext_resource type="Resource" uid="uid://8ke58klau1pi" path="res://items/foods/cannelle_cheese.tres" id="4_y8xsm"]
+[ext_resource type="Resource" uid="uid://oipd8q2ont3u" path="res://items/foods/cannelle_tea.tres" id="5_ass0c"]
+[ext_resource type="Resource" uid="uid://pvciqo0g7ma6" path="res://items/foods/cannelle_chocolate.tres" id="6_xavmk"]
 
 [resource]
 script = ExtResource("1_0lymt")
 display_name = "Cannelle"
 instructions = "<todo>"
-variants = Array[ExtResource("2_nfgrc")]([])
+variants = Array[ExtResource("2_nfgrc")]([ExtResource("3_5ha2f"), ExtResource("4_y8xsm"), ExtResource("5_ass0c"), ExtResource("6_xavmk")])

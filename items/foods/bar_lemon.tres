@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://dabrwbblxvfru"]
+
+[ext_resource type="PackedScene" uid="uid://ckmbs4bxchfpk" path="res://cooking/food_items_recipes/Bar.tscn" id="1_ok6r7"]
+[ext_resource type="Texture2D" uid="uid://6kxx1jobd4yy" path="res://items/foods/art/Bar_Lemon.png" id="2_cs0ab"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_sxsow"]
+
+[resource]
+script = ExtResource("3_sxsow")
+cooking_minigame = ExtResource("1_ok6r7")
+display_name = "Lemon Bar"
+image = ExtResource("2_cs0ab")

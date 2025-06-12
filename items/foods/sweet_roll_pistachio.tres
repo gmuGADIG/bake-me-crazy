@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bj0g6bqr52ynm"]
+
+[ext_resource type="PackedScene" uid="uid://denifoodnorro" path="res://cooking/food_items_recipes/Sweet_Roll.tscn" id="1_r4ua3"]
+[ext_resource type="Texture2D" uid="uid://d30ilv3ml857l" path="res://items/foods/art/PistachioSweetRoll.png" id="2_y32vq"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_ejvaw"]
+[ext_resource type="Resource" uid="uid://d27qlixlhrm2l" path="res://items/ingredients/pistaschio.tres" id="3_jctgl"]
+
+[resource]
+script = ExtResource("3_ejvaw")
+cooking_minigame = ExtResource("1_r4ua3")
+ingredient = ExtResource("3_jctgl")
+display_name = "Pistachio Sweet Roll"
+image = ExtResource("2_y32vq")

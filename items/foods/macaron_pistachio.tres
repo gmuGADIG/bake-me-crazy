@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bl56p7fyuwt15"]
+
+[ext_resource type="PackedScene" uid="uid://cdlagugjlu0oq" path="res://cooking/food_items_recipes/Macaron.tscn" id="1_072b1"]
+[ext_resource type="Texture2D" uid="uid://2dq1wvjmq8e4" path="res://items/foods/art/Macaron_Pistachio.png" id="2_37dkp"]
+[ext_resource type="Resource" uid="uid://d27qlixlhrm2l" path="res://items/ingredients/pistaschio.tres" id="3_grex8"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_bj73j"]
+
+[resource]
+script = ExtResource("4_bj73j")
+cooking_minigame = ExtResource("1_072b1")
+ingredient = ExtResource("3_grex8")
+display_name = "Pistachio Macaron"
+image = ExtResource("2_37dkp")
