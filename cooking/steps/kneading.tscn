@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtfpjbxnjfn3m"]
+[gd_scene load_steps=9 format=3 uid="uid://dtfpjbxnjfn3m"]
 
 [ext_resource type="Script" path="res://cooking/steps/kneading.gd" id="1_llm4v"]
+[ext_resource type="PackedScene" uid="uid://p7jlq2812llw" path="res://cooking/steps/instructions_panel.tscn" id="2_g87e4"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="2_x35rf"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_23vti"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="4_ukwp6"]
@@ -34,6 +35,10 @@ midPointGain = 15
 slowPointGain = 10
 midThreshold = 2000
 slowThreshold = 3000
+
+[node name="InstructionsPanel" parent="." instance=ExtResource("2_g87e4")]
+minigame_title = "KNEAD"
+instructions = "Click and Hold while dragging the mouse up and down till the dough fills the space."
 
 [node name="VSlider" type="VSlider" parent="."]
 unique_name_in_owner = true
