@@ -17,6 +17,7 @@ minigame_title = "Minigame Title"
 instructions = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 236.0
 offset_right = 492.0
 offset_bottom = 236.0
