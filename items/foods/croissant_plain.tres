@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://deb0tra4qisro"]
+
+[ext_resource type="PackedScene" uid="uid://ca5okbi35v74j" path="res://cooking/food_items_recipes/Croissant.tscn" id="1_7ubch"]
+[ext_resource type="Texture2D" uid="uid://dlx146n2vp5th" path="res://items/foods/art/croissant.png" id="2_2gubs"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_3k3sm"]
+
+[resource]
+script = ExtResource("4_3k3sm")
+cooking_minigame = ExtResource("1_7ubch")
+display_name = "Croissant"
+image = ExtResource("2_2gubs")

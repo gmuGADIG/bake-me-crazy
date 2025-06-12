@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://wbyprea2fck1"]
+
+[ext_resource type="PackedScene" uid="uid://ckmbs4bxchfpk" path="res://cooking/food_items_recipes/Bar.tscn" id="1_1w4ok"]
+[ext_resource type="Texture2D" uid="uid://d4cvrxp22ejf8" path="res://items/foods/art/Bar_Billionaire.png" id="2_oxhhd"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="3_cc4c3"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_fx420"]
+
+[resource]
+script = ExtResource("4_fx420")
+cooking_minigame = ExtResource("1_1w4ok")
+ingredient = ExtResource("3_cc4c3")
+display_name = "Billionaire Bar"
+image = ExtResource("2_oxhhd")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://8ke58klau1pi"]
+
+[ext_resource type="PackedScene" uid="uid://yi5g23jj26ut" path="res://cooking/food_items_recipes/Cannelle.tscn" id="1_gp1vr"]
+[ext_resource type="Texture2D" uid="uid://chr4qbnxokk6m" path="res://items/foods/art/Canelle_Cheese.png" id="2_0pdr1"]
+[ext_resource type="Resource" uid="uid://c7qq5te66x2sh" path="res://items/ingredients/cheese.tres" id="3_7djqn"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_mlqy6"]
+
+[resource]
+script = ExtResource("4_mlqy6")
+cooking_minigame = ExtResource("1_gp1vr")
+ingredient = ExtResource("3_7djqn")
+display_name = "Cheese Canelle"
+image = ExtResource("2_0pdr1")

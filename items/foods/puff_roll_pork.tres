@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://ckof315v6uid3"]
+
+[ext_resource type="PackedScene" uid="uid://cs2trculmsbxv" path="res://cooking/food_items_recipes/Puff_Roll.tscn" id="1_m237y"]
+[ext_resource type="Texture2D" uid="uid://dy5gahy1h5kjp" path="res://items/foods/art/PuffRoll_Sausage.png" id="2_ddr12"]
+[ext_resource type="Resource" uid="uid://cnuuuomy00hxl" path="res://items/ingredients/pork.tres" id="3_e540k"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_qkkam"]
+
+[resource]
+script = ExtResource("4_qkkam")
+cooking_minigame = ExtResource("1_m237y")
+ingredient = ExtResource("3_e540k")
+display_name = "Sausage Puff Roll"
+image = ExtResource("2_ddr12")

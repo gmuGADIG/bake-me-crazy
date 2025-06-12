@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://n1we7ai6up0j"]
+
+[ext_resource type="PackedScene" uid="uid://ckmbs4bxchfpk" path="res://cooking/food_items_recipes/Bar.tscn" id="1_4iqa4"]
+[ext_resource type="Texture2D" uid="uid://buxkx0dky3jmm" path="res://items/foods/art/Bar_Strawberry.png" id="2_liyqy"]
+[ext_resource type="Resource" uid="uid://ncul60wovroo" path="res://items/ingredients/strawberry.tres" id="3_3hnh4"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_4v0y3"]
+
+[resource]
+script = ExtResource("3_4v0y3")
+cooking_minigame = ExtResource("1_4iqa4")
+ingredient = ExtResource("3_3hnh4")
+display_name = "Strawberry Bar"
+image = ExtResource("2_liyqy")

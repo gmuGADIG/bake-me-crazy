@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxwiwkh36it68"]
+
+[ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_cmip3"]
+[ext_resource type="PackedScene" uid="uid://83sg17i2w6gw" path="res://cooking/morning_results.tscn" id="2_1u8ww"]
+[ext_resource type="PackedScene" uid="uid://d1v5q0dylibsk" path="res://cooking/steps/pour_flour.tscn" id="3_4yn38"]
+[ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="4_sy68h"]
+
+[node name="FoodMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_cmip3")
+
+[node name="MorningResults" parent="." instance=ExtResource("2_1u8ww")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="PourFlour" parent="." instance=ExtResource("3_4yn38")]
+layout_mode = 1
+
+[node name="StepCut" parent="." instance=ExtResource("4_sy68h")]
+layout_mode = 1

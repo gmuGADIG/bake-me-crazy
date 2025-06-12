@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://denifoodnorro"]
+
+[ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_dfs8c"]
+[ext_resource type="PackedScene" uid="uid://83sg17i2w6gw" path="res://cooking/morning_results.tscn" id="2_hiklx"]
+[ext_resource type="PackedScene" uid="uid://d1v5q0dylibsk" path="res://cooking/steps/pour_flour.tscn" id="3_vtw0t"]
+[ext_resource type="PackedScene" uid="uid://bhr08sd4y1yuy" path="res://cooking/steps/step_roll_up.tscn" id="4_vga33"]
+
+[node name="FoodMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_dfs8c")
+
+[node name="MorningResults" parent="." instance=ExtResource("2_hiklx")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="PourFlour" parent="." instance=ExtResource("3_vtw0t")]
+layout_mode = 1
+
+[node name="RollUp" parent="." instance=ExtResource("4_vga33")]
+layout_mode = 1

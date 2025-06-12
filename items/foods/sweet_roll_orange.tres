@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://dltmya4lx6avl"]
+
+[ext_resource type="PackedScene" uid="uid://denifoodnorro" path="res://cooking/food_items_recipes/Sweet_Roll.tscn" id="1_4injj"]
+[ext_resource type="Texture2D" uid="uid://c1hoxmyh44c8x" path="res://items/foods/art/OrangeSweetRoll.png" id="2_nua20"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_f8k2n"]
+[ext_resource type="Resource" uid="uid://dlcm7m0yeyb0d" path="res://items/ingredients/orange.tres" id="3_rexxb"]
+
+[resource]
+script = ExtResource("3_f8k2n")
+cooking_minigame = ExtResource("1_4injj")
+ingredient = ExtResource("3_rexxb")
+display_name = "Orange Sticky Bun"
+image = ExtResource("2_nua20")

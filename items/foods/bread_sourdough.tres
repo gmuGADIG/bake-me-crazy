@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://bbujjoxcahdlh"]
+
+[ext_resource type="PackedScene" uid="uid://bhoifd24rojac" path="res://cooking/food_items_recipes/Bread.tscn" id="1_kwxpb"]
+[ext_resource type="Texture2D" uid="uid://c6hvm1ahi2u64" path="res://items/foods/art/Bread_Sourdough.png" id="2_csmr5"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_k5fdv"]
+
+[resource]
+script = ExtResource("4_k5fdv")
+cooking_minigame = ExtResource("1_kwxpb")
+display_name = "Sourdough Bread"
+image = ExtResource("2_csmr5")

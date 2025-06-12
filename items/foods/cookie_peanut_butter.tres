@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://c7w56usrlw56h"]
+
+[ext_resource type="PackedScene" uid="uid://cm2p8u38psxpy" path="res://cooking/food_items_recipes/Cookies.tscn" id="1_qjkb8"]
+[ext_resource type="Texture2D" uid="uid://8crq3jkpven1" path="res://items/foods/art/Cookie_Snickerdoodle.png" id="2_erulq"]
+[ext_resource type="Resource" uid="uid://brttxq285l2lr" path="res://items/ingredients/peanut_butter.tres" id="3_7aloq"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_8j3ae"]
+
+[resource]
+script = ExtResource("4_8j3ae")
+cooking_minigame = ExtResource("1_qjkb8")
+ingredient = ExtResource("3_7aloq")
+display_name = "Peanut Butter Cookie"
+image = ExtResource("2_erulq")

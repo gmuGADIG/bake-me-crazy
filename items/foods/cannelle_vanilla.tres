@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://c477xnuxsu1d8"]
+
+[ext_resource type="PackedScene" uid="uid://yi5g23jj26ut" path="res://cooking/food_items_recipes/Cannelle.tscn" id="1_s3uqn"]
+[ext_resource type="Texture2D" uid="uid://bt8ow64g2bleh" path="res://items/foods/art/Canelle_Vanilla.png" id="2_t4hi0"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_7jtuy"]
+[ext_resource type="Resource" uid="uid://0nwwupoe48k4" path="res://items/ingredients/vanilla.tres" id="3_wcaa0"]
+
+[resource]
+script = ExtResource("3_7jtuy")
+cooking_minigame = ExtResource("1_s3uqn")
+ingredient = ExtResource("3_wcaa0")
+display_name = "Vanilla Canelle"
+image = ExtResource("2_t4hi0")
