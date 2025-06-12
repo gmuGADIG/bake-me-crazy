@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bthmkwq5lu0kl" path="res://cooking/steps/base_step_cut.tscn" id="1_mf85h"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="2_00atf"]
 [ext_resource type="Texture2D" uid="uid://4p08bggtflm3" path="res://cooking/art/knife.png" id="2_cob0c"]
-[ext_resource type="PackedScene" uid="uid://p7jlq2812llw" path="res://cooking/steps/instructions_panel.tscn" id="2_y6041"]
+[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="2_y6041"]
 [ext_resource type="Texture2D" uid="uid://demxad4xjetim" path="res://cooking/art/Minigame_WoodCuttingBoard.png" id="3_rswos"]
 [ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="5_7wkoo"]
 
