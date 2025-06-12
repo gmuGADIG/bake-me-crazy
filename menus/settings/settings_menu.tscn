@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgcj6pme3xasq"]
+[gd_scene load_steps=9 format=3 uid="uid://bgcj6pme3xasq"]
 
+[ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="1_6o8dw"]
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_k7ytp"]
-[ext_resource type="AudioStream" uid="uid://oq0kffb81ncn" path="res://menus/settings/infiltration.mp3" id="2_r624d"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="3_ad6og"]
+[ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="3_f0ln0"]
+[ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_7fknj"]
+[ext_resource type="PackedScene" uid="uid://bui5g7gwd6hyf" path="res://menus/settings/settings_menu_volume_slider.tscn" id="5_rxro5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgij0"]
-bg_color = Color(0.75289, 0.52467, 0.614333, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm1bm"]
+bg_color = Color(0.498039, 0.25098, 0.278431, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjyrs"]
+font_size = 36
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -16,27 +25,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6o8dw")
 script = ExtResource("1_k7ytp")
+metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ClipBg" type="ColorRect" parent="."]
+clip_children = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_xgij0")
+color = Color(0.32, 0.24256, 0.2144, 1)
+metadata/_edit_lock_ = true
 
-[node name="SettingsTitle" type="Label" parent="."]
+[node name="Background" type="TextureRect" parent="ClipBg"]
+texture_repeat = 2
+layout_mode = 0
+offset_left = -2817.0
+offset_top = -1618.0
+offset_right = 3985.0
+offset_bottom = 2283.0
+texture = ExtResource("3_f0ln0")
+stretch_mode = 1
+script = ExtResource("4_7fknj")
+scroll_position = Vector2(500, -250)
+scroll_time = 15.0
+
+[node name="ClipBg2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.239216)
+metadata/_edit_lock_ = true
+
+[node name="CenterPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -217.5
+offset_right = 179.0
+offset_bottom = 217.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(179, 201.5)
+theme = ExtResource("1_6o8dw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_dm1bm")
+
+[node name="SettingsTitle" type="Label" parent="CenterPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -31.0
-offset_top = 45.0
-offset_right = 31.0
-offset_bottom = 68.0
+offset_left = -108.0
+offset_top = 31.0
+offset_right = 108.0
+offset_bottom = 84.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 1
 text = "Settings"
 label_settings = SubResource("LabelSettings_vjyrs")
 horizontal_alignment = 1
@@ -48,75 +103,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -225.0
-offset_top = -88.0
-offset_right = 225.0
-offset_bottom = 88.0
+offset_left = -150.0
+offset_top = -104.5
+offset_right = 150.0
+offset_bottom = 71.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(225, 0)
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer"]
+[node name="MasterVolSlider" parent="VBoxContainer" instance=ExtResource("5_rxro5")]
 layout_mode = 2
-max_value = 1.2
-step = 0.01
 
-[node name="Label" type="Label" parent="VBoxContainer/MasterVolSlider"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Master Volume"
-horizontal_alignment = 1
-
-[node name="MusicVolSlider" type="HSlider" parent="VBoxContainer"]
+[node name="MusicSlider" parent="VBoxContainer" instance=ExtResource("5_rxro5")]
 layout_mode = 2
-max_value = 1.2
-step = 0.01
+slider_name = "Music"
+audio_bus_name = "Music"
 
-[node name="Label" type="Label" parent="VBoxContainer/MusicVolSlider"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Music"
-horizontal_alignment = 1
-
-[node name="SFXVolSlider" type="HSlider" parent="VBoxContainer"]
+[node name="SFXSlider" parent="VBoxContainer" instance=ExtResource("5_rxro5")]
 layout_mode = 2
-max_value = 1.2
-step = 0.01
-
-[node name="Label" type="Label" parent="VBoxContainer/SFXVolSlider"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "SFX"
-horizontal_alignment = 1
+slider_name = "SFX"
+audio_bus_name = "SFX"
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -126,20 +134,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -82.0
-offset_top = -127.0
+offset_top = -194.5
 offset_right = 82.0
-offset_bottom = -96.0
+offset_bottom = -146.5
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(82, 0)
+pivot_offset = Vector2(82, 21)
 text = "Back"
+script = ExtResource("3_ad6og")
 
-[node name="Infiltration" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("2_r624d")
-bus = &"SFX"
-
-[connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
