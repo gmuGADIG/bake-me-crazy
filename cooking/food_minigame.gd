@@ -15,12 +15,19 @@ var current_score :float= 0
 signal food_step_started
 signal all_minigames_done
 
-func next_step() -> void:
+func next_step(score : float) -> void:
 	# get the previous and next step (each may be null)
 	var prev: FoodStep
 	var next: FoodStep
 	if step_ptr > 0 and not steps.is_empty(): prev = steps[step_ptr - 1]
 	if step_ptr < steps.size(): next = steps[step_ptr]
+	
+	
+	##Play the step completion screen
+	if prev != null:
+		prev.process_mode = Node.PROCESS_MODE_DISABLED
+		$StepResults.display_results(score)
+		await $StepResults.finised
 	
 	# prepare next step
 	if next != null:
@@ -85,7 +92,11 @@ func step_finished(score: float) -> void:
 	print("FoodMinigame: Step finished with score ", score, " (TODO track scores visually?)")
 	current_score += score
 	# When we finish the last step, move on to the next one.
-	next_step()
+	
+	
+	
+	
+	next_step(score)
 
 func _ready() -> void:
 	# Populate the steps with each FoodStep child.
