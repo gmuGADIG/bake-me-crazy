@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgcj6pme3xasq"]
+[gd_scene load_steps=9 format=3 uid="uid://bgcj6pme3xasq"]
 
 [ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="1_6o8dw"]
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_k7ytp"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="3_ad6og"]
 [ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="3_f0ln0"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_7fknj"]
+[ext_resource type="PackedScene" uid="uid://bui5g7gwd6hyf" path="res://menus/settings/settings_menu_volume_slider.tscn" id="5_rxro5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm1bm"]
 bg_color = Color(0.498039, 0.25098, 0.278431, 1)
@@ -112,69 +113,18 @@ pivot_offset = Vector2(225, 0)
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="MasterVolSlider" type="HSlider" parent="VBoxContainer"]
-unique_name_in_owner = true
+[node name="MasterVolSlider" parent="VBoxContainer" instance=ExtResource("5_rxro5")]
 layout_mode = 2
-max_value = 1.2
-step = 0.01
-value = 0.5
 
-[node name="Label" type="Label" parent="VBoxContainer/MasterVolSlider"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Master Volume"
-horizontal_alignment = 1
-
-[node name="MusicVolSlider" type="HSlider" parent="VBoxContainer"]
-unique_name_in_owner = true
+[node name="MusicSlider" parent="VBoxContainer" instance=ExtResource("5_rxro5")]
 layout_mode = 2
-max_value = 1.2
-step = 0.01
+slider_name = "Music"
+audio_bus_name = "Music"
 
-[node name="Label" type="Label" parent="VBoxContainer/MusicVolSlider"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Music"
-horizontal_alignment = 1
-
-[node name="SFXVolSlider" type="HSlider" parent="VBoxContainer"]
-unique_name_in_owner = true
+[node name="SFXSlider" parent="VBoxContainer" instance=ExtResource("5_rxro5")]
 layout_mode = 2
-max_value = 1.2
-step = 0.01
-
-[node name="Label" type="Label" parent="VBoxContainer/SFXVolSlider"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -59.0
-offset_top = 22.0
-offset_right = 59.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "SFX"
-horizontal_alignment = 1
+slider_name = "SFX"
+audio_bus_name = "SFX"
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -193,7 +143,4 @@ pivot_offset = Vector2(82, 21)
 text = "Back"
 script = ExtResource("3_ad6og")
 
-[connection signal="value_changed" from="VBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
