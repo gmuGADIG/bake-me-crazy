@@ -117,6 +117,7 @@ unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.2
 step = 0.01
+value = 0.5
 
 [node name="Label" type="Label" parent="VBoxContainer/MasterVolSlider"]
 layout_mode = 1
