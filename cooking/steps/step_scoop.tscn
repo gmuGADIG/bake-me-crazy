@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_8uj2r"]
 [ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="3_rsoc1"]
-[ext_resource type="PackedScene" uid="uid://p7jlq2812llw" path="res://cooking/steps/instructions_panel.tscn" id="3_v27x2"]
+[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="3_v27x2"]
 [ext_resource type="Texture2D" uid="uid://bnqstvih1ok8r" path="res://cooking/art/Snickerdoodle_Cookie_Dough.png" id="4_rolkp"]
 [ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="6_1c4gu"]
 [ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="6_65nad"]
@@ -55,16 +55,7 @@ position = Vector2(377, 294)
 rotation = -0.00126775
 texture = ExtResource("8_n7naa")
 
-[node name="gameTimer" type="Label" parent="." index="3"]
-layout_mode = 0
-offset_left = 965.0
-offset_top = 3.0
-offset_right = 1105.0
-offset_bottom = 27.0
-theme_override_font_sizes/font_size = 21
-text = "Time limit: 15.00"
-
-[node name="Bowl" type="Area2D" parent="." index="4"]
+[node name="Bowl" type="Area2D" parent="." index="3"]
 position = Vector2(999, 370)
 metadata/_edit_group_ = true
 
@@ -166,7 +157,7 @@ rotation = 1.85186
 scale = Vector2(0.131723, 0.131723)
 texture = ExtResource("4_rolkp")
 
-[node name="placePos" type="Area2D" parent="." index="5"]
+[node name="placePos" type="Area2D" parent="." index="4"]
 position = Vector2(163, 192)
 metadata/_edit_group_ = true
 
@@ -177,7 +168,7 @@ shape = SubResource("CircleShape2D_vkt58")
 material = SubResource("ShaderMaterial_j0vec")
 texture = SubResource("GradientTexture2D_unpg6")
 
-[node name="FollowCursor" type="Node2D" parent="." index="6"]
+[node name="FollowCursor" type="Node2D" parent="." index="5"]
 rotation = -0.00126775
 script = ExtResource("6_1c4gu")
 
@@ -193,7 +184,7 @@ rotation = 0.00126775
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_rolkp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="7"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="6"]
 visible = false
 layout_mode = 0
 offset_left = 91.0
@@ -360,6 +351,24 @@ offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.433333, 1, 0, 1)
+
+[node name="gameTimer" type="Label" parent="." index="7"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -303.0
+offset_top = 18.0
+offset_right = -17.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 32
+text = "Time left: 15.00s"
 
 [connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]
