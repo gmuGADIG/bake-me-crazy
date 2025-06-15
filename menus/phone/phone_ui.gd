@@ -1,10 +1,13 @@
-extends Control
+class_name Phone extends Control
 
+static var instance : Phone
 var phone_opened = false
+
 #@onready var HomeScreen = %Contacts
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Phone.instance = self
 	phone_opened = false
 	print("gah")
 	#$Panel/AnimationPlayer.play("open_phone")
