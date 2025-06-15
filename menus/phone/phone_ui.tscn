@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=25 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
@@ -34,6 +34,9 @@ expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
 [sub_resource type="Theme" id="Theme_tnnuu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdxyq"]
+line_spacing = -8.0
 
 [sub_resource type="Animation" id="Animation_1tc4a"]
 length = 0.001
@@ -394,6 +397,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -411,25 +415,26 @@ offset_right = 67.8032
 offset_bottom = 66.7777
 expand_mode = 3
 
-[node name="SelectedItemName" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
 layout_mode = 0
-offset_left = 79.9999
-offset_top = 7.0
-offset_right = 160.0
-offset_bottom = 30.0
-text = "select an
-item"
+offset_left = 72.0
+offset_right = 183.0
+offset_bottom = 78.0
+theme_override_constants/separation = 0
 
-[node name="SelectedItemDescription" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
+[node name="SelectedItemName" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 79.0386
-offset_top = 30.294
-offset_right = 167.039
-offset_bottom = 68.294
+custom_minimum_size = Vector2(111, 0)
+layout_mode = 2
+text = "Test Food Item"
+label_settings = SubResource("LabelSettings_qdxyq")
+autowrap_mode = 2
+
+[node name="SelectedItemDescription" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_font_sizes/font_size = 10
-autowrap_mode = 1
+text = "Quantity: something"
 clip_text = true
 
 [node name="InventoryGrid" type="GridContainer" parent="Panel/MarginContainer/Inventory/VBoxContainer"]
