@@ -7,6 +7,21 @@ var data := SaveTemplate.new()
 func _ready() -> void:
 	Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
 	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
 
 func load_file(save_template : SaveTemplate) -> void:
 	data = save_template
