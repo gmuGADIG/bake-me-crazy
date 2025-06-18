@@ -99,6 +99,12 @@ func step_finished(score: float) -> void:
 	next_step(score)
 
 func _ready() -> void:
+	# TODO: use inherited scenes next semester!
+	if get_node_or_null("StepResults") == null:
+		var step_results = preload("res://cooking/step_results.tscn")
+		step_results.name = "StepResults"
+		add_child(step_results)
+	
 	# Populate the steps with each FoodStep child.
 	for child in get_children():
 		if child is FoodStep:

@@ -1,6 +1,6 @@
 testing/testman1: welcome to the cabbage sHop
 salty: holy guacamole! i can't wait to buy some cabage
-do DialogManager.open_market("res://menus/market_ui/market_ui.tscn")
+do DialogueManager.open_market("res://menus/market_ui/market_ui.tscn")
 # Warning: We can't have any dialog after the market is opened, as it will simply play
 # over the market UI.
 # testing/testman1: ok! thanks for buying the cabbages
