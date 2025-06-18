@@ -6,7 +6,7 @@
 [ext_resource type="Shader" path="res://cooking/steps/step_fold_dough_overlay.gdshader" id="3_74cav"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="3_f215f"]
 [ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="3_ga4hl"]
-[ext_resource type="PackedScene" uid="uid://p7jlq2812llw" path="res://cooking/steps/instructions_panel.tscn" id="3_thty5"]
+[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="3_thty5"]
 [ext_resource type="Texture2D" uid="uid://6rwqsc4do05u" path="res://cooking/art/arrow2.svg" id="6_gkao6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ib7rm"]
