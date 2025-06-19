@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bstefa0yy7mq5"]
+[gd_scene load_steps=20 format=3 uid="uid://bstefa0yy7mq5"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
 [ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bfbc61gfc86an" path="res://cooking/cooking_art/Minigame_HandCursorPoint.png" id="6_7xhu1"]
 [ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
 [ext_resource type="Shader" path="res://cooking/steps/pour_flour.gdshader" id="10_1oh4q"]
+[ext_resource type="Texture2D" uid="uid://djw1pnwl235lb" path="res://menus/recipe_book/Cookbook.png" id="13_0rxxk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_olnti"]
 font_size = 30
@@ -57,6 +58,7 @@ grow_vertical = 2
 texture = ExtResource("3_x1sjv")
 expand_mode = 1
 stretch_mode = 6
+metadata/_edit_lock_ = true
 
 [node name="FlourScale" type="Label" parent="." index="2"]
 top_level = true
@@ -146,3 +148,33 @@ spread = 180.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Recipe" type="Node2D" parent="." index="8"]
+position = Vector2(735, 263)
+
+[node name="Cookbook" type="Sprite2D" parent="Recipe" index="0"]
+position = Vector2(207.8, 44.8)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("13_0rxxk")
+region_enabled = true
+region_rect = Rect2(101.396, 41.2506, 1064.21, 1254.75)
+
+[node name="Label" type="RichTextLabel" parent="Recipe" index="1"]
+offset_left = 72.7999
+offset_top = -103.2
+offset_right = 811.8
+offset_bottom = 14.8
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave freq=5]- Pour flour: 300g[/wave]"
+
+[node name="Label2" type="RichTextLabel" parent="Recipe" index="2"]
+offset_left = 18.7999
+offset_top = -163.2
+offset_right = 421.8
+offset_bottom = -99.2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]RECIPE[/center]"
