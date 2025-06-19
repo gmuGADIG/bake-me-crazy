@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://da8edpgw8e72d" path="res://temp_art/gartic/taco_bucket.png" id="2_e4817"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_8uj2r"]
 [ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="3_rsoc1"]
-[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="3_v27x2"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="3_v27x2"]
 [ext_resource type="Texture2D" uid="uid://bnqstvih1ok8r" path="res://cooking/art/Snickerdoodle_Cookie_Dough.png" id="4_rolkp"]
 [ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="6_1c4gu"]
 [ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="6_65nad"]
@@ -35,9 +35,12 @@ script = ExtResource("1_gwrga")
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("3_v27x2")]
 z_index = 1
-offset_top = 446.0
-offset_bottom = 446.0
-minigame_title = "SCOOP COOKIES"
+offset_left = 130.0
+offset_top = 230.0
+offset_right = 130.0
+offset_bottom = 230.0
+scale = Vector2(0.9111, 0.9111)
+minigame_title = "Scoop cookies"
 instructions = "Use the spoon to pick up the dough and plop it on to the cookie tray."
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
@@ -65,7 +68,7 @@ theme_override_font_sizes/font_size = 21
 text = "Time limit: 15.00"
 
 [node name="Bowl" type="Area2D" parent="." index="4"]
-position = Vector2(999, 370)
+position = Vector2(991, 152)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" index="0"]

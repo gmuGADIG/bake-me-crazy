@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://p7jlq2812llw"]
+[gd_scene load_steps=5 format=3 uid="uid://bx3c2sms6ejy2"]
 
 [ext_resource type="Script" path="res://cooking/steps/instructions_panel.gd" id="1_y88w7"]
+[ext_resource type="Texture2D" uid="uid://djw1pnwl235lb" path="res://menus/recipe_book/Cookbook.png" id="2_kicvv"]
 
-[sub_resource type="Gradient" id="Gradient_avq53"]
-offsets = PackedFloat32Array(0, 0.991935)
-colors = PackedColorArray(0.737072, 0.616802, 0.451666, 1, 0.930094, 0.543976, 0.501241, 1)
+[sub_resource type="Gradient" id="Gradient_5b2gi"]
+offsets = PackedFloat32Array(0.0857143, 0.109524)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_kp1bc"]
-gradient = SubResource("Gradient_avq53")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3tmm0"]
+gradient = SubResource("Gradient_5b2gi")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
 
 [node name="InstructionsPanel" type="Control"]
 layout_mode = 3
@@ -18,31 +24,47 @@ instructions = "Type the instructions in the Inspector and they will automatical
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 236.0
-offset_right = 492.0
-offset_bottom = 236.0
-rotation = 1.5708
-texture = SubResource("GradientTexture1D_kp1bc")
+offset_left = 665.0
+offset_top = 50.0
+offset_right = 1636.0
+offset_bottom = 596.0
+texture = ExtResource("2_kicvv")
+expand_mode = 1
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-offset_left = 50.0
-offset_top = 15.0
-offset_right = 176.0
-offset_bottom = 39.0
-text = "Minigame Title"
-horizontal_alignment = 1
+[node name="RECIPE" type="RichTextLabel" parent="."]
+offset_left = 769.0
+offset_top = 116.0
+offset_right = 1146.0
+offset_bottom = 180.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]RECIPE[/center]"
 
-[node name="InstructionsText" type="Label" parent="Title"]
-process_mode = 3
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -80.5
-offset_top = 35.0
-offset_right = 80.5
-offset_bottom = 134.0
-grow_horizontal = 2
-text = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
-autowrap_mode = 3
+[node name="TaskTitle" type="RichTextLabel" parent="."]
+offset_left = 799.0
+offset_top = 165.0
+offset_right = 1044.0
+offset_bottom = 207.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[wave freq=5]Pour flour: 300g[/wave]"
+
+[node name="Instructions" type="RichTextLabel" parent="."]
+offset_left = 799.0
+offset_top = 211.0
+offset_right = 1120.0
+offset_bottom = 476.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Click and hold over the bowl to fill it with flour."
+
+[node name="BulletPoint1" type="Sprite2D" parent="."]
+position = Vector2(790, 183)
+texture = SubResource("GradientTexture2D_3tmm0")
+
+[node name="BulletPoint2" type="Sprite2D" parent="."]
+position = Vector2(790, 228)
+texture = SubResource("GradientTexture2D_3tmm0")
