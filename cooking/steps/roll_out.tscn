@@ -63,7 +63,7 @@ layout_mode = 1
 offset_top = -75.0
 offset_bottom = -75.0
 minigame_title = "Roll the dough"
-instructions = "Click and Hold the rolling pin and move it over the dough to roll it out."
+instructions = "Click and hold the rolling pin and move it over the dough to roll it out."
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 z_index = -10
