@@ -155,6 +155,7 @@ position = Vector2(125, 178)
 texture = SubResource("GradientTexture2D_3tmm0")
 
 [node name="RECIPE" type="RichTextLabel" parent="TextureRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 104.0
 offset_top = 66.0

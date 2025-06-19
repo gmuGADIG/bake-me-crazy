@@ -9,6 +9,7 @@ class_name InstructionsPanel
 # - 
 # static var seen: Dictionary = {}
 
+@onready var recipe   : RichTextLabel = %RECIPE
 @onready var title_box: RichTextLabel = %TaskTitle
 @onready var text_box : RichTextLabel = %Instructions
 
@@ -27,7 +28,12 @@ func _ready() -> void:
 	# 	queue_free()
 	
 	# seen[parent_name()] = null
+	var display_name = "RECIPE"
+	if MorningShift.instance:
+		if MorningShift.instance.current_recipe:
+			display_name = MorningShift.instance.current_recipe.display_name
 
+	recipe.text = str("[center]", display_name, "[/center]")
 	title_box.text = minigame_title
 	text_box.text = instructions
 	
