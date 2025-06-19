@@ -11,14 +11,12 @@
 [ext_resource type="FontFile" uid="uid://ywm1il2mln4f" path="res://cooking/steps/pour_flour/7segment.ttf" id="5_kct4c"]
 [ext_resource type="Texture2D" uid="uid://bfbc61gfc86an" path="res://cooking/cooking_art/Minigame_HandCursorPoint.png" id="6_7xhu1"]
 [ext_resource type="Texture2D" uid="uid://cmrx2ogxh3j52" path="res://cooking/cooking_art/bowl_front.png" id="6_jxq2s"]
+[ext_resource type="Texture2D" uid="uid://e864ejwf88ag" path="res://cooking/cooking_art/bowl_mask.png" id="9_mlc5v"]
 [ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
-[ext_resource type="Shader" path="res://cooking/steps/pour_flour.gdshader" id="10_1oh4q"]
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="10_wogy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
 size = Vector2(155.5, 608)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mwux"]
-shader = ExtResource("10_1oh4q")
 
 [sub_resource type="Gradient" id="Gradient_bixkh"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -92,10 +90,36 @@ scale = Vector2(0.34082, 0.34082)
 texture = ExtResource("4_dildu")
 metadata/_edit_lock_ = true
 
-[node name="HoldingManager" parent="." index="3" instance=ExtResource("3_p1eiu")]
+[node name="BowlMask" type="Sprite2D" parent="." index="3"]
+clip_children = 1
+position = Vector2(509, 445)
+scale = Vector2(1.09167, 1.09167)
+texture = ExtResource("9_mlc5v")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="BowlMask" index="0"]
+
+[node name="Powder" type="CPUParticles2D" parent="BowlMask/CanvasGroup" index="0"]
+unique_name_in_owner = true
+show_behind_parent = true
+z_index = -1
+position = Vector2(-232.672, -42.1374)
+scale = Vector2(0.0870229, 0.0870229)
+amount = 24
+randomness = 0.1
+texture = SubResource("GradientTexture2D_icf4r")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+
+[node name="Sprite2D" type="Sprite2D" parent="BowlMask/CanvasGroup/Powder" index="0"]
+position = Vector2(0.000244141, 10.5264)
+scale = Vector2(11.4912, 11.4912)
+texture = ExtResource("10_wogy5")
+
+[node name="HoldingManager" parent="." index="4" instance=ExtResource("3_p1eiu")]
 position = Vector2(19, 152)
 
-[node name="FlourPourer" parent="." index="4" instance=ExtResource("2_u3vmg")]
+[node name="FlourPourer" parent="." index="5" instance=ExtResource("2_u3vmg")]
 unique_name_in_owner = true
 position = Vector2(232, 358)
 collision_layer = 9
@@ -113,26 +137,17 @@ position = Vector2(23, 38)
 scale = Vector2(0.095, 0.095)
 texture = ExtResource("9_ns6fm")
 
-[node name="Powder" type="CPUParticles2D" parent="FlourPourer" index="3"]
+[node name="PowderLocation" type="Node2D" parent="FlourPourer" index="3"]
 unique_name_in_owner = true
-show_behind_parent = true
-z_index = -1
-material = SubResource("ShaderMaterial_4mwux")
-position = Vector2(23, 41)
-scale = Vector2(0.095, 0.095)
-amount = 24
-randomness = 0.1
-texture = SubResource("GradientTexture2D_icf4r")
-emission_shape = 1
-emission_sphere_radius = 128.0
-spread = 180.0
+position = Vector2(-73, 36)
+scale = Vector2(1, 1)
 
-[node name="TextureRect" type="TextureRect" parent="." index="5"]
+[node name="TextureRect" type="TextureRect" parent="." index="6"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="FlourScale" type="Label" parent="." index="6"]
+[node name="FlourScale" type="Label" parent="." index="7"]
 layout_mode = 0
 offset_left = 424.0
 offset_top = 551.0
@@ -143,7 +158,7 @@ text = "0.0"
 label_settings = SubResource("LabelSettings_olnti")
 horizontal_alignment = 2
 
-[node name="FlourScaleG" type="Label" parent="." index="7"]
+[node name="FlourScaleG" type="Label" parent="." index="8"]
 layout_mode = 0
 offset_left = 433.0
 offset_top = 567.0

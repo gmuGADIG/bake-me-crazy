@@ -16,6 +16,7 @@ var done := false
 @onready var grab_sprite: Sprite2D = %GrabSprite
 
 @onready var particles: CPUParticles2D = %Powder
+@onready var powder_location: Node2D = %PowderLocation
 
 
 func _process(delta: float) -> void:
@@ -49,3 +50,5 @@ func _process(delta: float) -> void:
 		done = true
 
 		print("[pour_flour] score = ", score)
+		
+	particles.global_position = powder_location.global_position
