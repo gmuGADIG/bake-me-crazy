@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 #@onready var pause_container: VBoxContainer = %PauseContainer
+@onready var anim: AnimationPlayer = %AnimationPlayer
 
 var submenu: Control = null # the currently open sub-menu, e.g. the saves or options menu
 
@@ -28,7 +29,7 @@ func _process(_delta: float) -> void:
 	
 	# close when the player presses "pause" again
 	if Input.is_action_just_pressed("pause"):
-		queue_free()
+		_on_close_menu_pressed()
 		
 	scale_theta += TAU * _delta * 0.7
 	scale_theta = fmod(scale_theta, TAU)
@@ -58,6 +59,9 @@ func _on_open_saves_pressed() -> void:
 
 func _on_close_menu_pressed() -> void:
 	get_tree().paused = false
+	anim.play(&"swipe_down")
+	MainMusicPlayer.set_volume(1.0)
+	await anim.animation_finished
 	queue_free()
 
 func _on_return_main_menu_pressed() -> void:
