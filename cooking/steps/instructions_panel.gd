@@ -8,8 +8,8 @@ extends Node
 # - 
 # static var seen: Dictionary = {}
 
-@onready var title_box: RichTextLabel = $TaskTitle
-@onready var text_box : RichTextLabel = $Instructions
+@onready var title_box: RichTextLabel = %TaskTitle
+@onready var text_box : RichTextLabel = %Instructions
 
 @export var minigame_title:String: set = set_title
 @export_multiline var instructions:String: set = set_instruct

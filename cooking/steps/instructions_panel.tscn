@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx3c2sms6ejy2"]
+[gd_scene load_steps=8 format=3 uid="uid://bx3c2sms6ejy2"]
 
 [ext_resource type="Script" path="res://cooking/steps/instructions_panel.gd" id="1_y88w7"]
 [ext_resource type="Texture2D" uid="uid://djw1pnwl235lb" path="res://menus/recipe_book/Cookbook.png" id="2_kicvv"]
@@ -15,6 +15,66 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0, 0)
 
+[sub_resource type="Animation" id="Animation_3pr5q"]
+resource_name = "show_book"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1064, 50), Vector2(647, 50), Vector2(665, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.055, 1), Vector2(1.119, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yv8vb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(665, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wiqd1"]
+_data = {
+"RESET": SubResource("Animation_yv8vb"),
+"show_book": SubResource("Animation_3pr5q")
+}
+
 [node name="InstructionsPanel" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -28,46 +88,55 @@ offset_left = 665.0
 offset_top = 50.0
 offset_right = 1636.0
 offset_bottom = 596.0
+pivot_offset = Vector2(488, 278)
 texture = ExtResource("2_kicvv")
 expand_mode = 1
 
-[node name="RECIPE" type="RichTextLabel" parent="."]
+[node name="BulletPoint1" type="Sprite2D" parent="TextureRect"]
+position = Vector2(125, 133)
+texture = SubResource("GradientTexture2D_3tmm0")
+
+[node name="BulletPoint2" type="Sprite2D" parent="TextureRect"]
+position = Vector2(125, 178)
+texture = SubResource("GradientTexture2D_3tmm0")
+
+[node name="RECIPE" type="RichTextLabel" parent="TextureRect"]
 layout_mode = 0
-offset_left = 769.0
-offset_top = 116.0
-offset_right = 1146.0
-offset_bottom = 180.0
+offset_left = 104.0
+offset_top = 66.0
+offset_right = 481.0
+offset_bottom = 130.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[center]RECIPE[/center]"
 
-[node name="TaskTitle" type="RichTextLabel" parent="."]
+[node name="TaskTitle" type="RichTextLabel" parent="TextureRect"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 799.0
-offset_top = 165.0
-offset_right = 1044.0
-offset_bottom = 207.0
+offset_left = 134.0
+offset_top = 115.0
+offset_right = 379.0
+offset_bottom = 157.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Minigame Title"
 
-[node name="Instructions" type="RichTextLabel" parent="."]
+[node name="Instructions" type="RichTextLabel" parent="TextureRect"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 799.0
-offset_top = 211.0
-offset_right = 1120.0
-offset_bottom = 476.0
+offset_left = 134.0
+offset_top = 161.0
+offset_right = 455.0
+offset_bottom = 426.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
 
-[node name="BulletPoint1" type="Sprite2D" parent="."]
-position = Vector2(790, 183)
-texture = SubResource("GradientTexture2D_3tmm0")
-
-[node name="BulletPoint2" type="Sprite2D" parent="."]
-position = Vector2(790, 228)
-texture = SubResource("GradientTexture2D_3tmm0")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wiqd1")
+}
+autoplay = "show_book"
