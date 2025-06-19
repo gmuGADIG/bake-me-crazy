@@ -114,6 +114,10 @@ text/autopauses={}
 
 window/stretch/mode="canvas_items"
 
+[editor]
+
+movie_writer/movie_file="/home/micycle/Documents/Godot/bake-me-crazy/.builds/movie.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
