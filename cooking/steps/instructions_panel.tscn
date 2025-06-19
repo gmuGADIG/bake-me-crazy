@@ -32,6 +32,7 @@ texture = ExtResource("2_kicvv")
 expand_mode = 1
 
 [node name="RECIPE" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 769.0
 offset_top = 116.0
 offset_right = 1146.0
@@ -42,6 +43,7 @@ bbcode_enabled = true
 text = "[center]RECIPE[/center]"
 
 [node name="TaskTitle" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 799.0
 offset_top = 165.0
 offset_right = 1044.0
@@ -49,9 +51,10 @@ offset_bottom = 207.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[wave freq=5]Pour flour: 300g[/wave]"
+text = "Minigame Title"
 
 [node name="Instructions" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 799.0
 offset_top = 211.0
 offset_right = 1120.0
@@ -59,7 +62,7 @@ offset_bottom = 476.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "Click and hold over the bowl to fill it with flour."
+text = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
 
 [node name="BulletPoint1" type="Sprite2D" parent="."]
 position = Vector2(790, 183)
