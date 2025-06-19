@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://g2k6cx260kwp"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/kill_particle_on_finished.gd" id="1_o3hqd"]
-[ext_resource type="Material" uid="uid://duktpbqe8777w" path="res://cooking/lunch_rush/shaker_particles.tres" id="1_xx3lk"]
+[ext_resource type="Material" uid="uid://dwf2xhsrq4k7c" path="res://cooking/lunch_rush/shaker_particles.tres" id="1_xx3lk"]
 
 [node name="ShakerParticles" type="GPUParticles2D"]
 z_index = 50

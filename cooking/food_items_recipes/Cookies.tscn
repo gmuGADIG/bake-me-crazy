@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm2p8u38psxpy"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_5bf5n"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_4dn73"]
+[ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="5_vgihy"]
+[ext_resource type="PackedScene" uid="uid://1kn7jln1tm7y" path="res://cooking/steps/roll_out.tscn" id="6_0elg3"]
+
+[node name="Cookies" instance=ExtResource("1_5bf5n")]
+
+[node name="PourFlour" parent="." index="2" instance=ExtResource("3_4dn73")]
+layout_mode = 1
+target_amount = 300.0
+pour_speed = 200.0
+
+[node name="Kneading" parent="." index="3" instance=ExtResource("5_vgihy")]
+layout_mode = 1
+
+[node name="RollOut" parent="." index="4" instance=ExtResource("6_0elg3")]
+layout_mode = 1

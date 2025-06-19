@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://bn6t8jlkga7bv"]
+
+[ext_resource type="PackedScene" uid="uid://ckmbs4bxchfpk" path="res://cooking/food_items_recipes/Bar.tscn" id="1_3fo1n"]
+[ext_resource type="Texture2D" uid="uid://jepgpp4q36k0" path="res://items/foods/art/Bar_Butter.png" id="2_r84j4"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_vnkhs"]
+
+[resource]
+script = ExtResource("4_vnkhs")
+cooking_minigame = ExtResource("1_3fo1n")
+display_name = "Butter Bar"
+image = ExtResource("2_r84j4")

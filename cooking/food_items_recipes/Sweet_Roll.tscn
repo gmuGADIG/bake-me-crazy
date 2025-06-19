@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://denifoodnorro"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_wwq8i"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_vtw0t"]
+[ext_resource type="PackedScene" uid="uid://bhr08sd4y1yuy" path="res://cooking/steps/step_roll_up.tscn" id="4_vga33"]
+
+[node name="SweetRoll" instance=ExtResource("1_wwq8i")]
+
+[node name="PourFlour" parent="." index="2" instance=ExtResource("3_vtw0t")]
+layout_mode = 1
+
+[node name="RollUp" parent="." index="3" instance=ExtResource("4_vga33")]
+layout_mode = 1

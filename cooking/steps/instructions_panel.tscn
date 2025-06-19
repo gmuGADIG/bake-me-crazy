@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://p7jlq2812llw"]
+
+[ext_resource type="Script" path="res://cooking/steps/instructions_panel.gd" id="1_y88w7"]
+
+[sub_resource type="Gradient" id="Gradient_avq53"]
+offsets = PackedFloat32Array(0, 0.991935)
+colors = PackedColorArray(0.737072, 0.616802, 0.451666, 1, 0.930094, 0.543976, 0.501241, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kp1bc"]
+gradient = SubResource("Gradient_avq53")
+
+[node name="InstructionsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_y88w7")
+minigame_title = "Minigame Title"
+instructions = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 236.0
+offset_right = 492.0
+offset_bottom = 236.0
+rotation = 1.5708
+texture = SubResource("GradientTexture1D_kp1bc")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 15.0
+offset_right = 176.0
+offset_bottom = 39.0
+text = "Minigame Title"
+horizontal_alignment = 1
+
+[node name="InstructionsText" type="Label" parent="Title"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_top = 35.0
+offset_right = 80.5
+offset_bottom = 134.0
+grow_horizontal = 2
+text = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
+autowrap_mode = 3

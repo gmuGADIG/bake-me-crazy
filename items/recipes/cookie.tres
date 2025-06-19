@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://lajel20edapa"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=6 format=3 uid="uid://lajel20edapa"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_o2eyg"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_so6ft"]
+[ext_resource type="Resource" uid="uid://wia6rfgsi2q5" path="res://items/foods/cookie_chocolate.tres" id="3_q7oj2"]
+[ext_resource type="Resource" uid="uid://c7w56usrlw56h" path="res://items/foods/cookie_peanut_butter.tres" id="4_xy1sc"]
+[ext_resource type="Resource" uid="uid://birfsrw15ouc3" path="res://items/foods/cookie_snickerdoodle.tres" id="5_cu5no"]
 
 [resource]
 script = ExtResource("1_o2eyg")
 display_name = "Cookie"
 instructions = "<todo>"
-variants = Array[ExtResource("2_so6ft")]([])
+variants = Array[ExtResource("2_so6ft")]([ExtResource("3_q7oj2"), ExtResource("4_xy1sc"), ExtResource("5_cu5no")])

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://uy3v2ird2pb5"]
+
+[ext_resource type="PackedScene" uid="uid://denifoodnorro" path="res://cooking/food_items_recipes/Sweet_Roll.tscn" id="1_r4ua3"]
+[ext_resource type="Texture2D" uid="uid://b16ppgiltuawr" path="res://items/foods/art/CinnamonRoll.png" id="2_snepl"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_ejvaw"]
+[ext_resource type="Resource" uid="uid://bgg3p5ee7mfuv" path="res://items/ingredients/cinnamon.tres" id="3_p1cic"]
+
+[resource]
+script = ExtResource("3_ejvaw")
+cooking_minigame = ExtResource("1_r4ua3")
+ingredient = ExtResource("3_p1cic")
+display_name = "Cinnamon Roll"
+image = ExtResource("2_snepl")

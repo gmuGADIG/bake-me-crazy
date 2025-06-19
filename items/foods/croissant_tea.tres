@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://n2mvxsfnrq2d"]
+
+[ext_resource type="PackedScene" uid="uid://ca5okbi35v74j" path="res://cooking/food_items_recipes/Croissant.tscn" id="1_dx2kn"]
+[ext_resource type="Texture2D" uid="uid://8cafdka6trlu" path="res://items/foods/art/AlmondCroissant.png" id="2_xm7f8"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_6wwkj"]
+[ext_resource type="Resource" uid="uid://bcjm032lps0e7" path="res://items/ingredients/tea.tres" id="3_ysycn"]
+
+[resource]
+script = ExtResource("3_6wwkj")
+cooking_minigame = ExtResource("1_dx2kn")
+ingredient = ExtResource("3_ysycn")
+display_name = "Earl Grey Croissant"
+image = ExtResource("2_xm7f8")

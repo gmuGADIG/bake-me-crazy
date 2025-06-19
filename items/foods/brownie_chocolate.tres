@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bmasbdsrl2rai"]
+
+[ext_resource type="PackedScene" uid="uid://ce5x1pc1d4rwg" path="res://cooking/food_items_recipes/Brownie.tscn" id="1_nk7bd"]
+[ext_resource type="Texture2D" uid="uid://cgpd8847541qb" path="res://items/foods/art/Brownie.png" id="2_iw7k2"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="3_j0r2h"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_f563v"]
+
+[resource]
+script = ExtResource("4_f563v")
+cooking_minigame = ExtResource("1_nk7bd")
+ingredient = ExtResource("3_j0r2h")
+display_name = "Chocolate Brownie"
+image = ExtResource("2_iw7k2")

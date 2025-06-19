@@ -1,0 +1,381 @@
+[gd_scene load_steps=16 format=3 uid="uid://vmpkwlugc1x1"]
+
+[ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="1_oh3yc"]
+[ext_resource type="Script" path="res://credits/credits.gd" id="1_s7w40"]
+[ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="2_8a6fe"]
+[ext_resource type="Shader" path="res://credits/credits.gdshader" id="2_qvt80"]
+[ext_resource type="Script" path="res://credits/scroller.gd" id="3_h2xfm"]
+[ext_resource type="Texture2D" uid="uid://dm1rnojb1jxd1" path="res://menus/start_menu/start_menu_title.png" id="4_vidm0"]
+[ext_resource type="Script" path="res://credits/thanks_label.gd" id="6_moxr0"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="7_a1pke"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxo0d"]
+shader = ExtResource("2_qvt80")
+shader_parameter/brightness = 1.0
+shader_parameter/blurriness = 0.0
+
+[sub_resource type="Animation" id="Animation_t8rc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 0.909)]
+}
+
+[sub_resource type="Animation" id="Animation_ktyn4"]
+resource_name = "animate"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.03, 0.971), Vector2(0.971, 1.03)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbhx2"]
+_data = {
+"RESET": SubResource("Animation_t8rc3"),
+"animate": SubResource("Animation_ktyn4")
+}
+
+[sub_resource type="Animation" id="Animation_rarw4"]
+resource_name = "darken_and_blur"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.425]
+}
+
+[sub_resource type="Animation" id="Animation_g78u7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:material:shader_parameter/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3e4st"]
+_data = {
+"RESET": SubResource("Animation_g78u7"),
+"darken_and_blur": SubResource("Animation_rarw4")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s7w40")
+start_pause = 1.254
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+texture_filter = 3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_kxo0d")
+layout_mode = 0
+offset_left = -2817.0
+offset_top = -1618.0
+offset_right = 3985.0
+offset_bottom = 2283.0
+texture = ExtResource("1_oh3yc")
+stretch_mode = 1
+script = ExtResource("2_8a6fe")
+unique = true
+started = false
+scroll_position = Vector2(0, -250)
+scroll_time = 10.0
+
+[node name="Control" type="Control" parent="Background"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Scroller" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_h2xfm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Scroller"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 99.0
+offset_top = 648.0
+offset_right = -143.0
+offset_bottom = 6653.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
+	Art Director Jonah Kossoy
+	Assistant Art Director Joan Palacios
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
+		Finch Spear
+		Jesse P
+		Liam Tikoyan
+		Nicole Tiongon (ThermiteFe8)
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Artist[/wave][/font_size]
+		Ally Estabillo
+		Finch Spear
+		Jesse P
+		Liam Tikoyan
+		Maya Banks 
+		Nathan Caruso
+		Nicole Tiongon (ThermiteFe8)
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Environmental Artist[/wave][/font_size]
+		Breeana Rivera 
+		Jordan Tatum
+		Michael Ozan Bailey
+		Nicole Tiongon (ThermiteFe8)
+		Ryan Cobleigh
+		Veronica Mayfield
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Food Artist[/wave][/font_size]
+		Breeana Rivera 
+		Ivory Jemmott
+		Jordan McGill
+		Kshaunish Shaik
+		Maya Banks 
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UI [/wave][/font_size]
+		Andrew Zhan
+		Benjamin Wall
+		Connor Harrison
+		Nicole Tiongon (ThermiteFe8)
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Design[/wave][/font_size]
+	Design Director Brenden Choi
+	Assistant Design Director Andrew McGaffic
+	Assistant Design Director Ethan Hayes
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
+		Jordan McGill
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Cooking [/wave][/font_size]
+		Alex Xayavong
+		Andrew Zhan
+		Ivory Jemmott
+		Jordan McGill
+		Justin Adjodha 
+		Kshaunish Shaik
+		Maya Banks 
+		Michael Ozan Bailey
+		Zachary Kim
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Dates System [/wave][/font_size]
+		Kshaunish Shaik
+		Michael Ozan Bailey
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Narrative Designer & Scriptwriter [/wave][/font_size]
+		EY
+		Edward (Eddie) Crawley
+		Jordan D'Andre Myers
+		Jordan McGill
+		Lukas Brockman
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]QA Tester[/wave][/font_size]
+		Alex Xayavong
+		Andrew Zhan
+		Connor Harrison
+		Kshaunish Shaik
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Relationship System [/wave][/font_size]
+		Connor Harrison
+		Kshaunish Shaik
+		Michael Ozan Bailey
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UX Design [/wave][/font_size]
+		Alex Xayavong
+		Jordan McGill
+		Kshaunish Shaik
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Programming[/wave][/font_size]
+	Programming Co-director Michael Campbell
+	Programming Co-director Justin Langdon
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Cooking [/wave][/font_size]
+		Benjamin Wall
+		Carlin (CJ) Jasper
+		Cian Barrett
+		Clancy Mahoney
+		Emily Hansen
+		Kaiden Zamora-Soon
+		Maximilian Fowlkes
+		Oscar Angleberger
+		Rayan Qadri
+		Shakeeb Uddin
+		Toby Schultz
+		Tushar Rangaswamy
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Free roam [/wave][/font_size]
+		Cian Barrett
+		Emily Hansen
+		Oscar Angleberger
+		Rayan Qadri
+		Toby Schultz
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UI [/wave][/font_size]
+		Benjamin Wall
+		Carlin (CJ) Jasper
+		Khalid Moosa
+		Mira MacLennan
+
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Sound[/wave][/font_size]
+	Sound Co-director Miles Tison
+	Sound Co-director Daniel Irchai
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Design [/wave][/font_size]
+		Nathan Caruso
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Music [/wave][/font_size]
+		Alexander Edralin
+		Becs Neuman
+		Christopher Taylor
+		Connor Hayes
+		Grace Dorl
+		Justin Lam
+		Nathan Caruso
+		Sami Rao
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]SFX [/wave][/font_size]
+		Alex Dugan
+		Connor Hayes
+		Jan Deichmann
+
+	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Voice Acting [/wave][/font_size]
+		[i][font_size=32]Callum[/font_size][/i]:    Edward (Eddie) Crawley
+		[i][font_size=32]Millie[/font_size][/i]:    Fiona Brown
+		[i][font_size=32]Pepper[/font_size][/i]:    Kelly Leach
+		[i][font_size=32]Raymond[/font_size][/i]:    Robbie Albritton
+
+	[center][font_size=35][wave amp=35.0 freq=4.0 connected=0]Thank you to GMU Voice Acting Club![/wave][/font_size][/center]
+
+[font_size=75][wave amp=50.0 freq=4.0 connected=0]Admin[/wave][/font_size]
+	Co-president Matthew Neri
+	Co-president & Social Media Manager Khalid Moosa
+	Vice President Maia Ocampo
+	Production Manager Alex James
+	Assistant Production Manager Joan Palacios
+	Secretary John McGuire
+	Treasurer Zachary Kim
+	Web Master Evan Kusko
+
+
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Title" type="TextureRect" parent="Scroller"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -361.0
+offset_top = -180.0
+offset_right = 361.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 0.909)
+pivot_offset = Vector2(296.5, 148)
+texture = ExtResource("4_vidm0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="DropShadow" type="TextureRect" parent="Scroller/Title"]
+modulate = Color(0, 0, 0, 0.45098)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.045
+offset_top = -158.513
+offset_right = 377.955
+offset_bottom = 201.487
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vidm0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scroller/Title"]
+libraries = {
+"": SubResource("AnimationLibrary_qbhx2")
+}
+autoplay = "animate"
+
+[node name="ThanksLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 7780.0
+offset_bottom = 7846.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center][wave amp=30 connected=0 freq=5]Thank you for playing![/wave][/center]"
+fit_content = true
+script = ExtResource("6_moxr0")
+
+[node name="PlaySongForScene" parent="." instance=ExtResource("7_a1pke")]
+song_name = "pre_lunch_rush.tres"
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_3e4st")
+}

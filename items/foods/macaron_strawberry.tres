@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://ceyv2x3ksyafl"]
+
+[ext_resource type="PackedScene" uid="uid://cdlagugjlu0oq" path="res://cooking/food_items_recipes/Macaron.tscn" id="1_00rm5"]
+[ext_resource type="Texture2D" uid="uid://ciw5n6nmwrh8y" path="res://items/foods/art/Macaron_Strawberry.png" id="2_eh23c"]
+[ext_resource type="Resource" uid="uid://ncul60wovroo" path="res://items/ingredients/strawberry.tres" id="3_4m1e8"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_847g0"]
+
+[resource]
+script = ExtResource("4_847g0")
+cooking_minigame = ExtResource("1_00rm5")
+ingredient = ExtResource("3_4m1e8")
+display_name = "Strawberry Macaron"
+image = ExtResource("2_eh23c")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhr08sd4y1yuy"]
+[gd_scene load_steps=10 format=3 uid="uid://bhr08sd4y1yuy"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_28xqw"]
 [ext_resource type="Script" path="res://cooking/steps/roll_up.gd" id="2_wilwa"]
 [ext_resource type="Texture2D" uid="uid://dv5rxhvailmj" path="res://cooking/art/Countertop_Blue.png" id="3_edc7c"]
+[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="3_pb4hx"]
 [ext_resource type="Shader" path="res://cooking/steps/step_roll_up.gdshader" id="4_usw27"]
 [ext_resource type="Texture2D" uid="uid://dv8m6j6e7tttp" path="res://cooking/art/arrow.svg" id="5_vsrsk"]
 [ext_resource type="Texture2D" uid="uid://cfmj7i53id43a" path="res://cooking/art/BigDoughBallLong.png" id="8_2y368"]
@@ -22,7 +23,12 @@ expected_speed = 500
 speed_tolerance = 200
 progress_total = 10000.0
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
+[node name="InstructionsPanel" parent="." index="0" instance=ExtResource("3_pb4hx")]
+layout_mode = 1
+minigame_title = "ROLL UP"
+instructions = "Click and Drag the roll up in one quick motion"
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
 z_index = -10
 layout_mode = 1
 anchors_preset = 15
@@ -34,24 +40,24 @@ texture = ExtResource("3_edc7c")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="FlashSprite" type="Sprite2D" parent="." index="1"]
+[node name="FlashSprite" type="Sprite2D" parent="." index="2"]
 clip_children = 2
 material = SubResource("ShaderMaterial_xndhv")
 position = Vector2(236, 306)
 scale = Vector2(0.487583, 0.487583)
 texture = ExtResource("5_vsrsk")
 
-[node name="first" type="Sprite2D" parent="." index="2"]
+[node name="first" type="Sprite2D" parent="." index="3"]
 position = Vector2(553, 430)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_2y368")
 
-[node name="second" type="Sprite2D" parent="." index="3"]
+[node name="second" type="Sprite2D" parent="." index="4"]
 position = Vector2(553, 395)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_tioel")
 
-[node name="third" type="Sprite2D" parent="." index="4"]
+[node name="third" type="Sprite2D" parent="." index="5"]
 position = Vector2(554, 329)
 scale = Vector2(0.5, 0.902344)
 texture = ExtResource("9_tioel")

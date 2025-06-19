@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://pl8q7s5xreim"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=6 format=3 uid="uid://pl8q7s5xreim"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_l30b8"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_hxeqm"]
+[ext_resource type="Resource" uid="uid://ckof315v6uid3" path="res://items/foods/puff_roll_pork.tres" id="3_sfgsh"]
+[ext_resource type="Resource" uid="uid://d11yl7pw3yhgt" path="res://items/foods/puff_roll_pistachio.tres" id="4_6pbkl"]
+[ext_resource type="Resource" uid="uid://d0pu8p3gpa5tk" path="res://items/foods/puff_roll_cheese.tres" id="5_ch3ee"]
 
 [resource]
 script = ExtResource("1_l30b8")
 display_name = "Puff Roll"
 instructions = "<todo>"
-variants = Array[ExtResource("2_hxeqm")]([])
+variants = Array[ExtResource("2_hxeqm")]([ExtResource("3_sfgsh"), ExtResource("4_6pbkl"), ExtResource("5_ch3ee")])
