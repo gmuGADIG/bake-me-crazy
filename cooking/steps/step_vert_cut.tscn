@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bqiuapp2ar2pr"]
 
 [ext_resource type="PackedScene" uid="uid://bthmkwq5lu0kl" path="res://cooking/steps/base_step_cut.tscn" id="1_t6cv2"]
-[ext_resource type="PackedScene" uid="uid://p7jlq2812llw" path="res://cooking/steps/instructions_panel.tscn" id="2_6xt0f"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="2_6xt0f"]
 [ext_resource type="Texture2D" uid="uid://dv5rxhvailmj" path="res://cooking/art/Countertop_Blue.png" id="2_7xu16"]
 [ext_resource type="Texture2D" uid="uid://4p08bggtflm3" path="res://cooking/art/knife.png" id="2_wyfqc"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="2_x7f68"]
@@ -32,10 +32,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("2_6xt0f")]
-offset_top = 392.0
-offset_bottom = 392.0
-minigame_title = "CUT THE DOUGH"
-instructions = "Click and Drag along the dotted lines to cut the dough."
+offset_top = 304.0
+offset_bottom = 304.0
+minigame_title = "Cut the dough"
+instructions = "Click and drag along the dotted lines to cut the dough."
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 z_index = -10
