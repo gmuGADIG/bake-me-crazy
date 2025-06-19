@@ -12,6 +12,7 @@ class_name InstructionsPanel
 @onready var recipe   : RichTextLabel = %RECIPE
 @onready var title_box: RichTextLabel = %TaskTitle
 @onready var text_box : RichTextLabel = %Instructions
+@onready var step_num : Label         = %TaskNumber
 
 @export var minigame_title:String: set = set_title
 @export_multiline var instructions:String: set = set_instruct
@@ -21,6 +22,12 @@ func close_book() -> void:
 
 func parent_name() -> String:
 	return get_parent().name
+	
+func update_step_num() -> void:
+	if MorningShift.instance:
+		step_num.text = str(MorningShift.instance.current_step, ".")
+	else:
+		step_num.text = "-"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,6 +39,7 @@ func _ready() -> void:
 	if MorningShift.instance:
 		if MorningShift.instance.current_recipe:
 			display_name = MorningShift.instance.current_recipe.display_name
+	update_step_num()
 
 	recipe.text = str("[center]", display_name, "[/center]")
 	title_box.text = minigame_title
