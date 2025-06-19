@@ -1,27 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckmbs4bxchfpk"]
+[gd_scene load_steps=4 format=3 uid="uid://ckmbs4bxchfpk"]
 
-[ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_r6gml"]
-[ext_resource type="PackedScene" uid="uid://83sg17i2w6gw" path="res://cooking/morning_results.tscn" id="2_vnmvl"]
-[ext_resource type="PackedScene" uid="uid://d1v5q0dylibsk" path="res://cooking/steps/pour_flour.tscn" id="3_ruid5"]
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hexus"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_ruid5"]
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="4_00fwg"]
 
-[node name="FoodMinigame" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-script = ExtResource("1_r6gml")
+[node name="Bar" instance=ExtResource("1_hexus")]
 
-[node name="MorningResults" parent="." instance=ExtResource("2_vnmvl")]
-unique_name_in_owner = true
-visible = false
+[node name="PourFlour" parent="." index="2" instance=ExtResource("3_ruid5")]
 layout_mode = 1
 
-[node name="PourFlour" parent="." instance=ExtResource("3_ruid5")]
-layout_mode = 1
-
-[node name="StepHeat" parent="." instance=ExtResource("4_00fwg")]
+[node name="StepHeat" parent="." index="3" instance=ExtResource("4_00fwg")]
 layout_mode = 1

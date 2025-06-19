@@ -20,4 +20,5 @@ visible = false
 layout_mode = 1
 
 [node name="StepResults" parent="." instance=ExtResource("3_clpcc")]
+z_index = 100
 layout_mode = 1
