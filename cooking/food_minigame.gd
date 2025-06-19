@@ -25,6 +25,15 @@ func next_step(score : float) -> void:
 	
 	##Play the step completion screen
 	if prev != null:
+		# Animate any closing stuff here. For now, that means make the
+		# recipe book leave.
+		var recipe_book = prev.get_node_or_null("InstructionsPanel")
+		if recipe_book != null:
+			# Make sure the recipe book IS processing, cause we disable
+			# the node.
+			recipe_book.process_mode = Node.PROCESS_MODE_ALWAYS
+			recipe_book.close_book()
+		
 		prev.process_mode = Node.PROCESS_MODE_DISABLED
 		$StepResults.display_results(score)
 		await $StepResults.finised

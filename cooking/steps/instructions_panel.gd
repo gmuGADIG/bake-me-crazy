@@ -1,5 +1,6 @@
 @tool
 extends Node
+class_name InstructionsPanel
 
 # TODO: Decide whether we use this or not.
 # - The pour_floor minigame always needs to show the recipe so that we can
@@ -13,6 +14,9 @@ extends Node
 
 @export var minigame_title:String: set = set_title
 @export_multiline var instructions:String: set = set_instruct
+
+func close_book() -> void:
+	$AnimationPlayer.play("close_book")
 
 func parent_name() -> String:
 	return get_parent().name
