@@ -38,8 +38,8 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="PourFlour" instance=ExtResource("1_0kwik")]
 script = ExtResource("1_4i01a")
-target_amount = null
-pour_speed = null
+target_amount = 300.0
+pour_speed = 200.0
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("3_8lxue")]
 layout_mode = 1

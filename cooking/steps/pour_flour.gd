@@ -43,6 +43,9 @@ func _process(delta: float) -> void:
 		var score := remap(flour_in_bowl, target_amount + pour_speed * .5, target_amount + pour_speed * 1.5, 3, 0)
 		score = clampf(score, 0, 3)
 		finished.emit(score)
+		
+		# Hide the particles when finished so they don't show during the animation.
+		particles.hide()
 		done = true
 
 		print("[pour_flour] score = ", score)
