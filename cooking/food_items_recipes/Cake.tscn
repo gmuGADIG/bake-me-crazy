@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_cmip3"]
 [ext_resource type="PackedScene" uid="uid://83sg17i2w6gw" path="res://cooking/morning_results.tscn" id="2_1u8ww"]
-[ext_resource type="PackedScene" uid="uid://d1v5q0dylibsk" path="res://cooking/steps/pour_flour.tscn" id="3_4yn38"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_4yn38"]
 [ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="4_sy68h"]
 
 [node name="FoodMinigame" type="Control"]

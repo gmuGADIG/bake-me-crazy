@@ -10,5 +10,6 @@ func _ready() -> void:
 
 func load_file(save_template : SaveTemplate) -> void:
 	data = save_template
-	SceneTransition.change_scene_to_file("res://free_roam/world/streets.tscn")
+	SceneTransition.change_scene_to_file(data.scene_path)
+	Dialogic.load_full_state(data.dialogic_blob)
 	# TODO: include the current scene in the save and go there
