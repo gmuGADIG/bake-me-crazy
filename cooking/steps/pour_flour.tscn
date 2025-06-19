@@ -13,14 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
 [ext_resource type="Shader" path="res://cooking/steps/pour_flour.gdshader" id="10_1oh4q"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_olnti"]
-font_size = 30
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_1tj86"]
-font_size = 12
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
 size = Vector2(155.5, 608)
 
@@ -35,6 +27,14 @@ gradient = SubResource("Gradient_bixkh")
 width = 4
 height = 4
 fill_to = Vector2(0, 0.0723684)
+
+[sub_resource type="LabelSettings" id="LabelSettings_olnti"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1tj86"]
+font_size = 12
+font_color = Color(0, 0, 0, 1)
 
 [node name="PourFlour" instance=ExtResource("1_0kwik")]
 script = ExtResource("1_4i01a")
@@ -59,31 +59,7 @@ expand_mode = 1
 stretch_mode = 6
 metadata/_edit_lock_ = true
 
-[node name="FlourScale" type="Label" parent="." index="2"]
-top_level = true
-layout_mode = 0
-offset_left = 424.0
-offset_top = 551.0
-offset_right = 521.0
-offset_bottom = 583.0
-theme_override_fonts/font = ExtResource("5_kct4c")
-text = "0.0"
-label_settings = SubResource("LabelSettings_olnti")
-horizontal_alignment = 2
-
-[node name="FlourScaleG" type="Label" parent="." index="3"]
-top_level = true
-layout_mode = 0
-offset_left = 433.0
-offset_top = 567.0
-offset_right = 530.0
-offset_bottom = 599.0
-theme_override_fonts/font = ExtResource("5_kct4c")
-text = "g"
-label_settings = SubResource("LabelSettings_1tj86")
-horizontal_alignment = 2
-
-[node name="BowlArea" type="Area2D" parent="." index="4"]
+[node name="BowlArea" type="Area2D" parent="." index="2"]
 unique_name_in_owner = true
 position = Vector2(19, 152)
 
@@ -107,10 +83,10 @@ scale = Vector2(0.34082, 0.34082)
 texture = ExtResource("4_dildu")
 metadata/_edit_lock_ = true
 
-[node name="HoldingManager" parent="." index="5" instance=ExtResource("3_p1eiu")]
+[node name="HoldingManager" parent="." index="3" instance=ExtResource("3_p1eiu")]
 position = Vector2(19, 152)
 
-[node name="FlourPourer" parent="." index="6" instance=ExtResource("2_u3vmg")]
+[node name="FlourPourer" parent="." index="4" instance=ExtResource("2_u3vmg")]
 unique_name_in_owner = true
 position = Vector2(232, 358)
 collision_layer = 9
@@ -143,7 +119,29 @@ emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 180.0
 
-[node name="TextureRect" type="TextureRect" parent="." index="7"]
+[node name="TextureRect" type="TextureRect" parent="." index="5"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="FlourScale" type="Label" parent="." index="6"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 551.0
+offset_right = 521.0
+offset_bottom = 583.0
+theme_override_fonts/font = ExtResource("5_kct4c")
+text = "0.0"
+label_settings = SubResource("LabelSettings_olnti")
+horizontal_alignment = 2
+
+[node name="FlourScaleG" type="Label" parent="." index="7"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 567.0
+offset_right = 530.0
+offset_bottom = 599.0
+theme_override_fonts/font = ExtResource("5_kct4c")
+text = "g"
+label_settings = SubResource("LabelSettings_1tj86")
+horizontal_alignment = 2
