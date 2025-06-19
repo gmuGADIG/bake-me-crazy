@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bstefa0yy7mq5"]
+[gd_scene load_steps=19 format=3 uid="uid://bstefa0yy7mq5"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
 [ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cmrx2ogxh3j52" path="res://cooking/cooking_art/bowl_front.png" id="6_jxq2s"]
 [ext_resource type="Texture2D" uid="uid://e864ejwf88ag" path="res://cooking/cooking_art/bowl_mask.png" id="9_mlc5v"]
 [ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
-[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="10_wogy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
 size = Vector2(155.5, 608)
@@ -92,17 +91,14 @@ metadata/_edit_lock_ = true
 
 [node name="BowlMask" type="Sprite2D" parent="." index="3"]
 clip_children = 1
-position = Vector2(509, 445)
+position = Vector2(509, 440)
 scale = Vector2(1.09167, 1.09167)
 texture = ExtResource("9_mlc5v")
+metadata/_edit_lock_ = true
 
-[node name="CanvasGroup" type="CanvasGroup" parent="BowlMask" index="0"]
-
-[node name="Powder" type="CPUParticles2D" parent="BowlMask/CanvasGroup" index="0"]
+[node name="Powder" type="CPUParticles2D" parent="BowlMask" index="0"]
 unique_name_in_owner = true
-show_behind_parent = true
-z_index = -1
-position = Vector2(-232.672, -42.1374)
+position = Vector2(-231.755, -35.7251)
 scale = Vector2(0.0870229, 0.0870229)
 amount = 24
 randomness = 0.1
@@ -110,11 +106,6 @@ texture = SubResource("GradientTexture2D_icf4r")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 180.0
-
-[node name="Sprite2D" type="Sprite2D" parent="BowlMask/CanvasGroup/Powder" index="0"]
-position = Vector2(0.000244141, 10.5264)
-scale = Vector2(11.4912, 11.4912)
-texture = ExtResource("10_wogy5")
 
 [node name="HoldingManager" parent="." index="4" instance=ExtResource("3_p1eiu")]
 position = Vector2(19, 152)
@@ -139,8 +130,7 @@ texture = ExtResource("9_ns6fm")
 
 [node name="PowderLocation" type="Node2D" parent="FlourPourer" index="3"]
 unique_name_in_owner = true
-position = Vector2(-73, 36)
-scale = Vector2(1, 1)
+position = Vector2(24, 43)
 
 [node name="TextureRect" type="TextureRect" parent="." index="6"]
 layout_mode = 0

@@ -167,7 +167,7 @@ offset_right = 150.0
 offset_bottom = 157.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "10."
+text = "-"
 horizontal_alignment = 2
 
 [node name="Instructions" type="RichTextLabel" parent="TextureRect"]
