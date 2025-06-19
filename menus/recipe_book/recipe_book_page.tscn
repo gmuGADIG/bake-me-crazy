@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://feyopye254fc"]
+[gd_scene load_steps=3 format=3 uid="uid://csbdkjtt5wtsj"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_page.gd" id="1_bnpu1"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_0saai"]
 
-[node name="RecipeBookPage" type="Panel"]
+[node name="RecipeBookPage" type="Control"]
 custom_minimum_size = Vector2(396, 360)
+layout_mode = 3
+anchors_preset = 0
 offset_right = 396.0
 offset_bottom = 506.0
 size_flags_horizontal = 3

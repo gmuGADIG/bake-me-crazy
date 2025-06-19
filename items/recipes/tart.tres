@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_6all1")
 display_name = "Tart"
-instructions = "<todo>"
+instructions = "A versatile crust with a crumbly yet soft texture that can handle all kinds of juicy fruits and other toppings in a pie-like shape."
 variants = Array[ExtResource("2_h55dg")]([ExtResource("3_nluy0"), ExtResource("4_lo4p8"), ExtResource("5_yg6ug")])

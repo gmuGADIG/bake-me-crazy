@@ -10,5 +10,5 @@
 [resource]
 script = ExtResource("1_0lymt")
 display_name = "Cannelle"
-instructions = "<todo>"
+instructions = "A small and soft pastry that has a rich caramelized exterior, which is contrasted with a pillowy soft custardy center."
 variants = Array[ExtResource("2_nfgrc")]([ExtResource("3_5ha2f"), ExtResource("4_y8xsm"), ExtResource("5_ass0c"), ExtResource("6_xavmk")])

@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_3s57o")
 display_name = "Cake"
-instructions = "<todo>"
+instructions = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors."
 variants = Array[ExtResource("2_d2w5t")]([ExtResource("3_7eexl"), ExtResource("4_rtog4"), ExtResource("5_3drrj")])
