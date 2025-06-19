@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bstefa0yy7mq5"]
+[gd_scene load_steps=20 format=3 uid="uid://bstefa0yy7mq5"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
 [ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bddmmieici4ii" path="res://cooking/cooking_art/Minigame_Scale.png" id="4_dildu"]
 [ext_resource type="FontFile" uid="uid://ywm1il2mln4f" path="res://cooking/steps/pour_flour/7segment.ttf" id="5_kct4c"]
 [ext_resource type="Texture2D" uid="uid://bfbc61gfc86an" path="res://cooking/cooking_art/Minigame_HandCursorPoint.png" id="6_7xhu1"]
+[ext_resource type="Texture2D" uid="uid://cmrx2ogxh3j52" path="res://cooking/cooking_art/bowl_front.png" id="6_jxq2s"]
 [ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
 [ext_resource type="Shader" path="res://cooking/steps/pour_flour.gdshader" id="10_1oh4q"]
 
@@ -71,11 +72,19 @@ metadata/_edit_lock_ = true
 [node name="BowlSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="0"]
 light_mask = 2
 visibility_layer = 2
+z_index = -2
 position = Vector2(0.25, 121)
 scale = Vector2(0.187292, 0.187292)
 texture = ExtResource("3_yphet")
 
-[node name="ScaleSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="1"]
+[node name="BowlFront" type="Sprite2D" parent="BowlArea/BowlShape" index="1"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0.25, 121)
+scale = Vector2(0.187292, 0.187292)
+texture = ExtResource("6_jxq2s")
+
+[node name="ScaleSprite" type="Sprite2D" parent="BowlArea/BowlShape" index="2"]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(4.25, 212)
@@ -107,7 +116,6 @@ texture = ExtResource("9_ns6fm")
 [node name="Powder" type="CPUParticles2D" parent="FlourPourer" index="3"]
 unique_name_in_owner = true
 show_behind_parent = true
-clip_children = 2
 z_index = -1
 material = SubResource("ShaderMaterial_4mwux")
 position = Vector2(23, 41)
