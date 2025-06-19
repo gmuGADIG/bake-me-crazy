@@ -10,5 +10,5 @@
 [resource]
 script = ExtResource("1_kvdlp")
 display_name = "Sweet Roll"
-instructions = "<todo>"
+instructions = "This treat is perfect for breakfast or brunch as it's a light, flaky dough that surrounds a filling of choice."
 variants = Array[ExtResource("2_3nb1f")]([ExtResource("3_2ws65"), ExtResource("4_36ces"), ExtResource("5_pkh0n"), ExtResource("6_bb3qm")])

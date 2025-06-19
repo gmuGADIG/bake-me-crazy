@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_o2eyg")
 display_name = "Cookie"
-instructions = "<todo>"
+instructions = "A baked dessert shaped to be small, flat, and made with love. The butter dough mixed with sweet ingredients gives each bite a memorable sensation."
 variants = Array[ExtResource("2_so6ft")]([ExtResource("3_q7oj2"), ExtResource("4_xy1sc"), ExtResource("5_cu5no")])

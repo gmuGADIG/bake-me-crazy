@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_l30b8")
 display_name = "Puff Roll"
-instructions = "<todo>"
+instructions = "The pastry’s equivalent of a burrito! Sporting a soft yet slightly crunchy exterior, having enough space inside to fill up on the delicious fillings."
 variants = Array[ExtResource("2_hxeqm")]([ExtResource("3_sfgsh"), ExtResource("4_6pbkl"), ExtResource("5_ch3ee")])

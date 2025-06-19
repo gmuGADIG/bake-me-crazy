@@ -1,37 +1,50 @@
-[gd_scene load_steps=17 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=28 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
-[ext_resource type="Texture2D" uid="uid://bc4nmmo0iovxd" path="res://Spiralnotebook_cover.png" id="5_1tayq"]
-[ext_resource type="Texture2D" uid="uid://otf65c5h0fhj" path="res://Notebookpaper.png" id="6_p3kn6"]
-[ext_resource type="PackedScene" uid="uid://feyopye254fc" path="res://menus/recipe_book/recipe_book_page.tscn" id="7_ldrir"]
+[ext_resource type="Texture2D" uid="uid://d07o2lsduweq4" path="res://menus/recipe_book/photo_frame_back.png" id="3_0yxhu"]
+[ext_resource type="Script" path="res://menus/recipe_book/recipe_book_page.gd" id="3_echjj"]
+[ext_resource type="Texture2D" uid="uid://dlx146n2vp5th" path="res://items/foods/art/croissant.png" id="4_68jve"]
+[ext_resource type="Texture2D" uid="uid://b4j3328aowmyu" path="res://menus/recipe_book/Cookbook.png" id="4_vlr6a"]
+[ext_resource type="Texture2D" uid="uid://c233itwo8peqr" path="res://menus/recipe_book/photo_frame_front.png" id="5_husja"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="10_7f2te"]
+[ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="10_u7x5x"]
 [ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
 [ext_resource type="Texture2D" uid="uid://bjtf32jw05iq5" path="res://menus/recipe_book/Right_arrow_curve.webp" id="32_wttob"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_variant_selection.gd" id="33_amgaq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ndtw"]
-bg_color = Color(0.98, 0.825977, 0.7546, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.52, 0.3601, 0.286, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 40
+[sub_resource type="LabelSettings" id="LabelSettings_c0w4i"]
+font_size = 30
+font_color = Color(0.07, 0.04088, 0.0364, 1)
+outline_color = Color(0.07, 0.04088, 0.0364, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4nyj"]
-bg_color = Color(0.98, 0.825977, 0.7546, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.52, 0.3601, 0.286, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 10
+[sub_resource type="Gradient" id="Gradient_l0upc"]
+offsets = PackedFloat32Array(0, 0.0427046, 0.533808, 0.967972, 1)
+colors = PackedColorArray(0.07, 0.0390833, 0.035, 0, 0.07, 0.0390833, 0.035, 1, 0.0705882, 0.0392157, 0.0352941, 1, 0.07, 0.0390833, 0.035, 1, 0.07, 0.0390833, 0.035, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6wtt"]
+gradient = SubResource("Gradient_l0upc")
+height = 4
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5r03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_piwxr"]
+bg_color = Color(0.44, 0.33352, 0.2948, 0.305882)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0.18, 0.10944, 0.0936, 0.466667)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsihr"]
+bg_color = Color(0.439216, 0.333333, 0.294118, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g84x"]
 
@@ -52,28 +65,58 @@ region_rect = Rect2(26, 61, 252, 167)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upkg4"]
 
+[sub_resource type="Animation" id="Animation_myak8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5isc8"]
+resource_name = "flip_left"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0, 0.0350523, -0.059, -0.0666667, -0.0027857, 0.0487456, -0.0169968, 0.00162391, -0.0666667, 0.00529155, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.233333)
+}
+
+[sub_resource type="Animation" id="Animation_sl8q5"]
+resource_name = "flip_right"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Book:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0, 0.0350523, 0.0588241, -0.0666667, -0.0027857, 0.0487456, -0.0169968, 0.00162391, -0.0666667, 0.00529155, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.233333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gqix"]
+_data = {
+"RESET": SubResource("Animation_myak8"),
+"flip_left": SubResource("Animation_5isc8"),
+"flip_right": SubResource("Animation_sl8q5")
+}
+
 [node name="RecipeBook" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_3psjk")
-
-[node name="BookBack" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(577, 322)
-scale = Vector2(0.177667, 0.190222)
-texture = ExtResource("5_1tayq")
-
-[node name="BookVisual" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(840, 323.5)
-scale = Vector2(0.271991, 0.254774)
-texture = ExtResource("6_p3kn6")
-
-[node name="BookVisual2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(312.5, 327)
-rotation = -3.14159
-scale = Vector2(0.274, 0.256)
-texture = ExtResource("6_p3kn6")
 
 [node name="Book" type="Control" parent="."]
 layout_mode = 3
@@ -88,6 +131,22 @@ offset_right = 398.0
 offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(398, 420)
+
+[node name="BookArt" type="TextureRect" parent="Book"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -137.0
+offset_right = 67.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vlr6a")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Pages" type="HBoxContainer" parent="Book"]
 layout_mode = 1
@@ -99,17 +158,240 @@ offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PageLeft" parent="Book/Pages" instance=ExtResource("7_ldrir")]
+[node name="PageLeft" type="Control" parent="Book/Pages" node_paths=PackedStringArray("food_icon", "food_name", "food_desc", "variants")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2ndtw")
-metadata/_edit_lock_ = true
+size_flags_horizontal = 3
+script = ExtResource("3_echjj")
+food_icon = NodePath("Photo/FoodImage")
+food_name = NodePath("FoodName")
+food_desc = NodePath("Writing/FoodDesc")
+variants = NodePath("Writing/Variants")
 
-[node name="PageRight" parent="Book/Pages" instance=ExtResource("7_ldrir")]
+[node name="Photo" type="Control" parent="Book/Pages/PageLeft"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 38.0
+offset_top = 78.0
+offset_right = 141.0
+offset_bottom = 181.0
+rotation = -0.196472
+
+[node name="PhotoBack" type="TextureRect" parent="Book/Pages/PageLeft/Photo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0yxhu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FoodImage" type="TextureRect" parent="Book/Pages/PageLeft/Photo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = -7.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_68jve")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PhotoFront" type="TextureRect" parent="Book/Pages/PageLeft/Photo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_husja")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FoodName" type="Label" parent="Book/Pages/PageLeft"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 73.0
+offset_top = -158.5
+offset_right = 74.0
+offset_bottom = -114.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0439496
+text = "Croissant"
+label_settings = SubResource("LabelSettings_c0w4i")
+
+[node name="Underline" type="TextureRect" parent="Book/Pages/PageLeft/FoodName"]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_g6wtt")
+
+[node name="Writing" type="VBoxContainer" parent="Book/Pages/PageLeft"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.0
+offset_top = 203.0
+offset_right = 141.0
+offset_bottom = 489.0
+grow_horizontal = 2
+
+[node name="FoodDesc" type="RichTextLabel" parent="Book/Pages/PageLeft/Writing"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside."
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Book/Pages/PageLeft/Writing"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Variants" type="RichTextLabel" parent="Book/Pages/PageLeft/Writing"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
+bbcode_enabled = true
+text = "Variants:
+• Croissant [color=green][b]✓[/b][/color]
+• Chocolate Croissant [color=red][b]✗[/b][/color]
+• Strawberry Croissant
+• Earl Grey Croissant"
+fit_content = true
+
+[node name="PageRight" type="Control" parent="Book/Pages" node_paths=PackedStringArray("food_icon", "food_name", "food_desc", "variants")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x4nyj")
-metadata/_edit_lock_ = true
+size_flags_horizontal = 3
+script = ExtResource("3_echjj")
+food_icon = NodePath("Photo/FoodImage")
+food_name = NodePath("FoodName")
+food_desc = NodePath("Writing/FoodDesc")
+variants = NodePath("Writing/Variants")
+
+[node name="Photo" type="Control" parent="Book/Pages/PageRight"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 266.0
+offset_top = 58.0
+offset_right = 369.0
+offset_bottom = 161.0
+rotation = 0.197222
+
+[node name="PhotoBack" type="TextureRect" parent="Book/Pages/PageRight/Photo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0yxhu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FoodImage" type="TextureRect" parent="Book/Pages/PageRight/Photo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 9.0
+offset_right = -7.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_68jve")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PhotoFront" type="TextureRect" parent="Book/Pages/PageRight/Photo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_husja")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FoodName" type="Label" parent="Book/Pages/PageRight"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34596
+anchor_top = 0.298211
+anchor_right = 0.34596
+anchor_bottom = 0.298211
+offset_left = -1.0
+offset_top = -49.0
+offset_bottom = -4.99998
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.0590418
+text = "Croissant"
+label_settings = SubResource("LabelSettings_c0w4i")
+
+[node name="Underline" type="TextureRect" parent="Book/Pages/PageRight/FoodName"]
+texture_filter = 2
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_g6wtt")
+
+[node name="Writing" type="VBoxContainer" parent="Book/Pages/PageRight"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.0
+offset_top = 203.0
+offset_right = 141.0
+offset_bottom = 489.0
+grow_horizontal = 2
+
+[node name="FoodDesc" type="RichTextLabel" parent="Book/Pages/PageRight/Writing"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors."
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Book/Pages/PageRight/Writing"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Variants" type="RichTextLabel" parent="Book/Pages/PageRight/Writing"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
+bbcode_enabled = true
+text = "Variants:
+• Croissant [color=green][b]✓[/b][/color]
+• Chocolate Croissant [color=red][b]✗[/b][/color]
+• Strawberry Croissant
+• Earl Grey Croissant"
+fit_content = true
 
 [node name="BakingText" type="Control" parent="."]
 unique_name_in_owner = true
@@ -143,33 +425,67 @@ anchor_bottom = 1.0
 offset_left = -150.0
 offset_top = -58.0
 offset_right = 150.0
-offset_bottom = -19.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(150, 32.5)
+pivot_offset = Vector2(150, 61)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h5r03")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_piwxr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_dsihr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dsihr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dsihr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dsihr")
 text = "0/2 Recipes"
 script = ExtResource("10_7f2te")
 
-[node name="BakeLeft" type="Button" parent="."]
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("10_u7x5x")
+
+[node name="BakeLeft" type="Button" parent="Buttons"]
 unique_name_in_owner = true
 z_index = 1
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -894.0
-offset_top = -134.0
+offset_top = -161.0
 offset_right = -594.0
-offset_bottom = -74.0
+offset_bottom = -101.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(147, 30)
 text = "BAKE"
 script = ExtResource("10_7f2te")
 
-[node name="TurnPageRight" type="Button" parent="."]
+[node name="BakeRight" type="Button" parent="Buttons"]
 unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 595.0
+offset_top = -160.0
+offset_right = 895.0
+offset_bottom = -100.0
+grow_vertical = 0
+pivot_offset = Vector2(150, 30)
+text = "BAKE"
+script = ExtResource("10_7f2te")
+
+[node name="TurnPageRight" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -189,8 +505,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_gf6wf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xodou")
 script = ExtResource("10_7f2te")
 
-[node name="TurnPageLeft" type="Button" parent="."]
+[node name="TurnPageLeft" type="Button" parent="Buttons"]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -211,30 +528,15 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_gf6wf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xodou")
 script = ExtResource("10_7f2te")
 
-[node name="BakeRight" type="Button" parent="."]
-unique_name_in_owner = true
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 595.0
-offset_top = -133.0
-offset_right = 895.0
-offset_bottom = -73.0
-grow_vertical = 0
-pivot_offset = Vector2(150, 30)
-text = "BAKE"
-script = ExtResource("10_7f2te")
-
 [node name="RecipeVariantSelection" type="ColorRect" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.643665, 0.539271, 0.449243, 1)
+color = Color(0, 0, 0, 0.333333)
 script = ExtResource("33_amgaq")
 
 [node name="SelectRecipesVariants" type="RichTextLabel" parent="RecipeVariantSelection"]
@@ -276,6 +578,7 @@ offset_top = 595.0
 offset_right = 557.0
 offset_bottom = 627.0
 pivot_offset = Vector2(88, 17)
+theme = ExtResource("10_u7x5x")
 text = "Confirm!"
 script = ExtResource("10_7f2te")
 
@@ -286,6 +589,7 @@ offset_top = 595.0
 offset_right = 746.0
 offset_bottom = 627.0
 pivot_offset = Vector2(88, 16)
+theme = ExtResource("10_u7x5x")
 text = "Cancel"
 script = ExtResource("10_7f2te")
 
@@ -311,9 +615,15 @@ offset_bottom = 573.0
 [node name="VariantButton2" parent="RecipeVariantSelection/VariantsRight" instance=ExtResource("28_8q60k")]
 layout_mode = 2
 
+[node name="Anim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_8gqix")
+}
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="BakingText/FinishButton" to="." method="_on_finish_button_pressed"]
-[connection signal="pressed" from="BakeLeft" to="." method="_on_bake_left_pressed"]
-[connection signal="pressed" from="TurnPageRight" to="." method="_on_turn_page_right_pressed"]
-[connection signal="pressed" from="TurnPageLeft" to="." method="_on_turn_page_left_pressed"]
-[connection signal="pressed" from="BakeRight" to="." method="_on_bake_right_pressed"]
+[connection signal="pressed" from="Buttons/BakeLeft" to="." method="_on_bake_left_pressed"]
+[connection signal="pressed" from="Buttons/BakeRight" to="." method="_on_bake_right_pressed"]
+[connection signal="pressed" from="Buttons/TurnPageRight" to="." method="_on_turn_page_right_pressed"]
+[connection signal="pressed" from="Buttons/TurnPageLeft" to="." method="_on_turn_page_left_pressed"]

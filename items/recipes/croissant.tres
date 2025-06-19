@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_4x5xi")
 display_name = "Croissant"
-instructions = "<todo>"
+instructions = "A French pastry in a crescent shape. It has a golden brown crisp exterior with extra flakes and a soft, warm inside that will leave customers in pure buttery bliss on the first bite."
 variants = Array[ExtResource("2_0mctr")]([ExtResource("3_mrijp"), ExtResource("4_gc3v1"), ExtResource("5_sdphb")])
