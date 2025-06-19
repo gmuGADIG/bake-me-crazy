@@ -24,13 +24,13 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      inkscape:zoom="1.0806047"
-     inkscape:cx="6.0151508"
+     inkscape:cx="5.5524467"
      inkscape:cy="153.15499"
-     inkscape:window-width="2560"
-     inkscape:window-height="1494"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1481"
+     inkscape:window-height="890"
+     inkscape:window-x="948"
+     inkscape:window-y="411"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
      id="defs1" />
@@ -39,31 +39,31 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="fill:#f9f9f9;stroke-width:0.690999;stroke-linecap:square;stroke-miterlimit:12.9"
+       style="fill:#d7adb2;stroke-width:0.690999;stroke-linecap:square;stroke-miterlimit:12.9;fill-opacity:1"
        id="path1"
        cx="67.455482"
        cy="67.455482"
        r="67.455482" />
     <circle
-       style="fill:#ffbce6;fill-opacity:1;stroke-width:0.580639;stroke-linecap:square;stroke-miterlimit:12.9"
+       style="fill:#cb3d63;fill-opacity:1;stroke-width:0.580639;stroke-linecap:square;stroke-miterlimit:12.9"
        id="circle1"
        cx="67.455482"
        cy="67.455482"
        r="56.682194" />
     <circle
-       style="fill:#f9f9f9;stroke-width:0.197955;stroke-linecap:square;stroke-miterlimit:12.9"
+       style="fill:#d7adb2;stroke-width:0.197955;stroke-linecap:square;stroke-miterlimit:12.9;fill-opacity:1"
        id="circle2"
        cx="47.812496"
        cy="56.901558"
        r="19.324421" />
     <circle
-       style="fill:#f9f9f9;stroke-width:0.197955;stroke-linecap:square;stroke-miterlimit:12.9"
+       style="fill:#d7adb2;stroke-width:0.197955;stroke-linecap:square;stroke-miterlimit:12.9;fill-opacity:1"
        id="circle3"
        cx="86.421219"
        cy="56.901558"
        r="19.324421" />
     <path
-       style="fill:#f9f9f9;fill-opacity:1;stroke-width:0.690999;stroke-linecap:square;stroke-miterlimit:12.9"
+       style="fill:#d7adb2;fill-opacity:1;stroke-width:0.690999;stroke-linecap:square;stroke-miterlimit:12.9"
        d="M 31.819619,67.88597 67.443072,107.523 102.69734,67.399349 66.750537,56.794934 Z"
        id="path3"
        sodipodi:nodetypes="ccccc" />

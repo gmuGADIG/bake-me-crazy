@@ -220,12 +220,12 @@ autoplay = "RESET"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1527.0
-offset_right = -1527.0
+offset_left = -31.5635
+offset_right = -31.5635
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 0.822239, 0.929257, 1)
+color = Color(0.728852, 0.409831, 0.442025, 1)
 
 [node name="right_triangle" type="ColorRect" parent="main_pink"]
 material = SubResource("ShaderMaterial_ue3l7")
@@ -239,7 +239,7 @@ offset_right = 340.718
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 0.822239, 0.929257, 1)
+color = Color(0.729412, 0.407843, 0.443137, 1)
 
 [node name="right_triangle2" type="ColorRect" parent="main_pink"]
 material = SubResource("ShaderMaterial_v01uq")
@@ -249,7 +249,7 @@ anchor_bottom = 1.0
 offset_left = -320.0
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 0.822239, 0.929257, 1)
+color = Color(0.729412, 0.407843, 0.443137, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 anchors_preset = 4
@@ -261,6 +261,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(0, 53)
 mouse_filter = 2
+color = Color(0.447059, 0.219608, 0.247059, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -268,9 +269,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -890.0
+offset_left = -229.099
 offset_top = -153.0
-offset_right = -584.0
+offset_right = 76.9008
 offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2

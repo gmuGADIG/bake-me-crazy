@@ -1,8 +1,13 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://margarita"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://margarita"]
+
+[ext_resource type="Texture2D" uid="uid://bfa2fl7mmi04x" path="res://menus/settings/hslider_grabber.svg" id="1_v4mx1"]
+[ext_resource type="Texture2D" uid="uid://dh3b2ic7o8i86" path="res://menus/settings/hslider_grabber_highlight.svg" id="2_612kb"]
 
 [sub_resource type="FontVariation" id="FontVariation_n8uio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy8yt"]
+content_margin_top = 3.0
+content_margin_bottom = 6.0
 bg_color = Color(0.996078, 0.901961, 0.701961, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -10,6 +15,8 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2dkm"]
+content_margin_top = 3.0
+content_margin_bottom = 6.0
 bg_color = Color(0.27451, 0.184314, 0.152941, 1)
 border_width_left = 4
 border_width_top = 4
@@ -25,6 +32,8 @@ shadow_size = 1
 shadow_offset = Vector2(10.59, 8.76)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vc2w"]
+content_margin_top = 3.0
+content_margin_bottom = 6.0
 bg_color = Color(0.451255, 0.326019, 0.811645, 1)
 skew = Vector2(0.13, 0)
 border_width_left = 7
@@ -36,6 +45,31 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpdw8"]
+content_margin_top = 3.0
+content_margin_right = 3.0
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.92549, 0.772549, 0.666667, 1)
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfugj"]
+content_margin_top = 3.0
+content_margin_right = 3.0
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.92549, 0.772549, 0.666667, 1)
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiblb"]
+content_margin_top = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.92549, 0.772549, 0.666667, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_nr536"]
 
@@ -58,3 +92,8 @@ Button/fonts/font = SubResource("FontVariation_n8uio")
 Button/styles/hover = SubResource("StyleBoxFlat_iy8yt")
 Button/styles/normal = SubResource("StyleBoxFlat_x2dkm")
 Button/styles/pressed = SubResource("StyleBoxFlat_7vc2w")
+HSlider/icons/grabber = ExtResource("1_v4mx1")
+HSlider/icons/grabber_highlight = ExtResource("2_612kb")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_rpdw8")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_bfugj")
+HSlider/styles/slider = SubResource("StyleBoxFlat_fiblb")
