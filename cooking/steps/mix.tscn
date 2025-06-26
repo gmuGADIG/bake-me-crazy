@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://hckjoefpykk4"]
+
+[ext_resource type="Script" path="res://cooking/steps/mix.gd" id="1_wbjww"]
+[ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="3_vw7ff"]
+[ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="4_8weyk"]
+[ext_resource type="Texture2D" uid="uid://boew2rvyixbcv" path="res://temp_art/temp ui/goodness_bar.png" id="4_qhvrs"]
+[ext_resource type="Texture2D" uid="uid://cho30r4kn6o8f" path="res://temp_art/temp ui/goodness_pointer.png" id="5_2cgno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlol7"]
+size = Vector2(537, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi8n2"]
+size = Vector2(316, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hy7s"]
+size = Vector2(573, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r73xu"]
+size = Vector2(324, 24)
+
+[node name="Mix" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wbjww")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 75.0
+offset_right = 176.0
+offset_bottom = 99.0
+text = "Hello"
+
+[node name="FirstMix" type="Area2D" parent="."]
+position = Vector2(559, 313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstMix"]
+position = Vector2(-289.5, 0)
+shape = SubResource("RectangleShape2D_rlol7")
+one_way_collision = true
+one_way_collision_margin = 2.3
+
+[node name="SecondMix" type="Area2D" parent="."]
+position = Vector2(559, 314)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondMix"]
+position = Vector2(6.10352e-05, 177)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_gi8n2")
+one_way_collision = true
+one_way_collision_margin = 2.2
+
+[node name="ThirdMix" type="Area2D" parent="."]
+position = Vector2(559, 313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ThirdMix"]
+position = Vector2(306.5, -3.05176e-05)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_3hy7s")
+one_way_collision = true
+
+[node name="FourthMix" type="Area2D" parent="."]
+position = Vector2(559, 313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FourthMix"]
+position = Vector2(-1, -153)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_r73xu")
+one_way_collision = true
+
+[node name="FollowCursor" type="Node2D" parent="."]
+rotation = -0.00126775
+script = ExtResource("3_vw7ff")
+
+[node name="MinigameSpoon" type="Sprite2D" parent="FollowCursor"]
+position = Vector2(38.0443, -34.9518)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("4_8weyk")
+
+[node name="GoodnessBar" type="Sprite2D" parent="."]
+position = Vector2(31, 313.5)
+scale = Vector2(1.21, 1.038)
+texture = ExtResource("4_qhvrs")
+
+[node name="GoodnessPointer" type="Sprite2D" parent="."]
+position = Vector2(60, 574)
+scale = Vector2(0.3025, 0.27825)
+texture = ExtResource("5_2cgno")
+
+[connection signal="input_event" from="FirstMix" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FirstMix" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FirstMix" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SecondMix" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SecondMix" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="ThirdMix" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="ThirdMix" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="FourthMix" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FourthMix" to="." method="_on_area_2d_mouse_exited"]
