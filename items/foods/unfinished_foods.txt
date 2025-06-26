@@ -7,7 +7,7 @@ When the art is available, make sure these are swapped in.
 !! Try to update this file when implementing the art !!
 
 Missing foods:
-- Croissant: Earl Grey (uses the almond instead, since almond isn't a real ingredient)
-- Scones: All
+- Croissant: Earl Grey (the almond croissant isn't supposed to exist)
+- Scones: All (has since been posted; not in the drive yet)
 - Tarts: All
 - Cookie: peanut butter, chocolate

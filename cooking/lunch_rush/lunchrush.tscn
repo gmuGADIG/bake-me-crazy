@@ -1,7 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=33 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
-[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="1_buvuw"]
 [ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_d5ipb"]
 [ext_resource type="Resource" uid="uid://bvbn2iyovtuc5" path="res://cooking/food_items/foods/cake.tres" id="2_ht3hp"]
 [ext_resource type="Resource" uid="uid://blh6k7g2jwce2" path="res://cooking/food_items/foods/cannelle.tres" id="3_dvqv6"]
@@ -13,15 +12,221 @@
 [ext_resource type="PackedScene" uid="uid://g2k6cx260kwp" path="res://cooking/lunch_rush/shaker_particles.tscn" id="10_86e4i"]
 [ext_resource type="PackedScene" uid="uid://d1i177bdpvrs7" path="res://cooking/lunch_rush/drizzle_particles.tscn" id="11_e61kw"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
-[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="12_mww8j"]
-[ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="13_3boij"]
+[ext_resource type="Texture2D" uid="uid://b4og188mx5udw" path="res://cooking/lunch_rush/lunch_rush_bg.png" id="12_j6egg"]
+[ext_resource type="Texture2D" uid="uid://dywf4vf3nrgj" path="res://cooking/lunch_rush/wobbly_circle.png" id="13_ftmbm"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="13_qy27j"]
+[ext_resource type="Texture2D" uid="uid://b67eyc7kqcxra" path="res://cooking/lunch_rush/wobbly_rectangle.png" id="14_ha45s"]
+[ext_resource type="Texture2D" uid="uid://demxad4xjetim" path="res://cooking/art/Minigame_WoodCuttingBoard.png" id="14_qird5"]
 [ext_resource type="Texture2D" uid="uid://1ynufi5ur5i" path="res://cooking/lunch_rush/dust.png" id="14_rbkm8"]
-[ext_resource type="Texture2D" uid="uid://byucxcrpu5nud" path="res://thought_bubble.png" id="15_yqvug"]
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="18_58qv4"]
+[ext_resource type="Theme" uid="uid://7qdfoumvlph0" path="res://cooking/lunch_rush/lunch_rush_theme.tres" id="18_85t1o"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="19_1ienb"]
+[ext_resource type="Texture2D" uid="uid://yytg0qnv63ow" path="res://menus/market_ui/Gold_Button.webp" id="21_fewph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
 size = Vector2(76, 39)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u66px"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oecrh"]
+atlas = ExtResource("21_fewph")
+region = Rect2(0, 112, 512, 256)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtxq0"]
+texture = SubResource("AtlasTexture_oecrh")
+
+[sub_resource type="Animation" id="Animation_wtjnf"]
+resource_name = "earn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.766667, 2),
+"transitions": PackedFloat32Array(2.54912, 1),
+"update": 0,
+"values": [Vector2(853.539, 95.3629), Vector2(853.539, 24.898)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.766667, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gsdmb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(853.539, 95.3629)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_et5s8"]
+_data = {
+"RESET": SubResource("Animation_gsdmb"),
+"earn": SubResource("Animation_wtjnf")
+}
+
+[sub_resource type="Animation" id="Animation_65s2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(583, 728)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FoodItem:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(582.319, 533.307)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPCHolder:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(581, 157)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Counter:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.30071, 1.30071)]
+}
+
+[sub_resource type="Animation" id="Animation_41ebi"]
+resource_name = "expand_table"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(583, 728), Vector2(583, 600)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FoodItem:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(582.319, 533.307), Vector2(582.319, 337.309)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NPCHolder:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -400)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(581, 157), Vector2(581, -210.73)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Counter:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.45, 1),
+"update": 0,
+"values": [Vector2(1.30071, 1.30071), Vector2(1.301, 1.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyxgj"]
+_data = {
+"RESET": SubResource("Animation_65s2r"),
+"expand_table": SubResource("Animation_41ebi")
+}
 
 [node name="Lunchrush" type="Node2D"]
 script = ExtResource("1_8n1i3")
@@ -32,49 +237,59 @@ drizzle_particle = ExtResource("11_e61kw")
 percent_gained_per_shake = 5.0
 percent_gained_per_drizzle = 0.75
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -10
-custom_minimum_size = Vector2(1152, 648)
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("12_mww8j")
+position = Vector2(581, 157)
+scale = Vector2(0.862064, 0.862064)
+texture = ExtResource("12_j6egg")
+
+[node name="NPCHolder" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="FoodRequest" type="Node2D" parent="."]
+position = Vector2(283, 129)
+
+[node name="Bubble1" type="Sprite2D" parent="FoodRequest"]
+position = Vector2(129, 114)
+scale = Vector2(0.117954, 0.117954)
+texture = ExtResource("13_ftmbm")
+
+[node name="Bubble2" type="Sprite2D" parent="FoodRequest"]
+position = Vector2(89, 91)
+rotation = 1.39505
+scale = Vector2(0.162517, 0.162517)
+texture = ExtResource("13_ftmbm")
+
+[node name="Bubble3" type="Sprite2D" parent="FoodRequest"]
+position = Vector2(-57, 53)
+rotation = 1.57782
+scale = Vector2(0.487774, 0.487774)
+texture = ExtResource("14_ha45s")
+
+[node name="RequestedFlavor" type="Sprite2D" parent="FoodRequest"]
+position = Vector2(-62.3629, 103.454)
+
+[node name="RequestedFood" type="TextureRect" parent="FoodRequest"]
+offset_left = -107.254
+offset_top = -45.3279
+offset_right = -17.2538
+offset_bottom = 47.6721
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 4
 
-[node name="DivorceWoman" type="Sprite2D" parent="."]
-position = Vector2(534, 273)
-texture = ExtResource("1_buvuw")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FoodRequest"]
 
-[node name="CounterRed" type="Sprite2D" parent="."]
-position = Vector2(583, 920)
-texture = ExtResource("13_3boij")
+[node name="Counter" type="Sprite2D" parent="."]
+position = Vector2(583, 728)
+scale = Vector2(1.30071, 1.30071)
+texture = ExtResource("14_qird5")
 
 [node name="FinisherSprite" type="Sprite2D" parent="."]
 rotation = -3.14159
 
-[node name="FoodRequest" type="Node2D" parent="."]
-position = Vector2(349, 120)
-
-[node name="ThoughtBubble" type="Sprite2D" parent="FoodRequest"]
-position = Vector2(56, 44)
-scale = Vector2(0.422521, 0.422521)
-texture = ExtResource("15_yqvug")
-
-[node name="RequestedFlavor" type="Sprite2D" parent="FoodRequest"]
-z_index = 1
-position = Vector2(0, 50)
-
-[node name="RequestedFood" type="TextureRect" parent="FoodRequest"]
-offset_left = -44.0
-offset_top = -97.0
-offset_right = 46.0
-offset_bottom = -4.0
-expand_mode = 1
-stretch_mode = 4
-
 [node name="FoodItem" type="Node2D" parent="."]
 z_index = 1
-position = Vector2(-150, 446)
+position = Vector2(582.319, 533.307)
 scale = Vector2(2, 2)
 
 [node name="FoodItemSprite" type="TextureRect" parent="FoodItem"]
@@ -114,39 +329,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("18_85t1o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FoodSelect"]
+[node name="FoodContainer" type="VBoxContainer" parent="CanvasLayer/FoodSelect"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -206.0
-offset_right = 100.0
-offset_bottom = 206.0
+offset_left = -2.0
+offset_top = -222.5
+offset_right = 98.0
+offset_bottom = 222.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 15
 
-[node name="Food1" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food1" type="Button" parent="CanvasLayer/FoodSelect/FoodContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("19_1ienb")
 
-[node name="Food2" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food2" type="Button" parent="CanvasLayer/FoodSelect/FoodContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("19_1ienb")
 
-[node name="Food3" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food3" type="Button" parent="CanvasLayer/FoodSelect/FoodContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("19_1ienb")
 
-[node name="Food4" type="Button" parent="CanvasLayer/FoodSelect/VBoxContainer"]
+[node name="Food4" type="Button" parent="CanvasLayer/FoodSelect/FoodContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_constants/icon_max_width = 128
 icon = ExtResource("18_58qv4")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("19_1ienb")
 
 [node name="FlavorSelect" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -156,8 +385,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("18_85t1o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/FlavorSelect"]
+[node name="FlavorContainer" type="VBoxContainer" parent="CanvasLayer/FlavorSelect"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -169,16 +400,17 @@ offset_right = 100.0
 offset_bottom = 154.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 25
 
-[node name="Flavor1" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+[node name="Flavor1" type="Button" parent="CanvasLayer/FlavorSelect/FlavorContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="Flavor2" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+[node name="Flavor2" type="Button" parent="CanvasLayer/FlavorSelect/FlavorContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
-[node name="Flavor3" type="Button" parent="CanvasLayer/FlavorSelect/VBoxContainer"]
+[node name="Flavor3" type="Button" parent="CanvasLayer/FlavorSelect/FlavorContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 
@@ -192,21 +424,68 @@ offset_top = -20.0
 offset_right = -60.0
 offset_bottom = 20.0
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer/FinishOrder"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
-text = "Finish
-Order"
+offset_left = -74.0
+offset_top = 44.0
+offset_right = 106.0
+offset_bottom = 144.0
+pivot_offset = Vector2(90, 50)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u66px")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_vtxq0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtxq0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vtxq0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vtxq0")
+text = "Finish Order"
+script = ExtResource("19_1ienb")
 
 [node name="PlaySongForScene" parent="." instance=ExtResource("13_qy27j")]
 song_name = "lunch_rush.tres"
 
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food1" to="." method="_on_food_selected" binds= [0]]
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food2" to="." method="_on_food_selected" binds= [1]]
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food3" to="." method="_on_food_selected" binds= [2]]
-[connection signal="pressed" from="CanvasLayer/FoodSelect/VBoxContainer/Food4" to="." method="_on_food_selected" binds= [3]]
-[connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor1" to="." method="_on_flavor_selected" binds= [0]]
-[connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor2" to="." method="_on_flavor_selected" binds= [1]]
-[connection signal="pressed" from="CanvasLayer/FlavorSelect/VBoxContainer/Flavor3" to="." method="_on_flavor_selected" binds= [2]]
+[node name="Money" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+clip_contents = false
+offset_left = 853.539
+offset_top = 95.3629
+offset_right = 1015.54
+offset_bottom = 201.363
+rotation = -0.227178
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.556863)
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 56
+bbcode_enabled = true
+text = "[wave amp=70][b]$12"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Anim" type="AnimationPlayer" parent="Money"]
+libraries = {
+"": SubResource("AnimationLibrary_et5s8")
+}
+
+[node name="ViewAnim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_uyxgj")
+}
+
+[connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food1" to="." method="_on_food_selected" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food2" to="." method="_on_food_selected" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food3" to="." method="_on_food_selected" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food4" to="." method="_on_food_selected" binds= [3]]
+[connection signal="pressed" from="CanvasLayer/FlavorSelect/FlavorContainer/Flavor1" to="." method="_on_flavor_selected" binds= [0]]
+[connection signal="pressed" from="CanvasLayer/FlavorSelect/FlavorContainer/Flavor2" to="." method="_on_flavor_selected" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/FlavorSelect/FlavorContainer/Flavor3" to="." method="_on_flavor_selected" binds= [2]]
 [connection signal="pressed" from="CanvasLayer/FinishOrder/Button" to="." method="_on_finish_order"]
