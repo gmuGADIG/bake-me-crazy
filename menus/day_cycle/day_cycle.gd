@@ -24,6 +24,8 @@ func _ready() -> void:
 		circle_index -= 7
 	circle.position.x += CIRCLE_STRIDE_X * circle_index
 	
+	MainMusicPlayer.transition_to_song(preload("res://menus/day_cycle/day_night_cycle.tres"))
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
