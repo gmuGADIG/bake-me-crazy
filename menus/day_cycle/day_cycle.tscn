@@ -122,27 +122,27 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_6ctwl"]
 resource_name = "cycle"
-length = 12.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("SunMoon:rotation")
-tracks/0/interp = 2
+tracks/0/interp = 4
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.6, 3.33333, 5.66667, 5.96667, 9.1, 12),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.6, 4.33333, 6.66667, 6.96667, 10.1, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.631833, 0.650236, 3.00786, 3.27822, 5.65741, 5.69753, 5.80628, 5.80628]
+"values": [0.631833, 3.00786, 3.27822, 5.65741, 5.69753, 5.80628, 5.80628]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Background:color")
 tracks/1/interp = 1
-tracks/1/loop_wrap = true
+tracks/1/loop_wrap = false
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.26667, 3, 5.06667, 5.96667),
+"times": PackedFloat32Array(1, 2.26667, 4, 6.06667, 6.96667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.795991, 0.50297, 0.418329, 1), Color(0.00259964, 0.0548438, 0.140691, 1), Color(0.0884307, 0.0512957, 0.304852, 1), Color(0.218569, 0.2442, 0.692675, 1), Color(0.644249, 0.817423, 0.947263, 1)]
@@ -152,9 +152,9 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/path = NodePath("Stars:modulate")
 tracks/2/interp = 1
-tracks/2/loop_wrap = true
+tracks/2/loop_wrap = false
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 1.76667, 3.03333, 4.56667),
+"times": PackedFloat32Array(1.6, 2.76667, 4.03333, 5.56667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -164,9 +164,9 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/path = NodePath("Calendar:position")
 tracks/3/interp = 2
-tracks/3/loop_wrap = true
+tracks/3/loop_wrap = false
 tracks/3/keys = {
-"times": PackedFloat32Array(5, 5.7, 6, 6.13333, 6.9, 7, 9),
+"times": PackedFloat32Array(6, 6.7, 7, 7.13333, 7.9, 8, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(575, -369), Vector2(203.514, 437.893), Vector2(777.171, 321.695), Vector2(777.171, 321.695), Vector2(777.171, 321.695), Vector2(777.171, 321.695), Vector2(828, 521)]
@@ -176,9 +176,9 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/path = NodePath("Calendar:scale")
 tracks/4/interp = 2
-tracks/4/loop_wrap = true
+tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(5, 6, 6.13333, 6.9, 7, 9),
+"times": PackedFloat32Array(6, 7, 7.13333, 7.9, 8, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0.116, 0.116), Vector2(0.57317, 0.57317), Vector2(0.57317, 0.57317), Vector2(0.57317, 0.57317), Vector2(0.57317, 0.57317), Vector2(1.831, 1.83099)]
@@ -188,9 +188,9 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/path = NodePath("Skyline:position")
 tracks/5/interp = 1
-tracks/5/loop_wrap = true
+tracks/5/loop_wrap = false
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(575, 416), Vector2(575, 596)]
@@ -200,9 +200,9 @@ tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/path = NodePath("SunMoon:position")
 tracks/6/interp = 1
-tracks/6/loop_wrap = true
+tracks/6/loop_wrap = false
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(563, 529), Vector2(563, 635)]
@@ -212,9 +212,9 @@ tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/path = NodePath("Stars:position")
 tracks/7/interp = 1
-tracks/7/loop_wrap = true
+tracks/7/loop_wrap = false
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 94)]
@@ -224,9 +224,9 @@ tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/path = NodePath("Calendar/Circle:material:shader_parameter/show_theta")
 tracks/8/interp = 1
-tracks/8/loop_wrap = true
+tracks/8/loop_wrap = false
 tracks/8/keys = {
-"times": PackedFloat32Array(6, 6.56667),
+"times": PackedFloat32Array(7, 7.56667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.283]
@@ -238,9 +238,12 @@ tracks/9/path = NodePath(".")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(9.26667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_anim_change_scene"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnibo"]
