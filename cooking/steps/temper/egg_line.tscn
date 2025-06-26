@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bxhtfkrkaquj1"]
+
+[node name="EggLine" type="Line2D"]
+default_color = Color(1, 1, 0, 1)

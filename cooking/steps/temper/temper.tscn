@@ -1,14 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dow8da7vvfan3"]
+[gd_scene load_steps=5 format=3 uid="uid://dow8da7vvfan3"]
 
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="1_h0ij1"]
-[ext_resource type="Script" path="res://temper.gd" id="2_t3dct"]
+[ext_resource type="Script" path="res://cooking/steps/temper/temper.gd" id="2_t3dct"]
 [ext_resource type="Texture2D" uid="uid://dt27721ff43r2" path="res://cooking/cooking_art/Minigame_MixingBowl.png" id="3_1m6c7"]
-[ext_resource type="PackedScene" uid="uid://brvi4sbicou2l" path="res://cooking/steps/temper_particle.tscn" id="3_fmc0k"]
 [ext_resource type="Texture2D" uid="uid://x6tugdipc082" path="res://cooking/cooking_art/Minigame_Ladle.png" id="4_hqdp8"]
 
 [node name="Temper" instance=ExtResource("1_h0ij1")]
 script = ExtResource("2_t3dct")
-temper_particle = ExtResource("3_fmc0k")
+temper_particle = null
 stir_sensitivity = 4e-05
 cooldown_acceleration = 0.05
 heat_velocity_max = 0.02
@@ -23,4 +22,15 @@ texture = ExtResource("3_1m6c7")
 [node name="Ladle" type="Sprite2D" parent="." index="1"]
 position = Vector2(818, 193)
 texture = ExtResource("4_hqdp8")
-offset = Vector2(-12.035, -80.13)
+offset = Vector2(24.875, -86.78)
+
+[node name="Line2D" type="Line2D" parent="." index="4"]
+points = PackedVector2Array(450, 145, 778, 265)
+
+[node name="Line2D2" type="Line2D" parent="." index="5"]
+points = PackedVector2Array(778, 265, 642, 345, 434, 401)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="EggStream" type="Node2D" parent="." index="6"]
