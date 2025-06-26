@@ -166,10 +166,10 @@ tracks/3/path = NodePath("Calendar:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(5, 5.7, 5.93333, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(5, 5.7, 6, 6.13333, 6.9, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(575, -369), Vector2(203.514, 437.893), Vector2(795, 313), Vector2(777.171, 321.695)]
+"values": [Vector2(575, -369), Vector2(203.514, 437.893), Vector2(777.171, 321.695), Vector2(777.171, 321.695), Vector2(777.171, 321.695), Vector2(777.171, 321.695), Vector2(828, 521)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -178,10 +178,10 @@ tracks/4/path = NodePath("Calendar:scale")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5, 6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(5, 6, 6.13333, 6.9, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0.116, 0.116), Vector2(0.57317, 0.57317)]
+"values": [Vector2(0.116, 0.116), Vector2(0.57317, 0.57317), Vector2(0.57317, 0.57317), Vector2(0.57317, 0.57317), Vector2(0.57317, 0.57317), Vector2(1.831, 1.83099)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -230,6 +230,17 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.283]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnibo"]
@@ -419,18 +430,18 @@ rotation = 0.631833
 
 [node name="Sun" type="Sprite2D" parent="SunMoon"]
 position = Vector2(-0.00447929, -430)
-rotation = 0.475718
+rotation = -0.631833
 scale = Vector2(0.271424, 0.271424)
 texture = ExtResource("2_vpgti")
 
 [node name="Moon" type="Sprite2D" parent="SunMoon"]
 position = Vector2(0, 430)
-rotation = 0.475718
+rotation = -0.631833
 scale = Vector2(0.271424, 0.271424)
 texture = ExtResource("3_n6qqf")
 
 [node name="Skyline" type="Sprite2D" parent="."]
-modulate = Color(0.928428, 0.939192, 0.947263, 1)
+modulate = Color(0.795991, 0.688248, 0.657126, 1)
 position = Vector2(575, 416)
 texture = ExtResource("1_e5p5n")
 
