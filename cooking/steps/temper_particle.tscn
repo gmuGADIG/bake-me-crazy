@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brvi4sbicou2l"]
+
+[ext_resource type="Material" uid="uid://dax71ewgwy0y5" path="res://cooking/steps/temper_particle.tres" id="1_sod7c"]
+[ext_resource type="Script" path="res://cooking/lunch_rush/kill_particle_on_finished.gd" id="2_r4p1q"]
+
+[node name="TemperParticle" type="GPUParticles2D"]
+z_index = 50
+emitting = false
+amount = 1
+process_material = ExtResource("1_sod7c")
+lifetime = 1.2
+one_shot = true
+explosiveness = 1.0
+script = ExtResource("2_r4p1q")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1i177bdpvrs7"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/kill_particle_on_finished.gd" id="1_ilbsa"]
-[ext_resource type="Material" uid="uid://chfhajvviqdgk" path="res://cooking/lunch_rush/drizzle_particles.tres" id="1_wvgnf"]
+[ext_resource type="Material" uid="uid://b0ua51vrmralu" path="res://cooking/lunch_rush/drizzle_particles.tres" id="1_wvgnf"]
 
 [node name="DrizzleParticle" type="GPUParticles2D"]
 z_index = 50
