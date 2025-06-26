@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1shh2otxa8r3"]
+[gd_scene load_steps=21 format=3 uid="uid://1shh2otxa8r3"]
 
 [ext_resource type="Texture2D" uid="uid://o0tfuycemmk4" path="res://minor_npc/npc_b.png" id="1_cbmvy"]
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunch_rush_npc.gd" id="2_ra2pt"]
@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://b1fcv3hrlc3yv" path="res://minor_npc/npc_g.png" id="8_dn2ui"]
 [ext_resource type="Texture2D" uid="uid://ca7743hmd3yb1" path="res://minor_npc/npc_h.png" id="9_dv34a"]
 [ext_resource type="Texture2D" uid="uid://bj1f1klgy1nqe" path="res://minor_npc/npc_i.png" id="10_jvv7o"]
+[ext_resource type="Script" path="res://cooking/lunch_rush/bubble.gd" id="11_boxts"]
+[ext_resource type="Texture2D" uid="uid://dywf4vf3nrgj" path="res://cooking/lunch_rush/wobbly_circle.png" id="11_hdp23"]
+[ext_resource type="Texture2D" uid="uid://b67eyc7kqcxra" path="res://cooking/lunch_rush/wobbly_rectangle.png" id="12_yf6w1"]
+[ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="14_kab0y"]
+[ext_resource type="Texture2D" uid="uid://b5j60fdegdpsp" path="res://temp_art/Ketchup.png" id="15_al5dr"]
 
 [sub_resource type="Animation" id="Animation_l6sk4"]
 length = 0.001
@@ -59,10 +64,46 @@ tracks/3/keys = {
 "points": PackedFloat32Array(618, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%NPC/../Bubble1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.117954, 0.117954)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%NPC/../Bubble2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.174023, 0.174023)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%NPC/../BigBubble:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.487774, 0.487774)]
+}
 
 [sub_resource type="Animation" id="Animation_qhct0"]
 resource_name = "bounce"
-length = 1.3667
+length = 2.234
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,10 +122,10 @@ tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.36667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.36667, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.75, 0.75), Vector2(1, 1)]
+"values": [Vector2(0.75, 0.75), Vector2(1, 1), Vector2(0.98, 1.02)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -98,22 +139,41 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_aaggw"]
-resource_name = "idle"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.6, 2.03333),
-"transitions": PackedFloat32Array(1, 1),
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%NPC/../Bubble1:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.46667, 1.6, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1.02, 0.98), Vector2(0.98, 1.02)]
+"values": [Vector2(0, 0), Vector2(0.15, 0.15), Vector2(0.117954, 0.117954)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%NPC/../Bubble2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.7, 1.83333, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.2, 0.2), Vector2(0.174023, 0.174023)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%NPC/../BigBubble:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.96667, 2.13333, 2.23333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.55, 0.55), Vector2(0.487774, 0.487774)]
 }
 
 [sub_resource type="Animation" id="Animation_obn5w"]
@@ -165,6 +225,60 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%NPC/../Bubble1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%NPC/../Bubble2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%NPC/../BigBubble:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_aaggw"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 2.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(1.02, 0.98), Vector2(0.98, 1.02)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7svno"]
 _data = {
@@ -174,13 +288,79 @@ _data = {
 "idle": SubResource("Animation_aaggw")
 }
 
-[node name="LunchRushNPC" type="Sprite2D"]
-position = Vector2(618, 491)
-texture = ExtResource("1_cbmvy")
+[node name="LunchRushNPC" type="Node2D"]
 script = ExtResource("2_ra2pt")
 sprite_options = Array[Texture]([ExtResource("3_ojkih"), ExtResource("1_cbmvy"), ExtResource("4_4m7j6"), ExtResource("5_taimg"), ExtResource("6_kk45m"), ExtResource("7_cvxk7"), ExtResource("8_dn2ui"), ExtResource("9_dv34a"), ExtResource("10_jvv7o")])
 
+[node name="NPC" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(618, 491)
+texture = ExtResource("1_cbmvy")
+
+[node name="Bubble1" type="Sprite2D" parent="."]
+position = Vector2(470.411, 233.824)
+rotation = -0.277473
+scale = Vector2(0.117954, 0.117954)
+texture = ExtResource("11_hdp23")
+script = ExtResource("11_boxts")
+
+[node name="Bubble2" type="Sprite2D" parent="."]
+position = Vector2(425.066, 189.443)
+rotation = -0.116389
+scale = Vector2(0.174023, 0.174023)
+texture = ExtResource("11_hdp23")
+script = ExtResource("11_boxts")
+
+[node name="BigBubble" type="Sprite2D" parent="."]
+position = Vector2(276.203, 203.647)
+scale = Vector2(0.487774, 0.487774)
+texture = ExtResource("12_yf6w1")
+script = ExtResource("11_boxts")
+rotation_angles = 3
+rotation_speed = 0.351
+
+[node name="FoodArea" type="Sprite2D" parent="BigBubble"]
+modulate = Color(0.886262, 0.886261, 0.886262, 1)
+position = Vector2(-6.28283, -145.87)
+rotation = 1.58476
+scale = Vector2(0.488, -0.488)
+texture = ExtResource("12_yf6w1")
+script = ExtResource("11_boxts")
+
+[node name="FoodTexture" type="TextureRect" parent="BigBubble/FoodArea"]
+unique_name_in_owner = true
+offset_left = -202.163
+offset_top = 156.944
+offset_right = -96.163
+offset_bottom = 262.944
+rotation = -1.57079
+scale = Vector2(3.37009, 3.37009)
+texture = ExtResource("14_kab0y")
+expand_mode = 1
+
+[node name="FlavorArea" type="Sprite2D" parent="BigBubble"]
+modulate = Color(0.886262, 0.886261, 0.886262, 1)
+position = Vector2(-4.55891, 136.822)
+rotation = 1.58476
+scale = Vector2(0.488, -0.488)
+texture = ExtResource("12_yf6w1")
+script = ExtResource("11_boxts")
+
+[node name="FlavorTexture" type="TextureRect" parent="BigBubble/FlavorArea"]
+unique_name_in_owner = true
+offset_left = -200.251
+offset_top = 177.0
+offset_right = -103.251
+offset_bottom = 274.0
+rotation = -1.57079
+scale = Vector2(3.59741, 3.59741)
+texture = ExtResource("15_al5dr")
+expand_mode = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../NPC")
 libraries = {
 "": SubResource("AnimationLibrary_7svno")
 }
+autoplay = "enter"

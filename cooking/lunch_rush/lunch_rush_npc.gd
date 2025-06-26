@@ -1,19 +1,22 @@
-class_name LunchRushNPC extends Sprite2D
+class_name LunchRushNPC extends Node2D
 
 @export var sprite_options: Array[Texture]
 
-@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var anim: AnimationPlayer = %AnimationPlayer
 
 static var npc_history: Array[int]
 
 func _ready() -> void:
 	# pick npc
-	texture = sprite_options[pick_npc()]
+	%NPC.texture = sprite_options[pick_npc()]
 	
 	# enter animation
-	anim.play("enter")
 	await anim.animation_finished
 	anim.play("idle")
+
+func set_food(requested_food: FoodItem, requested_flavor: FoodItem) -> void:
+	%FoodTexture.texture = requested_food.image
+	%FlavorTexture.texture = requested_flavor.image
 
 func pick_npc() -> int:
 	var idx = randi_range(0, sprite_options.size()-1)

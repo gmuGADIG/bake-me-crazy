@@ -94,26 +94,20 @@ func new_order() -> void:
 	current_stage = Stage.FOOD_SELECT
 	selected_finisher_type = Finisher.NOT_SELECTED
 	
-	## Spawn NPC
-	if current_npc != null:
-		current_npc.exit()
-
-	current_npc = preload("lunch_rush_npc.tscn").instantiate()
-	npc_holder.add_child(current_npc)
-
-	## Reset buttons	
-	$FinisherSprite.texture = null
-	$FoodItem.position.x = -150
-	food_container.position.x = 1162
-	flavor_container.position.x = 1162
-	$CanvasLayer/FinishOrder.position.x = -120
-	
 	## Selects order
 	requested_food = foods.pick_random()
 	requested_flavor = flavors.pick_random()
 	
-	print("food: " + requested_food.display_name)
-	print("flavour: " + requested_flavor.display_name)
+	## Spawn NPC
+	current_npc = preload("lunch_rush_npc.tscn").instantiate()
+	npc_holder.add_child(current_npc)
+	current_npc.set_food(requested_food, requested_flavor)
+
+	## Reset buttons	
+	$FinisherSprite.texture = null
+	food_container.position.x = 1162
+	flavor_container.position.x = 1162
+	$CanvasLayer/FinishOrder.position.x = -120
 	
 
 	## Sets all of the images
@@ -248,6 +242,8 @@ func _on_food_selected(food_index: int) -> void:
 	selected_food = foods[food_index]
 	print(selected_food)
 	$FoodItem/FoodItemSprite.texture = selected_food.image
+	$FoodItem.modulate.a = 1.0
+	$FoodItem.position.x = -150
 	
 	var tween = get_tree().create_tween()
 	tween.tween_property(food_container, "position:x", 1162, 0.3	).set_trans(Tween.TRANS_QUAD)
@@ -316,6 +312,9 @@ func score_food() -> void:
 	rewarded_tip -= penalty
 	rewarded_tip = max(round(rewarded_tip), 1)
 	
+	## Remove food sprite
+	create_tween().tween_property($FoodItem, "modulate:a", 0.0, 0.5)
+	
 	## Display money earned
 	money_label.text = "[wave amp=70][b]$%d" % rewarded_tip
 	money_label.get_node("Anim").play("earn")
@@ -334,15 +333,17 @@ func _on_finish_order() -> void:
 	current_customer += 1
 	print(current_customer)
 	
+	view_anim.play_backwards("expand_table")
+	current_npc.exit()
+	
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -120, 0.3).set_trans(Tween.TRANS_QUAD)
-	#tween.set_parallel().tween_property($DivorceWoman, "modulate:a", 0, 0.8)
 	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_EXPO)
-	## If the player has served all customers, end the lunch rush
+	
+	await view_anim.animation_finished
+	
+	## New order, or change scene if all customers have been served
 	if current_customer >= total_customers:
 		SceneTransition.change_scene_to_file("res://menus/clock_out/clock_out.tscn")
-		return
-		##end here
-
-	view_anim.play_backwards("expand_table")
-	new_order()
+	else:
+		new_order()
