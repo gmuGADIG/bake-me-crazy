@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_mnqic")
 loop_start = 0.0
-loop_end = 14.0
+loop_end = 100.0
 song_file = ExtResource("2_84e2o")
 fade_period = 0.2
