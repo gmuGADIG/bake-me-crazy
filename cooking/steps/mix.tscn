@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://hckjoefpykk4"]
+[gd_scene load_steps=16 format=3 uid="uid://hckjoefpykk4"]
 
 [ext_resource type="Script" path="res://cooking/steps/mix.gd" id="1_wbjww"]
 [ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="3_vw7ff"]
 [ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="4_8weyk"]
 [ext_resource type="Texture2D" uid="uid://boew2rvyixbcv" path="res://temp_art/temp ui/goodness_bar.png" id="4_qhvrs"]
 [ext_resource type="Texture2D" uid="uid://cho30r4kn6o8f" path="res://temp_art/temp ui/goodness_pointer.png" id="5_2cgno"]
+[ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="6_565il"]
+[ext_resource type="Texture2D" uid="uid://dr1wqg311m8ns" path="res://cooking/cooking_art/Mixing_Bowl_Top.png" id="7_tlsqm"]
+[ext_resource type="Texture2D" uid="uid://c3cvdn4edpoab" path="res://cooking/art/MixTexture.png" id="8_7o2b5"]
+[ext_resource type="Texture2D" uid="uid://dpg1l8rynd7n" path="res://cooking/steps/mix_circle.png" id="9_p7f5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlol7"]
 size = Vector2(537, 20)
@@ -18,6 +22,27 @@ size = Vector2(573, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r73xu"]
 size = Vector2(324, 24)
 
+[sub_resource type="Shader" id="Shader_28n3p"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	500;
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2uiyi"]
+shader = SubResource("Shader_28n3p")
+
 [node name="Mix" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -26,14 +51,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wbjww")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 131.0
-offset_top = 75.0
-offset_right = 176.0
-offset_bottom = 99.0
-text = "Hello"
 
 [node name="FirstMix" type="Area2D" parent="."]
 position = Vector2(559, 313)
@@ -73,6 +90,7 @@ shape = SubResource("RectangleShape2D_r73xu")
 one_way_collision = true
 
 [node name="FollowCursor" type="Node2D" parent="."]
+top_level = true
 rotation = -0.00126775
 script = ExtResource("3_vw7ff")
 
@@ -80,6 +98,18 @@ script = ExtResource("3_vw7ff")
 position = Vector2(38.0443, -34.9518)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("4_8weyk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_565il")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="GoodnessBar" type="Sprite2D" parent="."]
 position = Vector2(31, 313.5)
@@ -90,6 +120,26 @@ texture = ExtResource("4_qhvrs")
 position = Vector2(60, 574)
 scale = Vector2(0.3025, 0.27825)
 texture = ExtResource("5_2cgno")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(553.5, 280)
+scale = Vector2(1.015, 0.603333)
+texture = ExtResource("9_p7f5y")
+
+[node name="MixTexture" type="Sprite2D" parent="Sprite2D"]
+clip_children = 2
+position = Vector2(20.197, 2.48625)
+scale = Vector2(2.53233, 2.90703)
+texture = ExtResource("8_7o2b5")
+
+[node name="MixingBowlTop" type="Sprite2D" parent="."]
+show_behind_parent = true
+clip_children = 2
+material = SubResource("ShaderMaterial_2uiyi")
+position = Vector2(558, 313)
+scale = Vector2(0.72125, 0.54)
+texture = ExtResource("7_tlsqm")
 
 [connection signal="input_event" from="FirstMix" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="FirstMix" to="." method="_on_area_2d_mouse_entered"]
