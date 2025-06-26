@@ -1,0 +1,289 @@
+[gd_scene load_steps=9 format=3 uid="uid://bxtppxw1ilo0l"]
+
+[ext_resource type="Texture2D" uid="uid://mh2ll1ahnsjh" path="res://menus/day_cycle/skyline.svg" id="1_e5p5n"]
+[ext_resource type="Script" path="res://menus/day_cycle/day_cycle.gd" id="1_k54ua"]
+[ext_resource type="Texture2D" uid="uid://cfpircex3uso6" path="res://menus/day_cycle/sun.svg" id="2_vpgti"]
+[ext_resource type="Texture2D" uid="uid://cfwi7q24h06yi" path="res://menus/day_cycle/moon.svg" id="3_n6qqf"]
+[ext_resource type="PackedScene" uid="uid://ejcdwln7g2f6" path="res://menus/day_cycle/star.tscn" id="5_c1nav"]
+
+[sub_resource type="Animation" id="Animation_qw3xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SunMoon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.631833]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.795991, 0.50297, 0.418329, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stars:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6ctwl"]
+resource_name = "cycle"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SunMoon:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.6, 3.33333, 5.66667, 5.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.631833, 0.650236, 3.00786, 3.27822, 5.65741, 5.69753]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.26667, 3, 5.06667, 5.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.795991, 0.50297, 0.418329, 1), Color(0.00259964, 0.0548438, 0.140691, 1), Color(0.0884307, 0.0512957, 0.304852, 1), Color(0.218569, 0.2442, 0.692675, 1), Color(0.644249, 0.817423, 0.947263, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Stars:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.76667, 3.03333, 4.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cnibo"]
+_data = {
+"RESET": SubResource("Animation_qw3xj"),
+"cycle": SubResource("Animation_6ctwl")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k54ua")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.795991, 0.50297, 0.418329, 1)
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Star" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(413, 239)
+
+[node name="Star2" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(350, 141)
+
+[node name="Star3" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(404, 91)
+
+[node name="Star38" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(511, 147)
+
+[node name="Star39" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(587, 53)
+
+[node name="Star40" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(611, 147)
+
+[node name="Star41" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(494, 222)
+
+[node name="Star42" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(989, 209)
+
+[node name="Star43" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(64.0001, 2.00002)
+
+[node name="Star44" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1117, -1)
+
+[node name="Star45" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1073, -36)
+
+[node name="Star46" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(924, 4)
+
+[node name="Star47" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(818, -37)
+
+[node name="Star48" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(522, -15)
+
+[node name="Star49" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(457, -94)
+
+[node name="Star50" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(190, -19)
+
+[node name="Star4" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(259, 45)
+
+[node name="Star5" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(224, 189)
+
+[node name="Star6" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(188, 89)
+
+[node name="Star7" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(74, 71)
+
+[node name="Star8" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(62, 243)
+
+[node name="Star9" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(118, 147)
+
+[node name="Star10" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(222, 269)
+
+[node name="Star11" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(356, 336)
+
+[node name="Star12" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(600, 238)
+
+[node name="Star13" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(696, 287)
+
+[node name="Star14" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(727, 121)
+
+[node name="Star15" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(676, 219)
+
+[node name="Star16" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(708, 39)
+
+[node name="Star17" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(800, 48)
+
+[node name="Star18" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(817, 135)
+
+[node name="Star19" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(889, 254)
+
+[node name="Star20" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(995, 126)
+
+[node name="Star21" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1071, 229)
+
+[node name="Star22" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(931, 314)
+
+[node name="Star23" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1103, 106)
+
+[node name="Star24" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1036, 41)
+
+[node name="Star25" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(933, 70)
+
+[node name="Star26" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(825, 293)
+
+[node name="Star27" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(785, 224)
+
+[node name="Star28" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(507, 45)
+
+[node name="Star29" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(265, 351)
+
+[node name="Star30" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(155, 263)
+
+[node name="Star31" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(65, 349)
+
+[node name="Star32" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(916, 162)
+
+[node name="Star33" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1040, 322)
+
+[node name="Star34" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(317, 231)
+
+[node name="Star35" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(332, 2)
+
+[node name="Star36" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(1150, 199)
+
+[node name="Star37" parent="Stars" instance=ExtResource("5_c1nav")]
+position = Vector2(0.000244141, 144)
+
+[node name="SunMoon" type="Node2D" parent="."]
+position = Vector2(563, 529)
+rotation = 0.631833
+
+[node name="Sun" type="Sprite2D" parent="SunMoon"]
+position = Vector2(-0.00447929, -430)
+rotation = -0.631833
+scale = Vector2(0.271424, 0.271424)
+texture = ExtResource("2_vpgti")
+
+[node name="Moon" type="Sprite2D" parent="SunMoon"]
+position = Vector2(0, 430)
+rotation = -0.631833
+scale = Vector2(0.271424, 0.271424)
+texture = ExtResource("3_n6qqf")
+
+[node name="Skyline" type="Sprite2D" parent="."]
+modulate = Color(0.795991, 0.688248, 0.657126, 1)
+position = Vector2(575, 416)
+texture = ExtResource("1_e5p5n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cnibo")
+}
+autoplay = "cycle"

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_28xqw"]
 [ext_resource type="Script" path="res://cooking/steps/roll_up.gd" id="2_wilwa"]
 [ext_resource type="Texture2D" uid="uid://dv5rxhvailmj" path="res://cooking/art/Countertop_Blue.png" id="3_edc7c"]
-[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="3_pb4hx"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="3_pb4hx"]
 [ext_resource type="Shader" path="res://cooking/steps/step_roll_up.gdshader" id="4_usw27"]
 [ext_resource type="Texture2D" uid="uid://dv8m6j6e7tttp" path="res://cooking/art/arrow.svg" id="5_vsrsk"]
 [ext_resource type="Texture2D" uid="uid://cfmj7i53id43a" path="res://cooking/art/BigDoughBallLong.png" id="8_2y368"]

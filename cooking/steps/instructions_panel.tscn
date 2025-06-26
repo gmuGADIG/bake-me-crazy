@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://p7jlq2812llw"]
+[gd_scene load_steps=4 format=3 uid="uid://bx3c2sms6ejy2"]
 
 [ext_resource type="Script" path="res://cooking/steps/instructions_panel.gd" id="1_y88w7"]
 

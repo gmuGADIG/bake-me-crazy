@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtfpjbxnjfn3m"]
 
 [ext_resource type="Script" path="res://cooking/steps/kneading.gd" id="1_llm4v"]
-[ext_resource type="PackedScene" path="res://cooking/steps/instructions_panel.tscn" id="2_g87e4"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="2_g87e4"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="2_x35rf"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_23vti"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="4_ukwp6"]
