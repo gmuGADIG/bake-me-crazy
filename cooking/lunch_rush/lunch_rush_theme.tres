@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ci7oj2xe68ki5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbtxy"]
+bg_color = Color(0.901407, 0.631291, 0.437757, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.364706)
+shadow_size = 1
+shadow_offset = Vector2(3.22, 5.765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7fho"]
+bg_color = Color(0.737255, 0.462745, 0.254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.364706)
+shadow_size = 1
+shadow_offset = Vector2(3.22, 5.765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxcdo"]
+bg_color = Color(0.737255, 0.462745, 0.254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.364706)
+shadow_size = 1
+shadow_offset = Vector2(3.22, 5.765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8lcp"]
+bg_color = Color(0.737255, 0.462745, 0.254902, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.180392, 0.109804, 0.0941176, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.364706)
+shadow_size = 1
+shadow_offset = Vector2(3.22, 5.765)
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxFlat_hbtxy")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_v7fho")
+Button/styles/normal = SubResource("StyleBoxFlat_xxcdo")
+Button/styles/pressed = SubResource("StyleBoxFlat_j8lcp")
