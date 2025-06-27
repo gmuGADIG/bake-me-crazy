@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://d1lbkrba2a1yu"]
+
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="1_o8tmu"]
+[ext_resource type="PackedScene" uid="uid://cbtuev8kmswbi" path="res://test_scenes/test_food_minigame/test_food_minigame.tscn" id="1_v5rhg"]
+[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="2_e5u6h"]
+
+[resource]
+script = ExtResource("1_o8tmu")
+cooking_minigame = ExtResource("1_v5rhg")
+display_name = "<test food>"
+image = ExtResource("2_e5u6h")

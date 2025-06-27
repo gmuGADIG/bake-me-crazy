@@ -75,4 +75,4 @@ func unlock_new_recipe(recipe_path: String) -> void:
 	Dialogic.Styles.get_layout_node().visible = true
 
 func change_scene(scene_path: String) -> void:
-	get_tree().change_scene_to_file(scene_path)
+	SceneTransition.change_scene_to_file(scene_path)

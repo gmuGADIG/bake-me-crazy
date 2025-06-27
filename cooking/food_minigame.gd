@@ -93,13 +93,20 @@ func next_step(score : float) -> void:
 	# on the final step, handle the food being finished
 	var food_finished = next == null
 	if food_finished:
+		# Get quality
+		var quality = round(current_score / steps.size())
+		
+		# Add item to inventory
+		if MorningShift.instance != null: # can happen when starting the game from specific scenes
+			Inventory.add_item(MorningShift.instance.current_recipe, quality)
+		
 		# Show the results and then wait for the results screen to be exited.
 		# At that point, this entire set of minigames is considered done, so
-		# we emite the all_minigames_done signal.
+		# we emit the all_minigames_done signal.
 		#
 		# The MorningShift will wait for this signal so that it can load the
 		# next part of the UI flow.
-		%MorningResults.show_results(round(current_score / steps.size()))
+		%MorningResults.show_results(quality)
 		await %MorningResults.results_done
 		
 		# Wait for the morning results to hide? Then next minigame?
