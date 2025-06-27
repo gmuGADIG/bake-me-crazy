@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
 [ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="3_8lxue"]
-[ext_resource type="PackedScene" uid="uid://u2v0gb5yo3pq" path="res://cooking/draggable_object/draggable_object.tscn" id="2_u3vmg"]
 [ext_resource type="PackedScene" uid="uid://3401sxy2s32d" path="res://cooking/draggable_object/holding_manager.tscn" id="3_p1eiu"]
 [ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="3_x1sjv"]
 [ext_resource type="Texture2D" uid="uid://dt27721ff43r2" path="res://cooking/cooking_art/Minigame_MixingBowl.png" id="3_yphet"]
