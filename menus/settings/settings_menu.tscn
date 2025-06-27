@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="3_ad6og"]
 [ext_resource type="Texture2D" uid="uid://cvmy4rferaovo" path="res://menus/start_menu/start_menu_bg.png" id="3_f0ln0"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="4_7fknj"]
-[ext_resource type="PackedScene" uid="uid://bui5g7gwd6hyf" path="res://menus/settings/settings_menu_volume_slider.tscn" id="5_rxro5"]
+[ext_resource type="PackedScene" path="res://menus/settings/settings_menu_volume_slider.tscn" id="5_rxro5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dm1bm"]
 bg_color = Color(0.498039, 0.25098, 0.278431, 1)
