@@ -1,6 +1,11 @@
+class_name GiftPrompt
 extends VBoxContainer
 
+static var selected_food_data: FoodData = null
+
 func _ready() -> void:
+	selected_food_data = null
+	
 	for item in PlayerData.data.inventory:
 		if item.data is not FoodData: continue
 		
@@ -16,6 +21,7 @@ func _on_cancel_button_pressed() -> void:
 func _on_food_option_pressed(food: ItemInstance) -> void:
 	# set 'gift_response' to the flavor name, or "no_flavor" if null
 	var flavor = food.data.ingredient as IngredientData
+	selected_food_data = food.data
 	if flavor == null:
 		Dialogic.VAR.read_only.gift_response = "no_flavor"
 	else:
