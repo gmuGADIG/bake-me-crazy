@@ -10,5 +10,5 @@
 [resource]
 script = ExtResource("1_fkvkn")
 display_name = "Bar"
-instructions = "<todo>"
+instructions = "A rectangular thick pastry similar to that of a brownie, this type of dessert is defined by its toppings."
 variants = Array[ExtResource("2_01i76")]([ExtResource("3_isl5u"), ExtResource("4_uu5pc"), ExtResource("5_xoexc"), ExtResource("6_0y4ad")])

@@ -169,7 +169,7 @@ rotation = 1.85186
 scale = Vector2(0.131723, 0.131723)
 texture = ExtResource("4_rolkp")
 
-[node name="placePos" type="Area2D" parent="." index="5"]
+[node name="placePos" type="Area2D" parent="." index="4"]
 position = Vector2(163, 192)
 metadata/_edit_group_ = true
 
@@ -180,7 +180,7 @@ shape = SubResource("CircleShape2D_vkt58")
 material = SubResource("ShaderMaterial_j0vec")
 texture = SubResource("GradientTexture2D_unpg6")
 
-[node name="FollowCursor" type="Node2D" parent="." index="6"]
+[node name="FollowCursor" type="Node2D" parent="." index="5"]
 rotation = -0.00126775
 script = ExtResource("6_1c4gu")
 
@@ -196,7 +196,7 @@ rotation = 0.00126775
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_rolkp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="7"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="6"]
 visible = false
 layout_mode = 0
 offset_left = 91.0
@@ -363,6 +363,24 @@ offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.433333, 1, 0, 1)
+
+[node name="gameTimer" type="Label" parent="." index="7"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -303.0
+offset_top = 18.0
+offset_right = -17.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 32
+text = "Time left: 15.00s"
 
 [connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]

@@ -10,5 +10,5 @@
 [resource]
 script = ExtResource("1_eui82")
 display_name = "Macaron"
-instructions = "<todo>"
+instructions = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside."
 variants = Array[ExtResource("2_jrl8s")]([ExtResource("3_1u0tn"), ExtResource("4_sbeei"), ExtResource("5_vofqm"), ExtResource("6_8ft7b")])

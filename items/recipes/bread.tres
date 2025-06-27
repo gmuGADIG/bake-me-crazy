@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("1_y81kr")
 display_name = "Bread"
-instructions = "<todo>"
+instructions = "A staple for all bakeries, an incredibly versatile pastry that sports a cloudy soft inside and a firm and strong exterior."
 variants = Array[ExtResource("2_8ichm")]([ExtResource("3_73fy8")])

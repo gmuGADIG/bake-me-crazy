@@ -14,6 +14,7 @@
 position = Vector2(132, 604)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerPath/Player"]
+process_mode = 3
 script = ExtResource("2_y05i1")
 
 [node name="PauseOpener" type="Node" parent="."]

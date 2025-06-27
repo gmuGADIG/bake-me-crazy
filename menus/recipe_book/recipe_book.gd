@@ -16,6 +16,23 @@ class_name RecipeBook extends Node
 @onready var finish_button: Button = %FinishButton
 @onready var turn_page_left: Button = %TurnPageLeft
 @onready var turn_page_right: Button = %TurnPageRight
+@onready var anim: AnimationPlayer = %Anim
+
+#@onready var debug_all_recipes = [
+	#"res://items/recipes/bar.tres",
+	#"res://items/recipes/bread.tres",
+	#"res://items/recipes/brownie.tres",
+	#"res://items/recipes/cake.tres",
+	#"res://items/recipes/cannelle.tres",
+	#"res://items/recipes/cookie.tres",
+	#"res://items/recipes/croissant.tres",
+	#"res://items/recipes/food_group.gd",
+	#"res://items/recipes/macaron.tres",
+	#"res://items/recipes/puff_roll.tres",
+	#"res://items/recipes/scone.tres",
+	#"res://items/recipes/sweet_roll.tres",
+	#"res://items/recipes/tart.tres",
+#]
 
 var recipes : Array[FoodGroup]
 
@@ -28,6 +45,7 @@ func _ready() -> void:
 	get_tree().paused = true # this is reset to false in _on_tree_exiting
 	MainMusicPlayer.set_volume(0.3)
 
+	#for recipe_path in debug_all_recipes:
 	for recipe_path in PlayerData.data.unlocked_recipe_paths:
 		recipes.append(load(recipe_path))
 	update_displayed_recipes()
@@ -76,10 +94,14 @@ func update_displayed_recipes() -> void:
 func _on_turn_page_left_pressed() -> void:
 	current_page -= 1
 	update_displayed_recipes()
+	anim.stop()
+	anim.play("flip_left")
 
 func _on_turn_page_right_pressed() -> void:
 	current_page += 1
 	update_displayed_recipes()
+	anim.stop()
+	anim.play("flip_right")
 
 func _on_bake_left_pressed() -> void:
 	_toggle_recipe_selection(current_page*2)

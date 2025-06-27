@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4j3328aowmyu"
-path="res://.godot/imported/Cookbook.png-379ca5621dab6d241ee55a6ad8c17d55.ctex"
+uid="uid://bfa2fl7mmi04x"
+path="res://.godot/imported/hslider_grabber.svg-fd893594fc0178842f20f0e35c1290a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/recipe_book/Cookbook.png"
-dest_files=["res://.godot/imported/Cookbook.png-379ca5621dab6d241ee55a6ad8c17d55.ctex"]
+source_file="res://menus/settings/hslider_grabber.svg"
+dest_files=["res://.godot/imported/hslider_grabber.svg-fd893594fc0178842f20f0e35c1290a7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

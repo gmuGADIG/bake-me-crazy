@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource("1_t8yms")
 display_name = "Scone"
-instructions = "<todo>"
+instructions = "Similar to a biscuit, this type of pastry has a crumbly exterior with a buttery flavor, and a wide selection of toppings."
 variants = Array[ExtResource("2_qyyms")]([ExtResource("3_hxbjt"), ExtResource("4_uiqsc"), ExtResource("5_kbxek")])

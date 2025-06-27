@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4j3328aowmyu"
-path="res://.godot/imported/Cookbook.png-379ca5621dab6d241ee55a6ad8c17d55.ctex"
+uid="uid://d07o2lsduweq4"
+path="res://.godot/imported/photo_frame_back.png-a757f9881b3f0480dedbc195ac4d415a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/recipe_book/Cookbook.png"
-dest_files=["res://.godot/imported/Cookbook.png-379ca5621dab6d241ee55a6ad8c17d55.ctex"]
+source_file="res://menus/recipe_book/photo_frame_back.png"
+dest_files=["res://.godot/imported/photo_frame_back.png-a757f9881b3f0480dedbc195ac4d415a.ctex"]
 
 [params]
 

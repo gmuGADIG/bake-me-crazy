@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4j3328aowmyu"
-path="res://.godot/imported/Cookbook.png-379ca5621dab6d241ee55a6ad8c17d55.ctex"
+uid="uid://dpg1l8rynd7n"
+path="res://.godot/imported/mix_circle.png-3cb93ece1795e17767dfceb34bb10fd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/recipe_book/Cookbook.png"
-dest_files=["res://.godot/imported/Cookbook.png-379ca5621dab6d241ee55a6ad8c17d55.ctex"]
+source_file="res://cooking/steps/mix_circle.png"
+dest_files=["res://.godot/imported/mix_circle.png-3cb93ece1795e17767dfceb34bb10fd2.ctex"]
 
 [params]
 

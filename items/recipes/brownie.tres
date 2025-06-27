@@ -10,5 +10,5 @@
 [resource]
 script = ExtResource("1_ss005")
 display_name = "Brownie"
-instructions = "<todo>"
+instructions = "A sweet that can reach true perfection as it is glossy and filled with rich flavor."
 variants = Array[ExtResource("2_43caf")]([ExtResource("3_noscf"), ExtResource("4_ykfgu"), ExtResource("6_6rvcg"), ExtResource("5_4cx60")])
