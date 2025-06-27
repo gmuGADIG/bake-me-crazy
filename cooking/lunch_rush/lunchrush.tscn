@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://demxad4xjetim" path="res://cooking/art/Minigame_WoodCuttingBoard.png" id="14_qird5"]
 [ext_resource type="Texture2D" uid="uid://1ynufi5ur5i" path="res://cooking/lunch_rush/dust.png" id="14_rbkm8"]
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="18_58qv4"]
-[ext_resource type="Theme" uid="uid://7qdfoumvlph0" path="res://cooking/lunch_rush/lunch_rush_theme.tres" id="18_85t1o"]
+[ext_resource type="Theme" uid="uid://ci7oj2xe68ki5" path="res://cooking/lunch_rush/lunch_rush_theme.tres" id="18_85t1o"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="19_1ienb"]
 [ext_resource type="Texture2D" uid="uid://yytg0qnv63ow" path="res://menus/market_ui/Gold_Button.webp" id="21_fewph"]
 
@@ -234,7 +234,6 @@ foods = Array[ExtResource("2_d5ipb")]([ExtResource("2_ht3hp"), ExtResource("3_dv
 flavors = Array[ExtResource("2_d5ipb")]([ExtResource("6_0baax"), ExtResource("7_bj863"), ExtResource("8_jcw3l")])
 shaker_particle = ExtResource("10_86e4i")
 drizzle_particle = ExtResource("11_e61kw")
-total_customers = 1
 percent_gained_per_shake = 5.0
 percent_gained_per_drizzle = 0.75
 
