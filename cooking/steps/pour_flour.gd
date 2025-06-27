@@ -16,6 +16,7 @@ var done := false
 @onready var grab_sprite: Sprite2D = %GrabSprite
 
 @onready var particles: CPUParticles2D = %Powder
+@onready var powder_location: Node2D = %PowderLocation
 
 
 func _process(delta: float) -> void:
@@ -34,7 +35,7 @@ func _process(delta: float) -> void:
 
 	var in_bowl_area = bowl_area.overlaps_body(flour_pourer)
 	
-	$FlourScale.text = "%.1f" % flour_in_bowl
+	$FlourScale.text = "%d" % flour_in_bowl
 	
 	if Input.is_mouse_button_pressed(1) && in_bowl_area:
 		flour_in_bowl = flour_in_bowl + delta * pour_speed
@@ -43,6 +44,11 @@ func _process(delta: float) -> void:
 		var score := remap(flour_in_bowl, target_amount + pour_speed * .5, target_amount + pour_speed * 1.5, 3, 0)
 		score = clampf(score, 0, 3)
 		finished.emit(score)
+		
+		# Hide the particles when finished so they don't show during the animation.
+		particles.hide()
 		done = true
 
 		print("[pour_flour] score = ", score)
+		
+	particles.global_position = powder_location.global_position

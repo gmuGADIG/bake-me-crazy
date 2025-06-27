@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://csbdkjtt5wtsj"]
+[gd_scene load_steps=3 format=3 uid="uid://feyopye254fc"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_page.gd" id="1_bnpu1"]
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="2_0saai"]

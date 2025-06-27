@@ -25,6 +25,18 @@ func next_step(score : float) -> void:
 	
 	##Play the step completion screen
 	if prev != null:
+		# Animate any closing stuff here. For now, that means make the
+		# recipe book leave.
+		var recipe_book = prev.get_node_or_null("InstructionsPanel")
+		if recipe_book != null:
+			# Make sure the recipe book IS processing, cause we disable
+			# the node.
+			recipe_book.process_mode = Node.PROCESS_MODE_ALWAYS
+			recipe_book.close_book()
+		
+		if MorningShift.instance:
+			MorningShift.instance.current_step += 1
+		
 		prev.process_mode = Node.PROCESS_MODE_DISABLED
 		$StepResults.display_results(score)
 		await $StepResults.finised
@@ -33,6 +45,11 @@ func next_step(score : float) -> void:
 	if next != null:
 		next.pre_animation()
 		next.visible = true
+		
+		# Tell the recipe book of the next step its actual number.
+		var recipe_book = next.get_node_or_null("InstructionsPanel")
+		if recipe_book != null:
+			recipe_book.update_step_num()
 	
 	# animate them swiping across the screen
 	var tween = create_tween().set_trans(Tween.TRANS_BACK).set_parallel()
