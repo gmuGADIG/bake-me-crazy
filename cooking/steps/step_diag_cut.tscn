@@ -32,10 +32,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("2_y6041")]
-offset_top = 392.0
-offset_bottom = 392.0
-minigame_title = "CUT THE DOUGH"
-instructions = "Click and Drag along the dotted lines to cut the dough."
+offset_left = 3.0
+offset_top = 323.0
+offset_right = 3.0
+offset_bottom = 323.0
+minigame_title = "Cut the dough"
+instructions = "Click and drag along the dotted lines to cut the dough."
 
 [node name="MinigameDough" type="Sprite2D" parent="." index="1"]
 position = Vector2(593.5, 241)

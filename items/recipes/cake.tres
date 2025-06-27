@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_d2w5t"]
 [ext_resource type="Resource" uid="uid://bh0233f3346f" path="res://items/foods/cake_chocolate.tres" id="3_7eexl"]
 [ext_resource type="Resource" uid="uid://d3cy6xm2m0ly8" path="res://items/foods/cake_vanilla.tres" id="4_rtog4"]
-[ext_resource type="Resource" uid="uid://cpe1mq04ogcy" path="res://items/foods/cake_strawberry.tres" id="5_3drrj"]
+[ext_resource type="Resource" path="res://items/foods/cake_strawberry.tres" id="5_3drrj"]
 
 [resource]
 script = ExtResource("1_3s57o")

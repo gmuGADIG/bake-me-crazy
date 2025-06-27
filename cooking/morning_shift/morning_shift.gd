@@ -8,6 +8,7 @@ var backup_minigame = load("res://test_scenes/test_food_minigame/test_food_minig
 
 var variants: Array[FoodData] = []
 
+var current_step: int = 1
 var current_recipe: FoodData
 
 func _init() -> void:
@@ -21,6 +22,7 @@ func _ready() -> void:
 	var recipes_selected: Array = await select_recipe.recipes_selected
 	while not recipes_selected.is_empty():
 		current_recipe = recipes_selected.pop_front()
+		current_step = 1
 		
 		# Remove current children
 		for child in get_children():

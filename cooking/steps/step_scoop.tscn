@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="6_65nad"]
 [ext_resource type="Texture2D" uid="uid://vodrqcfckd01" path="res://cooking/art/Cookie_Sheet.png" id="8_n7naa"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i70qp"]
-radius = 120.204
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkt58"]
 radius = 45.0
 
@@ -25,6 +22,9 @@ shader = ExtResource("3_rsoc1")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_unpg6"]
 gradient = SubResource("Gradient_1r282")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_i70qp"]
+radius = 120.204
+
 [node name="StepScoop" instance=ExtResource("1_1pduj")]
 offset_left = 0.0
 offset_top = 0.0
@@ -35,9 +35,12 @@ script = ExtResource("1_gwrga")
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("3_v27x2")]
 z_index = 1
-offset_top = 446.0
-offset_bottom = 446.0
-minigame_title = "SCOOP COOKIES"
+offset_left = 130.0
+offset_top = 267.0
+offset_right = 130.0
+offset_bottom = 267.0
+scale = Vector2(0.9111, 0.9111)
+minigame_title = "Scoop cookies"
 instructions = "Use the spoon to pick up the dough and plop it on to the cookie tray."
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
@@ -55,109 +58,7 @@ position = Vector2(377, 294)
 rotation = -0.00126775
 texture = ExtResource("8_n7naa")
 
-[node name="Bowl" type="Area2D" parent="." index="3"]
-position = Vector2(999, 370)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" index="0"]
-shape = SubResource("CircleShape2D_i70qp")
-
-[node name="Sprite2D" type="Sprite2D" parent="Bowl" index="1"]
-visible = false
-position = Vector2(-0.452675, -1.27741)
-scale = Vector2(0.0948551, 0.0948551)
-texture = ExtResource("2_e4817")
-
-[node name="SnickerdoodleCookieDough" type="Sprite2D" parent="Bowl" index="2"]
-rotation = 1.27686
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough2" type="Sprite2D" parent="Bowl" index="3"]
-position = Vector2(33, 35)
-rotation = -0.75887
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough3" type="Sprite2D" parent="Bowl" index="4"]
-position = Vector2(57, -32)
-rotation = 0.898043
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough4" type="Sprite2D" parent="Bowl" index="5"]
-position = Vector2(-22, -48)
-rotation = -1.45152
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough5" type="Sprite2D" parent="Bowl" index="6"]
-position = Vector2(-66, 1)
-rotation = 1.05941
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough6" type="Sprite2D" parent="Bowl" index="7"]
-position = Vector2(-36, 50)
-rotation = -1.34842
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough7" type="Sprite2D" parent="Bowl" index="8"]
-position = Vector2(22, 71)
-rotation = -0.55163
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough8" type="Sprite2D" parent="Bowl" index="9"]
-position = Vector2(87, 43)
-rotation = 1.43541
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough9" type="Sprite2D" parent="Bowl" index="10"]
-position = Vector2(85, -4)
-rotation = -1.40708
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough10" type="Sprite2D" parent="Bowl" index="11"]
-position = Vector2(28, -69)
-rotation = -0.848931
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough11" type="Sprite2D" parent="Bowl" index="12"]
-position = Vector2(-73, -56)
-rotation = 1.58879
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough12" type="Sprite2D" parent="Bowl" index="13"]
-position = Vector2(-91, 39)
-rotation = -0.894763
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough13" type="Sprite2D" parent="Bowl" index="14"]
-position = Vector2(-36, 86)
-rotation = 1.71478
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough14" type="Sprite2D" parent="Bowl" index="15"]
-position = Vector2(18, 99)
-rotation = -1.83034
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="SnickerdoodleCookieDough15" type="Sprite2D" parent="Bowl" index="16"]
-position = Vector2(18, 99)
-rotation = 1.85186
-scale = Vector2(0.131723, 0.131723)
-texture = ExtResource("4_rolkp")
-
-[node name="placePos" type="Area2D" parent="." index="4"]
+[node name="placePos" type="Area2D" parent="." index="3"]
 position = Vector2(163, 192)
 metadata/_edit_group_ = true
 
@@ -168,7 +69,7 @@ shape = SubResource("CircleShape2D_vkt58")
 material = SubResource("ShaderMaterial_j0vec")
 texture = SubResource("GradientTexture2D_unpg6")
 
-[node name="FollowCursor" type="Node2D" parent="." index="5"]
+[node name="FollowCursor" type="Node2D" parent="." index="4"]
 rotation = -0.00126775
 script = ExtResource("6_1c4gu")
 
@@ -184,7 +85,7 @@ rotation = 0.00126775
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_rolkp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="6"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="5"]
 visible = false
 layout_mode = 0
 offset_left = 91.0
@@ -352,7 +253,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.433333, 1, 0, 1)
 
-[node name="gameTimer" type="Label" parent="." index="7"]
+[node name="gameTimer" type="Label" parent="." index="6"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -370,6 +271,108 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 32
 text = "Time left: 15.00s"
 
+[node name="Bowl" type="Area2D" parent="." index="7"]
+position = Vector2(960, 200)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bowl" index="0"]
+shape = SubResource("CircleShape2D_i70qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bowl" index="1"]
+visible = false
+position = Vector2(-0.452675, -1.27741)
+scale = Vector2(0.0948551, 0.0948551)
+texture = ExtResource("2_e4817")
+
+[node name="SnickerdoodleCookieDough" type="Sprite2D" parent="Bowl" index="2"]
+rotation = 1.27686
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough2" type="Sprite2D" parent="Bowl" index="3"]
+position = Vector2(33, 35)
+rotation = -0.75887
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough3" type="Sprite2D" parent="Bowl" index="4"]
+position = Vector2(57, -32)
+rotation = 0.898043
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough4" type="Sprite2D" parent="Bowl" index="5"]
+position = Vector2(-22, -48)
+rotation = -1.45152
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough5" type="Sprite2D" parent="Bowl" index="6"]
+position = Vector2(-66, 1)
+rotation = 1.05941
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough6" type="Sprite2D" parent="Bowl" index="7"]
+position = Vector2(-36, 50)
+rotation = -1.34842
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough7" type="Sprite2D" parent="Bowl" index="8"]
+position = Vector2(22, 71)
+rotation = -0.55163
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough8" type="Sprite2D" parent="Bowl" index="9"]
+position = Vector2(87, 43)
+rotation = 1.43541
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough9" type="Sprite2D" parent="Bowl" index="10"]
+position = Vector2(85, -4)
+rotation = -1.40708
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough10" type="Sprite2D" parent="Bowl" index="11"]
+position = Vector2(28, -69)
+rotation = -0.848931
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough11" type="Sprite2D" parent="Bowl" index="12"]
+position = Vector2(-73, -56)
+rotation = 1.58879
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough12" type="Sprite2D" parent="Bowl" index="13"]
+position = Vector2(-91, 39)
+rotation = -0.894763
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough13" type="Sprite2D" parent="Bowl" index="14"]
+position = Vector2(-36, 86)
+rotation = 1.71478
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough14" type="Sprite2D" parent="Bowl" index="15"]
+position = Vector2(18, 99)
+rotation = -1.83034
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[node name="SnickerdoodleCookieDough15" type="Sprite2D" parent="Bowl" index="16"]
+position = Vector2(18, 99)
+rotation = 1.85186
+scale = Vector2(0.131723, 0.131723)
+texture = ExtResource("4_rolkp")
+
+[connection signal="body_entered" from="placePos" to="." method="_on_place_pos_body_entered"]
 [connection signal="mouse_entered" from="Bowl" to="." method="_on_bowl_mouse_entered"]
 [connection signal="mouse_exited" from="Bowl" to="." method="_on_bowl_mouse_exited"]
-[connection signal="body_entered" from="placePos" to="." method="_on_place_pos_body_entered"]

@@ -32,10 +32,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("2_6xt0f")]
-offset_top = 392.0
-offset_bottom = 392.0
-minigame_title = "CUT THE DOUGH"
-instructions = "Click and Drag along the dotted lines to cut the dough."
+offset_top = 304.0
+offset_bottom = 304.0
+minigame_title = "Cut the dough"
+instructions = "Click and drag along the dotted lines to cut the dough."
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 z_index = -10

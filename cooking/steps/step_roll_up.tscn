@@ -25,8 +25,8 @@ progress_total = 10000.0
 
 [node name="InstructionsPanel" parent="." index="0" instance=ExtResource("3_pb4hx")]
 layout_mode = 1
-minigame_title = "ROLL UP"
-instructions = "Click and Drag the roll up in one quick motion"
+minigame_title = "Roll up"
+instructions = "Click and drag the roll up in one quick motion."
 
 [node name="TextureRect" type="TextureRect" parent="." index="1"]
 z_index = -10

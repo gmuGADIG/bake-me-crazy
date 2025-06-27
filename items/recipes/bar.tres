@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_fkvkn"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_01i76"]
-[ext_resource type="Resource" uid="uid://bn6t8jlkga7bv" path="res://items/foods/bar_butter.tres" id="3_isl5u"]
-[ext_resource type="Resource" uid="uid://dabrwbblxvfru" path="res://items/foods/bar_lemon.tres" id="4_uu5pc"]
-[ext_resource type="Resource" uid="uid://n1we7ai6up0j" path="res://items/foods/bar_strawberry.tres" id="5_xoexc"]
-[ext_resource type="Resource" uid="uid://wbyprea2fck1" path="res://items/foods/bar_billionaire.tres" id="6_0y4ad"]
+[ext_resource type="Resource" path="res://items/foods/bar_butter.tres" id="3_isl5u"]
+[ext_resource type="Resource" path="res://items/foods/bar_lemon.tres" id="4_uu5pc"]
+[ext_resource type="Resource" path="res://items/foods/bar_strawberry.tres" id="5_xoexc"]
+[ext_resource type="Resource" path="res://items/foods/bar_billionaire.tres" id="6_0y4ad"]
 
 [resource]
 script = ExtResource("1_fkvkn")
