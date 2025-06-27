@@ -2,7 +2,7 @@ class_name SaveSlotUI extends ButtonHover
 
 @export_range(1, 3) var slot := 1
 
-@onready var save_path = "user://save%s.tres" % slot
+@onready var save_path = "user://save_v2_%s.tres" % slot
 @onready var slot_name: Label = %SlotName
 @onready var slot_desc: Label = %SlotDesc
 @onready var empty: Label = %Empty

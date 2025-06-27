@@ -21,7 +21,7 @@ func _ready() -> void:
 	# debug stuff
 	if OS.has_feature("debug"):
 		data.unlocked_recipe_paths.insert(0, "res://items/recipes/test_food.tres")
-
+ 
 func load_file(save_template : SaveTemplate) -> void:
 	data = save_template
 	SceneTransition.change_scene_to_file(data.scene_path)
