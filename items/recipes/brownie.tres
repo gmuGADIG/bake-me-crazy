@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_ss005"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_43caf"]
-[ext_resource type="Resource" uid="uid://bmasbdsrl2rai" path="res://items/foods/brownie_chocolate.tres" id="3_noscf"]
-[ext_resource type="Resource" uid="uid://2g7lxm420tba" path="res://items/foods/brownie_peanut_butter.tres" id="4_ykfgu"]
-[ext_resource type="Resource" uid="uid://b2wn642iccnhx" path="res://items/foods/brownie_blondie.tres" id="5_4cx60"]
-[ext_resource type="Resource" uid="uid://d2hpgmeeudavt" path="res://items/foods/brownie_cherry.tres" id="6_6rvcg"]
+[ext_resource type="Resource" path="res://items/foods/brownie_chocolate.tres" id="3_noscf"]
+[ext_resource type="Resource" path="res://items/foods/brownie_peanut_butter.tres" id="4_ykfgu"]
+[ext_resource type="Resource" path="res://items/foods/brownie_blondie.tres" id="5_4cx60"]
+[ext_resource type="Resource" path="res://items/foods/brownie_cherry.tres" id="6_6rvcg"]
 
 [resource]
 script = ExtResource("1_ss005")
