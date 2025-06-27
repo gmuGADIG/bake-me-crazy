@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bkljcjpnupg3i"]
+
+[ext_resource type="PackedScene" uid="uid://cr7epfvpohmfg" path="res://cooking/food_items_recipes/Scones.tscn" id="1_ourkp"]
+[ext_resource type="Texture2D" uid="uid://dnnuuj7ed13ly" path="res://temp_art/scone_fucked_up.png" id="2_8pp7m"]
+[ext_resource type="Resource" uid="uid://dlcm7m0yeyb0d" path="res://items/ingredients/orange.tres" id="3_hag23"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_411oe"]
+
+[resource]
+script = ExtResource("4_411oe")
+cooking_minigame = ExtResource("1_ourkp")
+ingredient = ExtResource("3_hag23")
+display_name = "Orange Scone"
+image = ExtResource("2_8pp7m")

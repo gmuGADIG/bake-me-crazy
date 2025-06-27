@@ -1,4 +1,4 @@
-extends Button
+extends ButtonHover
 class_name RecipeBookVariantButton
 
 var variant: FoodData
@@ -9,9 +9,18 @@ var variant: FoodData
 @onready var quantity_requirement := %QuantityRequirement
 
 func _ready() -> void:
+	super._ready()
+	
 	if variant == null:
 		push_warning("Recipe book variant button had null variant!")
 		return
+	
+	focus_entered.connect(func():
+		if disabled:
+			modulate = Color.RED
+			create_tween().tween_property(self, "modulate", Color.WHITE, 0.3)
+			release_focus()
+	)
 
 	# If we don't have a requirement, we're always available, and
 	# we can make our requirement name "Nothing!"

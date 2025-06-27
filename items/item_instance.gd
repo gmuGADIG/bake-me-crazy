@@ -20,7 +20,7 @@ var data: ItemData:
 
 func setup(item_data: ItemData, item_quality: int) -> ItemInstance:
 	data = item_data
-	_data_resource_path = _data_resource_path
+	_data_resource_path = item_data.resource_path
 	quality = item_quality
 	
 	return self

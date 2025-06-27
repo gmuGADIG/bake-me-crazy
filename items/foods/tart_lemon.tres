@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://dfol8nfhxwjpu"]
+
+[ext_resource type="PackedScene" uid="uid://df55va66pl7mq" path="res://cooking/food_items_recipes/Tart.tscn" id="1_8ljlh"]
+[ext_resource type="Texture2D" uid="uid://bbvtqnjb0wsqf" path="res://temp_art/foods/temp_tart_lemon.png" id="2_gowki"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_gqcnh"]
+[ext_resource type="Resource" uid="uid://biw16s27hi36y" path="res://items/ingredients/lemon.tres" id="3_qg7ks"]
+
+[resource]
+script = ExtResource("3_gqcnh")
+cooking_minigame = ExtResource("1_8ljlh")
+ingredient = ExtResource("3_qg7ks")
+display_name = "Lemon Tart"
+image = ExtResource("2_gowki")

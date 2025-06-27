@@ -1,12 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://dykiajohmtf56"]
+[gd_scene load_steps=7 format=3 uid="uid://dykiajohmtf56"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_variant_button.gd" id="1_lnngo"]
 [ext_resource type="Texture2D" uid="uid://cvmk88s6vodej" path="res://items/foods/art/Cake_Lemon.png" id="1_w6gbt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrc7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bx4e7"]
+bg_color = Color(0.42, 0.35525, 0.315, 0.623529)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho3iq"]
+bg_color = Color(0.51, 0.368475, 0.2805, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.89, 0.621072, 0.4539, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3fyd"]
+bg_color = Color(0.51, 0.368475, 0.2805, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="VariantButton" type="Button"]
 custom_minimum_size = Vector2(310, 120)
 offset_right = 310.0
 offset_bottom = 120.0
+pivot_offset = Vector2(155, 60)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xrc7g")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bx4e7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ho3iq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v3fyd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ho3iq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_v3fyd")
 toggle_mode = true
 script = ExtResource("1_lnngo")
 

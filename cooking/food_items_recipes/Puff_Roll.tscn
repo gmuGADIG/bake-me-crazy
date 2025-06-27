@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs2trculmsbxv"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_a3rkt"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_lbwx7"]
+[ext_resource type="PackedScene" uid="uid://b3o1ok3dj2q50" path="res://cooking/steps/step_pipe_spot.tscn" id="4_1hus6"]
+
+[node name="PuffRoll" instance=ExtResource("1_a3rkt")]
+
+[node name="PourFlour" parent="." index="2" instance=ExtResource("3_lbwx7")]
+layout_mode = 1
+
+[node name="pipping_spot" parent="." index="3" instance=ExtResource("4_1hus6")]
+layout_mode = 1

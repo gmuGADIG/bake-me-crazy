@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://df55va66pl7mq"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_y06e7"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_3tr7p"]
+[ext_resource type="PackedScene" uid="uid://b1qo3dh7pfxpl" path="res://cooking/steps/step_scoop.tscn" id="4_80ori"]
+
+[node name="Tart" instance=ExtResource("1_y06e7")]
+
+[node name="PourFlour" parent="." index="2" instance=ExtResource("3_3tr7p")]
+layout_mode = 1
+
+[node name="StepScoop" parent="." index="3" instance=ExtResource("4_80ori")]
+layout_mode = 1

@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3pcgb5cxk8x6"]
+
+[ext_resource type="Script" path="res://cooking/step_results.gd" id="1_7o0qf"]
+[ext_resource type="Texture2D" uid="uid://cku62vjpyj8bh" path="res://menus/market_ui/star_1.svg" id="2_5xska"]
+[ext_resource type="Script" path="res://cooking/spinny_star.gd" id="3_p4lf6"]
+
+[node name="StepResults" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7o0qf")
+result_grow_time = 0.3
+result_full_size_time = 0.4
+result_full_leave_time = 0.3
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/shadow_offset_x = 8
+theme_override_font_sizes/italics_font_size = 100
+bbcode_enabled = true
+text = "[center][i]Good[/i][/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StarContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Star1" type="Control" parent="Control/VBoxContainer/StarContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SpinnyStar" type="Sprite2D" parent="Control/VBoxContainer/StarContainer/Star1"]
+self_modulate = Color(1, 0.858, 0.29, 1)
+position = Vector2(0, 25)
+rotation = 6.22808
+texture = ExtResource("2_5xska")
+region_enabled = true
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("3_p4lf6")
+
+[node name="Star2" type="Control" parent="Control/VBoxContainer/StarContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SpinnyStar" type="Sprite2D" parent="Control/VBoxContainer/StarContainer/Star2"]
+self_modulate = Color(1, 0.858, 0.29, 1)
+z_index = 1
+rotation = 1.96013
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_5xska")
+region_enabled = true
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("3_p4lf6")
+
+[node name="Star3" type="Control" parent="Control/VBoxContainer/StarContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="SpinnyStar" type="Sprite2D" parent="Control/VBoxContainer/StarContainer/Star3"]
+self_modulate = Color(1, 0.858, 0.29, 1)
+position = Vector2(0, 25)
+rotation = 2.2289
+texture = ExtResource("2_5xska")
+region_enabled = true
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("3_p4lf6")

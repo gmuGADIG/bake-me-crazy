@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://dubeksh27mnty"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=7 format=3 uid="uid://dubeksh27mnty"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_eui82"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_jrl8s"]
+[ext_resource type="Resource" uid="uid://bg12i2y4yb1qs" path="res://items/foods/macaron_chocolate.tres" id="3_1u0tn"]
+[ext_resource type="Resource" uid="uid://bl56p7fyuwt15" path="res://items/foods/macaron_pistachio.tres" id="4_sbeei"]
+[ext_resource type="Resource" uid="uid://ceyv2x3ksyafl" path="res://items/foods/macaron_strawberry.tres" id="5_vofqm"]
+[ext_resource type="Resource" uid="uid://cpwfkunr6s15g" path="res://items/foods/macaron_tea.tres" id="6_8ft7b"]
 
 [resource]
 script = ExtResource("1_eui82")
 display_name = "Macaron"
-instructions = "<todo>"
-variants = Array[ExtResource("2_jrl8s")]([])
+instructions = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside."
+variants = Array[ExtResource("2_jrl8s")]([ExtResource("3_1u0tn"), ExtResource("4_sbeei"), ExtResource("5_vofqm"), ExtResource("6_8ft7b")])

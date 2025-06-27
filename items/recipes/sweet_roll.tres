@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=3 format=3 uid="uid://cx0c46h3n02h4"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=7 format=3 uid="uid://cx0c46h3n02h4"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_kvdlp"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_3nb1f"]
+[ext_resource type="Resource" uid="uid://d1a178667vo0w" path="res://items/foods/sweet_roll_plain.tres" id="3_2ws65"]
+[ext_resource type="Resource" uid="uid://uy3v2ird2pb5" path="res://items/foods/sweet_roll_cinnamon.tres" id="4_36ces"]
+[ext_resource type="Resource" uid="uid://dltmya4lx6avl" path="res://items/foods/sweet_roll_orange.tres" id="5_pkh0n"]
+[ext_resource type="Resource" uid="uid://bj0g6bqr52ynm" path="res://items/foods/sweet_roll_pistachio.tres" id="6_bb3qm"]
 
 [resource]
 script = ExtResource("1_kvdlp")
 display_name = "Sweet Roll"
-instructions = "<todo>"
-variants = Array[ExtResource("2_3nb1f")]([])
+instructions = "This treat is perfect for breakfast or brunch as it's a light, flaky dough that surrounds a filling of choice."
+variants = Array[ExtResource("2_3nb1f")]([ExtResource("3_2ws65"), ExtResource("4_36ces"), ExtResource("5_pkh0n"), ExtResource("6_bb3qm")])

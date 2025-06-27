@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://d0pu8p3gpa5tk"]
+
+[ext_resource type="PackedScene" uid="uid://cs2trculmsbxv" path="res://cooking/food_items_recipes/Puff_Roll.tscn" id="1_5repv"]
+[ext_resource type="Texture2D" uid="uid://hvy3ajjxlrfl" path="res://items/foods/art/PuffRoll_Spinach.png" id="2_1f1yb"]
+[ext_resource type="Resource" uid="uid://c7qq5te66x2sh" path="res://items/ingredients/cheese.tres" id="3_ydu6l"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_x8urk"]
+
+[resource]
+script = ExtResource("4_x8urk")
+cooking_minigame = ExtResource("1_5repv")
+ingredient = ExtResource("3_ydu6l")
+display_name = "Spinach Ricotta Puff Roll"
+image = ExtResource("2_1f1yb")

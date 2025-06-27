@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://cscj7lqcyvov2"]
+
+[ext_resource type="PackedScene" uid="uid://ca5okbi35v74j" path="res://cooking/food_items_recipes/Croissant.tscn" id="1_0i2l7"]
+[ext_resource type="Texture2D" uid="uid://q10nspsyb56y" path="res://items/foods/art/ChocolateCroissant.png" id="2_dmydt"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_4u5ou"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="3_hy6ke"]
+
+[resource]
+script = ExtResource("3_4u5ou")
+cooking_minigame = ExtResource("1_0i2l7")
+ingredient = ExtResource("3_hy6ke")
+display_name = "Chocolate Croissant"
+image = ExtResource("2_dmydt")

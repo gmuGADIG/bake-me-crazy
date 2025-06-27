@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=5 format=3 uid="uid://5bfmoyhlooa1"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=6 format=3 uid="uid://5bfmoyhlooa1"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_3s57o"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_d2w5t"]
 [ext_resource type="Resource" uid="uid://bh0233f3346f" path="res://items/foods/cake_chocolate.tres" id="3_7eexl"]
 [ext_resource type="Resource" uid="uid://d3cy6xm2m0ly8" path="res://items/foods/cake_vanilla.tres" id="4_rtog4"]
+[ext_resource type="Resource" uid="uid://cpe1mq04ogcy" path="res://items/foods/cake_strawberry.tres" id="5_3drrj"]
 
 [resource]
 script = ExtResource("1_3s57o")
 display_name = "Cake"
-instructions = "<todo>"
-variants = Array[ExtResource("2_d2w5t")]([ExtResource("3_7eexl"), ExtResource("4_rtog4")])
+instructions = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors."
+variants = Array[ExtResource("2_d2w5t")]([ExtResource("3_7eexl"), ExtResource("4_rtog4"), ExtResource("5_3drrj")])

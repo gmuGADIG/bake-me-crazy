@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://birfsrw15ouc3"]
+
+[ext_resource type="PackedScene" uid="uid://cm2p8u38psxpy" path="res://cooking/food_items_recipes/Cookies.tscn" id="1_cqvk7"]
+[ext_resource type="Texture2D" uid="uid://8crq3jkpven1" path="res://items/foods/art/Cookie_Snickerdoodle.png" id="2_wdrvn"]
+[ext_resource type="Resource" uid="uid://bgg3p5ee7mfuv" path="res://items/ingredients/cinnamon.tres" id="3_cg7gy"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_lou7g"]
+
+[resource]
+script = ExtResource("4_lou7g")
+cooking_minigame = ExtResource("1_cqvk7")
+ingredient = ExtResource("3_cg7gy")
+display_name = "Snickerdoodle Cookie"
+image = ExtResource("2_wdrvn")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://bg12i2y4yb1qs"]
+
+[ext_resource type="PackedScene" uid="uid://cdlagugjlu0oq" path="res://cooking/food_items_recipes/Macaron.tscn" id="1_cqhkw"]
+[ext_resource type="Texture2D" uid="uid://bgvakkuj05g85" path="res://items/foods/art/Macaron_Chocolate.png" id="2_qdc1h"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="3_w7lb6"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_hjqwm"]
+
+[resource]
+script = ExtResource("4_hjqwm")
+cooking_minigame = ExtResource("1_cqhkw")
+ingredient = ExtResource("3_w7lb6")
+display_name = "Chocolate Macaron"
+image = ExtResource("2_qdc1h")

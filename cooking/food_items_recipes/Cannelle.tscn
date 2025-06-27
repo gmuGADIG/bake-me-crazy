@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://yi5g23jj26ut"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_3l31p"]
+[ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_qg1bf"]
+[ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="4_y76yg"]
+
+[node name="Cannelle" instance=ExtResource("1_3l31p")]
+
+[node name="PourFlour" parent="." index="2" instance=ExtResource("3_qg1bf")]
+layout_mode = 1
+
+[node name="StepHeat" parent="." index="3" instance=ExtResource("4_y76yg")]
+layout_mode = 1
