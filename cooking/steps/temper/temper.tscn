@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dow8da7vvfan3"]
+[gd_scene load_steps=9 format=3 uid="uid://dow8da7vvfan3"]
 
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="1_h0ij1"]
 [ext_resource type="Script" path="res://cooking/steps/temper/temper.gd" id="2_t3dct"]
 [ext_resource type="Texture2D" uid="uid://dt27721ff43r2" path="res://cooking/cooking_art/Minigame_MixingBowl.png" id="3_1m6c7"]
+[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="3_8t8f1"]
 [ext_resource type="Texture2D" uid="uid://x6tugdipc082" path="res://cooking/cooking_art/Minigame_Ladle.png" id="4_hqdp8"]
+[ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="4_uexeg"]
 [ext_resource type="Script" path="res://cooking/steps/temper/egg_stream.gd" id="5_xuopf"]
 [ext_resource type="PackedScene" uid="uid://bxhtfkrkaquj1" path="res://cooking/steps/temper/egg_line.tscn" id="6_p02lj"]
 
@@ -16,17 +18,30 @@ heat_velocity_max = 0.02
 heat_velocity_min = -0.02
 green_range = 0.4
 
-[node name="MinigameMixingBowl" type="Sprite2D" parent="." index="0"]
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
+z_index = -10
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_8t8f1")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CounterRed" type="Sprite2D" parent="." index="1"]
+position = Vector2(586, 1145)
+texture = ExtResource("4_uexeg")
+
+[node name="MinigameMixingBowl" type="Sprite2D" parent="." index="2"]
 position = Vector2(610, 561)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_1m6c7")
 
-[node name="Ladle" type="Sprite2D" parent="." index="1"]
+[node name="Ladle" type="Sprite2D" parent="." index="3"]
 position = Vector2(818, 193)
 texture = ExtResource("4_hqdp8")
 offset = Vector2(24.875, -86.78)
 
-[node name="EggStream" type="Node2D" parent="." index="4"]
+[node name="EggStream" type="Node2D" parent="." index="6"]
 script = ExtResource("5_xuopf")
 egg_line = ExtResource("6_p02lj")
 egg_drop_speed = 400.0

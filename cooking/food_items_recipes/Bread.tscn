@@ -9,7 +9,6 @@
 
 [node name="Temper" parent="." index="2" instance=ExtResource("2_pumm8")]
 layout_mode = 1
-temper_particle = null
 
 [node name="PourFlour" parent="." index="3" instance=ExtResource("3_ajggn")]
 layout_mode = 1
