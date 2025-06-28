@@ -2,7 +2,7 @@ extends StepHeat
 
 @export var temper_particle : PackedScene
 
-@export var stir_sensitivity : float = 0.00004	
+@export var stir_sensitivity : float = 0.00007
 @export var cooldown_acceleration : float = 0.05
 @export var heat_velocity_max : float = 0.02
 @export var heat_velocity_min : float = -0.02
@@ -16,23 +16,22 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("minigame_interact"):
 		last_x_pos = clamp(get_global_mouse_position().x,ladle_limits[0],ladle_limits[1])
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var new_x_pos : float = clamp(get_global_mouse_position().x,ladle_limits[0],ladle_limits[1])
 	$Ladle.position.x = new_x_pos
+	var x_dist : float = abs(last_x_pos-new_x_pos)
+	
 	heat_velocity = clamp(heat_velocity - cooldown_acceleration * delta,heat_velocity_min,heat_velocity_max)
 	
 	if Input.is_action_pressed("minigame_interact"):
-		if abs(new_x_pos-last_x_pos) > 20:
-			var new_particle : GPUParticles2D = temper_particle.instantiate()
-			add_child(new_particle)
-			new_particle.global_position = $Ladle.global_position
-			new_particle.emitting = true
-		
-		var x_dist : float = abs(last_x_pos-new_x_pos)
 		heat_velocity += x_dist * stir_sensitivity
-		
-		last_x_pos = new_x_pos
 	
+	$EggStream._update_egg_stream(delta,$Ladle.position,x_dist)
+	last_x_pos = new_x_pos
+
+
+func _process(delta: float) -> void:
+	##Normal Step Heat Logic
 	heat += heat_velocity
 	if heat < -1 || heat > 1:
 		heat_velocity = 0
