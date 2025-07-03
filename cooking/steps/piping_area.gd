@@ -8,7 +8,7 @@ var pipping: bool = false
 @export var sprite_node: Sprite2D
 @export var pipping_speed: float = 0.2
 
-@onready var slider := $HSlider
+@onready var progress_bar := $ProgressBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 		print("poke")
 	if pipping == true:
 		sprite_node.scale += Vector2(pipping_speed, pipping_speed) * delta
-		slider.value = sprite_node.scale.x * 100
+		progress_bar.value = sprite_node.scale.x * 100
 	if mouse_over and Input.is_action_just_released("minigame_interact"):
 		pipping = false
 		print(sprite_node.scale)

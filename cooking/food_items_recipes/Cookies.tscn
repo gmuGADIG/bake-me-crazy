@@ -9,8 +9,6 @@
 
 [node name="PourFlour" parent="." index="2" instance=ExtResource("3_4dn73")]
 layout_mode = 1
-target_amount = 300.0
-pour_speed = 200.0
 
 [node name="Kneading" parent="." index="3" instance=ExtResource("5_vgihy")]
 layout_mode = 1

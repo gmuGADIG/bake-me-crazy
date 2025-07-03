@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3o1ok3dj2q50"]
+[gd_scene load_steps=6 format=3 uid="uid://b3o1ok3dj2q50"]
 
-[ext_resource type="Script" path="res://cooking/steps/pipping_spot.gd" id="1_m47dj"]
-[ext_resource type="PackedScene" uid="uid://dn5xfkyv5it31" path="res://cooking/piping_area.tscn" id="2_viuau"]
+[ext_resource type="Script" path="res://cooking/steps/piping_spot_minigame.gd" id="1_m47dj"]
+[ext_resource type="Texture2D" uid="uid://bo138mcnk6gcn" path="res://cooking/steps/PipingBag.png" id="2_1ksba"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_834ev"]
+[ext_resource type="Texture2D" uid="uid://vodrqcfckd01" path="res://cooking/art/Cookie_Sheet.png" id="3_cen00"]
+[ext_resource type="PackedScene" uid="uid://dlspt71wko61b" path="res://cooking/steps/piping_spot.tscn" id="4_o8tka"]
 
-[node name="pipping_spot" type="Control"]
+[node name="PipingSpot" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,18 +16,39 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_m47dj")
 
-[node name="PipingParent" type="Node2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_834ev")
 
-[node name="pipping_area" parent="PipingParent" instance=ExtResource("2_viuau")]
-position = Vector2(385, 432)
+[node name="CookieSheet" type="Sprite2D" parent="."]
+position = Vector2(576, 294)
+texture = ExtResource("3_cen00")
 
-[node name="pipping_area2" parent="PipingParent" instance=ExtResource("2_viuau")]
-position = Vector2(834, 411)
+[node name="PipingAreas" type="Node2D" parent="."]
 
-[node name="pipping_area3" parent="PipingParent" instance=ExtResource("2_viuau")]
-position = Vector2(536, 185)
+[node name="PipingSpot" parent="PipingAreas" instance=ExtResource("4_o8tka")]
+position = Vector2(575, 153)
+
+[node name="PipingSpot2" parent="PipingAreas" instance=ExtResource("4_o8tka")]
+position = Vector2(444, 259)
+
+[node name="PipingSpot3" parent="PipingAreas" instance=ExtResource("4_o8tka")]
+position = Vector2(709, 247)
+
+[node name="PipingSpot4" parent="PipingAreas" instance=ExtResource("4_o8tka")]
+position = Vector2(506, 385)
+
+[node name="PipingSpot5" parent="PipingAreas" instance=ExtResource("4_o8tka")]
+position = Vector2(644, 385)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -35,3 +59,7 @@ offset_bottom = 24.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 text = "Accuracy"
+
+[node name="PipingBag" type="Sprite2D" parent="."]
+texture = ExtResource("2_1ksba")
+offset = Vector2(-28.03, -76.715)
