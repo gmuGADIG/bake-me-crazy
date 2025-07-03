@@ -2,12 +2,12 @@ extends StepHeat
 
 @export var temper_particle : PackedScene
 
-@export var stir_sensitivity : float = 0.00007
-@export var cooldown_acceleration : float = 0.05
-@export var heat_velocity_max : float = 0.02
-@export var heat_velocity_min : float = -0.02
+@export var stir_sensitivity : float = .01
+@export var cooldown_acceleration : float = 7.2
+@export var heat_velocity_max : float = 1
+@export var heat_velocity_min : float = -1
 
-static var ladle_limits : Array[int] = [386,818]
+const ladle_limits : Array[int] = [386,818]
 
 var last_x_pos : float
 var heat_velocity : float = 0
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	##Normal Step Heat Logic
-	heat += heat_velocity
+	heat += heat_velocity * delta
 	if heat < -1 || heat > 1:
 		heat_velocity = 0
 		heat = clamp(heat, -1.0, 1.0)

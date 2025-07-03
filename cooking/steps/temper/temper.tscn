@@ -12,15 +12,16 @@
 [node name="Temper" instance=ExtResource("1_h0ij1")]
 script = ExtResource("2_t3dct")
 temper_particle = null
-stir_sensitivity = 7e-05
-cooldown_acceleration = 0.05
-heat_velocity_max = 0.02
-heat_velocity_min = -0.02
+stir_sensitivity = 0.01
+cooldown_acceleration = 7.2
+heat_velocity_max = 1.0
+heat_velocity_min = -1.0
 green_range = 0.4
 
 [node name="TextureRect2" type="TextureRect" parent="." index="0"]
 z_index = -10
 custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("3_8t8f1")
