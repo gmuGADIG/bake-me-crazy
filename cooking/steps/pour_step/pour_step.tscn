@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://wt4g54fei3ii"]
+[gd_scene load_steps=4 format=3 uid="uid://wt4g54fei3ii"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_lc6su"]
 [ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="2_515r1"]
+[ext_resource type="PackedScene" uid="uid://bdp3tme7lqxa0" path="res://cooking/steps/pour_step/pour_step_bowl.tscn" id="3_j4h5s"]
 
 [node name="PourStep" instance=ExtResource("1_lc6su")]
 
@@ -22,3 +23,5 @@ position = Vector2(805, 339)
 
 [node name="TartContainer6" parent="." index="5" instance=ExtResource("2_515r1")]
 position = Vector2(970, 339)
+
+[node name="Node2D" parent="." index="6" instance=ExtResource("3_j4h5s")]
