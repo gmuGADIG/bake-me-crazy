@@ -1,20 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://ql78v3rtxp5y"]
+[gd_scene load_steps=7 format=3 uid="uid://ql78v3rtxp5y"]
 
 [ext_resource type="Texture2D" uid="uid://doivkpu7ns52n" path="res://cooking/steps/pour_step/TartContainer.png" id="1_qgwjv"]
 [ext_resource type="Script" path="res://cooking/steps/pour_step/single_pourer.gd" id="2_6q4qi"]
 [ext_resource type="Shader" path="res://cooking/steps/pour_step/poured_step.gdshader" id="2_b1yfq"]
 [ext_resource type="Texture2D" uid="uid://ctvqvxqaq525u" path="res://cooking/steps/pour_step/poured.png" id="3_3x3vc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0y1ce"]
+size = Vector2(152, 32)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uiygd"]
 shader = ExtResource("2_b1yfq")
 
-[node name="SinglePourer" type="Sprite2D"]
+[node name="SinglePourer" type="Area2D"]
+script = ExtResource("2_6q4qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 54)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0y1ce")
+
+[node name="SinglePourer" type="Sprite2D" parent="."]
 clip_children = 2
 scale = Vector2(0.734375, 0.734375)
 texture = ExtResource("1_qgwjv")
-script = ExtResource("2_6q4qi")
 
-[node name="PouredIn" type="Sprite2D" parent="."]
+[node name="PouredIn" type="Sprite2D" parent="SinglePourer"]
 unique_name_in_owner = true
 texture_repeat = 2
 material = SubResource("ShaderMaterial_uiygd")

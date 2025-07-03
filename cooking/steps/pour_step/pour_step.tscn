@@ -24,4 +24,4 @@ position = Vector2(805, 339)
 [node name="TartContainer6" parent="." index="5" instance=ExtResource("2_515r1")]
 position = Vector2(970, 339)
 
-[node name="Node2D" parent="." index="6" instance=ExtResource("3_j4h5s")]
+[node name="Bowl" parent="." index="6" instance=ExtResource("3_j4h5s")]
