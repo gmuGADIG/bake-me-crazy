@@ -3,8 +3,6 @@ class_name PourStepBowl
 
 @onready var anim := %AnimationPlayer
 
-@export var spawn_particles: bool = false
-
 var _p_timer := 0.0
 
 func _ready() -> void:
@@ -16,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	target_pos.y = clamp(target_pos.y, 0, 250)
 	global_position = lerp(global_position, target_pos, 0.05)
 	
-	if spawn_particles:
+	if Input.is_action_pressed("minigame_interact"):
 		_p_timer += 20 * delta
 		while _p_timer > 0:
 			var p = preload("res://cooking/steps/pour_step/pour_particle.tscn").instantiate()
