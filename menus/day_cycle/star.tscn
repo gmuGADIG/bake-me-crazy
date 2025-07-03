@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://ejcdwln7g2f6"]
+
+[ext_resource type="Texture2D" uid="uid://dcv35lrfk5chx" path="res://menus/day_cycle/star-twinkle.svg" id="1_unkwi"]
+[ext_resource type="Texture2D" uid="uid://cddor8dnxhp2c" path="res://menus/day_cycle/star.svg" id="2_kv5n8"]
+[ext_resource type="Script" path="res://menus/day_cycle/star.gd" id="2_m6jd2"]
+
+[sub_resource type="Animation" id="Animation_e6ja4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Twinkle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dlanu"]
+resource_name = "twinkle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Twinkle:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.142857, 0.462)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6sm1"]
+_data = {
+"RESET": SubResource("Animation_e6ja4"),
+"twinkle": SubResource("Animation_dlanu")
+}
+
+[node name="Star" type="Sprite2D"]
+scale = Vector2(0.109375, 0.109375)
+texture = ExtResource("1_unkwi")
+script = ExtResource("2_m6jd2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i6sm1")
+}
+autoplay = "twinkle"
+
+[node name="Twinkle" type="Sprite2D" parent="."]
+texture = ExtResource("2_kv5n8")

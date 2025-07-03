@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbtuev8kmswbi"]
+[gd_scene load_steps=13 format=3 uid="uid://cbtuev8kmswbi"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
 [ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="2_bndm2"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://1kn7jln1tm7y" path="res://cooking/steps/roll_out.tscn" id="8_fv5op"]
 [ext_resource type="PackedScene" uid="uid://bhr08sd4y1yuy" path="res://cooking/steps/step_roll_up.tscn" id="8_xa1bs"]
 [ext_resource type="PackedScene" uid="uid://b1qo3dh7pfxpl" path="res://cooking/steps/step_scoop.tscn" id="9_ttoy5"]
+[ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="10_kxsvf"]
+[ext_resource type="PackedScene" uid="uid://ifnm35j8kb1y" path="res://cooking/steps/step_pipe_line.tscn" id="11_pt6p5"]
+[ext_resource type="PackedScene" uid="uid://b3o1ok3dj2q50" path="res://cooking/steps/step_pipe_spot.tscn" id="12_a2lsj"]
 
 [node name="FoodMinigame" instance=ExtResource("1_hk2jr")]
 
@@ -33,4 +36,13 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="RollUp" parent="." index="8" instance=ExtResource("8_xa1bs")]
+layout_mode = 1
+
+[node name="Mix" parent="." index="9" instance=ExtResource("10_kxsvf")]
+layout_mode = 1
+
+[node name="pipping_speed" parent="." index="10" instance=ExtResource("11_pt6p5")]
+layout_mode = 1
+
+[node name="pipping_spot" parent="." index="11" instance=ExtResource("12_a2lsj")]
 layout_mode = 1

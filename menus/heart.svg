@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="109.16522mm"
+   height="102.5676mm"
+   viewBox="0 0 109.16522 102.5676"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="heart.svg"
+   inkscape:export-filename="../../Shop/sugar-cookie-shop.png"
+   inkscape:export-xdpi="960"
+   inkscape:export-ydpi="960"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="1.1011145"
+     inkscape:cx="231.58356"
+     inkscape:cy="202.068"
+     inkscape:window-width="1874"
+     inkscape:window-height="986"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="false">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="4.5826093"
+       originy="-4.1974928"
+       spacingx="5"
+       spacingy="5"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(4.5826093,-4.1974925)">
+    <path
+       id="path4"
+       style="fill:#d7adb2;fill-opacity:1;stroke:#cb3d63;stroke-width:10;stroke-dasharray:none;stroke-opacity:1"
+       d="m 29.304237,9.1974925 c -7.387823,-1.9e-6 -14.775807,2.8300515 -20.4367394,8.4909855 -11.321867,11.321866 -11.321868,29.551611 10e-7,40.87348 l 0.259449,0.258595 40.8734794,40.873479 40.872627,-40.872626 0.259449,-0.259448 c 11.321867,-11.321868 11.321867,-29.551614 10e-7,-40.87348 -11.321869,-11.3218696 -29.551613,-11.3218685 -40.873481,0 l -0.259449,0.259449 -0.258596,-0.259449 C 44.080043,12.027542 36.692064,9.1974915 29.304237,9.1974925 Z" />
+  </g>
+</svg>

@@ -8,6 +8,12 @@ class MouseData:
 		self.val = y
 		self.delta = d
 
+@onready var npc_holder: Node2D = %NPCHolder
+@onready var food_container: VBoxContainer = %FoodContainer
+@onready var flavor_container: VBoxContainer = %FlavorContainer
+@onready var money_label: RichTextLabel = %Money
+@onready var view_anim: AnimationPlayer = %ViewAnim
+
 #TODO: Replace these with the actual food items and flavors
 @export var foods : Array[FoodItem]
 @export var flavors : Array[FoodItem]
@@ -41,7 +47,7 @@ var requested_flavor : FoodItem
 var selected_food : FoodItem
 var selected_flavor : FoodItem
 
-
+var current_npc : LunchRushNPC
 var current_customer : int = 0
 var total_tip : float
  
@@ -80,43 +86,36 @@ var current_finisher_percentage : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	new_order()
 
 
 func new_order() -> void:
-	##Reset all node states to default
+	## Reset all node states to default
 	current_stage = Stage.FOOD_SELECT
 	selected_finisher_type = Finisher.NOT_SELECTED
 	
-	$FinisherSprite.texture = null
-	$FoodItem.position.x = -150
-	$DivorceWoman.modulate.a = 0
-	$CanvasLayer/FoodSelect/VBoxContainer.position.x = 1162
-	$CanvasLayer/FlavorSelect/VBoxContainer.position.x = 1162
-	$CanvasLayer/FinishOrder.position.x = -100
-	
-	##Selects order
+	## Selects order
 	requested_food = foods.pick_random()
 	requested_flavor = flavors.pick_random()
 	
-	print("food: " + requested_food.display_name)
-	print("flavour: " + requested_flavor.display_name)
-	
-	
-	##Sets all of the images
-	$CanvasLayer/FoodSelect/VBoxContainer/Food1.icon = foods[0].image
-	$CanvasLayer/FoodSelect/VBoxContainer/Food1.icon = foods[0].image
-	$CanvasLayer/FoodSelect/VBoxContainer/Food2.icon = foods[1].image
-	$CanvasLayer/FoodSelect/VBoxContainer/Food3.icon = foods[2].image
-	$CanvasLayer/FoodSelect/VBoxContainer/Food4.icon = foods[3].image
+	## Spawn NPC
+	current_npc = preload("lunch_rush_npc.tscn").instantiate()
+	npc_holder.add_child(current_npc)
+	current_npc.set_food(requested_food, requested_flavor)
 
-	for child in $CanvasLayer/FoodSelect/VBoxContainer.get_children():
-		child.expand_icon = true
+	## Reset buttons	
+	$FinisherSprite.texture = null
+	food_container.position.x = 1162
+	flavor_container.position.x = 1162
+	$CanvasLayer/FinishOrder.position.x = -120
 	
-	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor1.icon = flavors[0].image
-	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor2.icon = flavors[1].image
-	$CanvasLayer/FlavorSelect/VBoxContainer/Flavor3.icon = flavors[2].image
+
+	## Sets all of the images
+	for i in range(food_container.get_child_count()):
+		food_container.get_child(i).icon = foods[i].image
+
+	for i in range(flavor_container.get_child_count()):
+		flavor_container.get_child(i).icon = flavors[i].image
 	
 	$FoodRequest/RequestedFood.texture = requested_food.image
 	$FoodRequest/RequestedFlavor.texture = requested_flavor.image
@@ -128,12 +127,12 @@ func new_order() -> void:
 	
 	##Make new person visible
 	var tween = get_tree().create_tween()
-	tween.tween_property($DivorceWoman, "modulate:a", 1, 0.8).set_trans(Tween.TRANS_EXPO)
+	#tween.tween_property($DivorceWoman, "modulate:a", 1, 0.8).set_trans(Tween.TRANS_EXPO)
 	
 	
 	tween.tween_property($FoodRequest, "modulate:a", 1, 0.3).set_trans(Tween.TRANS_EXPO)
 	##Food buttons slide in
-	tween.parallel().tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1052, 0.8).set_trans(Tween.TRANS_QUAD)
+	tween.parallel().tween_property(food_container, "position:x", 1025, 0.8).set_trans(Tween.TRANS_QUAD)
 	
 	## Reset and start the timer!
 	elapsed_time = 0.0
@@ -243,11 +242,13 @@ func _on_food_selected(food_index: int) -> void:
 	selected_food = foods[food_index]
 	print(selected_food)
 	$FoodItem/FoodItemSprite.texture = selected_food.image
+	$FoodItem.modulate.a = 1.0
+	$FoodItem.position.x = -150
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property($CanvasLayer/FoodSelect/VBoxContainer, "position:x", 1162, 0.3	).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(food_container, "position:x", 1162, 0.3	).set_trans(Tween.TRANS_QUAD)
 	#TODO: Make the food slide in at the same time as the food select disapears
-	tween.tween_property($CanvasLayer/FlavorSelect/VBoxContainer, "position:x", 1052, 0.3).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(flavor_container, "position:x", 1025, 0.3).set_trans(Tween.TRANS_QUAD)
 	tween.parallel().tween_property($FoodItem,"position:x", 576, 0.8).set_trans(Tween.TRANS_QUAD)
 	
 
@@ -258,15 +259,14 @@ func _on_flavor_selected(flavor_index: int) -> void:
 	
 	current_stage = Stage.FLAVOR_TOWN
 	
+	view_anim.play("expand_table")
 	
 	selected_flavor = flavors[flavor_index]
 	$FinisherSprite.texture = selected_flavor.image
 	selected_finisher_type = select_finisher_type()
 	var tween = get_tree().create_tween()
-	tween.tween_property($CanvasLayer/FlavorSelect/VBoxContainer, "position:x", 1162, 0.3).set_trans(Tween.TRANS_QUAD)
-	tween.set_parallel().tween_property($CanvasLayer/FinishOrder, "position:x", 0, 0.3).set_trans(Tween.TRANS_QUAD)
-	
-	pass
+	tween.tween_property(flavor_container, "position:x", 1162, 0.3).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel().tween_property($CanvasLayer/FinishOrder, "position:x", 100, 0.3).set_trans(Tween.TRANS_QUAD)
 	
 func select_finisher_type() -> Finisher:
 	match selected_flavor.type:
@@ -286,7 +286,7 @@ func _process(delta) -> void:
 func processTimer(delta) -> void:
 	elapsed_time+=delta
 
-func scoreFood() -> float:
+func score_food() -> void:
 	#	SCORE CRITERIA:
 	#	- TIME SPENT
 	#	- ACCURACY TO REQUEST
@@ -310,11 +310,17 @@ func scoreFood() -> float:
 	## We take the penalty we calculated and subtract it from how much the customer will tip. We assume each customer will ideally tip the same maximum_tip export variable.
 	var rewarded_tip: float = maximum_tip
 	rewarded_tip -= penalty
-	if rewarded_tip<0: rewarded_tip==0
-	## We take that final tip and return it wherever the function was called.
-	return rewarded_tip
-
+	rewarded_tip = max(round(rewarded_tip), 1)
 	
+	## Remove food sprite
+	create_tween().tween_property($FoodItem, "modulate:a", 0.0, 0.5)
+	
+	## Display money earned
+	money_label.text = "[wave amp=70][b]$%d" % rewarded_tip
+	money_label.get_node("Anim").play("earn")
+	
+	## Add to money
+	PlayerData.data.money += rewarded_tip
 
 
 func _on_finish_order() -> void:
@@ -323,18 +329,21 @@ func _on_finish_order() -> void:
 	if current_stage != Stage.FLAVOR_TOWN:
 		return
 		
-	total_tip += scoreFood()
+	score_food()
 	current_customer += 1
 	print(current_customer)
 	
+	view_anim.play_backwards("expand_table")
+	current_npc.exit()
+	
 	var tween = get_tree().create_tween()
-	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -100, 0.3).set_trans(Tween.TRANS_QUAD)
-	tween.set_parallel().tween_property($DivorceWoman, "modulate:a", 0, 0.8)
+	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -120, 0.3).set_trans(Tween.TRANS_QUAD)
 	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_EXPO)
-	## If the player has served all customers, end the lunch rush
+	
+	await view_anim.animation_finished
+	
+	## New order, or change scene if all customers have been served
 	if current_customer >= total_customers:
 		SceneTransition.change_scene_to_file("res://menus/clock_out/clock_out.tscn")
-		return
-		##end here
-
-	new_order()
+	else:
+		new_order()

@@ -12,6 +12,8 @@ func _ready() -> void:
 	# Compute lambda for correct framerate-independent
 	# lerp smoothing. See: https://pbs.twimg.com/media/GGUR6TVWQAATdwe?format=png&name=large
 	lambda = -duration / (log(0.01) / log(2))
+	
+	pivot_offset = size / 2
 
 func _process(delta: float) -> void:
 	# NOTE: Kinda sad that we recompute this, ideally it gets cached somewhere.

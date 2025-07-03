@@ -1,0 +1,526 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3787y2i6iibl"]
+
+[ext_resource type="Texture2D" uid="uid://d2dmxvvovf1no" path="res://items/foods/art/Cake_Strawberry.png" id="1_r06sf"]
+[ext_resource type="Script" path="res://menus/gift_animation.gd" id="1_ucg57"]
+[ext_resource type="Texture2D" uid="uid://cku62vjpyj8bh" path="res://menus/market_ui/star_1.svg" id="2_inlm5"]
+[ext_resource type="Script" path="res://cooking/spinny_star.gd" id="3_k0rcv"]
+[ext_resource type="Texture2D" uid="uid://fv7ylc5reuto" path="res://menus/heart.svg" id="4_xsspu"]
+[ext_resource type="Script" path="res://menus/heart.gd" id="5_qa1wm"]
+[ext_resource type="Texture2D" uid="uid://c2pdk1044618r" path="res://temp_art/placeholder.svg" id="6_3lhol"]
+[ext_resource type="Texture2D" uid="uid://1k3d7pvdbmrr" path="res://menus/missing-heart.svg" id="8_40523"]
+[ext_resource type="Texture2D" uid="uid://benw0hi4dyl2k" path="res://menus/missing-ingredient.svg" id="8_jlv5k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mspa"]
+bg_color = Color(0.07, 0.07, 0.07, 0.741176)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Animation" id="Animation_6hxrc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parent:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parent:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parent/HBoxContainer2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parent/HBoxContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Parent/HBoxContainer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(443, 353)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Parent/HBoxContainer2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(443, 353)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Parent/IngredientTextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(717, 239)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Parent/IngredientTextureRect:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Parent/IngredientHeart:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Parent/IngredientHeart:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(764, 285)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Parent/MissingHeart:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Parent/MissingHeart:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(764, 285)]
+}
+
+[sub_resource type="Animation" id="Animation_gursf"]
+resource_name = "new_animation"
+length = 5.25
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parent:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 4.5, 5),
+"transitions": PackedFloat32Array(0.5, 1, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Parent:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 4.5, 5),
+"transitions": PackedFloat32Array(0.5, 1, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, -100), Vector2(0, 0), Vector2(0, 0), Vector2(0, -100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parent/HBoxContainer2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.25, 2.5),
+"transitions": PackedFloat32Array(1, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parent/HBoxContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 2.25),
+"transitions": PackedFloat32Array(1, 0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Parent/HBoxContainer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2, 2.25),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(443, 353), Vector2(443, 403)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Parent/HBoxContainer2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.25, 2.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(443, 403), Vector2(443, 353)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Parent/IngredientTextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 2.25),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(717, 239), Vector2(717, 274)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Parent/IngredientTextureRect:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2, 2.25),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Parent/IngredientHeart:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.25, 2.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Parent/IngredientHeart:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.25, 2.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(764, 320), Vector2(764, 285)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Parent/MissingHeart:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.25, 2.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(764, 320), Vector2(764, 285)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Parent/MissingHeart:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.25, 2.5),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejveu"]
+_data = {
+"RESET": SubResource("Animation_6hxrc"),
+"new_animation": SubResource("Animation_gursf")
+}
+
+[node name="GiftAnimation" type="CanvasLayer"]
+script = ExtResource("1_ucg57")
+
+[node name="Parent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(576, 324)
+
+[node name="Panel" type="Panel" parent="Parent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -163.0
+offset_right = 267.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7mspa")
+
+[node name="FoodTextureRect" type="TextureRect" parent="Parent"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -137.0
+offset_right = 89.5
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r06sf")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Parent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = 29.0
+offset_right = 133.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(131, 31)
+
+[node name="Control" type="Control" parent="Parent/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Star1" type="Sprite2D" parent="Parent/HBoxContainer/Control"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.858, 0.29, 1)
+rotation = 1193.48
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_inlm5")
+region_enabled = true
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("3_k0rcv")
+
+[node name="Control2" type="Control" parent="Parent/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Star2" type="Sprite2D" parent="Parent/HBoxContainer/Control2"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.858, 0.29, 1)
+position = Vector2(0, 21)
+rotation = 1192.4
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_inlm5")
+region_enabled = true
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("3_k0rcv")
+
+[node name="Control3" type="Control" parent="Parent/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Star3" type="Sprite2D" parent="Parent/HBoxContainer/Control3"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.858, 0.29, 1)
+rotation = 1193.83
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_inlm5")
+region_enabled = true
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("3_k0rcv")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Parent"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = 79.0
+offset_right = 133.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(133, 30)
+
+[node name="Control" type="Control" parent="Parent/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Heart1" type="Sprite2D" parent="Parent/HBoxContainer2/Control"]
+unique_name_in_owner = true
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_xsspu")
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("5_qa1wm")
+
+[node name="Control2" type="Control" parent="Parent/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Heart2" type="Sprite2D" parent="Parent/HBoxContainer2/Control2"]
+unique_name_in_owner = true
+position = Vector2(0, 21)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_xsspu")
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("5_qa1wm")
+delay = 0.15
+
+[node name="Control3" type="Control" parent="Parent/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Heart3" type="Sprite2D" parent="Parent/HBoxContainer2/Control3"]
+unique_name_in_owner = true
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_xsspu")
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("5_qa1wm")
+delay = 0.3
+
+[node name="IngredientTextureRect" type="TextureRect" parent="Parent"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 717.0
+offset_top = 239.0
+offset_right = 805.0
+offset_bottom = 327.0
+texture = ExtResource("6_3lhol")
+expand_mode = 1
+
+[node name="MissingIngredientTextureRect" type="TextureRect" parent="Parent"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 717.0
+offset_top = 239.0
+offset_right = 805.0
+offset_bottom = 327.0
+texture = ExtResource("8_jlv5k")
+expand_mode = 1
+
+[node name="IngredientHeart" type="Sprite2D" parent="Parent"]
+unique_name_in_owner = true
+position = Vector2(764, 285)
+scale = Vector2(0.139175, 0.139175)
+texture = ExtResource("4_xsspu")
+region_rect = Rect2(254, 0, 130, 128)
+script = ExtResource("5_qa1wm")
+delay = 0.45
+
+[node name="MissingHeart" type="Sprite2D" parent="Parent"]
+unique_name_in_owner = true
+position = Vector2(764, 285)
+scale = Vector2(0.139175, 0.139175)
+texture = ExtResource("8_40523")
+region_rect = Rect2(254, 0, 130, 128)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ejveu")
+}
+autoplay = "new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

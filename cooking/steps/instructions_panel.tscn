@@ -1,13 +1,121 @@
-[gd_scene load_steps=4 format=3 uid="uid://p7jlq2812llw"]
+[gd_scene load_steps=7 format=3 uid="uid://bx3c2sms6ejy2"]
 
 [ext_resource type="Script" path="res://cooking/steps/instructions_panel.gd" id="1_y88w7"]
+[ext_resource type="Texture2D" uid="uid://djw1pnwl235lb" path="res://menus/recipe_book/Cookbook.png" id="2_kicvv"]
 
-[sub_resource type="Gradient" id="Gradient_avq53"]
-offsets = PackedFloat32Array(0, 0.991935)
-colors = PackedColorArray(0.737072, 0.616802, 0.451666, 1, 0.930094, 0.543976, 0.501241, 1)
+[sub_resource type="Animation" id="Animation_yv8vb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(665, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_kp1bc"]
-gradient = SubResource("Gradient_avq53")
+[sub_resource type="Animation" id="Animation_yax3c"]
+resource_name = "close_book"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.104, 1), Vector2(0.055, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3pr5q"]
+resource_name = "show_book"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1064, 50), Vector2(647, 50), Vector2(665, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.055, 1), Vector2(1.119, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wiqd1"]
+_data = {
+"RESET": SubResource("Animation_yv8vb"),
+"close_book": SubResource("Animation_yax3c"),
+"show_book": SubResource("Animation_3pr5q")
+}
 
 [node name="InstructionsPanel" type="Control"]
 layout_mode = 3
@@ -18,31 +126,64 @@ instructions = "Type the instructions in the Inspector and they will automatical
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 236.0
-offset_right = 492.0
-offset_bottom = 236.0
-rotation = 1.5708
-texture = SubResource("GradientTexture1D_kp1bc")
+offset_left = 665.0
+offset_top = 50.0
+offset_right = 1636.0
+offset_bottom = 596.0
+pivot_offset = Vector2(488, 278)
+texture = ExtResource("2_kicvv")
+expand_mode = 1
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 1
-offset_left = 50.0
-offset_top = 15.0
-offset_right = 176.0
-offset_bottom = 39.0
+[node name="RECIPE" type="RichTextLabel" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 104.0
+offset_top = 66.0
+offset_right = 481.0
+offset_bottom = 130.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]RECIPE[/center]"
+
+[node name="TaskTitle" type="RichTextLabel" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 156.0
+offset_top = 115.0
+offset_right = 401.0
+offset_bottom = 157.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 text = "Minigame Title"
-horizontal_alignment = 1
 
-[node name="InstructionsText" type="Label" parent="Title"]
-process_mode = 3
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -80.5
-offset_top = 35.0
-offset_right = 80.5
-offset_bottom = 134.0
-grow_horizontal = 2
+[node name="TaskNumber" type="Label" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 116.0
+offset_top = 115.0
+offset_right = 150.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "-"
+horizontal_alignment = 2
+
+[node name="Instructions" type="RichTextLabel" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 149.0
+offset_top = 168.0
+offset_right = 455.0
+offset_bottom = 446.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
 text = "Type the instructions in the Inspector and they will automatically show up in editor. NIfty Right?"
-autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wiqd1")
+}
+autoplay = "show_book"

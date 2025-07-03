@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://cooking/food_minigame.gd" id="1_ri8w5"]
 [ext_resource type="PackedScene" uid="uid://83sg17i2w6gw" path="res://cooking/morning_results.tscn" id="2_2ctmu"]
-[ext_resource type="PackedScene" uid="uid://c3pcgb5cxk8x6" path="res://cooking/step_results.tscn" id="3_clpcc"]
+[ext_resource type="PackedScene" uid="uid://dlve2u70ri8uy" path="res://cooking/step_results.tscn" id="3_clpcc"]
 
 [node name="FoodMinigame2" type="Control"]
 layout_mode = 3

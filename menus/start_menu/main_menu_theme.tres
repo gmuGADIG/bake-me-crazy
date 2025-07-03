@@ -31,16 +31,10 @@ shadow_color = Color(0, 0, 0, 0.458824)
 shadow_size = 1
 shadow_offset = Vector2(10.59, 8.76)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vc2w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q73hi"]
 content_margin_top = 3.0
 content_margin_bottom = 6.0
-bg_color = Color(0.451255, 0.326019, 0.811645, 1)
-skew = Vector2(0.13, 0)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_blend = true
+bg_color = Color(0.996078, 0.901961, 0.701961, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -81,7 +75,7 @@ Button/colors/font_color = Color(0.947199, 0.947199, 0.947199, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0.163442, 0.707179, 0.513037, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/colors/icon_hover_color = Color(1, 1, 0.505882, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/colors/icon_pressed_color = Color(1, 0.686275, 1, 1)
@@ -91,7 +85,7 @@ Button/font_sizes/font_size = 21
 Button/fonts/font = SubResource("FontVariation_n8uio")
 Button/styles/hover = SubResource("StyleBoxFlat_iy8yt")
 Button/styles/normal = SubResource("StyleBoxFlat_x2dkm")
-Button/styles/pressed = SubResource("StyleBoxFlat_7vc2w")
+Button/styles/pressed = SubResource("StyleBoxFlat_q73hi")
 HSlider/icons/grabber = ExtResource("1_v4mx1")
 HSlider/icons/grabber_highlight = ExtResource("2_612kb")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_rpdw8")

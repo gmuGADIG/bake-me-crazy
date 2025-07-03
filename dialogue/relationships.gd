@@ -19,6 +19,8 @@ func _ready():
 	heart_gained.connect(_handle_new_recipes)
 
 func _on_variable_changed(changes: Dictionary):
+	print("Variable changed!!")
+	
 	var var_name = changes["variable"] as String
 	if var_name.begins_with("rp."):
 		var character_name = var_name.trim_prefix("rp.")

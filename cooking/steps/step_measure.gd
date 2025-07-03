@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 
 	var in_bowl_area = bowl_area.overlaps_body(flour_pourer)
 	
-	$FlourScale.text = "%.1f" % flour_in_bowl
+	$FlourScale.text = "%d" % flour_in_bowl
 	
 	if in_bowl_area:
 		flour_in_bowl = flour_in_bowl + delta * pour_speed

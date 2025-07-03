@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=4 format=3 uid="uid://c47s3smyw2lyc"]
+
+[ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_cgju4"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_oa4m4"]
+[ext_resource type="Resource" uid="uid://d1lbkrba2a1yu" path="res://items/foods/test_food.tres" id="3_yo7pj"]
+
+[resource]
+script = ExtResource("1_cgju4")
+display_name = "<test food>"
+instructions = "involves all currently-implemented food steps. useful for testing them"
+variants = Array[ExtResource("2_oa4m4")]([ExtResource("3_yo7pj")])

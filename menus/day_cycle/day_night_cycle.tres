@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Song" load_steps=3 format=3 uid="uid://bp32smed0mjbq"]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_mnqic"]
+[ext_resource type="AudioStream" uid="uid://1o2a5byvem46" path="res://menus/day_cycle/day_night_cycle.ogg" id="2_84e2o"]
+
+[resource]
+script = ExtResource("1_mnqic")
+loop_start = 0.0
+loop_end = 100.0
+song_file = ExtResource("2_84e2o")
+fade_period = 0.2

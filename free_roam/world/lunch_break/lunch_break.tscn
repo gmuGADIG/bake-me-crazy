@@ -48,7 +48,7 @@ position = Vector2(89, 658)
 [node name="Camera2D" parent="PlayerPath/Player" index="3"]
 limit_left = 0
 limit_top = 0
-limit_right = 1721
+limit_right = 2300
 limit_bottom = 648
 
 [node name="PlaySongForScene" parent="." index="4" instance=ExtResource("9_7b54g")]

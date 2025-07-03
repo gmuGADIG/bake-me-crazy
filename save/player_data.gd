@@ -13,15 +13,14 @@ func save_auxilary_data():
 
 func _ready() -> void:
 	Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
-	Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
+	Inventory.add_item(load("res://items/foods/croissant_plain.tres"), 2)
+	Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 1)
 	
 	if ResourceLoader.exists(AUXILARY_SAVE_PATH, "AuxilarySaveData"):
 		auxilary_data = ResourceLoader.load(AUXILARY_SAVE_PATH)
 	if auxilary_data == null:
 		auxilary_data = AuxilarySaveData.new()
 	auxilary_data.restore_settings()
-	#Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
-	#Inventory.add_item(load("res://items/foods/cake_chocolate.tres"), 2)
 
 func load_file(save_template : SaveTemplate) -> void:
 	data = save_template
