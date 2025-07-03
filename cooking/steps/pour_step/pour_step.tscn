@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wt4g54fei3ii"]
+[gd_scene load_steps=14 format=3 uid="uid://wt4g54fei3ii"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_lc6su"]
 [ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="2_515r1"]
@@ -8,6 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="4_gmmah"]
 [ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="5_a5iyt"]
 [ext_resource type="Texture2D" uid="uid://j5takid8r7gg" path="res://cooking/steps/pour_step/baking_sheet.svg" id="6_fcvv0"]
+
+[sub_resource type="Gradient" id="Gradient_36fex"]
+offsets = PackedFloat32Array(0, 0.300613, 0.337423, 0.803681, 0.819018, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_71vox"]
+gradient = SubResource("Gradient_36fex")
+width = 128
+height = 16
 
 [sub_resource type="Animation" id="Animation_5wupr"]
 resource_name = "blink"
@@ -110,10 +119,13 @@ position = Vector2(985, 333)
 unique_name_in_owner = true
 
 [node name="Line2D" type="Line2D" parent="." index="11"]
+texture_repeat = 2
 position = Vector2(-4, 356)
 points = PackedVector2Array(0, 0, 1200, 0)
 width = 2.0
 default_color = Color(0.864, 0, 0.276, 0.413)
+texture = SubResource("GradientTexture2D_71vox")
+texture_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Line2D" index="0"]
 libraries = {
