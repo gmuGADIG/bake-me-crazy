@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_jr2t5")
+ingredient_type = 7
 description = "It's nuts"
 display_name = "Pistaschio"

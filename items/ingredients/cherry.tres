@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_w636t")
+ingredient_type = 1
 description = "Red & fruit"
 display_name = "Cherry"

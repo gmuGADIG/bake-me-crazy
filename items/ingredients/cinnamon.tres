@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_2x2jc")
+ingredient_type = 3
 description = "Put it in rolls or rolls"
 display_name = "Cinnamon"
