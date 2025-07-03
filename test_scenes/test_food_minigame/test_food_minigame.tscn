@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_hk2jr"]
 [ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="2_bndm2"]
-[ext_resource type="PackedScene" uid="uid://wt4g54fei3ii" path="res://cooking/steps/pour_step/pour_step.tscn" id="2_ov8rw"]
+[ext_resource type="PackedScene" uid="uid://jg55l16gns4a" path="res://cooking/steps/pour_step/pour_step.tscn" id="2_ov8rw"]
 [ext_resource type="PackedScene" uid="uid://bqiuapp2ar2pr" path="res://cooking/steps/step_vert_cut.tscn" id="4_nxen1"]
 [ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="5_qmntb"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="6_y6r7u"]

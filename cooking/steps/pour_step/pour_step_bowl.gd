@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	global_position = lerp(global_position, target_pos, 0.05)
 	
 	if spawn_particles:
-		_p_timer += 20 * delta
+		_p_timer += 40 * delta
 		while _p_timer > 0:
 			var p = preload("res://cooking/steps/pour_step/pour_particle.tscn").instantiate()
 			p.global_position = global_position + Vector2.from_angle(randf_range(0, TAU)) * \

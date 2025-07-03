@@ -11,9 +11,11 @@ collision_mask = 0
 script = ExtResource("1_coge7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 modulate = Color(1, 0.854902, 0.427451, 1)
 scale = Vector2(0.210938, 0.210938)
 texture = ExtResource("1_ivx3h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_oesk4")

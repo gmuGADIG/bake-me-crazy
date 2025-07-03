@@ -17,7 +17,7 @@ var score := 1.0
 func _ready() -> void:
 	poured_in.position.y = UNPOURED
 	body_entered.connect(func(body):
-		var delta = 0.05 # Lets us easily test this code in _process(?)
+		var delta = 0.025 # Lets us easily test this code in _process(?)
 		pour_percent = min(pour_percent + delta * pour_rate, 1.0)
 		pour_rate += delta * 0.25
 		
