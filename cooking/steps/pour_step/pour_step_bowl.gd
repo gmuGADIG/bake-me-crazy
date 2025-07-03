@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var target_pos = get_global_mouse_position()
+	target_pos.y *= 0.25
+	target_pos.y = clamp(target_pos.y, 0, 250)
 	global_position = lerp(global_position, target_pos, 0.05)
 	
 	if spawn_particles:
