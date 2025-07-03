@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://d0pu8p3gpa5tk"]
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://cdg7s8yr352qr"]
 
 [ext_resource type="PackedScene" uid="uid://cs2trculmsbxv" path="res://cooking/food_items_recipes/Puff_Roll.tscn" id="1_5repv"]
 [ext_resource type="Texture2D" uid="uid://hvy3ajjxlrfl" path="res://items/foods/art/PuffRoll_Spinach.png" id="2_1f1yb"]
@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("4_x8urk")
 cooking_minigame = ExtResource("1_5repv")
+food_type = 4
 ingredient = ExtResource("3_ydu6l")
 display_name = "Spinach Ricotta Puff Roll"
 image = ExtResource("2_1f1yb")

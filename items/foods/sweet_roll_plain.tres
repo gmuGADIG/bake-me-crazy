@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://d1a178667vo0w"]
+[gd_resource type="Resource" script_class="FoodData" load_steps=4 format=3 uid="uid://duuspnho7cmjc"]
 
 [ext_resource type="PackedScene" uid="uid://denifoodnorro" path="res://cooking/food_items_recipes/Sweet_Roll.tscn" id="1_iof33"]
 [ext_resource type="Texture2D" uid="uid://daf2fqlqruief" path="res://items/foods/art/SweetRollUpdated.png" id="2_o5d0r"]
@@ -7,5 +7,6 @@
 [resource]
 script = ExtResource("4_70ca1")
 cooking_minigame = ExtResource("1_iof33")
+food_type = 12
 display_name = "Honey Roll"
 image = ExtResource("2_o5d0r")
