@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://wt4g54fei3ii"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_lc6su"]
+[ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="2_515r1"]
+
+[node name="PourStep" instance=ExtResource("1_lc6su")]
+
+[node name="TartContainer" parent="." index="0" instance=ExtResource("2_515r1")]
+position = Vector2(134, 339)
+
+[node name="TartContainer2" parent="." index="1" instance=ExtResource("2_515r1")]
+position = Vector2(303, 339)
+
+[node name="TartContainer3" parent="." index="2" instance=ExtResource("2_515r1")]
+position = Vector2(471, 339)
+
+[node name="TartContainer4" parent="." index="3" instance=ExtResource("2_515r1")]
+position = Vector2(638, 339)
+
+[node name="TartContainer5" parent="." index="4" instance=ExtResource("2_515r1")]
+position = Vector2(805, 339)
+
+[node name="TartContainer6" parent="." index="5" instance=ExtResource("2_515r1")]
+position = Vector2(970, 339)

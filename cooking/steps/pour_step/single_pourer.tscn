@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://ql78v3rtxp5y"]
+
+[ext_resource type="Texture2D" uid="uid://doivkpu7ns52n" path="res://cooking/steps/pour_step/TartContainer.png" id="1_qgwjv"]
+[ext_resource type="Script" path="res://cooking/steps/pour_step/single_pourer.gd" id="2_6q4qi"]
+[ext_resource type="Shader" path="res://cooking/steps/pour_step/poured_step.gdshader" id="2_b1yfq"]
+[ext_resource type="Texture2D" uid="uid://ctvqvxqaq525u" path="res://cooking/steps/pour_step/poured.png" id="3_3x3vc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uiygd"]
+shader = ExtResource("2_b1yfq")
+
+[node name="SinglePourer" type="Sprite2D"]
+clip_children = 2
+scale = Vector2(0.734375, 0.734375)
+texture = ExtResource("1_qgwjv")
+script = ExtResource("2_6q4qi")
+
+[node name="PouredIn" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_uiygd")
+position = Vector2(0, 34)
+scale = Vector2(0.398936, 0.159574)
+texture = ExtResource("3_3x3vc")
+region_enabled = true
+region_rect = Rect2(0, 0, 768, 512)
