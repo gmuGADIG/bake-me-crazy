@@ -24,6 +24,10 @@ func _process(delta: float) -> void:
 	score /= containers.size()
 	score = clamp(score, 1.0, 3.999)
 	if done and not bowl.spawn_particles:
+		# If there are any pour particles left, we're not done.
+		if get_tree().get_node_count_in_group("PourParticle") > 0:
+			return
+			
 		if not _sent_signal:
 			finished.emit(score)
 			_sent_signal = true
