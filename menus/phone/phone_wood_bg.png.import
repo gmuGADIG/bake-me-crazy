@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccyadgmvjfjo2"
-path="res://.godot/imported/Bio_Portrait.png-97dd38034f6b227b8f83830a6eb497d7.ctex"
+uid="uid://ch0exc2kv6tcg"
+path="res://.godot/imported/phone_wood_bg.png-620ee7fa87eb797af027c722f649ac9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bio_Portrait.png"
-dest_files=["res://.godot/imported/Bio_Portrait.png-97dd38034f6b227b8f83830a6eb497d7.ctex"]
+source_file="res://menus/phone/phone_wood_bg.png"
+dest_files=["res://.godot/imported/phone_wood_bg.png-620ee7fa87eb797af027c722f649ac9f.ctex"]
 
 [params]
 
