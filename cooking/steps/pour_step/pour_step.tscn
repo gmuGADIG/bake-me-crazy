@@ -1,27 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://wt4g54fei3ii"]
+[gd_scene load_steps=7 format=3 uid="uid://wt4g54fei3ii"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_lc6su"]
 [ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="2_515r1"]
+[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="2_pqfan"]
 [ext_resource type="PackedScene" uid="uid://bdp3tme7lqxa0" path="res://cooking/steps/pour_step/pour_step_bowl.tscn" id="3_j4h5s"]
+[ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="5_a5iyt"]
+[ext_resource type="Texture2D" uid="uid://j5takid8r7gg" path="res://cooking/steps/pour_step/baking_sheet.svg" id="6_fcvv0"]
 
 [node name="PourStep" instance=ExtResource("1_lc6su")]
 
-[node name="TartContainer" parent="." index="0" instance=ExtResource("2_515r1")]
-position = Vector2(134, 339)
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pqfan")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
 
-[node name="TartContainer2" parent="." index="1" instance=ExtResource("2_515r1")]
-position = Vector2(303, 339)
+[node name="Counter" type="Sprite2D" parent="." index="1"]
+position = Vector2(598, 572)
+scale = Vector2(1, 0.640794)
+texture = ExtResource("5_a5iyt")
 
-[node name="TartContainer3" parent="." index="2" instance=ExtResource("2_515r1")]
-position = Vector2(471, 339)
+[node name="BakingSheet" type="Sprite2D" parent="." index="2"]
+position = Vector2(566.091, 387.5)
+scale = Vector2(0.951219, 0.951219)
+texture = ExtResource("6_fcvv0")
 
-[node name="TartContainer4" parent="." index="3" instance=ExtResource("2_515r1")]
-position = Vector2(638, 339)
+[node name="TartContainer" parent="." index="3" instance=ExtResource("2_515r1")]
+position = Vector2(149, 333)
 
-[node name="TartContainer5" parent="." index="4" instance=ExtResource("2_515r1")]
-position = Vector2(805, 339)
+[node name="TartContainer2" parent="." index="4" instance=ExtResource("2_515r1")]
+position = Vector2(318, 333)
 
-[node name="TartContainer6" parent="." index="5" instance=ExtResource("2_515r1")]
-position = Vector2(970, 339)
+[node name="TartContainer3" parent="." index="5" instance=ExtResource("2_515r1")]
+position = Vector2(486, 333)
 
-[node name="Bowl" parent="." index="6" instance=ExtResource("3_j4h5s")]
+[node name="TartContainer4" parent="." index="6" instance=ExtResource("2_515r1")]
+position = Vector2(653, 333)
+
+[node name="TartContainer5" parent="." index="7" instance=ExtResource("2_515r1")]
+position = Vector2(820, 333)
+
+[node name="TartContainer6" parent="." index="8" instance=ExtResource("2_515r1")]
+position = Vector2(985, 333)
+
+[node name="Bowl" parent="." index="9" instance=ExtResource("3_j4h5s")]
