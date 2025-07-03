@@ -97,6 +97,7 @@ unique_name_in_owner = true
 position = Vector2(985, 333)
 
 [node name="Bowl" parent="." index="9" instance=ExtResource("3_j4h5s")]
+unique_name_in_owner = true
 
 [node name="Line2D" type="Line2D" parent="." index="10"]
 position = Vector2(-4, 356)

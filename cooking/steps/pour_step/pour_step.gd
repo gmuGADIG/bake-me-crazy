@@ -12,6 +12,8 @@ extends FoodStep
 var score: float = 0.0
 var _sent_signal: bool = false
 
+@onready var bowl = %Bowl
+
 func _process(delta: float) -> void:
 	var done = true
 	score = 0.0
@@ -21,7 +23,7 @@ func _process(delta: float) -> void:
 		score += container.score
 	score /= containers.size()
 	score = clamp(score, 1.0, 3.999)
-	if done and not Input.is_action_pressed("minigame_interact"):
+	if done and not bowl.spawn_particles:
 		if not _sent_signal:
 			finished.emit(score)
 			_sent_signal = true
