@@ -14,6 +14,9 @@ var pour_rate := 0.1
 var done := false
 var score := 1.0
 
+func set_container_texture(texture: Texture2D) -> void:
+	%SinglePourer.texture = texture
+
 func _ready() -> void:
 	poured_in.position.y = UNPOURED
 	body_entered.connect(func(body):

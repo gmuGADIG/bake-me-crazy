@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://jg55l16gns4a"]
+[gd_scene load_steps=15 format=3 uid="uid://jg55l16gns4a"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_lc6su"]
 [ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="2_515r1"]
 [ext_resource type="Script" path="res://cooking/steps/pour_step/pour_step.gd" id="2_liv11"]
 [ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="2_pqfan"]
 [ext_resource type="PackedScene" uid="uid://bdp3tme7lqxa0" path="res://cooking/steps/pour_step/pour_step_bowl.tscn" id="3_j4h5s"]
+[ext_resource type="Texture2D" uid="uid://doivkpu7ns52n" path="res://cooking/steps/pour_step/TartContainer.png" id="3_sg5ac"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="4_gmmah"]
 [ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="5_a5iyt"]
 [ext_resource type="Texture2D" uid="uid://j5takid8r7gg" path="res://cooking/steps/pour_step/baking_sheet.svg" id="6_fcvv0"]
@@ -17,6 +18,21 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 
 gradient = SubResource("Gradient_36fex")
 width = 128
 height = 16
+
+[sub_resource type="Animation" id="Animation_atdu5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_5wupr"]
 resource_name = "blink"
@@ -35,21 +51,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_atdu5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7axs"]
 _data = {
 "RESET": SubResource("Animation_atdu5"),
@@ -58,6 +59,7 @@ _data = {
 
 [node name="PourStep" instance=ExtResource("1_lc6su")]
 script = ExtResource("2_liv11")
+container_texture = ExtResource("3_sg5ac")
 
 [node name="TextureRect2" type="TextureRect" parent="." index="0"]
 z_index = -10

@@ -14,6 +14,13 @@ var _sent_signal: bool = false
 
 @onready var bowl = %Bowl
 
+## Set this to TartContainer.png or Bar_Container.png
+@export var container_texture: Texture2D = preload("res://cooking/steps/pour_step/TartContainer.png")
+
+func _ready() -> void:
+	for container in containers:
+		container.set_container_texture(container_texture)
+
 func _process(delta: float) -> void:
 	var done = true
 	score = 0.0

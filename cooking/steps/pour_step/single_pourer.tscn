@@ -16,10 +16,10 @@ script = ExtResource("2_6q4qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 54)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0y1ce")
 
 [node name="SinglePourer" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 clip_children = 2
 scale = Vector2(0.734375, 0.734375)
 texture = ExtResource("1_qgwjv")
