@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwjx77l0b360o"
-path="res://.godot/imported/4ea.jpg-b5d6868b9f34873d9cf0fb06f685a140.ctex"
+uid="uid://dkfpblh3iw05s"
+path="res://.godot/imported/contacts_icon.png-7c5b0f4c9b534aad3035d90d5de0ab51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/phone/4ea.jpg"
-dest_files=["res://.godot/imported/4ea.jpg-b5d6868b9f34873d9cf0fb06f685a140.ctex"]
+source_file="res://menus/phone/contacts_icon.png"
+dest_files=["res://.godot/imported/contacts_icon.png-7c5b0f4c9b534aad3035d90d5de0ab51.ctex"]
 
 [params]
 

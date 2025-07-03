@@ -40,27 +40,10 @@ func show_menu(menu): #parameter is the unique variable name of the panel screen
 	current_menu = menu # makes the "open" menu the new current menu screen open
 
 # The 4 apps will be Contacts, Messages, Gallery, and Inventory
-func _on_app_pressed(button_id: int) -> void:	
-	
-	print(button_id)
-	match button_id:
-		1:
-			print("button 1")
-			show_menu(TestScreen)
-			BackButton.visible = true
-		2:
-			print("button 2")
-			show_menu(TestScreen2)
-			BackButton.visible = true
-		3:
-			print("button 3")
-			show_menu(TestScreen3)
-			BackButton.visible = true
-		4:
-			print("button 4")
-			show_menu(TestScreen4)
-			BackButton.visible = true
-	pass # Replace with function body.
+func _on_app_pressed(button_idx: int) -> void:	
+	var menus = [TestScreen, TestScreen2, TestScreen3, TestScreen4]
+	show_menu(menus[button_idx])
+	BackButton.visible = true
 	
 func _on_back_pressed() -> void:
 	print("take it back now yall")

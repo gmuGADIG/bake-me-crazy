@@ -1,4 +1,4 @@
-class_name ButtonHover extends Button
+class_name ButtonHover extends BaseButton
 
 @export var hover_scale := 1.1
 @export var pressed_scale := 0.9
