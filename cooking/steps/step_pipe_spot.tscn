@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3o1ok3dj2q50"]
 
 [ext_resource type="Script" path="res://cooking/steps/piping_spot_minigame.gd" id="1_m47dj"]
-[ext_resource type="Texture2D" uid="uid://bo138mcnk6gcn" path="res://cooking/steps/PipingBag.png" id="2_1ksba"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_834ev"]
 [ext_resource type="Texture2D" uid="uid://vodrqcfckd01" path="res://cooking/art/Cookie_Sheet.png" id="3_cen00"]
 [ext_resource type="PackedScene" uid="uid://dlspt71wko61b" path="res://cooking/steps/piping_spot.tscn" id="4_o8tka"]
+[ext_resource type="Texture2D" uid="uid://cj72sisb6318w" path="res://cooking/steps/PipingBagFull.png" id="5_eqiqt"]
 
 [node name="PipingSpot" type="Control"]
 layout_mode = 3
@@ -61,5 +61,5 @@ theme_override_font_sizes/font_size = 48
 text = "Accuracy"
 
 [node name="PipingBag" type="Sprite2D" parent="."]
-texture = ExtResource("2_1ksba")
+texture = ExtResource("5_eqiqt")
 offset = Vector2(-28.03, -76.715)
