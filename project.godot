@@ -140,6 +140,10 @@ folder_colors={
 "res://menus/testing/": "gray"
 }
 
+[global_group]
+
+PourParticle=""
+
 [gui]
 
 common/snap_controls_to_pixels=false
