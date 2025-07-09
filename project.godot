@@ -29,7 +29,7 @@ MainSFXPlayer="*res://sfx/sfx_player.tscn"
 SFXDispatcher="*res://sfx/sfx_dispatcher.tscn"
 BreakNPCSystem="*res://dialogue/internal/code/break_npc/break_npc_system.tscn"
 DebugMenu="res://menus/debug_menu/debug_menu.tscn"
-Fullscreenizer="*res://fullscreenizer.gd"
+Fullscreenizer="*res://misc/fullscreenizer.tscn"
 
 [dialogic]
 
