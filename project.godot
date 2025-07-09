@@ -52,6 +52,7 @@ directories/dtl_directory={
 "callum_date_confession": "res://dialogue/salty/dates/callum_date_confession.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
+"raymond_conversations": "res://dialogue/sweet/daily_interactions/conversations/raymond_conversations.dtl",
 "raymond_date_1": "res://dialogue/sweet/dates/raymond_date_1.dtl",
 "raymond_date_2": "res://dialogue/sweet/dates/raymond_date_2.dtl",
 "raymond_date_3": "res://dialogue/sweet/dates/raymond_date_3.dtl",
