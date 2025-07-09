@@ -31,6 +31,8 @@ func start_line(ladle_pos : Vector2) -> void:
 	pass
 
 func continue_line(ladle_pos : Vector2, new_thickness : float) -> void:
+	if lines.is_empty(): return
+	
 	var actual_prev_pos : Vector2 = prev_pos+Vector2(0,lines[lines.size()-1].position.y)
 	create_line(actual_prev_pos,ladle_pos,prev_thickness,new_thickness)
 	
