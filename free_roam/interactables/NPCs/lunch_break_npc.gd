@@ -25,6 +25,8 @@ var talk_count: int:
 			return 0
 
 func _interact() -> void:
+	if SceneTransition.is_transitioning(): return
+	
 	latest_npc = self
 	
 	## Set readonly variables
