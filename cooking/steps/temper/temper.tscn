@@ -22,15 +22,19 @@ green_range = 0.4
 z_index = -10
 custom_minimum_size = Vector2(1152, 648)
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 1154.0
+offset_bottom = 647.0
 texture = ExtResource("3_8t8f1")
 expand_mode = 1
 stretch_mode = 6
 
 [node name="CounterRed" type="Sprite2D" parent="." index="1"]
-position = Vector2(586, 1145)
+position = Vector2(578, 680)
 texture = ExtResource("4_uexeg")
+region_enabled = true
+region_rect = Rect2(636, 0, 1152, 400)
 
 [node name="MinigameMixingBowl" type="Sprite2D" parent="." index="2"]
 position = Vector2(610, 561)
