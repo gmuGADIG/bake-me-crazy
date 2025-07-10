@@ -14,17 +14,19 @@ func _ready() -> void:
 	#$Panel/AnimationPlayer.play("open_phone")
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("open_phone"):
-		if not phone_opened and get_tree().paused: return # something else is already pausing the game
-		
-		if not phone_opened:
-			phone_opened = true
-			anim.play("open_phone")
-		else:
+	if phone_opened:
+		if Input.is_action_just_pressed("open_phone") \
+		or Input.is_action_just_pressed("pause"):
 			phone_opened = false
+			get_tree().paused = false
 			anim.play_backwards("open_phone")
+	else:
+		if get_tree().paused: return # something else is already pausing the game
 		
-		get_tree().paused = phone_opened
+		if Input.is_action_just_pressed("open_phone"):
+			phone_opened = true
+			get_tree().paused = true
+			anim.play("open_phone")
 	
 # when the button PhoneTop is pressed, this function should execute
 func _on_phone_top_pressed() -> void:

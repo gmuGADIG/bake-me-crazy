@@ -46,7 +46,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rcjri")
 
 [node name="FaceIcon" type="TextureRect" parent="."]
 unique_name_in_owner = true
-texture_filter = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
