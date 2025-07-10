@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qa7616vk2odt"
-path="res://.godot/imported/messaging_app.png-3a0ae86f7eceb9d890d1e1b3686958b3.ctex"
+uid="uid://ccyadgmvjfjo2"
+path="res://.godot/imported/Bio_Portrait.png-be91fc5aae3f3184a81f74242314793b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://messaging_app.png"
-dest_files=["res://.godot/imported/messaging_app.png-3a0ae86f7eceb9d890d1e1b3686958b3.ctex"]
+source_file="res://menus/phone/Bio_Portrait.png"
+dest_files=["res://.godot/imported/Bio_Portrait.png-be91fc5aae3f3184a81f74242314793b.ctex"]
 
 [params]
 

@@ -3,30 +3,30 @@
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="1_58v3b"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="2_n5cfp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me66y"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an45m"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trq1e"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_me66y"]
+bg_color = Color(0, 0, 0, 0.231373)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="InventorySlot" type="Button"]
 custom_minimum_size = Vector2(50, 50)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1102.0
-offset_bottom = -598.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 50.0
+offset_bottom = 50.0
 pivot_offset = Vector2(25, 25)
-theme_override_styles/focus = SubResource("StyleBoxFlat_me66y")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_trq1e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_trq1e")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_trq1e")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_trq1e")
+theme_override_styles/focus = SubResource("StyleBoxFlat_an45m")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_me66y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_me66y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_me66y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_me66y")
 icon = ExtResource("1_58v3b")
 expand_icon = true
 script = ExtResource("2_n5cfp")

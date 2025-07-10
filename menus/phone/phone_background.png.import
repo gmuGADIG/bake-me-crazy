@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2f2rqk8eagol"
-path="res://.godot/imported/contacts_icon.png-97ae9493b28d7d063cad74fbd000a483.ctex"
+uid="uid://cffo720j02tg8"
+path="res://.godot/imported/phone_background.png-389c3833dfa72316a73fca6b0ef499cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://temp_art/temp ui/contacts_icon.png"
-dest_files=["res://.godot/imported/contacts_icon.png-97ae9493b28d7d063cad74fbd000a483.ctex"]
+source_file="res://menus/phone/phone_background.png"
+dest_files=["res://.godot/imported/phone_background.png-389c3833dfa72316a73fca6b0ef499cf.ctex"]
 
 [params]
 
