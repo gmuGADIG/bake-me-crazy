@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bx3c2sms6ejy2"]
 
 [ext_resource type="Script" path="res://cooking/steps/instructions_panel.gd" id="1_y88w7"]
-[ext_resource type="Texture2D" uid="uid://djw1pnwl235lb" path="res://menus/recipe_book/Cookbook.png" id="2_kicvv"]
+[ext_resource type="Texture2D" uid="uid://b4j3328aowmyu" path="res://menus/recipe_book/Cookbook.png" id="2_kicvv"]
 
 [sub_resource type="Animation" id="Animation_yv8vb"]
 length = 0.001

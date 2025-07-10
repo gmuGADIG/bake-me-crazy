@@ -1,57 +1,34 @@
 extends FoodStep
 class_name Mix
 
-var mixes : Array[Area2D] = [$FirstMix, $SecondMix, $ThirdMix, $FourthMix]
-
-# Called when the node enters the scene tree for the first time.
-var mouse : bool = false
+var done = false
 var count_mixes = 0
-@onready var doneness: Sprite2D = $GoodnessPointer
+var last_mix_hitbox = -1
 
-func _ready() -> void:
-	connect("input_event", Callable(self, "_on_Area2D_input_event"))
-	connect("mouse_entered", Callable(self, "_on_area_2d_mouse_entered"))
-	connect("mouse_exited", Callable(self, "_on_area_2d_mouse_exited"))
+@onready var doneness: Sprite2D = %GoodnessPointer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	mouse_filter = MOUSE_FILTER_IGNORE
-	var prev_checkpoint = 0
-	var checkpoint = 0
-	var mix_checkpoint = mixes[0]
-	var result = 0
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if mouse and (prev_checkpoint == checkpoint):
-			count_mixes += 1
-			mix_checkpoint = mixes[checkpoint]
-			prev_checkpoint = checkpoint
-			checkpoint += 1
-			mouse = false
-			if doneness.position.y > 0:
-				doneness.position.y -= 5
-			print("Left mouse button clicked inside Area2D!")
-		elif !mouse:
-			prev_checkpoint += 1
-	else:
-		if count_mixes != 0:
-			result = assess_score(count_mixes)
-			emit_signal("finished", result)
-	print(count_mixes)
+func _process(_delta: float) -> void:
+	if done: return
+	if Input.is_action_just_released("minigame_interact"):
+		if count_mixes < 4: return
 
-func assess_score(count_mixes) -> int:
-	if count_mixes > 50:
-		count_mixes = 100 - count_mixes
-	print(count_mixes * 2)
-	return count_mixes * 2
+		var dist_from_center := clampf(absf(count_mixes - 50), 0, 50)
+		var normalized_dist := remap(dist_from_center, 0, 50, 0, 1)
+		var score := lerpf(3, 1, normalized_dist)
+
+		print("[mix] score = ", score)
+		finished.emit(score)
+		done = true
 
 
-func _on_area_2d_mouse_entered() -> bool:
-	mouse = true
-	print("Mouse is now over the area!")
-	return true
+func _on_area_2d_mouse_entered(id: int) -> void:
+	if done: return
+	if not Input.is_action_pressed("minigame_interact"): return
+	if last_mix_hitbox == id: return
 
-func _on_area_2d_mouse_exited() -> bool:
-	mouse = false
-	print("Mouse just left the area.")
-	return false
+	last_mix_hitbox = id
+
+	# raise the left side arrow, making sure it doesn't overflow
+	doneness.position.y = max(-250, doneness.position.y - 5)
+	# tick our internal counter, making sure it doesn't go over 100
+	count_mixes = min(count_mixes + 1, 100)

@@ -27,6 +27,11 @@ var kneading: bool = false
 var centerY: float
 
 var kneadPoints: float
+
+func failure_ok() -> bool:
+	var normalized := meter.value / meter.max_value # convert meter.value to [0, 1]
+	return normalized > .1
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spriteRect.pivot_offset = Vector2(spriteRect.size.x/2, spriteRect.size.y/2)
@@ -43,6 +48,7 @@ func _process(delta: float) -> void:
 		lastStretch = 0
 	if Input.is_action_just_released("minigame_interact"):
 		kneading = false
+		if not failure_ok(): return
 		canKnead = false
 
 		# calculate score
