@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo138mcnk6gcn"
-path="res://.godot/imported/PipingBag.png-193fa78032f6ec78c47a2e7d03d04777.ctex"
+path="res://.godot/imported/PipingBag.png-b287c7a4d1aa70150093ee75e2593c94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cooking/steps/PipingBag.png"
-dest_files=["res://.godot/imported/PipingBag.png-193fa78032f6ec78c47a2e7d03d04777.ctex"]
+source_file="res://cooking/steps/piping_spot/PipingBag.png"
+dest_files=["res://.godot/imported/PipingBag.png-b287c7a4d1aa70150093ee75e2593c94.ctex"]
 
 [params]
 

@@ -8,7 +8,7 @@ enum IngredientType {
 	LEMON,
 	ORANGE,
 	PEANUT_BUTTER,
-	PISTASCHIO,
+	PISTACHIO,
 	PORK,
 	STRAWBERRY,
 	TEA,

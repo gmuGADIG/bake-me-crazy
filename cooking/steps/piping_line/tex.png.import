@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj72sisb6318w"
-path="res://.godot/imported/PipingBagFull.png-774542bc73967d591c90b72285fc5a12.ctex"
+uid="uid://dak3gv6ynj2q1"
+path="res://.godot/imported/tex.png-ed9d9fb74d80e8d65b6e44aac08be7a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cooking/steps/PipingBagFull.png"
-dest_files=["res://.godot/imported/PipingBagFull.png-774542bc73967d591c90b72285fc5a12.ctex"]
+source_file="res://cooking/steps/piping_line/tex.png"
+dest_files=["res://.godot/imported/tex.png-ed9d9fb74d80e8d65b6e44aac08be7a9.ctex"]
 
 [params]
 

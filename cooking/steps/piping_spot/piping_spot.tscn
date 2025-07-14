@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dlspt71wko61b"]
 
-[ext_resource type="Script" path="res://cooking/steps/piping_spot.gd" id="1_k8nit"]
+[ext_resource type="Script" path="res://cooking/steps/piping_spot/piping_spot.gd" id="1_k8nit"]
 [ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="2_7v6d7"]
 [ext_resource type="Texture2D" uid="uid://byl3qjsmifff3" path="res://temp_art/temp_shape_dough.png" id="3_bomxk"]
 
