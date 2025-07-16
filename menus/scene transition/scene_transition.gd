@@ -9,6 +9,9 @@ func _ready() -> void:
 	# Make sure that we will always be able to transition, even while paused.
 	process_mode = PROCESS_MODE_ALWAYS
 
+func is_transitioning() -> bool:
+	return $AnimationPlayer.is_playing()
+
 ## Called by the AnimationPlayer when the swipe animation is ready to actually
 ## change to the next scene.
 func _anim_move_to_scene() -> void:

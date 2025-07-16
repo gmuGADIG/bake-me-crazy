@@ -98,6 +98,9 @@ func _process(delta: float) -> void:
 		progress_pointer.position.y = progress_bottom_px - ((current_score / 10) * progress_height)
 
 	elif stage == END_FRAME:
+		if get_current_score() < 5: 
+			progress = PENDING
+			return
 		var score = assess_score()
 		emit_signal("finished", score)	
 		progress = FINISHED

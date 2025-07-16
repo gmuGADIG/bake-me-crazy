@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkfpblh3iw05s"
-path="res://.godot/imported/contacts_icon.png-a0974c36e630be537ea3334cddfc5d17.ctex"
+uid="uid://x6tugdipc082"
+path="res://.godot/imported/Minigame_Ladle.png-06c2a802a3acd98d91182a6c8040e913.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contacts_icon.png"
-dest_files=["res://.godot/imported/contacts_icon.png-a0974c36e630be537ea3334cddfc5d17.ctex"]
+source_file="res://cooking/cooking_art/Minigame_Ladle.png"
+dest_files=["res://.godot/imported/Minigame_Ladle.png-06c2a802a3acd98d91182a6c8040e913.ctex"]
 
 [params]
 

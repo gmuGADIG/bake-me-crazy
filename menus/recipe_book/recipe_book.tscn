@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=29 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_11cuj"]
 [ext_resource type="Texture2D" uid="uid://d07o2lsduweq4" path="res://menus/recipe_book/photo_frame_back.png" id="3_0yxhu"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_page.gd" id="3_echjj"]
 [ext_resource type="Texture2D" uid="uid://dlx146n2vp5th" path="res://items/foods/art/croissant.png" id="4_68jve"]
@@ -117,6 +118,11 @@ _data = {
 [node name="RecipeBook" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_3psjk")
+
+[node name="CountertopBlue" type="Sprite2D" parent="."]
+position = Vector2(561, 348)
+scale = Vector2(1.31641, 1.36719)
+texture = ExtResource("2_11cuj")
 
 [node name="Book" type="Control" parent="."]
 layout_mode = 3
@@ -530,13 +536,14 @@ script = ExtResource("10_7f2te")
 
 [node name="RecipeVariantSelection" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.333333)
+color = Color(0, 0, 0, 0.913725)
 script = ExtResource("33_amgaq")
 
 [node name="SelectRecipesVariants" type="RichTextLabel" parent="RecipeVariantSelection"]

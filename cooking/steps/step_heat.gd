@@ -56,11 +56,14 @@ func _process(delta: float) -> void:
 	
 	# Only update the timer when it's greater than 0 so we can detect the frame
 	# when it changes.
+	print(heat_time)
 	if heat_time > 0:
 		heat_time -= delta
 		heat_time_label.text = "Time left: %.2f" % [clamp(heat_time, 0.0, original_heat_time)]
 		
+		print(heat_time)
 		# If this if passes, this is THE FRAME when the timer expired.
 		if heat_time <= 0:
+			print("AAAAAAAAAAAAAA")
 			var ratio = clamp(seconds_in_green / original_heat_time, 0.0, 1.0)
 			finished.emit(ratio * 3.0)

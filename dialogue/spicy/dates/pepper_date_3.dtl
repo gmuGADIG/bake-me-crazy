@@ -1,0 +1,70 @@
+After arriving at the pier to meet Pepper, you take a look around to try and find her. The sparkling ocean gently crashes against the shore as boats float around near the dock, and seagulls cry as they circle overhead.[n]Plenty of tourists and locals are strolling up and down the pier, looking at the sights, taking pictures and buying food from stalls. On the beach nearby, people are relaxing on the sand and even swimming.[n]As you finish your slow turn of taking in the pier, you spot Pepper walking up to you from nearby.
+pepper (Happy): Hey, there! Sorry I had to stay so late and lock up shop, I hope you weren’t waiting too long.
+- "I’ve only been here a few minutes."
+	set {dateRP} += 0
+	pepper (Happy): Well, that’s not so bad. Are you ready to start?
+- "Just taking a look around."
+	set {dateRP} += 5
+	pepper (Excited): Ohhh, been scouting ahead, have you? Let’s get to it, then!
+- "It’s about time!"
+	set {dateRP} -= 5
+	if {dateRP} <= -30:
+		jump DateFailState
+	pepper (Frustrated): It’s not like I wanted to stay late, doofus. Your waiting’s over now, though!
+The two of you are taking a walk down the pier, watching the ships float up and down, when Pepper starts a conversation.
+pepper (Happy): So, are you hungry? I see quite a few pop-up snack shops we could stop at.
+The two of you find a stall to buy from, and as you stand in line you decide to strike up a conversation with Pepper.
+- "Where are some places on your bucket list?"
+	pepper (Happy): Places I’d like to go? Hmm... I’m not really sure. I’ve never thought about it, but maybe somewhere like Rome? Europe has some pretty nice places.
+- "Do you have a favorite movie or show?"
+	pepper (Excited): I’d say Rocky is always a top pick for me. Gets the blood pumping, you know? Cop dramas are pretty fun, too.
+- "What do you usually eat besides baked goods?"
+	pepper (Happy): Uhhh, I’ll usually get a protein shake in the morning and either an egg salad sandwich or a good burger for lunch. For dinner... Oh, I really like that Thai place on the next street over.
+That sounds a lot like something Pepper would answer. You continue trading questions for a bit, then you realize the wait in line will be longer than you first thought. Before long, the two of you are playing some games while you wait.[n]After some rock, paper, scissors and a few rounds of thought experiments, you are both mauling each other’s shadow animals with your own when suddenly you hear the next person called, and realize it is you.[n]You walk up to the counter and consider your options. Would Pepper like one of these more than the others?
+- We should get some hot dogs.
+	set {dateRP} += 0
+- A pair of giant pretzels sound good.
+	set {dateRP} += 0
+- A couple street tacos would hit the spot.
+	set {dateRP} += 5
+- Let’s get a funnel cake.
+	set {dateRP} -= 5
+Pepper is unfocused until you place the food in her hands.
+pepper (Neutral): What? Oh, thanks! This looks great.
+She seemed to be spacing out until you gave her the snack. Maybe something is wrong? She looks like she has something on her mind.
+- Let her bring it up on her own.
+	set {dateRP} += 5
+	You step away from the food stand with Pepper, purchase in hand. You look at her a little expectantly for a moment before she catches on.
+- Ask Pepper what’s bothering her.
+	set {dateRP} += 10
+	Pepper looks at you for a few seconds before she starts laughing heartily. Once she is done, she sighs and turns to you again.
+- Change topics to cheer her up.
+	set {dateRP} -= 10
+	if {dateRP} <= -30:
+		jump DateFailState
+	You suddenly start talking about a recent sports game. Pepper looks at you, bewildered for a moment, before chuckling and looking down.
+pepper (Pensive): Wow, I’m sorry. Is it that obvious? I didn’t mean to make you worry. I’ve just had a lot on my mind since last time. I suppose I do owe you an explanation.[n]Well, you see...[n]About a year ago, Mom and Dad went on a cruise for their anniversary. I was really happy for them, and glad to take over the shop while they were gone.[n]It was supposed to be temporary, but... well, they came back and seemed really happy not having to worry about the store, and I said they could take their time coming back.[n]But, things kind of snowballed, and... they retired, thinking I’d take care of the shop. Truth be told, running the place isn’t that bad, but... it’s not what I want to do with my life.[n]Sorry for dumping it on you, but that’s what’s been on my mind recently.
+- "Wow, I can’t imagine. It must be tough."
+	set {dateRP} -= 10
+	if {dateRP} <= -30:
+		jump DateFailState
+	pepper (Pensive): Eh, it’s alright. The job’s really not awful, it’s...  I just don’t want this to be the rest of my life.
+- "I’m sorry that happened to you."
+	set {dateRP} += 10
+	pepper (Neutral): Thanks, but it’s not actually that bad. I just don’t know what to do about it. I can’t keep doing this forever... right?
+- "You’re not alone. I’ll be there for you."
+	set {dateRP} += 15
+	pepper (Happy): Heh, thanks. I knew I could count on you to back me up. I’m not really sure if there’s anything you could do to help, though.
+- "That’s... a lot to deal with."
+	set {dateRP} -= 15
+	if {dateRP} <= -30:
+		jump DateFailState
+	pepper (Pensive): No, it’s not that bad... lots of other people have worse problems. I can’t be mad I’ve got a job and don’t want it.
+# Choice branch break
+- "Have you talked with your parents about it, even once?"
+	pepper (Neutral): No, I haven’t. Wasn’t really planning on it either. I really would like to have enough time to play sports, to make games... to hang out with you.[n]I’m sure they’d understand if I did talk about it with them, but... I can’t just force them out of retirement, you know?[n]No, I’m too scared to talk to them about it. I feel like they’d be disappointed.
+if {dateRP} >= 20:
+	After that, Pepper sits with a small smile and eats her food. You crack a joke out of nowhere and the two of you laugh. The rest of the day is spent looking at the boats, eating dockside snacks, and even a little playing in the sand.[n]Before you know it, the sun has set and both of you have to leave before you lose sleep. You exchange an enthusiastic goodbye before strolling back up the street, a smile on your face.
+if {dateRP} < 20:
+	After that, Pepper falls quiet once again. The two of you eat in silence, and go on to spend a few more hours at the pier, but it just doesn’t feel the same. She eventually mentions she has work tomorrow, and after exchanging friendly goodbyes, heads home.
+label DateFailState

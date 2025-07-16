@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qa7616vk2odt"
-path="res://.godot/imported/messaging_app.png-3a0ae86f7eceb9d890d1e1b3686958b3.ctex"
+uid="uid://c5lu5srko5jmr"
+path="res://.godot/imported/icon_gallery.png-ac492847d19c33f56f9f1f75fc24b4a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://messaging_app.png"
-dest_files=["res://.godot/imported/messaging_app.png-3a0ae86f7eceb9d890d1e1b3686958b3.ctex"]
+source_file="res://menus/phone/icon_gallery.png"
+dest_files=["res://.godot/imported/icon_gallery.png-ac492847d19c33f56f9f1f75fc24b4a7.ctex"]
 
 [params]
 

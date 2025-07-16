@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://5p7vjtbgjk6n"]
+
+[ext_resource type="Texture2D" uid="uid://1k3d7pvdbmrr" path="res://menus/missing-heart.svg" id="1_jg8ef"]
+[ext_resource type="Texture2D" uid="uid://fv7ylc5reuto" path="res://menus/heart.svg" id="1_qovde"]
+[ext_resource type="Script" path="res://menus/heart_display/heart.gd" id="1_xuy0h"]
+[ext_resource type="Shader" path="res://menus/heart_display/heart.gdshader" id="3_be3rp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yas1k"]
+resource_local_to_scene = true
+shader = ExtResource("3_be3rp")
+shader_parameter/fill = 1.0
+
+[node name="Heart" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_xuy0h")
+
+[node name="HeartEmpty" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jg8ef")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeartFull" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yas1k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qovde")
+expand_mode = 1
+stretch_mode = 5
