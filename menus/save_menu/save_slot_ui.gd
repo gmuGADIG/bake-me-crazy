@@ -35,6 +35,7 @@ func update_info(just_saved_save: SaveTemplate = null) -> void:
 		empty.visible = false
 		slot_desc.visible = true
 		slot_desc.text = "Day %s" % save_resource.day
+		slot_desc.text = save_resource.get_day_phase_string()
 		#self_modulate.a = 1.0
 		#self_modulate = Color(1, 1, 1, 1)
 		
