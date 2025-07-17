@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daenfqa1t2mr4"
-path="res://.godot/imported/portrait_callum.png-1ced3ab2a8acc6910660772a62f2ee56.ctex"
+uid="uid://c12k704fu73xo"
+path="res://.godot/imported/icon_recipe_book.png-a7f1a61954feaab59936847a1e372c31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/phone/portraits/portrait_callum.png"
-dest_files=["res://.godot/imported/portrait_callum.png-1ced3ab2a8acc6910660772a62f2ee56.ctex"]
+source_file="res://menus/phone/icon_recipe_book.png"
+dest_files=["res://.godot/imported/icon_recipe_book.png-a7f1a61954feaab59936847a1e372c31.ctex"]
 
 [params]
 

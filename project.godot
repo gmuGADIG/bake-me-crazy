@@ -30,6 +30,7 @@ SFXDispatcher="*res://sfx/sfx_dispatcher.tscn"
 BreakNPCSystem="*res://dialogue/internal/code/break_npc/break_npc_system.tscn"
 DebugMenu="res://menus/debug_menu/debug_menu.tscn"
 Fullscreenizer="*res://misc/fullscreenizer.tscn"
+TextManager="*res://dialogue/internal/code/texting/text_manager.tscn"
 
 [dialogic]
 
@@ -53,6 +54,10 @@ directories/dtl_directory={
 "callum_date_confession": "res://dialogue/salty/callum_date_confession.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
+"phone_test_1": "res://dialogue/testing/phone_test_1.dtl",
+"phone_test_2": "res://dialogue/testing/phone_test_2.dtl",
+"phone_test_3": "res://dialogue/testing/phone_test_3.dtl",
+"phone_test_4": "res://dialogue/testing/phone_test_4.dtl",
 "salty_days": "res://dialogue/salty/lunch_break/salty_days.dtl",
 "salty_main": "res://dialogue/salty/lunch_break/salty_main.dtl",
 "savory_days": "res://dialogue/savory/lunch_break/savory_days.dtl",
@@ -73,10 +78,10 @@ variables={
 "date": "",
 "dateRP": 0,
 "hearts": {
-"salty": 0,
-"savory": 0,
-"spicy": 0,
-"sweet": 0
+"salty": 2,
+"savory": 3,
+"spicy": 4,
+"sweet": 5
 },
 "read_only": {
 "gift_quality": 0,

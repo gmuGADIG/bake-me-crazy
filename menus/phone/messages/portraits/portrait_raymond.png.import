@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx72x1c4gxxch"
-path="res://.godot/imported/portrait_millie.png-9b3fcc36a2407f3d4f358ed2923c25a1.ctex"
+uid="uid://bwt2bx2aj0r3y"
+path="res://.godot/imported/portrait_raymond.png-4674da94dc22ad6dcb655ec1d49834dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/phone/portraits/portrait_millie.png"
-dest_files=["res://.godot/imported/portrait_millie.png-9b3fcc36a2407f3d4f358ed2923c25a1.ctex"]
+source_file="res://menus/phone/messages/portraits/portrait_raymond.png"
+dest_files=["res://.godot/imported/portrait_raymond.png-4674da94dc22ad6dcb655ec1d49834dd.ctex"]
 
 [params]
 

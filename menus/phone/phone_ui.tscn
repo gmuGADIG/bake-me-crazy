@@ -1,34 +1,31 @@
-[gd_scene load_steps=49 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=45 format=3 uid="uid://dktieicdug37m"]
 
 [ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
 [ext_resource type="Script" path="res://menus/phone/phone_screens.gd" id="2_1a7hx"]
 [ext_resource type="Texture2D" uid="uid://5lppdbbmjeod" path="res://menus/phone/phone.png" id="2_7m8c8"]
-[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="3_m70wx"]
-[ext_resource type="Script" path="res://menus/phone/contacts_app.gd" id="3_rv7fq"]
 [ext_resource type="Texture2D" uid="uid://cffo720j02tg8" path="res://menus/phone/phone_background.png" id="4_578qi"]
-[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="4_wsq33"]
 [ext_resource type="Script" path="res://menus/phone/inventory_scene.gd" id="5_7dqal"]
 [ext_resource type="Texture2D" uid="uid://qst2473t8kgd" path="res://temp_art/4ea.jpg" id="5_j01br"]
 [ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://temp_art/temp ui/BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="5_r6x37"]
-[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
 [ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="6_sjcrr"]
 [ext_resource type="Texture2D" uid="uid://c4444njqb2a41" path="res://menus/phone/phone_background_b&w.png" id="10_iuym1"]
-[ext_resource type="PackedScene" uid="uid://b3hjgbyt4tc6" path="res://menus/phone/message_char.tscn" id="11_7v68t"]
-[ext_resource type="Texture2D" uid="uid://tvs2knwhrbdh" path="res://menus/phone/portraits/portrait_pepper.png" id="12_8obd3"]
+[ext_resource type="PackedScene" uid="uid://b3hjgbyt4tc6" path="res://menus/phone/messages/message_char.tscn" id="11_7v68t"]
+[ext_resource type="Texture2D" uid="uid://tvs2knwhrbdh" path="res://menus/phone/messages/portraits/portrait_pepper.png" id="12_8obd3"]
 [ext_resource type="Texture2D" uid="uid://dkfpblh3iw05s" path="res://menus/phone/icon_contacts.png" id="12_kv8e5"]
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="13_1vomg"]
-[ext_resource type="Texture2D" uid="uid://bx72x1c4gxxch" path="res://menus/phone/portraits/portrait_millie.png" id="13_dlodv"]
-[ext_resource type="Texture2D" uid="uid://qa7616vk2odt" path="res://menus/phone/icon_messaging.png" id="14_2dlto"]
-[ext_resource type="Texture2D" uid="uid://bwt2bx2aj0r3y" path="res://menus/phone/portraits/portrait_raymond.png" id="14_2patd"]
+[ext_resource type="Texture2D" uid="uid://bx72x1c4gxxch" path="res://menus/phone/messages/portraits/portrait_millie.png" id="13_dlodv"]
+[ext_resource type="Texture2D" uid="uid://bwt2bx2aj0r3y" path="res://menus/phone/messages/portraits/portrait_raymond.png" id="14_2patd"]
 [ext_resource type="Texture2D" uid="uid://b5nsknbxyjgkx" path="res://menus/phone/icon_inventory.png" id="15_6b8sl"]
 [ext_resource type="Texture2D" uid="uid://ch0exc2kv6tcg" path="res://menus/phone/phone_wood_bg.png" id="15_cqrpx"]
-[ext_resource type="Texture2D" uid="uid://daenfqa1t2mr4" path="res://menus/phone/portraits/portrait_callum.png" id="15_qajdy"]
+[ext_resource type="Texture2D" uid="uid://daenfqa1t2mr4" path="res://menus/phone/messages/portraits/portrait_callum.png" id="15_qajdy"]
 [ext_resource type="Texture2D" uid="uid://d3gjggefdqm6p" path="res://PhoneBackArrow.png" id="16_lpc83"]
 [ext_resource type="Script" path="res://menus/phone/phone_main_menu.gd" id="16_n5rnq"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="17_a72gu"]
 [ext_resource type="PackedScene" uid="uid://b2bh41bd0epcc" path="res://menus/phone/inventory_slot.tscn" id="17_hlvhb"]
 [ext_resource type="Texture2D" uid="uid://c5lu5srko5jmr" path="res://menus/phone/icon_gallery.png" id="24_yk7th"]
+[ext_resource type="Texture2D" uid="uid://dycpyp7xoyd4b" path="res://menus/phone/messages/notif_cherry.png" id="25_1pn2p"]
+[ext_resource type="Texture2D" uid="uid://c12k704fu73xo" path="res://menus/phone/icon_recipe_book.png" id="26_2wacm"]
 
 [sub_resource type="Gradient" id="Gradient_1sjun"]
 colors = PackedColorArray(0, 0, 0, 0.72549, 0, 0, 0, 0.258824)
@@ -49,8 +46,6 @@ texture = SubResource("AtlasTexture_qe3l0")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8xy"]
 bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Theme" id="Theme_tnnuu"]
 
 [sub_resource type="Gradient" id="Gradient_dbkf1"]
 colors = PackedColorArray(0, 0, 0, 0.756863, 0, 0, 0, 0)
@@ -130,6 +125,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fwirb"]
 resource_name = "open_phone"
@@ -170,6 +177,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eqgxp"]
 _data = {
@@ -199,6 +218,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_mtpha")
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 377.0
 offset_top = 704.0
@@ -210,6 +230,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_bxblj")
 
 [node name="ScreenHolder" type="Panel" parent="Panel"]
+unique_name_in_owner = true
 show_behind_parent = true
 clip_children = 1
 layout_mode = 1
@@ -235,131 +256,6 @@ grow_vertical = 2
 texture = ExtResource("4_578qi")
 expand_mode = 1
 
-[node name="Contacts" type="Panel" parent="Panel/ScreenHolder"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Panel/ScreenHolder/Contacts"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.623529, 1, 1, 1)
-
-[node name="Contact1" type="Panel" parent="Panel/ScreenHolder/Contacts"]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(184, 275)
-layout_mode = 2
-offset_right = 184.0
-
-[node name="ColorRect" type="ColorRect" parent="Panel/ScreenHolder/Contacts/Contact1"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 298.0
-
-[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Contacts/Contact1"]
-layout_mode = 0
-offset_right = 180.0
-offset_bottom = 174.0
-texture = ExtResource("5_r6x37")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Contact2" type="Panel" parent="Panel/ScreenHolder/Contacts"]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(184, 275)
-layout_mode = 2
-offset_right = 184.0
-
-[node name="ColorRect" type="ColorRect" parent="Panel/ScreenHolder/Contacts/Contact2"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 298.0
-color = Color(0.655981, 0.135346, 0.674231, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Contacts/Contact2"]
-layout_mode = 0
-offset_right = 185.0
-offset_bottom = 148.0
-texture = ExtResource("4_wsq33")
-
-[node name="ContactScreen" type="Panel" parent="Panel/ScreenHolder/Contacts"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="Panel/ScreenHolder/Contacts/ContactScreen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_rv7fq")
-
-[node name="TextureButton" type="TextureButton" parent="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_tnnuu")
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton2" type="TextureButton" parent="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton3" type="TextureButton" parent="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton4" type="TextureButton" parent="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton5" type="TextureButton" parent="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="ContactsBackButton" type="TextureButton" parent="Panel/ScreenHolder/Contacts"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -6.10352e-05
-offset_top = 255.0
-offset_right = 49.9999
-offset_bottom = 305.0
-texture_normal = ExtResource("5_vvy46")
-ignore_texture_size = true
-stretch_mode = 5
-flip_h = true
-
 [node name="Messages" type="Panel" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
 visible = false
@@ -384,7 +280,7 @@ grow_vertical = 2
 scale = Vector2(0.625324, 0.625324)
 texture = ExtResource("10_iuym1")
 
-[node name="VBoxContainer" type="Control" parent="Panel/ScreenHolder/Messages"]
+[node name="Control" type="Control" parent="Panel/ScreenHolder/Messages"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -394,19 +290,21 @@ offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MessageChar" parent="Panel/ScreenHolder/Messages/VBoxContainer" instance=ExtResource("11_7v68t")]
+[node name="MessageChar" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 284.0
 offset_bottom = 77.0
+icon = ExtResource("12_8obd3")
 npc_code_name = "spicy"
 npc_display_name = "Pepper"
 color = Color(0.776471, 0.184314, 0.184314, 1)
 icon = ExtResource("12_8obd3")
+hover_scale = 1.05
 
-[node name="MessageChar2" parent="Panel/ScreenHolder/Messages/VBoxContainer" instance=ExtResource("11_7v68t")]
+[node name="MessageChar2" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
@@ -414,12 +312,14 @@ anchor_bottom = 0.0
 offset_top = 83.0
 offset_right = 284.0
 offset_bottom = 160.0
+icon = ExtResource("13_dlodv")
 npc_code_name = "savory"
 npc_display_name = "Millie"
 color = Color(0.262745, 0.847059, 0.94902, 1)
 icon = ExtResource("13_dlodv")
+hover_scale = 1.05
 
-[node name="MessageChar3" parent="Panel/ScreenHolder/Messages/VBoxContainer" instance=ExtResource("11_7v68t")]
+[node name="MessageChar3" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
@@ -427,12 +327,14 @@ anchor_bottom = 0.0
 offset_top = 166.0
 offset_right = 284.0
 offset_bottom = 243.0
+icon = ExtResource("14_2patd")
 npc_code_name = "sweet"
 npc_display_name = "Ray"
 color = Color(0.709804, 0.231373, 0.827451, 1)
 icon = ExtResource("14_2patd")
+hover_scale = 1.05
 
-[node name="MessageChar4" parent="Panel/ScreenHolder/Messages/VBoxContainer" instance=ExtResource("11_7v68t")]
+[node name="MessageChar4" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
@@ -440,10 +342,12 @@ anchor_bottom = 0.0
 offset_top = 249.0
 offset_right = 284.0
 offset_bottom = 326.0
+icon = ExtResource("15_qajdy")
 npc_code_name = "salty"
 npc_display_name = "Callum"
 color = Color(0.588235, 0.827451, 0.231373, 1)
 icon = ExtResource("15_qajdy")
+hover_scale = 1.05
 
 [node name="Gallery" type="Panel" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
@@ -787,8 +691,7 @@ theme_override_constants/h_separation = -2
 theme_override_constants/v_separation = -15
 columns = 2
 
-[node name="ContactsButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
-visible = false
+[node name="MessagingButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -798,18 +701,40 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("17_a72gu")
 
-[node name="MessagingButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
+[node name="MessageRedDot" type="TextureRect" parent="Panel/ScreenHolder/Screen/GridContainer/MessagingButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 75.6487
+offset_top = -14.3505
+offset_right = 115.649
+offset_bottom = 25.6495
+rotation = 0.30046
+texture = ExtResource("25_1pn2p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RedDotCount" type="Label" parent="Panel/ScreenHolder/Screen/GridContainer/MessagingButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 68.2936
+offset_top = -1.43142
+offset_right = 104.294
+offset_bottom = 22.5686
+scale = Vector2(1.14126, 1.14126)
+text = "1"
+horizontal_alignment = 1
+
+[node name="RecipeBookButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-texture_normal = ExtResource("14_2dlto")
+texture_normal = ExtResource("26_2wacm")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("17_a72gu")
 
 [node name="GalleryButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -868,13 +793,12 @@ libraries = {
 "": SubResource("AnimationLibrary_eqgxp")
 }
 
-[connection signal="pressed" from="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer/TextureButton" to="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer" method="_on_texture_button_pressed" binds= [1]]
-[connection signal="pressed" from="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer/TextureButton2" to="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer" method="_on_texture_button_pressed" binds= [2]]
-[connection signal="pressed" from="Panel/ScreenHolder/Contacts/ContactsBackButton" to="Panel/ScreenHolder/Contacts/ContactScreen/GridContainer" method="_on_contacts_back_button_pressed"]
+[connection signal="visibility_changed" from="Panel/ScreenHolder" to="Panel/ScreenHolder" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Panel/ScreenHolder/Inventory" to="Panel/ScreenHolder/Inventory" method="on_app_toggle"]
+[connection signal="visibility_changed" from="Panel/ScreenHolder/Screen" to="Panel/ScreenHolder/Screen" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Panel/ScreenHolder/Screen/DayDisplay" to="Panel/ScreenHolder/Screen/DayDisplay" method="_on_visibility_changed"]
-[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/ContactsButton" to="Panel/ScreenHolder" method="_on_app_pressed" binds= [0]]
-[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/MessagingButton" to="Panel/ScreenHolder" method="_on_app_pressed" binds= [1]]
-[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/GalleryButton" to="Panel/ScreenHolder" method="_on_app_pressed" binds= [2]]
-[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/Inventory" to="Panel/ScreenHolder" method="_on_app_pressed" binds= [3]]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/MessagingButton" to="Panel/ScreenHolder" method="open_contacts"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/RecipeBookButton" to="Panel/ScreenHolder" method="open_recipe_book"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/GalleryButton" to="Panel/ScreenHolder" method="open_gallery"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/Inventory" to="Panel/ScreenHolder" method="open_inventory"]
 [connection signal="pressed" from="Panel/ScreenHolder/BackButton" to="Panel/ScreenHolder" method="_on_back_pressed"]
