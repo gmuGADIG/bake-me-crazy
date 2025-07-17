@@ -44,6 +44,29 @@ func play(sfx: SoundEffect, volume := 1.0) -> void:
 		return
 
 	var path := sfx.sound_file.resource_path
+	
+	# Issue: The _active dictionary does not get properly cleared, because
+	# the finished() signal is never actually emitted for some reason.
+	#
+	# This means the _stop_player() loop (the if _active.has() block) will
+	# believe that the player for a still-playing sound still belongs to an
+	# older sound.
+	#
+	# (That is, sound A plays & finishes. Sound B re-uses that AudioStreamPlayer,
+	# while sound A still believes the AudioStreamPlayer belongs to it, i.e.
+	# _active[A] = that AudioStreamPlayer. Then, when sound A plays again, it
+	# stops sound B, because it stops _active[A], which should have been cleared
+	# but wasn't).
+	#
+	# The fix to this is simply acquire the new player BEFORE stopping the old
+	# one.
+	#
+	# This is still actually slightly wrong, because we still end up canceling
+	# SOME sound when we play A again. So, we should probably fix the finished()
+	# issue for real at some point (and then we can move the if block back up).
+	
+	# Acquire a free player
+	var player = _get_player()
 
 	# If already playing and not interruptible, just refresh timer
 	if _active.has(path):
@@ -54,9 +77,6 @@ func play(sfx: SoundEffect, volume := 1.0) -> void:
 			return
 		# Interrupt: stop and clean up
 		_stop_player(existing, path)
-
-	# Acquire a free player
-	var player = _get_player()
 
 	# Assign the imported stream directly
 	player.stream = sfx.sound_file

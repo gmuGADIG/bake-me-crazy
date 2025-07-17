@@ -22,6 +22,16 @@ enum DayPhase {
 @export_range(1,14) var day : int = 1 ## Current day, from 1 to 14
 @export var day_phase : DayPhase
 
+func get_day_phase_string() -> StringName:
+	match day_phase:
+		DayPhase.EXPLORE:  return "Exploring"
+		DayPhase.MORNING:  return "Morning"
+		DayPhase.BREAK:    return "Break"
+		DayPhase.RUSH:     return "Lunch Rush"
+		DayPhase.CLOCKOUT: return "Clock Out"
+		DayPhase.HOME:     return "At Home"
+		_: return "Unknown"
+
 #- Recipes -#
 @export var unlocked_recipe_paths: Array[String] = [
 	"res://items/recipes/cake.tres",
