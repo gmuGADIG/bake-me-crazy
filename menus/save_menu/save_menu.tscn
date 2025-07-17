@@ -1,20 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://s6ok5pxmaod6"]
+[gd_scene load_steps=11 format=3 uid="uid://s6ok5pxmaod6"]
 
 [ext_resource type="Script" path="res://menus/save_menu/save_menu.gd" id="1_v5una"]
 [ext_resource type="PackedScene" uid="uid://bwhlnfpn8hjus" path="res://menus/save_menu/save_slot_ui.tscn" id="2_bihf2"]
 [ext_resource type="Texture2D" uid="uid://c1t2fl5ginevd" path="res://menus/save_menu/save_menu.png" id="2_dqne5"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="3_dgtsx"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_28mvr"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 11
+shadow_color = Color(0, 0, 0, 0.245)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_342mj"]
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
+bg_color = Color(0.972549, 0.537255, 0.227451, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 border_color = Color(1, 0.85098, 0.733333, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+shadow_size = 1
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncjyp"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 11
+shadow_color = Color(0, 0, 0, 0.245)
 
 [sub_resource type="Animation" id="Animation_tsl37"]
 length = 0.001
@@ -236,10 +251,10 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 text = "Select a Save"
+label_settings = SubResource("LabelSettings_28mvr")
 
 [node name="LoadSaveButton" type="Button" parent="BottomButtons"]
-visible = false
-custom_minimum_size = Vector2(130, 80)
+custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -248,11 +263,28 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
+
+[node name="LoadSaveLabel" type="Label" parent="BottomButtons/LoadSaveButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -20.5
+offset_right = 44.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 text = "Load Slot 1"
+label_settings = SubResource("LabelSettings_ncjyp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WriteSaveButton" type="Button" parent="BottomButtons"]
-visible = false
-custom_minimum_size = Vector2(130, 80)
+custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -261,7 +293,25 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
+
+[node name="WriteSaveLabel" type="Label" parent="BottomButtons/WriteSaveButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -20.5
+offset_right = 55.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 text = "Save to Slot 1"
+label_settings = SubResource("LabelSettings_ncjyp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

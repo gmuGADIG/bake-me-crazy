@@ -7,6 +7,9 @@ extends Control
 @onready var load_save_button: Button = $BottomButtons/LoadSaveButton
 @onready var write_save_button: Button = $BottomButtons/WriteSaveButton
 
+@onready var load_save_label = $BottomButtons/LoadSaveButton/LoadSaveLabel
+@onready var write_save_label = $BottomButtons/WriteSaveButton/WriteSaveLabel
+
 var currently_selected_slot: SaveSlotUI
 var _tween: Tween ## current tween, used for raising the bottom buttons
 
@@ -44,13 +47,13 @@ func update_bottom_buttons() -> void:
 			load_save_button.visible = false
 		else:
 			load_save_button.visible = true
-			load_save_button.text = "Load Slot %s" % currently_selected_slot.slot
+			load_save_label.text = "Load Slot %s" % currently_selected_slot.slot
 		
 		if not can_save:
 			write_save_button.visible = false
 		else:
 			write_save_button.visible = true
-			write_save_button.text = "Save to Slot %s" % currently_selected_slot.slot
+			write_save_label.text = "Save to Slot %s" % currently_selected_slot.slot
 
 func _on_back_button_pressed() -> void:
 	queue_free()
