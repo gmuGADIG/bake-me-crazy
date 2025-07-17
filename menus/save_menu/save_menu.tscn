@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://s6ok5pxmaod6"]
+[gd_scene load_steps=13 format=3 uid="uid://s6ok5pxmaod6"]
 
 [ext_resource type="Script" path="res://menus/save_menu/save_menu.gd" id="1_v5una"]
 [ext_resource type="PackedScene" uid="uid://bwhlnfpn8hjus" path="res://menus/save_menu/save_slot_ui.tscn" id="2_bihf2"]
 [ext_resource type="Texture2D" uid="uid://c1t2fl5ginevd" path="res://menus/save_menu/save_menu.png" id="2_dqne5"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="3_dgtsx"]
+[ext_resource type="Theme" uid="uid://margarita" path="res://menus/start_menu/main_menu_theme.tres" id="4_lmdg1"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="5_21s6t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_28mvr"]
@@ -188,11 +189,21 @@ metadata/_edit_lock_ = true
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
-offset_left = 75.0
-offset_top = 45.0
-offset_right = 98.0
-offset_bottom = 76.0
-text = "<-"
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -189.0
+offset_top = -72.0
+offset_right = -25.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(82, 21)
+theme = ExtResource("4_lmdg1")
+text = "Back"
+script = ExtResource("5_21s6t")
 
 [node name="Slots" type="Control" parent="."]
 layout_mode = 1
@@ -216,27 +227,23 @@ offset_right = 200.0
 offset_bottom = 200.0
 
 [node name="Slot2" parent="Slots" instance=ExtResource("2_bihf2")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 240.0
-offset_top = 40.0
 offset_right = 440.0
-offset_bottom = 240.0
+offset_bottom = 200.0
 slot = 2
 
 [node name="Slot3" parent="Slots" instance=ExtResource("2_bihf2")]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 480.0
-offset_top = 40.0
 offset_right = 680.0
-offset_bottom = 240.0
+offset_bottom = 200.0
 slot = 3
 
 [node name="BottomButtons" type="HBoxContainer" parent="."]
