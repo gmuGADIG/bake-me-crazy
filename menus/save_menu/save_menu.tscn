@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://s6ok5pxmaod6"]
+[gd_scene load_steps=9 format=3 uid="uid://s6ok5pxmaod6"]
 
 [ext_resource type="Script" path="res://menus/save_menu/save_menu.gd" id="1_v5una"]
 [ext_resource type="PackedScene" uid="uid://bwhlnfpn8hjus" path="res://menus/save_menu/save_slot_ui.tscn" id="2_bihf2"]
+[ext_resource type="Texture2D" uid="uid://c1t2fl5ginevd" path="res://menus/save_menu/save_menu.png" id="2_dqne5"]
+[ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="3_dgtsx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_342mj"]
-bg_color = Color(0.88, 0.740667, 0.66, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color(0.71631, 0.525071, 0.411331, 1)
+border_color = Color(1, 0.85098, 0.733333, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -135,6 +136,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v5una")
 
+[node name="ClipBg" type="ColorRect" parent="."]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32, 0.24256, 0.2144, 1)
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="ClipBg"]
+texture_repeat = 2
+layout_mode = 0
+offset_left = -2817.0
+offset_top = -1618.0
+offset_right = 3985.0
+offset_bottom = 2283.0
+texture = ExtResource("2_dqne5")
+stretch_mode = 1
+script = ExtResource("3_dgtsx")
+scroll_position = Vector2(500, -250)
+scroll_time = 15.0
+
+[node name="ClipBg2" type="ColorRect" parent="ClipBg"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.365)
+metadata/_edit_lock_ = true
+
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
 offset_left = 75.0
@@ -163,10 +199,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 200.0
 offset_bottom = 200.0
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
 
 [node name="Slot2" parent="Slots" instance=ExtResource("2_bihf2")]
 layout_mode = 2
@@ -176,10 +208,6 @@ anchor_bottom = 0.0
 offset_left = 240.0
 offset_right = 440.0
 offset_bottom = 200.0
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
 slot = 2
 
 [node name="Slot3" parent="Slots" instance=ExtResource("2_bihf2")]
@@ -190,10 +218,6 @@ anchor_bottom = 0.0
 offset_left = 480.0
 offset_right = 680.0
 offset_bottom = 200.0
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
-theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
 slot = 3
 
 [node name="BottomButtons" type="HBoxContainer" parent="."]
