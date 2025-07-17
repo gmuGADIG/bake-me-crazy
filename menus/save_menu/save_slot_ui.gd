@@ -21,25 +21,37 @@ func get_time_number(number: float, what: StringName) -> String:
 		return str(actual, " ", what, "s")
 	
 func get_time_string(seconds: float) -> String:
-	if seconds > 60:
-		var minutes = seconds / 60
-		if minutes > 60:
-			var hours = minutes / 60
-			if hours > 24:
-				var days = hours / 24
-				if days > 7:
-					var weeks = days / 7
-					if weeks > 4:
-						var months = weeks / 4
-						if months > 12:
-							var years = months / 12
-							return get_time_number(years, "year")
-						return get_time_number(months, "month")
-					return get_time_number(weeks, "week")
-				return get_time_number(days, "day")
-			return get_time_number(hours, "hour")
+	if seconds < 60:
+		return get_time_number(seconds, "second")
+		
+	var minutes = seconds / 60
+	if minutes < 60:
 		return get_time_number(minutes, "minute")
-	return get_time_number(seconds, "second")
+		
+	var hours = minutes / 60
+	if hours < 24:
+		return get_time_number(hours, "hour")
+		
+	var days = hours / 24
+	if days < 7:
+		return get_time_number(days, "day")
+		
+	var weeks = days / 7
+	if weeks < 4:
+		return get_time_number(weeks, "week")
+		
+	var months = weeks / 4
+	if months < 12:
+		return get_time_number(months, "month")
+		
+	var years = months / 12
+	return get_time_number(years, "year")
+	
+	
+	
+			
+		
+	
 
 ## Provide just_saved_save if we just saved this save slot. In that case,
 ## update_info() will read the current information from that save. Otherwise,
