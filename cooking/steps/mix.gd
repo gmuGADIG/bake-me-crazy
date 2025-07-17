@@ -1,5 +1,4 @@
 extends FoodStep
-class_name Mix
 
 var mixes : Array[Area2D] = [$FirstMix, $SecondMix, $ThirdMix, $FourthMix]
 
