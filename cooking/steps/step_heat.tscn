@@ -1,8 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs2tul8n3xvnn"]
+[gd_scene load_steps=12 format=3 uid="uid://cs2tul8n3xvnn"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_25exc"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="2_uj0nr"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="3_4xmly"]
+[ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="4_lam0x"]
+[ext_resource type="Texture2D" uid="uid://5hlkhhtkgxsm" path="res://cooking/art/Fire Spritesheet.png" id="4_m17or"]
+[ext_resource type="Texture2D" uid="uid://tckmwkoekjq0" path="res://cooking/cooking_art/Minigame_Saucepan.png" id="5_myo54"]
+[ext_resource type="Script" path="res://cooking/steps/bake_animation.gd" id="5_tvtvx"]
+
+[sub_resource type="Animation" id="Animation_w3i8t"]
+resource_name = "Idle"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0133334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_wkjpk"]
+resource_name = "Moving"
+length = 0.35
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03, 0.13166, 0.247136),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_buda4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb5p8"]
+_data = {
+"Idle": SubResource("Animation_w3i8t"),
+"Moving": SubResource("Animation_wkjpk"),
+"RESET": SubResource("Animation_buda4")
+}
 
 [node name="StepHeat" instance=ExtResource("1_25exc")]
 anchors_preset = -1
@@ -58,3 +117,27 @@ theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 32
 text = "Time left: 15.00s"
+
+[node name="CounterRed" type="Sprite2D" parent="." index="2"]
+show_behind_parent = true
+position = Vector2(579, 326.5)
+scale = Vector2(0.501736, 0.502315)
+texture = ExtResource("4_lam0x")
+
+[node name="MinigameSaucepan" type="Sprite2D" parent="." index="3"]
+position = Vector2(746.25, 333.75)
+scale = Vector2(3.11914, 2.50195)
+texture = ExtResource("5_myo54")
+
+[node name="Fire" type="Sprite2D" parent="." index="4"]
+position = Vector2(593, 313)
+scale = Vector2(0.660156, 0.619141)
+texture = ExtResource("4_m17or")
+hframes = 3
+region_rect = Rect2(2.64081, 0.974304, 496.923, 510.564)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fire" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_hb5p8")
+}
+script = ExtResource("5_tvtvx")
