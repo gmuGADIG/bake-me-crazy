@@ -16,6 +16,12 @@ extends Control
 var currently_selected_slot: SaveSlotUI
 var _tween: Tween ## current tween, used for raising the bottom buttons
 
+func _ready() -> void:
+	var in_tween := create_tween()
+	position = Vector2(1193, 709)
+	#in_tween.tween_property(self, "position", Vector2(629, -79), 0.2).set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_LINEAR)
+	in_tween.tween_property(self, "position", Vector2.ZERO,      0.3).set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_LINEAR)
+
 func _process(delta: float) -> void:
 	## go back with the back buttton
 	if Input.is_action_just_pressed("pause"):
