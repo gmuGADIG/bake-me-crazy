@@ -46,12 +46,6 @@ func get_time_string(seconds: float) -> String:
 		
 	var years = months / 12
 	return get_time_number(years, "year")
-	
-	
-	
-			
-		
-	
 
 ## Provide just_saved_save if we just saved this save slot. In that case,
 ## update_info() will read the current information from that save. Otherwise,
