@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://ce5x1pc1d4rwg"]
+[gd_scene load_steps=6 format=3 uid="uid://ce5x1pc1d4rwg"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_x41ly"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_42w5n"]
-[ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="4_2ybfe"]
+[ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="3_aur6a"]
+[ext_resource type="PackedScene" uid="uid://dow8da7vvfan3" path="res://cooking/steps/temper/temper.tscn" id="4_f7asw"]
+[ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="5_4u234"]
 
 [node name="Brownie" instance=ExtResource("1_x41ly")]
 
 [node name="PourFlour" parent="." index="2" instance=ExtResource("3_42w5n")]
 layout_mode = 1
 
-[node name="shape_step" parent="." index="3" instance=ExtResource("4_2ybfe")]
+[node name="StepHeat" parent="." index="3" instance=ExtResource("3_aur6a")]
+layout_mode = 1
+
+[node name="Temper" parent="." index="4" instance=ExtResource("4_f7asw")]
+layout_mode = 1
+
+[node name="Mix" parent="." index="5" instance=ExtResource("5_4u234")]
+layout_mode = 1
