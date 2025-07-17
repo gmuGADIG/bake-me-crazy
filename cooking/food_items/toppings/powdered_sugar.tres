@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://dewve36rr1ikf"]
+
+[ext_resource type="Texture2D" uid="uid://dxw36nl6uaf3f" path="res://items/ingredients/art/Powdered Sugar shaker.png" id="1_xkuch"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_jc2mr"]
+
+[resource]
+script = ExtResource("2_jc2mr")
+type = 12
+display_name = "Powdered Sugar"
+image = ExtResource("1_xkuch")

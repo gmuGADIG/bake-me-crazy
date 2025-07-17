@@ -164,6 +164,10 @@ func drizzle(delta : float) -> void:
 		drizzle_started.emit()
 		var new_particle : GPUParticles2D = drizzle_particle.instantiate()
 		$FinisherSprite.add_child(new_particle)
+		print(selected_flavor.display_name)
+		if (selected_flavor.display_name == "Chocolate Topping"):
+			print("hello")
+			new_particle.process_material.color = Color.SIENNA
 		new_particle.emitting = true
 		
 		if above_food():
@@ -173,6 +177,8 @@ func drizzle(delta : float) -> void:
 			##Visible Sauce application feedback
 			$FoodItem/FoodItemSprite/Sauce.visible = true
 			$FoodItem/FoodItemSprite/Sauce.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
+			if (selected_flavor.display_name == "Chocolate Topping"):
+				$FoodItem/FoodItemSprite/Sauce.modulate = Color.SIENNA
 	pass
 
 func shaker(delta : float) -> void:
@@ -270,11 +276,11 @@ func _on_flavor_selected(flavor_index: int) -> void:
 	
 func select_finisher_type() -> Finisher:
 	match selected_flavor.type:
-		FoodItem.Type.BLUEBERRY_SAUCE:
+		FoodItem.Type.CHOCOLATE_TOPPING:
 			return Finisher.DRIZZLE
-		FoodItem.Type.KETCHUP:
+		FoodItem.Type.CHERRY_TOPPING:
 			return Finisher.DRIZZLE
-		FoodItem.Type.PESTO:
+		FoodItem.Type.POWDERED_SUGAR:
 			return Finisher.SHAKER
 		_:
 			return -1
