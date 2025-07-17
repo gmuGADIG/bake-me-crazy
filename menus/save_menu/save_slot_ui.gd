@@ -12,6 +12,34 @@ var save_resource: SaveTemplate
 func _ready() -> void:
 	super._ready()
 	update_info()
+	
+func get_time_number(number: float, what: StringName) -> String:
+	var actual = int(round(number))
+	if actual == 1:
+		return str(actual, " ", what)
+	else:
+		return str(actual, " ", what, "s")
+	
+func get_time_string(seconds: float) -> String:
+	if seconds > 60:
+		var minutes = seconds / 60
+		if minutes > 60:
+			var hours = minutes / 60
+			if hours > 24:
+				var days = hours / 24
+				if days > 7:
+					var weeks = days / 7
+					if weeks > 4:
+						var months = weeks / 4
+						if months > 12:
+							var years = months / 12
+							return get_time_number(years, "year")
+						return get_time_number(months, "month")
+					return get_time_number(weeks, "week")
+				return get_time_number(days, "day")
+			return get_time_number(hours, "hour")
+		return get_time_number(minutes, "minute")
+	return get_time_number(seconds, "second")
 
 ## Provide just_saved_save if we just saved this save slot. In that case,
 ## update_info() will read the current information from that save. Otherwise,
@@ -34,8 +62,23 @@ func update_info(just_saved_save: SaveTemplate = null) -> void:
 	if save_exists:
 		empty.visible = false
 		slot_desc.visible = true
-		slot_desc.text = "Day %s" % save_resource.day
-		slot_desc.text = save_resource.get_day_phase_string()
+		
+		var modified_time := FileAccess.get_modified_time(save_path)
+		var modified_time_string := Time.get_datetime_string_from_unix_time(modified_time)
+		
+		var current_time := Time.get_unix_time_from_system()
+		var dif := current_time - modified_time
+		
+		print(current_time, " ", modified_time, " ", dif)
+		
+		var dict := Time.get_datetime_dict_from_unix_time(dif)
+		var time: String = get_time_string(abs(dif))
+		if dif > 0:
+			time += " ago"
+		else:
+			time += " in the future"
+		
+		slot_desc.text = "Day %s\n%s\n%s" % [save_resource.day, save_resource.get_day_phase_string(), time]
 		#self_modulate.a = 1.0
 		#self_modulate = Color(1, 1, 1, 1)
 		
