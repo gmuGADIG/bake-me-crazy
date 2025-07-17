@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dow8da7vvfan3"]
+[gd_scene load_steps=10 format=3 uid="uid://dow8da7vvfan3"]
 
 [ext_resource type="PackedScene" uid="uid://cs2tul8n3xvnn" path="res://cooking/steps/step_heat.tscn" id="1_h0ij1"]
 [ext_resource type="Script" path="res://cooking/steps/temper/temper.gd" id="2_t3dct"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="4_uexeg"]
 [ext_resource type="Script" path="res://cooking/steps/temper/egg_stream.gd" id="5_xuopf"]
 [ext_resource type="PackedScene" uid="uid://bxhtfkrkaquj1" path="res://cooking/steps/temper/egg_line.tscn" id="6_p02lj"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="9_vchf7"]
 
 [node name="Temper" instance=ExtResource("1_h0ij1")]
 script = ExtResource("2_t3dct")
@@ -50,3 +51,15 @@ offset = Vector2(24.875, -86.78)
 script = ExtResource("5_xuopf")
 egg_line = ExtResource("6_p02lj")
 egg_drop_speed = 400.0
+
+[node name="InstructionsPanel" parent="." index="7" instance=ExtResource("9_vchf7")]
+z_index = 1
+offset_left = 445.0
+offset_top = 362.0
+offset_right = 445.0
+offset_bottom = 362.0
+scale = Vector2(0.609574, 0.609574)
+minigame_title = "Temper"
+instructions = "Keep the meter in the green!
+
+Click and move the mouse back and forth to raise the meter."
