@@ -5,7 +5,7 @@ class_name SaveSlotUI extends ButtonHover
 @onready var save_path = "user://save_v2_%s.tres" % slot
 @onready var slot_name: Label = %SlotName
 @onready var slot_desc: Label = %SlotDesc
-@onready var empty: Label = %Empty
+@onready var empty: Panel = %EmptyPanel
 
 var save_resource: SaveTemplate
 
@@ -35,8 +35,15 @@ func update_info(just_saved_save: SaveTemplate = null) -> void:
 		empty.visible = false
 		slot_desc.visible = true
 		slot_desc.text = "Day %s" % save_resource.day
-		self_modulate.a = 1.0
+		#self_modulate.a = 1.0
+		#self_modulate = Color(1, 1, 1, 1)
+		
+		original_scale = Vector2(1.0, 1.0)
 	else:
 		empty.visible = true
 		slot_desc.visible = false
-		self_modulate.a = 0.5 # `modulate` is controlled by the entry animation; use `self_modulate` instead
+		#self_modulate = Color(0.9, 0.9, 0.9, 1.0)
+		
+		# Set button_hover base scale
+		original_scale = Vector2(0.97, 0.97)
+		#self_modulate.a = 0.5 # `modulate` is controlled by the entry animation; use `self_modulate` instead

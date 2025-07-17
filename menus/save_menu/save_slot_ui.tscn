@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwhlnfpn8hjus"]
+[gd_scene load_steps=10 format=3 uid="uid://bwhlnfpn8hjus"]
 
 [ext_resource type="Script" path="res://menus/save_menu/save_slot_ui.gd" id="1_64cum"]
 
@@ -59,6 +59,19 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_offset = Vector2(4, 4)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hac"]
+bg_color = Color(0.205, 0, 0.036, 0.521)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_j53g5"]
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 11
+shadow_color = Color(0, 0, 0, 0.245)
+
 [sub_resource type="LabelSettings" id="LabelSettings_s7ft1"]
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
@@ -66,12 +79,6 @@ shadow_size = 11
 shadow_color = Color(0, 0, 0, 0.245)
 
 [sub_resource type="LabelSettings" id="LabelSettings_oepfd"]
-outline_size = 6
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 11
-shadow_color = Color(0, 0, 0, 0.245)
-
-[sub_resource type="LabelSettings" id="LabelSettings_j53g5"]
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 11
@@ -94,6 +101,41 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_w4occ")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_elhtb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
 script = ExtResource("1_64cum")
+
+[node name="EmptyPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = -14.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hac")
+
+[node name="Empty" type="Label" parent="EmptyPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -12.0
+offset_right = 30.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "EMPTY"
+label_settings = SubResource("LabelSettings_j53g5")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SlotName" type="Label" parent="."]
 unique_name_in_owner = true
@@ -124,20 +166,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "12 Minutes Ago
 3rd Morning"
 label_settings = SubResource("LabelSettings_oepfd")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Empty" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "EMPTY"
-label_settings = SubResource("LabelSettings_j53g5")
 horizontal_alignment = 1
 vertical_alignment = 1
