@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://s6ok5pxmaod6"]
+[gd_scene load_steps=12 format=3 uid="uid://s6ok5pxmaod6"]
 
 [ext_resource type="Script" path="res://menus/save_menu/save_menu.gd" id="1_v5una"]
 [ext_resource type="PackedScene" uid="uid://bwhlnfpn8hjus" path="res://menus/save_menu/save_slot_ui.tscn" id="2_bihf2"]
 [ext_resource type="Texture2D" uid="uid://c1t2fl5ginevd" path="res://menus/save_menu/save_menu.png" id="2_dqne5"]
 [ext_resource type="Script" path="res://menus/start_menu/scrolling_bg.gd" id="3_dgtsx"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="5_21s6t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_28mvr"]
 outline_size = 6
@@ -215,23 +216,27 @@ offset_right = 200.0
 offset_bottom = 200.0
 
 [node name="Slot2" parent="Slots" instance=ExtResource("2_bihf2")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 240.0
+offset_top = 40.0
 offset_right = 440.0
-offset_bottom = 200.0
+offset_bottom = 240.0
 slot = 2
 
 [node name="Slot3" parent="Slots" instance=ExtResource("2_bihf2")]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 480.0
+offset_top = 40.0
 offset_right = 680.0
-offset_bottom = 200.0
+offset_bottom = 240.0
 slot = 3
 
 [node name="BottomButtons" type="HBoxContainer" parent="."]
@@ -240,8 +245,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -143.0
-offset_bottom = 2.0
+offset_top = -155.0
+offset_bottom = -95.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 50
@@ -253,9 +258,18 @@ layout_mode = 2
 text = "Select a Save"
 label_settings = SubResource("LabelSettings_28mvr")
 
-[node name="LoadSaveButton" type="Button" parent="BottomButtons"]
+[node name="LoadSaveBox" type="Control" parent="BottomButtons"]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
+
+[node name="LoadSaveButton" type="Button" parent="BottomButtons/LoadSaveBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 60.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
@@ -263,8 +277,10 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
+script = ExtResource("5_21s6t")
 
-[node name="LoadSaveLabel" type="Label" parent="BottomButtons/LoadSaveButton"]
+[node name="LoadSaveLabel" type="Label" parent="BottomButtons/LoadSaveBox/LoadSaveButton"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -283,9 +299,18 @@ label_settings = SubResource("LabelSettings_ncjyp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WriteSaveButton" type="Button" parent="BottomButtons"]
+[node name="WriteSaveBox" type="Control" parent="BottomButtons"]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(160, 60)
 layout_mode = 2
+
+[node name="WriteSaveButton" type="Button" parent="BottomButtons/WriteSaveBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 60.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
@@ -293,8 +318,10 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_342mj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_342mj")
+script = ExtResource("5_21s6t")
 
-[node name="WriteSaveLabel" type="Label" parent="BottomButtons/WriteSaveButton"]
+[node name="WriteSaveLabel" type="Label" parent="BottomButtons/WriteSaveBox/WriteSaveButton"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -320,5 +347,5 @@ libraries = {
 autoplay = "enter"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="BottomButtons/LoadSaveButton" to="." method="_on_load_save_button_pressed"]
-[connection signal="pressed" from="BottomButtons/WriteSaveButton" to="." method="_on_write_save_button_pressed"]
+[connection signal="pressed" from="BottomButtons/LoadSaveBox/LoadSaveButton" to="." method="_on_load_save_button_pressed"]
+[connection signal="pressed" from="BottomButtons/WriteSaveBox/WriteSaveButton" to="." method="_on_write_save_button_pressed"]

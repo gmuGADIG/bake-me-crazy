@@ -4,11 +4,14 @@ extends Control
 
 @onready var bottom_buttons: HBoxContainer = $BottomButtons
 @onready var unselected_placeholder: Label = %UnselectedPlaceholder
-@onready var load_save_button: Button = $BottomButtons/LoadSaveButton
-@onready var write_save_button: Button = $BottomButtons/WriteSaveButton
+@onready var load_save_button: Button = %LoadSaveButton
+@onready var write_save_button: Button = %WriteSaveButton
 
-@onready var load_save_label = $BottomButtons/LoadSaveButton/LoadSaveLabel
-@onready var write_save_label = $BottomButtons/WriteSaveButton/WriteSaveLabel
+@onready var load_save_box: Control = %LoadSaveBox
+@onready var write_save_box: Control = %WriteSaveBox
+
+@onready var load_save_label = %LoadSaveLabel
+@onready var write_save_label = %WriteSaveLabel
 
 var currently_selected_slot: SaveSlotUI
 var _tween: Tween ## current tween, used for raising the bottom buttons
@@ -37,22 +40,22 @@ func _process(delta: float) -> void:
 func update_bottom_buttons() -> void:
 	if currently_selected_slot == null:
 		unselected_placeholder.visible = true
-		load_save_button.visible = false
-		write_save_button.visible = false
+		load_save_box.visible = false
+		write_save_box.visible = false
 	else:
 		unselected_placeholder.visible = false
-		write_save_button.visible = true
+		write_save_box.visible = true
 		
 		if currently_selected_slot.save_resource == null:
-			load_save_button.visible = false
+			load_save_box.visible = false
 		else:
-			load_save_button.visible = true
+			load_save_box.visible = true
 			load_save_label.text = "Load Slot %s" % currently_selected_slot.slot
 		
 		if not can_save:
-			write_save_button.visible = false
+			write_save_box.visible = false
 		else:
-			write_save_button.visible = true
+			write_save_box.visible = true
 			write_save_label.text = "Save to Slot %s" % currently_selected_slot.slot
 
 func _on_back_button_pressed() -> void:
