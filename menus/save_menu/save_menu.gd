@@ -72,6 +72,7 @@ func _on_write_save_button_pressed() -> void:
 		print("[save_system] ", '"', item._data_resource_path, '"')
 	print("[save_system] ", PlayerData.data.dialogic_blob)
 	var result = ResourceSaver.save(PlayerData.data, currently_selected_slot.save_path)
+	print("save to path: ", currently_selected_slot.save_path)
 	assert(result == 0)
 	
-	currently_selected_slot.update_info()
+	currently_selected_slot.update_info(PlayerData.data)

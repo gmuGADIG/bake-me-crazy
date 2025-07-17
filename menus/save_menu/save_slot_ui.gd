@@ -13,9 +13,22 @@ func _ready() -> void:
 	super._ready()
 	update_info()
 
-func update_info() -> void:
+## Provide just_saved_save if we just saved this save slot. In that case,
+## update_info() will read the current information from that save. Otherwise,
+## it will read the data from the filesystem.
+##
+## Note that just_saved_save will have duplicate(true) called on it, so that
+## we get a deep copy, like we just saved-loaded.
+func update_info(just_saved_save: SaveTemplate = null) -> void:
 	var save_exists = ResourceLoader.exists(save_path)
-	if save_exists: save_resource = ResourceLoader.load(save_path)
+	if just_saved_save != null:
+		save_resource = just_saved_save.duplicate(true)
+		await get_tree().process_frame
+		# Reload the save from the file system ASAP, so that we get a true
+		# deep copy rather than a fake one.
+		save_resource = ResourceLoader.load(save_path)
+		
+	elif save_exists: save_resource = ResourceLoader.load(save_path)
 
 	slot_name.text = "Slot %s" % slot
 	if save_exists:
