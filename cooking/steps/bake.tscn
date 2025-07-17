@@ -1,15 +1,85 @@
-[gd_scene load_steps=15 format=3 uid="uid://j4jq3njqgncy"]
+[gd_scene load_steps=15 format=3 uid="uid://c704qe70wauha"]
 
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_d4q1h"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="1_rwpaa"]
-[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="2_75uel"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="2_vbpxp"]
-[ext_resource type="Texture2D" uid="uid://5hlkhhtkgxsm" path="res://cooking/art/Fire Spritesheet.png" id="4_dc0px"]
+[ext_resource type="Texture2D" uid="uid://canki8310peh4" path="res://cooking/art/oven_spritesheet.png" id="3_p1uax"]
 [ext_resource type="Texture2D" uid="uid://b1fobtmp8858k" path="res://cooking/art/bellow_spritesheet.png" id="4_r4c5m"]
 [ext_resource type="Script" path="res://cooking/steps/bake_animation.gd" id="5_4se6c"]
 
+[sub_resource type="Animation" id="Animation_vbyy3"]
+resource_name = "Idle"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cgaq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2fttp"]
+resource_name = "Moving"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 1), Vector2i(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gn5bo"]
+_data = {
+"Idle": SubResource("Animation_vbyy3"),
+"Moving": SubResource("Animation_2fttp"),
+"RESET": SubResource("Animation_cgaq3")
+}
+
+[sub_resource type="Animation" id="Animation_uy3f8"]
+resource_name = "Idle"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_m17nx"]
 resource_name = "Moving"
-length = 0.5
+length = 0.42
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,7 +88,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.123197, 0.213004, 0.309933, 0.418315),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 3, 4, 2]
@@ -39,22 +109,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_uy3f8"]
-resource_name = "Idle"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ug2fd"]
 _data = {
 "Idle": SubResource("Animation_uy3f8"),
@@ -62,76 +116,25 @@ _data = {
 "RESET": SubResource("Animation_iv8gq")
 }
 
-[sub_resource type="Animation" id="Animation_wkjpk"]
-resource_name = "Moving"
-length = 0.35
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.03, 0.13166, 0.247136),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-
-[sub_resource type="Animation" id="Animation_buda4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_w3i8t"]
-resource_name = "Idle"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0133334),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb5p8"]
-_data = {
-"Idle": SubResource("Animation_w3i8t"),
-"Moving": SubResource("Animation_wkjpk"),
-"RESET": SubResource("Animation_buda4")
-}
-
-[node name="Bake" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Bake" instance=ExtResource("1_d4q1h")]
 script = ExtResource("1_rwpaa")
+green_range = 0.5
+heat_time = 15.0
 
-[node name="Blurred-bg" type="Sprite2D" parent="."]
-position = Vector2(-377, -238)
-scale = Vector2(1.66269, 1.20309)
-texture = ExtResource("2_75uel")
+[node name="Oven" type="Sprite2D" parent="." index="0"]
+position = Vector2(579, 325)
+scale = Vector2(0.600728, 0.598796)
+texture = ExtResource("3_p1uax")
+hframes = 2
+vframes = 3
 
-[node name="FullBar" type="ColorRect" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Oven" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_gn5bo")
+}
+script = ExtResource("5_4se6c")
+
+[node name="FullBar" type="ColorRect" parent="." index="1"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -142,7 +145,7 @@ offset_bottom = -23.0
 grow_vertical = 2
 color = Color(1, 0.0986208, 0.387233, 1)
 
-[node name="Arrow" type="TextureRect" parent="FullBar"]
+[node name="Arrow" type="TextureRect" parent="FullBar" index="0"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.598
@@ -153,7 +156,7 @@ offset_right = 168.0
 offset_bottom = -7.508
 texture = ExtResource("2_vbpxp")
 
-[node name="GreenBar" type="ColorRect" parent="FullBar"]
+[node name="GreenBar" type="ColorRect" parent="FullBar" index="1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -162,7 +165,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.881706, 0.31818, 1)
 
-[node name="HeatTimeLabel" type="Label" parent="."]
+[node name="HeatTimeLabel" type="Label" parent="." index="2"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -180,27 +183,14 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 32
 text = "Time left: 15.00s"
 
-[node name="Bellow" type="Sprite2D" parent="."]
-position = Vector2(579, 564)
+[node name="Bellow" type="Sprite2D" parent="." index="3"]
+position = Vector2(522, 569)
 texture = ExtResource("4_r4c5m")
 hframes = 3
 vframes = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Bellow"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bellow" index="0"]
 libraries = {
 "": SubResource("AnimationLibrary_ug2fd")
-}
-script = ExtResource("5_4se6c")
-
-[node name="Fire" type="Sprite2D" parent="."]
-position = Vector2(871, 338)
-scale = Vector2(0.660156, 0.619141)
-texture = ExtResource("4_dc0px")
-hframes = 3
-region_rect = Rect2(2.64081, 0.974304, 496.923, 510.564)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fire"]
-libraries = {
-"": SubResource("AnimationLibrary_hb5p8")
 }
 script = ExtResource("5_4se6c")
