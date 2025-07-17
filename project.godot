@@ -78,10 +78,10 @@ variables={
 "date": "",
 "dateRP": 0,
 "hearts": {
-"salty": 2,
-"savory": 3,
-"spicy": 4,
-"sweet": 5
+"salty": 0,
+"savory": 0,
+"spicy": 0,
+"sweet": 0
 },
 "read_only": {
 "gift_quality": 0,
