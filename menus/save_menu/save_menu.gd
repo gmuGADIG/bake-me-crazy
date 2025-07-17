@@ -16,13 +16,18 @@ extends Control
 var currently_selected_slot: SaveSlotUI
 var _tween: Tween ## current tween, used for raising the bottom buttons
 
+var _currently_leaving: bool = false
+
 func _ready() -> void:
 	var in_tween := create_tween()
 	position = Vector2(1193, 709)
 	#in_tween.tween_property(self, "position", Vector2(629, -79), 0.2).set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_LINEAR)
-	in_tween.tween_property(self, "position", Vector2.ZERO,      0.3).set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_LINEAR)
+	in_tween.tween_property(self, "position", Vector2.ZERO, 0.3).set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_LINEAR)
 
 func _process(delta: float) -> void:
+	if _currently_leaving:
+		return
+	
 	## go back with the back buttton
 	if Input.is_action_just_pressed("pause"):
 		_on_back_button_pressed()
@@ -65,9 +70,15 @@ func update_bottom_buttons() -> void:
 			write_save_label.text = "Save to Slot %s" % currently_selected_slot.slot
 
 func _on_back_button_pressed() -> void:
-	queue_free()
+	_currently_leaving = true
+	var out_tween := create_tween()
+	out_tween.tween_property(self, "position", Vector2(-1236, -597), 0.3).set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_LINEAR)
+	out_tween.tween_callback(self.queue_free)
 
 func _on_load_save_button_pressed() -> void:
+	if _currently_leaving:
+		return
+	
 	print("[save_system] Loading!")
 	var save_resource = currently_selected_slot.save_resource
 	print("[save_system] ", save_resource.inventory)
@@ -76,6 +87,9 @@ func _on_load_save_button_pressed() -> void:
 	PlayerData.load_file(save_resource)
 
 func _on_write_save_button_pressed() -> void:
+	if _currently_leaving:
+		return
+	
 	PlayerData.data.scene_path = get_tree().current_scene.scene_file_path
 	PlayerData.data.dialogic_blob = Dialogic.get_full_state()
 	print("[save_system] Saving!")
