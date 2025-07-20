@@ -6,9 +6,3 @@
 
 [node name="FinishButton" parent="BakingText" index="1"]
 visible = false
-
-[node name="BakeLeft" parent="." index="5"]
-visible = false
-
-[node name="BakeRight" parent="." index="8"]
-visible = false

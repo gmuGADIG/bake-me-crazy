@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 			var dist := absf($dough.scale.y - 3)
 			if (dist < 0.5): dist = 0
 			var score := remap(dist, 0, 3, 3, 0)
+			if score < 1.2: return
 			print(score)
 			finished.emit(clampf(score, 0, 3))
 			done = true

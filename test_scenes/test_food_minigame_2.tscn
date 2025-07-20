@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://v5axvuv4jvc8"]
+
+[ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_8oopm"]
+[ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="2_cec86"]
+[ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="3_oskdu"]
+[ext_resource type="PackedScene" uid="uid://1kn7jln1tm7y" path="res://cooking/steps/roll_out.tscn" id="4_d0eff"]
+[ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="5_whnno"]
+
+[node name="FoodMinigame2" instance=ExtResource("1_8oopm")]
+
+[node name="Kneading" parent="." index="2" instance=ExtResource("2_cec86")]
+layout_mode = 1
+
+[node name="Mix" parent="." index="3" instance=ExtResource("3_oskdu")]
+layout_mode = 1
+
+[node name="RollOut" parent="." index="4" instance=ExtResource("4_d0eff")]
+layout_mode = 1
+
+[node name="shape_step" parent="." index="5" instance=ExtResource("5_whnno")]

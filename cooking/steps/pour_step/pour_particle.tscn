@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dds6hnjwnl5nm"]
+
+[ext_resource type="Script" path="res://cooking/steps/pour_step/pour_particle.gd" id="1_coge7"]
+[ext_resource type="Texture2D" uid="uid://bdo2jhu80yn6r" path="res://cooking/steps/pour_step/wobbly_circle_2_no_shadow.png" id="1_ivx3h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oesk4"]
+radius = 24.1868
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["PourParticle"]]
+collision_mask = 0
+script = ExtResource("1_coge7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0.854902, 0.427451, 1)
+scale = Vector2(0.210938, 0.210938)
+texture = ExtResource("1_ivx3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_oesk4")

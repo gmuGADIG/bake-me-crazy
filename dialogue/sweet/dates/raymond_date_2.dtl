@@ -1,0 +1,63 @@
+[background arg="res://dialogue/date_backgrounds/date_carnival.png" fade="0.0"]
+do MainMusicPlayer.transition_to_song_by_filename("carnival_theme.tres")
+join raymond (Excited) center
+raymond (Excited): Hey! Glad that you could make it!
+raymond (Happy): I made sure to clear out all of my projects for school for today. I even picked up an earlier shift at the planetarium too! Although, that was a quick way to learn that I’m not much of a morning person…[n]Let’s start making our way inside! There’s this one place we have to see first.
+You both enter the carnival. You both passed many of the typical All-American concoctions that you remember seeing when you were younger.[n]Just as you and Ray neared the end of the aisle, Ray stopped by a stand that seemed to only sell one thing\: Funnel Cakes.
+raymond: YES! They’re still selling here! This right here is one of the best carnival food stands on the planet, you HAVE to try it out!
+His excitement overtakes him as he immediately goes to the stand’s seller to order a funnel cake. In no time at all, the seller whips up a full plate of funnel cake and hands it to Ray.
+raymond: Ah, it looks just as good as I remember it! They’ve been refining and passing down their original recipe for over 50 years! After I first tried it a few years ago I went down a HUGE rabbit hole trying to see if I could figure out their secrets. *Sigh*, seems like they keep their lips sealed…Well, enough about the food, you should try some!\
+- "Sure, it looks tasty!"
+set {dateRP} += 5
+raymond: You’re gonna love it, I promise.
+With a bit of hesitation, you ate a small portion of the cake. The flavors struck your taste buds immediately. The gentle sweetness of the powdered sugar. The crisp yet soft texture of the fried batter. The strawberry jam that was layered atop it all, popped out with a bright and tart complementing flavor. Even while the food was composed of those three simple components, each of them were somehow elevated to a point of mastery. It was, in no stretch of the word, the perfect funnel cake.
+raymond (Happy): See, isn’t it wonderful? The only bad part about it is how addictive it is.[n]Honestly, I have trouble limiting myself to just one of these, but I try my best to resist the temptation.
+- "No thanks, carnival food is too junky."
+	set {dateRP} -= 10
+	raymond (Pensive): Oh...
+	raymond (Neutral): Well that’s fine, I’ll just have the rest to myself then! Haha...
+	Despite his claim, he was very slow to eat the rest. Odd.
+You both walk past the food stands and into newer areas of the carnival. You both ended up making way into the aisle of carnival games. Suddenly, Ray perked up at the milk bottle toss game.
+raymond: Awww, that plushie is adorable! I don’t really play that many carnival games, though. I probably couldn’t win it if I tried.[n] Sigh...[n+] maybe another day.
+- Maybe I could give it a shot?
+- I’ve played games like these before…
+raymond: Really?! Maybe you could win that plushie for me! [n+]I’m rooting for you!
+Filled with fake confidence, you walk up to the game stand to play. With only one chance to win, you wind up your arm, hurl it forward, and…completely miss. You lost, embarrassingly.
+raymond (Pensive): Aw, man… It’s okay, I didn’t really need it that much…
+- You should give it a shot!
+	set {dateRP} += 10
+	raymond: Really?[n+] Well…I guess I can’t make a conclusion without experimenting first!
+	Filled with a much more genuine confidence than you, Ray steps up and pays for his shot at the game. Miraculously, he knocks down every milk bottle in one throw. You're dumbfounded.
+	raymond (Excited): Oh my gosh, I did it!
+	The gamemaster behind the stand begrudgingly took the plushie from its hook on the wall and gave it to Ray.
+	raymond (Happy): Yay! I gotta bring this little guy back home safely. Let’s start making our way out!
+- I shouldn't have wasted my money...
+	set {dateRP} -= 10
+	raymond (Pensive): Ah, you’re right, I probably shouldn’t have said anything, sorry.[n+]We should probably start making our way out of here anyway…
+You both walked past the rest of the carnival games, finding the exit. Near it, there was a photo booth that allowed guests to take a group picture to take home with them.
+raymond (Happy): Hey, looks like we can take a photo on our way out!
+You both walked up to get in line and after a short wait, it was time to take a picture. The camera operator prepared the shot, and the countdown began.
+raymond (Flustered): Oh, gosh, I don’t really know how to pose for these things, uhhh…
+The countdown was already nearing its end. You needed to think of something fast.
+- Throw up a peace sign.
+	set {dateRP} += 5
+	raymond (Happy): Good idea!
+	Ray copies your pose right before the picture is taken. The photo booth prints out two copies of the photo.
+	raymond (Excited): This is PERFECT! I’ll be sure to keep this in a safe spot back at home.
+- Wrap Ray into a hug.
+	set {dateRP} -= 10
+	raymond (Shocked): wait what-
+	The camera flashes. The photo brooth prints your picture...it looks extremely awkward.
+	raymond: Uh…y'know what, maybe we didn’t need to get a photo, that’s fine!
+	if {dateRP} <= -30:
+		jump Fail State
+You exit the carnival together.
+raymond (Excited): Man, that was so much fun! I’ll be sure to get my classwork done early more often if it means getting to spend more time with you![n+]I really appreciate you taking time away from the bakery, I know you’re quite a busy person, so it means a lot to see you today.
+raymond (Neutral): Anyways, I gotta start making my way back home. Hopefully I can see you sometime soon!
+You head home from your date with Raymond.
+[end_timeline]
+label Fail State
+raymond (Pensive): Well, that was certainly…something!
+raymond (Neutral): Has today been weird for you, as well? Maybe we should try again another time! Either way, I think I should start making my way back home. I have some work to do tomorrow.
+raymond (Happy): Sorry, I hope you get home safe!
+[end_timeline]

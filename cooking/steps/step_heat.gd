@@ -1,5 +1,4 @@
 extends FoodStep
-class_name StepHeat
 
 @onready var arrow := $FullBar/Arrow
 @onready var heat_time_label := $HeatTimeLabel
@@ -41,8 +40,8 @@ func start():
 func _process(delta: float) -> void:
 	heat -= delta * 0.25
 	
-	if Input.is_action_pressed("minigame_interact"):
-		heat += delta * 2.0
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		heat += delta
 		
 	heat = clamp(heat, -1.0, 1.0)
 	
