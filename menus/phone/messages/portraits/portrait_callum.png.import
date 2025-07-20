@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tvs2knwhrbdh"
-path="res://.godot/imported/portrait_pepper.png-323ce1557acabc7b39ab5af68a36c53e.ctex"
+uid="uid://daenfqa1t2mr4"
+path="res://.godot/imported/portrait_callum.png-5c98d4aef30c16df40e63f64caec3b9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/phone/portraits/portrait_pepper.png"
-dest_files=["res://.godot/imported/portrait_pepper.png-323ce1557acabc7b39ab5af68a36c53e.ctex"]
+source_file="res://menus/phone/messages/portraits/portrait_callum.png"
+dest_files=["res://.godot/imported/portrait_callum.png-5c98d4aef30c16df40e63f64caec3b9c.ctex"]
 
 [params]
 

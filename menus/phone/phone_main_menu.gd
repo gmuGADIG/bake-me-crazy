@@ -4,6 +4,9 @@ extends Control
 @onready var time: Label = $DayDisplay/Time
 @onready var days_left: Label = $DayDisplay/DaysLeft
 
+@onready var message_red_dot: TextureRect = %MessageRedDot
+@onready var red_dot_count: Label = %RedDotCount
+
 func _ready() -> void:
 	update_info()
 
@@ -25,3 +28,14 @@ func update_info() -> void:
 	
 	# money
 	money_count.text = "$%d" % PlayerData.data.money
+	
+	# messaging app red dot
+	var unreads = TextManager.total_unread_count()
+	if unreads > 0:
+		message_red_dot.visible = true
+		red_dot_count.text = str(unreads)
+	else:
+		message_red_dot.visible = false
+		red_dot_count.text = ""
+		
+	

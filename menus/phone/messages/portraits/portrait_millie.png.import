@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c81wdrdpsqjtl"
-path="res://.godot/imported/text_arrow.png-25cebc20fba4d1457c77d5ba36274fb1.ctex"
+uid="uid://bx72x1c4gxxch"
+path="res://.godot/imported/portrait_millie.png-183366e098af80158bf0f092fdf93b3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menus/phone/text_arrow.png"
-dest_files=["res://.godot/imported/text_arrow.png-25cebc20fba4d1457c77d5ba36274fb1.ctex"]
+source_file="res://menus/phone/messages/portraits/portrait_millie.png"
+dest_files=["res://.godot/imported/portrait_millie.png-183366e098af80158bf0f092fdf93b3c.ctex"]
 
 [params]
 

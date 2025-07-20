@@ -30,6 +30,7 @@ SFXDispatcher="*res://sfx/sfx_dispatcher.tscn"
 BreakNPCSystem="*res://dialogue/internal/code/break_npc/break_npc_system.tscn"
 DebugMenu="res://menus/debug_menu/debug_menu.tscn"
 Fullscreenizer="*res://misc/fullscreenizer.tscn"
+TextManager="*res://dialogue/internal/code/texting/text_manager.tscn"
 
 [dialogic]
 
@@ -59,6 +60,10 @@ directories/dtl_directory={
 "pepper_date_2": "res://dialogue/spicy/dates/pepper_date_2.dtl",
 "pepper_date_3": "res://dialogue/spicy/dates/pepper_date_3.dtl",
 "pepper_date_confession": "res://dialogue/spicy/dates/pepper_date_confession.dtl",
+"phone_test_1": "res://dialogue/testing/phone_test_1.dtl",
+"phone_test_2": "res://dialogue/testing/phone_test_2.dtl",
+"phone_test_3": "res://dialogue/testing/phone_test_3.dtl",
+"phone_test_4": "res://dialogue/testing/phone_test_4.dtl",
 "raymond_conversations": "res://dialogue/sweet/daily_interactions/conversations/raymond_conversations.dtl",
 "raymond_date_1": "res://dialogue/sweet/dates/raymond_date_1.dtl",
 "raymond_date_2": "res://dialogue/sweet/dates/raymond_date_2.dtl",

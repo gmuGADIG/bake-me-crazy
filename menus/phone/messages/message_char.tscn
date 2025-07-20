@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3hjgbyt4tc6"]
 
-[ext_resource type="Script" path="res://menus/phone/message_char.gd" id="1_vb112"]
-[ext_resource type="Texture2D" uid="uid://dcyteltvlp6yf" path="res://menus/phone/portraits/placeholder.png" id="2_rxtj8"]
-[ext_resource type="Texture2D" uid="uid://c81wdrdpsqjtl" path="res://menus/phone/text_arrow.png" id="3_2m5df"]
+[ext_resource type="Script" path="res://menus/phone/messages/message_char.gd" id="1_vb112"]
+[ext_resource type="Texture2D" uid="uid://dcyteltvlp6yf" path="res://menus/phone/messages/portraits/placeholder.png" id="2_rxtj8"]
+[ext_resource type="Texture2D" uid="uid://c81wdrdpsqjtl" path="res://menus/phone/messages/text_arrow.png" id="3_2m5df"]
 [ext_resource type="PackedScene" uid="uid://cwnhjhgmo3p32" path="res://menus/heart_display/hearts_display.tscn" id="4_bqxhe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcjri"]
@@ -21,13 +21,12 @@ anti_aliasing = false
 font_size = 24
 outline_size = 1
 
-[node name="MessageChar" type="Control"]
-layout_mode = 3
+[node name="MessageChar" type="Button"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -745.0
-offset_bottom = -557.0
+offset_right = -868.0
+offset_bottom = -571.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -42,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rcjri")
 
 [node name="FaceIcon" type="TextureRect" parent="."]
@@ -76,8 +76,38 @@ grow_vertical = 2
 text = "<char>"
 label_settings = SubResource("LabelSettings_sfibi")
 
-[node name="SendArrow" type="TextureRect" parent="."]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.372549)
+
+[node name="HeartsDisplay" parent="ColorRect" instance=ExtResource("4_bqxhe")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 6.0
+offset_top = 1.0
+offset_right = -6.0
+offset_bottom = -1.0
+mouse_filter = 2
+
+[node name="TextNodes" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SendArrow" type="TextureRect" parent="TextNodes"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -94,21 +124,22 @@ texture = ExtResource("3_2m5df")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0, 0, 0, 0.372549)
-
-[node name="HeartsDisplay" parent="ColorRect" instance=ExtResource("4_bqxhe")]
+[node name="UnreadText" type="RichTextLabel" parent="TextNodes"]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 6.0
-offset_top = 1.0
-offset_right = -6.0
-offset_bottom = -1.0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -42.5
+offset_right = -50.0
+offset_bottom = -18.5
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[right]<unreads>"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
