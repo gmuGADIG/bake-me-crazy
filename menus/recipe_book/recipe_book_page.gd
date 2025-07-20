@@ -10,6 +10,7 @@ func display_empty_page() -> void:
 	food_name.text = "???"
 	food_desc.text = "Unlock new recipes by getting to know people more!"
 	variants.text = ""
+	modulate.a = 1.0
 
 func display_recipe(recipe: FoodGroup, is_selected: bool) -> void:
 	modulate.a = 0.5 if is_selected else 1.0
