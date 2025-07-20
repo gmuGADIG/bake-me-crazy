@@ -42,22 +42,33 @@ directories/dch_directory={
 "pepper": "res://dialogue/spicy/pepper.dch",
 "raymond": "res://dialogue/sweet/raymond.dch",
 "salty": "res://dialogue/salty/salty.dch",
-"testing/testman1": "res://menus/testing/testman1.dch"
+"testman1": "res://menus/testing/testman1.dch"
 }
 directories/dtl_directory={
 "boss_lunch_break": "res://dialogue/boss/boss_lunch_break.dtl",
-"callum_date_1": "res://dialogue/salty/callum_date_1.dtl",
-"callum_date_1_dartballoons": "res://dialogue/salty/callum_date_1_dartballoons.dtl",
-"callum_date_1_failstate": "res://dialogue/salty/callum_date_1_failstate.dtl",
-"callum_date_1_wheeloffortune": "res://dialogue/salty/callum_date_1_wheeloffortune.dtl",
-"callum_date_3": "res://dialogue/salty/callum_date_3.dtl",
-"callum_date_confession": "res://dialogue/salty/callum_date_confession.dtl",
+"clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
+"dates/callum_date_1": "res://dialogue/salty/dates/callum_date_1.dtl",
+"dates/callum_date_1_dartballoons": "res://dialogue/salty/dates/callum_date_1_dartballoons.dtl",
+"dates/callum_date_1_failstate": "res://dialogue/salty/dates/callum_date_1_failstate.dtl",
+"dates/callum_date_1_wheeloffortune": "res://dialogue/salty/dates/callum_date_1_wheeloffortune.dtl",
+"dates/callum_date_3": "res://dialogue/salty/dates/callum_date_3.dtl",
+"dates/callum_date_confession": "res://dialogue/salty/dates/callum_date_confession.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
+"npcclasstest": "res://menus/testing/npcclasstest.dtl",
+"pepper_date_1": "res://dialogue/spicy/dates/pepper_date_1.dtl",
+"pepper_date_2": "res://dialogue/spicy/dates/pepper_date_2.dtl",
+"pepper_date_3": "res://dialogue/spicy/dates/pepper_date_3.dtl",
+"pepper_date_confession": "res://dialogue/spicy/dates/pepper_date_confession.dtl",
 "phone_test_1": "res://dialogue/testing/phone_test_1.dtl",
 "phone_test_2": "res://dialogue/testing/phone_test_2.dtl",
 "phone_test_3": "res://dialogue/testing/phone_test_3.dtl",
 "phone_test_4": "res://dialogue/testing/phone_test_4.dtl",
+"raymond_conversations": "res://dialogue/sweet/daily_interactions/conversations/raymond_conversations.dtl",
+"raymond_date_1": "res://dialogue/sweet/dates/raymond_date_1.dtl",
+"raymond_date_2": "res://dialogue/sweet/dates/raymond_date_2.dtl",
+"raymond_date_3": "res://dialogue/sweet/dates/raymond_date_3.dtl",
+"raymond_date_confession": "res://dialogue/sweet/dates/raymond_date_confession.dtl",
 "salty_days": "res://dialogue/salty/lunch_break/salty_days.dtl",
 "salty_main": "res://dialogue/salty/lunch_break/salty_main.dtl",
 "savory_days": "res://dialogue/savory/lunch_break/savory_days.dtl",
@@ -67,9 +78,7 @@ directories/dtl_directory={
 "sweet_days": "res://dialogue/sweet/lunch_break/sweet_days.dtl",
 "sweet_main": "res://dialogue/sweet/lunch_break/sweet_main.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
-"test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl",
-"testing/clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
-"testing/npcclasstest": "res://menus/testing/npcclasstest.dtl"
+"test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
@@ -145,6 +154,10 @@ folder_colors={
 "res://menus/": "yellow",
 "res://menus/testing/": "gray"
 }
+
+[global_group]
+
+PourParticle=""
 
 [gui]
 

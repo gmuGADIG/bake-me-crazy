@@ -15,9 +15,18 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"Confused": {
+"export_overrides": {
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Excited": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_excited.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,7 +35,7 @@
 },
 "Flustered": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_flustered.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +44,7 @@
 },
 "Frustrated": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_disgusted.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -44,7 +53,7 @@
 },
 "Happy": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -53,7 +62,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -62,7 +71,7 @@
 },
 "Pensive": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -71,7 +80,7 @@
 },
 "Shocked": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/spicy/vn_portraits/pepper_shocked.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

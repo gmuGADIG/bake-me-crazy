@@ -15,9 +15,18 @@
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
+"Confused": {
+"export_overrides": {
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_confused.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
 "Excited": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_excited.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,7 +35,7 @@
 },
 "Flustered": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_flustered.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +44,7 @@
 },
 "Frustrated": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_frustrated.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -44,7 +53,7 @@
 },
 "Happy": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -53,7 +62,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -62,7 +71,7 @@
 },
 "Pensive": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_pensive.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -71,7 +80,7 @@
 },
 "Shocked": {
 "export_overrides": {
-"image": ""
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_shocked.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

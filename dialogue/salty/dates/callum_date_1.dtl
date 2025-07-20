@@ -19,13 +19,12 @@ callum: Are you game for the ferris wheel? I hear the view isn't half bad.
 	- "Great...that way we can die together."
 callum (excited): Come on already, before they start the next cycle!
 You and Callum board the ferris wheel.
-callum (neutral): Wow, look at that sky. I never got to see so many in Cali. 
+callum (neutral): Wow, look at that sky. I never got to see so many in Cali.
 callum (disgusted): Man, now I sound like that Raymond guy...
 - "How was Cali?"
 	callum (neutral): California? It was great. Everything about it was great. The crowded streets, the smooth beaches... And the food was to die for.\
-
 	- "Why did you leave?"
-	callum (pensive): Oh, um… I’m not sure I want to go there. Just, life happened. I needed a change of scenery and stuff. 
+	callum (pensive): Oh, um… I’m not sure I want to go there. Just, life happened. I needed a change of scenery and stuff.
 	- Nod your head.
 	- "I doubt that."
 		callum (disgusted): Too bad, that's all you're getting out of me.
@@ -36,7 +35,6 @@ callum (disgusted): Man, now I sound like that Raymond guy...
 	callum (confused): The town? Really? That’s what you want to talk about?
 	callum (confused): I mean, it’s fine. A little too rocky for my liking, though.
 	This place isn’t anything like Cali. I’m not sure if I’ll ever feel comfortable here, but I’m making the best of things.\
-
 - "How does the Leaventide carnival compare to the ones in Cali?" | [=""]
 	Oh, now that’s an easy one. This carnival, obviously. We’re having such a great time. I love to do this again sometime.
 	- "Wow. Really?" | [=""]
@@ -45,7 +43,6 @@ callum (disgusted): Man, now I sound like that Raymond guy...
 		set {dateRP} += 10
 	- "I couldn't agree more."
 		callum (confused): That's a lot of confidence. As far as I'm aware, you’ve never been to Cali.\
-
 		- "Sure, but you're here."
 			You try to get your words out, but your nerves stop you.
 		- Say nothing.
