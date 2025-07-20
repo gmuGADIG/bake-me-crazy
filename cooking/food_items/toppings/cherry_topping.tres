@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://qdu6j6ogexeg"]
+
+[ext_resource type="Texture2D" uid="uid://3dio5vg6h26a" path="res://items/ingredients/art/Cherry Bottle.png" id="1_wdsuc"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_x6ako"]
+
+[resource]
+script = ExtResource("2_x6ako")
+type = 14
+display_name = "Cherry Topping"
+image = ExtResource("1_wdsuc")

@@ -1,4 +1,5 @@
 extends FoodStep
+class_name StepHeat
 
 @onready var arrow := $FullBar/Arrow
 @onready var heat_time_label := $HeatTimeLabel

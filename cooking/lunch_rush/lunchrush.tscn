@@ -6,9 +6,9 @@
 [ext_resource type="Resource" uid="uid://blh6k7g2jwce2" path="res://cooking/food_items/foods/cannelle.tres" id="3_dvqv6"]
 [ext_resource type="Resource" uid="uid://bqmmx232ckmi7" path="res://cooking/food_items/foods/croissant.tres" id="4_8teuu"]
 [ext_resource type="Resource" uid="uid://cn3q0o25fqg7v" path="res://cooking/food_items/foods/puff_roll.tres" id="5_ya6sg"]
-[ext_resource type="Resource" uid="uid://bqnoasg4rpd2t" path="res://cooking/food_items/toppings/blueberry_saucce.tres" id="6_0baax"]
-[ext_resource type="Resource" uid="uid://qdu6j6ogexeg" path="res://cooking/food_items/toppings/ketchup.tres" id="7_bj863"]
-[ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/pesto.tres" id="8_jcw3l"]
+[ext_resource type="Resource" uid="uid://bqnoasg4rpd2t" path="res://cooking/food_items/toppings/chocolate_topping.tres" id="6_0baax"]
+[ext_resource type="Resource" uid="uid://qdu6j6ogexeg" path="res://cooking/food_items/toppings/cherry_topping.tres" id="7_bj863"]
+[ext_resource type="Resource" uid="uid://dewve36rr1ikf" path="res://cooking/food_items/toppings/powdered_sugar.tres" id="8_jcw3l"]
 [ext_resource type="PackedScene" uid="uid://g2k6cx260kwp" path="res://cooking/lunch_rush/shaker_particles.tscn" id="10_86e4i"]
 [ext_resource type="PackedScene" uid="uid://d1i177bdpvrs7" path="res://cooking/lunch_rush/drizzle_particles.tscn" id="11_e61kw"]
 [ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="11_i352t"]
@@ -287,6 +287,7 @@ texture = ExtResource("14_qird5")
 
 [node name="FinisherSprite" type="Sprite2D" parent="."]
 rotation = -3.14159
+scale = Vector2(0.2, 0.2)
 
 [node name="FoodItem" type="Node2D" parent="."]
 z_index = 1
@@ -304,7 +305,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Sauce" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.926861, 0.211668, 0.420472, 1)
 position = Vector2(61.5316, 30.5201)
 texture = ExtResource("14_rbkm8")
 
@@ -404,14 +405,17 @@ theme_override_constants/separation = 25
 [node name="Flavor1" type="Button" parent="CanvasLayer/FlavorSelect/FlavorContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+expand_icon = true
 
 [node name="Flavor2" type="Button" parent="CanvasLayer/FlavorSelect/FlavorContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+expand_icon = true
 
 [node name="Flavor3" type="Button" parent="CanvasLayer/FlavorSelect/FlavorContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+expand_icon = true
 
 [node name="FinishOrder" type="Control" parent="CanvasLayer"]
 layout_mode = 3

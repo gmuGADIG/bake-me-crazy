@@ -1,13 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dweb1kgltbbes"]
+[gd_scene load_steps=8 format=3 uid="uid://dweb1kgltbbes"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_vxw2d"]
+[ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="3_dicmu"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_m02lh"]
 [ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="4_elb4y"]
+[ext_resource type="PackedScene" uid="uid://1kn7jln1tm7y" path="res://cooking/steps/roll_out.tscn" id="5_ivj5j"]
+[ext_resource type="PackedScene" uid="uid://drb08kawdi5an" path="res://cooking/steps/step_fold.tscn" id="6_7b8nu"]
+[ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="7_4riyo"]
 
 [node name="Croissant" instance=ExtResource("1_vxw2d")]
 
 [node name="PourFlour" parent="." index="2" instance=ExtResource("3_m02lh")]
 layout_mode = 1
 
-[node name="Kneading" parent="." index="3" instance=ExtResource("4_elb4y")]
+[node name="Mix" parent="." index="3" instance=ExtResource("3_dicmu")]
+layout_mode = 1
+
+[node name="Kneading" parent="." index="4" instance=ExtResource("4_elb4y")]
+layout_mode = 1
+
+[node name="RollOut" parent="." index="5" instance=ExtResource("5_ivj5j")]
+layout_mode = 1
+
+[node name="StepFold" parent="." index="6" instance=ExtResource("6_7b8nu")]
+layout_mode = 1
+
+[node name="StepFold2" parent="." index="7" instance=ExtResource("6_7b8nu")]
+layout_mode = 1
+
+[node name="StepFold3" parent="." index="8" instance=ExtResource("6_7b8nu")]
+layout_mode = 1
+
+[node name="StepCut" parent="." index="9" instance=ExtResource("7_4riyo")]
 layout_mode = 1
