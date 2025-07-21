@@ -1,20 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://ifnm35j8kb1y"]
+[gd_scene load_steps=18 format=3 uid="uid://ifnm35j8kb1y"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_wtsfb"]
 [ext_resource type="Script" path="res://cooking/steps/piping_line/piping_line_minigame.gd" id="2_mcpkt"]
+[ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="3_qh0nl"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_w7hmj"]
 [ext_resource type="Script" path="res://cooking/steps/piping_line/piping_bag_visuals.gd" id="5_7684g"]
 [ext_resource type="Texture2D" uid="uid://cj72sisb6318w" path="res://cooking/steps/piping_line/PipingBagFull.png" id="6_o4k7v"]
 [ext_resource type="Texture2D" uid="uid://cinpe424kp5k1" path="res://cooking/steps/piping_line/PipingBagEmpty.png" id="7_an37g"]
-[ext_resource type="Texture2D" uid="uid://daf2fqlqruief" path="res://items/foods/art/SweetRollUpdated.png" id="7_oltjc"]
-[ext_resource type="Script" path="res://cooking/steps/piping_line/puff_roll_visuals.gd" id="8_do5x4"]
+[ext_resource type="Script" path="res://cooking/steps/piping_line/pipe_line_icing.gd" id="8_hfxdh"]
 [ext_resource type="Texture2D" uid="uid://ddguiyp5vl5nr" path="res://cooking/steps/piping_line/icing_layer.png" id="8_m8dr4"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="8_xa70s"]
-[ext_resource type="Texture2D" uid="uid://cgiyidyfi44mc" path="res://items/foods/art/PuffRoll_Empty.png" id="9_o6gau"]
-[ext_resource type="Texture2D" uid="uid://dml75s4v7v8nc" path="res://items/foods/art/PuffRoll_Baclava.png" id="10_oswa0"]
-[ext_resource type="Script" path="res://cooking/steps/piping_line/sweet_roll_visuals.gd" id="11_4e3nr"]
-[ext_resource type="Texture2D" uid="uid://c1hoxmyh44c8x" path="res://items/foods/art/OrangeSweetRoll.png" id="11_d83i6"]
-[ext_resource type="Script" path="res://cooking/steps/piping_line/speed_dial.gd" id="14_oj1ao"]
-[ext_resource type="Texture2D" uid="uid://b5nuf582dnca1" path="res://cooking/steps/piping_line/speed_guage.png" id="15_i0gk5"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_odmsh"]
 light_mode = 2
@@ -38,31 +33,13 @@ width = 200
 height = 20
 fill_from = Vector2(1, 1)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ctg8y"]
-light_mode = 2
+[sub_resource type="Curve2D" id="Curve2D_ec7wp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 163, 535, 0, 0, 0, 0, 724, 526)
+}
+point_count = 2
 
-[sub_resource type="Gradient" id="Gradient_onvju"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_e4v36"]
-gradient = SubResource("Gradient_onvju")
-width = 200
-height = 128
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i3v1x"]
-light_mode = 2
-
-[sub_resource type="Gradient" id="Gradient_5xdm5"]
-offsets = PackedFloat32Array(0, 0.551948, 0.701299)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tja1f"]
-gradient = SubResource("Gradient_5xdm5")
-width = 128
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-metadata/_snap_enabled = true
+[sub_resource type="Curve" id="Curve_6msox"]
 
 [node name="PipeLine" instance=ExtResource("1_wtsfb")]
 offset_left = 0.0
@@ -70,21 +47,29 @@ offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 script = ExtResource("2_mcpkt")
-percent_piped_per_pixel_per_second = 10.0
-piping_bag_idle_pos = Vector2(451, 376)
-piping_bag_using_pos = Vector2(448, 455)
+percent_piped_per_pixel = 10.0
 target_piping_speed = 0.5
 target_tolerance = 0.2
-drag_distance_average_amount = 10
+drag_sample_size_requirement = 10
 
-[node name="PipingBag" type="Node2D" parent="." index="0"]
+[node name="MinigameStoneCuttingBoard" type="Sprite2D" parent="." index="0"]
+position = Vector2(555, 623)
+scale = Vector2(1.21, 1.21)
+texture = ExtResource("3_w7hmj")
+
+[node name="BigDoughBallNormal" type="Sprite2D" parent="." index="1"]
+position = Vector2(469, 537)
+scale = Vector2(2, 0.75)
+texture = ExtResource("3_qh0nl")
+
+[node name="PipingBag" type="Node2D" parent="." index="2"]
 z_index = 1
-position = Vector2(451, 376)
+position = Vector2(163, 531)
 rotation = 0.872665
 script = ExtResource("5_7684g")
 
 [node name="Sprites" type="Node2D" parent="PipingBag" index="0"]
-position = Vector2(30, -72)
+position = Vector2(43.8248, -123.792)
 scale = Vector2(1.6, 1.6)
 
 [node name="PipingBagFull" type="Sprite2D" parent="PipingBag/Sprites" index="0"]
@@ -98,7 +83,7 @@ flip_h = true
 
 [node name="IcingMasks" type="Node2D" parent="PipingBag" index="1"]
 clip_children = 1
-position = Vector2(-171.18, -114.918)
+position = Vector2(-131.874, -152.428)
 rotation = -0.785398
 
 [node name="FullMask" type="PointLight2D" parent="PipingBag/IcingMasks" index="0"]
@@ -115,7 +100,21 @@ color = Color(0, 0, 0, 1)
 texture = ExtResource("8_m8dr4")
 texture_scale = 2.8
 
-[node name="InstructionsPanel" parent="." index="1" instance=ExtResource("8_xa70s")]
+[node name="Icing" type="Node" parent="PipingBag" index="2"]
+script = ExtResource("8_hfxdh")
+
+[node name="Path2D" type="Path2D" parent="PipingBag/Icing" index="0"]
+curve = SubResource("Curve2D_ec7wp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PipingBag/Icing/Path2D" index="0"]
+position = Vector2(163, 535)
+rotation = -0.0160414
+
+[node name="Visual" type="Line2D" parent="PipingBag/Icing" index="1"]
+width = 100.0
+width_curve = SubResource("Curve_6msox")
+
+[node name="InstructionsPanel" parent="." index="3" instance=ExtResource("8_xa70s")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,56 +122,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 minigame_title = "Pipe Filling"
-instructions = "Click and drag downwards at the correct speed to evenly distribute the icing."
-
-[node name="PuffRoll" type="Node2D" parent="." index="2"]
-script = ExtResource("8_do5x4")
-
-[node name="Sprites" type="Node2D" parent="PuffRoll" index="0"]
-position = Vector2(427, 561)
-rotation = -1.65806
-scale = Vector2(0.7, 0.7)
-
-[node name="PastryHollow" type="Sprite2D" parent="PuffRoll/Sprites" index="0"]
-texture = ExtResource("9_o6gau")
-
-[node name="PastryFull" type="Sprite2D" parent="PuffRoll/Sprites" index="1"]
-material = SubResource("CanvasItemMaterial_ctg8y")
-texture = ExtResource("10_oswa0")
-
-[node name="Mask" type="Node2D" parent="PuffRoll" index="1"]
-position = Vector2(414, 573)
-
-[node name="FillingMask" type="PointLight2D" parent="PuffRoll/Mask" index="0"]
-color = Color(0, 0, 0, 1)
-texture = SubResource("GradientTexture2D_e4v36")
-
-[node name="SweetRoll" type="Node2D" parent="." index="3"]
-visible = false
-script = ExtResource("11_4e3nr")
-
-[node name="Sprites" type="Node2D" parent="SweetRoll" index="0"]
-
-[node name="UnglazedRoll" type="Sprite2D" parent="SweetRoll/Sprites" index="0"]
-position = Vector2(407, 538)
-scale = Vector2(0.238255, 0.238255)
-texture = ExtResource("7_oltjc")
-
-[node name="GlazedRoll" type="Sprite2D" parent="SweetRoll/Sprites" index="1"]
-material = SubResource("CanvasItemMaterial_i3v1x")
-position = Vector2(407, 538)
-scale = Vector2(0.238255, 0.238255)
-texture = ExtResource("11_d83i6")
-
-[node name="GlazeMask" type="PointLight2D" parent="SweetRoll" index="1"]
-position = Vector2(410, 528)
-scale = Vector2(1e-05, 1e-05)
-texture = SubResource("GradientTexture2D_tja1f")
-
-[node name="SpeedDial" type="Node2D" parent="." index="4"]
-script = ExtResource("14_oj1ao")
-
-[node name="Sprite2D" type="Sprite2D" parent="SpeedDial" index="0"]
-position = Vector2(577, 257)
-scale = Vector2(0.21, 0.21)
-texture = ExtResource("15_i0gk5")
+instructions = "Click and drag the piping bag at the correct speed to evenly distribute the icing."

@@ -30,6 +30,10 @@ SFXDispatcher="*res://sfx/sfx_dispatcher.tscn"
 BreakNPCSystem="*res://dialogue/internal/code/break_npc/break_npc_system.tscn"
 DebugMenu="res://menus/debug_menu/debug_menu.tscn"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [dialogic]
 
 directories/dch_directory={
