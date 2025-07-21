@@ -1,6 +1,7 @@
 extends FoodStep
 
-
+signal piping_bag_sfx
+signal piping_bag_sfx_cancel
 
 @export var percent_piped_per_pixel : float = 10
 
@@ -10,7 +11,6 @@ extends FoodStep
 var num_in_target : int
 var num_out_of_target : int
 
-var food_type : FoodData.FoodType
 var percent_piped : float = 0.0 ##Ranges between 0 and 100
 
 var last_mouse_pos : Vector2
@@ -27,15 +27,36 @@ func _ready() -> void:
 	##Define the type here if you don't want to keep walking through the street during debug (for testing)
 	if recipe == null:
 		recipe = load("res://items/foods/sweet_roll_cinnamon.tres")
+	set_icing_color(recipe.ingredient.ingredient_type if recipe.ingredient != null else null)
 	
-	assert(
-		recipe.food_type == FoodData.FoodType.SWEET_ROLL || recipe.food_type == FoodData.FoodType.PUFF_ROLL,
-		"This step is invalid for the given food type"
+	$StopSFXTimer.wait_time = 0.3
+	$StopSFXTimer.timeout.connect(func():
+		piping_bag_sfx_cancel.emit()
 	)
-	
-	$PipingBag.set_icing_color(recipe.ingredient.ingredient_type)
 
+func set_icing_color(ingredient : IngredientData.IngredientType) -> void:
+	var icing_color : Color
+	match ingredient:
+		null:
+			icing_color = Color.ANTIQUE_WHITE
+		IngredientData.IngredientType.CINNAMON:
+			icing_color = Color.SIENNA
+		IngredientData.IngredientType.ORANGE:
+			icing_color = Color.ORANGE
+		IngredientData.IngredientType.PISTACHIO:
+			icing_color = Color.WEB_GREEN
+		IngredientData.IngredientType.PORK:
+			icing_color = Color.SADDLE_BROWN
+		IngredientData.IngredientType.CHEESE:
+			icing_color = Color.LIGHT_GREEN
+		
+	$PipingBag/Sprites/PipingBagFull.modulate = icing_color
+	$Icing/Visual.default_color = icing_color
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("minigame_interact"):
+		$InstructionsPanel.hide()
+		
 func _physics_process(delta: float) -> void:
 	if $PipingBag.is_lowered():
 		if not currently_piping:
@@ -72,19 +93,26 @@ func _physics_process(delta: float) -> void:
 					icing_size = PipeLineIcing.IcingSize.JUST_RIGHT
 					
 				recent_drag_distances.remove_at(0)
-		
-		## Visual Feedback
+			piping_bag_sfx.emit()
+			$StopSFXTimer.stop()
+		else:
+			if $StopSFXTimer.is_stopped():
+				$StopSFXTimer.start()
+		## Visual & Audio Feedback
 		$PipingBag.display_piping_bag(percent_piped)
 		if not icing_size == PipeLineIcing.IcingSize.NONE:
-			$PipingBag/Icing.draw_icing_line(icing_size)
-		
+			$Icing.draw_icing_line(icing_size)
 		last_mouse_pos = new_mouse_pos
-	
+	elif $StopSFXTimer.is_stopped():
+		$StopSFXTimer.start()
 	
 	if is_equal_approx(percent_piped,100.0):
+		piping_bag_sfx_cancel.emit()
+		
 		var total_data_points : float = num_in_target+num_out_of_target
 		var end_score : float = 3.0*(num_in_target/total_data_points)
 		finished.emit(end_score)
+		print(end_score)
 
 
 func averagef(array : Array[float]) -> float:
