@@ -30,6 +30,10 @@ func _physics_process(delta: float) -> void:
 		if !in_area || already_piped:
 			return
 		
+		## Play sound
+		var piping_spot_step = $"../.."
+		piping_spot_step.piping_bag_sfx.emit()
+		
 		percent_piped += percent_gained_per_second * delta
 		calculate_dough_sprite()
 	

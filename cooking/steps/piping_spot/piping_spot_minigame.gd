@@ -1,5 +1,8 @@
 extends FoodStep
 
+signal piping_bag_sfx
+signal piping_bag_sfx_cancel
+
 @export var max_score_window : float = 3.0 ##The percent amount +/- from 100% that the player gets full score
 @export var score_loss_per_percent : float = 0.12
 
@@ -20,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	$PipingBag.position = get_global_mouse_position()
 
 func _on_piping_spot_finished(area_percent : float) -> void:
+	piping_bag_sfx_cancel.emit()
 	running_score += score_piping(area_percent)
 	spots_piped += 1
 	print(running_score)
