@@ -54,7 +54,8 @@ func _process(delta: float) -> void:
 		# calculate score
 		var normalized := meter.value / meter.max_value # convert meter.value to [0, 1]
 		var dist := absf(.5 - normalized) # get distance from .5 on number line
-		var score = remap(dist, 0, .5, 3, 0) # score is a function of dist according to the gdd
+		var score = remap(dist, 0, .5, 3, 1) # score is a function of dist according to the gdd
+		score = clampf(score, 1, 3)
 		
 		print(score)
 		finished.emit(score)
