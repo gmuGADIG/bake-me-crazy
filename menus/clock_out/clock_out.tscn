@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b12qkrr2aijgv"]
+[gd_scene load_steps=4 format=3 uid="uid://b12qkrr2aijgv"]
 
 [ext_resource type="Script" path="res://menus/clock_out/clock_out.gd" id="1_wmgct"]
 [ext_resource type="Resource" path="res://menus/testing/clock_out_no_date_timeline.dtl" id="2_i3vma"]
+[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="3_hjh51"]
 
 [node name="ClockOut" type="Control"]
 layout_mode = 3
@@ -24,3 +25,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="SetDayPhase" parent="." instance=ExtResource("3_hjh51")]
+new_day_phase = 4

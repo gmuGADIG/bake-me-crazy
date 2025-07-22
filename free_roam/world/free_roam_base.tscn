@@ -17,6 +17,7 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [node name="FreeRoamBase" type="Node2D"]
+metadata/is_freeroam = true
 
 [node name="PlayerPath" type="Path2D" parent="."]
 
