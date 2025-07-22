@@ -24,9 +24,10 @@ func _ready() -> void:
 		current_recipe = recipes_selected.pop_front()
 		current_step = 1
 		
-		# Remove current children
+		# Remove current children (excluding pause opener)
 		for child in get_children():
-			child.queue_free()
+			if child is not PauseOpener:
+				child.queue_free()
 			
 		var minigame = current_recipe.cooking_minigame
 		if minigame == null:

@@ -1,4 +1,4 @@
-extends Node
+class_name PauseOpener extends Node
 
 var pause_menu: Node = null
 

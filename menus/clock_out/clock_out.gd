@@ -7,9 +7,13 @@ func _ready() -> void:
 	# TODO: this should check if a date has been scheduled and
 	# play different dialogic timelines accordingly.
 	
-	# switches to scene based on Dialogic "date" variable 
-	# plays timeline for no dates if no date is found
-	start_date()
+	# normally, Dialogic.current_timeline would be null
+	# it may not be null if we're loading from a save, in that case, we dont 
+	# want to disrupt the loaded VN sequence
+	if Dialogic.current_timeline == null:
+		# switches to scene based on Dialogic "date" variable 
+		# plays timeline for no dates if no date is found
+		start_date()
 	#Dialogic.start(no_date_timeline)
 	await Dialogic.timeline_ended
 	

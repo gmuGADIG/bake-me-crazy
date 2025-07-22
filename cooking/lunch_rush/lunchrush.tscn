@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=35 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_d5ipb"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="19_1ienb"]
 [ext_resource type="Texture2D" uid="uid://yytg0qnv63ow" path="res://menus/market_ui/Gold_Button.webp" id="21_fewph"]
 [ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="23_k4gpg"]
+[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="24_76rpg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
 size = Vector2(76, 39)
@@ -487,6 +488,8 @@ libraries = {
 
 [node name="SetDayPhase" parent="." instance=ExtResource("23_k4gpg")]
 new_day_phase = 3
+
+[node name="PauseOpener" parent="." instance=ExtResource("24_76rpg")]
 
 [connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food2" to="." method="_on_food_selected" binds= [1]]
