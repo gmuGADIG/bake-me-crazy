@@ -13,6 +13,7 @@ func _ready() -> void:
 	if Dialogic.current_timeline == null:
 		# switches to scene based on Dialogic "date" variable 
 		# plays timeline for no dates if no date is found
+		MainMusicPlayer.soft_stop()
 		start_date()
 	#Dialogic.start(no_date_timeline)
 	await Dialogic.timeline_ended

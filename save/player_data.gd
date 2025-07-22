@@ -28,9 +28,13 @@ func _ready() -> void:
 
 func load_file(save_template : SaveTemplate) -> void:
 	data = save_template
+	
 	SceneTransition.change_scene_to_file(data.scene_path)
+	if data.music_file != "":
+		MainMusicPlayer.transition_to_song(load(data.music_file))
+	else:
+		MainMusicPlayer.stop()
 	
-	await get_tree().node_added
+	await get_tree().node_added # wait until scene change
+	
 	Dialogic.load_full_state(data.dialogic_blob)
-	print(';3')
-	

@@ -50,3 +50,4 @@ func get_day_phase_string() -> StringName:
 
 @export_storage var scene_path := ""
 @export_storage var dialogic_blob := {}
+@export_storage var music_file := ""
