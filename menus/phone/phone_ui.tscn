@@ -1,28 +1,35 @@
-[gd_scene load_steps=45 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=54 format=3 uid="uid://dktieicdug37m"]
 
-[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
 [ext_resource type="Script" path="res://menus/phone/phone_screens.gd" id="2_1a7hx"]
 [ext_resource type="Texture2D" uid="uid://5lppdbbmjeod" path="res://menus/phone/phone.png" id="2_7m8c8"]
 [ext_resource type="Texture2D" uid="uid://cffo720j02tg8" path="res://menus/phone/phone_background.png" id="4_578qi"]
 [ext_resource type="Script" path="res://menus/phone/inventory_scene.gd" id="5_7dqal"]
-[ext_resource type="Texture2D" uid="uid://qst2473t8kgd" path="res://temp_art/4ea.jpg" id="5_j01br"]
 [ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://temp_art/temp ui/BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="5_r6x37"]
-[ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="6_sjcrr"]
 [ext_resource type="Texture2D" uid="uid://c4444njqb2a41" path="res://menus/phone/phone_background_b&w.png" id="10_iuym1"]
+[ext_resource type="Texture2D" uid="uid://dhhiyg3pkfv1h" path="res://menus/phone/gallery_art/concept_characters.jpg" id="11_4xjsc"]
 [ext_resource type="PackedScene" uid="uid://b3hjgbyt4tc6" path="res://menus/phone/messages/message_char.tscn" id="11_7v68t"]
+[ext_resource type="Texture2D" uid="uid://0jdts8m2hg8t" path="res://menus/phone/gallery_art/concept_boss.jpg" id="11_vuhvu"]
 [ext_resource type="Texture2D" uid="uid://tvs2knwhrbdh" path="res://menus/phone/messages/portraits/portrait_pepper.png" id="12_8obd3"]
+[ext_resource type="Texture2D" uid="uid://dmxq0b47xo3xl" path="res://menus/phone/gallery_art/concept_spciy.png" id="12_b2kxp"]
 [ext_resource type="Texture2D" uid="uid://dkfpblh3iw05s" path="res://menus/phone/icon_contacts.png" id="12_kv8e5"]
+[ext_resource type="Texture2D" uid="uid://crqunbvg0u24u" path="res://menus/phone/gallery_art/concept_friendos.jpg" id="12_rl2yq"]
+[ext_resource type="Texture2D" uid="uid://dud73r2l7kiny" path="res://menus/phone/gallery_art/concept_npcs2.png" id="12_vipjo"]
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="13_1vomg"]
+[ext_resource type="Texture2D" uid="uid://tcem1srcveo5" path="res://menus/phone/gallery_art/concept_fruit.jpg" id="13_4neqh"]
 [ext_resource type="Texture2D" uid="uid://bx72x1c4gxxch" path="res://menus/phone/messages/portraits/portrait_millie.png" id="13_dlodv"]
 [ext_resource type="Texture2D" uid="uid://bwt2bx2aj0r3y" path="res://menus/phone/messages/portraits/portrait_raymond.png" id="14_2patd"]
+[ext_resource type="Texture2D" uid="uid://baqfmibksyli2" path="res://menus/phone/gallery_art/concept_mc.png" id="14_sswb5"]
 [ext_resource type="Texture2D" uid="uid://b5nsknbxyjgkx" path="res://menus/phone/icon_inventory.png" id="15_6b8sl"]
 [ext_resource type="Texture2D" uid="uid://ch0exc2kv6tcg" path="res://menus/phone/phone_wood_bg.png" id="15_cqrpx"]
 [ext_resource type="Texture2D" uid="uid://daenfqa1t2mr4" path="res://menus/phone/messages/portraits/portrait_callum.png" id="15_qajdy"]
 [ext_resource type="Texture2D" uid="uid://d3gjggefdqm6p" path="res://PhoneBackArrow.png" id="16_lpc83"]
 [ext_resource type="Script" path="res://menus/phone/phone_main_menu.gd" id="16_n5rnq"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="16_xvh5g"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="17_a72gu"]
 [ext_resource type="PackedScene" uid="uid://b2bh41bd0epcc" path="res://menus/phone/inventory_slot.tscn" id="17_hlvhb"]
+[ext_resource type="Texture2D" uid="uid://b4sn22n4wum3e" path="res://menus/phone/gallery_art/concept_coworker2.png" id="17_ialdj"]
+[ext_resource type="Texture2D" uid="uid://b256w4dsl6tqj" path="res://menus/phone/gallery_art/concept_salty.jpg" id="18_rhqk3"]
 [ext_resource type="Texture2D" uid="uid://c5lu5srko5jmr" path="res://menus/phone/icon_gallery.png" id="24_yk7th"]
 [ext_resource type="Texture2D" uid="uid://dycpyp7xoyd4b" path="res://menus/phone/messages/notif_cherry.png" id="25_1pn2p"]
 [ext_resource type="Texture2D" uid="uid://c12k704fu73xo" path="res://menus/phone/icon_recipe_book.png" id="26_2wacm"]
@@ -46,6 +53,15 @@ texture = SubResource("AtlasTexture_qe3l0")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8xy"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_w0rks"]
+offsets = PackedFloat32Array(0.914591, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0t3mb"]
+gradient = SubResource("Gradient_w0rks")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="Gradient" id="Gradient_dbkf1"]
 colors = PackedColorArray(0, 0, 0, 0.756863, 0, 0, 0, 0)
@@ -351,7 +367,6 @@ hover_scale = 1.05
 
 [node name="Gallery" type="Panel" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -376,70 +391,525 @@ custom_minimum_size = Vector2(184, 260)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 20
-alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="TitleContainer" type="MarginContainer" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
 mouse_filter = 2
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
+theme_override_constants/margin_top = 10
 
-[node name="TextureButton2" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/TitleContainer"]
+clip_contents = false
 layout_mode = 2
-size_flags_horizontal = 6
 mouse_filter = 2
-texture_normal = ExtResource("5_r6x37")
-ignore_texture_size = true
-stretch_mode = 0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.517647)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[wave][center]Concept Art!"
+fit_content = true
+autowrap_mode = 0
 
-[node name="TextureButton3" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="LineContainer" type="MarginContainer" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
-mouse_filter = 2
-texture_normal = ExtResource("5_j01br")
-ignore_texture_size = true
-stretch_mode = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
 
-[node name="TextureButton4" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="FnafSeperator" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/LineContainer"]
+custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
-size_flags_horizontal = 6
-mouse_filter = 2
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
+texture = ExtResource("5_r6x37")
+expand_mode = 1
 
-[node name="TextureButton5" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="Characters" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 288.17)
 layout_mode = 2
-size_flags_horizontal = 6
 mouse_filter = 2
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
 
-[node name="TextureButton6" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-size_flags_horizontal = 6
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Characters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-texture_normal = ExtResource("6_sjcrr")
-ignore_texture_size = true
-stretch_mode = 0
+texture = ExtResource("11_4xjsc")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="TextureButton7" type="TextureButton" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 2
-size_flags_horizontal = 6
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Characters/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = -30.0
+offset_bottom = 8.51498
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Characters"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Characters"
+horizontal_alignment = 1
+
+[node name="Spicy" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 165.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Spicy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_b2kxp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Spicy/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 9.0
+offset_right = -39.0
+offset_bottom = 8.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Spicy"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Spicy"
+horizontal_alignment = 1
+
+[node name="NPCs" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 165.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/NPCs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_vipjo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/NPCs/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 9.0
+offset_right = -10.0
+offset_bottom = 8.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/NPCs"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "NPCs"
+horizontal_alignment = 1
+
+[node name="Friendos" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 288.17)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Friendos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_rl2yq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Friendos/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = -30.0
+offset_bottom = 8.51498
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Friendos"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Friendos <3"
+horizontal_alignment = 1
+
+[node name="DivorceWoman" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 179.555)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/DivorceWoman"]
+modulate = Color(0, 0, 0, 0.352941)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.19475
+offset_top = 2.53486
+offset_right = 4.19476
+offset_bottom = -17.1501
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_xvh5g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/DivorceWoman"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_xvh5g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/DivorceWoman"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Divorce Woman"
+horizontal_alignment = 1
+
+[node name="Boss" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Boss"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_vuhvu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Boss/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = -31.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Boss"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Boss"
+horizontal_alignment = 1
+
+[node name="Foods" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Foods"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_4neqh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Foods/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 9.0
+offset_right = -59.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Foods"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Food :D"
+horizontal_alignment = 1
+
+[node name="Coworker" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Coworker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("17_ialdj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Coworker/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = 9.0
+offset_right = -69.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Coworker"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Coworker"
+horizontal_alignment = 1
+
+[node name="Salty" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Salty"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("18_rhqk3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Salty/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 9.0
+offset_right = -92.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Salty"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Salty"
+horizontal_alignment = 1
+
+[node name="MC" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/MC"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("14_sswb5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/MC/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 9.0
+offset_right = -28.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/MC"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Main Character"
+horizontal_alignment = 1
+
+[node name="EndSpacing" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 
 [node name="Inventory" type="Panel" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
@@ -600,6 +1070,7 @@ layout_mode = 2
 
 [node name="Screen" type="Control" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
