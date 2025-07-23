@@ -20,7 +20,6 @@
 
 [node name="PourStep" parent="." index="1" instance=ExtResource("2_ov8rw")]
 layout_mode = 1
-pour_rate_multiplier = 1.0
 
 [node name="PourStepBig" parent="." index="2" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
@@ -46,7 +45,6 @@ layout_mode = 1
 [node name="PourStep_Bar" parent="." index="9" instance=ExtResource("2_ov8rw")]
 layout_mode = 1
 container_texture = ExtResource("3_h35mo")
-pour_rate_multiplier = 1.0
 
 [node name="shape_step" parent="." index="10" instance=ExtResource("2_bndm2")]
 
