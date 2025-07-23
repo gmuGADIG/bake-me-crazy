@@ -8,6 +8,7 @@ class MouseData:
 		self.val = y
 		self.delta = d
 
+@onready var drizzle_line: DrizzleLine = $DrizzleLine
 @onready var npc_holder: Node2D = %NPCHolder
 @onready var food_container: VBoxContainer = %FoodContainer
 @onready var flavor_container: VBoxContainer = %FlavorContainer
@@ -31,8 +32,7 @@ class MouseData:
 @export var acceleration_threshold : int = 500
 ##Defines at what jerk (the change in acceleration) threshold should the shaker start working
 @export var jerk_threshold : int = 1000
-@export var finisher_raycast_length : int = 250 ## The length of the downward raycast when checking for drizzles and shakers
-
+@export var finisher_raycast_length : int = 500 ## The length of the downward raycast when checking for drizzles and shakers
 ##The length of the raycast made to check if the shaker is over the food
 @export var shaker_distance : int = 500
 
@@ -104,7 +104,7 @@ func new_order() -> void:
 	current_npc.set_food(requested_food, requested_flavor)
 
 	## Reset buttons	
-	$FinisherSprite.texture = null
+	$FinisherSprite.texture
 	food_container.position.x = 1162
 	flavor_container.position.x = 1162
 	$CanvasLayer/FinishOrder.position.x = -120
@@ -143,10 +143,20 @@ func new_order() -> void:
 func approx_derivative(m1 : MouseData	, m2 : MouseData) -> float:
 	return (m2.val-m1.val)/(m2.delta*10.0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# true if the previous physics frame was both in stage FLAVOR_TOWN and
+# the user was holding down the mouse button and if the mouse was over
+# the food
+var new_line := true
+
 func _physics_process(delta: float) -> void:
 	if current_stage != Stage.FLAVOR_TOWN:
+		new_line = true
 		return
+	
+	if Input.is_action_pressed("minigame_interact") and not new_line:
+		new_line = false
+	elif not Input.is_action_just_pressed("minigame_interact"):
+		new_line = true
 	
 	##Make the shaker follow the mouse
 	$FinisherSprite.position = get_viewport().get_mouse_position()
@@ -159,20 +169,56 @@ func _physics_process(delta: float) -> void:
 		
 func drizzle(delta : float) -> void:
 	if Input.is_mouse_button_pressed(1): # Left click
+		var height_arr := above_food()
+		if height_arr:
+			var tool_tip_pos := get_local_mouse_position() + Vector2.DOWN * 80
+			var ray_height := height_arr[0]
+			var food_item_y: float = %FoodItem.position.y
+			var food_bottom_y := food_item_y + 35
+			var food_top_y := food_item_y - 41
+			
+			# convert ray_height to point on food
+			ray_height -= 65
+			ray_height = max(0, ray_height)
+			
+			var fall_target := food_bottom_y - ray_height * .5
+			fall_target = max(fall_target, food_top_y)
+			var fall_height := fall_target - tool_tip_pos.y
+			
+			drizzle_line.add_point(
+				tool_tip_pos, 
+				fall_height / DrizzleLine.GRAVITY,
+				new_line
+			)
+			
+			new_line = false
+			current_finisher_percentage = move_toward(
+				current_finisher_percentage, 
+				100.0, 
+				percent_gained_per_drizzle
+			)
 		
 		##Create Drizzle Particle
-		drizzle_started.emit()
-		var new_particle : GPUParticles2D = drizzle_particle.instantiate()
-		$FinisherSprite.add_child(new_particle)
-		new_particle.emitting = true
-		
-		if above_food():
-			print("drizz")
-			current_finisher_percentage = move_toward(current_finisher_percentage, 100.0, percent_gained_per_drizzle)
-			
-			##Visible Sauce application feedback
-			$FoodItem/FoodItemSprite/Sauce.visible = true
-			$FoodItem/FoodItemSprite/Sauce.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
+		#drizzle_started.emit()
+		#var new_particle : GPUParticles2D = drizzle_particle.instantiate()
+		#$FinisherSprite.add_child(new_particle)
+		#print(selected_flavor.display_name)
+		#if (selected_flavor.display_name == "Chocolate Topping"):
+			#print("hello")
+			#new_particle.process_material.color = Color.SIENNA
+		#new_particle.emitting = true
+		#
+		#if above_food():
+			#print("drizz")
+			#current_finisher_percentage = move_toward(current_finisher_percentage, 100.0, percent_gained_per_drizzle)
+			#
+			###Visible Sauce application feedback
+			#$FoodItem/FoodItemSprite/Sauce.visible = true
+			#$FoodItem/FoodItemSprite/Sauce.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
+			#if (selected_flavor.display_name == "Chocolate Topping"):
+				#$FoodItem/FoodItemSprite/Sauce.modulate = Color.SIENNA
+		else:
+			new_line = true
 	pass
 
 func shaker(delta : float) -> void:
@@ -201,16 +247,19 @@ func shaker(delta : float) -> void:
 	pass
 	
 
-func above_food()-> bool:
+
+func above_food()-> Array[float]:
 	var space_state = get_world_2d().direct_space_state
 	#use global coordinates, not local to node
-	var query = PhysicsRayQueryParameters2D.create(get_viewport().get_mouse_position(), get_viewport().get_mouse_position()+Vector2(0,finisher_raycast_length))
+	var src_pos := get_global_mouse_position() + Vector2.DOWN * 80
+	var query = PhysicsRayQueryParameters2D.create(src_pos, get_viewport().get_mouse_position()+Vector2(0,finisher_raycast_length))
 	query.collide_with_areas = true
 	var result = space_state.intersect_ray(query)
 	if result.size() > 0:
-		return true
+		var height: float = result.position.y - src_pos.y
+		return [height]
 	else:
-		return false
+		return []
 
 
 
@@ -262,6 +311,7 @@ func _on_flavor_selected(flavor_index: int) -> void:
 	view_anim.play("expand_table")
 	
 	selected_flavor = flavors[flavor_index]
+	$FinisherSprite.modulate.a = 1.
 	$FinisherSprite.texture = selected_flavor.image
 	selected_finisher_type = select_finisher_type()
 	var tween = get_tree().create_tween()
@@ -269,12 +319,15 @@ func _on_flavor_selected(flavor_index: int) -> void:
 	tween.set_parallel().tween_property($CanvasLayer/FinishOrder, "position:x", 100, 0.3).set_trans(Tween.TRANS_QUAD)
 	
 func select_finisher_type() -> Finisher:
+	drizzle_line.clear_points()
 	match selected_flavor.type:
-		FoodItem.Type.BLUEBERRY_SAUCE:
+		FoodItem.Type.CHOCOLATE_TOPPING:
+			drizzle_line.modulate = Color.SIENNA
 			return Finisher.DRIZZLE
-		FoodItem.Type.KETCHUP:
+		FoodItem.Type.CHERRY_TOPPING:
+			drizzle_line.modulate = Color.HOT_PINK
 			return Finisher.DRIZZLE
-		FoodItem.Type.PESTO:
+		FoodItem.Type.POWDERED_SUGAR:
 			return Finisher.SHAKER
 		_:
 			return -1
@@ -314,6 +367,7 @@ func score_food() -> void:
 	
 	## Remove food sprite
 	create_tween().tween_property($FoodItem, "modulate:a", 0.0, 0.5)
+	create_tween().tween_property(drizzle_line, "modulate:a", 0.0, 0.5)
 	
 	## Display money earned
 	money_label.text = "[wave amp=70][b]$%d" % rewarded_tip
@@ -337,8 +391,9 @@ func _on_finish_order() -> void:
 	current_npc.exit()
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -120, 0.3).set_trans(Tween.TRANS_QUAD)
-	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.3).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property($CanvasLayer/FinishOrder, "position:x", -120, 0.5).set_trans(Tween.TRANS_QUAD)
+	tween.set_parallel().tween_property($FoodRequest, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property($FinisherSprite, "modulate:a", 0., .5).set_trans(Tween.TRANS_EXPO)
 	
 	await view_anim.animation_finished
 	

@@ -1,10 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://docgr3runo3a"]
+[gd_scene load_steps=10 format=3 uid="uid://docgr3runo3a"]
 
 [ext_resource type="PackedScene" uid="uid://cx06e1lqkpenc" path="res://free_roam/player/player.tscn" id="1_8gurn"]
-[ext_resource type="Script" path="res://menus/pause_menu/pause_opener.gd" id="2_7hu1x"]
 [ext_resource type="Script" path="res://free_roam/world/free_roam_camera.gd" id="2_y05i1"]
 [ext_resource type="PackedScene" uid="uid://dktieicdug37m" path="res://menus/phone/phone_ui.tscn" id="4_0axhq"]
+[ext_resource type="Texture2D" uid="uid://c3vgyifrcxkr6" path="res://menus/ui_tips/open_pause.png" id="4_x44ts"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_opener.gd" id="4_yfy7n"]
+[ext_resource type="Texture2D" uid="uid://df1dxfgu5dy87" path="res://menus/ui_tips/open_phone.png" id="5_s8l22"]
+[ext_resource type="Texture2D" uid="uid://ckt5bdt387sd2" path="res://menus/ui_tips/open_book.png" id="6_cf5mk"]
+[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="7_ypuws"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvhhv"]
+bg_color = Color(0, 0, 0, 0.286275)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="FreeRoamBase" type="Node2D"]
 
@@ -17,12 +27,70 @@ position = Vector2(132, 604)
 process_mode = 3
 script = ExtResource("2_y05i1")
 
-[node name="PauseOpener" type="Node" parent="."]
-script = ExtResource("2_7hu1x")
-
-[node name="RecipeBookOpener" type="Node" parent="."]
-script = ExtResource("4_yfy7n")
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PhoneUi" parent="UI" instance=ExtResource("4_0axhq")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 258.0
+offset_bottom = 73.0
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Panel" type="Panel" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wvhhv")
+
+[node name="TextureRect" type="TextureRect" parent="UI/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_x44ts")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel2" type="Panel" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wvhhv")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_s8l22")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel3" type="Panel" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wvhhv")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_cf5mk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PauseOpener" parent="." instance=ExtResource("7_ypuws")]
+
+[node name="RecipeBookOpener" type="Node" parent="."]
+script = ExtResource("4_yfy7n")

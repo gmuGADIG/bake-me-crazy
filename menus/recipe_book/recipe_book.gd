@@ -1,4 +1,4 @@
-class_name RecipeBook extends Node
+class_name RecipeBook extends CanvasLayer
 
 ## True during the morning shift, when the player has to select some recipes to bake.
 ## False if the player is just browsing their recipes whenever.
@@ -54,10 +54,25 @@ func _ready() -> void:
 		bake_left.visible = false
 		bake_right.visible = false
 		baking_text.visible = false
+		
+	if user_closable:
+		%BakeLeft.hide()
+		%BakeRight.hide()
+		$CountertopBlue.hide()
+		%ReadOnlyOpenAnimation.play("new_animation")
+		
+		# the first frame will flicker because animation player sux
+		# so we hide the first frame so the player wont see a flicker
+		hide()
+		await get_tree().process_frame
+		show()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") || Input.is_action_just_pressed("open_recipes"):
-		if user_closable: queue_free()
+		if user_closable: 
+			%ReadOnlyOpenAnimation.play_backwards("new_animation")
+			await %ReadOnlyOpenAnimation.animation_finished
+			queue_free()
 
 func update_displayed_recipes() -> void:
 	var left_idx = current_page*2

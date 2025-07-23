@@ -87,11 +87,10 @@ func _process(_delta: float) -> void:
 			bottom_dough_shader.set_shader_parameter(direction_to_string(direction), new_fold)
 
 			var arrow := get_arrow(direction)
-			if arrow.modulate.a == 1:
-				var tween := create_tween()
-				tween.tween_property(arrow, "modulate:a", 0., .35)
-
 			if new_fold < .7:
+				if arrow.modulate.a == 1:
+					var tween := create_tween()
+					tween.tween_property(arrow, "modulate:a", 0., .35)
 				used_directions[direction] = null
 				if used_directions.size() == 2:
 					finished.emit(3)

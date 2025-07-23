@@ -7,3 +7,5 @@
 script = ExtResource("1_3x1af")
 interrupt = true
 sound_file = ExtResource("2_5vhmc")
+looping = false
+expiration_time = 0.0

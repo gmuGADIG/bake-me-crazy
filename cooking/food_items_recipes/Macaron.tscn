@@ -1,13 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdlagugjlu0oq"]
+[gd_scene load_steps=6 format=3 uid="uid://cdlagugjlu0oq"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_ptpy7"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_8dsmd"]
-[ext_resource type="PackedScene" uid="uid://ifnm35j8kb1y" path="res://cooking/steps/piping_line/step_pipe_line.tscn" id="4_rl3bs"]
+[ext_resource type="PackedScene" uid="uid://dow8da7vvfan3" path="res://cooking/steps/temper/temper.tscn" id="3_idds6"]
+[ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="4_2ngqo"]
+[ext_resource type="PackedScene" uid="uid://b3o1ok3dj2q50" path="res://cooking/steps/piping_spot/step_pipe_spot.tscn" id="5_ae4ht"]
 
 [node name="Macaron" instance=ExtResource("1_ptpy7")]
 
 [node name="PourFlour" parent="." index="2" instance=ExtResource("3_8dsmd")]
 layout_mode = 1
 
-[node name="pipping_speed" parent="." index="3" instance=ExtResource("4_rl3bs")]
+[node name="Temper" parent="." index="3" instance=ExtResource("3_idds6")]
+layout_mode = 1
+
+[node name="Mix" parent="." index="4" instance=ExtResource("4_2ngqo")]
+layout_mode = 1
+
+[node name="pipping_spot" parent="." index="5" instance=ExtResource("5_ae4ht")]
+layout_mode = 1
+
+[node name="Mix2" parent="." index="6" instance=ExtResource("4_2ngqo")]
+layout_mode = 1
+
+[node name="pipping_spot2" parent="." index="7" instance=ExtResource("5_ae4ht")]
 layout_mode = 1

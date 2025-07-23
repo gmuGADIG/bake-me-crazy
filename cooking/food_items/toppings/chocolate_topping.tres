@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FoodItem" load_steps=3 format=3 uid="uid://bqnoasg4rpd2t"]
+
+[ext_resource type="Texture2D" uid="uid://domxuu17bctq1" path="res://items/ingredients/art/Chocolate Bottle.png" id="1_c1kfm"]
+[ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_8isdk"]
+
+[resource]
+script = ExtResource("2_8isdk")
+type = 13
+display_name = "Chocolate Topping"
+image = ExtResource("1_c1kfm")

@@ -77,17 +77,19 @@ func _process(delta: float) -> void:
 
 				var current_direction = sign(angle_diff) # we now have the direction!
 				
-				if initial_direction == 0:
-					initial_direction = current_direction
-				elif current_direction != initial_direction:
-					# you must keep going in the same direction (CW/CCW) you started, or else
-					# the minigame instantly ends (if you change direction)
-					progress = FINISHED
-					return
+				#if initial_direction == 0:
+					#initial_direction = current_direction
+				#elif current_direction != initial_direction:
+					## you must keep going in the same direction (CW/CCW) you started, or else
+					## the minigame instantly ends (if you change direction)
+					#progress = FINISHED
+					#return
 
-				net_rotation += angle_diff
+				net_rotation += absf(angle_diff)
+				$Dough.rotation += angle_diff
 				previous_angle = current_angle
 			else:
+				print("asdfgasdfghadsfgsdf")
 				# outside valid region
 				progress = FINISHED
 		else:
@@ -98,6 +100,9 @@ func _process(delta: float) -> void:
 		progress_pointer.position.y = progress_bottom_px - ((current_score / 10) * progress_height)
 
 	elif stage == END_FRAME:
+		if get_current_score() < 5: 
+			progress = PENDING
+			return
 		var score = assess_score()
 		emit_signal("finished", score)	
 		progress = FINISHED
@@ -119,6 +124,7 @@ func get_mouse_angle() -> float:
 
 func is_mouse_within_bounds() -> bool:
 	var dist = (get_global_mouse_position() - origin).length()
+	print(dist)
 	return dist >= min_radius and dist <= max_radius
 
 func assess_score() -> float:

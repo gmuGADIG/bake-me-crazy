@@ -17,16 +17,16 @@
 "portraits": {
 "confused": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_confused.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Confused_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"disgusted": {
+"disturbed": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_disgusted.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Uncomfortable_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +35,7 @@
 },
 "excited": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_excited.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Excited_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -44,16 +44,7 @@
 },
 "flustered": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_flustered.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"frustrated": {
-"export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_frustrated.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Embarrassed_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -62,7 +53,7 @@
 },
 "neutral": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_neutral.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Neutral_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -71,7 +62,7 @@
 },
 "pensive": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_pensive.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Upset_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -80,7 +71,16 @@
 },
 "shocked": {
 "export_overrides": {
-"image": "\"res://dialogue/salty/callum_portraits/callum_shocked.png\""
+"image": "\"res://dialogue/savory/vn_portraits/Surprised_Millie.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"unimpressed": {
+"export_overrides": {
+"image": "\"res://dialogue/savory/vn_portraits/Unimpressed_Millie.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

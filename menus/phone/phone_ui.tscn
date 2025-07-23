@@ -1,42 +1,107 @@
-[gd_scene load_steps=25 format=3 uid="uid://dktieicdug37m"]
+[gd_scene load_steps=54 format=3 uid="uid://dktieicdug37m"]
 
-[ext_resource type="Texture2D" uid="uid://dk05ddnwboxsm" path="res://temp_art/temp_game_icon.png" id="1_p0egn"]
 [ext_resource type="Script" path="res://menus/phone/phone_ui.gd" id="1_pyxwy"]
 [ext_resource type="Script" path="res://menus/phone/phone_screens.gd" id="2_1a7hx"]
-[ext_resource type="Texture2D" uid="uid://c54mcqibxeokk" path="res://temp_art/brightened_temp_game_icon.png" id="3_5sgex"]
-[ext_resource type="Texture2D" uid="uid://dqqh3fy2l1j0e" path="res://temp_art/Taco.png" id="3_m70wx"]
-[ext_resource type="Script" path="res://menus/phone/contacts_app.gd" id="3_rv7fq"]
-[ext_resource type="Texture2D" uid="uid://bfajgg2epihyd" path="res://temp_art/icon.svg" id="4_wsq33"]
+[ext_resource type="Texture2D" uid="uid://5lppdbbmjeod" path="res://menus/phone/phone.png" id="2_7m8c8"]
+[ext_resource type="Texture2D" uid="uid://cffo720j02tg8" path="res://menus/phone/phone_background.png" id="4_578qi"]
 [ext_resource type="Script" path="res://menus/phone/inventory_scene.gd" id="5_7dqal"]
-[ext_resource type="Texture2D" uid="uid://qst2473t8kgd" path="res://temp_art/4ea.jpg" id="5_j01br"]
-[ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="5_r6x37"]
-[ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="5_vvy46"]
-[ext_resource type="Texture2D" uid="uid://ccyadgmvjfjo2" path="res://Bio_Portrait.png" id="6_pdhip"]
-[ext_resource type="Texture2D" uid="uid://blf8frytq0uhb" path="res://temp_art/Salad.png" id="6_sjcrr"]
-[ext_resource type="Texture2D" uid="uid://dkfpblh3iw05s" path="res://contacts_icon.png" id="12_kv8e5"]
+[ext_resource type="Texture2D" uid="uid://mqalwehwa6jn" path="res://temp_art/temp ui/BF2168D5-8D03-41A3-BB51-AD8E682472C4.jpg" id="5_r6x37"]
+[ext_resource type="Texture2D" uid="uid://c4444njqb2a41" path="res://menus/phone/phone_background_b&w.png" id="10_iuym1"]
+[ext_resource type="Texture2D" uid="uid://dhhiyg3pkfv1h" path="res://menus/phone/gallery_art/concept_characters.jpg" id="11_4xjsc"]
+[ext_resource type="PackedScene" uid="uid://b3hjgbyt4tc6" path="res://menus/phone/messages/message_char.tscn" id="11_7v68t"]
+[ext_resource type="Texture2D" uid="uid://0jdts8m2hg8t" path="res://menus/phone/gallery_art/concept_boss.jpg" id="11_vuhvu"]
+[ext_resource type="Texture2D" uid="uid://tvs2knwhrbdh" path="res://menus/phone/messages/portraits/portrait_pepper.png" id="12_8obd3"]
+[ext_resource type="Texture2D" uid="uid://dmxq0b47xo3xl" path="res://menus/phone/gallery_art/concept_spciy.png" id="12_b2kxp"]
+[ext_resource type="Texture2D" uid="uid://dkfpblh3iw05s" path="res://menus/phone/icon_contacts.png" id="12_kv8e5"]
+[ext_resource type="Texture2D" uid="uid://crqunbvg0u24u" path="res://menus/phone/gallery_art/concept_friendos.jpg" id="12_rl2yq"]
+[ext_resource type="Texture2D" uid="uid://dud73r2l7kiny" path="res://menus/phone/gallery_art/concept_npcs2.png" id="12_vipjo"]
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="13_1vomg"]
-[ext_resource type="Texture2D" uid="uid://qa7616vk2odt" path="res://messaging_app.png" id="14_2dlto"]
-[ext_resource type="Texture2D" uid="uid://b5nsknbxyjgkx" path="res://inventory.png" id="15_6b8sl"]
+[ext_resource type="Texture2D" uid="uid://tcem1srcveo5" path="res://menus/phone/gallery_art/concept_fruit.jpg" id="13_4neqh"]
+[ext_resource type="Texture2D" uid="uid://bx72x1c4gxxch" path="res://menus/phone/messages/portraits/portrait_millie.png" id="13_dlodv"]
+[ext_resource type="Texture2D" uid="uid://bwt2bx2aj0r3y" path="res://menus/phone/messages/portraits/portrait_raymond.png" id="14_2patd"]
+[ext_resource type="Texture2D" uid="uid://baqfmibksyli2" path="res://menus/phone/gallery_art/concept_mc.png" id="14_sswb5"]
+[ext_resource type="Texture2D" uid="uid://b5nsknbxyjgkx" path="res://menus/phone/icon_inventory.png" id="15_6b8sl"]
+[ext_resource type="Texture2D" uid="uid://ch0exc2kv6tcg" path="res://menus/phone/phone_wood_bg.png" id="15_cqrpx"]
+[ext_resource type="Texture2D" uid="uid://daenfqa1t2mr4" path="res://menus/phone/messages/portraits/portrait_callum.png" id="15_qajdy"]
 [ext_resource type="Texture2D" uid="uid://d3gjggefdqm6p" path="res://PhoneBackArrow.png" id="16_lpc83"]
+[ext_resource type="Script" path="res://menus/phone/phone_main_menu.gd" id="16_n5rnq"]
+[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="16_xvh5g"]
+[ext_resource type="Script" path="res://menus/button_hover.gd" id="17_a72gu"]
+[ext_resource type="PackedScene" uid="uid://b2bh41bd0epcc" path="res://menus/phone/inventory_slot.tscn" id="17_hlvhb"]
+[ext_resource type="Texture2D" uid="uid://b4sn22n4wum3e" path="res://menus/phone/gallery_art/concept_coworker2.png" id="17_ialdj"]
+[ext_resource type="Texture2D" uid="uid://b256w4dsl6tqj" path="res://menus/phone/gallery_art/concept_salty.jpg" id="18_rhqk3"]
+[ext_resource type="Texture2D" uid="uid://c5lu5srko5jmr" path="res://menus/phone/icon_gallery.png" id="24_yk7th"]
+[ext_resource type="Texture2D" uid="uid://dycpyp7xoyd4b" path="res://menus/phone/messages/notif_cherry.png" id="25_1pn2p"]
+[ext_resource type="Texture2D" uid="uid://c12k704fu73xo" path="res://menus/phone/icon_recipe_book.png" id="26_2wacm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liewr"]
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.187176, 0.187176, 0.187176, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 3.0
-expand_margin_right = 3.0
-expand_margin_bottom = 3.0
+[sub_resource type="Gradient" id="Gradient_1sjun"]
+colors = PackedColorArray(0, 0, 0, 0.72549, 0, 0, 0, 0.258824)
 
-[sub_resource type="Theme" id="Theme_tnnuu"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mtpha"]
+gradient = SubResource("Gradient_1sjun")
+width = 4
+height = 256
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe3l0"]
+atlas = ExtResource("2_7m8c8")
+region = Rect2(98, 49, 525, 979)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bxblj"]
+texture = SubResource("AtlasTexture_qe3l0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb8xy"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_w0rks"]
+offsets = PackedFloat32Array(0.914591, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0t3mb"]
+gradient = SubResource("Gradient_w0rks")
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_dbkf1"]
+colors = PackedColorArray(0, 0, 0, 0.756863, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a1ej0"]
+gradient = SubResource("Gradient_dbkf1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgfuf"]
+bg_color = Color(0, 0, 0, 0.443137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7v4ho"]
+bg_color = Color(0, 0, 0, 0.341176)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_qdxyq"]
 line_spacing = -8.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1pijh"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2ihr"]
+bg_color = Color(0.370365, 0.370364, 0.370364, 0.647059)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_fw2gd"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_vicmm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lb1w"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
 
 [sub_resource type="Animation" id="Animation_1tc4a"]
 length = 0.001
@@ -50,7 +115,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(922, 611)]
+"values": [Vector2(377, 704)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -62,12 +127,36 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.0915635]
+"values": [-0.174532]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_fwirb"]
 resource_name = "open_phone"
-length = 0.75
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -76,9 +165,9 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(0.535887, 1),
+"transitions": PackedFloat32Array(0.482969, 1),
 "update": 0,
-"values": [Vector2(909, 630), Vector2(841, 207)]
+"values": [Vector2(377, 704), Vector2(421, 68)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -88,9 +177,33 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.517632, 1),
+"update": 0,
+"values": [-0.174532, 0.0279253]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TextureRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.0915635, 0.0279253]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eqgxp"]
@@ -110,356 +223,864 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_pyxwy")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 922.0
-offset_top = 611.0
-offset_right = 1124.0
-offset_bottom = 936.0
-rotation = -0.0915635
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_liewr")
-
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 9
-theme_override_constants/margin_top = 28
-theme_override_constants/margin_right = 9
+texture = SubResource("GradientTexture2D_mtpha")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 377.0
+offset_top = 704.0
+offset_right = 694.0
+offset_bottom = 1214.0
+rotation = -0.174532
+pivot_offset = Vector2(317, 510)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bxblj")
+
+[node name="ScreenHolder" type="Panel" parent="Panel"]
+unique_name_in_owner = true
+show_behind_parent = true
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 41.0
+offset_right = -17.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lb8xy")
 script = ExtResource("2_1a7hx")
 
-[node name="Contacts" type="Panel" parent="Panel/MarginContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Contacts"]
+[node name="SceenBG" type="TextureRect" parent="Panel/ScreenHolder"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.623529, 1, 1, 1)
+texture = ExtResource("4_578qi")
+expand_mode = 1
 
-[node name="Contact1" type="Panel" parent="Panel/MarginContainer/Contacts"]
+[node name="Messages" type="Panel" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(184, 275)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="Panel/ScreenHolder/Messages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.3476
+offset_top = -41.5053
+offset_right = 181.652
+offset_bottom = 362.495
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.625324, 0.625324)
+texture = ExtResource("10_iuym1")
+
+[node name="Control" type="Control" parent="Panel/ScreenHolder/Messages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MessageChar" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
 layout_mode = 2
-offset_right = 184.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 284.0
+offset_bottom = 77.0
+icon = ExtResource("12_8obd3")
+npc_code_name = "spicy"
+npc_display_name = "Pepper"
+color = Color(0.776471, 0.184314, 0.184314, 1)
+icon = ExtResource("12_8obd3")
+hover_scale = 1.05
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Contacts/Contact1"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 298.0
+[node name="MessageChar2" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 83.0
+offset_right = 284.0
+offset_bottom = 160.0
+icon = ExtResource("13_dlodv")
+npc_code_name = "savory"
+npc_display_name = "Millie"
+color = Color(0.262745, 0.847059, 0.94902, 1)
+icon = ExtResource("13_dlodv")
+hover_scale = 1.05
 
-[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/Contacts/Contact1"]
-layout_mode = 0
-offset_right = 180.0
-offset_bottom = 174.0
+[node name="MessageChar3" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 166.0
+offset_right = 284.0
+offset_bottom = 243.0
+icon = ExtResource("14_2patd")
+npc_code_name = "sweet"
+npc_display_name = "Ray"
+color = Color(0.709804, 0.231373, 0.827451, 1)
+icon = ExtResource("14_2patd")
+hover_scale = 1.05
+
+[node name="MessageChar4" parent="Panel/ScreenHolder/Messages/Control" instance=ExtResource("11_7v68t")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 249.0
+offset_right = 284.0
+offset_bottom = 326.0
+icon = ExtResource("15_qajdy")
+npc_code_name = "salty"
+npc_display_name = "Callum"
+color = Color(0.588235, 0.827451, 0.231373, 1)
+icon = ExtResource("15_qajdy")
+hover_scale = 1.05
+
+[node name="Gallery" type="Panel" parent="Panel/ScreenHolder"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/ScreenHolder/Gallery"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.0620307
+offset_top = -0.409882
+offset_right = -0.0620422
+offset_bottom = -0.409882
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScreenHolder/Gallery/ScrollContainer"]
+custom_minimum_size = Vector2(184, 260)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="TitleContainer" type="MarginContainer" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/TitleContainer"]
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.517647)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[wave][center]Concept Art!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="LineContainer" type="MarginContainer" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = -5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="FnafSeperator" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/LineContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
 texture = ExtResource("5_r6x37")
+expand_mode = 1
+
+[node name="Characters" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 288.17)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Characters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_4xjsc")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Contact2" type="Panel" parent="Panel/MarginContainer/Contacts"]
-unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(184, 275)
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Characters/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = -30.0
+offset_bottom = 8.51498
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Characters"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Characters"
+horizontal_alignment = 1
+
+[node name="Spicy" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 165.455)
 layout_mode = 2
-offset_right = 184.0
+mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Contacts/Contact2"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 298.0
-color = Color(0.655981, 0.135346, 0.674231, 1)
-
-[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/Contacts/Contact2"]
-layout_mode = 0
-offset_right = 185.0
-offset_bottom = 148.0
-texture = ExtResource("4_wsq33")
-
-[node name="ContactScreen" type="Panel" parent="Panel/MarginContainer/Contacts"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 270.0
-
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Contacts/ContactScreen"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 297.0
-script = ExtResource("3_rv7fq")
-
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-theme = SubResource("Theme_tnnuu")
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Contacts/ContactScreen/GridContainer"]
-custom_minimum_size = Vector2(184, 40)
-layout_mode = 2
-texture_normal = ExtResource("3_m70wx")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="ContactsBackButton" type="TextureButton" parent="Panel/MarginContainer/Contacts"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -6.10352e-05
-offset_top = 255.0
-offset_right = 49.9999
-offset_bottom = 305.0
-texture_normal = ExtResource("5_vvy46")
-ignore_texture_size = true
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Spicy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_b2kxp")
+expand_mode = 1
 stretch_mode = 5
-flip_h = true
 
-[node name="Messages" type="Panel" parent="Panel/MarginContainer"]
-unique_name_in_owner = true
-visible = false
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Spicy/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = 9.0
+offset_right = -39.0
+offset_bottom = 8.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Spicy"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Spicy"
+horizontal_alignment = 1
+
+[node name="NPCs" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 165.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/NPCs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_vipjo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/NPCs/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 9.0
+offset_right = -10.0
+offset_bottom = 8.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/NPCs"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "NPCs"
+horizontal_alignment = 1
+
+[node name="Friendos" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 288.17)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Friendos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_rl2yq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Friendos/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = -30.0
+offset_bottom = 8.51498
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Friendos"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Friendos <3"
+horizontal_alignment = 1
+
+[node name="DivorceWoman" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 179.555)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/DivorceWoman"]
+modulate = Color(0, 0, 0, 0.352941)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.19475
+offset_top = 2.53486
+offset_right = 4.19476
+offset_bottom = -17.1501
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_xvh5g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/DivorceWoman"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_xvh5g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/DivorceWoman"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Divorce Woman"
+horizontal_alignment = 1
+
+[node name="Boss" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Boss"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("11_vuhvu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Boss/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = -31.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Boss"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Boss"
+horizontal_alignment = 1
+
+[node name="Foods" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Foods"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_4neqh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Foods/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 9.0
+offset_right = -59.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Foods"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Food :D"
+horizontal_alignment = 1
+
+[node name="Coworker" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Coworker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("17_ialdj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Coworker/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = 9.0
+offset_right = -69.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Coworker"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Coworker"
+horizontal_alignment = 1
+
+[node name="Salty" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Salty"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("18_rhqk3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Salty/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 9.0
+offset_right = -92.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/Salty"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Salty"
+horizontal_alignment = 1
+
+[node name="MC" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 161.455)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/MC"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -22.685
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("14_sswb5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropShadow" type="TextureRect" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/MC/TextureRect"]
+modulate = Color(0, 0, 0, 0.380392)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 9.0
+offset_right = -28.0
+offset_bottom = 9.23
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_0t3mb")
+
+[node name="Label" type="Label" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer/MC"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+text = "Main Character"
+horizontal_alignment = 1
+
+[node name="EndSpacing" type="Control" parent="Panel/ScreenHolder/Gallery/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Messages"]
+[node name="Inventory" type="Panel" parent="Panel/ScreenHolder"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.97766, 0.811356, 0.793624, 1)
-
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Messages"]
-layout_mode = 0
-offset_right = 184.0
-offset_bottom = 297.0
-
-[node name="Button" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 50)
-layout_mode = 2
-text = "Pepper"
-icon = ExtResource("6_pdhip")
-alignment = 0
-expand_icon = true
-
-[node name="Button2" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 50)
-layout_mode = 2
-text = "Millie"
-icon = ExtResource("6_pdhip")
-alignment = 0
-expand_icon = true
-
-[node name="Button3" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 50)
-layout_mode = 2
-text = "Ray
-"
-icon = ExtResource("6_pdhip")
-alignment = 0
-expand_icon = true
-
-[node name="Button4" type="Button" parent="Panel/MarginContainer/Messages/GridContainer"]
-custom_minimum_size = Vector2(184, 50)
-layout_mode = 2
-text = "Callum"
-icon = ExtResource("6_pdhip")
-alignment = 0
-expand_icon = true
-
-[node name="Gallery" type="Panel" parent="Panel/MarginContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Gallery"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.628921, 0.96398, 0.418176, 1)
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/Gallery"]
-layout_mode = 0
-offset_right = 186.0
-offset_bottom = 297.0
-
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Gallery/ScrollContainer"]
-custom_minimum_size = Vector2(184, 260)
-layout_mode = 2
-theme_override_constants/v_separation = 10
-
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("5_r6x37")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("5_j01br")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="TextureButton5" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="TextureButton6" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("6_sjcrr")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButton7" type="TextureButton" parent="Panel/MarginContainer/Gallery/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_horizontal = 6
-texture_normal = ExtResource("1_p0egn")
-ignore_texture_size = true
-stretch_mode = 4
-
-[node name="Inventory" type="Panel" parent="Panel/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
 script = ExtResource("5_7dqal")
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Inventory"]
+[node name="WoodBG" type="TextureRect" parent="Panel/ScreenHolder/Inventory"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.960114, 0.740453, 0.926453, 1)
+texture = ExtResource("15_cqrpx")
+expand_mode = 1
+stretch_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Inventory"]
+[node name="DarkGradient" type="TextureRect" parent="Panel/ScreenHolder/Inventory"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -217.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_a1ej0")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScreenHolder/Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.99998
+offset_right = 1.99997
 offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SelectedBackground" type="TextureRect" parent="Panel/MarginContainer/Inventory/VBoxContainer"]
+[node name="SelectedBackground" type="Panel" parent="Panel/ScreenHolder/Inventory/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fgfuf")
 
-[node name="SelectedItemIcon" type="TextureRect" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
+[node name="Panel" type="Panel" parent="Panel/ScreenHolder/Inventory/VBoxContainer/SelectedBackground"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.0
+offset_top = -44.0
+offset_right = 100.0
+offset_bottom = 42.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7v4ho")
+
+[node name="SelectedItemIcon" type="TextureRect" parent="Panel/ScreenHolder/Inventory/VBoxContainer/SelectedBackground/Panel"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 8.80316
-offset_top = 7.77771
-offset_right = 67.8032
-offset_bottom = 66.7777
-expand_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_1vomg")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground"]
-layout_mode = 0
-offset_left = 72.0
-offset_right = 183.0
-offset_bottom = 78.0
-theme_override_constants/separation = 0
+[node name="Panel2" type="Panel" parent="Panel/ScreenHolder/Inventory/VBoxContainer/SelectedBackground"]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 12.0
+offset_right = 275.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7v4ho")
 
-[node name="SelectedItemName" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground/VBoxContainer"]
+[node name="Panel3" type="Panel" parent="Panel/ScreenHolder/Inventory/VBoxContainer/SelectedBackground"]
+layout_mode = 2
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 276.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7v4ho")
+
+[node name="SelectedItemName" type="Label" parent="Panel/ScreenHolder/Inventory/VBoxContainer/SelectedBackground"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(111, 0)
 layout_mode = 2
+offset_left = 111.113
+offset_top = 9.06722
+offset_right = 281.113
+offset_bottom = 33.0672
 text = "Test Food Item"
 label_settings = SubResource("LabelSettings_qdxyq")
 autowrap_mode = 2
 
-[node name="SelectedItemDescription" type="Label" parent="Panel/MarginContainer/Inventory/VBoxContainer/SelectedBackground/VBoxContainer"]
+[node name="SelectedItemDescription" type="Label" parent="Panel/ScreenHolder/Inventory/VBoxContainer/SelectedBackground"]
 unique_name_in_owner = true
 layout_mode = 2
+offset_left = 111.0
+offset_top = 45.0
+offset_right = 270.0
+offset_bottom = 99.0
+theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 10
-text = "Quantity: something"
+text = "this thing is a thing and idk i just need to write just keep writing keep typing shit"
+autowrap_mode = 3
 clip_text = true
 
-[node name="InventoryGrid" type="GridContainer" parent="Panel/MarginContainer/Inventory/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/ScreenHolder/Inventory/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="InventoryGrid" type="GridContainer" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
 theme_override_constants/h_separation = 15
-columns = 3
+columns = 4
 
-[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer/Inventory/VBoxContainer/InventoryGrid"]
+[node name="InventorySlot" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("13_1vomg")
-expand_mode = 1
-stretch_mode = 5
 
-[node name="Screen" type="Panel" parent="Panel/MarginContainer"]
+[node name="InventorySlot2" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Panel/ScreenHolder/Inventory/VBoxContainer/MarginContainer/InventoryGrid" instance=ExtResource("17_hlvhb")]
+layout_mode = 2
+
+[node name="Screen" type="Control" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
 visible = false
-clip_children = 1
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_n5rnq")
 
-[node name="ColorRect" type="ColorRect" parent="Panel/MarginContainer/Screen"]
+[node name="ColorRect" type="ColorRect" parent="Panel/ScreenHolder/Screen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -467,93 +1088,188 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/Screen"]
+[node name="MoneyCount" type="Label" parent="Panel/ScreenHolder/Screen"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.1176
+offset_top = -0.415086
+offset_right = -5.11761
+offset_bottom = 33.5849
+grow_horizontal = 0
+text = "$100"
+label_settings = SubResource("LabelSettings_1pijh")
+horizontal_alignment = 2
+
+[node name="DayDisplay" type="Panel" parent="Panel/ScreenHolder/Screen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -52.0
+offset_left = 28.6755
+offset_top = 40.3812
+offset_right = -30.3245
+offset_bottom = -314.619
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2ihr")
+
+[node name="Time" type="Label" parent="Panel/ScreenHolder/Screen/DayDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.0196021
+offset_top = -0.999841
+offset_right = -0.0196075
+offset_bottom = -23.9999
+grow_horizontal = 2
+grow_vertical = 2
+text = "Afternoon"
+label_settings = SubResource("LabelSettings_fw2gd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DaysLeft" type="Label" parent="Panel/ScreenHolder/Screen/DayDisplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.376393
+offset_top = 37.0249
+offset_right = -0.376389
+offset_bottom = -9.97507
+grow_horizontal = 2
+grow_vertical = 2
+text = "X Days til Festival!"
+label_settings = SubResource("LabelSettings_vicmm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ScreenHolder/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 161.0
+offset_right = -23.0
+offset_bottom = -48.9999
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = -2
 theme_override_constants/v_separation = -15
 columns = 2
 
-[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
+[node name="MessagingButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture_normal = ExtResource("12_kv8e5")
-texture_pressed = ExtResource("1_p0egn")
-texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("17_a72gu")
 
-[node name="TextureButton2" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
+[node name="MessageRedDot" type="TextureRect" parent="Panel/ScreenHolder/Screen/GridContainer/MessagingButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 75.6487
+offset_top = -14.3505
+offset_right = 115.649
+offset_bottom = 25.6495
+rotation = 0.30046
+texture = ExtResource("25_1pn2p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RedDotCount" type="Label" parent="Panel/ScreenHolder/Screen/GridContainer/MessagingButton"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 68.2936
+offset_top = -1.43142
+offset_right = 104.294
+offset_bottom = 22.5686
+scale = Vector2(1.14126, 1.14126)
+text = "1"
+horizontal_alignment = 1
+
+[node name="RecipeBookButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-texture_normal = ExtResource("14_2dlto")
-texture_hover = ExtResource("3_5sgex")
+texture_normal = ExtResource("26_2wacm")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("17_a72gu")
 
-[node name="TextureButton3" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
+[node name="GalleryButton" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-texture_normal = ExtResource("1_p0egn")
-texture_hover = ExtResource("3_5sgex")
+texture_normal = ExtResource("24_yk7th")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("17_a72gu")
 
-[node name="TextureButton4" type="TextureButton" parent="Panel/MarginContainer/Screen/GridContainer"]
-custom_minimum_size = Vector2(75, 75)
+[node name="Inventory" type="TextureButton" parent="Panel/ScreenHolder/Screen/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 texture_normal = ExtResource("15_6b8sl")
-texture_hover = ExtResource("3_5sgex")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("17_a72gu")
 
-[node name="BackButton" type="TextureButton" parent="Panel/MarginContainer"]
+[node name="BackButton" type="TextureButton" parent="Panel/ScreenHolder"]
 unique_name_in_owner = true
-visible = false
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 0.323218
+offset_top = -49.6962
+offset_right = 50.3232
+offset_bottom = 0.303833
+grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 texture_normal = ExtResource("16_lpc83")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Panel" type="Panel" parent="Panel/ScreenHolder/BackButton"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.16866
+offset_top = -5.50208
+offset_right = 6.83134
+offset_bottom = 5.49792
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8lb1w")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_eqgxp")
 }
 
-[node name="PhoneTop" type="TextureButton" parent="Panel"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -100.0
-offset_right = 100.0
-offset_bottom = 30.0
-grow_horizontal = 2
-
-[connection signal="pressed" from="Panel/MarginContainer/Contacts/ContactScreen/GridContainer/TextureButton" to="Panel/MarginContainer/Contacts/ContactScreen/GridContainer" method="_on_texture_button_pressed" binds= [1]]
-[connection signal="pressed" from="Panel/MarginContainer/Contacts/ContactScreen/GridContainer/TextureButton2" to="Panel/MarginContainer/Contacts/ContactScreen/GridContainer" method="_on_texture_button_pressed" binds= [2]]
-[connection signal="pressed" from="Panel/MarginContainer/Contacts/ContactsBackButton" to="Panel/MarginContainer/Contacts/ContactScreen/GridContainer" method="_on_contacts_back_button_pressed"]
-[connection signal="visibility_changed" from="Panel/MarginContainer/Inventory" to="Panel/MarginContainer/Inventory" method="on_app_toggle"]
-[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton" to="Panel/MarginContainer" method="_on_app_pressed" binds= [1]]
-[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton2" to="Panel/MarginContainer" method="_on_app_pressed" binds= [2]]
-[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton3" to="Panel/MarginContainer" method="_on_app_pressed" binds= [3]]
-[connection signal="pressed" from="Panel/MarginContainer/Screen/GridContainer/TextureButton4" to="Panel/MarginContainer" method="_on_app_pressed" binds= [4]]
-[connection signal="pressed" from="Panel/MarginContainer/BackButton" to="Panel/MarginContainer" method="_on_back_pressed"]
-[connection signal="button_down" from="Panel/PhoneTop" to="." method="_on_phone_top_pressed"]
+[connection signal="visibility_changed" from="Panel/ScreenHolder" to="Panel/ScreenHolder" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Panel/ScreenHolder/Inventory" to="Panel/ScreenHolder/Inventory" method="on_app_toggle"]
+[connection signal="visibility_changed" from="Panel/ScreenHolder/Screen" to="Panel/ScreenHolder/Screen" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Panel/ScreenHolder/Screen/DayDisplay" to="Panel/ScreenHolder/Screen/DayDisplay" method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/MessagingButton" to="Panel/ScreenHolder" method="open_contacts"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/RecipeBookButton" to="Panel/ScreenHolder" method="open_recipe_book"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/GalleryButton" to="Panel/ScreenHolder" method="open_gallery"]
+[connection signal="pressed" from="Panel/ScreenHolder/Screen/GridContainer/Inventory" to="Panel/ScreenHolder" method="open_inventory"]
+[connection signal="pressed" from="Panel/ScreenHolder/BackButton" to="Panel/ScreenHolder" method="_on_back_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=33 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_11cuj"]
 [ext_resource type="Texture2D" uid="uid://d07o2lsduweq4" path="res://menus/recipe_book/photo_frame_back.png" id="3_0yxhu"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_page.gd" id="3_echjj"]
 [ext_resource type="Texture2D" uid="uid://dlx146n2vp5th" path="res://items/foods/art/croissant.png" id="4_68jve"]
@@ -11,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
 [ext_resource type="Texture2D" uid="uid://bjtf32jw05iq5" path="res://menus/recipe_book/Right_arrow_curve.webp" id="32_wttob"]
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_variant_selection.gd" id="33_amgaq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrw7b"]
+bg_color = Color(0, 0, 0, 0.843137)
 
 [sub_resource type="LabelSettings" id="LabelSettings_c0w4i"]
 font_size = 30
@@ -114,9 +118,132 @@ _data = {
 "flip_right": SubResource("Animation_sl8q5")
 }
 
+[sub_resource type="Animation" id="Animation_yrvjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-370, 853)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Book:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gckjy"]
+resource_name = "new_animation"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.353553, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Book:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.75),
+"transitions": PackedFloat32Array(0.482968, -2, 1),
+"update": 0,
+"values": [Vector2(-370, 853), Vector2(192, 127), Vector2(178, 144)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Book:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.55, 0.75),
+"transitions": PackedFloat32Array(0.683019, -2, 1),
+"update": 0,
+"values": [-0.328122, 0.0436332, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(0.353, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lq5t"]
+_data = {
+"RESET": SubResource("Animation_yrvjd"),
+"new_animation": SubResource("Animation_gckjy")
+}
+
 [node name="RecipeBook" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_3psjk")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrw7b")
+
+[node name="CountertopBlue" type="Sprite2D" parent="."]
+position = Vector2(561, 348)
+scale = Vector2(1.31641, 1.36719)
+texture = ExtResource("2_11cuj")
 
 [node name="Book" type="Control" parent="."]
 layout_mode = 3
@@ -448,6 +575,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("10_u7x5x")
+metadata/_edit_lock_ = true
 
 [node name="BakeLeft" type="Button" parent="Buttons"]
 unique_name_in_owner = true
@@ -530,13 +658,14 @@ script = ExtResource("10_7f2te")
 
 [node name="RecipeVariantSelection" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.333333)
+color = Color(0, 0, 0, 0.913725)
 script = ExtResource("33_amgaq")
 
 [node name="SelectRecipesVariants" type="RichTextLabel" parent="RecipeVariantSelection"]
@@ -619,6 +748,12 @@ layout_mode = 2
 unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_8gqix")
+}
+
+[node name="ReadOnlyOpenAnimation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_2lq5t")
 }
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

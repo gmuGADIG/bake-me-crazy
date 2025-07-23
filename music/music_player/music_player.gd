@@ -57,6 +57,18 @@ func play(from_sec: float = 0.0) -> void:
 	active.volume_db = FULL_DB
 	active.play(from_sec)
 
+## slowly drop the volume of the music players, then stop them
+func soft_stop() -> void:
+	# stop inactive players
+	for player in players:
+		if player != players[active_idx]:
+			player.stop()
+	
+	var tween := create_tween()
+	tween.tween_property(players[active_idx], "volume_db", MUTE_DB, 5.)
+	await tween.finished
+	stop()
+
 func stop() -> void:
 	_reset_players()
 

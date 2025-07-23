@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwkpcolidvc0a"]
+[gd_scene load_steps=13 format=3 uid="uid://cwkpcolidvc0a"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_kr52v"]
 [ext_resource type="Texture2D" uid="uid://cb2o5nwjunabw" path="res://free_roam/world/streets/streets_bg.png" id="2_dnht4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/simple_npc.gd" id="5_r5mtj"]
 [ext_resource type="Resource" path="res://dialogue/testing/test_market_timeline.dtl" id="6_8q1kx"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
+[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="9_pnv2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn5p"]
 size = Vector2(238, 320)
@@ -69,3 +70,5 @@ position_smoothing_enabled = true
 
 [node name="PlaySongForScene" parent="." index="4" instance=ExtResource("9_nxvw3")]
 song_name = "morning_theme.tres"
+
+[node name="SetDayPhase" parent="." index="7" instance=ExtResource("9_pnv2p")]

@@ -41,14 +41,23 @@ func _process(delta: float) -> void:
 		flour_in_bowl = flour_in_bowl + delta * pour_speed
 	
 	if flour_in_bowl >= target_amount and not Input.is_mouse_button_pressed(1):
-		var score := remap(flour_in_bowl, target_amount + pour_speed * .5, target_amount + pour_speed * 1.5, 3, 0)
-		score = clampf(score, 0, 3)
+		# perfect = 0, inaccurate = 1
+		var inv_accuracy := remap(flour_in_bowl, target_amount, target_amount + pour_speed * 1.5, 0, 1)
+		inv_accuracy = clampf(inv_accuracy, 0, 1)
+		
+		# -(x^(0.5)) + 1 maps linear x to exponential fn, where 0 = 1, 1 = 0
+		# the score is biased toward accurate results and eases out toward less
+		# accurate ones.
+		var raw_score := -pow(inv_accuracy, .5) + 1
+		var score := lerpf(1, 3, clamp(raw_score, 0, 1))
 		finished.emit(score)
 		
 		# Hide the particles when finished so they don't show during the animation.
 		particles.hide()
 		done = true
 
+		print("[pour_flour] inv_accuracy = ", inv_accuracy)
+		print("[pour_flour] raw_score = ", raw_score)
 		print("[pour_flour] score = ", score)
 		
 	particles.global_position = powder_location.global_position

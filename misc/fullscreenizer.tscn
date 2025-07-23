@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfyx02bkiyjcq"]
+
+[ext_resource type="Script" path="res://misc/fullscreenizer.gd" id="1_hmb50"]
+
+[node name="Fullscreenizer" type="Node"]
+process_mode = 3
+script = ExtResource("1_hmb50")
