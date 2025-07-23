@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cs2tul8n3xvnn"]
+[gd_scene load_steps=15 format=3 uid="uid://cs2tul8n3xvnn"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_25exc"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="2_uj0nr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5hlkhhtkgxsm" path="res://cooking/art/Fire Spritesheet.png" id="4_m17or"]
 [ext_resource type="Texture2D" uid="uid://tckmwkoekjq0" path="res://cooking/cooking_art/Minigame_Saucepan.png" id="5_myo54"]
 [ext_resource type="Script" path="res://cooking/steps/bake_animation.gd" id="5_tvtvx"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="6_moveo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngbnn"]
 bg_color = Color(0.93, 0.3069, 0.3069, 1)
@@ -147,7 +148,16 @@ position = Vector2(746.25, 333.75)
 scale = Vector2(3.11914, 2.50195)
 texture = ExtResource("5_myo54")
 
-[node name="Fire" type="Sprite2D" parent="." index="4"]
+[node name="InstructionsPanel" parent="." index="4" instance=ExtResource("6_moveo")]
+offset_left = 330.0
+offset_top = 334.0
+offset_right = 330.0
+offset_bottom = 334.0
+scale = Vector2(0.7, 0.7)
+minigame_title = "Heat"
+instructions = "Click and hold to keep the meter in the green!"
+
+[node name="Fire" type="Sprite2D" parent="." index="5"]
 position = Vector2(593, 313)
 scale = Vector2(0.660156, 0.619141)
 texture = ExtResource("4_m17or")
