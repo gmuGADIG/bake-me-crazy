@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 
 func _on_start_pressed() -> void:
 	#SceneTransition.change_scene_to_file("res://menus/character_select/character_select.tscn")
+	PlayerData.reset()
 	SceneTransition.change_scene_to_file("res://free_roam/world/streets/streets.tscn")
 
 func _on_load_game_pressed() -> void:
@@ -31,7 +32,7 @@ func _on_options_pressed() -> void:
 	add_child(settings_menu)
 
 func _on_credits_pressed() -> void:
-	print("GADIG made this game") # Temporary code
+	SceneTransition.change_scene_to_file("res://credits/credits.tscn")
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()

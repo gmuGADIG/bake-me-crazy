@@ -21,9 +21,8 @@ func _process(delta: float) -> void:
 	
 	if position.y == target:
 		stopped = true
-		await get_tree().create_timer(10.).timeout
+		await get_tree().create_timer(5.).timeout
 		if OS.has_feature("movie"):
 			get_tree().quit()
 		else:
-			get_tree().change_scene_to_file("res://menus/start_menu/main_menu.tscn")
-
+			SceneTransition.change_scene_to_file("res://menus/start_menu/main_menu.tscn")
