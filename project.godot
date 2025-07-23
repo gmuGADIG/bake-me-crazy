@@ -101,7 +101,15 @@ directories/dtl_directory={
 "sweet_days": "res://dialogue/sweet/lunch_break/sweet_days.dtl",
 "sweet_main": "res://dialogue/sweet/lunch_break/sweet_main.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
-"test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl"
+"test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl",
+"text_1": "res://dialogue/sweet/daily_interactions/texts/text_1.dtl",
+"text_2": "res://dialogue/sweet/daily_interactions/texts/text_2.dtl",
+"text_3": "res://dialogue/sweet/daily_interactions/texts/text_3.dtl",
+"text_4": "res://dialogue/sweet/daily_interactions/texts/text_4.dtl",
+"text_5": "res://dialogue/sweet/daily_interactions/texts/text_5.dtl",
+"text_6": "res://dialogue/sweet/daily_interactions/texts/text_6.dtl",
+"text_7": "res://dialogue/sweet/daily_interactions/texts/text_7.dtl",
+"text_8": "res://dialogue/sweet/daily_interactions/texts/text_8.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=[]
