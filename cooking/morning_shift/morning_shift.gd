@@ -16,7 +16,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	var select_recipe: RecipeBook = recipe_book.instantiate()
-	select_recipe.user_closable = false
 	add_child(select_recipe)
 	# Godot won't let us use a typed array here. Lame!
 	var recipes_selected: Array = await select_recipe.recipes_selected

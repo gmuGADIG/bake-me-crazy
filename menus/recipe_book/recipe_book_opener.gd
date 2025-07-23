@@ -15,5 +15,4 @@ func _process(_delta: float) -> void:
 
 func open_book() -> void:
 	recipe_book = load("res://menus/recipe_book/recipe_book_view_only.tscn").instantiate()
-	recipe_book.user_closable = true
 	add_child(recipe_book)

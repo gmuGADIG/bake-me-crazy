@@ -40,7 +40,8 @@ func reset():
 func load_file(save_template : SaveTemplate, change_music: bool = true) -> void:
 	data = save_template
 	
-	SceneTransition.change_scene_to_file(data.scene_path)
+	if data.scene_path != "": # "" iff new save
+		SceneTransition.change_scene_to_file(data.scene_path)
 	
 	if change_music:
 		if data.music_file != "":
