@@ -76,3 +76,20 @@ func unlock_new_recipe(recipe_path: String) -> void:
 
 func change_scene(scene_path: String) -> void:
 	SceneTransition.change_scene_to_file(scene_path)
+
+func coworker_all_gossip_given() -> bool:
+	const MAX_GOSSIP := 8
+	
+	var sum = 0
+	for person in ["salty", "savory", "spicy", "sweet"]:
+		sum += Dialogic.VAR.coworker.get(person)
+	
+	return sum >= MAX_GOSSIP
+
+func coworker_can_gossip(character: String) -> bool:
+	const MAX_PER_CHAR := 2
+	return Dialogic.VAR.coworker.get(character) < MAX_PER_CHAR
+
+func coworker_start_gossip():
+	var current_npc = LunchBreakNPC.latest_npc
+	current_npc.is_repeating = true

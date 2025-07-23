@@ -57,13 +57,14 @@ directories/dtl_directory={
 "callum_gossips": "res://dialogue/coworker/gossip/callum_gossips.dtl",
 "clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
+"coworker_gossip_main": "res://dialogue/coworker/gossip/coworker_gossip_main.dtl",
+"coworker_lunch_break": "res://dialogue/coworker/gossip/coworker_lunch_break.dtl",
 "dates/callum_date_1": "res://dialogue/salty/dates/callum_date_1.dtl",
 "dates/callum_date_1_dartballoons": "res://dialogue/salty/dates/callum_date_1_dartballoons.dtl",
 "dates/callum_date_1_failstate": "res://dialogue/salty/dates/callum_date_1_failstate.dtl",
 "dates/callum_date_1_wheeloffortune": "res://dialogue/salty/dates/callum_date_1_wheeloffortune.dtl",
 "dates/callum_date_3": "res://dialogue/salty/dates/callum_date_3.dtl",
 "dates/callum_date_confession": "res://dialogue/salty/dates/callum_date_confession.dtl",
-"gossip_tree": "res://dialogue/coworker/gossip/gossip_tree.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "millie_date_1": "res://dialogue/savory/dates/millie_date_1.dtl",
 "millie_date_2": "res://dialogue/savory/dates/millie_date_2.dtl",
@@ -102,6 +103,14 @@ glossary/default_case_sensitive=true
 layout/style_list=[]
 layout/default_style=""
 variables={
+"coworker": {
+"investigating": "",
+"repeat": false,
+"salty": 0,
+"savory": 0,
+"spicy": 0,
+"sweet": 0
+},
 "date": "",
 "dateRP": 0,
 "hearts": {

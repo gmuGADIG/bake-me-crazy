@@ -1,0 +1,25 @@
+if {coworker.investigating} == "salty":
+	set {coworker.salty} += 1
+	if {coworker.salty} == 1:
+		jump callum_gossips/1
+	else:
+		jump callum_gossips/2
+elif {coworker.investigating} == "savory":
+	set {coworker.savory} += 1
+	if {coworker.savory} == 1:
+		jump millie_gossips/1
+	else:
+		jump millie_gossips/2
+elif {coworker.investigating} == "spicy":
+	set {coworker.spicy} += 1
+	if {coworker.spicy} == 1:
+		jump pepper_gossips/1
+	else:
+		jump pepper_gossips/2
+else:
+	set {coworker.sweet} += 1
+	if {coworker.sweet} == 1:
+		jump raymond_gossips/1
+	else:
+		jump raymond_gossips/2
+return
