@@ -12,6 +12,12 @@ var _sent_signal: bool = false
 
 @export var pour_rate_multiplier := 1.0
 
+func pre_animation():
+	# Before the animation, be sure to reset all the containers again, so they
+	# appear properly (?)
+	for container in containers:
+		container.set_container_texture(container_texture)
+
 func _ready() -> void:
 	# Collect all the child containers
 	for child in get_children():

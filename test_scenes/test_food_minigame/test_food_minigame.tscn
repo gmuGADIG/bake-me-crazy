@@ -18,28 +18,28 @@
 
 [node name="FoodMinigame" instance=ExtResource("1_hk2jr")]
 
-[node name="PourStep" parent="." index="1" instance=ExtResource("2_ov8rw")]
+[node name="PourStepBig" parent="." index="1" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig" parent="." index="2" instance=ExtResource("2_4qsn0")]
+[node name="PourStepBig2" parent="." index="2" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig2" parent="." index="3" instance=ExtResource("2_4qsn0")]
+[node name="PourStepBig3" parent="." index="3" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig3" parent="." index="4" instance=ExtResource("2_4qsn0")]
+[node name="PourStepBig4" parent="." index="4" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig4" parent="." index="5" instance=ExtResource("2_4qsn0")]
+[node name="PourStepBig5" parent="." index="5" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig5" parent="." index="6" instance=ExtResource("2_4qsn0")]
+[node name="PourStepBig6" parent="." index="6" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig6" parent="." index="7" instance=ExtResource("2_4qsn0")]
+[node name="PourStepBig7" parent="." index="7" instance=ExtResource("2_4qsn0")]
 layout_mode = 1
 
-[node name="PourStepBig7" parent="." index="8" instance=ExtResource("2_4qsn0")]
+[node name="PourStep" parent="." index="8" instance=ExtResource("2_ov8rw")]
 layout_mode = 1
 
 [node name="PourStep_Bar" parent="." index="9" instance=ExtResource("2_ov8rw")]

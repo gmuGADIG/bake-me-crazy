@@ -22,6 +22,8 @@ var score := 1.0
 var tex_scale := 0.734
 const TEX_SCALE_REF := 0.734
 
+@onready var poured_in_ref_scale = %PouredIn.scale
+
 func unpoured() -> float:
 	return UNPOURED * TEX_SCALE_REF / tex_scale
 func poured() -> float:
@@ -37,8 +39,10 @@ func set_container_texture(texture: Texture2D) -> void:
 	tex_scale = (256.0 / texture.get_width()) * TEX_SCALE_REF
 	
 	%SinglePourer.scale = Vector2(tex_scale, tex_scale)
-	%PouredIn.scale.x *= TEX_SCALE_REF / tex_scale
-	%PouredIn.scale.y *= TEX_SCALE_REF / tex_scale
+	%PouredIn.scale = poured_in_ref_scale * TEX_SCALE_REF / tex_scale
+	
+	# Reset the poured_in sprite for initial scene load
+	poured_in.position.y = lerp(unpoured(), poured(), pour_percent)
 
 func _ready() -> void:
 	%PerfectPourRef.queue_free()
