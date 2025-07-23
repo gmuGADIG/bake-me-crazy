@@ -48,6 +48,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "boss_lunch_break": "res://dialogue/boss/boss_lunch_break.dtl",
+"callum_conversations": "res://dialogue/salty/daily_interactions/callum_conversations.dtl",
 "callum_date_1_beanbagtoss": "res://dialogue/salty/dates/callum_date_1_beanbagtoss.dtl",
 "callum_date_1_fishinggame": "res://dialogue/salty/dates/callum_date_1_fishinggame.dtl",
 "callum_gossips": "res://dialogue/coworker/gossip/callum_gossips.dtl",
@@ -60,6 +61,7 @@ directories/dtl_directory={
 "dates/callum_date_1_wheeloffortune": "res://dialogue/salty/dates/callum_date_1_wheeloffortune.dtl",
 "dates/callum_date_3": "res://dialogue/salty/dates/callum_date_3.dtl",
 "dates/callum_date_confession": "res://dialogue/salty/dates/callum_date_confession.dtl",
+"end_of_day": "res://dialogue/narration/end_of_day.dtl",
 "gossip_tree": "res://dialogue/coworker/gossip/gossip_tree.dtl",
 "ivy_dialogue_tree": "res://dialogue/boss/ivy_dialogue_tree.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",

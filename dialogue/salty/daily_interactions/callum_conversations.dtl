@@ -1,0 +1,66 @@
+label 1
+callum: Hey, what are the perks of working here? Is it true that you guys get the leftovers at closing?
+	- “It’s all donated to charities.”
+callum: Whoa, okay...so the perk is that you’re Leaventide’s local superheroes. Noted.
+[end_timeline]
+
+label 2
+callum: Hey! Me? I’m just hanging out. Just taking a break from the monotony of day-to-day life. I’ll get back to it...eventually.[n]Does it ever bore you making the same pastries every day?
+- “Some days are a drag.”
+	callum: I figured.[n]It’s your passion, but stuff can get repetitive. At least it makes the unexpected stuff stick out more, if you care for a bit of optimism.[n]Well, I appreciate the honesty! Hope today isn’t one of those drags.
+- “It’s always worth seeing people enjoy your food!”
+	callum: Aw, that’s actually pretty sweet. Unfortunately it’s not the same at the repair shop.[n]Fix a customer’s machine, and they’re grateful for a while, but once it stops working again? They call it a result of a botched repair job.[n]And then they pay me again to fix it, so, what do they REALLY think?
+[end_timeline]
+
+label 3
+callum: I’ll be the first to admit it. This bakery easily clears any that I went to in Cali. It’s a shame nothing else in Leaventide sticks out as much…[n]Uhh, hey, do you think you could hook me up with the recipes for when I eventually move back to the mother coast?
+[end_timeline]
+
+label 4
+callum: Look who it is! Same time, same place. You sure you’re not following me?[n]Hah! Just kidding! I know you work here. ...Or is that just part of an elaborate plan?[n]Entrance me with good food to ensure I’m at the same spot for lunch every day, and then blend in as an employee at said spot...[n+] just to get to know me better. I’m flattered. And, again. Just kidding.
+[end_timeline]
+
+label 5
+callum: So, what’s up with your coworker? Leslie, right?[n] I see them around town cooped up in all these odd spots, just staring at people. Just the other day, I saw them placing a cup against someone’s wall.[n]What are they plotting? Should I be worried?
+[end_timeline]
+
+label 6
+callum: Heyo! Nice seeing you again. This is really becoming a routine, isn’t it?[n]I stand out here, you walk up to me. I talk, you stare, and then get back to your shift. Rinse and repeat.[n]I like it.
+[end_timeline]
+
+label 7
+callum: Ooh, I’ve been hurting for Cali’s summer weather. We’re so close.[n]Only this is Leaventide, and we get dog days and mornings that envelope the whole town in an obnoxious fog.[n]Sorry, that was a bit venomous of me. The occasional light storm is nice, at least!
+[end_timeline]
+
+label 8
+callum: I can’t believe it. This old lady’s computer had me stumped yesterday.[n]I checked her drivers, her hardware, everything...and guess what? The last thing I noticed was that she was due for a system update.[n]I can’t say I was unhappy that the update fixed everything in one fell swoop, but I was definitely disappointed that it wasn't the first thing I tried.
+[end_timeline]
+
+label 9
+callum: Again, {player_name}, your coworker is something else. I saw them tip-toeing around town like one of those cartoonish crooks.[n]What were they up to, I wonder? Rigging an anvil above someone’s doorway?[n]I shudder at the thought! Thank goodness they’re not tailing me. Right? You’d tell me if they were tailing me, wouldn’t you!?
+[end_timeline]
+
+label 10
+callum: Just when Leaventide was starting to grow on me, someone sent a curse through the town.[n]Suddenly, everyone has computer troubles. Good for business, bad for stress.[n]I guess that’s how you feel every day when the lunchtime rush comes in.
+[end_timeline]
+
+label 11
+callum: Do you guys plan seasonal items at this bakery? I can only imagine the beaucoup bucks you could make around the holiday season.
+“Planning to stick around until then?”
+	callum: I’m expressing my curiosity, not staking my claim on the land…[n+]but if you promise to bake me something special for Christmas, I might hold out until then.
+“We make a few special batches for the culture festival.”
+	callum: No kidding? Well, I’m glad I don’t have to wait too long to try them out![n]I hope it includes special baklava...
+[end_timeline]
+
+label 12
+callum: Hey! Mind if I share a fun fact about computers?[n]The average computer keyboard contains well over a hundred times more bacteria than a trash can.[n]That’s enough bacteria to get super sick![n]So, how was that fun fact? Thought I’d try geeking out the same way Raymond does.
+- “That was sort of gross.”
+	callum: Oh, come on! It’s just biology.
+- “You capture his charm perfectly.”
+	callum: Aww, thanks. Wait, perfectly? Sorry...I need some time to reflect on that.
+[end_timeline]
+
+label 13
+callum: You know, {player_name}, you have spoken to me EVERY. DAY. for the last two weeks.[n]Think we can keep it up at tomorrow’s culture festival? I’d love to see you there!
+[end_timeline]
+
