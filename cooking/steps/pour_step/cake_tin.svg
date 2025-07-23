@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="256"
-   height="256"
-   viewBox="0 0 67.733332 67.733333"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
    version="1.1"
    id="svg1"
    xml:space="preserve"
@@ -25,8 +25,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="px"
      inkscape:zoom="1.5559226"
-     inkscape:cx="274.7566"
-     inkscape:cy="308.17728"
+     inkscape:cx="132.07598"
+     inkscape:cy="360.87913"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
@@ -49,14 +49,15 @@
        y1="42.921764"
        x2="42.322418"
        y2="53.634865"
-       gradientUnits="userSpaceOnUse" /></defs><g
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.8651303,0,0,1.8651303,4.7630682,6.6074198)" /></defs><g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"><path
-       style="fill:url(#linearGradient4);fill-opacity:1;stroke:#2e1c18;stroke-width:0.940858;stroke-linecap:round;stroke-miterlimit:12.9;stroke-dasharray:none"
-       d="M 7.0767216,53.423072 2.6874515,41.406827 1.8566126,40.479077 1.2024288,38.688157 66.698541,38.778341 65.869689,40.761086 64.786223,42.058527 60.02506,53.447976 Z"
+       style="fill:url(#linearGradient4);stroke:#2e1c18;stroke-width:0.87312499;stroke-linecap:round;stroke-miterlimit:12.9;stroke-dasharray:none"
+       d="M 17.962076,106.24841 9.7755158,83.836546 8.2258926,82.106172 7.0057538,78.765873 129.16453,78.93407 l -1.54592,3.698078 -2.0208,2.419896 -8.88018,21.242806 z"
        id="path1"
        sodipodi:nodetypes="ccccccccc" /><path
-       style="fill:#3e3a34;fill-opacity:1;stroke:#2e1c18;stroke-width:0.729192;stroke-linecap:round;stroke-miterlimit:12.9;stroke-dasharray:none"
-       d="M 2.6915033,41.219042 65.097575,41.399406"
+       style="fill:#3e3a34;fill-opacity:1;stroke:#2e1c18;stroke-width:0.66145833;stroke-linecap:round;stroke-miterlimit:12.9;stroke-dasharray:none"
+       d="M 9.7830708,83.486303 126.17853,83.822705"
        id="path3" /></g></svg>

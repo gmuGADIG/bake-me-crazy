@@ -60,6 +60,7 @@ _data = {
 [node name="PourStep" instance=ExtResource("1_lc6su")]
 script = ExtResource("2_liv11")
 container_texture = ExtResource("3_sg5ac")
+pour_rate_multiplier = 1.0
 
 [node name="TextureRect2" type="TextureRect" parent="." index="0"]
 z_index = -10
