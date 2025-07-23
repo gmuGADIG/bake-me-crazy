@@ -94,7 +94,6 @@ directories/dtl_directory={
 "spicy_days": "res://dialogue/spicy/lunch_break/spicy_days.dtl",
 "spicy_main": "res://dialogue/spicy/lunch_break/spicy_main.dtl",
 "spicy_market": "res://dialogue/spicy/spicy_market.dtl",
-"sweet_days": "res://dialogue/sweet/lunch_break/sweet_days.dtl",
 "sweet_main": "res://dialogue/sweet/lunch_break/sweet_main.dtl",
 "sweet_market": "res://dialogue/sweet/sweet_market.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
