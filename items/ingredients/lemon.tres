@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://biw16s27hi36y"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://biw16s27hi36y"]
 
 [ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_fbsh8"]
+[ext_resource type="Texture2D" uid="uid://bb42knsb8mgjf" path="res://items/ingredients/art/Lemon.png" id="1_k8do4"]
 
 [resource]
 script = ExtResource("1_fbsh8")
 ingredient_type = 4
 description = "Citrus fruit that is yellow"
 display_name = "Lemon"
+image = ExtResource("1_k8do4")

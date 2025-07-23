@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://brwsfydgrpxie"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://brwsfydgrpxie"]
 
+[ext_resource type="Texture2D" uid="uid://b3d1i30x3c3rp" path="res://items/ingredients/art/Cherry.png" id="1_uujan"]
 [ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_w636t"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_w636t")
 ingredient_type = 1
 description = "Red & fruit"
 display_name = "Cherry"
+image = ExtResource("1_uujan")

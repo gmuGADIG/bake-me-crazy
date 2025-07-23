@@ -127,6 +127,10 @@ func resume() -> void:
 		if player.playing and player.playback_paused:
 			player.playback_paused = false
 
+func is_song_name_playing(filename: String) -> bool:
+	var song: Song = SongScanner.get_song_by_filename(filename)
+	return song == current_song
+
 # Internal handlers
 func _handle_song_transition(delta: float) -> void:
 	if not is_song_transition:

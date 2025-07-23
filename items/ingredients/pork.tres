@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://cnuuuomy00hxl"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://cnuuuomy00hxl"]
 
+[ext_resource type="Texture2D" uid="uid://brqrnnqxdwuke" path="res://items/ingredients/art/Pork.png" id="1_d8226"]
 [ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_r76m3"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_r76m3")
 ingredient_type = 8
 description = "The only meat ingredient"
 display_name = "Pork"
+image = ExtResource("1_d8226")

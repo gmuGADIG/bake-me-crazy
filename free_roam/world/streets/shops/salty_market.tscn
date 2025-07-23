@@ -1,0 +1,42 @@
+[gd_scene load_steps=13 format=3 uid="uid://dhraqm00vs1j5"]
+
+[ext_resource type="PackedScene" uid="uid://ksburhrk4icq" path="res://menus/market_ui/market_ui.tscn" id="1_8v2rn"]
+[ext_resource type="Script" path="res://items/shop_item.gd" id="2_ik6xg"]
+[ext_resource type="Resource" uid="uid://bcjm032lps0e7" path="res://items/ingredients/tea.tres" id="3_43ehf"]
+[ext_resource type="Resource" uid="uid://dlcm7m0yeyb0d" path="res://items/ingredients/orange.tres" id="4_uo5tl"]
+[ext_resource type="Resource" uid="uid://biw16s27hi36y" path="res://items/ingredients/lemon.tres" id="5_r6ye5"]
+[ext_resource type="Resource" uid="uid://bgg3p5ee7mfuv" path="res://items/ingredients/cinnamon.tres" id="6_c8qvc"]
+[ext_resource type="Texture2D" uid="uid://dcnamp0ss32qn" path="res://dialogue/salty/callum_portraits/callum_neutral.png" id="7_axer4"]
+[ext_resource type="Texture2D" uid="uid://btp0qn2i017d" path="res://dialogue/salty/callum_portraits/callum_excited.png" id="8_2wfsw"]
+
+[sub_resource type="Resource" id="Resource_2hh77"]
+script = ExtResource("2_ik6xg")
+price = 15
+quality = 0
+data = ExtResource("3_43ehf")
+
+[sub_resource type="Resource" id="Resource_mc1sb"]
+script = ExtResource("2_ik6xg")
+price = 15
+quality = 0
+data = ExtResource("4_uo5tl")
+
+[sub_resource type="Resource" id="Resource_i7fcm"]
+script = ExtResource("2_ik6xg")
+price = 15
+quality = 0
+data = ExtResource("5_r6ye5")
+
+[sub_resource type="Resource" id="Resource_xwmqh"]
+script = ExtResource("2_ik6xg")
+price = 15
+quality = 0
+data = ExtResource("6_c8qvc")
+
+[node name="MarketUI" instance=ExtResource("1_8v2rn")]
+items = Array[ExtResource("2_ik6xg")]([SubResource("Resource_2hh77"), SubResource("Resource_mc1sb"), SubResource("Resource_i7fcm"), SubResource("Resource_xwmqh")])
+neutral_portrait = ExtResource("7_axer4")
+happy_portrait = ExtResource("8_2wfsw")
+
+[node name="CharacterName" parent="Control/Panel/BottomStuff" index="3"]
+text = "Capital Tea"
