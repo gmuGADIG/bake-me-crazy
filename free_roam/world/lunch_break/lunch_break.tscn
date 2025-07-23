@@ -12,9 +12,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_r20jp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 89, 658, 0, 0, 0, 0, 1410, 647)
+"points": PackedVector2Array(0, 0, 0, 0, 204, 615, -275.611, -18.8775, 275.611, 18.8775, 1494, 664, 0, 0, 0, 0, 2980, 661)
 }
-point_count = 2
+point_count = 3
 
 [node name="LunchBreak" instance=ExtResource("1_edee5")]
 
@@ -26,30 +26,30 @@ centered = false
 [node name="Interactables" type="Node2D" parent="." index="1"]
 
 [node name="SaltyNPC" parent="Interactables" index="0" instance=ExtResource("3_m7bti")]
-position = Vector2(759, 578)
+position = Vector2(2745, 639)
 
 [node name="SpicyNPC" parent="Interactables" index="1" instance=ExtResource("5_n35qi")]
-position = Vector2(421, 604)
+position = Vector2(2388, 655)
 
 [node name="SavoryNPC" parent="Interactables" index="2" instance=ExtResource("6_nm6yq")]
-position = Vector2(977, 585)
+position = Vector2(2032, 636)
 
 [node name="SweetNPC" parent="Interactables" index="3" instance=ExtResource("7_cnq0i")]
-position = Vector2(566, 595)
+position = Vector2(1766, 640)
 
 [node name="BossNPC" parent="Interactables" index="4" instance=ExtResource("4_ibe2d")]
-position = Vector2(1319, 587)
+position = Vector2(1215, 587)
 
 [node name="PlayerPath" parent="." index="2"]
 curve = SubResource("Curve2D_r20jp")
 
 [node name="Player" parent="PlayerPath" index="0"]
-position = Vector2(89, 658)
+position = Vector2(204, 615)
 
 [node name="Camera2D" parent="PlayerPath/Player" index="3"]
 limit_left = 0
 limit_top = 0
-limit_right = 2300
+limit_right = 3122
 limit_bottom = 648
 
 [node name="PlaySongForScene" parent="." index="4" instance=ExtResource("9_7b54g")]
