@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcp3s2yh0odt3"]
+
+[ext_resource type="Script" path="res://free_roam/interactables/NPCs/lunch_break_npc.gd" id="1_oeqd3"]
+[ext_resource type="Resource" path="res://dialogue/coworker/gossip/coworker_lunch_break.dtl" id="2_588qd"]
+[ext_resource type="Texture2D" uid="uid://bhcltkuwgmtpw" path="res://menus/phone/gallery_art/coworker2_trans_bg.png" id="3_52adq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l8ad"]
+size = Vector2(170, 287)
+
+[node name="CoworkerNPC" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_oeqd3")
+character_code_name = "coworker"
+main_timeline = ExtResource("2_588qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -117.5)
+shape = SubResource("RectangleShape2D_6l8ad")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, -118)
+scale = Vector2(0.567627, 0.567627)
+texture = ExtResource("3_52adq")

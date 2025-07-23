@@ -1,3 +1,4 @@
+do BreakNPCSystem.start_daily_chat()
 label 1
 The customer stares at the glass casing of pastries for a concerning amount of time.
 
@@ -16,7 +17,7 @@ raymond: Oh, hi! It’s you again![n]You have to give me what I had last time, i
 [end_timeline]
 
 label 3
-raymond: Random astronomy fact of the day: neutron stars are so dense that a single teaspoon of their material would weigh about 6 billion tons, which is roughly the same as a mountain on Earth![n]Lemme know if you ever get sick of hearing this stuff.
+raymond: Random astronomy fact of the day\: neutron stars are so dense that a single teaspoon of their material would weigh about 6 billion tons, which is roughly the same as a mountain on Earth![n]Lemme know if you ever get sick of hearing this stuff.
 [end_timeline]
 
 label 4
@@ -25,7 +26,7 @@ raymond: Oh, hey... No, I'm fine.[n]I finished a writeup for an exhibit at the p
 
 label 5
 
-raymond: Ugh, you know what’s been bothering me?[n+]All those conspiracy nuts who say the moon landing was fake. 
+raymond: Ugh, you know what’s been bothering me?[n+]All those conspiracy nuts who say the moon landing was fake.
 
 - “Hold on. It was fake?!”
 	raymond: Wha–NO! No, it most certainly wasn’t fake!
@@ -36,7 +37,7 @@ raymond: I mean, it’s one of mankind’s greatest accomplishments towards the 
 [end_timeline]
 
 label 6
-raymond:Sigh... I’ve dealt with too many people mistaking astronomy with astrology. I don’t wanna sound rude, but I don’t know how they make that mistake![n]I mean, one is proven by science, and the other…well…[n+] Oh, never mind, it’s really not that big of a deal.
+raymond: Sigh... I’ve dealt with too many people mistaking astronomy with astrology. I don’t wanna sound rude, but I don’t know how they make that mistake![n]I mean, one is proven by science, and the other…well…[n+] Oh, never mind, it’s really not that big of a deal.
 [end_timeline]
 
 label 7
@@ -54,7 +55,7 @@ raymond: I’ve been learning a lot about distant galaxies, and while they are i
 - “What makes you say that?”
 	raymond: Some of these names are absolutely ridiculous!
 - “I think the Milky Way is a clever name.”
-	raymond: Oh, trust me. It only goes downhill from there! 
+	raymond: Oh, trust me. It only goes downhill from there!
 raymond: Get this, we named one the “Hockey Stick Galaxy” just because it’s shaped like one! Surely, we could’ve thought of something more creative than that![n]Maybe a title such as “Knife Edge Galaxy” would’ve sufficed…[n]Wait…that one’s already taken?! Maybe we are running out of good options after all.
 [end_timeline]
 
@@ -84,7 +85,7 @@ raymond: Man, summer is literally right around the corner, and I still can’t b
 [end_timeline]
 
 label 14
-raymond: Hey! I just got back from my astronomy club’s final meeting! I gotta say, I’m gonna miss quite a few of those members…they really knew how to keep the place engaging.[n]The earth really is a small place in the grand scheme of things, so no matter how far they go, I’m sure I’ll bump into them somehow![n]Hey, with those empty spots, you can join the club if you’d like. 
+raymond: Hey! I just got back from my astronomy club’s final meeting! I gotta say, I’m gonna miss quite a few of those members…they really knew how to keep the place engaging.[n]The earth really is a small place in the grand scheme of things, so no matter how far they go, I’m sure I’ll bump into them somehow![n]Hey, with those empty spots, you can join the club if you’d like.
 
 - “Do you really think they would allow me in?”
 	raymond: Well…I’m sure I could, uh, make some…arrangements.
