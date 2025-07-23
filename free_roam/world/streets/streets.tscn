@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://free_roam/interactables/NPCs/simple_npc.gd" id="5_r5mtj"]
 [ext_resource type="Resource" path="res://dialogue/testing/test_market_timeline.dtl" id="6_8q1kx"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
-[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="9_pnv2p"]
+[ext_resource type="PackedScene" path="res://misc/set_day_phase.tscn" id="9_pnv2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn5p"]
 size = Vector2(238, 320)

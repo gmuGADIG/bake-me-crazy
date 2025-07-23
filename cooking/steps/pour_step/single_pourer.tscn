@@ -33,3 +33,10 @@ scale = Vector2(0.398936, 0.159574)
 texture = ExtResource("3_3x3vc")
 region_enabled = true
 region_rect = Rect2(0, 0, 768, 512)
+
+[node name="PerfectPourRef" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+offset_left = -77.0
+offset_top = 24.0
+offset_right = 77.0
+offset_bottom = 32.0

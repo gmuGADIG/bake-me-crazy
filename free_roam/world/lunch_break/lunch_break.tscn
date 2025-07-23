@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cnxead63d1lt2" path="res://free_roam/interactables/NPCs/scenes/spicy_npc.tscn" id="5_n35qi"]
 [ext_resource type="PackedScene" uid="uid://cp8oihby02jnw" path="res://free_roam/interactables/NPCs/scenes/savory_npc.tscn" id="6_nm6yq"]
 [ext_resource type="PackedScene" uid="uid://b36stbyap3x8r" path="res://free_roam/interactables/NPCs/scenes/sweet_npc.tscn" id="7_cnq0i"]
-[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="9_5yeg3"]
+[ext_resource type="PackedScene" path="res://misc/set_day_phase.tscn" id="9_5yeg3"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_7b54g"]
 
 [sub_resource type="Curve2D" id="Curve2D_r20jp"]

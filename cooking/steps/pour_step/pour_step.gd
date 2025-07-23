@@ -1,13 +1,6 @@
 extends FoodStep
 
-@onready var containers = [
-	%Container,
-	%Container2,
-	%Container3,
-	%Container4,
-	%Container5,
-	%Container6,
-]
+var containers: Array[SinglePourer] = []
 
 var score: float = 0.0
 var _sent_signal: bool = false
@@ -17,9 +10,25 @@ var _sent_signal: bool = false
 ## Set this to TartContainer.png or Bar_Container.png
 @export var container_texture: Texture2D = preload("res://cooking/steps/pour_step/TartContainer.png")
 
+@export var pour_rate_multiplier := 1.0
+
+## Strictness controls how you are scored. Set it to a higher value to make
+## the scoring more strict, and a lower value to be less strict.
+##
+## For the normal pour step, this should be 0.2, and for the bigger one, probably
+## smaller.
+@export var strictness = 0.2
+
 func _ready() -> void:
+	# Collect all the child containers
+	for child in get_children():
+		if child is SinglePourer:
+			containers.append(child)
+	
 	for container in containers:
 		container.set_container_texture(container_texture)
+		container.pour_rate_multiplier = pour_rate_multiplier
+		container.strictness = strictness
 
 func _process(delta: float) -> void:
 	var done = true
