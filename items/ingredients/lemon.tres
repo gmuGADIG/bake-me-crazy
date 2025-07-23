@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_fbsh8")
+ingredient_type = 4
 description = "Citrus fruit that is yellow"
 display_name = "Lemon"

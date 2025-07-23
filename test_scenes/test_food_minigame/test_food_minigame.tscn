@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bhr08sd4y1yuy" path="res://cooking/steps/step_roll_up.tscn" id="8_xa1bs"]
 [ext_resource type="PackedScene" uid="uid://b1qo3dh7pfxpl" path="res://cooking/steps/step_scoop.tscn" id="9_ttoy5"]
 [ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="10_kxsvf"]
-[ext_resource type="PackedScene" uid="uid://ifnm35j8kb1y" path="res://cooking/steps/step_pipe_line.tscn" id="11_pt6p5"]
-[ext_resource type="PackedScene" uid="uid://b3o1ok3dj2q50" path="res://cooking/steps/step_pipe_spot.tscn" id="12_a2lsj"]
+[ext_resource type="PackedScene" uid="uid://ifnm35j8kb1y" path="res://cooking/steps/piping_line/step_pipe_line.tscn" id="11_pt6p5"]
+[ext_resource type="PackedScene" uid="uid://b3o1ok3dj2q50" path="res://cooking/steps/piping_spot/step_pipe_spot.tscn" id="12_a2lsj"]
 
 [node name="FoodMinigame" instance=ExtResource("1_hk2jr")]
 

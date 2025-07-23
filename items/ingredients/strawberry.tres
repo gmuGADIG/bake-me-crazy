@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_2vo2c")
+ingredient_type = 9
 description = "Is that a Celeste reference?"
 display_name = "Strawberry"

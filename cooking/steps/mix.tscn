@@ -1,15 +1,41 @@
-[gd_scene load_steps=17 format=3 uid="uid://hckjoefpykk4"]
+[gd_scene load_steps=19 format=3 uid="uid://hckjoefpykk4"]
 
 [ext_resource type="Script" path="res://cooking/steps/mix.gd" id="1_wbjww"]
 [ext_resource type="Script" path="res://cooking/steps/follow_cursor.gd" id="3_vw7ff"]
 [ext_resource type="Texture2D" uid="uid://cnl4x85d3gkr4" path="res://cooking/art/Minigame_Spoon.png" id="4_8weyk"]
-[ext_resource type="Texture2D" uid="uid://boew2rvyixbcv" path="res://temp_art/temp ui/goodness_bar.png" id="4_qhvrs"]
 [ext_resource type="Texture2D" uid="uid://cho30r4kn6o8f" path="res://temp_art/temp ui/goodness_pointer.png" id="5_2cgno"]
 [ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="6_565il"]
 [ext_resource type="Texture2D" uid="uid://dr1wqg311m8ns" path="res://cooking/cooking_art/Mixing_Bowl_Top.png" id="7_tlsqm"]
 [ext_resource type="Texture2D" uid="uid://c3cvdn4edpoab" path="res://cooking/art/MixTexture.png" id="8_7o2b5"]
 [ext_resource type="Texture2D" uid="uid://dpg1l8rynd7n" path="res://cooking/steps/mix_circle.png" id="9_p7f5y"]
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="10_t3itb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sca3r"]
+bg_color = Color(0.93, 0.3069, 0.3069, 1)
+border_color = Color(0.65, 0.2145, 0.366925, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.219608)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1qc7"]
+bg_color = Color(0.89528, 0.93, 0.4092, 1)
+border_color = Color(0.75, 0.561, 0.33, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14hno"]
+bg_color = Color(0.3069, 0.93, 0.628835, 1)
+border_color = Color(0.1809, 0.67, 0.547725, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Shader" id="Shader_28n3p"]
 code = "shader_type canvas_item;
@@ -74,16 +100,44 @@ texture = ExtResource("6_565il")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="GoodnessBar" type="Sprite2D" parent="." index="2"]
-position = Vector2(31, 313.5)
-scale = Vector2(1.21, 1.038)
-texture = ExtResource("4_qhvrs")
+[node name="FullBar" type="Panel" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 49.0
+offset_bottom = -23.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sca3r")
 
-[node name="GoodnessPointer" type="Sprite2D" parent="GoodnessBar" index="0"]
+[node name="GoodnessPointer" type="Sprite2D" parent="FullBar" index="0"]
 unique_name_in_owner = true
-position = Vector2(37.1901, 250)
-scale = Vector2(0.25, 0.268064)
+position = Vector2(64.931, 590)
+scale = Vector2(0.247314, 0.247314)
 texture = ExtResource("5_2cgno")
+
+[node name="YellowBar" type="Panel" parent="FullBar" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 119.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1qc7")
+
+[node name="GreenBar" type="Panel" parent="FullBar" index="2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 241.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_14hno")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="3"]
 clip_children = 2
@@ -92,6 +146,7 @@ scale = Vector2(1.015, 0.603333)
 texture = ExtResource("9_p7f5y")
 
 [node name="MixTexture" type="Sprite2D" parent="Sprite2D" index="0"]
+unique_name_in_owner = true
 clip_children = 2
 position = Vector2(20.197, 2.48625)
 scale = Vector2(2.53233, 2.90703)

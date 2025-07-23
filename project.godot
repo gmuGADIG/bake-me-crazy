@@ -32,6 +32,10 @@ DebugMenu="res://menus/debug_menu/debug_menu.tscn"
 Fullscreenizer="*res://misc/fullscreenizer.tscn"
 TextManager="*res://dialogue/internal/code/texting/text_manager.tscn"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [dialogic]
 
 directories/dch_directory={

@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_yaw0c")
+ingredient_type = 6
 description = "It's sandwich"
 display_name = "Peanut Butter"

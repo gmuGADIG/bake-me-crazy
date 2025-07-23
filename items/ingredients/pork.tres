@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_r76m3")
+ingredient_type = 8
 description = "The only meat ingredient"
 display_name = "Pork"

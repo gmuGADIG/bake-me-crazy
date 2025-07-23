@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_kxklu")
+ingredient_type = 10
 description = "It's hot!"
 display_name = "Tea"
