@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_grpq7"]
 [ext_resource type="Script" path="res://cooking/steps/pour_step/pour_step.gd" id="2_cjseu"]
-[ext_resource type="Texture2D" uid="uid://doivkpu7ns52n" path="res://cooking/steps/pour_step/TartContainer.png" id="3_j6m8l"]
+[ext_resource type="Texture2D" uid="uid://br100htw3ff40" path="res://cooking/steps/pour_step/cake_tin.svg" id="3_rdidg"]
 [ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="4_h11ts"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="5_h3r34"]
 [ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="6_mjj2t"]
@@ -59,9 +59,8 @@ _data = {
 
 [node name="PourStepBig" instance=ExtResource("1_grpq7")]
 script = ExtResource("2_cjseu")
-container_texture = ExtResource("3_j6m8l")
+container_texture = ExtResource("3_rdidg")
 pour_rate_multiplier = 0.2
-strictness = 0.05
 
 [node name="TextureRect2" type="TextureRect" parent="." index="0"]
 z_index = -10
