@@ -13,13 +13,13 @@
 
 [node name="Temper" instance=ExtResource("13_pb53r")]
 script = ExtResource("2_t3dct")
-green_range = 0.4
-heat_time = 15.0
 temper_particle = null
 stir_sensitivity = 0.01
 cooldown_acceleration = 7.2
 heat_velocity_max = 1.0
 heat_velocity_min = -1.0
+green_range = 0.4
+heat_time = 15.0
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 z_index = -10
