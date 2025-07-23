@@ -1,0 +1,31 @@
+You walk to the bean bag toss. Callum seems really amped up!
+
+callum (excited): Now, this is my jam! I would consider myself a bit of a pro at this game.[n+]I can go easy on you if you want.
+
+- “I would appreciate that.”
+	callum (neutral): No worries! Okay, let’s do this.
+- “Give it your all!”
+callum (neutral): It will be my pleasure.
+- “No need... I’m a pro, too.”
+	callum (neutral): Hah! Is that so? Let’s do this, then!
+
+The stall manager hands each of you three bean bags. In front of you is a slanted board with a hole in the center. A bag on top is one point, and a bag in the center hole is three. Whoever scores the most points wins!
+callum (neutral): Let’s see what you’re made of.
+leave callum
+Your turn. How do you want to play this?
+- Throw overhand with all your might!
+	The first bag slams into the hole! The second slams onto the board...and the third slams into the ground. Not a very long-lived strategy.
+- Calculate the angles to throw at, and account for windspeed.
+	Accounting for windspeed may have worsened your performance...you land every bag on the board, but they’re hanging off the side. On Callum’s turn, he knocks two of yours off, reducing your score.
+- Imagine the bean bags are balls of dough…
+	You start to knead the bags in your hands… While you’re focused, Callum goes ahead and throws his bags.
+Against your valiant efforts, Callum wins with a perfect score of 9. He wins a dolphin plushie!
+join callum (excited) center
+
+- “Congrats! You earned that plushie.” +10
+	callum (excited): Thanks! Though I could say you did, too, for putting up with me thus far!
+	Callum hands you the plushie.
+- “There’s no way. You cheated!” -10
+	callum (disgusted): Seriously? You’re gonna be a sore loser about it? Whatever.
+callum (neutral): Well, what’s next?
+jump dates/callum_date_1/next game

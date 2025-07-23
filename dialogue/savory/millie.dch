@@ -8,14 +8,14 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "confused",
+"default_portrait": "Neutral",
 "description": "",
 "display_name": "Millie",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"confused": {
+"Confused": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Confused_Millie.png\""
 },
@@ -24,7 +24,7 @@
 "scale": 1,
 "scene": ""
 },
-"disturbed": {
+"Disturbed": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Uncomfortable_Millie.png\""
 },
@@ -33,16 +33,7 @@
 "scale": 1,
 "scene": ""
 },
-"excited": {
-"export_overrides": {
-"image": "\"res://dialogue/savory/vn_portraits/Excited_Millie.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"flustered": {
+"Embarrassed": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Embarrassed_Millie.png\""
 },
@@ -51,7 +42,34 @@
 "scale": 1,
 "scene": ""
 },
-"neutral": {
+"Excited": {
+"export_overrides": {
+"image": "\"res://dialogue/savory/vn_portraits/Excited_Millie.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Flustered": {
+"export_overrides": {
+"image": "\"res://dialogue/savory/vn_portraits/Flustered_Millie.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Happy": {
+"export_overrides": {
+"image": "\"res://dialogue/savory/vn_portraits/Pleased_Millie.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Neutral": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Neutral_Millie.png\""
 },
@@ -60,7 +78,7 @@
 "scale": 1,
 "scene": ""
 },
-"pensive": {
+"Pensive": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Upset_Millie.png\""
 },
@@ -69,7 +87,7 @@
 "scale": 1,
 "scene": ""
 },
-"shocked": {
+"Shocked": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Surprised_Millie.png\""
 },
@@ -78,7 +96,7 @@
 "scale": 1,
 "scene": ""
 },
-"unimpressed": {
+"Unimpressed": {
 "export_overrides": {
 "image": "\"res://dialogue/savory/vn_portraits/Unimpressed_Millie.png\""
 },
