@@ -17,6 +17,13 @@ func pre_animation():
 	# appear properly (?)
 	for container in containers:
 		container.set_container_texture(container_texture)
+	
+func start():
+	print("Start called!")
+	# Enable the bowl in start() so that it isn't moving around at the end
+	# of the previous step
+	bowl.enable_movement = true
+	bowl.show()
 
 func _ready() -> void:
 	# Collect all the child containers

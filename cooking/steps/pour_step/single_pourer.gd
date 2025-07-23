@@ -59,7 +59,8 @@ func _ready() -> void:
 func _compute_score() -> void:
 	var y: float = poured_in.position.y
 	done = (y <= pour_ready())
-	score = 3.999 - 0.2 * abs(y - pour_perfect())
+	# To properly scale the score computation, we must use a triangle
+	score = 3.999 - 0.2 * abs(y - pour_perfect()) * (tex_scale / TEX_SCALE_REF)
 	score = clamp(score, 1.0, 3.999)
 
 func _process(delta: float) -> void:
