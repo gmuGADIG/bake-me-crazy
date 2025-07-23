@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://bgg3p5ee7mfuv"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://bgg3p5ee7mfuv"]
 
+[ext_resource type="Texture2D" uid="uid://cef3xncvwbyxh" path="res://items/ingredients/art/Cinnamon.png" id="1_0xgoo"]
 [ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_2x2jc"]
 
 [resource]
@@ -7,3 +8,4 @@ script = ExtResource("1_2x2jc")
 ingredient_type = 3
 description = "Put it in rolls or rolls"
 display_name = "Cinnamon"
+image = ExtResource("1_0xgoo")

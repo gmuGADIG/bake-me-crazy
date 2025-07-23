@@ -32,10 +32,6 @@ DebugMenu="res://menus/debug_menu/debug_menu.tscn"
 Fullscreenizer="*res://misc/fullscreenizer.tscn"
 TextManager="*res://dialogue/internal/code/texting/text_manager.tscn"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [dialogic]
 
 directories/dch_directory={
@@ -58,6 +54,7 @@ directories/dtl_directory={
 "callum_recipes": "res://dialogue/boss/recipe_rewards/callum_recipes.dtl",
 "clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
+"daily_interactions/raymond_conversations": "res://dialogue/sweet/daily_interactions/raymond_conversations.dtl",
 "dates/callum_date_1": "res://dialogue/salty/dates/callum_date_1.dtl",
 "dates/callum_date_1_dartballoons": "res://dialogue/salty/dates/callum_date_1_dartballoons.dtl",
 "dates/callum_date_1_failstate": "res://dialogue/salty/dates/callum_date_1_failstate.dtl",
@@ -84,7 +81,6 @@ directories/dtl_directory={
 "phone_test_2": "res://dialogue/testing/phone_test_2.dtl",
 "phone_test_3": "res://dialogue/testing/phone_test_3.dtl",
 "phone_test_4": "res://dialogue/testing/phone_test_4.dtl",
-"raymond_conversations": "res://dialogue/sweet/daily_interactions/raymond_conversations.dtl",
 "raymond_date_1": "res://dialogue/sweet/dates/raymond_date_1.dtl",
 "raymond_date_2": "res://dialogue/sweet/dates/raymond_date_2.dtl",
 "raymond_date_3": "res://dialogue/sweet/dates/raymond_date_3.dtl",
@@ -94,12 +90,16 @@ directories/dtl_directory={
 "raymond_texts": "res://dialogue/sweet/daily_interactions/raymond_texts.dtl",
 "salty_days": "res://dialogue/salty/lunch_break/salty_days.dtl",
 "salty_main": "res://dialogue/salty/lunch_break/salty_main.dtl",
+"salty_market": "res://dialogue/salty/salty_market.dtl",
 "savory_days": "res://dialogue/savory/lunch_break/savory_days.dtl",
 "savory_main": "res://dialogue/savory/lunch_break/savory_main.dtl",
+"savory_market": "res://dialogue/savory/savory_market.dtl",
 "spicy_days": "res://dialogue/spicy/lunch_break/spicy_days.dtl",
 "spicy_main": "res://dialogue/spicy/lunch_break/spicy_main.dtl",
+"spicy_market": "res://dialogue/spicy/spicy_market.dtl",
 "sweet_days": "res://dialogue/sweet/lunch_break/sweet_days.dtl",
 "sweet_main": "res://dialogue/sweet/lunch_break/sweet_main.dtl",
+"sweet_market": "res://dialogue/sweet/sweet_market.dtl",
 "testTimeline_hearts1": "res://dialogue/testing/testTimeline_hearts1.dtl",
 "test_market_timeline": "res://dialogue/testing/test_market_timeline.dtl"
 }

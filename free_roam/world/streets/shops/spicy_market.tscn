@@ -1,0 +1,35 @@
+[gd_scene load_steps=11 format=3 uid="uid://buigfjy0uenro"]
+
+[ext_resource type="PackedScene" uid="uid://ksburhrk4icq" path="res://menus/market_ui/market_ui.tscn" id="1_o786d"]
+[ext_resource type="Script" path="res://items/shop_item.gd" id="2_qc7ti"]
+[ext_resource type="Resource" uid="uid://d27qlixlhrm2l" path="res://items/ingredients/pistaschio.tres" id="3_oucpa"]
+[ext_resource type="Resource" uid="uid://brttxq285l2lr" path="res://items/ingredients/peanut_butter.tres" id="4_bd4x1"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="5_01h74"]
+[ext_resource type="Texture2D" uid="uid://dojod6phcub8n" path="res://dialogue/spicy/vn_portraits/pepper_neutral.png" id="6_s36ph"]
+[ext_resource type="Texture2D" uid="uid://ln60h8bblvku" path="res://dialogue/spicy/vn_portraits/pepper_happy.png" id="7_cg81c"]
+
+[sub_resource type="Resource" id="Resource_xhvlc"]
+script = ExtResource("2_qc7ti")
+price = 15
+quality = 0
+data = ExtResource("3_oucpa")
+
+[sub_resource type="Resource" id="Resource_c0pf6"]
+script = ExtResource("2_qc7ti")
+price = 15
+quality = 0
+data = ExtResource("4_bd4x1")
+
+[sub_resource type="Resource" id="Resource_wp0ab"]
+script = ExtResource("2_qc7ti")
+price = 5
+quality = 0
+data = ExtResource("5_01h74")
+
+[node name="MarketUI" instance=ExtResource("1_o786d")]
+items = Array[ExtResource("2_qc7ti")]([SubResource("Resource_xhvlc"), SubResource("Resource_c0pf6"), SubResource("Resource_wp0ab")])
+neutral_portrait = ExtResource("6_s36ph")
+happy_portrait = ExtResource("7_cg81c")
+
+[node name="CharacterName" parent="Control/Panel/BottomStuff" index="3"]
+text = "Natty Flavors"

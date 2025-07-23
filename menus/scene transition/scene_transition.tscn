@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c88oq78kawy4d"]
+[gd_scene load_steps=12 format=3 uid="uid://c88oq78kawy4d"]
 
 [ext_resource type="Script" path="res://menus/scene transition/scene_transition.gd" id="1_pxxs4"]
 [ext_resource type="Shader" path="res://menus/scene transition/scene_transition_right_triangle.gdshader" id="2_8b8ol"]
@@ -90,6 +90,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-1527, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Panel:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_cvent"]
@@ -194,9 +206,39 @@ tracks/7/keys = {
 "values": [Vector2(-1517, 0), Vector2(0, 0), Vector2(0, 0), Vector2(1492, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_3apce"]
+resource_name = "fade_in_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_anim_move_to_scene"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_12a0b"]
 _data = {
 "RESET": SubResource("Animation_k732j"),
+"fade_in_out": SubResource("Animation_3apce"),
 "swipe": SubResource("Animation_cvent")
 }
 
@@ -205,6 +247,9 @@ shader = ExtResource("2_8b8ol")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v01uq"]
 shader = ExtResource("3_f8f1p")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mj0r"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="SceneTransition" type="CanvasLayer"]
 layer = 10
@@ -220,8 +265,8 @@ autoplay = "RESET"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -31.5635
-offset_right = -31.5635
+offset_left = -1517.0
+offset_right = -1517.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -269,9 +314,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -229.099
+offset_left = -914.0
 offset_top = -153.0
-offset_right = 76.9008
+offset_right = -608.0
 offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -279,3 +324,13 @@ scale = Vector2(0.8, 0.8)
 pivot_offset = Vector2(153, 153)
 texture = ExtResource("2_e44iw")
 expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1mj0r")
