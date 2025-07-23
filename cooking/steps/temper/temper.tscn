@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dow8da7vvfan3"]
+[gd_scene load_steps=13 format=3 uid="uid://dow8da7vvfan3"]
 
 [ext_resource type="Script" path="res://cooking/steps/temper/temper.gd" id="2_t3dct"]
 [ext_resource type="Texture2D" uid="uid://dt27721ff43r2" path="res://cooking/cooking_art/Minigame_MixingBowl.png" id="3_1m6c7"]
@@ -10,6 +10,23 @@
 [ext_resource type="PackedScene" uid="uid://bxhtfkrkaquj1" path="res://cooking/steps/temper/egg_line.tscn" id="6_p02lj"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="9_vchf7"]
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="13_pb53r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngbnn"]
+bg_color = Color(0.93, 0.3069, 0.3069, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sqoh"]
+bg_color = Color(0.3069, 0.93, 0.628835, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="Temper" instance=ExtResource("13_pb53r")]
 script = ExtResource("2_t3dct")
@@ -49,7 +66,7 @@ position = Vector2(818, 193)
 texture = ExtResource("4_hqdp8")
 offset = Vector2(24.875, -86.78)
 
-[node name="FullBar" type="ColorRect" parent="." index="4"]
+[node name="FullBar" type="Panel" parent="." index="4"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -58,7 +75,7 @@ offset_top = 23.0
 offset_right = 49.0
 offset_bottom = -23.0
 grow_vertical = 2
-color = Color(1, 0.0986208, 0.387233, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ngbnn")
 
 [node name="Arrow" type="TextureRect" parent="FullBar" index="0"]
 layout_mode = 1
@@ -71,14 +88,15 @@ offset_right = 168.0
 offset_bottom = -7.508
 texture = ExtResource("6_iyy3h")
 
-[node name="GreenBar" type="ColorRect" parent="FullBar" index="1"]
+[node name="GreenBar" type="Panel" parent="FullBar" index="1"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.099
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.874
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.881706, 0.31818, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sqoh")
 
 [node name="HeatTimeLabel" type="Label" parent="." index="5"]
 layout_mode = 1

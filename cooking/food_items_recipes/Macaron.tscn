@@ -2,26 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_ptpy7"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_8dsmd"]
-[ext_resource type="PackedScene" uid="uid://dow8da7vvfan3" path="res://cooking/steps/temper/temper.tscn" id="3_idds6"]
 [ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="4_2ngqo"]
 [ext_resource type="PackedScene" uid="uid://b3o1ok3dj2q50" path="res://cooking/steps/piping_spot/step_pipe_spot.tscn" id="5_ae4ht"]
+[ext_resource type="PackedScene" uid="uid://5tdiyy8wyd03" path="res://cooking/steps/bake.tscn" id="6_ad2bg"]
 
 [node name="Macaron" instance=ExtResource("1_ptpy7")]
 
 [node name="PourFlour" parent="." index="2" instance=ExtResource("3_8dsmd")]
 layout_mode = 1
 
-[node name="Temper" parent="." index="3" instance=ExtResource("3_idds6")]
+[node name="Mix" parent="." index="3" instance=ExtResource("4_2ngqo")]
 layout_mode = 1
 
-[node name="Mix" parent="." index="4" instance=ExtResource("4_2ngqo")]
+[node name="pipping_spot" parent="." index="4" instance=ExtResource("5_ae4ht")]
 layout_mode = 1
 
-[node name="pipping_spot" parent="." index="5" instance=ExtResource("5_ae4ht")]
-layout_mode = 1
-
-[node name="Mix2" parent="." index="6" instance=ExtResource("4_2ngqo")]
-layout_mode = 1
-
-[node name="pipping_spot2" parent="." index="7" instance=ExtResource("5_ae4ht")]
+[node name="Bake" parent="." index="5" instance=ExtResource("6_ad2bg")]
 layout_mode = 1

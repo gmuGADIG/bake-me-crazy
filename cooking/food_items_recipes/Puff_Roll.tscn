@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cs2trculmsbxv"]
+[gd_scene load_steps=10 format=3 uid="uid://cs2trculmsbxv"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_a3rkt"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_lbwx7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://drb08kawdi5an" path="res://cooking/steps/step_fold.tscn" id="6_q5w4v"]
 [ext_resource type="PackedScene" uid="uid://bqiuapp2ar2pr" path="res://cooking/steps/step_vert_cut.tscn" id="7_0s3xv"]
 [ext_resource type="PackedScene" uid="uid://ifnm35j8kb1y" path="res://cooking/steps/piping_line/step_pipe_line.tscn" id="8_pjp2f"]
+[ext_resource type="PackedScene" uid="uid://5tdiyy8wyd03" path="res://cooking/steps/bake.tscn" id="9_5t6kd"]
 
 [node name="PuffRoll" instance=ExtResource("1_a3rkt")]
 
@@ -32,14 +33,11 @@ layout_mode = 1
 [node name="StepFold2" parent="." index="8" instance=ExtResource("6_q5w4v")]
 layout_mode = 1
 
-[node name="RollOut3" parent="." index="9" instance=ExtResource("5_xdw07")]
+[node name="StepCut" parent="." index="9" instance=ExtResource("7_0s3xv")]
 layout_mode = 1
 
-[node name="StepFold3" parent="." index="10" instance=ExtResource("6_q5w4v")]
+[node name="pipping_speed" parent="." index="10" instance=ExtResource("8_pjp2f")]
 layout_mode = 1
 
-[node name="StepCut" parent="." index="11" instance=ExtResource("7_0s3xv")]
-layout_mode = 1
-
-[node name="pipping_speed" parent="." index="12" instance=ExtResource("8_pjp2f")]
+[node name="Bake" parent="." index="11" instance=ExtResource("9_5t6kd")]
 layout_mode = 1

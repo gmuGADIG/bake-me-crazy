@@ -20,11 +20,10 @@ enum {BEFORE, START_FRAME, MIDDLE, END_FRAME, AFTER} # what stage the actual sha
 @export var green_yellow_threshold : float = 60
 @export var yellow_red_threshold : float = 80
 
-@onready var progress_bar : Sprite2D = $"GoodnessBar"
-@onready var progress_pointer : Sprite2D = $"GoodnessPointer"
+@onready var progress_pointer : Sprite2D = %GoodnessPointer
 
-var progress_top_px : int = 75
-var progress_bottom_px : int = 575
+var progress_top_px : int = 20
+var progress_bottom_px : int = 590
 var progress_height = 50
 
 var progress := PENDING

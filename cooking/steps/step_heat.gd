@@ -15,6 +15,12 @@ var seconds_in_green := 0.0
 ## How long the heating minigame should last.
 @export var heat_time: float = 15.0
 
+## How fast the heat variable increases when holding down the mouse.
+const increase_rate := 0.25
+
+## How fast the heat variable decreases when not holding down the mouse.
+const decrease_rate := 0.5
+
 ## Track the original heat time for computing the score at the end. This should
 ## not be modified after _ready.
 @onready var original_heat_time: float = heat_time
@@ -39,10 +45,11 @@ func start():
 	pass
 
 func _process(delta: float) -> void:
-	heat -= delta * 0.25
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		heat += delta
+		heat += delta * increase_rate
+	else:
+		heat -= delta * decrease_rate
 		
 	heat = clamp(heat, -1.0, 1.0)
 	

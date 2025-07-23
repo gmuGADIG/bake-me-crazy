@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://ifnm35j8kb1y"]
+[gd_scene load_steps=24 format=3 uid="uid://ifnm35j8kb1y"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_wtsfb"]
 [ext_resource type="Script" path="res://cooking/steps/piping_line/piping_line_minigame.gd" id="2_mcpkt"]
+[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="3_gmstm"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="3_qh0nl"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_w7hmj"]
 [ext_resource type="Script" path="res://cooking/steps/piping_line/piping_bag_visuals.gd" id="5_7684g"]
@@ -69,17 +70,29 @@ target_piping_speed = 0.5
 target_tolerance = 0.2
 drag_sample_size_requirement = 10
 
-[node name="MinigameStoneCuttingBoard" type="Sprite2D" parent="." index="0"]
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gmstm")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MinigameStoneCuttingBoard" type="Sprite2D" parent="." index="1"]
 position = Vector2(555, 623)
 scale = Vector2(1.21, 1.21)
 texture = ExtResource("3_w7hmj")
 
-[node name="BigDoughBallNormal" type="Sprite2D" parent="." index="1"]
+[node name="BigDoughBallNormal" type="Sprite2D" parent="." index="2"]
 position = Vector2(469, 537)
 scale = Vector2(2, 0.75)
 texture = ExtResource("3_qh0nl")
 
-[node name="Icing" type="Node2D" parent="." index="2"]
+[node name="Icing" type="Node2D" parent="." index="3"]
 unique_name_in_owner = true
 script = ExtResource("8_hfxdh")
 
@@ -93,7 +106,7 @@ position = Vector2(163, 535)
 width = 100.0
 width_curve = SubResource("Curve_6msox")
 
-[node name="PipingBag" type="Node2D" parent="." index="3"]
+[node name="PipingBag" type="Node2D" parent="." index="4"]
 z_index = 1
 position = Vector2(163, 531)
 rotation = 0.872665
@@ -131,7 +144,7 @@ color = Color(0, 0, 0, 1)
 texture = ExtResource("8_m8dr4")
 texture_scale = 2.8
 
-[node name="VisualGuides" type="Node2D" parent="." index="4"]
+[node name="VisualGuides" type="Node2D" parent="." index="5"]
 
 [node name="DottedLine" type="Line2D" parent="VisualGuides" index="0"]
 z_index = 1
@@ -157,7 +170,7 @@ texture = SubResource("GradientTexture2D_gwbps")
 texture_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="InstructionsPanel" parent="." index="5" instance=ExtResource("8_xa70s")]
+[node name="InstructionsPanel" parent="." index="6" instance=ExtResource("8_xa70s")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -167,4 +180,4 @@ grow_vertical = 2
 minigame_title = "Pipe Filling"
 instructions = "Click and drag the piping bag at the correct speed to evenly distribute the icing."
 
-[node name="StopSFXTimer" type="Timer" parent="." index="6"]
+[node name="StopSFXTimer" type="Timer" parent="." index="7"]
