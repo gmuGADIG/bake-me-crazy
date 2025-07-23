@@ -1,0 +1,81 @@
+# FIXME
+- “Is everything okay?”
+	Callum looks towards the Ferris Wheel.
+callum (neutral): You know, since we had such a great time on the ferris wheel last time, you want to go again?
+- “Yeah, sure.”
+	set {dateRP} += 10
+	callum (neutral): Let’s go.
+- “Are you sure? The line is kind of long.”
+	set {dateRP} -= 10
+	if {dateRP} <= -30:
+		jump DateFailState
+	callum (neutral): It’ll be fine, let’s go.
+You and Cal wait in line; it’s taking a lot longer than Cal expected. He is noticeably frustrated.
+- “Hey, is something going on?”
+	set {dateRP} += 5
+	callum (frustrated): Uh, no. Why do you think that?
+	- “We can always do something else.”
+		callum (pensive): Sigh... I wouldn’t mind some fresh air. The pier sounds great right now.
+- “It’s taking a while, wanna do something else?”
+	callum (frustrated): No, it’s fine. It’ll only be a little longer.
+	- “We can always do something else.”
+		callum (pensive): Sigh... I wouldn’t mind some fresh air. The pier sounds great right now.
+- “Uhh…I need to go to the bathroom.”
+	set {dateRP} -= 10
+	if {dateRP} <= -30:
+		jump DateFailState
+	callum (frustrated): Fine. Let’s just go.
+	You go to the bathroom, leaving Callum to wait outside. When you return, Cal gestures for you to follow him.
+Callum leads the way to the pier. He leans over the railing.
+- “You don’t look well. Talk to me.”
+	set {dateRP} += 10
+	callum (pensive): I’ve been trying to hide it, but to be honest with you, I am really going through it.
+- “That line stunk. We can always try another day.”
+	set {dateRP} += 5
+	callum (neutral): Yeah… Hey, can I talk to you about something?
+- “What was that all about?”
+	set {dateRP} -= 10
+	if {dateRP} <= -30:
+		jump DateFailState
+	callum (pensive): Nothing. I just needed a break.
+Cal continues to look away from the player and off to the beach.
+callum (pensive): I just feel so out of place here. I don’t belong here. I try to stay positive about my situation. Make a few jokes, smile, laugh. But none of it is helping. It feels like the more I try to fit in, the more I end up feeling alone. I feel like I’ve totally lost my purpose.
+Callum takes a deep sigh and looks down at his reflection in the water. You lean over the railing and look down with him.
+callum (neutral): ...Thanks for still sticking around after that. I don’t want to come off as such a bitter person. It’s just that I’m not here by choice. I loved living in California, and I was getting ready to “make it big” in Silicon Valley as a computer engineer. It was my dream, and I was going to do everything in my power to make it happen.
+- “What happened?”
+	callum (pensive): Life happened.
+He lifts his head and turns to you.
+callum (pensive): I messed up. I thought I had what it took to be the best of the best.[n]I had just gotten the job and thought I could help one of my coworkers. They were having a hard time dealing with a bug in the system.[n]Turns out, I wasn’t much of anything. I made things worse…cost them thousands of hours of work.[n]I tried to help them fix it, but I got kicked out that day. Now, I’m here repairing computers and I hate it.
+- “I’m so sorry that happened. I can’t even imagine how that was like.”
+	set {dateRP} += 10
+- “That’s horrible, I can understand why you would hate this town.”
+	set {dateRP} += 5
+- “That’s not a good reason to hate the town.”
+	jump DateFailState
+callum (pensive): Yeah. I feel like you're the only one who gets me. I mean, I’ve tried talking to the people here and I just feel like I keep messing it all up.[n]There was this one time I was talking to Ray and he was going on and on about astrology or something, and so I thought I would ask him what his star sign was. You know?[n]I wanted to get to know him some more. Well, he just glared at me and told me he had to do something, and poof, he was gone.[n]I feel like…apologizing? Or at least trying again. But he’d probably prefer I stayed away.
+- “Yeah…might be best to leave it."
+	set {dateRP} -= 10
+	if {dateRP} <= -30:
+		jump DateFailState
+	callum (pensive): I… I guess so, huh? Geez. I was hoping you’d disagree.
+- “No, Callum. You’re such pleasant company."
+	set {dateRP} += 10
+	callum (neutral): You really think that? Even with all this awkward heart-to-heart crap? Ah, don’t answer that! I’ll just nod my head and agree.
+- "Ray wants friends just as badly as you do."
+	set {dateRP} += 5
+	callum (neutral): One talk on the pier and you think you know me, huh? You’re probably not wrong. Maybe we can hash out our differences on this pier.[n]Verbally, of course. And casually.
+callum (neutral): Hey, thanks for listening. And sorry that the only thing you know about me so far is that I’m a total screw-up, haha.
+- “I know you love pistachio!”
+	set {dateRP} += 10
+	callum (shocked): Oh my gosh! It’s kinda hard to believe you learned that without me saying anything. Looks like I ordered too much of that flavor. Maybe you could make a pistachio dish for me sometime.
+- “I know that you’re an awesome person.”
+	callum (neutral): Hah! That doesn’t count. You have an opinion of me, sure, but you can’t say you really know me.
+- “I know you love chocolate!”
+	set {dateRP} -= 5
+	if {dateRP} <= -30:
+		jump DateFailState
+	callum (disgusted): Come on, don’t make a guess. That just feels bad. I hate chocolate—it’s melty, and it gets everywhere.
+Callum briefly looks up at the sky, as if he can tell the time by the position of the moon...
+callum (neutral): Well, I say we tie tonight up in a bow and part ways! Thanks for this, [Player].
+Callum walks you back to your apartment building before saying farewell. Huh...he didn’t even make a cynical comment about the town during the walk back.
+label DateFailState
