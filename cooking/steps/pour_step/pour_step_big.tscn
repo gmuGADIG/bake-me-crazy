@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bg30vapgyf6if"]
+[gd_scene load_steps=14 format=3 uid="uid://bg30vapgyf6if"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_grpq7"]
 [ext_resource type="Script" path="res://cooking/steps/pour_step/pour_step.gd" id="2_cjseu"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="4_h11ts"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="5_h3r34"]
 [ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="6_mjj2t"]
-[ext_resource type="Texture2D" uid="uid://j5takid8r7gg" path="res://cooking/steps/pour_step/baking_sheet.svg" id="7_ow88h"]
 [ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="8_17i1a"]
 [ext_resource type="PackedScene" uid="uid://bdp3tme7lqxa0" path="res://cooking/steps/pour_step/pour_step_bowl.tscn" id="9_qihfd"]
 
@@ -89,20 +88,15 @@ position = Vector2(598, 572)
 scale = Vector2(1, 0.640794)
 texture = ExtResource("6_mjj2t")
 
-[node name="BakingSheet" type="Sprite2D" parent="." index="3"]
-position = Vector2(566.091, 387.5)
-scale = Vector2(0.951219, 0.951219)
-texture = ExtResource("7_ow88h")
-
-[node name="Container" parent="." index="4" instance=ExtResource("8_17i1a")]
+[node name="Container" parent="." index="3" instance=ExtResource("8_17i1a")]
 unique_name_in_owner = true
 position = Vector2(536, 249)
 scale = Vector2(2.84156, 2.84156)
 
-[node name="Bowl" parent="." index="5" instance=ExtResource("9_qihfd")]
+[node name="Bowl" parent="." index="4" instance=ExtResource("9_qihfd")]
 unique_name_in_owner = true
 
-[node name="Line2D" type="Line2D" parent="." index="6"]
+[node name="Line2D" type="Line2D" parent="." index="5"]
 texture_repeat = 2
 position = Vector2(-4, 317)
 points = PackedVector2Array(0, 0, 1200, 0)
