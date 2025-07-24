@@ -1,24 +1,11 @@
 if DialogueManager.has_any_new_recipe():
-	boss: Hey! We've got some new recipes we'll be making tomorrow.
-	
-	if DialogueManager.has_new_recipe("res://items/recipes/puff_roll.tres"):
-		boss: I know Emillie's gonna love these ones
-		do DialogueManager.unlock_new_recipe("res://items/recipes/puff_roll.tres")
-	if DialogueManager.has_new_recipe("res://items/recipes/cookie.tres"):
-		boss: These'll be Raymond's favorites
-		do DialogueManager.unlock_new_recipe("res://items/recipes/cookie.tres")
-	if DialogueManager.has_new_recipe("res://items/recipes/cake.tres"):
-		boss: the huz love cake
-		do DialogueManager.unlock_new_recipe("res://items/recipes/cake.tres")
-	# etc, repeat for every food you can unlock
-	
-	boss: Now, ready to start the lunch rush? Or did you want to talk with the others some more?
+	jump recipe_reward_main/
+	boss: Oh, look at the time! Break’s about over!
 else:
-	boss: Hey! Ready to start the lunch rush?\
-Or did you want to talk with the others some more?
-<Empty Text Event>
-- Go to Lunch Rush
-	boss: Great!
+	boss: Howdy, honey. Break time’s about over!
+Do you want to start the lunch rush?\
+If you haven't talked with everyone, you should do that now.
+- “I’ll get back to work!”
 	do DialogueManager.change_scene("res://cooking/lunch_rush/lunchrush.tscn")
-- Keep Talking
-	boss: Gotcha, come back when you're ready!
+- “There’s still a few minutes on the clock…”
+	boss: It took some squinting, but you’re right! I read the clock all wonky! Well, go on and enjoy the rest of your break, now.

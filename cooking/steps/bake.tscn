@@ -1,65 +1,63 @@
-[gd_scene load_steps=15 format=3 uid="uid://bohreioccqdcu"]
+[gd_scene load_steps=21 format=3 uid="uid://5tdiyy8wyd03"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_d4q1h"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="1_rwpaa"]
 [ext_resource type="Texture2D" uid="uid://j3wk58cmgu5j" path="res://temp_art/meter_arrow.svg" id="2_vbpxp"]
-[ext_resource type="Texture2D" uid="uid://canki8310peh4" path="res://cooking/art/oven_spritesheet.png" id="3_p1uax"]
+[ext_resource type="Texture2D" uid="uid://sxepcndirn5g" path="res://cooking/art/oven.png" id="3_vcaa2"]
+[ext_resource type="Texture2D" uid="uid://cvr6bfifaqv8m" path="res://cooking/art/oven_flame_spritesheet.png" id="4_4cat6"]
 [ext_resource type="Texture2D" uid="uid://b1fobtmp8858k" path="res://cooking/art/bellow_spritesheet.png" id="4_r4c5m"]
 [ext_resource type="Script" path="res://cooking/steps/bake_animation.gd" id="5_4se6c"]
+[ext_resource type="Script" path="res://cooking/steps/oven_flame_animator.gd" id="5_07y26"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="7_7u2ne"]
 
-[sub_resource type="Animation" id="Animation_vbyy3"]
-resource_name = "Idle"
-length = 0.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mlbir"]
+blend_mode = 1
 
-[sub_resource type="Animation" id="Animation_2fttp"]
-resource_name = "Moving"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 2), Vector2i(1, 1), Vector2i(0, 1)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4jhx"]
+atlas = ExtResource("4_4cat6")
+region = Rect2(0, 0, 1920, 1080)
 
-[sub_resource type="Animation" id="Animation_cgaq3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuw6v"]
+atlas = ExtResource("4_4cat6")
+region = Rect2(1920, 0, 1920, 1080)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gn5bo"]
-_data = {
-"Idle": SubResource("Animation_vbyy3"),
-"Moving": SubResource("Animation_2fttp"),
-"RESET": SubResource("Animation_cgaq3")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwky2"]
+atlas = ExtResource("4_4cat6")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xdyp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4jhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuw6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwky2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngbnn"]
+bg_color = Color(0.93, 0.3069, 0.3069, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sqoh"]
+bg_color = Color(0.3069, 0.93, 0.628835, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Animation" id="Animation_uy3f8"]
 resource_name = "Idle"
@@ -79,8 +77,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_m17nx"]
 resource_name = "Moving"
-length = 0.42
-loop_mode = 1
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -88,10 +85,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 3, 4, 2]
+"values": [0, 1, 3, 4, 2, 1]
 }
 
 [sub_resource type="Animation" id="Animation_iv8gq"]
@@ -121,20 +118,23 @@ script = ExtResource("1_rwpaa")
 green_range = 0.5
 heat_time = 15.0
 
-[node name="Oven" type="Sprite2D" parent="." index="0"]
+[node name="OvenEmpty" type="Sprite2D" parent="." index="0"]
 position = Vector2(579, 325)
 scale = Vector2(0.600728, 0.598796)
-texture = ExtResource("3_p1uax")
-hframes = 2
-vframes = 3
+texture = ExtResource("3_vcaa2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Oven" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_gn5bo")
-}
-script = ExtResource("5_4se6c")
+[node name="OvenFlame" type="AnimatedSprite2D" parent="." index="1" node_paths=PackedStringArray("minigame")]
+material = SubResource("CanvasItemMaterial_mlbir")
+position = Vector2(579, 325)
+scale = Vector2(0.600728, 0.598796)
+sprite_frames = SubResource("SpriteFrames_xdyp2")
+autoplay = "default"
+frame = 2
+frame_progress = 0.268453
+script = ExtResource("5_07y26")
+minigame = NodePath("..")
 
-[node name="FullBar" type="ColorRect" parent="." index="1"]
+[node name="FullBar" type="Panel" parent="." index="2"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -143,7 +143,7 @@ offset_top = 23.0
 offset_right = 49.0
 offset_bottom = -23.0
 grow_vertical = 2
-color = Color(1, 0.0986208, 0.387233, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ngbnn")
 
 [node name="Arrow" type="TextureRect" parent="FullBar" index="0"]
 layout_mode = 1
@@ -156,16 +156,17 @@ offset_right = 168.0
 offset_bottom = -7.508
 texture = ExtResource("2_vbpxp")
 
-[node name="GreenBar" type="ColorRect" parent="FullBar" index="1"]
+[node name="GreenBar" type="Panel" parent="FullBar" index="1"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.099
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.874
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.881706, 0.31818, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sqoh")
 
-[node name="HeatTimeLabel" type="Label" parent="." index="2"]
+[node name="HeatTimeLabel" type="Label" parent="." index="3"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -183,7 +184,16 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 32
 text = "Time left: 15.00s"
 
-[node name="Bellow" type="Sprite2D" parent="." index="3"]
+[node name="InstructionsPanel" parent="." index="4" instance=ExtResource("7_7u2ne")]
+offset_left = 271.0
+offset_top = 314.0
+offset_right = 271.0
+offset_bottom = 314.0
+scale = Vector2(0.75, 0.75)
+minigame_title = "Bake"
+instructions = "Click and hold to keep the meter in the green!"
+
+[node name="Bellow" type="Sprite2D" parent="." index="5"]
 position = Vector2(522, 569)
 texture = ExtResource("4_r4c5m")
 hframes = 3

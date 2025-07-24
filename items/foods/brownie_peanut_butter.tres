@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://2g7lxm420tba"]
 
 [ext_resource type="PackedScene" uid="uid://ce5x1pc1d4rwg" path="res://cooking/food_items_recipes/Brownie.tscn" id="1_lakhx"]
-[ext_resource type="Texture2D" uid="uid://dy862bngv7mae" path="res://items/foods/art/Brownie_Blondie.png" id="2_cu17e"]
-[ext_resource type="Resource" uid="uid://0nwwupoe48k4" path="res://items/ingredients/vanilla.tres" id="3_ao7kr"]
+[ext_resource type="Texture2D" uid="uid://by6jlaobfrw0y" path="res://items/foods/art/Brownie_PeanutButter.png" id="2_qye12"]
+[ext_resource type="Resource" uid="uid://brttxq285l2lr" path="res://items/ingredients/peanut_butter.tres" id="3_5jt7h"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_3lrjn"]
 
 [resource]
 script = ExtResource("4_3lrjn")
 cooking_minigame = ExtResource("1_lakhx")
-ingredient = ExtResource("3_ao7kr")
+ingredient = ExtResource("3_5jt7h")
 display_name = "Peanut Butter Brownie"
-image = ExtResource("2_cu17e")
+image = ExtResource("2_qye12")

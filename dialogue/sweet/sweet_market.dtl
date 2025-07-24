@@ -1,0 +1,2 @@
+raymond: welcome to the NOT capage s hop
+do DialogueManager.open_market("res://free_roam/world/streets/shops/sweet_market.tscn")

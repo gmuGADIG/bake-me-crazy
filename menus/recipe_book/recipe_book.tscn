@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=30 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_11cuj"]
@@ -118,116 +118,6 @@ _data = {
 "flip_right": SubResource("Animation_sl8q5")
 }
 
-[sub_resource type="Animation" id="Animation_yrvjd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Book:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-370, 853)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Book:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_gckjy"]
-resource_name = "new_animation"
-length = 0.75
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(0.353553, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Book:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.55, 0.75),
-"transitions": PackedFloat32Array(0.482968, -2, 1),
-"update": 0,
-"values": [Vector2(-370, 853), Vector2(192, 127), Vector2(178, 144)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Book:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.55, 0.75),
-"transitions": PackedFloat32Array(0.683019, -2, 1),
-"update": 0,
-"values": [-0.328122, 0.0436332, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.75),
-"transitions": PackedFloat32Array(0.353, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2lq5t"]
-_data = {
-"RESET": SubResource("Animation_yrvjd"),
-"new_animation": SubResource("Animation_gckjy")
-}
-
 [node name="RecipeBook" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_3psjk")
@@ -241,6 +131,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lrw7b")
 
 [node name="CountertopBlue" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(561, 348)
 scale = Vector2(1.31641, 1.36719)
 texture = ExtResource("2_11cuj")
@@ -577,7 +468,13 @@ mouse_filter = 2
 theme = ExtResource("10_u7x5x")
 metadata/_edit_lock_ = true
 
-[node name="BakeLeft" type="Button" parent="Buttons"]
+[node name="BakeButtonz" type="Control" parent="Buttons"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BakeLeft" type="Button" parent="Buttons/BakeButtonz"]
 unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
@@ -586,26 +483,26 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -894.0
-offset_top = -161.0
-offset_right = -594.0
-offset_bottom = -101.0
+offset_left = 218.0
+offset_top = 447.0
+offset_right = 518.0
+offset_bottom = 507.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(147, 30)
 text = "BAKE"
 script = ExtResource("10_7f2te")
 
-[node name="BakeRight" type="Button" parent="Buttons"]
+[node name="BakeRight" type="Button" parent="Buttons/BakeButtonz"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 595.0
-offset_top = -160.0
+offset_top = 448.0
 offset_right = 895.0
-offset_bottom = -100.0
+offset_bottom = 508.0
 grow_vertical = 0
 pivot_offset = Vector2(150, 30)
 text = "BAKE"
@@ -750,15 +647,9 @@ libraries = {
 "": SubResource("AnimationLibrary_8gqix")
 }
 
-[node name="ReadOnlyOpenAnimation" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_2lq5t")
-}
-
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="BakingText/FinishButton" to="." method="_on_finish_button_pressed"]
-[connection signal="pressed" from="Buttons/BakeLeft" to="." method="_on_bake_left_pressed"]
-[connection signal="pressed" from="Buttons/BakeRight" to="." method="_on_bake_right_pressed"]
+[connection signal="pressed" from="Buttons/BakeButtonz/BakeLeft" to="." method="_on_bake_left_pressed"]
+[connection signal="pressed" from="Buttons/BakeButtonz/BakeRight" to="." method="_on_bake_right_pressed"]
 [connection signal="pressed" from="Buttons/TurnPageRight" to="." method="_on_turn_page_right_pressed"]
 [connection signal="pressed" from="Buttons/TurnPageLeft" to="." method="_on_turn_page_left_pressed"]

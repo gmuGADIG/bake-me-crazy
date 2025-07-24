@@ -1,0 +1,58 @@
+#-- Millie: puff roll + cannelle
+
+if DialogueManager.has_new_recipe("res://items/recipes/puff_roll.tres"):
+	ivy: I’ve seen you talking to that Millie girl lately. Always thought you two were equally eccentric… but she’s got a lot of layers to her.
+	ivy: And you know what else has layers? The puff pastry. The internet tells me these layered dough techniques started in Europe… and I say they’re about to be reinvented here.
+	do DialogueManager.unlock_new_recipe("res://items/recipes/puff_roll.tres")
+
+if DialogueManager.has_new_recipe("res://items/recipes/cannelle.tres"):
+	ivy: So, you and Millie took a little walk in the park the other day?
+	ivy: Hmm? How do I know? Well, sweetie, I’ve got four eyes—gotta put ‘em to use somehow. Haha!
+	ivy: Anyhow… seeing you slowly breaking through that shell of hers reminds me of the canele.
+	ivy: You’ll find this particular pastry to be quite soft underneath its caramelized crust. Here, let me show you.
+	do DialogueManager.unlock_new_recipe("res://items/recipes/cannelle.tres")
+
+#-- Callum: macaron + scones
+
+if DialogueManager.has_new_recipe("res://items/recipes/macaron.tres"):
+	ivy: So, you’ve started talking with that Callum boy... Don’t go fleeing to the opposing coast on me, now!
+	ivy: I see the way his eyes dart around town. He’s a delicate one, so be gentle on him. Can’t have Leaventide being anything less than welcoming on my watch.
+	ivy: If you want some practice working with delicates, you’d best start at the macaron.
+	do DialogueManager.unlock_new_recipe("res://items/recipes/macaron.tres")
+
+if DialogueManager.has_new_recipe("res://items/recipes/scone.tres"):
+	ivy: That Cali boy always looks so uncomfortable here. You’ve done all you can to be welcoming, but he’s still out of place…
+	ivy: I’ll tell you what! He’s gotta learn sooner than later how to adapt to foreign lands. I know what’ll teach him! Let’s throw him headfirst into Scotland!
+	ivy: Oh, honey, no. We’re not sending him away. He just needs to try a scone!
+	do DialogueManager.unlock_new_recipe("res://items/recipes/scone.tres")
+
+#-- Pepper: bar + tart
+
+if DialogueManager.has_new_recipe("res://items/recipes/bar.tres"):
+	ivy: So Pepper’s got you running to and fro now…maybe you two can spare me some truck delivery fees with some of that in-house swiftness!
+	ivy: When you’re on the move like Pepper always is, it’s important to refuel! Nothing gets it done better than a nutritionally balanced bar.
+	ivy: But our balancing act isn’t about nutrition! It’s about craftsmanship. Let me tell you how to pack baked goodness into a bar.
+	do DialogueManager.unlock_new_recipe("res://items/recipes/bar.tres")
+
+if DialogueManager.has_new_recipe("res://items/recipes/tart.tres"):
+	ivy: You know what I’ve always liked about that Pepper girl? She’s got all this strong confidence about her!
+	ivy: You know what else isn’t afraid of what’s on the inside? The tart. Some desserts wanna keep their filling hidden from the world, but not this one!
+	ivy: I can’t think of a zinger every time, so I’ll see you back to work now. You’ll do a tart-ally awesome job out there! Hehe…
+	do DialogueManager.unlock_new_recipe("res://items/recipes/tart.tres")
+
+#-- Raymond: cookies + sweet roll
+
+if DialogueManager.has_new_recipe("res://items/recipes/cookie.tres"):
+	ivy: Talking to that Raymond boy, are you? You better keep your eyes on a cookbook rather than a textbook!
+	ivy: You wouldn’t think his type to get so hyper…reminds me of when Leslie was a baby. They’d eat just one cookie and get enough energy to jump over the moon.
+	ivy: Funny, isn’t it? One cookie. If a batch is handmade, they don’t even pack much sugar. But they do pack a lot of passion! And that boy seems to have a surplus of it.
+	ivy: If you two are gonna be friends, you’ll need enough passion to match his own—and you can start with cookies.
+	do DialogueManager.unlock_new_recipe("res://items/recipes/cookie.tres")
+
+if DialogueManager.has_new_recipe("res://items/recipes/sweet_roll.tres"):
+	ivy: I swear, that Raymond boy. It’s like you say ‘hello’ and he pops up like a spring.
+	ivy: He needs some kind of emotional outlet so he stops coiling up with all that repressed excitement. I hear kickboxing's popular these days...
+	ivy: But coils aren’t always bad. Enter\: the sweet roll! A whole spiraling pocket of flavor wraps around and around to the very center. Go ahead and try it for yourself.
+	do DialogueManager.unlock_new_recipe("res://items/recipes/sweet_roll.tres")
+
+return

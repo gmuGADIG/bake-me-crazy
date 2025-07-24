@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlspt71wko61b"]
+
+[ext_resource type="Script" path="res://cooking/steps/piping_spot/piping_spot.gd" id="1_k8nit"]
+[ext_resource type="Shader" path="res://cooking/steps/dotted_circle.gdshader" id="2_7v6d7"]
+[ext_resource type="Texture2D" uid="uid://byl3qjsmifff3" path="res://temp_art/temp_shape_dough.png" id="3_bomxk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_st3wd"]
+radius = 45.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1k4i8"]
+shader = ExtResource("2_7v6d7")
+
+[sub_resource type="Gradient" id="Gradient_1r282"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_miwus"]
+gradient = SubResource("Gradient_1r282")
+
+[node name="PipingSpot" type="Area2D"]
+script = ExtResource("1_k8nit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_st3wd")
+
+[node name="DottedLine" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1k4i8")
+texture = SubResource("GradientTexture2D_miwus")
+
+[node name="PipedDough" type="Sprite2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("3_bomxk")

@@ -1,0 +1,31 @@
+if {coworker.investigating} != "":
+	if {read_only.repeat_talk} == true:
+		leslie: I'll have that intel for you tomorrow! Just don't come into work looking too excited, or people might catch on to our little scheme.
+		[end_timeline]
+	else:
+		leslie: Oh, {player_name}!
+		jump coworker_gossip_main/
+		leslie: Soooo, got anything else?
+else:
+	leslie: What’s up?
+[u]
+- “I need some intel on a customer.”
+	if DialogueManager.coworker_all_gossip_given():
+		leslie: Sorry! I can't do anymore digging. Gotta focus on sharpening my baking skills so grandma gives me a raise!
+		[end_timeline]
+	leslie: Fiiinally. I was wondering when you’d put my skills to use again! So, who is it this time?
+	- Millie | [if DialogueManager.coworker_can_gossip("savory")]
+		leslie: Ooh, the butcher? I’ll try not to show up as an item at her meat stall!
+		set {coworker.investigating} = "savory"
+	- Raymond | [if DialogueManager.coworker_can_gossip("sweet")]
+		leslie: Space boy! I love space boy. I’ve always wanted to chase him around.
+		set {coworker.investigating} = "sweet"
+	- Callum | [if DialogueManager.coworker_can_gossip("salty")]
+		leslie: The surfer boy who can’t catch a wave from the ocean, or another person… I will watch him somberly.
+		set {coworker.investigating} = "salty"
+	- Pepper | [if DialogueManager.coworker_can_gossip("spicy")]
+		leslie: Wondering what the childhood bestie’s been up to? I got you covered.
+		set {coworker.investigating} = "spicy"
+	do DialogueManager.coworker_start_gossip()
+- “Nothing much.”
+	leslie: Oh, let me guess… it says “nothing much” on the ceiling.

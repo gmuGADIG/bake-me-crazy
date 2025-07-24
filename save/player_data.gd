@@ -23,7 +23,7 @@ func _ready() -> void:
 		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 3)
 		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 3)
 		
-		data.money = 25
+		data.money = 250
 	
 	if ResourceLoader.exists(AUXILARY_SAVE_PATH, "AuxilarySaveData"):
 		auxilary_data = ResourceLoader.load(AUXILARY_SAVE_PATH)
@@ -40,7 +40,8 @@ func reset():
 func load_file(save_template : SaveTemplate, change_music: bool = true) -> void:
 	data = save_template
 	
-	SceneTransition.change_scene_to_file(data.scene_path)
+	if data.scene_path != "": # "" iff new save
+		SceneTransition.change_scene_to_file(data.scene_path)
 	
 	if change_music:
 		if data.music_file != "":

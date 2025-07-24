@@ -1,0 +1,13 @@
+label 1
+leslie: So, about the scoop you asked me to get for ya… It’s kind of a dud.
+leslie: I tried tracking Raymond’s  day-to-day… you’d think someone with such a cute face would do anything other than bury it in a book all day. But no!!
+leslie: He’s totally shy. Gosh…if you’re asking cause you likey? Take it easy with Raymond.
+return
+
+label 2
+leslie: Oof… {player_name}? I wish I could hold your hand while I text you this…
+leslie: Ray was giving a PUBLIC! SPEECH! at the observatory the other day. Good for him, right? But right in the middle of it, this girl asked him something about playdough being a dwarf planet.
+leslie: Ah, wait, she said Pluto… His eyes were glued to his speech before, but suddenly he shot up and rambled about it for twenty minutes!
+leslie: Some people got really bored, and when he noticed, I think he got all nervous and concluded his speech early. Ugh, and then his charming smile went down to frown town…
+leslie: I wasn’t paying super close attention, but I think his speech was about how the universe is a lot like strawberry cake? Or maybe he said it smelled like burnt steak…
+return

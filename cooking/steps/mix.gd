@@ -6,6 +6,7 @@ var count_mixes = 0
 var last_mix_hitbox = -1
 
 @onready var doneness: Sprite2D = %GoodnessPointer
+@onready var mix_texture: Sprite2D = %MixTexture
 
 func _process(_delta: float) -> void:
 	if done: return
@@ -28,7 +29,13 @@ func _on_area_2d_mouse_entered(id: int) -> void:
 
 	last_mix_hitbox = id
 
-	# raise the left side arrow, making sure it doesn't overflow
-	doneness.position.y = max(-250, doneness.position.y - 5)
 	# tick our internal counter, making sure it doesn't go over 100
 	count_mixes = min(count_mixes + 1, 100)
+	
+	# raise arrow
+	var arrow_y = remap(count_mixes, 0, 100, 590, 20) # 590 and 20 are the lowest and highest heights of the arrow
+	create_tween().set_trans(Tween.TRANS_SINE).tween_property(doneness, "position:y", arrow_y, .2)
+	
+	# spin texture
+	var rads = remap(count_mixes, 0, 100, 0, PI * 10)
+	create_tween().set_trans(Tween.TRANS_SINE).tween_property(mix_texture, "rotation", rads, .2)

@@ -15,7 +15,18 @@ grow_vertical = 2
 script = ExtResource("1_wmgct")
 no_date_timeline = ExtResource("2_i3vma")
 datescenes = {
-"salty1": "clock_out_test"
+"salty1": "callum_date_1",
+"salty2": "callum_date_2",
+"salty3": "callum_date_3",
+"savory1": "millie_date_1",
+"savory2": "millie_date_2",
+"savory3": "millie_date_3",
+"spicy1": "pepper_date_1",
+"spicy2": "pepper_date_2",
+"spicy3": "pepper_date_3",
+"sweet1": "raymond_date_1",
+"sweet2": "raymond_date_2",
+"sweet3": "raymond_date_3"
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]

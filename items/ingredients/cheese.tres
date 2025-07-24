@@ -1,8 +1,11 @@
-[gd_resource type="Resource" script_class="IngredientData" load_steps=2 format=3 uid="uid://c7qq5te66x2sh"]
+[gd_resource type="Resource" script_class="IngredientData" load_steps=3 format=3 uid="uid://c7qq5te66x2sh"]
 
+[ext_resource type="Texture2D" uid="uid://c1g4a2u34nmhs" path="res://items/ingredients/art/Cheese.png" id="1_q2qiy"]
 [ext_resource type="Script" path="res://items/ingredients/ingredient_data.gd" id="1_tydwf"]
 
 [resource]
 script = ExtResource("1_tydwf")
+ingredient_type = 0
 description = "Cheddar or so"
 display_name = "Cheese"
+image = ExtResource("1_q2qiy")

@@ -2,6 +2,8 @@ extends CanvasLayer
 class_name MarketUI
 
 @export var items: Array[ShopItem]
+@export var neutral_portrait: Texture2D
+@export var happy_portrait: Texture2D
 
 @onready var ingredient_container: FlowContainer = %IngredientContainer
 
@@ -14,6 +16,7 @@ var current_item: ShopItem = null
 @onready var buy_button := %BuyButton
 
 @onready var your_money := %YourMoney
+@onready var portrait: TextureRect = $Control/Panel/TopStuff/Portrait
 
 ## Keeps the purchase count from going above this value. This is potentially
 ## a decent idea because it means the game will never behave unpredictably.
@@ -34,6 +37,8 @@ func _get_current_purchase_price() -> int:
 var _purchase_quantity: int = 1
 
 func _ready() -> void:
+	portrait.texture = neutral_portrait
+	
 	var button_group = ButtonGroup.new()
 	for i in range(ingredient_container.get_child_count()):
 		var item_button: MarketItemUI = ingredient_container.get_child(i)
@@ -65,6 +70,8 @@ func _ready() -> void:
 	
 	buy_button.pressed.connect(func():
 		Inventory.buy_item(current_item, _purchase_quantity)
+		portrait.texture = happy_portrait
+		%JumpPortrait.play(&"jump_portrait")
 		_update_item_displays()
 		_tween_box_scale(%YourMoneyPanel, 1.14)
 		_tween_box_scale(%YourMoneyDollar, 1.14)

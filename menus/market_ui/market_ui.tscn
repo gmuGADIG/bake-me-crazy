@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ksburhrk4icq"]
+[gd_scene load_steps=39 format=3 uid="uid://ksburhrk4icq"]
 
 [ext_resource type="Script" path="res://menus/market_ui/market.gd" id="1_exijc"]
 [ext_resource type="Texture2D" uid="uid://6bcsq6fgukrs" path="res://temp_art/temp ui/temp_orange_person.png" id="2_aujpw"]
@@ -16,7 +16,7 @@
 [sub_resource type="Resource" id="Resource_lpd5b"]
 script = ExtResource("2_bpq38")
 price = 10
-quality = 1
+quality = 0
 data = ExtResource("3_aeb46")
 
 [sub_resource type="Resource" id="Resource_6mt3q"]
@@ -182,7 +182,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(625, 325), Vector2(625, 51)]
+"values": [Vector2(625, 325), Vector2(625, 61)]
 }
 
 [sub_resource type="Animation" id="Animation_bjio7"]
@@ -210,7 +210,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(625, 51), Vector2(625, 325)]
+"values": [Vector2(625, 61), Vector2(625, 325)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -232,6 +232,44 @@ _data = {
 "RESET": SubResource("Animation_025ws"),
 "swipe_in": SubResource("Animation_tg8hl"),
 "swipe_out": SubResource("Animation_bjio7")
+}
+
+[sub_resource type="Animation" id="Animation_b7is6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(625, 51)]
+}
+
+[sub_resource type="Animation" id="Animation_lb4q2"]
+resource_name = "jump_portrait"
+length = 0.25
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/TopStuff/Portrait:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(625, 61), Vector2(625, 50), Vector2(625, 61)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gfadg"]
+_data = {
+"RESET": SubResource("Animation_b7is6"),
+"jump_portrait": SubResource("Animation_lb4q2")
 }
 
 [node name="MarketUI" type="CanvasLayer"]
@@ -657,3 +695,9 @@ libraries = {
 "": SubResource("AnimationLibrary_r37fl")
 }
 autoplay = "swipe_in"
+
+[node name="JumpPortrait" type="AnimationPlayer" parent="Control"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_gfadg")
+}

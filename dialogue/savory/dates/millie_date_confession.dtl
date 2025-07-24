@@ -1,0 +1,53 @@
+do MainMusicPlayer.transition_to_song_by_filename("sweet_theme.tres")
+[background arg="res://dialogue/date_backgrounds/date_park_nighttime.png" fade="0.0"]
+You approach Millie. She’s carrying a box of ingredients to one of the food stalls.
+join millie (Happy) center [animation="Slide In Up" length="2.0" wait="true"]
+
+millie (Happy): Ah, {player_name}. I’m glad you could make it.[n] Have you enjoyed looking around? You can really see how much love everyone has put into the festival.
+
+- “I’d like to spend the day with you.”
+millie (Flustered): Oh, my. Well, I wouldn’t mind that.[n][portrait=Neutral]Let me just finish up here…[n]Alright, I’m ready. Where would you like to start?
+
+- “Would you like to try some of the food?”
+	millie (Neutral): I’m afraid I already had a hearty lunch. Besides, I’ll tell you a secret\: the batter they’re using for the funnel cake is store-bought. I’d steer clear of it.
+- “Why don’t we go to the carnival?”
+	millie (Pensive): Ooh, I’m sorry. Anything but the carnival today. The crowd might be a bit much…
+
+“Then what do you want to do?”
+
+Millie gently shakes her head.
+
+millie (Neutral): Do you see the stall over there? The one about Leaventide’s founding?[n]The person running it is a friend of my family. They’ve been doing business with our farm for decades now.[n]And the ice cream stall just to the right of it? A majority of their ingredients are sourced from our cows and crops.
+- “Ice cream sounds really good right now.”
+- “Why don’t we say hello to them?”
+
+millie (Disturbed): …Let’s not.[n][portrait=Neutral]I could point to so many of the stalls here, and I’ll have been involved with them somehow.[n]My family is so deeply rooted in the town’s commerce, history, and growth…[n][portrait=Pensive]…that this festival feels all too formal to me, as if it’s another day on the farm.[n]Which is why, for today, I’d rather we not focus so much on all of that. I’d like to take a break from it all.
+
+- “Then let’s do our own thing.”
+
+millie (Happy): Thank you, {player_name}...[n][portrait=Pensive]You know, my work on the farm has really absorbed all of my energy these past few years.[n]Between caring for the livestock and spending time with my daughter, it’s been hard to keep up with my friends.[n][portrait=Happy]But the time I spend with you is always so refreshing. It doesn’t feel like another chore.[n]In fact, I look forward to moments like this quite a bit. They’re often the highlight of my day.
+
+- “Would you like every day to be like this?”
+
+millie (Flustered): …I would.
+
+- “Me, too.”
+# #BRANCH BREAK
+- “I’d like to start a relationship together.”
+millie (Flustered): I’ve been thinking the same thing. Come on, then. Today just became that much more special. Let’s make the most of it.
+
+You and Millie spend the day together at the festival, away from all the hubbub.[n]As dusk arrives, Millie’s phone buzzes.
+
+millie (Pensive): I’m sorry, {player_name}. I need to return home and prepare dinner for my daughter.
+
+“I can help.”
+
+millie (Embarrassed): No, no, I wouldn’t want to bother you. Toddlers can be very needy, and…
+
+Millie realizes that she is pushing the player away again.
+
+millie (Neutral): Sorry, I don’t mean to be so distant. If you’re certain…[n+][portrait=Happy] I would be happy to have you there.[n]You know, once my daughter’s a little more grown, you’ll have a friend to try those absurd carnival rides with.[n]I’ll be there as well, of course. To cherish every moment I have with you, and with her.
+leave millie
+[background arg="res://dialogue/date_backgrounds/confession_stills/Millie_Confession.png" fade="0.0"]
+
+Millie takes your hand as the two of you depart from the festival. She looks back at you. Everything about her is radiant...you’re glad to know she won’t try to hide the shine of who she truly is anymore.

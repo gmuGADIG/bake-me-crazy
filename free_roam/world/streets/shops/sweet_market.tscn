@@ -1,0 +1,35 @@
+[gd_scene load_steps=11 format=3 uid="uid://qb7iqa4u3sjn"]
+
+[ext_resource type="PackedScene" uid="uid://ksburhrk4icq" path="res://menus/market_ui/market_ui.tscn" id="1_58qal"]
+[ext_resource type="Script" path="res://items/shop_item.gd" id="2_fe0k0"]
+[ext_resource type="Resource" uid="uid://0nwwupoe48k4" path="res://items/ingredients/vanilla.tres" id="3_jpmph"]
+[ext_resource type="Resource" uid="uid://ncul60wovroo" path="res://items/ingredients/strawberry.tres" id="4_mlrqy"]
+[ext_resource type="Resource" uid="uid://brwsfydgrpxie" path="res://items/ingredients/cherry.tres" id="5_l6whi"]
+[ext_resource type="Texture2D" uid="uid://cs00f0ydoed6w" path="res://dialogue/sweet/vn_portraits/raymond_neutral.png" id="6_acr33"]
+[ext_resource type="Texture2D" uid="uid://b76spsp7vrhcr" path="res://dialogue/sweet/vn_portraits/raymond_excited.png" id="7_f224h"]
+
+[sub_resource type="Resource" id="Resource_e154e"]
+script = ExtResource("2_fe0k0")
+price = 15
+quality = 0
+data = ExtResource("3_jpmph")
+
+[sub_resource type="Resource" id="Resource_wogby"]
+script = ExtResource("2_fe0k0")
+price = 15
+quality = 0
+data = ExtResource("4_mlrqy")
+
+[sub_resource type="Resource" id="Resource_nl4y2"]
+script = ExtResource("2_fe0k0")
+price = 15
+quality = 0
+data = ExtResource("5_l6whi")
+
+[node name="MarketUI" instance=ExtResource("1_58qal")]
+items = Array[ExtResource("2_fe0k0")]([SubResource("Resource_e154e"), SubResource("Resource_wogby"), SubResource("Resource_nl4y2")])
+neutral_portrait = ExtResource("6_acr33")
+happy_portrait = ExtResource("7_f224h")
+
+[node name="CharacterName" parent="Control/Panel/BottomStuff" index="3"]
+text = "Stellar Sweets"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=9 format=3 uid="uid://bgny68pyhryew"]
+
+[ext_resource type="PackedScene" uid="uid://ksburhrk4icq" path="res://menus/market_ui/market_ui.tscn" id="1_mxl8f"]
+[ext_resource type="Script" path="res://items/shop_item.gd" id="2_8vwni"]
+[ext_resource type="Resource" uid="uid://cnuuuomy00hxl" path="res://items/ingredients/pork.tres" id="3_1gr06"]
+[ext_resource type="Resource" uid="uid://c7qq5te66x2sh" path="res://items/ingredients/cheese.tres" id="4_0a03d"]
+[ext_resource type="Texture2D" uid="uid://b3mv4kj7m4a22" path="res://dialogue/savory/vn_portraits/Neutral_Millie.png" id="5_h654o"]
+[ext_resource type="Texture2D" uid="uid://dmkc0jyge2nfe" path="res://dialogue/savory/vn_portraits/Pleased_Millie.png" id="6_0sg0q"]
+
+[sub_resource type="Resource" id="Resource_brnv5"]
+script = ExtResource("2_8vwni")
+price = 15
+quality = 0
+data = ExtResource("3_1gr06")
+
+[sub_resource type="Resource" id="Resource_5g5js"]
+script = ExtResource("2_8vwni")
+price = 15
+quality = 0
+data = ExtResource("4_0a03d")
+
+[node name="MarketUI" instance=ExtResource("1_mxl8f")]
+items = Array[ExtResource("2_8vwni")]([SubResource("Resource_brnv5"), SubResource("Resource_5g5js")])
+neutral_portrait = ExtResource("5_h654o")
+happy_portrait = ExtResource("6_0sg0q")
+
+[node name="CharacterName" parent="Control/Panel/BottomStuff" index="3"]
+text = "The Savory Stand"
