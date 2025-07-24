@@ -25,6 +25,7 @@ layout_mode = 1
 container_texture = ExtResource("3_h35mo")
 
 [node name="shape_step" parent="." index="3" instance=ExtResource("2_bndm2")]
+layout_mode = 1
 
 [node name="RollOut" parent="." index="4" instance=ExtResource("8_fv5op")]
 layout_mode = 1
