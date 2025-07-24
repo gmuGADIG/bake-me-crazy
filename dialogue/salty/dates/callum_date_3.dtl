@@ -1,2 +1,115 @@
 do MainMusicPlayer.transition_to_song_by_filename("park_theme.tres")
-...
+[background arg="res://dialogue/date_backgrounds/date_park_daytime.png" fade="0.0"]
+You arrive at the park. There’s a picnic blanket laid out where you and Callum agreed to meet, but he’s nowhere near it. Instead, you notice him talking with Raymond in the distance.
+
+Upon noticing your arrival, he quickly wraps up his conversation with Raymond and hurries over to you.
+join callum (excited) center [animation="Slide In Up" length="1.0" wait="true"]
+
+callum (excited): Hey! I got here a bit early. Found a nice flat spot to lay down the blanket.
+update callum (neutral)
+You and Callum sit down on the blanket and set up the picnic. Cal brought tea, cheese, and bread. You pull out a small basket of baked goods from Ivy’s.
+
+callum (excited): Wow, wow, wow! Those look delicious!
+
+- “I bet your goods don’t hold up to mine!”
+	set {dateRP} += -10
+	callum (frustrated): What? Okay, sure. It’s literally your job... That’s like if I said I could repair a laptop faster than you.[n][portrait=neutral]Anyways, I hope it doesn’t taste THAT awful.
+- “Everything you brought looks tasty, too.”
+	set {dateRP} += 5
+	callum (neutral): I hope you’re serious. I don’t want to be outclassed too much when it comes to picnic goods.
+- “I was worried we’d only have sweets!”
+	set {dateRP} += 10
+	callum (excited): Hah! Thankfully, we balanced each other out. You bring the sweet and I bring the...everything else. We make a good pair, I guess![n][portrait=flustered]Er, anyways…
+
+callum (neutral): It’s all storebought, as you can imagine. The bread’s from someplace other than Ivy’s—not out of betrayal or anything![n]I just thought you might like to try another place for a change.[n][portrait=excited]Oh, the tea’s homemade, though![n+] I am absolutely boss at brewing tea.[n]In my free time, I took some online classes and I got my tea certificate.
+
+- “What were the classes like?”
+
+callum (frustrated): Uhh, hard to say. It was all in Chinese. I just followed the pictures. [n][portrait=excited]Buuuut I haven’t had anyone complain about my tea, so I think it’s fine!
+
+You and Callum begin to eat. You try some of his tea.
+
+callum (excited): Wow. This is amazing! [n+][portrait=neutral]How do you like the tea, by the way?
+
+- “This is great. Those classes paid off.”
+	set {dateRP} += 10
+	callum (neutral): They better have, you have no idea how many attempts it took to get it right. All that “advanced cupping” and whatnot.
+
+- “I’ve never drank tea before, but I have nothing to complain about.”
+	callum (neutral): Really? You’ve never had it? And yet you come to my tea stand all the time? Strange.
+
+- “It’s too hot. I can’t really taste anything.”
+	set {dateRP} += -10
+	callum (disgusted): Ahah...are you joking? It’s tea. It’s supposed to be hot. You can always leave it to cool a little.
+	jump Dialogue Skip
+
+callum (excited): I had you in mind when I was making this blend, by the way. It’s a bit experimental, but it’s never too late to try new things.
+
+label Dialogue Skip
+
+- “So what were you doing with Ray?”
+
+callum (confused): That? Oh, I was just waiting for you, and Ray came around the corner.[n][portrait=neutral]We had a chat about astrology or astronomy or whatever it is he likes.[n]By the way, did you know that the International Space Station has a secret drive-thru?[n][portrait=excited]Kidding! Just a little misinformation for you. It would be cool though. I could imagine Ray driving there every day.[n][portrait=neutral]I don’t know what they would sell, probably dehydrated stuff and moon rocks, but it’s space, so he would probably love it.
+
+- “So you're becoming friends?”
+	set {dateRP} += 5
+	callum (neutral): I guess so. I just kind of listen to him talk about space.[n]He was very passionately telling me about the moon’s composition and how it interacts with our ecosystem, and...[n]I don’t know, it was nice to just sit and listen to someone.
+
+- “Aren’t moon rocks toxic?”
+	callum (neutral): Actually, they are. Ray was telling me a little about the moon’s composition. It's nice to learn about it from someone so passionate. Maybe next time we talk I’ll share some fun facts about computers.
+
+- “Careful not to scare him away.” -10
+	set {dateRP} += -10
+	callum (disgusted): Excuse you? I’m not a frightening person. And don’t put worries like that in my head! You know how much I’ve already struggled to make friends around here.
+	Following Callum's small outburst, you're quick to apologize.
+	if {dateRP} == -30:
+		jump Fail State
+
+You take a pause from conversation to enjoy some more of the picnic goods. Callum pipes up again.
+
+callum (neutral): By the way, I’ve been feeling better about the town.[n]Still haven’t found much of a purpose here, but Leaventide has some perks. [n]It’s a cozy spot, and it has that salty air that I love.
+
+- ”That’s a great start. I’ll always be here if you need someone to talk to.” +10
+	set {dateRP} += 10
+	callum (neutral): I feel like I’ve been relying on you a lot lately. The last thing I want to do is take advantage of your kindness. But thanks.
+- “Don’t forget that it has Ivy’s!” +5
+	set {dateRP} += 5
+	callum (excited): Oh, how could I? Such delicious food! And hey, it’s how I got to know you better.
+- ”Are you sure about that? You were constantly complaining last time.” -10
+	set {dateRP} += -10
+	callum (shocked): Well, I’m sorry, okay?[n][portrait=disgusted]I’m having a really hard time getting used to living here. Why don’t you try fumbling your dream job and figuring something else out?
+	You quickly apologize to Callum in an attempt to save the mood.
+	if {dateRP} == -30:
+		jump Fail State
+	
+	Callum stops to look up at the sky. After some silence, he lets out a stifled laugh.
+	
+	callum (pensive): After the pier, I couldn’t stop thinking about our conversation. I was sure I scared your pants off with my monologuing.
+	
+	- “Scared my pants off...?”
+	
+	callum (confused): Oh! Well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment.
+	
+	- “It’s hard for a moment with you to be ruined.”
+	
+	callum (flustered): Oh! Haha, well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment!
+	
+	- “Is there something I’m missing here?”
+	
+	callum (confused): Oh, umm. Missing? Did you forget to bring something?
+	
+	- “What? No, I brought everything.”
+	
+	Ah, but before you can reply, Callum jolts up.
+	
+	callum (flustered): Speaking of forgetting things, I actually have tons of stuff to do at work![n]Lots of, um, circuits to...unfry.[n+]You’d have to see it to believe it![n]Gosh, sorry to bolt, umm...see you later! Call me. If you’d like! Sorry! Bye!
+	
+	Callum rushes off, his face is noticeably flustered. He left everything he brought to the picnic behind. You wonder what must have made Callum flaky.
+	[end_timeline]
+	label Fail State
+	Unfortunately, your attempts to reconcile fail in the moment. Callum becomes noticeably more frustrated with your behavior…
+	callum (disgusted): Tsk. What’s that funny smell in the air? Must be a storm coming...guess we’d better pack up.
+	He gathers his belongings in his arms and pulls the blanket out from under you. Your baked goods tip over onto the grass... You spy a twinge of guilt on his face before he leaves.
+	leave callum
+	set {dateRP} += 10
+	[end_timeline]
