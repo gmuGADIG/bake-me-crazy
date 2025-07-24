@@ -76,6 +76,6 @@ callum (neutral): Hey, thanks for listening. And sorry that the only thing you k
 		jump DateFailState
 	callum (disgusted): Come on, don’t make a guess. That just feels bad. I hate chocolate—it’s melty, and it gets everywhere.
 Callum briefly looks up at the sky, as if he can tell the time by the position of the moon...
-callum (neutral): Well, I say we tie tonight up in a bow and part ways! Thanks for this, [Player].
+callum (neutral): Well, I say we tie tonight up in a bow and part ways! Thanks for this, {player_name}.
 Callum walks you back to your apartment building before saying farewell. Huh...he didn’t even make a cynical comment about the town during the walk back.
 label DateFailState
