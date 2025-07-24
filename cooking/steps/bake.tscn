@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5tdiyy8wyd03"]
+[gd_scene load_steps=21 format=3 uid="uid://5tdiyy8wyd03"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_d4q1h"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="1_rwpaa"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b1fobtmp8858k" path="res://cooking/art/bellow_spritesheet.png" id="4_r4c5m"]
 [ext_resource type="Script" path="res://cooking/steps/bake_animation.gd" id="5_4se6c"]
 [ext_resource type="Script" path="res://cooking/steps/oven_flame_animator.gd" id="5_07y26"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="7_7u2ne"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mlbir"]
 blend_mode = 1
@@ -183,7 +184,16 @@ theme_override_constants/outline_size = 15
 theme_override_font_sizes/font_size = 32
 text = "Time left: 15.00s"
 
-[node name="Bellow" type="Sprite2D" parent="." index="4"]
+[node name="InstructionsPanel" parent="." index="4" instance=ExtResource("7_7u2ne")]
+offset_left = 271.0
+offset_top = 314.0
+offset_right = 271.0
+offset_bottom = 314.0
+scale = Vector2(0.75, 0.75)
+minigame_title = "Bake"
+instructions = "Click and hold to keep the meter in the green!"
+
+[node name="Bellow" type="Sprite2D" parent="." index="5"]
 position = Vector2(522, 569)
 texture = ExtResource("4_r4c5m")
 hframes = 3
