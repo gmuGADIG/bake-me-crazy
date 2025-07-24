@@ -7,10 +7,17 @@ var _p_timer := 0.0
 
 @export var spawn_particles: bool = false
 
+var enable_movement: bool = false
+
 func _ready() -> void:
 	anim.play("bowl_show", 0, 0.0, false)
+	hide() # Don't show ourselves until start()
 
 func _physics_process(delta: float) -> void:
+	if not enable_movement:
+		hide()
+		return
+		
 	var target_pos = get_global_mouse_position()
 	target_pos.y *= 0.25
 	target_pos.y = clamp(target_pos.y, 0, 250)

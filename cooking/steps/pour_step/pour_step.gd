@@ -1,13 +1,6 @@
 extends FoodStep
 
-@onready var containers = [
-	%Container,
-	%Container2,
-	%Container3,
-	%Container4,
-	%Container5,
-	%Container6,
-]
+var containers: Array[SinglePourer] = []
 
 var score: float = 0.0
 var _sent_signal: bool = false
@@ -17,9 +10,30 @@ var _sent_signal: bool = false
 ## Set this to TartContainer.png or Bar_Container.png
 @export var container_texture: Texture2D = preload("res://cooking/steps/pour_step/TartContainer.png")
 
-func _ready() -> void:
+@export var pour_rate_multiplier := 1.0
+
+func pre_animation():
+	# Before the animation, be sure to reset all the containers again, so they
+	# appear properly (?)
 	for container in containers:
 		container.set_container_texture(container_texture)
+	
+func start():
+	print("Start called!")
+	# Enable the bowl in start() so that it isn't moving around at the end
+	# of the previous step
+	bowl.enable_movement = true
+	bowl.show()
+
+func _ready() -> void:
+	# Collect all the child containers
+	for child in get_children():
+		if child is SinglePourer:
+			containers.append(child)
+	
+	for container in containers:
+		container.set_container_texture(container_texture)
+		container.pour_rate_multiplier = pour_rate_multiplier
 
 func _process(delta: float) -> void:
 	var done = true

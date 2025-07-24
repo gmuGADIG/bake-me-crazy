@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://6xw0fbrjfpjl"]
 
 [ext_resource type="Script" path="res://cooking/morning_shift/morning_shift.gd" id="1_dy2v6"]
-[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="2_7cyh8"]
-[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="3_gr45s"]
+[ext_resource type="PackedScene" path="res://misc/set_day_phase.tscn" id="2_7cyh8"]
+[ext_resource type="PackedScene" path="res://menus/pause_menu/pause_opener.tscn" id="3_gr45s"]
 
 [node name="MorningShift" type="CanvasLayer"]
 script = ExtResource("1_dy2v6")
