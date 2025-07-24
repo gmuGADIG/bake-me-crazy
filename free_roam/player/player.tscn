@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx06e1lqkpenc"]
+[gd_scene load_steps=8 format=3 uid="uid://cx06e1lqkpenc"]
 
 [ext_resource type="Script" path="res://free_roam/player/player.gd" id="1_jfd2d"]
 [ext_resource type="SpriteFrames" uid="uid://60amcli7h4yi" path="res://free_roam/player/characters/player_1.tres" id="2_5iydo"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2jij"]
 size = Vector2(188, 259.916)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eghx6"]
+size = Vector2(188, 20)
 
 [node name="Player" type="PathFollow2D"]
 rotates = false
@@ -19,8 +22,7 @@ texture_filter = 1
 position = Vector2(0, -102.958)
 scale = Vector2(0.292631, 0.292631)
 sprite_frames = ExtResource("2_5iydo")
-animation = &"walking"
-frame_progress = 0.713436
+animation = &"idle"
 flip_h = true
 script = ExtResource("3_suty0")
 
@@ -40,5 +42,12 @@ texture_filter = 1
 position = Vector2(-2.38419e-07, -257)
 scale = Vector2(1.28125, 1.28125)
 texture = ExtResource("10_i78ey")
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+shape = SubResource("RectangleShape2D_eghx6")
 
 [connection signal="indicator" from="InteractionArea" to="." method="_on_interaction_area_indicator"]

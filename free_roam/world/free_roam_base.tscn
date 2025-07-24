@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book_opener.gd" id="4_yfy7n"]
 [ext_resource type="Texture2D" uid="uid://df1dxfgu5dy87" path="res://menus/ui_tips/open_phone.png" id="5_s8l22"]
 [ext_resource type="Texture2D" uid="uid://ckt5bdt387sd2" path="res://menus/ui_tips/open_book.png" id="6_cf5mk"]
-[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="7_ypuws"]
+[ext_resource type="PackedScene" path="res://menus/pause_menu/pause_opener.tscn" id="7_ypuws"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvhhv"]
 bg_color = Color(0, 0, 0, 0.286275)

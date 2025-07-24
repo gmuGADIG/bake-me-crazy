@@ -7,6 +7,8 @@ callum (excited): I’ve never visited the carnival here. I used to go to one wh
 callum (neutral): Honestly, I’m down for anything. How about this, I’ll let you choose what we do first.
 - Ballon dart throw
 	jump callum_date_1_dartballoons/
+- Bean bag toss
+	jump callum_date_1_beanbagtoss/
 label next game
 - Wheel of fortune
 	jump callum_date_1_wheeloffortune/
@@ -23,7 +25,7 @@ callum (neutral): Wow, look at that sky. I never got to see so many in Cali.
 callum (disgusted): Man, now I sound like that Raymond guy...
 - "How was Cali?"
 	callum (neutral): California? It was great. Everything about it was great. The crowded streets, the smooth beaches... And the food was to die for.\
-	- "Why did you leave?"
+- "Why did you leave?"
 	callum (pensive): Oh, um… I’m not sure I want to go there. Just, life happened. I needed a change of scenery and stuff.
 	- Nod your head.
 	- "I doubt that."
@@ -43,11 +45,11 @@ callum (disgusted): Man, now I sound like that Raymond guy...
 		set {dateRP} += 10
 	- "I couldn't agree more."
 		callum (confused): That's a lot of confidence. As far as I'm aware, you’ve never been to Cali.\
-		- "Sure, but you're here."
-			You try to get your words out, but your nerves stop you.
-		- Say nothing.
-	- "You don't have to lie about it."
-		I’m not, though. I would love to do this again.
+- "Sure, but you're here."
+		You try to get your words out, but your nerves stop you.
+	- Say nothing.
+- "You don't have to lie about it."
+	I’m not, though. I would love to do this again.
 The ferris wheel comes to a stop. The two of you disembark.
 leave callum
 join callum center

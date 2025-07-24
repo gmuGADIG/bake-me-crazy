@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dweb1kgltbbes"]
+[gd_scene load_steps=10 format=3 uid="uid://dweb1kgltbbes"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_vxw2d"]
 [ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="3_dicmu"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://1kn7jln1tm7y" path="res://cooking/steps/roll_out.tscn" id="5_ivj5j"]
 [ext_resource type="PackedScene" uid="uid://drb08kawdi5an" path="res://cooking/steps/step_fold.tscn" id="6_7b8nu"]
 [ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="7_4riyo"]
+[ext_resource type="PackedScene" uid="uid://bhr08sd4y1yuy" path="res://cooking/steps/step_roll_up.tscn" id="8_ak3eh"]
+[ext_resource type="PackedScene" uid="uid://5tdiyy8wyd03" path="res://cooking/steps/bake.tscn" id="9_kymck"]
 
 [node name="Croissant" instance=ExtResource("1_vxw2d")]
 
@@ -25,11 +27,23 @@ layout_mode = 1
 [node name="StepFold" parent="." index="6" instance=ExtResource("6_7b8nu")]
 layout_mode = 1
 
-[node name="StepFold2" parent="." index="7" instance=ExtResource("6_7b8nu")]
+[node name="RollOut2" parent="." index="7" instance=ExtResource("5_ivj5j")]
 layout_mode = 1
 
-[node name="StepFold3" parent="." index="8" instance=ExtResource("6_7b8nu")]
+[node name="StepFold2" parent="." index="8" instance=ExtResource("6_7b8nu")]
 layout_mode = 1
 
-[node name="StepCut" parent="." index="9" instance=ExtResource("7_4riyo")]
+[node name="RollOut3" parent="." index="9" instance=ExtResource("5_ivj5j")]
+layout_mode = 1
+
+[node name="StepFold3" parent="." index="10" instance=ExtResource("6_7b8nu")]
+layout_mode = 1
+
+[node name="StepCut" parent="." index="11" instance=ExtResource("7_4riyo")]
+layout_mode = 1
+
+[node name="RollUp" parent="." index="12" instance=ExtResource("8_ak3eh")]
+layout_mode = 1
+
+[node name="Bake" parent="." index="13" instance=ExtResource("9_kymck")]
 layout_mode = 1

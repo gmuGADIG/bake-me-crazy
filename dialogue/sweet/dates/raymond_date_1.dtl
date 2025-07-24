@@ -24,7 +24,7 @@ raymond (Happy): Anyhow, my papers blasting off was quite a rush! It'll be a sec
 - Sure, I'd be happy to!
 	set {dateRP} += 5
 - As long as you don't quiz me on space stuff.
-	set {dateRP} -= 15
+	set {dateRP} += -15
 	raymond (Pensive): Hah! Um. I wasn't planning on it.[n+] Sorry if I worried you.
 You and Raymond take a stroll on the pier.
 raymond (Happy): So yeah, astronomy’s kinda my thing. Ever since I was young. Are you into space at all?
@@ -36,7 +36,7 @@ raymond (Happy): So yeah, astronomy’s kinda my thing. Ever since I was young. 
 	set {dateRP} += 5
 	jump Shared Dialogue Branch 1
 - "It's not my thing."
-	set {dateRP} -= 5
+	set {dateRP} += -5
 	if {dateRP} <= -30:
 		jump Fail State
 	raymond (Pensive): Oh, that's okay...[n][portrait=Neutral] I mean, maybe you just haven't found the right subfield yet![n]For example, you might like to know that our solar system used be made up of roughly one hundred protoplanets until they collided into the full planets we know today![n]Some protoplanets still remain in the aesteroid belt. [n+] It's highly unlikely...but wouldn't it be cool if they collided and formed a brand new planet!?

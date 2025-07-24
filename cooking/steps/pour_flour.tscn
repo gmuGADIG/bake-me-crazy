@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bstefa0yy7mq5"]
+[gd_scene load_steps=20 format=3 uid="uid://bstefa0yy7mq5"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_0kwik"]
 [ext_resource type="Script" path="res://cooking/steps/pour_flour.gd" id="1_4i01a"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cmrx2ogxh3j52" path="res://cooking/cooking_art/bowl_front.png" id="6_jxq2s"]
 [ext_resource type="Texture2D" uid="uid://e864ejwf88ag" path="res://cooking/cooking_art/bowl_mask.png" id="9_mlc5v"]
 [ext_resource type="Texture2D" uid="uid://c0bh4y8u1ns5g" path="res://cooking/cooking_art/Minigame_HandCursorGrab.png" id="9_ns6fm"]
+[ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="13_ufhy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cau4"]
 size = Vector2(155.5, 608)
@@ -166,6 +167,10 @@ theme_override_fonts/font = ExtResource("5_kct4c")
 text = "g"
 label_settings = SubResource("LabelSettings_1tj86")
 horizontal_alignment = 2
+
+[node name="Counter" type="Sprite2D" parent="." index="9"]
+position = Vector2(572, 896)
+texture = ExtResource("13_ufhy8")
 
 [connection signal="mouse_entered" from="FlourPourer" to="FlourPourer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="FlourPourer" to="FlourPourer" method="_on_mouse_exited"]

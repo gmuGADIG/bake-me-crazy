@@ -8,6 +8,7 @@ font_size = 28
 
 [node name="DebugMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 2
 script = ExtResource("1_48okx")
 
 [node name="Panel" type="Panel" parent="."]

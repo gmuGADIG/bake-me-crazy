@@ -1,24 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwkpcolidvc0a"]
+[gd_scene load_steps=15 format=3 uid="uid://cwkpcolidvc0a"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_kr52v"]
 [ext_resource type="Texture2D" uid="uid://cb2o5nwjunabw" path="res://free_roam/world/streets/streets_bg.png" id="2_dnht4"]
 [ext_resource type="Script" path="res://free_roam/interactables/interactable_scene_changer.gd" id="4_r2mm7"]
 [ext_resource type="PackedScene" uid="uid://6xw0fbrjfpjl" path="res://cooking/morning_shift/morning_shift.tscn" id="5_3i5as"]
-[ext_resource type="Texture2D" uid="uid://cy16xwr4221yl" path="res://temp_art/gartic/divorce_woman.png" id="5_61bqb"]
-[ext_resource type="Script" path="res://free_roam/interactables/NPCs/simple_npc.gd" id="5_r5mtj"]
-[ext_resource type="Resource" path="res://dialogue/testing/test_market_timeline.dtl" id="6_8q1kx"]
+[ext_resource type="PackedScene" uid="uid://d0hkux4r4af46" path="res://free_roam/interactables/NPCs/scenes/salty_npc.tscn" id="5_chpji"]
+[ext_resource type="PackedScene" uid="uid://cp8oihby02jnw" path="res://free_roam/interactables/NPCs/scenes/savory_npc.tscn" id="6_1nivl"]
+[ext_resource type="Resource" path="res://dialogue/salty/salty_market.dtl" id="6_8two6"]
+[ext_resource type="Resource" path="res://dialogue/savory/savory_market.dtl" id="8_png8q"]
+[ext_resource type="PackedScene" uid="uid://bxw6aasc5fnqt" path="res://free_roam/world/transition_trigger.tscn" id="9_jlgk4"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_nxvw3"]
 [ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="9_pnv2p"]
+[ext_resource type="Texture2D" uid="uid://8kem83m2fb0c" path="res://free_roam/world/sign.svg" id="12_yxrmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ssn5p"]
 size = Vector2(238, 320)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rifyt"]
-size = Vector2(170, 287)
-
 [sub_resource type="Curve2D" id="Curve2D_5eqjp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 132, 604, 0, 0, 0, 0, 3342, 611)
+"points": PackedVector2Array(0, 0, 0, 0, -50, 604, 0, 0, 0, 0, 3342, 604)
 }
 point_count = 2
 
@@ -29,7 +29,32 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_dnht4")
 centered = false
 
-[node name="Interactables" type="Node2D" parent="." index="1"]
+[node name="Sign" type="Sprite2D" parent="." index="1"]
+position = Vector2(80, 506)
+scale = Vector2(0.263821, 0.263821)
+texture = ExtResource("12_yxrmv")
+
+[node name="Label" type="Label" parent="Sign" index="0"]
+offset_left = -155.408
+offset_top = -219.846
+offset_right = 50.5916
+offset_bottom = -160.846
+rotation = 0.159036
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 52
+text = "FARMER'S"
+
+[node name="Label2" type="Label" parent="Sign" index="1"]
+offset_left = -7.58089
+offset_top = -144.037
+offset_right = 259.419
+offset_bottom = -68.037
+rotation = 0.159036
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 52
+text = "market"
+
+[node name="Interactables" type="Node2D" parent="." index="2"]
 
 [node name="Bakery" type="StaticBody2D" parent="Interactables" index="0"]
 position = Vector2(2839, 382)
@@ -41,26 +66,22 @@ change_to_scene = ExtResource("5_3i5as")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Bakery" index="0"]
 shape = SubResource("RectangleShape2D_ssn5p")
 
-[node name="NPC" type="StaticBody2D" parent="Interactables" index="1"]
-position = Vector2(1078, 566)
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("5_r5mtj")
-timeline = ExtResource("6_8q1kx")
+[node name="SaltyNPC" parent="Interactables" index="1" instance=ExtResource("5_chpji")]
+position = Vector2(1704, 562)
+main_timeline = ExtResource("6_8two6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/NPC" index="0"]
-position = Vector2(0, -117.5)
-shape = SubResource("RectangleShape2D_rifyt")
+[node name="SavoryNPC" parent="Interactables" index="2" instance=ExtResource("6_1nivl")]
+position = Vector2(977, 585)
+main_timeline = ExtResource("8_png8q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Interactables/NPC" index="1"]
-position = Vector2(-13, -106)
-scale = Vector2(0.793333, 0.793333)
-texture = ExtResource("5_61bqb")
-
-[node name="PlayerPath" parent="." index="2"]
+[node name="PlayerPath" parent="." index="3"]
 curve = SubResource("Curve2D_5eqjp")
 
-[node name="Camera2D" parent="PlayerPath/Player" index="3"]
+[node name="Player" parent="PlayerPath" index="0"]
+position = Vector2(553.019, 604)
+progress = 603.02
+
+[node name="Camera2D" parent="PlayerPath/Player" index="4"]
 limit_left = 0
 limit_top = 0
 limit_right = 3456
@@ -68,7 +89,12 @@ limit_bottom = 648
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="PlaySongForScene" parent="." index="4" instance=ExtResource("9_nxvw3")]
+[node name="PlaySongForScene" parent="." index="5" instance=ExtResource("9_nxvw3")]
 song_name = "morning_theme.tres"
 
-[node name="SetDayPhase" parent="." index="7" instance=ExtResource("9_pnv2p")]
+[node name="SetDayPhase" parent="." index="8" instance=ExtResource("9_pnv2p")]
+
+[node name="TransitionTrigger" parent="." index="9" instance=ExtResource("9_jlgk4")]
+collision_layer = 0
+collision_mask = 2
+target_scene_path = "res://free_roam/world/farmers_market/farmers_market.tscn"

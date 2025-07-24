@@ -3,7 +3,7 @@ join callum (pensive) center
 Callum seems nervous...
 callum (neutral): Oh my gosh, I forgot about this. I was never able to play this game because I got too scared whenever the balloons popped.
 - "We can go somewhere else if you want."
-	callum (confused): What? No, I’m fine. I can do this. 
+	callum (confused): What? No, I’m fine. I can do this.
 	update callum (pensive)
 	Callum glances away, embarrassed.
 - "How old were you when you last went to a carnival?"
@@ -27,7 +27,7 @@ leave callum
 		You hit it!
 		callum: AHHH!
 		join callum (shocked) center
-		callum (shocked): Sorry! That was...louder than expected. 
+		callum (shocked): Sorry! That was...louder than expected.
 		The stall manager hands you a small reward! Nice.
 - Unleash you special move!
 	You throw all darts at once. You win zero points for flashiness, and zero for hitting balloons... [n+] You hear Callum sigh with relief.

@@ -20,12 +20,12 @@ func _anim_move_to_scene() -> void:
 
 ## Call this to change the scene to a scene at a specific path,
 ## similar to get_tree().change_scene_to_file.
-func change_scene_to_file(file_path: String) -> void:
-	change_scene_to_packed(load(file_path))
+func change_scene_to_file(file_path: String, fade_to_black: bool = false) -> void:
+	change_scene_to_packed(load(file_path), fade_to_black)
 
 ## Call this to change the scene to a specific PackedScene value,
 ## similar to get_tree().change_scene_to_packed.
-func change_scene_to_packed(scene: PackedScene) -> void:
+func change_scene_to_packed(scene: PackedScene, fade_to_black: bool = false) -> void:
 	# Refuse to change scene if we're already in the middle of an animation.
 	if _next_scene != null:
 		return
@@ -34,5 +34,5 @@ func change_scene_to_packed(scene: PackedScene) -> void:
 	# Stop the animation player to always reset the animation.
 	$AnimationPlayer.stop()
 	Dialogic.end_timeline()
-	$AnimationPlayer.play("swipe")
+	$AnimationPlayer.play("fade_in_out" if fade_to_black else "swipe")
 	

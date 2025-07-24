@@ -1,0 +1,79 @@
+You approach Millie. She’s looking off into the distance, seemingly lost in thought.
+
+- “Hi, Millie!”
+
+millie (Neutral): ...
+
+- “Uhh…earth to Millie?”
+	millie (Surprised): Ah! My apologies, I was lost in thought. I’ve been…really distracted lately.
+
+- “What’s your deal, girl?”
+	set {dateRP} += -10
+	millie (Pensive): Oh! I’m so sorry, dear. I’ve been really distracted lately…
+	Millie lets out a nervous laugh.
+
+- “Is the sea that pretty?”
+	millie (Shocked): Ah! I’m sorry...[n+][portrait=Pensive]please forgive me, I was caught up in my thoughts. You’re right about the sea, though.[n][portrait=Happy]The way the moon sparkles off the water is beautiful. Being stuck on the farm so much, I forget how beautiful other parts of town are. I’m glad we could meet here today.
+millie (Neutral): Regardless, let’s start seeing what they have here. Did anything in particular catch your eye?
+
+- “Let’s go fish!”
+	millie (Shocked): Sure, I wouldn’t mind. Though it’s been a while since I last fished…[portrait=Neutral]
+	You and Millie then make your way to the fishing dock, spending an hour at the pier and making small talk as the two of you fish up all kinds of, well, fish. For every fish you catch, Millie catches about three.
+	millie (Excited): Phew! Quite a good haul today if I do say so myself![n][portrait=Neutral]Oh, my apologies. I didn’t mean to seem so full of myself just then.[n]I know you had a bit of trouble catching up with my pace, but don’t feel discouraged! I hope you enjoyed yourself as much as I did.
+	Despite how impressed you were at Millie’s fishing skills, you were a bit sour at how poorly you did. Maybe the waters just weren’t in your favor today…
+
+- “There’s a lot. Why don’t we look around?”
+	millie (Flustered): Oh, well, that sounds like a wonderful idea![n][portrait=Neutral]Please, lead the way.
+	You and Millie walk along the pier, stopping at anything that catches your eyes.[n]You both tend towards small food vendors. Hot dogs, ice cream, pastries…[n]While you inquire about each vendor’s process for preparing the food (correct, you did NOT know how to prepare a hot dog), Millie asks about the quality of their ingredients.[n]It turns out to be an engaging activity for both of you.}
+
+After your activity, the two of you continue to walk along the pier. You strike conversation whenever you can muster something interesting, but Millie responds dryly each time... You feel as distant to her as when you first met. Something is wrong.
+
+
+- “Not a big fan of the pier?”
+	millie (Neutral): No, that’s not it at all! I’ve enjoyed our time here.
+- “If something’s on your mind, I’m here to listen.”
+	millie (Flustered): Ah, I suppose I wasn’t hiding it well enough. Then again, you’ve always had a good eye for things.[portrait=Pensive][n]I appreciate the concern.
+- “What’s with that look on your face?”
+	millie (Pensive): Ugh, I’m so sorry. It’s nothing about you, I promise.
+
+millie (Pensive): It’s just…I’m worried.[n]Do you remember that friend we talked about on our last outing? Well, I couldn’t really get her out of my mind after we had talked about it.[n]I had always felt like that friendship was never going to be rekindled.[n]I truly felt like I had completely destroyed our bond.[n][portrait=Neutral]And yet, your advice just seemed to shine through all of those doubts. It was as if I was going against my better judgement, but…[n]I formally apologized to her the other day and opened the opportunity for us to spend time together again.[n][portrait=Happy]She accepted my apology. In fact, I should be seeing her in a few days![n][portrait=Neutral]Despite how hopeful things seem…[n][portrait=Pensive]It doesn’t feel right. What if I make the same mistake again? I don’t want to betray her trust again.[n]I can’t help but feel like everything is just one slip away from crumbling back to how things once were.[n]It’s the uncertainty of it.
+
+- “I’m sure it’ll turn out well.”
+	millie (Neutral): You seem so confident…I wish I shared that trait myself. Maybe you’re right, though.
+
+- “Remember to take things one step at a time.”
+	set {dateRP} += 10
+	millie (Neutral): Yes, you’re right. I can’t just bog myself down with all of these possibilities. Thank you.
+
+- “Ah, don’t worry about it so much! Let it be!”
+	set {dateRP} += -10
+	millie (Frustrated): I can’t just “let it be!” This is too important to me. I want to make things right, and if I ruin my second chance...I’ll never be able to forgive myself.
+
+millie (Neutral): I’ll be sure to tell you how our meeting goes.[n][portrait=Happy]I must say that I couldn’t have gotten that off of my chest without you.[n+] I don’t thank you enough for your help.[n]Be it your advice or your company...it’s all been so refreshing. You’ve become such an important person in my life.[n][portrait=Pensive]…But I’m afraid I haven’t been the same for you.[n]I haven’t given you the same treatment that you’ve offered me, and that isn’t fair to you.[n]I’ve been so incredibly busy that the time we spend together remains rare, and I can hardly focus on us.[n+] There’s simply so much that I have to manage.[n]Between my family, the farm, the townsfolk, my child—[n][portrait=Shocked]
+Millie freezes. A child? You haven’t heard anything about a child before. It seems like she didn’t want those words to come out of her mouth. The tension in the air is thick. You should probably say something.
+
+- “Oh, I didn’t know that!”
+	millie (Shocked): Well, you weren’t supposed to know! I was so scared of how you would react, and I just didn’t know how I could tell you!
+- “It’s okay, I’m listening.”
+	set {dateRP} += 10
+	millie (Pensive): Um, okay. I’m sorry, it’s just…I was so scared to tell you about it. I didn’t know how you would react.
+- “You have a WHAT?!” -10
+	set {dateRP} += -10
+	millie (Frustrated): Gah, I knew I was right to keep it a secret! I knew you would have reacted like that. I was so scared to admit it to you that I just held my tongue for too long.
+
+# #FIXME: awaiting further writing.
+millie (Neutral): My daughter…her name is Maisie. She's incredibly important to me. So much so, I feel guilty spending any time away from her.[n][portrait=Pensive]Even when I can find someone to take care of her while I leave to take care of errands, this feeling of unease and anxiety digs deep into my core.[n][portrait=Neutral]Unfortunately, that feeling continues to persist even when I’m with you.[n]It’s hard for me to become so close to another person like you, especially considering my last relationship…well, it put me in this position.[n]I don’t have any disdain for them, but lord knows I don’t wanna experience that ever again. So, when I spend time with you, it feels…risky.[n]It’s all too similar to the situation with my friend.[n+] All I can imagine are the worst possible outcomes, and when I think about how detrimental my life at home is...[n]I just can’t bear facing the possibility of a bad ending. I didn’t want to burden you with all of these thoughts.[n]I can understand if it’s too much to handle.
+- "I don’t know, this is a lot to process for me…"
+	millie (Pensive): ...I'm so sorry.[n]Let's keep walking. I don't want to make you more uncomfortable.
+	The two of you continued to walk down the pier in silence. A long, uncomfortable silence. She continued to avert your gaze, consistently looking down at the ground, lost in thought. You couldn’t speak another word, so you followed her eyes towards the ground, as you too became lost in thought.
+- "It’s okay, we can handle this together."
+	update millie (Shocked)
+	Millie's eyes light up. She even lets out a small gasp.
+	millie (Flustered): I suppose...I'd appreciate that a great deal.
+	update millie (Happy)
+	The two of you continue to walk along the pier in silence. It isn’t an uncomfortable silence; rather, it's a warm awareness of each other's company. Despite Millie’s averted gaze, she continues to wear that smile she gave you not too long ago.[n]Eventually, you reach the end of the pier, where the two of you are about to part ways.
+millie (Happy): You really are just too kind, you know that?[n]I know today went a bit off course, but you were able to just…work with me.[n+] I appreciate that.[n]I hope to see you again soon...without all the emotional baggage. Get home safe!
+[end_timeline]
+label Fail State
+millie (Pensive): Ah…I can see that I’ve been a hindrance to our time today.[n]I hope you can forget this uncomfortable night we’ve had.[n+] Please, get home safe.[n]I need to keep myself busy, so I’ll be making my way home.[n+] Goodbye.
+[end_timeline]

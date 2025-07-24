@@ -1,0 +1,183 @@
+[gd_scene load_steps=24 format=3 uid="uid://ifnm35j8kb1y"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_wtsfb"]
+[ext_resource type="Script" path="res://cooking/steps/piping_line/piping_line_minigame.gd" id="2_mcpkt"]
+[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="3_gmstm"]
+[ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="3_qh0nl"]
+[ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="3_w7hmj"]
+[ext_resource type="Script" path="res://cooking/steps/piping_line/piping_bag_visuals.gd" id="5_7684g"]
+[ext_resource type="Texture2D" uid="uid://cj72sisb6318w" path="res://cooking/steps/piping_line/PipingBagFull.png" id="6_o4k7v"]
+[ext_resource type="Texture2D" uid="uid://cinpe424kp5k1" path="res://cooking/steps/piping_line/PipingBagEmpty.png" id="7_an37g"]
+[ext_resource type="Script" path="res://cooking/steps/piping_line/pipe_line_icing.gd" id="8_hfxdh"]
+[ext_resource type="Texture2D" uid="uid://ddguiyp5vl5nr" path="res://cooking/steps/piping_line/icing_layer.png" id="8_m8dr4"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="8_xa70s"]
+[ext_resource type="Shader" path="res://cooking/steps/piping_line/line_flash.gdshader" id="10_bym2r"]
+
+[sub_resource type="Curve2D" id="Curve2D_ec7wp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 163, 535, 0, 0, 0, 0, 724, 535)
+}
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6msox"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_odmsh"]
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_ea3s7"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6b28"]
+gradient = SubResource("Gradient_ea3s7")
+width = 160
+height = 285
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_gebea"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_36csd"]
+gradient = SubResource("Gradient_gebea")
+width = 200
+height = 20
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5enwi"]
+shader = ExtResource("10_bym2r")
+
+[sub_resource type="Gradient" id="Gradient_fv8kv"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.179283, 0.346614, 0.737052)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gwbps"]
+gradient = SubResource("Gradient_fv8kv")
+width = 10
+height = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sv5fe"]
+shader = ExtResource("10_bym2r")
+
+[node name="PipeLine" instance=ExtResource("1_wtsfb")]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+script = ExtResource("2_mcpkt")
+percent_piped_per_pixel = 10.0
+target_piping_speed = 0.5
+target_tolerance = 0.2
+drag_sample_size_requirement = 10
+
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gmstm")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MinigameStoneCuttingBoard" type="Sprite2D" parent="." index="1"]
+position = Vector2(555, 623)
+scale = Vector2(1.21, 1.21)
+texture = ExtResource("3_w7hmj")
+
+[node name="BigDoughBallNormal" type="Sprite2D" parent="." index="2"]
+position = Vector2(469, 537)
+scale = Vector2(2, 0.75)
+texture = ExtResource("3_qh0nl")
+
+[node name="Icing" type="Node2D" parent="." index="3"]
+unique_name_in_owner = true
+script = ExtResource("8_hfxdh")
+
+[node name="Path2D" type="Path2D" parent="Icing" index="0"]
+curve = SubResource("Curve2D_ec7wp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Icing/Path2D" index="0"]
+position = Vector2(163, 535)
+
+[node name="Visual" type="Line2D" parent="Icing" index="1"]
+width = 100.0
+width_curve = SubResource("Curve_6msox")
+
+[node name="PipingBag" type="Node2D" parent="." index="4"]
+z_index = 1
+position = Vector2(163, 531)
+rotation = 0.872665
+script = ExtResource("5_7684g")
+
+[node name="Sprites" type="Node2D" parent="PipingBag" index="0"]
+position = Vector2(43.8248, -123.792)
+scale = Vector2(1.6, 1.6)
+
+[node name="PipingBagFull" type="Sprite2D" parent="PipingBag/Sprites" index="0"]
+material = SubResource("CanvasItemMaterial_odmsh")
+texture = ExtResource("6_o4k7v")
+flip_h = true
+
+[node name="PipingBagEmpty" type="Sprite2D" parent="PipingBag/Sprites" index="1"]
+texture = ExtResource("7_an37g")
+flip_h = true
+
+[node name="IcingMasks" type="Node2D" parent="PipingBag" index="1"]
+clip_children = 1
+position = Vector2(-131.874, -152.428)
+rotation = -0.785398
+
+[node name="FullMask" type="PointLight2D" parent="PipingBag/IcingMasks" index="0"]
+texture = SubResource("GradientTexture2D_s6b28")
+
+[node name="FadeMask" type="PointLight2D" parent="PipingBag/IcingMasks/FullMask" index="0"]
+position = Vector2(-6.364, -151.447)
+texture = SubResource("GradientTexture2D_36csd")
+
+[node name="EmptyMask" type="PointLight2D" parent="PipingBag/IcingMasks" index="1"]
+position = Vector2(-11.4398, -99.9375)
+rotation = -0.785398
+color = Color(0, 0, 0, 1)
+texture = ExtResource("8_m8dr4")
+texture_scale = 2.8
+
+[node name="VisualGuides" type="Node2D" parent="." index="5"]
+
+[node name="DottedLine" type="Line2D" parent="VisualGuides" index="0"]
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5enwi")
+position = Vector2(12.52, -139)
+points = PackedVector2Array(185, 645, 720, 645)
+width = 5.0
+texture = SubResource("GradientTexture2D_gwbps")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="DottedLine2" type="Line2D" parent="VisualGuides" index="1"]
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sv5fe")
+position = Vector2(12.52, -79.75)
+points = PackedVector2Array(185, 645, 720, 645)
+width = 5.0
+texture = SubResource("GradientTexture2D_gwbps")
+texture_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="InstructionsPanel" parent="." index="6" instance=ExtResource("8_xa70s")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+minigame_title = "Pipe Filling"
+instructions = "Click and drag the piping bag at the correct speed to evenly distribute the icing."
+
+[node name="StopSFXTimer" type="Timer" parent="." index="7"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://menus/clock_out/clock_out.gd" id="1_wmgct"]
 [ext_resource type="Resource" path="res://menus/testing/clock_out_no_date_timeline.dtl" id="2_i3vma"]
-[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="3_hjh51"]
-[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="4_drhm4"]
+[ext_resource type="PackedScene" path="res://misc/set_day_phase.tscn" id="3_hjh51"]
+[ext_resource type="PackedScene" path="res://menus/pause_menu/pause_opener.tscn" id="4_drhm4"]
 
 [node name="ClockOut" type="Control"]
 layout_mode = 3
@@ -15,7 +15,18 @@ grow_vertical = 2
 script = ExtResource("1_wmgct")
 no_date_timeline = ExtResource("2_i3vma")
 datescenes = {
-"salty1": "clock_out_test"
+"salty1": "callum_date_1",
+"salty2": "callum_date_2",
+"salty3": "callum_date_3",
+"savory1": "millie_date_1",
+"savory2": "millie_date_2",
+"savory3": "millie_date_3",
+"spicy1": "pepper_date_1",
+"spicy2": "pepper_date_2",
+"spicy3": "pepper_date_3",
+"sweet1": "raymond_date_1",
+"sweet2": "raymond_date_2",
+"sweet3": "raymond_date_3"
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
