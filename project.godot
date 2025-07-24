@@ -13,6 +13,8 @@ config_version=5
 config/name="Bake Me Crazy"
 run/main_scene="res://menus/start_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0.498039, 0.25098, 0.278431, 1)
+boot_splash/image="res://menus/splash-screen.png"
 config/icon="res://menus/start_menu/title_logo.png"
 
 [autoload]
