@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckpmts7amvo6q"]
+[gd_scene load_steps=16 format=3 uid="uid://ckpmts7amvo6q"]
 
 [ext_resource type="Script" path="res://sfx/sfx_dispatcher.gd" id="1_ddg1u"]
 [ext_resource type="Script" path="res://sfx/event_sfx_mapping.gd" id="2_rk27y"]
@@ -85,6 +85,24 @@ event_name = "mouse_entered"
 sfx_id = "hover_sfx"
 stop_sfx = false
 
+[sub_resource type="Resource" id="Resource_2euku"]
+script = ExtResource("2_rk27y")
+node_type = "Control"
+node_group = ""
+node_name = ""
+event_name = "piping_bag_sfx"
+sfx_id = "piping_bag_sfx.tres"
+stop_sfx = false
+
+[sub_resource type="Resource" id="Resource_d7673"]
+script = ExtResource("2_rk27y")
+node_type = "Control"
+node_group = ""
+node_name = ""
+event_name = "piping_bag_sfx_cancel"
+sfx_id = "piping_bag_sfx.tres"
+stop_sfx = true
+
 [sub_resource type="Resource" id="Resource_x466h"]
 script = ExtResource("3_p45uh")
 animation_name = "swipe"
@@ -95,5 +113,5 @@ stop_sfx = false
 
 [node name="SFXDispatcher" type="Node"]
 script = ExtResource("1_ddg1u")
-event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_2i6c7"), SubResource("Resource_w77q6"), SubResource("Resource_lwk0c"), SubResource("Resource_7m6ny"), SubResource("Resource_5t5ta"), SubResource("Resource_mapta"), SubResource("Resource_2u5oj"), SubResource("Resource_j2dgd")])
+event_sfx_mappings = Array[ExtResource("2_rk27y")]([SubResource("Resource_ctuoi"), SubResource("Resource_2i6c7"), SubResource("Resource_w77q6"), SubResource("Resource_lwk0c"), SubResource("Resource_7m6ny"), SubResource("Resource_5t5ta"), SubResource("Resource_mapta"), SubResource("Resource_2u5oj"), SubResource("Resource_j2dgd"), SubResource("Resource_2euku"), SubResource("Resource_d7673")])
 animation_sfx_mappings = Array[ExtResource("3_p45uh")]([SubResource("Resource_x466h")])

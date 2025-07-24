@@ -42,7 +42,7 @@ func get_day_phase_string() -> StringName:
 @export var queued_recipe_unlocks: Array[String]
 
 #- Inventory / Items -#
-@export var money : int = 250
+@export var money : int = 25
 @export var inventory: Array[ItemInstance]
 
 #- Character Data -#
@@ -50,3 +50,4 @@ func get_day_phase_string() -> StringName:
 
 @export_storage var scene_path := ""
 @export_storage var dialogic_blob := {}
+@export_storage var music_file := ""

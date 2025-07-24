@@ -14,7 +14,7 @@
 		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
 		raymond: This is pretty good!
 - Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait 'til the next day)"]
-	jump sweet_days/
+	jump raymond_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
 if {read_only.possible_date} == 1:

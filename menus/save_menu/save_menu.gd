@@ -84,6 +84,7 @@ func _on_load_save_button_pressed() -> void:
 	print("[save_system] ", save_resource.inventory)
 	for item in save_resource.inventory:
 		print("[save_system] ", '"', item._data_resource_path, '"')
+	
 	PlayerData.load_file(save_resource)
 
 func _on_write_save_button_pressed() -> void:
@@ -92,13 +93,23 @@ func _on_write_save_button_pressed() -> void:
 	
 	PlayerData.data.scene_path = get_tree().current_scene.scene_file_path
 	PlayerData.data.dialogic_blob = Dialogic.get_full_state()
+	
 	print("[save_system] Saving!")
 	print("[save_system] ", PlayerData.data.inventory)
+	
 	for item in PlayerData.data.inventory:
 		print("[save_system] ", '"', item._data_resource_path, '"')
+	
 	print("[save_system] ", PlayerData.data.dialogic_blob)
+	
+	if MainMusicPlayer.is_playing():
+		PlayerData.data.music_file = MainMusicPlayer.current_song.resource_path
+	else:
+		PlayerData.data.music_file = ""
+	
 	var result = ResourceSaver.save(PlayerData.data, currently_selected_slot.save_path)
+	
 	print("save to path: ", currently_selected_slot.save_path)
-	assert(result == 0)
+	assert(result == Error.OK)
 	
 	currently_selected_slot.update_info(PlayerData.data)

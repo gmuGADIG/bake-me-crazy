@@ -1,0 +1,112 @@
+[gd_scene load_steps=14 format=3 uid="uid://bg30vapgyf6if"]
+
+[ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_grpq7"]
+[ext_resource type="Script" path="res://cooking/steps/pour_step/pour_step.gd" id="2_cjseu"]
+[ext_resource type="Texture2D" uid="uid://br100htw3ff40" path="res://cooking/steps/pour_step/cake_tin.svg" id="3_rdidg"]
+[ext_resource type="Texture2D" uid="uid://dp2xx4k252u2o" path="res://cooking/art/blurred-bg.png" id="4_h11ts"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="5_h3r34"]
+[ext_resource type="Texture2D" uid="uid://bdk40ot8gathk" path="res://cooking/steps/pour_step/counter.png" id="6_mjj2t"]
+[ext_resource type="PackedScene" uid="uid://ql78v3rtxp5y" path="res://cooking/steps/pour_step/single_pourer.tscn" id="8_17i1a"]
+[ext_resource type="PackedScene" uid="uid://bdp3tme7lqxa0" path="res://cooking/steps/pour_step/pour_step_bowl.tscn" id="9_qihfd"]
+
+[sub_resource type="Gradient" id="Gradient_36fex"]
+offsets = PackedFloat32Array(0, 0.300613, 0.337423, 0.803681, 0.819018, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_71vox"]
+gradient = SubResource("Gradient_36fex")
+width = 128
+height = 16
+
+[sub_resource type="Animation" id="Animation_atdu5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5wupr"]
+resource_name = "blink"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x7axs"]
+_data = {
+"RESET": SubResource("Animation_atdu5"),
+"blink": SubResource("Animation_5wupr")
+}
+
+[node name="PourStepBig" instance=ExtResource("1_grpq7")]
+script = ExtResource("2_cjseu")
+container_texture = ExtResource("3_rdidg")
+pour_rate_multiplier = 0.2
+
+[node name="TextureRect2" type="TextureRect" parent="." index="0"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_h11ts")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="InstructionsPanel" parent="." index="1" instance=ExtResource("5_h3r34")]
+offset_left = 534.0
+offset_top = -14.0
+offset_right = 534.0
+offset_bottom = -14.0
+scale = Vector2(0.535034, 0.535034)
+minigame_title = "Pour Dough"
+instructions = "Click to turn the bowl and start pouring. Move the mouse to move the bowl. Fill the container to the red line."
+
+[node name="Counter" type="Sprite2D" parent="." index="2"]
+position = Vector2(598, 572)
+scale = Vector2(1, 0.640794)
+texture = ExtResource("6_mjj2t")
+
+[node name="Container" parent="." index="3" instance=ExtResource("8_17i1a")]
+unique_name_in_owner = true
+position = Vector2(536, 249)
+scale = Vector2(2.84156, 2.84156)
+
+[node name="Bowl" parent="." index="4" instance=ExtResource("9_qihfd")]
+unique_name_in_owner = true
+
+[node name="Line2D" type="Line2D" parent="." index="5"]
+texture_repeat = 2
+position = Vector2(-4, 317)
+points = PackedVector2Array(0, 0, 1200, 0)
+width = 2.0
+default_color = Color(0.864, 0, 0.276, 0.413)
+texture = SubResource("GradientTexture2D_71vox")
+texture_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Line2D" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_x7axs")
+}
+autoplay = "blink"

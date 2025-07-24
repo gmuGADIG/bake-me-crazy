@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr7epfvpohmfg"]
+[gd_scene load_steps=7 format=3 uid="uid://cr7epfvpohmfg"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_2qc31"]
 [ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="3_6hkio"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_31i4w"]
 [ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="4_o0vgq"]
 [ext_resource type="PackedScene" uid="uid://bvkexsscuam4t" path="res://cooking/steps/step_diag_cut.tscn" id="5_cdymg"]
+[ext_resource type="PackedScene" uid="uid://5tdiyy8wyd03" path="res://cooking/steps/bake.tscn" id="6_ld13l"]
 
 [node name="Scones" instance=ExtResource("1_2qc31")]
 
@@ -15,6 +16,10 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="shape_step" parent="." index="4" instance=ExtResource("4_o0vgq")]
+layout_mode = 1
 
 [node name="StepCut" parent="." index="5" instance=ExtResource("5_cdymg")]
+layout_mode = 1
+
+[node name="Bake" parent="." index="6" instance=ExtResource("6_ld13l")]
 layout_mode = 1

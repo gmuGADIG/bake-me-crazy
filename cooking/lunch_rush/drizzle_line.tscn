@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qccd5vfubk5b"]
+
+[ext_resource type="Script" path="res://cooking/lunch_rush/drizzle_line.gd" id="1_8xyjh"]
+
+[sub_resource type="Gradient" id="Gradient_cof4l"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.960452, 0.960452, 0.960452, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_28ayd"]
+resource_local_to_scene = true
+gradient = SubResource("Gradient_cof4l")
+fill_to = Vector2(0, 1)
+
+[node name="DrizzleLine" type="Node2D"]
+script = ExtResource("1_8xyjh")
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = 2
+texture = SubResource("GradientTexture2D_28ayd")
+texture_mode = 2
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2

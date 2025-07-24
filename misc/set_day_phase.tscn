@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blhe028i1pveq"]
+
+[ext_resource type="Script" path="res://misc/set_day_phase.gd" id="1_7s7wg"]
+
+[node name="SetDayPhase" type="Node"]
+script = ExtResource("1_7s7wg")

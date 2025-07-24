@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dys4ry676givg"]
+
+[ext_resource type="Script" path="res://sfx/sfx_res.gd" id="1_27tpn"]
+[ext_resource type="AudioStream" uid="uid://cio72kn10ntw0" path="res://sfx/audio/piping_bag/piping_bag_sfx.mp3" id="2_hl1jy"]
+
+[resource]
+script = ExtResource("1_27tpn")
+interrupt = false
+sound_file = ExtResource("2_hl1jy")
+looping = true
+expiration_time = 1000.0

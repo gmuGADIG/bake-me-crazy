@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=36 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_d5ipb"]
@@ -22,9 +22,12 @@
 [ext_resource type="Theme" uid="uid://ci7oj2xe68ki5" path="res://cooking/lunch_rush/lunch_rush_theme.tres" id="18_85t1o"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="19_1ienb"]
 [ext_resource type="Texture2D" uid="uid://yytg0qnv63ow" path="res://menus/market_ui/Gold_Button.webp" id="21_fewph"]
+[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="23_k4gpg"]
+[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="24_76rpg"]
+[ext_resource type="PackedScene" uid="uid://qccd5vfubk5b" path="res://cooking/lunch_rush/drizzle_line.tscn" id="25_b2ygi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
-size = Vector2(76, 39)
+size = Vector2(94, 39)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u66px"]
 
@@ -117,10 +120,10 @@ tracks/1/path = NodePath("FoodItem:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333),
+"times": PackedFloat32Array(0.0333),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-150, 533.307)]
+"values": [Vector2(-150, 683.307)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -183,7 +186,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.450625, 1),
 "update": 0,
-"values": [Vector2(582.319, 533.307), Vector2(582.319, 337.309)]
+"values": [Vector2(582.319, 683.307), Vector2(582.319, 537.309)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -290,8 +293,9 @@ rotation = -3.14159
 scale = Vector2(0.2, 0.2)
 
 [node name="FoodItem" type="Node2D" parent="."]
+unique_name_in_owner = true
 z_index = 1
-position = Vector2(-150, 533.307)
+position = Vector2(-150, 683.307)
 scale = Vector2(2, 2)
 
 [node name="FoodItemSprite" type="TextureRect" parent="FoodItem"]
@@ -316,7 +320,7 @@ texture = ExtResource("14_rbkm8")
 [node name="Area2D" type="Area2D" parent="FoodItem"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodItem/Area2D"]
-position = Vector2(-2, -1)
+position = Vector2(-11, -1)
 shape = SubResource("RectangleShape2D_pa8sg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -483,6 +487,13 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_uyxgj")
 }
+
+[node name="SetDayPhase" parent="." instance=ExtResource("23_k4gpg")]
+new_day_phase = 3
+
+[node name="PauseOpener" parent="." instance=ExtResource("24_76rpg")]
+
+[node name="DrizzleLine" parent="." instance=ExtResource("25_b2ygi")]
 
 [connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food1" to="." method="_on_food_selected" binds= [0]]
 [connection signal="pressed" from="CanvasLayer/FoodSelect/FoodContainer/Food2" to="." method="_on_food_selected" binds= [1]]

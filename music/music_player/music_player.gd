@@ -18,6 +18,7 @@ var is_song_transition: bool = false
 var transition_time_elapsed: float = 0.0
 
 var volume_tween: Tween
+var soft_stop_tween: Tween
 
 func _ready() -> void:
 	for player in players:
@@ -37,16 +38,7 @@ func transition_to_song_by_filename(filename: String, at_point: float = 0.0):
 	var song: Song = SongScanner.get_song_by_filename(filename)
 	if not song:
 		return
-	current_song = song
-	if not _any_playing():
-		play(at_point)
-		return
-	is_song_transition = true
-	transition_time_elapsed = 0.0
-	var inactive = _inactive()
-	inactive.stream = song.song_file
-	inactive.volume_db = MUTE_DB
-	inactive.play(at_point)
+	transition_to_song(song, at_point)
 
 # Public API
 func play(from_sec: float = 0.0) -> void:
@@ -56,6 +48,18 @@ func play(from_sec: float = 0.0) -> void:
 	active.stream = current_song.song_file
 	active.volume_db = FULL_DB
 	active.play(from_sec)
+
+## slowly drop the volume of the music players, then stop them.
+func soft_stop() -> void:
+	# stop inactive players
+	for player in players:
+		if player != players[active_idx]:
+			player.stop()
+	
+	var tween := create_tween()
+	tween.tween_property(players[active_idx], "volume_db", MUTE_DB, 5.)
+	tween.finished.connect(stop)
+	soft_stop_tween = tween
 
 func stop() -> void:
 	_reset_players()
@@ -73,10 +77,14 @@ func get_length() -> float:
 	return 0.0
 
 func transition_to_song(song: Song, at_point: float = 0.0) -> void:
+	if soft_stop_tween != null and soft_stop_tween.is_running():
+		soft_stop_tween.kill()
+	
 	current_song = song
 	if not _any_playing():
 		play(at_point)
 		return
+	
 	is_song_transition = true
 	transition_time_elapsed = 0.0
 	var inactive = _inactive()
@@ -114,6 +122,10 @@ func resume() -> void:
 	for player in players:
 		if player.playing and player.playback_paused:
 			player.playback_paused = false
+
+func is_song_name_playing(filename: String) -> bool:
+	var song: Song = SongScanner.get_song_by_filename(filename)
+	return song == current_song
 
 # Internal handlers
 func _handle_song_transition(delta: float) -> void:

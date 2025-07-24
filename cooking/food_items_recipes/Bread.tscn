@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhoifd24rojac"]
+[gd_scene load_steps=7 format=3 uid="uid://bhoifd24rojac"]
 
 [ext_resource type="PackedScene" uid="uid://dwmajolaxmv26" path="res://cooking/food_minigame.tscn" id="1_re45d"]
 [ext_resource type="PackedScene" uid="uid://bstefa0yy7mq5" path="res://cooking/steps/pour_flour.tscn" id="3_ajggn"]
 [ext_resource type="PackedScene" uid="uid://hckjoefpykk4" path="res://cooking/steps/mix.tscn" id="3_jooka"]
 [ext_resource type="PackedScene" uid="uid://dtfpjbxnjfn3m" path="res://cooking/steps/kneading.tscn" id="4_usgl3"]
 [ext_resource type="PackedScene" uid="uid://brd86xxykauvf" path="res://cooking/steps/shape_step.tscn" id="5_7rgbg"]
+[ext_resource type="PackedScene" uid="uid://5tdiyy8wyd03" path="res://cooking/steps/bake.tscn" id="6_xul4q"]
 
 [node name="Bread" instance=ExtResource("1_re45d")]
 
@@ -22,3 +23,7 @@ offset_bottom = -2.0
 layout_mode = 1
 
 [node name="shape_step" parent="." index="5" instance=ExtResource("5_7rgbg")]
+layout_mode = 1
+
+[node name="Bake" parent="." index="6" instance=ExtResource("6_xul4q")]
+layout_mode = 1

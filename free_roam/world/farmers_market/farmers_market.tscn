@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://cw0pi3ksowsdr"]
+
+[ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_i1f1b"]
+[ext_resource type="Texture2D" uid="uid://b43uqlwrgdjd3" path="res://free_roam/world/farmers_market/Farmers_Market.png" id="2_p66vr"]
+[ext_resource type="PackedScene" uid="uid://cnxead63d1lt2" path="res://free_roam/interactables/NPCs/scenes/spicy_npc.tscn" id="3_15n25"]
+[ext_resource type="Resource" path="res://dialogue/spicy/spicy_market.dtl" id="4_86gxm"]
+[ext_resource type="PackedScene" uid="uid://b36stbyap3x8r" path="res://free_roam/interactables/NPCs/scenes/sweet_npc.tscn" id="4_s5heo"]
+[ext_resource type="PackedScene" uid="uid://bxw6aasc5fnqt" path="res://free_roam/world/transition_trigger.tscn" id="5_htkk8"]
+[ext_resource type="Resource" path="res://dialogue/sweet/sweet_market.dtl" id="6_x7ois"]
+[ext_resource type="Texture2D" uid="uid://c6001qwpnnnc1" path="res://free_roam/world/sign2.svg" id="8_xpb1k"]
+
+[sub_resource type="Curve2D" id="Curve2D_pds1b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1100, 609, 0, 0, 0, 0, 550, 609)
+}
+point_count = 2
+
+[node name="FreeRoamBase" instance=ExtResource("1_i1f1b")]
+
+[node name="FarmersMarket" type="Sprite2D" parent="." index="0"]
+position = Vector2(288, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_p66vr")
+
+[node name="Sign2" type="Sprite2D" parent="." index="1"]
+position = Vector2(1054, 461)
+scale = Vector2(0.294838, 0.294838)
+texture = ExtResource("8_xpb1k")
+
+[node name="Label" type="Label" parent="Sign2" index="0"]
+offset_left = -250.985
+offset_top = -176.368
+offset_right = 124.015
+offset_bottom = -51.3678
+rotation = -0.0600673
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 86
+text = "BAKERY"
+
+[node name="SpicyNPC" parent="." index="2" instance=ExtResource("3_15n25")]
+position = Vector2(-360, 516)
+main_timeline = ExtResource("4_86gxm")
+
+[node name="SweetNPC" parent="." index="3" instance=ExtResource("4_s5heo")]
+position = Vector2(41, 513)
+main_timeline = ExtResource("6_x7ois")
+
+[node name="PlayerPath" parent="." index="4"]
+position = Vector2(657, -23)
+curve = SubResource("Curve2D_pds1b")
+
+[node name="Player" parent="PlayerPath" index="0"]
+position = Vector2(91.7112, 609)
+progress = 1191.71
+
+[node name="PlayerSprite" parent="PlayerPath/Player" index="0"]
+flip_h = false
+
+[node name="Camera2D" parent="PlayerPath/Player" index="4"]
+limit_left = -576
+limit_top = 0
+limit_right = 1151
+limit_bottom = 648
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="TransitionTrigger" parent="." index="8" instance=ExtResource("5_htkk8")]
+position = Vector2(1092, 560)
+collision_layer = 0
+collision_mask = 2
+target_scene_path = "res://free_roam/world/streets/streets.tscn"
+
+[editable path="PlayerPath/Player"]

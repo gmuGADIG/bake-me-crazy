@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_ych4h")
+ingredient_type = 11
 description = "Yay vanilla :)"
 display_name = "Vanilla"
 image = ExtResource("1_ngdr0")

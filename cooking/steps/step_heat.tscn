@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cs2tul8n3xvnn"]
+[gd_scene load_steps=15 format=3 uid="uid://cs2tul8n3xvnn"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_25exc"]
 [ext_resource type="Script" path="res://cooking/steps/step_heat.gd" id="2_uj0nr"]
@@ -7,6 +7,24 @@
 [ext_resource type="Texture2D" uid="uid://5hlkhhtkgxsm" path="res://cooking/art/Fire Spritesheet.png" id="4_m17or"]
 [ext_resource type="Texture2D" uid="uid://tckmwkoekjq0" path="res://cooking/cooking_art/Minigame_Saucepan.png" id="5_myo54"]
 [ext_resource type="Script" path="res://cooking/steps/bake_animation.gd" id="5_tvtvx"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="6_moveo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngbnn"]
+bg_color = Color(0.93, 0.3069, 0.3069, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.156863)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sqoh"]
+bg_color = Color(0.3069, 0.93, 0.628835, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="Animation" id="Animation_w3i8t"]
 resource_name = "Idle"
@@ -66,10 +84,10 @@ _data = {
 [node name="StepHeat" instance=ExtResource("1_25exc")]
 anchors_preset = -1
 script = ExtResource("2_uj0nr")
-green_range = 1.265
+green_range = 0.5
 heat_time = 15.0
 
-[node name="FullBar" type="ColorRect" parent="." index="0"]
+[node name="FullBar" type="Panel" parent="." index="0"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -78,7 +96,7 @@ offset_top = 23.0
 offset_right = 49.0
 offset_bottom = -23.0
 grow_vertical = 2
-color = Color(1, 0.0986208, 0.387233, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ngbnn")
 
 [node name="Arrow" type="TextureRect" parent="FullBar" index="0"]
 layout_mode = 1
@@ -91,14 +109,15 @@ offset_right = 168.0
 offset_bottom = -7.508
 texture = ExtResource("3_4xmly")
 
-[node name="GreenBar" type="ColorRect" parent="FullBar" index="1"]
+[node name="GreenBar" type="Panel" parent="FullBar" index="1"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.185
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.808
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.881706, 0.31818, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sqoh")
 
 [node name="HeatTimeLabel" type="Label" parent="." index="1"]
 layout_mode = 1
@@ -129,7 +148,16 @@ position = Vector2(746.25, 333.75)
 scale = Vector2(3.11914, 2.50195)
 texture = ExtResource("5_myo54")
 
-[node name="Fire" type="Sprite2D" parent="." index="4"]
+[node name="InstructionsPanel" parent="." index="4" instance=ExtResource("6_moveo")]
+offset_left = 330.0
+offset_top = 334.0
+offset_right = 330.0
+offset_bottom = 334.0
+scale = Vector2(0.7, 0.7)
+minigame_title = "Heat"
+instructions = "Click and hold to keep the meter in the green!"
+
+[node name="Fire" type="Sprite2D" parent="." index="5"]
 position = Vector2(593, 313)
 scale = Vector2(0.660156, 0.619141)
 texture = ExtResource("4_m17or")

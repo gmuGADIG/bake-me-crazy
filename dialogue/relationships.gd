@@ -62,7 +62,8 @@ func _handle_new_recipes(character_name) -> void:
 	match character_name:
 		"salty": new_recipe = "res://items/recipes/macaron.tres" if first_recipe else "res://items/recipes/scone.tres"
 		"savory": new_recipe = "res://items/recipes/puff_roll.tres" if first_recipe else "res://items/recipes/cannelle.tres"
-		"spice": new_recipe = "res://items/recipes/bar.tres" if first_recipe else "res://items/recipes/tart.tres"
+		"spicy": new_recipe = "res://items/recipes/bar.tres" if first_recipe else "res://items/recipes/tart.tres"
 		"sweet": new_recipe = "res://items/recipes/cookie.tres" if first_recipe else "res://items/recipes/sweet_roll.tres"
 	
+	print("Adding recipe: ", new_recipe)
 	PlayerData.data.queued_recipe_unlocks.append(new_recipe)

@@ -1,17 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://brd86xxykauvf"]
+[gd_scene load_steps=9 format=3 uid="uid://brd86xxykauvf"]
 
 [ext_resource type="Script" path="res://cooking/steps/shape_step.gd" id="1_q1w3t"]
 [ext_resource type="Texture2D" uid="uid://dhhp1ccyb2oa0" path="res://cooking/art/BigDoughBallNormal.png" id="2_bv3xi"]
 [ext_resource type="Texture2D" uid="uid://coib06vlmljeo" path="res://cooking/art/Counter_Red.png" id="2_ih582"]
-[ext_resource type="Texture2D" uid="uid://boew2rvyixbcv" path="res://temp_art/temp ui/goodness_bar.png" id="3_doggk"]
 [ext_resource type="Texture2D" uid="uid://cho30r4kn6o8f" path="res://temp_art/temp ui/goodness_pointer.png" id="4_ytkyn"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="5_bt6ob"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni3ih"]
+bg_color = Color(0.93, 0.3069, 0.3069, 1)
+border_color = Color(0.65, 0.2145, 0.366925, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0, 0, 0, 0.219608)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwx3n"]
+bg_color = Color(0.89528, 0.93, 0.4092, 1)
+border_color = Color(0.75, 0.561, 0.33, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ftll"]
+bg_color = Color(0.3069, 0.93, 0.628835, 1)
+border_color = Color(0.1809, 0.67, 0.547725, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="shape_step" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_q1w3t")
 min_radius = 0.0
 
@@ -26,14 +54,44 @@ position = Vector2(576, 324)
 scale = Vector2(1.16828, 1.16828)
 texture = ExtResource("2_bv3xi")
 
-[node name="GoodnessBar" type="Sprite2D" parent="."]
-position = Vector2(60, 324)
-texture = ExtResource("3_doggk")
+[node name="FullBar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 49.0
+offset_bottom = -20.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ni3ih")
 
-[node name="GoodnessPointer" type="Sprite2D" parent="."]
-position = Vector2(85, 324)
-scale = Vector2(0.25, 0.25)
+[node name="GoodnessPointer" type="Sprite2D" parent="FullBar"]
+unique_name_in_owner = true
+position = Vector2(64.931, 590)
+scale = Vector2(0.247314, 0.247314)
 texture = ExtResource("4_ytkyn")
+
+[node name="YellowBar" type="Panel" parent="FullBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 119.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fwx3n")
+
+[node name="GreenBar" type="Panel" parent="FullBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 241.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ftll")
 
 [node name="InstructionsPanel" parent="." instance=ExtResource("5_bt6ob")]
 offset_left = 357.0

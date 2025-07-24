@@ -1,14 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://be1lqcj5xoxfv"]
+[gd_scene load_steps=14 format=3 uid="uid://be1lqcj5xoxfv"]
 
 [ext_resource type="Script" path="res://dialogue/internal/code/texting/text_manager.gd" id="1_0eas7"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/timeline.gd" id="2_2w8fv"]
 [ext_resource type="Resource" path="res://dialogue/testing/phone_test_1.dtl" id="3_uk1qo"]
 [ext_resource type="Resource" path="res://dialogue/testing/phone_test_2.dtl" id="4_4nmmx"]
 [ext_resource type="Resource" path="res://dialogue/testing/phone_test_3.dtl" id="5_2tuqb"]
-[ext_resource type="Resource" path="res://dialogue/testing/phone_test_4.dtl" id="6_0j8sm"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_1.dtl" id="6_ing2q"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_2.dtl" id="7_s6pj5"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_3.dtl" id="8_d8t3c"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_4.dtl" id="9_1hw13"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_5.dtl" id="10_fvoh7"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_6.dtl" id="11_h74lt"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_7.dtl" id="12_8pegv"]
+[ext_resource type="Resource" path="res://dialogue/sweet/daily_interactions/texts/text_8.dtl" id="13_372gk"]
 
 [node name="TextManager" type="Node"]
 script = ExtResource("1_0eas7")
 _salty_messages = Array[ExtResource("2_2w8fv")]([ExtResource("3_uk1qo"), ExtResource("4_4nmmx")])
 _savory_messages = Array[ExtResource("2_2w8fv")]([ExtResource("5_2tuqb")])
-_sweet_messages = Array[ExtResource("2_2w8fv")]([ExtResource("6_0j8sm")])
+_sweet_messages = Array[ExtResource("2_2w8fv")]([ExtResource("6_ing2q"), ExtResource("7_s6pj5"), ExtResource("8_d8t3c"), ExtResource("9_1hw13"), ExtResource("10_fvoh7"), ExtResource("11_h74lt"), ExtResource("12_8pegv"), ExtResource("13_372gk"), null, null])
