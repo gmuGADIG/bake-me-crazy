@@ -32,4 +32,4 @@ neutral_portrait = ExtResource("6_s36ph")
 happy_portrait = ExtResource("7_cg81c")
 
 [node name="CharacterName" parent="Control/Panel/BottomStuff" index="3"]
-text = "Natty Flavors"
+text = "Natty Flavorz"
