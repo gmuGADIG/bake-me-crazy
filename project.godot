@@ -53,6 +53,7 @@ directories/dtl_directory={
 "callum_conversations": "res://dialogue/salty/daily_interactions/callum_conversations.dtl",
 "callum_date_1_beanbagtoss": "res://dialogue/salty/dates/callum_date_1_beanbagtoss.dtl",
 "callum_date_1_fishinggame": "res://dialogue/salty/dates/callum_date_1_fishinggame.dtl",
+"callum_date_2": "res://dialogue/salty/dates/callum_date_2.dtl",
 "callum_gossips": "res://dialogue/coworker/gossip/callum_gossips.dtl",
 "clock_out_no_date_timeline": "res://menus/testing/clock_out_no_date_timeline.dtl",
 "clock_out_test": "res://dialogue/testing/clock_out_test.dtl",
