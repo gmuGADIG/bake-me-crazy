@@ -21,7 +21,7 @@ enum MsgState {
 func _init_msg(person: String, message_list: Array[DialogicTimeline]) -> void:
 	for i in range(message_list.size()):
 		if message_list[i] == null: continue
-		var msg = TextMessage.new(i, message_list[i])
+		var msg = TextMessage.new(i+1, message_list[i])
 		_texts[person].append(msg)
 
 func _ready() -> void:
