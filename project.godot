@@ -75,6 +75,7 @@ directories/dtl_directory={
 "dates/callum_date_3": "res://dialogue/salty/dates/callum_date_3.dtl",
 "dates/callum_date_confession": "res://dialogue/salty/dates/callum_date_confession.dtl",
 "end_of_day": "res://dialogue/narration/end_of_day.dtl",
+"festival_start": "res://dialogue/narration/festival_start.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "millie_conversations": "res://dialogue/savory/daily_interactions/millie_conversations.dtl",
 "millie_date_1": "res://dialogue/savory/dates/millie_date_1.dtl",
@@ -183,7 +184,7 @@ animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/cross_fade_default_length=0.0
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0

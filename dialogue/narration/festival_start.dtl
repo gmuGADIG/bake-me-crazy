@@ -1,0 +1,18 @@
+[background arg="res://dialogue/date_backgrounds/festival.png" fade="0.0"]
+It's finally the day of the festival!
+The park is swarming with locals and tourists, all weaving between various shops. There's so much to do.
+if {hearts.salty} == 10 or {hearts.savory} == 10 or {hearts.sweet} == 10 or {hearts.spicy} == 10:
+	But all that can wait until later\: you promised yourself you'd find someone special by the time of the festival.
+	Now it's only a matter of seeing if they feel the same way about you!
+	- Pepper | [if {hearts.spicy} == 10] [else="disable" alt_text="Pepper ({hearts.spicy}/10 ♥)"]
+		jump pepper_date_confession/
+	- Millie | [if {hearts.savory} == 10] [else="disable" alt_text="Millie ({hearts.savory}/10 ♥)"]
+		jump millie_date_confession/
+	- Raymond | [if {hearts.sweet} == 10] [else="disable" alt_text="Raymond ({hearts.sweet}/10 ♥)"]
+		jump raymond_date_confession/
+	- Callum | [if {hearts.salty} == 10] [else="disable" alt_text="Callum ({hearts.salty}/10 ♥)"]
+		jump dates/callum_date_confession/
+else:
+	Your original plan was to forget all of this activity and spend the evening with someone special to you...
+	Unfortunately, you're not confident in your progress with anybody in town.
+	The excess of stimulating activity seems like an appropriate distraction.
