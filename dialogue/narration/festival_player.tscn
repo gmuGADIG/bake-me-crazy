@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tcl5fhbrjt46"]
+
+[ext_resource type="Script" path="res://dialogue/narration/festival_player.gd" id="1_5rpr1"]
+
+[node name="FestivalPlayer" type="Node2D"]
+script = ExtResource("1_5rpr1")

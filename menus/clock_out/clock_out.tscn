@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://menus/clock_out/clock_out.gd" id="1_wmgct"]
 [ext_resource type="Resource" path="res://menus/testing/clock_out_no_date_timeline.dtl" id="2_i3vma"]
 [ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="3_hjh51"]
-[ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="4_drhm4"]
+[ext_resource type="PackedScene" path="res://menus/pause_menu/pause_opener.tscn" id="4_drhm4"]
 
 [node name="ClockOut" type="Control"]
 layout_mode = 3

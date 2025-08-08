@@ -37,4 +37,10 @@ func _process(delta: float) -> void:
 	skyline.modulate = color
 
 func _anim_change_scene() -> void:
-	SceneTransition.change_scene_to_packed(preload("res://free_roam/world/streets/streets.tscn"))
+	var scene: PackedScene
+	if PlayerData.data.day >= 14:
+		scene = preload("res://dialogue/narration/festival_player.tscn")
+	else:
+		scene = preload("res://free_roam/world/streets/streets.tscn")
+	
+	SceneTransition.change_scene_to_packed(scene)
