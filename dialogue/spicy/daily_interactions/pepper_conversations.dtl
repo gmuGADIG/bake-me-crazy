@@ -1,5 +1,12 @@
 label 1
-pepper: <missing conversation>
+pepper: Hey...[n+] I thought I recognized that face![n] You’re {player_name}, right?[n+] It’s Pepper, remember?[n] We used to be friends when we were kids.
+- Of course, how could I forget?
+pepper: Yeah, that’s what I’m talking about![n] It’s great to see you. I just got hit with a blast from the past!
+- No, sorry. Could you remind me?
+pepper: That’s fair, I guess.[n+] We were pretty little.[n] I lived down the street from you and we used to hang out after school.
+pepper: That’s great though, I didn’t know you were back in town![n] I’ve never been here before, do you work here?
+- Yep! I’m still pretty new, though.
+pepper: Well, that’s still awesome![n+] Personally, I’m running my parents’ sports store nowadays.[n] We should try to meet up sometime![n+] Like, catch up or hang out again.
 [end_timeline]
 
 label 2
