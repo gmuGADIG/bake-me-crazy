@@ -102,6 +102,7 @@ directories/dtl_directory={
 "pepper_text_2": "res://dialogue/spicy/daily_interactions/texts/pepper_text_2.dtl",
 "pepper_text_3": "res://dialogue/spicy/daily_interactions/texts/pepper_text_3.dtl",
 "pepper_text_4": "res://dialogue/spicy/daily_interactions/texts/pepper_text_4.dtl",
+"pepper_text_5": "res://dialogue/spicy/daily_interactions/texts/pepper_text_5.dtl",
 "pepper_text_6": "res://dialogue/spicy/daily_interactions/texts/pepper_text_6.dtl",
 "pepper_text_7": "res://dialogue/spicy/daily_interactions/texts/pepper_text_7.dtl",
 "pepper_text_8": "res://dialogue/spicy/daily_interactions/texts/pepper_text_8.dtl",
