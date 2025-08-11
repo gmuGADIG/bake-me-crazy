@@ -14,8 +14,16 @@
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
 if {read_only.possible_date} == 1:
+	- Are you free later?
+	pepper: Oh, today? I’m absolutely booked! But if you tag along for my evening run, we can hang.[n]What’s that? You’d LOVE to? That’s what I like to hear!
 	set {date} = "savory1"
 elif {read_only.possible_date} == 2:
+	- Are you free later?
+	pepper: Hm. Hmm… Yeah! I’ll just shut down the ol’ family business early today. Without telling anyone...that way they still get the steps in.[n]Maybe we can have a push-up competition!
+	- Or go to the carnival?
+	pepper: Ah, a rest day it is, then! See you later.
 	set {date} = "savory2"
 elif {read_only.possible_date} == 3:
+	- Are you free later?
+	pepper: I’d feel bad closing up shop early again...but I’d still love to hang out! What about a walk on the pier after I’m off the clock? Light cardio! Or…dimly lit cardio? Anyways! ‘Till then, soldier!
 	set {date} = "savory3"
