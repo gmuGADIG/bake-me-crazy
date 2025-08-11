@@ -1,2 +1,2 @@
-pepper: welcome to the NOT capage s hop
+pepper: WELCOME TO NATTY FLAVORZ! Everything you need to know is in the name. The ‘Z’ is actually a flexed bicep, by the way.
 do DialogueManager.open_market("res://free_roam/world/streets/shops/spicy_market.tscn")
