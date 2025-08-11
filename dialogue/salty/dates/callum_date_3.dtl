@@ -19,7 +19,7 @@ callum (excited): Wow, wow, wow! Those look delicious!
 	callum (neutral): I hope you’re serious. I don’t want to be outclassed too much when it comes to picnic goods.
 - “I was worried we’d only have sweets!”
 	set {dateRP} += 10
-	callum (excited): Hah! Thankfully, we balanced each other out. You bring the sweet and I bring the...everything else. We make a good pair, I guess![n][portrait=flustered]Er, anyways…
+	callum (excited): Hah! Thankfully, we balanced each other out. You bring the sweet and I bring the...everything else. We make a good pair, I guess![n][portrait=flustered]Er, anyways...
 
 callum (neutral): It’s all storebought, as you can imagine. The bread’s from someplace other than Ivy’s—not out of betrayal or anything![n]I just thought you might like to try another place for a change.[n][portrait=excited]Oh, the tea’s homemade, though![n+] I am absolutely boss at brewing tea.[n]In my free time, I took some online classes and I got my tea certificate.
 
@@ -107,7 +107,7 @@ callum (neutral): By the way, I’ve been feeling better about the town.[n]Still
 	Callum rushes off, his face is noticeably flustered. He left everything he brought to the picnic behind. You wonder what must have made Callum flaky.
 	[end_timeline]
 	label Fail State
-	Unfortunately, your attempts to reconcile fail in the moment. Callum becomes noticeably more frustrated with your behavior…
+	Unfortunately, your attempts to reconcile fail in the moment. Callum becomes noticeably more frustrated with your behavior...
 	callum (disgusted): Tsk. What’s that funny smell in the air? Must be a storm coming...guess we’d better pack up.
 	He gathers his belongings in his arms and pulls the blanket out from under you. Your baked goods tip over onto the grass... You spy a twinge of guilt on his face before he leaves.
 	leave callum

@@ -4,7 +4,7 @@ The customer stares at the glass casing of pastries for a concerning amount of t
 
 - “Something catch your fancy?”
 
-raymond: Hm? Oh! Yeah, sorry.[n]Uhh, could I have…uh, one of those things?
+raymond: Hm? Oh! Yeah, sorry.[n]Uhh, could I have...uh, one of those things?
 He points to what you know to be choux pastries.
 
 - ”A choux pastry?”
@@ -13,7 +13,7 @@ raymond: Oh, that’s how you pronounce it. Thanks! Man, it’s choux huge, it c
 [end_timeline]
 
 label 2
-raymond: Oh, hi! It’s you again![n]You have to give me what I had last time, it was ”out of this world!” Heh, heh. Ehh…[n]Sorry.
+raymond: Oh, hi! It’s you again![n]You have to give me what I had last time, it was ”out of this world!” Heh, heh. Ehh...[n]Sorry.
 [end_timeline]
 
 label 3
@@ -37,14 +37,14 @@ raymond: I mean, it’s one of mankind’s greatest accomplishments towards the 
 [end_timeline]
 
 label 6
-raymond: Sigh... I’ve dealt with too many people mistaking astronomy with astrology. I don’t wanna sound rude, but I don’t know how they make that mistake![n]I mean, one is proven by science, and the other…well…[n+] Oh, never mind, it’s really not that big of a deal.
+raymond: Sigh... I’ve dealt with too many people mistaking astronomy with astrology. I don’t wanna sound rude, but I don’t know how they make that mistake![n]I mean, one is proven by science, and the other...well...[n+] Oh, never mind, it’s really not that big of a deal.
 [end_timeline]
 
 label 7
 raymond: I recently got recommended this new show called The Big Splat Theory.[n]I was super excited at first! I was expecting this epic and in-depth analysis about the creation of the moon, but it turns out it’s just some silly sitcom.
 
 - “Aw, that’s lame.”
-	raymond: Right? I suppose I’ll just have to rewatch all 5 seasons of Exo-Defenders again. [n]Although I suppose that show isn’t very informative either…
+	raymond: Right? I suppose I’ll just have to rewatch all 5 seasons of Exo-Defenders again. [n]Although I suppose that show isn’t very informative either...
 - “I love that show!”
 	raymond: Really? Hm, well, I suppose I can give the show a fairer shot next time.
 [end_timeline]
@@ -56,19 +56,19 @@ raymond: I’ve been learning a lot about distant galaxies, and while they are i
 	raymond: Some of these names are absolutely ridiculous!
 - “I think the Milky Way is a clever name.”
 	raymond: Oh, trust me. It only goes downhill from there!
-raymond: Get this, we named one the “Hockey Stick Galaxy” just because it’s shaped like one! Surely, we could’ve thought of something more creative than that![n]Maybe a title such as “Knife Edge Galaxy” would’ve sufficed…[n]Wait…that one’s already taken?! Maybe we are running out of good options after all.
+raymond: Get this, we named one the “Hockey Stick Galaxy” just because it’s shaped like one! Surely, we could’ve thought of something more creative than that![n]Maybe a title such as “Knife Edge Galaxy” would’ve sufficed...[n]Wait...that one’s already taken?! Maybe we are running out of good options after all.
 [end_timeline]
 
 label 9
 raymond: Here’s another random astronomy fact of the day! Saturn is less dense than water, so if you had a big enough bathtub, it would float!
 
 label 10
-raymond: YAAAWNNN… Oh, heeey. I’m just a little tired from pulling an all-nighter on my speech presentation for the planetarium. Remember that paper on stellar formation that you ran into a while back? Now I'll be doing a speech.
+raymond: YAAAWNNN... Oh, heeey. I’m just a little tired from pulling an all-nighter on my speech presentation for the planetarium. Remember that paper on stellar formation that you ran into a while back? Now I'll be doing a speech.
 
 - “Do you need a coffee for the day?”
 	raymond: Yes, please. Cream and sugar too, if that’s possible.
 - “Wow, seems like you have a lot on your plate!”
-	raymond: Huh? No I don’t, I haven’t even ordered yet![n]Oh, you meant metaphorically… Maybe I should take a nap later today.
+	raymond: Huh? No I don’t, I haven’t even ordered yet![n]Oh, you meant metaphorically... Maybe I should take a nap later today.
 [end_timeline]
 
 
@@ -85,10 +85,10 @@ raymond: Man, summer is literally right around the corner, and I still can’t b
 [end_timeline]
 
 label 14
-raymond: Hey! I just got back from my astronomy club’s final meeting! I gotta say, I’m gonna miss quite a few of those members…they really knew how to keep the place engaging.[n]The earth really is a small place in the grand scheme of things, so no matter how far they go, I’m sure I’ll bump into them somehow![n]Hey, with those empty spots, you can join the club if you’d like.
+raymond: Hey! I just got back from my astronomy club’s final meeting! I gotta say, I’m gonna miss quite a few of those members...they really knew how to keep the place engaging.[n]The earth really is a small place in the grand scheme of things, so no matter how far they go, I’m sure I’ll bump into them somehow![n]Hey, with those empty spots, you can join the club if you’d like.
 
 - “Do you really think they would allow me in?”
-	raymond: Well…I’m sure I could, uh, make some…arrangements.
+	raymond: Well...I’m sure I could, uh, make some...arrangements.
 - “Even if I don’t know that much about astronomy?”
 	raymond: Absolutely! In fact, there are plenty of members like you who are new to the subject! It just means more passionate people, which is always good for the club.
 raymond: Only if you really want to, though! I dunno, I just think you might find it interesting, is all. Tell me what you think sometime! I always love seeing new members!

@@ -62,6 +62,7 @@ func reveal_text(_text: String, keep_previous:=false) -> void:
 
 	if !keep_previous:
 		text = _text
+		text = text.strip_edges()
 		base_visible_characters = 0
 
 		if alignment == Alignment.CENTER:

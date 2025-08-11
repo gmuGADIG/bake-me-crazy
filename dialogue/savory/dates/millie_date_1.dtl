@@ -10,27 +10,27 @@ millie (Neutral): You’re alright, dear. I just arrived myself. [n][portrait=co
 	set {dateRP} += -10
 	millie (Pensive): Oh...it does? Well, alright.
 	leave 
-	You get on the Gut Twister. You swear you can see the operator grin wickedly as she flips the switch to start the ride.[n]This might be a bit too much for you… the ride has only been running for ten seconds, and you already feel sick.[n]After the ride ends, both of you exit with frizzled hair and scrunched faces. That was certainly an experience.
+	You get on the Gut Twister. You swear you can see the operator grin wickedly as she flips the switch to start the ride.[n]This might be a bit too much for you... the ride has only been running for ten seconds, and you already feel sick.[n]After the ride ends, both of you exit with frizzled hair and scrunched faces. That was certainly an experience.
 	join millie (Disturbed) center
-	millie (Disturbed): Ugh… I haven’t been this winded since that time I got kicked by a heifer. I don’t think I want to try that one again.
+	millie (Disturbed): Ugh... I haven’t been this winded since that time I got kicked by a heifer. I don’t think I want to try that one again.
 
 - “I’ve always been good at the ring toss.”
 	set {dateRP} += 10
 	millie (Excited): Hmph! We’ll see about that.[n][portrait=Shocked] Ah, my apologies! I didn’t mean anything untoward by that.[n][portrait=Neutral]Please, let’s give it a try.
 	You make your way towards the carnival games and find the ring toss fairly quickly. You both buy some rings and start tossing.[n]It’s harder than you were expecting, but Millie looks like she’s having a good time.
-	millie (Neutral): Phew, this is harder than I thought…[n][portrait=Excited]Oh! I got another one!
+	millie (Neutral): Phew, this is harder than I thought...[n][portrait=Excited]Oh! I got another one!
 	It’s a hard-fought battle, but Millie just barely pulls ahead at the end.
 	millie (Happy): Would you look at that? Well, better luck next time, dear.
 
 - “I’d love to check out the arcade.”
 	millie (Neutral): Oh! That wouldn’t be my first choice. I’m looking forward to trying it.
 	You head over to the arcade section of the carnival. There are games everywhere, but the wall of claw machines catches your eye.
-	millie (Confused): I must admit, I don’t have much experience with arcade games…is there anything here that you might be able to introduce me to?
+	millie (Confused): I must admit, I don’t have much experience with arcade games...is there anything here that you might be able to introduce me to?
 	- “The claw machines!”
 	You walk to the claw machines. They’re full of stuffed animals, and you can spot one that’s right near the edge of the prize hole.
 	millie (Neutral): Goodness, I wouldn’t know where to start with these machines. I hope you know what you’re doing.
-You situate yourself at the claw machine, and move the claw over until it’s right on top of the loose plush. The angle is perfect. All you need to do is drop the claw. You press the button, and it goes down. The claws close on the plush. The claw starts to retract, and the plush rises with it. It’s so close… But the plush falls out of the claw, disappearing into the pile of faux fur.
-millie (Pensive): Awww… Well, that’s alright, dear. You’ll get it next time.
+You situate yourself at the claw machine, and move the claw over until it’s right on top of the loose plush. The angle is perfect. All you need to do is drop the claw. You press the button, and it goes down. The claws close on the plush. The claw starts to retract, and the plush rises with it. It’s so close... But the plush falls out of the claw, disappearing into the pile of faux fur.
+millie (Pensive): Awww... Well, that’s alright, dear. You’ll get it next time.
 # #Returns to the main route.
 millie (Neutral): It’s been so nice exploring these lil’ attractions again. Do you know of any good food around here? I’m starting to feel a bit peckish.
 - “I saw funnel cakes a minute ago.”
@@ -43,7 +43,7 @@ millie (Neutral): It’s been so nice exploring these lil’ attractions again. 
 	You both take a bite.
 	millie (Excited): Mmmmm! Now THAT is a perfect funnel cake. Gotta say, I wasn’t expecting to find something that good at a carnival, of all places. Color me impressed!
 
-- “Corn dogs sound great right now…”
+- “Corn dogs sound great right now...”
 	millie (Neutral): I agree! Although I’m a bit picky when it comes to them. Let’s see if this here stand can get it right.
 	The two of you approach the corn dog stand and buy one for each other. You cover yours in ketchup and mustard, while she keeps hers plain. You both take a bite.
 	millie (Neutral): Hmm. As I suspected. Nobody can make them like they used to... Don’t get me wrong, it’s good, just not perfect.

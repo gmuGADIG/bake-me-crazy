@@ -27,7 +27,7 @@ func prompt_gift():
 func start_daily_chat():
 	var current_npc = LunchBreakNPC.latest_npc
 	
-	print("[BreakNPCSystem] starting chat for ", current_npc)
+	print("[BreakNPCSystem] starting chat for ", current_npc.name)
 	current_npc.talk_count += 1
 	current_npc.is_repeating = true
 	

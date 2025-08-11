@@ -21,11 +21,11 @@ else:
 		leslie: Space boy! I love space boy. I’ve always wanted to chase him around.
 		set {coworker.investigating} = "sweet"
 	- Callum | [if DialogueManager.coworker_can_gossip("salty")]
-		leslie: The surfer boy who can’t catch a wave from the ocean, or another person… I will watch him somberly.
+		leslie: The surfer boy who can’t catch a wave from the ocean, or another person... I will watch him somberly.
 		set {coworker.investigating} = "salty"
 	- Pepper | [if DialogueManager.coworker_can_gossip("spicy")]
 		leslie: Wondering what the childhood bestie’s been up to? I got you covered.
 		set {coworker.investigating} = "spicy"
 	do DialogueManager.coworker_start_gossip()
 - “Nothing much.”
-	leslie: Oh, let me guess… it says “nothing much” on the ceiling.
+	leslie: Oh, let me guess... it says “nothing much” on the ceiling.

@@ -20,7 +20,7 @@ You and Cal wait in line; it’s taking a lot longer than Cal expected. He is no
 	callum (frustrated): No, it’s fine. It’ll only be a little longer.
 	- “We can always do something else.”
 		callum (pensive): Sigh... I wouldn’t mind some fresh air. The pier sounds great right now.
-- “Uhh…I need to go to the bathroom.”
+- “Uhh...I need to go to the bathroom.”
 	set {dateRP} -= 10
 	if {dateRP} <= -30:
 		jump DateFailState
@@ -32,7 +32,7 @@ Callum leads the way to the pier. He leans over the railing.
 	callum (pensive): I’ve been trying to hide it, but to be honest with you, I am really going through it.
 - “That line stunk. We can always try another day.”
 	set {dateRP} += 5
-	callum (neutral): Yeah… Hey, can I talk to you about something?
+	callum (neutral): Yeah... Hey, can I talk to you about something?
 - “What was that all about?”
 	set {dateRP} -= 10
 	if {dateRP} <= -30:
@@ -45,19 +45,19 @@ callum (neutral): ...Thanks for still sticking around after that. I don’t want
 - “What happened?”
 	callum (pensive): Life happened.
 He lifts his head and turns to you.
-callum (pensive): I messed up. I thought I had what it took to be the best of the best.[n]I had just gotten the job and thought I could help one of my coworkers. They were having a hard time dealing with a bug in the system.[n]Turns out, I wasn’t much of anything. I made things worse…cost them thousands of hours of work.[n]I tried to help them fix it, but I got kicked out that day. Now, I’m here repairing computers and I hate it.
+callum (pensive): I messed up. I thought I had what it took to be the best of the best.[n]I had just gotten the job and thought I could help one of my coworkers. They were having a hard time dealing with a bug in the system.[n]Turns out, I wasn’t much of anything. I made things worse...cost them thousands of hours of work.[n]I tried to help them fix it, but I got kicked out that day. Now, I’m here repairing computers and I hate it.
 - “I’m so sorry that happened. I can’t even imagine how that was like.”
 	set {dateRP} += 10
 - “That’s horrible, I can understand why you would hate this town.”
 	set {dateRP} += 5
 - “That’s not a good reason to hate the town.”
 	jump DateFailState
-callum (pensive): Yeah. I feel like you're the only one who gets me. I mean, I’ve tried talking to the people here and I just feel like I keep messing it all up.[n]There was this one time I was talking to Ray and he was going on and on about astrology or something, and so I thought I would ask him what his star sign was. You know?[n]I wanted to get to know him some more. Well, he just glared at me and told me he had to do something, and poof, he was gone.[n]I feel like…apologizing? Or at least trying again. But he’d probably prefer I stayed away.
-- “Yeah…might be best to leave it."
+callum (pensive): Yeah. I feel like you're the only one who gets me. I mean, I’ve tried talking to the people here and I just feel like I keep messing it all up.[n]There was this one time I was talking to Ray and he was going on and on about astrology or something, and so I thought I would ask him what his star sign was. You know?[n]I wanted to get to know him some more. Well, he just glared at me and told me he had to do something, and poof, he was gone.[n]I feel like...apologizing? Or at least trying again. But he’d probably prefer I stayed away.
+- “Yeah...might be best to leave it."
 	set {dateRP} -= 10
 	if {dateRP} <= -30:
 		jump DateFailState
-	callum (pensive): I… I guess so, huh? Geez. I was hoping you’d disagree.
+	callum (pensive): I... I guess so, huh? Geez. I was hoping you’d disagree.
 - “No, Callum. You’re such pleasant company."
 	set {dateRP} += 10
 	callum (neutral): You really think that? Even with all this awkward heart-to-heart crap? Ah, don’t answer that! I’ll just nod my head and agree.

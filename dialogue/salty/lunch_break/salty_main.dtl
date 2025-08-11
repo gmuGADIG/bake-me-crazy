@@ -24,9 +24,9 @@ elif {read_only.possible_date} == 2:
 	- Wanna hang this evening?
 	callum: Let me ask you something first: what’s big, clear, and blue today?
 	- ...The sky!
-	callum: Yes! As well as my schedule. For context, my calendar back home is blue.[n]Anyways, I hope you got a kick out of that. See you later at…we’ll say…the carnival! Part two.
+	callum: Yes! As well as my schedule. For context, my calendar back home is blue.[n]Anyways, I hope you got a kick out of that. See you later at...we’ll say...the carnival! Part two.
 	set {date} = "salty2"
 elif {read_only.possible_date} == 3:
 	- Wanna hang this evening?
-	callum: O-Oh! For real? Yeah, I’m absolutely down. I was going to ask you the same thing yesterday. And the day before that. And the…you get it.[n]Gosh, funny how it’s still awkward to ask someone you know to spend time together. Personally, I’m game for a picnic later.
+	callum: O-Oh! For real? Yeah, I’m absolutely down. I was going to ask you the same thing yesterday. And the day before that. And the...you get it.[n]Gosh, funny how it’s still awkward to ask someone you know to spend time together. Personally, I’m game for a picnic later.
 	set {date} = "salty3"

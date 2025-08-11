@@ -1,11 +1,11 @@
 - Give Gift
-	millie: Oh… you want to give something to me? That’s very kind of you.
+	millie: Oh... you want to give something to me? That’s very kind of you.
 	do BreakNPCSystem.prompt_gift()
 	if {read_only.gift_response} == "canceled":
-		millie: Hmm? You changed your mind? Uh…alright then. I’m not sure how to respond.
+		millie: Hmm? You changed your mind? Uh...alright then. I’m not sure how to respond.
 	elif {read_only.gift_response} in ["pork", "cheese"]:
 		set {rp.savory} += {BreakNPCSystem.compute_gift_reward(true)}
-		millie (Excited): This…How did you know I loved these? Oh my goodness, I’ve been wanting these for so long. Thank you so much dear, I can’t express how grateful I am.
+		millie (Excited): This...How did you know I loved these? Oh my goodness, I’ve been wanting these for so long. Thank you so much dear, I can’t express how grateful I am.
 	else:
 		set {rp.savory} += {BreakNPCSystem.compute_gift_reward(false)}
 		millie: Oh, thank you so much! These are wonderful, I appreciate them so much!
@@ -24,9 +24,9 @@ if {read_only.new_phone_number} == true:
 	do DialogueManager.add_phone_number("savory")
 if {read_only.possible_date} == 1:
 	- Would you like to go out?
-	millie: You want to go out with me…? Oh, I’m not sure, we’ve just met and I don’t even know that much about you, dear. Uh. Let me think about it. Maybe I…well, I think it’d be nice to, umm, hang out with you? 
+	millie: You want to go out with me...? Oh, I’m not sure, we’ve just met and I don’t even know that much about you, dear. Uh. Let me think about it. Maybe I...well, I think it’d be nice to, umm, hang out with you? 
 	- The carnival will be open later.
-	millie: Ah, the carnival…I haven’t been there for a while. Sure, we can go together! I’m looking forward to it.
+	millie: Ah, the carnival...I haven’t been there for a while. Sure, we can go together! I’m looking forward to it.
 	set {date} = "savory1"
 elif {read_only.possible_date} == 2:
 	- Would you like to go out?
@@ -34,7 +34,7 @@ elif {read_only.possible_date} == 2:
 	set {date} = "savory2"
 elif {read_only.possible_date} == 3:
 	- Would you like to go out?
-	millie: Oh, I’m so happy that you’re asking again![n]Perhaps we could take a pleasant walk on the pier later tonight…? Or, sorry, that sounds much too intimate! Oh, I’m so embarrassed now…please forget that I even suggested it.
+	millie: Oh, I’m so happy that you’re asking again![n]Perhaps we could take a pleasant walk on the pier later tonight...? Or, sorry, that sounds much too intimate! Oh, I’m so embarrassed now...please forget that I even suggested it.
 	- Why? It’s a lovely idea.
 	millie: You think so? I’m quite relieved![n]Well then, I’ll see you tonight, at the pier. It will be so nice to visit the sea again.
 	set {date} = "savory3"

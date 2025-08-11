@@ -13,7 +13,7 @@ callum: Hey! Me? I’m just hanging out. Just taking a break from the monotony o
 [end_timeline]
 
 label 3
-callum: I’ll be the first to admit it. This bakery easily clears any that I went to in Cali. It’s a shame nothing else in Leaventide sticks out as much…[n]Uhh, hey, do you think you could hook me up with the recipes for when I eventually move back to the mother coast?
+callum: I’ll be the first to admit it. This bakery easily clears any that I went to in Cali. It’s a shame nothing else in Leaventide sticks out as much...[n]Uhh, hey, do you think you could hook me up with the recipes for when I eventually move back to the mother coast?
 [end_timeline]
 
 label 4
@@ -47,7 +47,7 @@ callum: Just when Leaventide was starting to grow on me, someone sent a curse th
 label 11
 callum: Do you guys plan seasonal items at this bakery? I can only imagine the beaucoup bucks you could make around the holiday season.
 “Planning to stick around until then?”
-	callum: I’m expressing my curiosity, not staking my claim on the land…[n+]but if you promise to bake me something special for Christmas, I might hold out until then.
+	callum: I’m expressing my curiosity, not staking my claim on the land...[n+]but if you promise to bake me something special for Christmas, I might hold out until then.
 “We make a few special batches for the culture festival.”
 	callum: No kidding? Well, I’m glad I don’t have to wait too long to try them out![n]I hope it includes special baklava...
 [end_timeline]

@@ -6,12 +6,12 @@ join millie (Happy) center [animation="Slide In Up" length="2.0" wait="true"]
 millie (Happy): Ah, {player_name}. I’m glad you could make it.[n] Have you enjoyed looking around? You can really see how much love everyone has put into the festival.
 
 - “I’d like to spend the day with you.”
-millie (Flustered): Oh, my. Well, I wouldn’t mind that.[n][portrait=Neutral]Let me just finish up here…[n]Alright, I’m ready. Where would you like to start?
+millie (Flustered): Oh, my. Well, I wouldn’t mind that.[n][portrait=Neutral]Let me just finish up here...[n]Alright, I’m ready. Where would you like to start?
 
 - “Would you like to try some of the food?”
 	millie (Neutral): I’m afraid I already had a hearty lunch. Besides, I’ll tell you a secret\: the batter they’re using for the funnel cake is store-bought. I’d steer clear of it.
 - “Why don’t we go to the carnival?”
-	millie (Pensive): Ooh, I’m sorry. Anything but the carnival today. The crowd might be a bit much…
+	millie (Pensive): Ooh, I’m sorry. Anything but the carnival today. The crowd might be a bit much...
 
 “Then what do you want to do?”
 
@@ -21,7 +21,7 @@ millie (Neutral): Do you see the stall over there? The one about Leaventide’s 
 - “Ice cream sounds really good right now.”
 - “Why don’t we say hello to them?”
 
-millie (Disturbed): …Let’s not.[n][portrait=Neutral]I could point to so many of the stalls here, and I’ll have been involved with them somehow.[n]My family is so deeply rooted in the town’s commerce, history, and growth…[n][portrait=Pensive]…that this festival feels all too formal to me, as if it’s another day on the farm.[n]Which is why, for today, I’d rather we not focus so much on all of that. I’d like to take a break from it all.
+millie (Disturbed): ...Let’s not.[n][portrait=Neutral]I could point to so many of the stalls here, and I’ll have been involved with them somehow.[n]My family is so deeply rooted in the town’s commerce, history, and growth...[n][portrait=Pensive]...that this festival feels all too formal to me, as if it’s another day on the farm.[n]Which is why, for today, I’d rather we not focus so much on all of that. I’d like to take a break from it all.
 
 - “Then let’s do our own thing.”
 
@@ -29,7 +29,7 @@ millie (Happy): Thank you, {player_name}...[n][portrait=Pensive]You know, my wor
 
 - “Would you like every day to be like this?”
 
-millie (Flustered): …I would.
+millie (Flustered): ...I would.
 
 - “Me, too.”
 # #BRANCH BREAK
@@ -42,11 +42,11 @@ millie (Pensive): I’m sorry, {player_name}. I need to return home and prepare 
 
 “I can help.”
 
-millie (Embarrassed): No, no, I wouldn’t want to bother you. Toddlers can be very needy, and…
+millie (Embarrassed): No, no, I wouldn’t want to bother you. Toddlers can be very needy, and...
 
 Millie realizes that she is pushing the player away again.
 
-millie (Neutral): Sorry, I don’t mean to be so distant. If you’re certain…[n+][portrait=Happy] I would be happy to have you there.[n]You know, once my daughter’s a little more grown, you’ll have a friend to try those absurd carnival rides with.[n]I’ll be there as well, of course. To cherish every moment I have with you, and with her.
+millie (Neutral): Sorry, I don’t mean to be so distant. If you’re certain...[n+][portrait=Happy] I would be happy to have you there.[n]You know, once my daughter’s a little more grown, you’ll have a friend to try those absurd carnival rides with.[n]I’ll be there as well, of course. To cherish every moment I have with you, and with her.
 leave millie
 [background arg="res://dialogue/date_backgrounds/confession_stills/Millie_Confession.png" fade="0.0"]
 

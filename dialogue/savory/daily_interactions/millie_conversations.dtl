@@ -11,9 +11,9 @@ During your break, you see a woman hanging out all by herself. She is intensely 
 millie: Oh dear, where are my manners? My name is Millie. It’s a pleasure to make your acquaintance.[n]I see that you work at this bakery? I’ve yet to try it, but I’ve been curious to try it for quite some time. After all, I respect an establishment that supports our farmers![n]Well, it’s been wonderful meeting you!
 [end_timeline]
 label 2
-millie: Ah, it’s you again! I didn’t think I’d stumble into you so soon! [n] [portrait=neutral]I’m glad, though. I need to compliment you on your bakery’s pastries. [n] [portrait=happy]They were delicious! I’ve always preferred the homemade quality of foods, especially baked goods. Even then, it seems like you know what you’re doing. [n]I made sure to bring some home for my family to try as well, and they were all thoroughly impressed! Trust me when I say they are not easy to impress, so don’t take that lightly. [n] [portrait=neutral]Keep up the good work, I’ll be sure to revisit this place whenever I’m in a pinch.
+millie: Ah, it’s you again! I didn’t think I’d stumble into you so soon! [n][portrait=neutral]I’m glad, though. I need to compliment you on your bakery’s pastries. [n][portrait=happy]They were delicious! I’ve always preferred the homemade quality of foods, especially baked goods. Even then, it seems like you know what you’re doing. [n]I made sure to bring some home for my family to try as well, and they were all thoroughly impressed! Trust me when I say they are not easy to impress, so don’t take that lightly. [n][portrait=neutral]Keep up the good work, I’ll be sure to revisit this place whenever I’m in a pinch.
 label 3
-millie: Huff, it seems you’ve caught me in quite a position.[n]Oh, don’t mind the stains on my clothes, they’re just the result of some rough labor...animal labor to be specific.[n]I’ll tell you what, on a good day, my job seems like a cake walk, but when it’s a bad day? Hooh, boy, I need more than just some rest to recover from it.[n]So, apologies if I don’t look the cleanest, I’m just in need of a quick snack to keep myself going.
+millie: Huff, it seems you’ve caught me in quite a position.[n]Oh, don’t mind the stains on my clothes, they’re just the result of some rough labor... animal labor to be specific.[n]I’ll tell you what, on a good day, my job seems like a cake walk, but when it’s a bad day? Hooh, boy, I need more than just some rest to recover from it.[n]So, apologies if I don’t look the cleanest, I’m just in need of a quick snack to keep myself going.
 [end_timeline]
 label 4
 millie: Have you ever seen those videos with the screaming goats?
@@ -21,94 +21,94 @@ millie: Have you ever seen those videos with the screaming goats?
 - “Yeah, I love them!”
 	millie: Ugh, I can’t even be fully mad with you for that.
 
-- “I don’t think I have…”
+- “I don’t think I have...”
 	millie: I’m surprised! Those videos have millions of views! There are an awful number of people who keep showing them to me just because they know I’ve worked with them before.
 
-They’re funny, don’t get me wrong, but they aren’t accurate in the slightest.[n]It’s rare that you ever find one actually screaming like that, and I can certainly tell you that in my years at the farm, I haven’t heard a single one make any kind of noise like that![n]Honestly, I don’t know what makes me more mad\: the fact that people are actively spreading misinformation about those poor goats, or that I haven’t been able to hear one scream on my own farm. Well, enough ranting from me, hope you’re staying cool out there!
+millie: They’re funny, don’t get me wrong, but they aren’t accurate in the slightest.[n]It’s rare that you ever find one actually screaming like that, and I can certainly tell you that in my years at the farm, I haven’t heard a single one make any kind of noise like that![n]Honestly, I don’t know what makes me more mad\: the fact that people are actively spreading misinformation about those poor goats, or that I haven’t been able to hear one scream on my own farm.[n]Well, enough ranting from me, hope you’re staying cool out there!
 [end_timeline]
 label 5
-millie: Oh my! I’m sorry dear, I didn’t see you there. [n]Dear, I have quite a conundrum. I’m struggling to pick which gift to give. You see…it’s, uh, someone’s birthday soon, and I wanted to know what gifts to pick for them. Do you have any ideas?
+millie: Oh my! I’m sorry dear, I didn’t see you there. [n]Dear, I have quite a conundrum. I’m struggling to pick which gift to give. You see... it’s, uh, someone’s birthday soon, and I wanted to know what gifts to pick for them. Do you have any ideas?
 
 - “Maybe a necklace would be nice?”
 	millie: Do you really think that would be a good choice?
 	You nod your head confidently.
-	millie: Hm...maybe I need a second opinion on this.
+	millie: Hm... maybe I need a second opinion on this.
 
 - “You should get them a new game to play!”
 	millie: You know what, that sounds like a wonderful idea! Thank you for the help deciding, I’ll be sure to get shopping soon!
 [end_timeline]
 label 6
-Good afternoon to you! I’m happy I caught you today.
+millie: Good afternoon to you! I’m happy I caught you today.
 
 Millie points out a small garden plot nearby. It has a plethora of small shrubs and garden sprouts growing from it.
 
-Did you notice these before? I heard that the local high schoolers were tasked with a new project in planting them. [n]It’s inspiring to see such nice children getting involved with agriculture. I hope that an experience like this could maybe sprout some aspiring farmers in the future! [n]It’s inspiring to see such nice children getting involved with agriculture. I hope that an experience like this could maybe sprout some aspiring farmers in the future! [n]To be honest, I used to think that only a few people truly cared about caring for plants and nature, but I’m glad to be proven wrong. [n]Be sure to stop by and appreciate the garden they’re working on! I know I’ll personally be spending some time there to congratulate those kids on their hard work.
+millie: Did you notice these before? I heard that the local high schoolers were tasked with a new project in planting them. [n]It’s inspiring to see such nice children getting involved with agriculture. I hope that an experience like this could maybe sprout some aspiring farmers in the future! [n]To be honest, I used to think that only a few people truly cared about caring for plants and nature, but I’m glad to be proven wrong. [n]Be sure to stop by and appreciate the garden they’re working on! I know I’ll personally be spending some time there to congratulate those kids on their hard work.
 [end_timeline]
 label 7
-Why hello there, dear. It’s such a lovely day today, I decided to come out for a stroll. [n]How is the business doing today? I hope all is well. [n]I’ll say, I’ve been quite a happy customer these past few days, so I can only imagine that all of the other customers must also be satisfied. [n]Especially with those recent additions to your pastry menu, I couldn’t help but take a few home for later!
+millie: Why hello there, dear. It’s such a lovely day today, I decided to come out for a stroll. [n]How is the business doing today? I hope all is well. [n]I’ll say, I’ve been quite a happy customer these past few days, so I can only imagine that all of the other customers must also be satisfied. [n]Especially with those recent additions to your pastry menu, I couldn’t help but take a few home for later!
 
 - “Ah, I think I know which ones you’re talking about. Those sell out fast.”
-	Is that so..? Well, if you could, could you tell them to save some for me..?
+	millie: Is that so..? Well, if you could, could you tell them to save some for me..?
 	You try to stifle a giggle.
-	I can hear you! Ugh, sorry, I can’t help it, they’re just too good. I’m usually not this possessive over baked goods. [n]Nonetheless, keep up the good work out there!
+	millie: I can hear you! Ugh, sorry, I can’t help it, they’re just too good. I’m usually not this possessive over baked goods. [n]Nonetheless, keep up the good work out there!
 
 - “I’m glad you liked them!”
-	Of course! Though to be honest, I find myself enjoying everything on the menu y’all offer, even for items I haven’t liked before! [n]Turns out that some pastries really do require some fine craftsmanship in order to come out good, and you have quite the skills back there!
+	millie: Of course! Though to be honest, I find myself enjoying everything on the menu y’all offer, even for items I haven’t liked before! [n]Turns out that some pastries really do require some fine craftsmanship in order to come out good, and you have quite the skills back there!
 [end_timeline]
 label 8
 Just as you notice Millie, she’s already begun approaching you with a warm smile.
 
-Hello there! I hope you’re doing well today. [n]I have a good feeling about today. My business is doing good and my farm’s doing even better. Not to mention the daily pleasure of going here for a quick snack. [n]For once, I think I can confidently say that I should have time for a bit of a break today! Maybe I can spend some time over at the park after work. [n]To be honest, I don’t know how to spend my break days, considering how busy I’ve kept myself these past few months. I’m sure I’ll figure something out, though. [n]Maybe if business slows down for you, too, we can enjoy some time at the park together! Just a thought.
+millie: Hello there! I hope you’re doing well today. [n]I have a good feeling about today. My business is doing good and my farm’s doing even better. Not to mention the daily pleasure of going here for a quick snack. [n]For once, I think I can confidently say that I should have time for a bit of a break today! Maybe I can spend some time over at the park after work. [n]To be honest, I don’t know how to spend my break days, considering how busy I’ve kept myself these past few months. I’m sure I’ll figure something out, though. [n]Maybe if business slows down for you, too, we can enjoy some time at the park together! Just a thought.
 [end_timeline]
 label 9
 Millie seems down today. She’s looking at you, yet you get the feeling that she’s not all there.
 
-Hello, Dear…I hope you’re doing alright today. [n]I wish I could say the same. Someone very dear to me is…well, let’s just say they aren’t doing very well. [n]I wish I knew how to properly care for someone in distress. I can butcher a cow and recognize the parts of it with a straight face when someone asks me, but when it comes to people…I’m not very good at taking care of them. [n]Ah! I’m probably bringing down your mood, aren’t I? I apologize. This is something that I have to learn myself, after all. Please, don’t let me ruin your day, now.
+millie: Hello, Dear... I hope you’re doing alright today. [n]I wish I could say the same. Someone very dear to me is... well, let’s just say they aren’t doing very well. [n]I wish I knew how to properly care for someone in distress. I can butcher a cow and recognize the parts of it with a straight face when someone asks me, but when it comes to people... [n]I’m not very good at taking care of them. [n]Ah! I’m probably bringing down your mood, aren’t I? I apologize. This is something that I have to learn myself, after all. Please, don’t let me ruin your day, now.
 [end_timeline]
 label 10
 Millie seems to be in a much brighter mood than the last time you spoke to her.
 
-Dear! I was looking for you. I am happy to report that the loved one is feeling a lot better. In return, so am I. [n]I’m sorry if I soured your mood that day. I wasn’t feeling at my best in the slightest. I hope you understand.
+millie: Dear! I was looking for you. I am happy to report that the loved one is feeling a lot better. In return, so am I. [n]I’m sorry if I soured your mood that day. I wasn’t feeling at my best in the slightest. I hope you understand.
 
 - “I’m happy to hear that.”
-	And so am I! It’s been quite a ride, and I couldn’t have done it without you. [n] Or, rather, I wouldn’t have done it without this bakery and the community that comes with it. Yes, that’s what I meant.
+	millie: And so am I! It’s been quite a ride, and I couldn’t have done it without you. [n] Or, rather, I wouldn’t have done it without this bakery and the community that comes with it. Yes, that’s what I meant.
 
 - “You don’t have to say sorry to me, Millie. You’re my friend.”
-	Oh! Right. [n]I’m very happy to hear you say that. I was worried that I was the only one who felt that way, but it seems that my worries have been lifted. Thank you.
+	millie: Oh! Right. [n]I’m very happy to hear you say that. I was worried that I was the only one who felt that way, but it seems that my worries have been lifted. Thank you.
 
 [end_timeline]
 label 11
-Dear, have you ever been to my shop before? If not, then you should stop by sometime! It’d be a pleasure to show you around the store. [n]Or–wait. Now that I think about it, it is kind of strange, isn’t it? Asking someone to tour a butchery? Forgive me, I wasn’t thinking clearly. If you are squeamish, then it might not be the best place for you to visit. [n]But, if you want to see it regardless, then be sure to tell me! Maybe, I can even sneak in a discount for you, who knows.
+millie: Dear, have you ever been to my shop before? If not, then you should stop by sometime! It’d be a pleasure to show you around the store. [n]Or–wait. Now that I think about it, it is kind of strange, isn’t it? Asking someone to tour a butchery? Forgive me, I wasn’t thinking clearly. If you are squeamish, then it might not be the best place for you to visit. [n]But, if you want to see it regardless, then be sure to tell me! Maybe, I can even sneak in a discount for you, who knows.
 [end_timeline]
 label 12
 You notice Millie run up to you in excitement. She is holding a brown paper bag.
 
-There you are! I’ve been looking for you! I have something special to give to you!
+millie: There you are! I’ve been looking for you! I have something special to give to you!
 
 She hands you the bag, and you look inside. It seems to be made of a bunch of handmade soaps and other well-scented goodies.
 
-I’ve been learning how to make soaps and candles on the farm with spare ingredients. I ended up successfully making my first batch, and I wanted to give these to you firsthand. [n]It’s been a while since I’ve been able to learn a new skill. Hopefully, there’ll be more experiences like this if the farm keeps doing well. [n]Hope you find a place for those at home! Be sure to share them with others, too. I wanna see if I can’t try selling these someday!
+millie: I’ve been learning how to make soaps and candles on the farm with spare ingredients. I ended up successfully making my first batch, and I wanted to give these to you firsthand. [n]It’s been a while since I’ve been able to learn a new skill. Hopefully, there’ll be more experiences like this if the farm keeps doing well. [n]Hope you find a place for those at home! Be sure to share them with others, too. I wanna see if I can’t try selling these someday!
 [end_timeline]
 label 13
-Hey, can I share with you a secret? You have to PINKY promise me that you won’t share it with anyone.
+millie: Hey, can I share with you a secret? You have to PINKY promise me that you won’t share it with anyone.
 
 You find the question a little humorous and snicker a bit.
 
-I’m serious! I can’t let anyone else but you know about this.
+millie: I’m serious! I can’t let anyone else but you know about this.
 
 Despite her claims of serious business, she forces you to actually wrap pinkies before she shares her secrets. After obliging to the sacred oath, she leans in real close.
 
-Okay. [n]Your pies? [n]...I think they’re better than how my mother used to make them.
+millie: Okay. [n]Your pies? [n]...I think they’re better than how my mother used to make them.
 
 Her secret catches you by surprise, and you let out a bellowing laugh.
 
-Hey, don’t laugh! If anyone else gets word of this, then you’re gonna get a piece of my mind, you hear!?
+millie: Hey, don’t laugh! If anyone else gets word of this, then you’re gonna get a piece of my mind, you hear!?
 
 [end_timeline]
 label 14
-Glad to see you, as always.
+millie: Glad to see you, as always.
 
-You greet her back, as always. As you do, a thought strikes you. You remember her mentioning long ago that she wouldn’t be in town very often, yet you’ve seen her almost every day for the past two weeks. You’re just too curious, now.
+You greet her back, as always. As you do, a thought strikes you.[n]You remember her mentioning long ago that she wouldn’t be in town very often, yet you’ve seen her almost every day for the past two weeks. You’re just too curious, now.
 
 - “How come I bump into you so often?”
 
@@ -116,8 +116,8 @@ You greet her back, as always. As you do, a thought strikes you. You remember he
 
 - “Do you remember when you said you wouldn’t be around town very often? It seems like I saw you just about every day.”
 
-Ah, it seems you’ve caught me. [n]While I haven’t lied in saying that I tend to come in here for a quick snack or to gather some special treats for the old folks back at the farm, the main reason I’ve been visiting so frequently was to catch some company from you.
+millie: Ah, it seems you’ve caught me. [n]While I haven’t lied in saying that I tend to come in here for a quick snack or to gather some special treats for the old folks back at the farm,[n]the main reason I’ve been visiting so frequently was to catch some company from you.
 
 You blush beet red. You try to hide it, but there’s no use. You’ve been properly flustered.
 
-What can I say, I’ve warmed up to you quite a bit. [n]Even at the bakery, when I’m so far away from the farm, that feeling of home doesn’t go away. Honestly, I think you’re the reason for that. [n]So, thank you, from the bottom of my heart, for making a home away from home. I’m sure I’m not the only one who feels that way, after all. [n]You’ve done a great thing for this town. Never forget that.
+millie: What can I say, I’ve warmed up to you quite a bit. [n]Even at the bakery, when I’m so far away from the farm, that feeling of home doesn’t go away. Honestly, I think you’re the reason for that. [n]So, thank you, from the bottom of my heart, for making a home away from home. I’m sure I’m not the only one who feels that way, after all. [n]You’ve done a great thing for this town. Never forget that.

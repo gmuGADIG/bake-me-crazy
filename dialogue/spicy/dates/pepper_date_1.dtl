@@ -22,7 +22,7 @@ pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, bu
 - “Yeah, you made up all sorts of crazy games for us to play.”
 	set {dateRP} += 5
 	pepper (Happy): Yep. I was pretty good at coming up with stuff for us to do.[n]I wanted to go out and find new ways to entertain my overactive mind, and I’m glad you remember coming along with me.
-- “Ugh… Don’t remind me…”
+- “Ugh... Don’t remind me...”
 	set {dateRP} -= 5
 	if {dateRP} <= -30:
 		jump DateFailState
@@ -34,7 +34,7 @@ pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, bu
 		jump DateFailState
 	pepper (Shocked): Huh?! You don’t remember the fun we had together as kids? I guess it just wasn’t important enough to you.
 	The pair of you are quiet for a moment before Pepper speaks up again.
-	pepper (Neutral): I suppose we were kids… Maybe you just need a little jumpstart.
+	pepper (Neutral): I suppose we were kids... Maybe you just need a little jumpstart.
 pepper: Anyway, what about now? You, working in a bakery, huh? That’s pretty interesting.
 - "Yep, that’s me! A professional baker."
 pepper: Fun! Maybe I should stop by more often... You could even make me a recommendation.

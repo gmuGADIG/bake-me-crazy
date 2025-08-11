@@ -5,7 +5,9 @@ class_name LunchBreakNPC extends Interactable
 static var latest_npc: LunchBreakNPC
 
 ## Dictionary[npc_code_name: String] -> days interacted (int)
-static var _talk_count_dict: Dictionary
+static var _talk_count_dict: Dictionary = {
+	savory = 13
+}
 
 ## This variable determines which dialogic variables are read (e.g. "RP.salty", "Hearts.savory").
 ## Must be "salty", "sweet", "savory", or "sour", case-sensitive.

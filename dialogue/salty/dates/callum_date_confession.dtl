@@ -4,7 +4,7 @@ You approach Callum to spend time at the Culture Festival. [n+] You spend a busy
 join callum (neutral) center [animation="Fade In" length="1.5" wait="true"]
 - "Why are we here?"
 [voice path="res://dialogue/salty/callum_voicelines/Callum 1.wav" volume="6.0"]
-callum (confused): You know… this is the first time I’ll say the square was too crowded for me. I needed a breather.
+callum (confused): You know... this is the first time I’ll say the square was too crowded for me. I needed a breather.
 - "Are you serious?"
 	[voice path="res://dialogue/salty/callum_voicelines/Callum 2a.wav" volume="6.0"]
 	callum (excited): I know! I can’t believe it either. Plus, I wanted to talk in private.
