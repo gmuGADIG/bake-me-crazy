@@ -15,3 +15,7 @@ func _process(delta: float) -> void:
 		flip_h = movement.x > 0 # this assumes the default orientation is facing left
 	
 	_last_frame_position = global_position
+
+func reset() -> void:
+	_last_frame_position = global_position
+	flip_h = true

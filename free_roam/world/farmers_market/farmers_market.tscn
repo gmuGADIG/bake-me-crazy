@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxw6aasc5fnqt" path="res://free_roam/world/transition_trigger.tscn" id="5_htkk8"]
 [ext_resource type="Resource" path="res://dialogue/sweet/sweet_market.dtl" id="6_x7ois"]
 [ext_resource type="Texture2D" uid="uid://c6001qwpnnnc1" path="res://free_roam/world/sign2.svg" id="8_xpb1k"]
-[ext_resource type="Script" path="res://dialogue/internal/code/world_dialogue_player.gd" id="9_pg7pr"]
+[ext_resource type="Script" path="res://free_roam/world/day_starter.gd" id="9_pg7pr"]
 [ext_resource type="Resource" path="res://dialogue/narration/intro_narration.dtl" id="10_ql6aw"]
 
 [sub_resource type="Curve2D" id="Curve2D_pds1b"]
@@ -40,11 +40,11 @@ theme_override_font_sizes/font_size = 86
 text = "BAKERY"
 
 [node name="SpicyNPC" parent="." index="2" instance=ExtResource("3_15n25")]
-position = Vector2(-360, 516)
+position = Vector2(-132, 498)
 main_timeline = ExtResource("4_86gxm")
 
 [node name="SweetNPC" parent="." index="3" instance=ExtResource("4_s5heo")]
-position = Vector2(41, 513)
+position = Vector2(681, 518)
 main_timeline = ExtResource("6_x7ois")
 
 [node name="PlayerPath" parent="." index="4"]
@@ -72,8 +72,8 @@ collision_layer = 0
 collision_mask = 2
 target_scene_path = "res://free_roam/world/streets/streets.tscn"
 
-[node name="IntroDialoguePlayer" type="Node" parent="." index="9"]
+[node name="DayStarter" type="Node" parent="." index="9"]
 script = ExtResource("9_pg7pr")
-timeline = ExtResource("10_ql6aw")
+intro_timeline = ExtResource("10_ql6aw")
 
 [editable path="PlayerPath/Player"]

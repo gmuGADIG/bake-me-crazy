@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func _on_start_pressed() -> void:
 	#SceneTransition.change_scene_to_file("res://menus/character_select/character_select.tscn")
 	PlayerData.reset()
-	SceneTransition.change_scene_to_file("res://free_roam/world/streets/streets.tscn")
+	SceneTransition.change_scene_to_file("res://free_roam/world/farmers_market/farmers_market.tscn")
 
 func _on_load_game_pressed() -> void:
 	var saves_menu = load("res://menus/save_menu/save_menu.tscn").instantiate()

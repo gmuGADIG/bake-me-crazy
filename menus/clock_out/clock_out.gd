@@ -19,8 +19,6 @@ func _ready() -> void:
 	await Dialogic.timeline_ended
 	
 	PlayerData.data.day += 1
-	#SceneTransition.change_scene_to_file("res://free_roam/world/streets/streets.tscn")
-	#SceneTransition.change_scene_to_packed(load("res://test_scenes/showoff_test/debug_scene.tscn"))
 	SceneTransition.change_scene_to_packed(preload("res://menus/day_cycle/day_cycle.tscn"))
 
 func start_date():

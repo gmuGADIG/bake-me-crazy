@@ -21,6 +21,7 @@ enum DayPhase {
 #- Day Phase -#
 @export_range(1,14) var day : int = 1 ## Current day, from 1 to 14
 @export var day_phase : DayPhase
+@export var day_just_starting := false ## True during the first frame of the day. Set to false by day_starter.gd
 
 func get_day_phase_string() -> StringName:
 	match day_phase:
