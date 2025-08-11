@@ -53,4 +53,4 @@ func is_new_phone_number() -> bool:
 		return false
 	
 	var hearts = Dialogic.VAR.hearts.get(character_code_name)
-	return hearts >= 1
+	return hearts != null and hearts >= 1

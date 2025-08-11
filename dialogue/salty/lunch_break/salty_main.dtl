@@ -15,6 +15,7 @@
 if {read_only.new_phone_number} == true:
 	callum: One last thing. I was thinking if we’re going to keep talking like this, it’d be nice to exchange numbers! Mind jotting yours down for me?
 	Callum has been added to your contacts!
+	do DialogueManager.add_phone_number("salty")
 if {read_only.possible_date} == 1:
 	- Wanna hang this evening?
 	callum: Who, me? Oh, sure! I don’t feel like there’s much to do in this town, so I’ll leave the logistics to you. Surprise me! 

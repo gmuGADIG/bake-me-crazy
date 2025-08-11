@@ -16,6 +16,7 @@
 if {read_only.new_phone_number} == true:
 	raymond: By the way, I was thinking…we’re friends, right? And friends have each others numbers! So I was wondering if I could have yours? I won’t send you unprompted space facts too often, promise!
 	Raymond has been added to your contacts!
+	do DialogueManager.add_phone_number("sweet")
 if {read_only.possible_date} == 1:
 	- Let's hang out!
 	raymond: Uhh, whoa! TODAY? Gosh, I’m flattered![n]But I’m… I’m busy. Sorry, I don’t mean to be a letdown. I have this HUGE project that I’ve been working on, and the due date’s coming up soon. See you back here tomorrow, though?

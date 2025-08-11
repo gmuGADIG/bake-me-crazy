@@ -38,6 +38,8 @@ func update_text_availability() -> void:
 				text.state = MsgState.UNREAD
 
 func get_unread_texts(person: String) -> Array[TextMessage]:
+	if person not in PlayerData.data.phone_numbers: return []
+	
 	var result: Array[TextMessage] = []
 	for text: TextMessage in _texts[person]:
 		if text.state == MsgState.UNREAD:
