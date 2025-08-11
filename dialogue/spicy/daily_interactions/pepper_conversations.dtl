@@ -1,3 +1,4 @@
+do BreakNPCSystem.start_daily_chat()
 label 1
 pepper: Hey...[n+] I thought I recognized that face![n] You’re {player_name}, right?[n+] It’s Pepper, remember?[n] We used to be friends when we were kids.
 - Of course, how could I forget?

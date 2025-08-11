@@ -10,7 +10,7 @@
 		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
 		callum: Huh. Much appreciated.
 - Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
-	jump salty_days/
+	jump callum_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 if {read_only.possible_date} == 1:
 	- Wanna hang this evening?
