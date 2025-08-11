@@ -161,6 +161,7 @@ variables={
 "read_only": {
 "gift_quality": 0,
 "gift_response": "canceled",
+"new_phone_number": false,
 "possible_date": 0,
 "repeat_talk": false
 },

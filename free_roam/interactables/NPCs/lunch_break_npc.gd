@@ -30,6 +30,7 @@ func _interact() -> void:
 	latest_npc = self
 	
 	## Set readonly variables
+	Dialogic.VAR.read_only.new_phone_number = is_new_phone_number()
 	Dialogic.VAR.read_only.possible_date = get_possible_date()
 	Dialogic.VAR.read_only.repeat_talk = is_repeating
 	
@@ -46,3 +47,10 @@ func get_possible_date() -> int:
 		9: return 3
 	
 	return 0
+
+func is_new_phone_number() -> bool:
+	if character_code_name in PlayerData.data.phone_numbers:
+		return false
+	
+	var hearts = Dialogic.VAR.hearts.get(character_code_name)
+	return hearts >= 1

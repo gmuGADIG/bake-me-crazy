@@ -12,6 +12,9 @@
 - Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
 	jump callum_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
+if {read_only.new_phone_number} == true:
+	callum: One last thing. I was thinking if we’re going to keep talking like this, it’d be nice to exchange numbers! Mind jotting yours down for me?
+	Callum has been added to your contacts!
 if {read_only.possible_date} == 1:
 	- Wanna hang this evening?
 	callum: Who, me? Oh, sure! I don’t feel like there’s much to do in this town, so I’ll leave the logistics to you. Surprise me! 

@@ -13,6 +13,9 @@
 	jump pepper_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
+if {read_only.new_phone_number} == true:
+	I was so stoked that we’re talking again—ooh, that makes it sound like we had a big fight, how cool—and I went to send you a text! Imagine the look on my face when I realized we were so young back then, we didn’t even have phones yet! So here, gimme your number.
+	Pepper has been added to your contacts!
 if {read_only.possible_date} == 1:
 	- Are you free later?
 	pepper: Oh, today? I’m absolutely booked! But if you tag along for my evening run, we can hang.[n]What’s that? You’d LOVE to? That’s what I like to hear!

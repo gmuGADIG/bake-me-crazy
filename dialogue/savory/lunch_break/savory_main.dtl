@@ -14,6 +14,13 @@
 	jump millie_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
+if {read_only.new_phone_number} == true:
+	millie: On another note, dear, I wanted to ask you something.
+	millie: I was wondering, since we’ve gotten to know each other better, shall we exchange numbers?
+	- Sure!
+	millie: I understand if you don’t want to, seeing as how we’ve only—
+	millie: Huh? You said yes? Thank you! I’ll text you later, dear. Thank you again.
+	Millie has been added to your contacts!
 if {read_only.possible_date} == 1:
 	- Would you like to go out?
 	millie: You want to go out with me…? Oh, I’m not sure, we’ve just met and I don’t even know that much about you, dear. Uh. Let me think about it. Maybe I…well, I think it’d be nice to, umm, hang out with you? 
