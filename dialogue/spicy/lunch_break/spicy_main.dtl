@@ -4,10 +4,10 @@
 	if {read_only.gift_response} == "canceled":
 		pepper: Oh, cool! I will satiate myself on my own terms, then.
 	elif {read_only.gift_response} in ["peanut butter", "pistachio", "chocolate"]:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
+		set {rp.spicy} += {BreakNPCSystem.compute_gift_reward(true)}
 		pepper (Excited): WOW!! Nice, nice, nice! This is perfect! You’re perfect! I can’t thank you enough!
 	else:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
+		set {rp.spicy} += {BreakNPCSystem.compute_gift_reward(false)}
 		pepper: Yeah, this will do numbers for the calorie counter. Appreciate it!
 - Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
 	jump pepper_conversations/

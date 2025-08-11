@@ -4,10 +4,10 @@
 	if {read_only.gift_response} == "canceled":
 		raymond: First my voice cracks, and then my heart… Sorry, I’m being dramatic.
 	elif {read_only.gift_response} in ["vanilla", "strawberry", "cherry"]:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
+		set {rp.sweet} += {BreakNPCSystem.compute_gift_reward(true)}
 		raymond (Excited): Are you secretly a mind reader?! This is perfect! I don’t have many favorite things that can actually be found here on Earth, but this is definitely one of those exceptions.[n] Oh, man…I can’t even eat this here! I’ll embarrass myself…! Thanks so much.
 	else:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
+		set {rp.sweet} += {BreakNPCSystem.compute_gift_reward(false)}
 		raymond: You’re really okay with giving me this?! Wait, let me just give it a taste—oh, STARS, that’s delicious! Thanks!
 - Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
 	jump raymond_conversations/

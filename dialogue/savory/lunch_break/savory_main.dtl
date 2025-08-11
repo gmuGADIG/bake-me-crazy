@@ -4,10 +4,10 @@
 	if {read_only.gift_response} == "canceled":
 		millie: Hmm? You changed your mind? Uh…alright then. I’m not sure how to respond.
 	elif {read_only.gift_response} in ["pork", "cheese"]:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
+		set {rp.savory} += {BreakNPCSystem.compute_gift_reward(true)}
 		millie (Excited): This…How did you know I loved these? Oh my goodness, I’ve been wanting these for so long. Thank you so much dear, I can’t express how grateful I am.
 	else:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
+		set {rp.savory} += {BreakNPCSystem.compute_gift_reward(false)}
 		millie: Oh, thank you so much! These are wonderful, I appreciate them so much!
 
 - Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
