@@ -75,6 +75,7 @@ directories/dtl_directory={
 "dates/callum_date_confession": "res://dialogue/salty/dates/callum_date_confession.dtl",
 "end_of_day": "res://dialogue/narration/end_of_day.dtl",
 "festival_start": "res://dialogue/narration/festival_start.dtl",
+"intro_narration": "res://dialogue/narration/intro_narration.dtl",
 "lunch_break_timeline": "res://dialogue/testing/lunch_break_timeline.dtl",
 "millie_conversations": "res://dialogue/savory/daily_interactions/millie_conversations.dtl",
 "millie_date_1": "res://dialogue/savory/dates/millie_date_1.dtl",
