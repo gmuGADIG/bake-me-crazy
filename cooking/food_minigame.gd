@@ -15,12 +15,15 @@ var current_score :float= 0
 signal food_step_started
 signal all_minigames_done
 
-func next_step(score : float) -> void:
+func next_step(score : float, prev_ptr: int = -1) -> void:
 	# get the previous and next step (each may be null)
 	var prev: FoodStep
 	var next: FoodStep
 	if step_ptr > 0 and not steps.is_empty(): prev = steps[step_ptr - 1]
 	if step_ptr < steps.size(): next = steps[step_ptr]
+	
+	if prev_ptr != -1:
+		prev = steps[prev_ptr]
 	
 	
 	##Play the step completion screen
@@ -167,3 +170,11 @@ func slide_finished():
 		
 		# This is also when we finally increase the step pointer.
 		step_ptr += 1
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("debug_skip") and OS.has_feature("debug"):
+		var _ptr := step_ptr
+		step_ptr = steps.size()
+		
+		current_score = steps.size() * 3
+		next_step(3, _ptr - 1)
