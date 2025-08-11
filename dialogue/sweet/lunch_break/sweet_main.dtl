@@ -4,12 +4,9 @@
 	do BreakNPCSystem.prompt_gift()
 	if {read_only.gift_response} == "canceled":
 		raymond: Oh, ok. *
-	elif {read_only.gift_response} in ["orange", "pistachio", "cinnamon"]:
+	elif {read_only.gift_response} in ["vanilla", "strawberry", "cherry"]:
 		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
 		raymond (Excited): This is perfect!! *
-	elif false:
-		# if salty has any flavor dislikes, that condition would be used. currently, this never happens
-		raymond (Pensive): I don't like this...
 	else:
 		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
 		raymond: This is pretty good!
