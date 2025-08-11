@@ -1,2 +1,2 @@
-millie: welcome to the NOT capage s hop
+millie: Welcome to my humble store! We serve all cuts of meat and dairy here. Feel free to browse and ask any questions.
 do DialogueManager.open_market("res://free_roam/world/streets/shops/savory_market.tscn")

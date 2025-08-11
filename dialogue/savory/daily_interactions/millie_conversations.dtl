@@ -1,3 +1,4 @@
+do BreakNPCSystem.start_daily_chat()
 label 1
 During your break, you see a woman hanging out all by herself. She is intensely focused on her phone, yet she’s holding a soft smile. 
 
@@ -112,5 +113,3 @@ Millie: Ah, it seems you’ve caught me. [n]While I haven’t lied in saying tha
 You blush beet red. You try to hide it, but there’s no use. You’ve been properly flustered.
 
 Millie: What can I say, I’ve warmed up to you quite a bit. [n]Even at the bakery, when I’m so far away from the farm, that feeling of home doesn’t go away. Honestly, I think you’re the reason for that. [n]So, thank you, from the bottom of my heart, for making a home away from home. I’m sure I’m not the only one who feels that way, after all. [n]You’ve done a great thing for this town. Never forget that.
-
-

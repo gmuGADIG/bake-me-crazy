@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://be1lqcj5xoxfv"]
+[gd_scene load_steps=35 format=3 uid="uid://be1lqcj5xoxfv"]
 
 [ext_resource type="Script" path="res://dialogue/internal/code/texting/text_manager.gd" id="1_0eas7"]
 [ext_resource type="Script" path="res://addons/dialogic/Resources/timeline.gd" id="2_2w8fv"]
@@ -30,6 +30,7 @@
 [ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_2.dtl" id="20_jas1i"]
 [ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_3.dtl" id="21_3w6om"]
 [ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_4.dtl" id="22_4dgfr"]
+[ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_5.dtl" id="23_0tjje"]
 [ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_6.dtl" id="23_nfhmd"]
 [ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_7.dtl" id="24_sdu7u"]
 [ext_resource type="Resource" path="res://dialogue/spicy/daily_interactions/texts/pepper_text_8.dtl" id="25_i0bx4"]
@@ -38,5 +39,5 @@
 script = ExtResource("1_0eas7")
 _salty_messages = Array[ExtResource("2_2w8fv")]([ExtResource("3_j6er6"), null, ExtResource("4_ypbvo"), ExtResource("5_epoem"), ExtResource("6_6s5lh"), null, ExtResource("7_auiyt"), ExtResource("8_ispcy"), ExtResource("9_cqvcn"), ExtResource("10_03vj3")])
 _savory_messages = Array[ExtResource("2_2w8fv")]([ExtResource("11_2yh4e"), ExtResource("12_r1s3l"), ExtResource("13_jheyp"), null, ExtResource("14_017ud"), ExtResource("15_854ro"), null, ExtResource("16_fm053"), ExtResource("17_lmrj1"), ExtResource("18_qvk6s")])
-_spicy_messages = Array[ExtResource("2_2w8fv")]([ExtResource("19_pbp81"), ExtResource("20_jas1i"), ExtResource("21_3w6om"), null, ExtResource("22_4dgfr"), ExtResource("23_nfhmd"), ExtResource("24_sdu7u"), null, ExtResource("25_i0bx4"), null])
+_spicy_messages = Array[ExtResource("2_2w8fv")]([ExtResource("19_pbp81"), ExtResource("20_jas1i"), ExtResource("21_3w6om"), null, ExtResource("22_4dgfr"), ExtResource("23_0tjje"), ExtResource("23_nfhmd"), ExtResource("24_sdu7u"), null, ExtResource("25_i0bx4")])
 _sweet_messages = Array[ExtResource("2_2w8fv")]([ExtResource("6_ing2q"), ExtResource("7_s6pj5"), ExtResource("8_d8t3c"), ExtResource("9_1hw13"), null, ExtResource("10_fvoh7"), ExtResource("11_h74lt"), ExtResource("12_8pegv"), ExtResource("13_372gk"), null])

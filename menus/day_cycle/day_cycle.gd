@@ -41,6 +41,6 @@ func _anim_change_scene() -> void:
 	if PlayerData.data.day >= 14:
 		scene = preload("res://dialogue/narration/festival_player.tscn")
 	else:
-		scene = preload("res://free_roam/world/streets/streets.tscn")
+		scene = preload("res://free_roam/world/farmers_market/farmers_market.tscn")
 	
 	SceneTransition.change_scene_to_packed(scene)

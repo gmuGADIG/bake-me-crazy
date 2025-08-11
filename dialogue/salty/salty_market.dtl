@@ -1,2 +1,2 @@
-callum: welcome to the NOT capage s hop
+callum: Hey there, valued customer! Nothing like a side hustle, right? I’m clearly doing well financially. ...Please take a look at my wares.
 do DialogueManager.open_market("res://free_roam/world/streets/shops/salty_market.tscn")

@@ -4,6 +4,12 @@ extends PathFollow2D
 
 @onready var interaction_area: PlayerInteractionArea = %InteractionArea
 
+func _ready() -> void:
+	# on the first day, start at the left-most spot, despite the normal farmers market starting position
+	if PlayerData.data.day_just_starting:
+		progress = 0
+		$PlayerSprite.reset()
+
 func _process(delta: float) -> void:
 	# get input
 	var input := Input.get_axis("move_left", "move_right")

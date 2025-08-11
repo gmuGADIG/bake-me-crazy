@@ -1,2 +1,2 @@
-raymond: welcome to the NOT capage s hop
+raymond: Hi! Welcome to Stellar Sweets! Outside of sugary ingredients, I also sell daily specials! …Please ask me about them. I spent so much time making them.
 do DialogueManager.open_market("res://free_roam/world/streets/shops/sweet_market.tscn")

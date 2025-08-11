@@ -4,7 +4,7 @@ extends Node2D
 func _ready() -> void:
 	Dialogic.start(load("res://dialogue/testing/lunch_break_timeline.dtl"))
 	await get_tree().create_timer(1.).timeout
-	SceneTransition.change_scene_to_file("res://free_roam/world/streets/streets.tscn")
+	SceneTransition.change_scene_to_file("res://free_roam/world/farmers_market/farmers_market.tscn")
 	pass # Replace with function body.
 
 

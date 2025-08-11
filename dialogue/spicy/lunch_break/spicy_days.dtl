@@ -1,4 +1,0 @@
-do BreakNPCSystem.start_daily_chat()
-label 1
-pepper: Hey!
-[end_timeline]

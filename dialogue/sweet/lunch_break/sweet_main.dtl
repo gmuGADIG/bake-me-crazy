@@ -1,25 +1,33 @@
 - Give Gift
-	# Temporary lines; replace them later
-	raymond: What do you have? *
+	raymond: A gift? REALLY? Oh, pardon my voice crack… I got a little excited there. What is it?
 	do BreakNPCSystem.prompt_gift()
 	if {read_only.gift_response} == "canceled":
-		raymond: Oh, ok. *
-	elif {read_only.gift_response} in ["orange", "pistachio", "cinnamon"]:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
-		raymond (Excited): This is perfect!! *
-	elif false:
-		# if salty has any flavor dislikes, that condition would be used. currently, this never happens
-		raymond (Pensive): I don't like this...
+		raymond: First my voice cracks, and then my heart… Sorry, I’m being dramatic.
+	elif {read_only.gift_response} in ["vanilla", "strawberry", "cherry"]:
+		set {rp.sweet} += {BreakNPCSystem.compute_gift_reward(true)}
+		raymond (Excited): Are you secretly a mind reader?! This is perfect! I don’t have many favorite things that can actually be found here on Earth, but this is definitely one of those exceptions.[n] Oh, man…I can’t even eat this here! I’ll embarrass myself…! Thanks so much.
 	else:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
-		raymond: This is pretty good!
-- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait 'til the next day)"]
+		set {rp.sweet} += {BreakNPCSystem.compute_gift_reward(false)}
+		raymond: You’re really okay with giving me this?! Wait, let me just give it a taste—oh, STARS, that’s delicious! Thanks!
+- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
 	jump raymond_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
+if {read_only.new_phone_number} == true:
+	raymond: By the way, I was thinking…we’re friends, right? And friends have each others numbers! So I was wondering if I could have yours? I won’t send you unprompted space facts too often, promise!
+	Raymond has been added to your contacts!
+	do DialogueManager.add_phone_number("sweet")
 if {read_only.possible_date} == 1:
+	- Let's hang out!
+	raymond: Uhh, whoa! TODAY? Gosh, I’m flattered![n]But I’m… I’m busy. Sorry, I don’t mean to be a letdown. I have this HUGE project that I’ve been working on, and the due date’s coming up soon. See you back here tomorrow, though?
 	set {date} = "savory1"
 elif {read_only.possible_date} == 2:
+	- Let's hang out!
+	Oh, thank goodness! I didn’t think you’d ask again, given how things turned out last time. I was worried you’d think I was some elaborate liar…[n]But now I totally have time! What do you say? Do you like the carnival?
 	set {date} = "savory2"
 elif {read_only.possible_date} == 3:
+	- Let’s hang out!
+	raymond: Of course! I—uh—have a bit of a left-field suggestion that we could try—
+	- I want to go stargazing.
+	raymond: YOU DO?! Oh, yes! That’s exactly what I was thinking! You just threw my nerves out the window![n] Meet me outside the bakery tonight and I’ll lead you to my favorite spot.
 	set {date} = "savory3"

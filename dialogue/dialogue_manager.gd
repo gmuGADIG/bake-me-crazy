@@ -46,6 +46,10 @@ func open_market(market) -> void:
 	
 	_current_market_ui = the_market
 
+func add_phone_number(character: String) -> void:
+	assert(character not in PlayerData.data.phone_numbers, "Adding a phone number that already exists!")
+	PlayerData.data.phone_numbers.append(character)
+
 func has_any_new_recipe() -> bool:
 	return PlayerData.data.queued_recipe_unlocks.size() > 0
 

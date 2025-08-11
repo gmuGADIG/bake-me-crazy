@@ -1,25 +1,40 @@
 - Give Gift
-	# Temporary lines; replace them later
-	millie: What do you have? *
+	millie: Oh… you want to give something to me? That’s very kind of you.
 	do BreakNPCSystem.prompt_gift()
 	if {read_only.gift_response} == "canceled":
-		millie: Oh, ok. *
-	elif {read_only.gift_response} in ["orange", "pistachio", "cinnamon"]:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
-		millie (Excited): This is perfect!! *
-	elif false:
-		# if salty has any flavor dislikes, that condition would be used. currently, this never happens
-		millie (Pensive): I don't like this...
+		millie: Hmm? You changed your mind? Uh…alright then. I’m not sure how to respond.
+	elif {read_only.gift_response} in ["pork", "cheese"]:
+		set {rp.savory} += {BreakNPCSystem.compute_gift_reward(true)}
+		millie (Excited): This…How did you know I loved these? Oh my goodness, I’ve been wanting these for so long. Thank you so much dear, I can’t express how grateful I am.
 	else:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
-		millie: This is pretty good!
-- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait 'til the next day)"]
-	jump savory_days/
+		set {rp.savory} += {BreakNPCSystem.compute_gift_reward(false)}
+		millie: Oh, thank you so much! These are wonderful, I appreciate them so much!
+
+- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
+	jump millie_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
+if {read_only.new_phone_number} == true:
+	millie: On another note, dear, I wanted to ask you something.
+	millie: I was wondering, since we’ve gotten to know each other better, shall we exchange numbers?
+	- Sure!
+	millie: I understand if you don’t want to, seeing as how we’ve only—
+	millie: Huh? You said yes? Thank you! I’ll text you later, dear. Thank you again.
+	Millie has been added to your contacts!
+	do DialogueManager.add_phone_number("savory")
 if {read_only.possible_date} == 1:
+	- Would you like to go out?
+	millie: You want to go out with me…? Oh, I’m not sure, we’ve just met and I don’t even know that much about you, dear. Uh. Let me think about it. Maybe I…well, I think it’d be nice to, umm, hang out with you? 
+	- The carnival will be open later.
+	millie: Ah, the carnival…I haven’t been there for a while. Sure, we can go together! I’m looking forward to it.
 	set {date} = "savory1"
 elif {read_only.possible_date} == 2:
+	- Would you like to go out?
+	millie: I had such a surprisingly pleasant experience last time. How could I say no?[n] I’d love to, ahem, hang out with you again.[n]The park is lovely this time of year with the goldenrods in full bloom. We should go see them later.
 	set {date} = "savory2"
 elif {read_only.possible_date} == 3:
+	- Would you like to go out?
+	millie: Oh, I’m so happy that you’re asking again![n]Perhaps we could take a pleasant walk on the pier later tonight…? Or, sorry, that sounds much too intimate! Oh, I’m so embarrassed now…please forget that I even suggested it.
+	- Why? It’s a lovely idea.
+	millie: You think so? I’m quite relieved![n]Well then, I’ll see you tonight, at the pier. It will be so nice to visit the sea again.
 	set {date} = "savory3"

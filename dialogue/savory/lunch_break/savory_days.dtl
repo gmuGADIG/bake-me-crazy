@@ -1,4 +1,0 @@
-do BreakNPCSystem.start_daily_chat()
-label 1
-millie: Hey!
-[end_timeline]

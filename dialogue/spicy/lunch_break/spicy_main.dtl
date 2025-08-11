@@ -1,25 +1,33 @@
 - Give Gift
-	# Temporary lines; replace them later
-	pepper: What do you have? *
+	pepper: Oh. perfect! I’m starving.
 	do BreakNPCSystem.prompt_gift()
 	if {read_only.gift_response} == "canceled":
-		pepper: Oh, ok. *
-	elif {read_only.gift_response} in ["orange", "pistachio", "cinnamon"]:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(true)}
-		pepper (Excited): This is perfect!! *
-	elif false:
-		# if salty has any flavor dislikes, that condition would be used. currently, this never happens
-		pepper (Pensive): I don't like this...
+		pepper: Oh, cool! I will satiate myself on my own terms, then.
+	elif {read_only.gift_response} in ["peanut butter", "pistachio", "chocolate"]:
+		set {rp.spicy} += {BreakNPCSystem.compute_gift_reward(true)}
+		pepper (Excited): WOW!! Nice, nice, nice! This is perfect! You’re perfect! I can’t thank you enough!
 	else:
-		set {rp.salty} += {BreakNPCSystem.compute_gift_reward(false)}
-		pepper: This is pretty good!
-- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait 'til the next day)"]
-	jump spicy_days/
+		set {rp.spicy} += {BreakNPCSystem.compute_gift_reward(false)}
+		pepper: Yeah, this will do numbers for the calorie counter. Appreciate it!
+- Chat | [if {read_only.repeat_talk} == false] [else="disable" alt_text="Chat (wait until tomorrow)"]
+	jump pepper_conversations/
 - Nevermind | [if {read_only.repeat_talk} == true] [else="hide"]
 	[end_timeline]
+if {read_only.new_phone_number} == true:
+	I was so stoked that we’re talking again—ooh, that makes it sound like we had a big fight, how cool—and I went to send you a text! Imagine the look on my face when I realized we were so young back then, we didn’t even have phones yet! So here, gimme your number.
+	Pepper has been added to your contacts!
+	do DialogueManager.add_phone_number("spicy")
 if {read_only.possible_date} == 1:
+	- Are you free later?
+	pepper: Oh, today? I’m absolutely booked! But if you tag along for my evening run, we can hang.[n]What’s that? You’d LOVE to? That’s what I like to hear!
 	set {date} = "savory1"
 elif {read_only.possible_date} == 2:
+	- Are you free later?
+	pepper: Hm. Hmm… Yeah! I’ll just shut down the ol’ family business early today. Without telling anyone...that way they still get the steps in.[n]Maybe we can have a push-up competition!
+	- Or go to the carnival?
+	pepper: Ah, a rest day it is, then! See you later.
 	set {date} = "savory2"
 elif {read_only.possible_date} == 3:
+	- Are you free later?
+	pepper: I’d feel bad closing up shop early again...but I’d still love to hang out! What about a walk on the pier after I’m off the clock? Light cardio! Or…dimly lit cardio? Anyways! ‘Till then, soldier!
 	set {date} = "savory3"

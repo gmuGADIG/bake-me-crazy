@@ -11,12 +11,19 @@ class_name MessageChar extends ButtonHover
 func _ready() -> void:
 	super._ready()
 	
-	%FaceIcon.texture = icon
-	%Panel.modulate = color
-	%Name.text = npc_display_name
-	%HeartsDisplay.npc = npc_code_name
-	
+	visibility_changed.connect(update_character_info)
 	visibility_changed.connect(update_texts)
+
+func update_character_info() -> void:
+	var number_unlocked = npc_code_name in PlayerData.data.phone_numbers
+	if number_unlocked:
+		%FaceIcon.texture = icon
+		%Name.text = npc_display_name
+	else:
+		%FaceIcon.texture = load("res://menus/phone/messages/portraits/portrait_empty.png")
+		%Name.text = "??"
+	%Panel.modulate = color
+	%HeartsDisplay.npc = npc_code_name
 
 func update_texts() -> void:
 	var texts = TextManager.get_unread_texts(npc_code_name)
