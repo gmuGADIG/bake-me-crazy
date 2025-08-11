@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vjagi5yawk50"]
+[gd_scene load_steps=13 format=3 uid="uid://vjagi5yawk50"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_edee5"]
 [ext_resource type="Texture2D" uid="uid://b0d2lwasdn5nw" path="res://free_roam/world/lunch_break/lunch_break_bg.png" id="2_407v2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bcp3s2yh0odt3" path="res://free_roam/interactables/NPCs/scenes/coworker_npc.tscn" id="8_ush0p"]
 [ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="9_5yeg3"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="9_7b54g"]
+[ext_resource type="Script" path="res://free_roam/world/lunch_break/debug_chat_manager.gd" id="11_fklfb"]
 
 [sub_resource type="Curve2D" id="Curve2D_r20jp"]
 _data = {
@@ -61,3 +62,6 @@ song_name = "pre_lunch_rush.tres"
 
 [node name="SetDayPhase" parent="." index="7" instance=ExtResource("9_5yeg3")]
 new_day_phase = 2
+
+[node name="DebugChatManager" type="Node" parent="." index="8"]
+script = ExtResource("11_fklfb")

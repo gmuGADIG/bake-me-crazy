@@ -13,7 +13,7 @@ static var _talk_count_dict: Dictionary
 
 @export var main_timeline: DialogicTimeline
 
-var is_repeating := false # set by break_npc_system when a daily chat is started
+var is_repeating := false # set by break_npc_system when a daiddly chat is started
 
 var talk_count: int:
 	set(value):
