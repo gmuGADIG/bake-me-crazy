@@ -1,4 +1,4 @@
-do MainMusicPlayer.transition_to_song_by_filename("sweet_theme.tres")
+do MainMusicPlayer.transition_to_song_by_filename("salty_theme.tres")
 You approach Callum to spend time at the Culture Festival. [n+] You spend a busy, blurry day together, and then retire to the pier.
 [background arg="res://dialogue/date_backgrounds/date_pier.png" fade="2.0" transition="Simple Fade"]
 join callum (neutral) center [animation="Fade In" length="1.5" wait="true"]
