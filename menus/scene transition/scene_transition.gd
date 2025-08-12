@@ -15,11 +15,12 @@ func is_transitioning() -> bool:
 ## Called by the AnimationPlayer when the swipe animation is ready to actually
 ## change to the next scene.
 func _anim_move_to_scene() -> void:
+	Dialogic.paused = false
+	Dialogic.end_timeline()
+	
 	get_tree().change_scene_to_packed(_next_scene)
 	_next_scene = null
 	
-	Dialogic.paused = true
-	Dialogic.end_timeline()
 
 ## Call this to change the scene to a scene at a specific path,
 ## similar to get_tree().change_scene_to_file.
