@@ -31,7 +31,7 @@ var recipes : Array[FoodGroup]
 var current_page = 0
 var selected_recipes: Array[int] = [] ## List of indices that have been selected to bake
 
-signal recipes_selected(variants: Array[FoodData])
+signal recipes_selected(variangts: Array[FoodData])
 
 func _ready() -> void:
 	#for recipe_path in debug_all_recipes:
