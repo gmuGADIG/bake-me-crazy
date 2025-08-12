@@ -1,11 +1,10 @@
 extends FoodStep
 
-signal piping_bag_sfx
-signal piping_bag_sfx_cancel
 
-@export var max_score_window : float = 3.0 ##The percent amount +/- from 100% that the player gets full score
-@export var score_loss_per_percent : float = 0.12
+@export var max_score_window : float = 20.0 ##The percent amount +/- from 100% that the player gets full score
+@export var score_loss_per_percent : float = 0.05
 
+@onready var piping_sfx: AudioStreamPlayer = %PipingSFX
 
 var piping_spots: Array[Node]
 var spots_piped : int = 0 ##The running count of how many spots have been piped on
@@ -15,7 +14,7 @@ var running_score : float = 0
 #@onready var final_percent_text := $Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	piping_spots = $PipingAreas.get_children()
+	piping_spots = $PipingAreas.get_children().filter(func(n): return n is PipingSpot)
 	for piping_spot in piping_spots:
 		piping_spot.finished_piping.connect(_on_piping_spot_finished)
 
@@ -23,13 +22,13 @@ func _physics_process(delta: float) -> void:
 	$PipingBag.position = get_global_mouse_position()
 
 func _on_piping_spot_finished(area_percent : float) -> void:
-	piping_bag_sfx_cancel.emit()
+	piping_sfx.stop()
 	running_score += score_piping(area_percent)
 	spots_piped += 1
 	print(running_score)
 	if spots_piped >= piping_spots.size():
 		##End Minigame
-		print(running_score/spots_piped)
+		print("final_score ", running_score/spots_piped)
 		finished.emit(running_score/spots_piped)
 	pass
 

@@ -9,12 +9,12 @@ curve = SubResource("Curve_8ghk4")
 
 [resource]
 particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 25.0
+emission_shape = 3
+emission_box_extents = Vector3(50, 12, 1)
 direction = Vector3(0, 1, 0)
 spread = 5.0
 initial_velocity_min = 100.0
-initial_velocity_max = 100.0
+initial_velocity_max = 150.0
 gravity = Vector3(0, 10, 0)
 scale_min = 3.0
 scale_max = 3.0

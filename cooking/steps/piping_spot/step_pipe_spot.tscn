@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3o1ok3dj2q50"]
+[gd_scene load_steps=8 format=3 uid="uid://b3o1ok3dj2q50"]
 
 [ext_resource type="Script" path="res://cooking/steps/piping_spot/piping_spot_minigame.gd" id="1_exwm8"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_mphmh"]
 [ext_resource type="Texture2D" uid="uid://vodrqcfckd01" path="res://cooking/art/Cookie_Sheet.png" id="3_osm1w"]
 [ext_resource type="PackedScene" uid="uid://dlspt71wko61b" path="res://cooking/steps/piping_spot/piping_spot.tscn" id="4_ie6aa"]
 [ext_resource type="Texture2D" uid="uid://cj72sisb6318w" path="res://cooking/steps/piping_line/PipingBagFull.png" id="5_forcu"]
+[ext_resource type="AudioStream" uid="uid://cio72kn10ntw0" path="res://sfx/audio/piping_bag/piping_bag_sfx.mp3" id="6_4w38n"]
+[ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="7_5nvk8"]
 
 [node name="PipingSpot" type="Control"]
 layout_mode = 3
@@ -26,11 +28,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_mphmh")
 
-[node name="CookieSheet" type="Sprite2D" parent="."]
+[node name="PipingAreas" type="Node2D" parent="."]
+position = Vector2(-144, 0)
+
+[node name="CookieSheet" type="Sprite2D" parent="PipingAreas"]
 position = Vector2(576, 294)
 texture = ExtResource("3_osm1w")
-
-[node name="PipingAreas" type="Node2D" parent="."]
 
 [node name="PipingSpot" parent="PipingAreas" instance=ExtResource("4_ie6aa")]
 position = Vector2(575, 153)
@@ -63,3 +66,17 @@ text = "Accuracy"
 [node name="PipingBag" type="Sprite2D" parent="."]
 texture = ExtResource("5_forcu")
 offset = Vector2(-28.03, -76.715)
+
+[node name="PipingSFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_4w38n")
+volume_db = 10.0
+
+[node name="InstructionsPanel" parent="." instance=ExtResource("7_5nvk8")]
+offset_left = 167.0
+offset_top = 6.0
+offset_right = 167.0
+offset_bottom = 6.0
+scale = Vector2(0.83492, 0.83492)
+minigame_title = "Pipe Spot"
+instructions = "Click on the dotted circles to pipe out dough. Pipe the dough to the size of the circle."

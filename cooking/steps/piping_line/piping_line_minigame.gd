@@ -1,12 +1,14 @@
 extends FoodStep
 
-signal piping_bag_sfx
-signal piping_bag_sfx_cancel
+#signal piping_bag_sfx
+#signal piping_bag_sfx_cancel
 
 @export var percent_piped_per_pixel : float = 10
 
 @export var target_piping_speed : float = 0.5
 @export var target_tolerance : float = 0.2
+
+@onready var piping_sfx: AudioStreamPlayer = %PipingSFX
 
 var num_in_target : int
 var num_out_of_target : int
@@ -19,7 +21,14 @@ var recent_drag_distances : Array[float]
 
 var currently_piping : bool
 
+var done := false
 
+func _update_sfx() -> void:
+	if currently_piping and not piping_sfx.playing:
+		piping_sfx.play()
+	
+	if not currently_piping:
+		piping_sfx.stop()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,11 +37,6 @@ func _ready() -> void:
 	if recipe == null:
 		recipe = load("res://items/foods/sweet_roll_cinnamon.tres")
 	set_icing_color(recipe.ingredient.ingredient_type if recipe.ingredient != null else null)
-	
-	$StopSFXTimer.wait_time = 0.3
-	$StopSFXTimer.timeout.connect(func():
-		piping_bag_sfx_cancel.emit()
-	)
 
 func set_icing_color(ingredient : IngredientData.IngredientType) -> void:
 	var icing_color : Color
@@ -56,7 +60,7 @@ func set_icing_color(ingredient : IngredientData.IngredientType) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("minigame_interact"):
 		$InstructionsPanel.hide()
-		
+
 func _physics_process(delta: float) -> void:
 	if $PipingBag.is_lowered():
 		if not currently_piping:
@@ -65,15 +69,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		currently_piping = false
 	
+	_update_sfx()
+	
 	if currently_piping:
 		var new_mouse_pos : Vector2 = get_global_mouse_position()
 		var drag_dist : float = new_mouse_pos.x-last_mouse_pos.x
 		var amount_piped : float = max(drag_dist*percent_piped_per_pixel*delta,0)
 		percent_piped = move_toward(percent_piped,100.0,amount_piped)
 		
-		
 		var icing_size : PipeLineIcing.IcingSize = PipeLineIcing.IcingSize.NONE
-		
 		
 		if amount_piped > 0:
 			recent_drag_distances.append(amount_piped)
@@ -93,26 +97,22 @@ func _physics_process(delta: float) -> void:
 					icing_size = PipeLineIcing.IcingSize.JUST_RIGHT
 					
 				recent_drag_distances.remove_at(0)
-			piping_bag_sfx.emit()
-			$StopSFXTimer.stop()
-		else:
-			if $StopSFXTimer.is_stopped():
-				$StopSFXTimer.start()
 		## Visual & Audio Feedback
 		$PipingBag.display_piping_bag(percent_piped)
 		if not icing_size == PipeLineIcing.IcingSize.NONE:
 			$Icing.draw_icing_line(icing_size)
 		last_mouse_pos = new_mouse_pos
-	elif $StopSFXTimer.is_stopped():
-		$StopSFXTimer.start()
 	
 	if is_equal_approx(percent_piped,100.0):
-		piping_bag_sfx_cancel.emit()
+		if done: return
+		piping_sfx.stop()
 		
 		var total_data_points : float = num_in_target+num_out_of_target
 		var end_score : float = 3.0*(num_in_target/total_data_points)
+		end_score = clampf(end_score, 1., 3.)
 		finished.emit(end_score)
 		print(end_score)
+		done = true
 
 
 func averagef(array : Array[float]) -> float:
