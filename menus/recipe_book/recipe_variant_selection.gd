@@ -36,7 +36,8 @@ func _ready():
 		var left_variant: FoodData = left_button.variant
 		var right_variant: FoodData = right_button.variant
 		
-		if left_variant.ingredient == right_variant.ingredient:
+		var same_ingredient := left_variant.ingredient == right_variant.ingredient
+		if same_ingredient and left_variant.ingredient != null:
 			if not Inventory.get_item_count(left_variant.ingredient) >= 2:
 				left_button.flash_red()
 				right_button.flash_red()
