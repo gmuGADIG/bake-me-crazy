@@ -51,3 +51,5 @@ leave millie
 [background arg="res://dialogue/date_backgrounds/confession_stills/Millie_Confession.png" fade="0.0"]
 
 Millie takes your hand as the two of you depart from the festival. She looks back at you. Everything about her is radiant...you’re glad to know she won’t try to hide the shine of who she truly is anymore.
+
+do DialogueManager.end_game()

@@ -98,3 +98,4 @@ callum (neutral): I want to enjoy this moment a bit longer.
 [voice path="res://dialogue/salty/callum_voicelines/Callum 17_2.wav" volume="6.0"]
 callum (neutral): Can we watch the sunset some more?
 The two of you spend the rest of evening together, enjoying each other's company.
+do DialogueManager.end_game()

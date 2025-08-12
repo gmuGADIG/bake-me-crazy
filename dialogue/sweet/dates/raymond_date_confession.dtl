@@ -68,3 +68,5 @@ raymond (Excited): Well, you’re gonna LOVE it! There’s SO many for you to tr
 The player and Raymond start walking through the festival. Raymond points at various goods from afar.
 raymond (Excited): We can try this, those are an absolute classic, these are my favorite, ohmygosh, are those new?!
 You smile at Raymond's starry-eyed look. It looks like he'll be this upbeat the rest of the evening. That's exactly what you want\: for him to let himself shine.
+
+do DialogueManager.end_game()

@@ -62,3 +62,5 @@ The two of you are tied again. There’s only one bottle left...if you miss it, 
 			pepper (Excited): Yes! I’m so glad to hear that!
 	pepper (Happy): I guess this makes us more than just workout partners, huh?
 pepper (Happy): I’m so used to roughing it out on my own. (chuckle) You’re probably plenty aware.[n]But as we’ve seen each other over the past few weeks, I’ve been realizing I need more than just myself. I need you.[n]And now, knowing you’re gonna stick around? It gives me the confidence to break away from the shop and pursue whatever I want...as long as you’re there beside me. Or, trying to keep up, at least![n]I think I’m ready to tell my dad that I’m through with the family bizz. After our time at the festival is over, I’ll make that call.
+
+do DialogueManager.end_game()

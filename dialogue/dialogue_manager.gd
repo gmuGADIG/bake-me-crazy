@@ -81,6 +81,9 @@ func unlock_new_recipe(recipe_path: String) -> void:
 func change_scene(scene_path: String) -> void:
 	SceneTransition.change_scene_to_file(scene_path)
 
+func end_game() -> void:
+	SceneTransition.change_scene_to_file("res://credits/credits.tscn", true, .2)
+
 func coworker_all_gossip_given() -> bool:
 	const MAX_GOSSIP := 8
 	

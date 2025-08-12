@@ -17,15 +17,18 @@ func is_transitioning() -> bool:
 func _anim_move_to_scene() -> void:
 	get_tree().change_scene_to_packed(_next_scene)
 	_next_scene = null
+	
+	Dialogic.paused = true
+	Dialogic.end_timeline()
 
 ## Call this to change the scene to a scene at a specific path,
 ## similar to get_tree().change_scene_to_file.
-func change_scene_to_file(file_path: String, fade_to_black: bool = false) -> void:
+func change_scene_to_file(file_path: String, fade_to_black: bool = false, speed := 1.0) -> void:
 	change_scene_to_packed(load(file_path), fade_to_black)
 
 ## Call this to change the scene to a specific PackedScene value,
 ## similar to get_tree().change_scene_to_packed.
-func change_scene_to_packed(scene: PackedScene, fade_to_black: bool = false) -> void:
+func change_scene_to_packed(scene: PackedScene, fade_to_black: bool = false, speed := 1.0) -> void:
 	# Refuse to change scene if we're already in the middle of an animation.
 	if _next_scene != null:
 		return
@@ -33,6 +36,10 @@ func change_scene_to_packed(scene: PackedScene, fade_to_black: bool = false) -> 
 	_next_scene = scene
 	# Stop the animation player to always reset the animation.
 	$AnimationPlayer.stop()
-	Dialogic.end_timeline()
-	$AnimationPlayer.play("fade_in_out" if fade_to_black else "swipe")
+	
+	# Pause dialogic. Unpause it in _anim_move_to_scene
+	Dialogic.paused = true
+	
+	# Start transition animation
+	$AnimationPlayer.play("fade_in_out" if fade_to_black else "swipe", -1, speed)
 	
