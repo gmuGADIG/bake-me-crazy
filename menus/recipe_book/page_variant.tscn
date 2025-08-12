@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://l0fphbfma0fy"]
+
+[ext_resource type="Texture2D" uid="uid://88injqg0tm8o" path="res://menus/recipe_book/ingredient_check.png" id="1_cduxn"]
+[ext_resource type="Script" path="res://menus/recipe_book/page_variant.gd" id="1_n3kvk"]
+
+[node name="Variant" type="HBoxContainer"]
+offset_right = 119.0
+offset_bottom = 24.0
+script = ExtResource("1_n3kvk")
+
+[node name="Name" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
+bbcode_enabled = true
+text = "• Croissant"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Check" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_cduxn")
+expand_mode = 2
+stretch_mode = 5

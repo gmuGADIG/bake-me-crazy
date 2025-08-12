@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c001by107vn8g"]
+[gd_scene load_steps=32 format=3 uid="uid://c001by107vn8g"]
 
 [ext_resource type="Script" path="res://menus/recipe_book/recipe_book.gd" id="1_3psjk"]
 [ext_resource type="Texture2D" uid="uid://drkiquojw3jns" path="res://cooking/art/Minigame_StoneCuttingBoard.png" id="2_11cuj"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dlx146n2vp5th" path="res://items/foods/art/croissant.png" id="4_68jve"]
 [ext_resource type="Texture2D" uid="uid://b4j3328aowmyu" path="res://menus/recipe_book/Cookbook.png" id="4_vlr6a"]
 [ext_resource type="Texture2D" uid="uid://c233itwo8peqr" path="res://menus/recipe_book/photo_frame_front.png" id="5_husja"]
+[ext_resource type="PackedScene" uid="uid://l0fphbfma0fy" path="res://menus/recipe_book/page_variant.tscn" id="8_cqcba"]
+[ext_resource type="Script" path="res://menus/recipe_book/page_variant_list.gd" id="8_y17wb"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="10_7f2te"]
 [ext_resource type="Theme" uid="uid://bmusolgpsdt66" path="res://menus/market_ui/market_ui_theme.tres" id="10_u7x5x"]
 [ext_resource type="PackedScene" uid="uid://dykiajohmtf56" path="res://menus/recipe_book/recipe_book_variant_button.tscn" id="28_8q60k"]
@@ -271,28 +273,41 @@ offset_top = 203.0
 offset_right = 141.0
 offset_bottom = 489.0
 grow_horizontal = 2
+theme_override_constants/separation = 0
 
 [node name="FoodDesc" type="RichTextLabel" parent="Book/Pages/PageLeft/Writing"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
 theme_override_font_sizes/normal_font_size = 14
-text = "A small cookie-like pastry that is best described by its crispy but delicate texture, as well as having a creamy filling inside."
+text = "A plush and suft celebratory dish that has a wide assortment of decorations and flavors."
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Book/Pages/PageLeft/Writing"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Variants" type="RichTextLabel" parent="Book/Pages/PageLeft/Writing"]
+[node name="Variants" type="VBoxContainer" parent="Book/Pages/PageLeft/Writing"]
+layout_mode = 2
+script = ExtResource("8_y17wb")
+
+[node name="Header" type="RichTextLabel" parent="Book/Pages/PageLeft/Writing/Variants"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
 bbcode_enabled = true
-text = "Variants:
-• Croissant [color=green][b]✓[/b][/color]
-• Chocolate Croissant [color=red][b]✗[/b][/color]
-• Strawberry Croissant
-• Earl Grey Croissant"
+text = "Variants:"
 fit_content = true
+
+[node name="Variant" parent="Book/Pages/PageLeft/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
+
+[node name="Variant2" parent="Book/Pages/PageLeft/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
+
+[node name="Variant3" parent="Book/Pages/PageLeft/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
+
+[node name="Variant4" parent="Book/Pages/PageLeft/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
 
 [node name="PageRight" type="Control" parent="Book/Pages" node_paths=PackedStringArray("food_icon", "food_name", "food_desc", "variants")]
 unique_name_in_owner = true
@@ -388,28 +403,41 @@ offset_top = 203.0
 offset_right = 141.0
 offset_bottom = 489.0
 grow_horizontal = 2
+theme_override_constants/separation = 0
 
 [node name="FoodDesc" type="RichTextLabel" parent="Book/Pages/PageRight/Writing"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
 theme_override_font_sizes/normal_font_size = 14
-text = "A plush and soft celebratory dish that has a wide assortment of decorations and flavors."
+text = "A plush and suft celebratory dish that has a wide assortment of decorations and flavors."
 fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Book/Pages/PageRight/Writing"]
-custom_minimum_size = Vector2(0, 10)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Variants" type="RichTextLabel" parent="Book/Pages/PageRight/Writing"]
+[node name="Variants" type="VBoxContainer" parent="Book/Pages/PageRight/Writing"]
+layout_mode = 2
+script = ExtResource("8_y17wb")
+
+[node name="Header" type="RichTextLabel" parent="Book/Pages/PageRight/Writing/Variants"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.0705882, 0.0392157, 0.0352941, 1)
 bbcode_enabled = true
-text = "Variants:
-• Croissant [color=green][b]✓[/b][/color]
-• Chocolate Croissant [color=red][b]✗[/b][/color]
-• Strawberry Croissant
-• Earl Grey Croissant"
+text = "Variants:"
 fit_content = true
+
+[node name="Variant" parent="Book/Pages/PageRight/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
+
+[node name="Variant2" parent="Book/Pages/PageRight/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
+
+[node name="Variant3" parent="Book/Pages/PageRight/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
+
+[node name="Variant4" parent="Book/Pages/PageRight/Writing/Variants" instance=ExtResource("8_cqcba")]
+layout_mode = 2
 
 [node name="BakingText" type="Control" parent="."]
 unique_name_in_owner = true
@@ -555,6 +583,7 @@ script = ExtResource("10_7f2te")
 
 [node name="RecipeVariantSelection" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
