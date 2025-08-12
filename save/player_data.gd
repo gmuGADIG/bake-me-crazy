@@ -38,7 +38,7 @@ func reset():
 	load_file(new_save_data, false)
 
 func load_file(save_template : SaveTemplate, change_music: bool = true) -> void:
-	data = save_template
+	data = save_template.duplicate(true)
 	
 	if data.scene_path != "": # "" iff new save
 		SceneTransition.change_scene_to_file(data.scene_path)
