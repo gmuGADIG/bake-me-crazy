@@ -28,15 +28,22 @@ func _ready():
 	
 	confirm_button.pressed.connect(func():
 		# Emit the selected recipes signal.
-		var left_button = button_group_left.get_pressed_button()
+		var left_button: RecipeBookVariantButton = button_group_left.get_pressed_button()
 		if left_button == null: return
-		var right_button = button_group_right.get_pressed_button()
+		var right_button: RecipeBookVariantButton = button_group_right.get_pressed_button()
 		if right_button == null: return
 		
-		var left_variant = left_button.variant
-		var right_variant = right_button.variant
+		var left_variant: FoodData = left_button.variant
+		var right_variant: FoodData = right_button.variant
 		
-		get_parent().recipes_selected.emit([left_variant, right_variant])
+		if left_variant.ingredient == right_variant.ingredient:
+			if not Inventory.get_item_count(left_variant.ingredient) >= 2:
+				left_button.flash_red()
+				right_button.flash_red()
+				return
+		
+		var variangts: Array[FoodData] = [left_variant, right_variant]
+		get_parent().recipes_selected.emit(variangts)
 	)
 	
 ## Recomputes whether the confirm button can be pressed. It can only be pressed

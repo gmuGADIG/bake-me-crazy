@@ -22,7 +22,7 @@ data = ExtResource("4_bd4x1")
 
 [sub_resource type="Resource" id="Resource_wp0ab"]
 script = ExtResource("2_qc7ti")
-price = 5
+price = 15
 quality = 0
 data = ExtResource("5_01h74")
 

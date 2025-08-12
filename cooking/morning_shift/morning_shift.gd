@@ -18,9 +18,10 @@ func _ready() -> void:
 	var select_recipe: RecipeBook = recipe_book.instantiate()
 	add_child(select_recipe)
 	# Godot won't let us use a typed array here. Lame!
-	var recipes_selected: Array = await select_recipe.recipes_selected
-	while not recipes_selected.is_empty():
-		current_recipe = recipes_selected.pop_front()
+	var recipes_selected: Array[FoodData] = await select_recipe.recipes_selected
+	for recipe in recipes_selected:
+		current_recipe = recipe
+		#current_recipe = recipes_selected.pop_front()
 		current_step = 1
 		
 		# Remove current children (excluding pause opener)
@@ -38,10 +39,12 @@ func _ready() -> void:
 		
 		# Wait until the food is done.
 		await instance.all_minigames_done
-		
-		# TODO: Here we probably want to show a menu showing the finished food?
-		# Then await for that menu being hidden?
-		
+	
+	# finally spend the ingredients spent
+	for recipe in recipes_selected:
+		if recipe.ingredient != null:
+			Inventory.pop_item(recipe.ingredient)
+	
 	# Once we reach here, we have awaited for all the sub-menus, and are ready
 	# to move on to the next step.
 	# According to what I can find, this is the lunch break?

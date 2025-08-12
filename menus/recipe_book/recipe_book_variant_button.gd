@@ -8,6 +8,10 @@ var variant: FoodData
 @onready var requirement_name := %RequirementName
 @onready var quantity_requirement := %QuantityRequirement
 
+func flash_red() -> void:
+	modulate = Color.RED
+	create_tween().tween_property(self, "modulate", Color.WHITE, 0.3)
+
 func _ready() -> void:
 	super._ready()
 	
@@ -17,8 +21,7 @@ func _ready() -> void:
 	
 	focus_entered.connect(func():
 		if disabled:
-			modulate = Color.RED
-			create_tween().tween_property(self, "modulate", Color.WHITE, 0.3)
+			flash_red()
 			release_focus()
 	)
 
