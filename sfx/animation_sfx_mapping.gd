@@ -12,5 +12,3 @@ class_name AnimationSFXMapping
 
 # The ID of the sound effect to play
 @export var sfx_id: String = ""
-
-@export var stop_sfx: bool = false

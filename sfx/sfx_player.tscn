@@ -4,6 +4,7 @@
 
 [node name="SFXPlayer" type="Node"]
 script = ExtResource("1_sy7cr")
+initial_player_count = 8
 
 [node name="AudioStreamPlayerA" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"

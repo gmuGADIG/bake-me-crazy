@@ -140,11 +140,7 @@ func _on_animation_started(anim_name: String, player: AnimationPlayer):
 			
 		# Check if animation name matches
 		if mapping.animation_name == anim_name:
-			# Either play or stop the associated sound effect
-			if mapping.stop_sfx:
-				MainSFXPlayer.stop_by_id(mapping.sfx_id)
-			else:
-				MainSFXPlayer.play_from_id(mapping.sfx_id)
+			MainSFXPlayer.play_from_id(mapping.sfx_id)
 			
 			# Continue checking - we might have both a play and stop mapping for the same animation
 			# Don't return early
