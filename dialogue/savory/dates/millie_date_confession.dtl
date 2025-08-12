@@ -1,4 +1,4 @@
-do MainMusicPlayer.transition_to_song_by_filename("sweet_theme.tres")
+do MainMusicPlayer.transition_to_song_by_filename("umami_theme.tres")
 [background arg="res://dialogue/date_backgrounds/date_park_nighttime.png" fade="0.0"]
 You approach Millie. She’s carrying a box of ingredients to one of the food stalls.
 join millie (Happy) center [animation="Slide In Up" length="2.0" wait="true"]
