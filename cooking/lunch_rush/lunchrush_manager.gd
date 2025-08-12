@@ -14,6 +14,8 @@ class MouseData:
 @onready var flavor_container: VBoxContainer = %FlavorContainer
 @onready var money_label: RichTextLabel = %Money
 @onready var view_anim: AnimationPlayer = %ViewAnim
+@onready var dust_manager: DustManager = %DustManager
+@onready var finisher_progress_bar: ProgressBar = %FinisherProgressBar
 
 #TODO: Replace these with the actual food items and flavors
 @export var foods : Array[FoodItem]
@@ -81,7 +83,16 @@ var timer_active : bool = false
 @export var percent_gained_per_drizzle : float 
 
 ##End goal for the finishers is 100.0%
-var current_finisher_percentage : float
+var current_finisher_percentage : float:
+	set(v):
+		current_finisher_percentage = v
+		
+		if v == 0:
+			finisher_progress_bar.modulate.a = 0.
+		elif finisher_progress_bar.modulate.a == 0.:
+			create_tween().tween_property(finisher_progress_bar, "modulate:a", 1., 1.)
+		
+		finisher_progress_bar.value = v
 
 
 # Called when the node enters the scene tree for the first time.
@@ -122,6 +133,7 @@ func new_order() -> void:
 	
 	$FoodItem/FoodItemSprite/Sauce.visible = false
 	$FoodItem/FoodItemSprite/Dust.visible = false
+	dust_manager.position = 0.
 	current_finisher_percentage = 0.0
 	
 	
@@ -232,6 +244,7 @@ func shaker(delta : float) -> void:
 	if is_shaking_hard_enough():
 		##Create the particle effect
 		var new_particle : GPUParticles2D = shaker_particle.instantiate()
+		new_particle.scale = Vector2.ONE * 5.
 		$FinisherSprite.add_child(new_particle)
 		new_particle.emitting = true
 		
@@ -242,8 +255,9 @@ func shaker(delta : float) -> void:
 			##Visible Sauce application feedback
 			$FoodItem/FoodItemSprite/Dust.visible = true
 			print(current_finisher_percentage)
-			$FoodItem/FoodItemSprite/Dust.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
-				
+			dust_manager.position += 0.015
+			#$FoodItem/FoodItemSprite/Dust.scale = Vector2(current_finisher_percentage/100.0,current_finisher_percentage/100.0)
+			
 	pass
 	
 
@@ -322,12 +336,15 @@ func select_finisher_type() -> Finisher:
 	drizzle_line.clear_points()
 	match selected_flavor.type:
 		FoodItem.Type.CHOCOLATE_TOPPING:
+			finisher_progress_bar.modulate = Color.SIENNA
 			drizzle_line.modulate = Color.SIENNA
 			return Finisher.DRIZZLE
 		FoodItem.Type.CHERRY_TOPPING:
+			finisher_progress_bar.modulate = Color.HOT_PINK
 			drizzle_line.modulate = Color.HOT_PINK
 			return Finisher.DRIZZLE
 		FoodItem.Type.POWDERED_SUGAR:
+			finisher_progress_bar.modulate = Color.GHOST_WHITE
 			return Finisher.SHAKER
 		_:
 			return -1

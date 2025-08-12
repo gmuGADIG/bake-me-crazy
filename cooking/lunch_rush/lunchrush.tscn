@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bkj7kns2dd0mc"]
+[gd_scene load_steps=42 format=3 uid="uid://bkj7kns2dd0mc"]
 
 [ext_resource type="Script" path="res://cooking/lunch_rush/lunchrush_manager.gd" id="1_8n1i3"]
 [ext_resource type="Script" path="res://cooking/food_items/food_item.gd" id="2_d5ipb"]
@@ -21,10 +21,50 @@
 [ext_resource type="Texture2D" uid="uid://d3ll4kbjcsp1f" path="res://items/foods/art/Cake_Chocolate.png" id="18_58qv4"]
 [ext_resource type="Theme" uid="uid://ci7oj2xe68ki5" path="res://cooking/lunch_rush/lunch_rush_theme.tres" id="18_85t1o"]
 [ext_resource type="Script" path="res://menus/button_hover.gd" id="19_1ienb"]
+[ext_resource type="Script" path="res://cooking/lunch_rush/dust_manager.gd" id="19_cg0o1"]
 [ext_resource type="Texture2D" uid="uid://yytg0qnv63ow" path="res://menus/market_ui/Gold_Button.webp" id="21_fewph"]
 [ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="23_k4gpg"]
 [ext_resource type="PackedScene" uid="uid://bm47pxurly2m5" path="res://menus/pause_menu/pause_opener.tscn" id="24_76rpg"]
 [ext_resource type="PackedScene" uid="uid://qccd5vfubk5b" path="res://cooking/lunch_rush/drizzle_line.tscn" id="25_b2ygi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_203d8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+anti_aliasing_size = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0frx"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+anti_aliasing_size = 0.1
+
+[sub_resource type="Gradient" id="Gradient_yeo1l"]
+offsets = PackedFloat32Array(0.996942, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vyvbe"]
+noise_type = 0
+frequency = 0.2553
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nu73v"]
+color_ramp = SubResource("Gradient_yeo1l")
+noise = SubResource("FastNoiseLite_vyvbe")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pa8sg"]
 size = Vector2(94, 39)
@@ -237,7 +277,7 @@ foods = Array[ExtResource("2_d5ipb")]([ExtResource("2_ht3hp"), ExtResource("3_dv
 flavors = Array[ExtResource("2_d5ipb")]([ExtResource("6_0baax"), ExtResource("7_bj863"), ExtResource("8_jcw3l")])
 shaker_particle = ExtResource("10_86e4i")
 drizzle_particle = ExtResource("11_e61kw")
-percent_gained_per_shake = 5.0
+percent_gained_per_shake = 7.5
 percent_gained_per_drizzle = 0.75
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -298,6 +338,20 @@ z_index = 1
 position = Vector2(-150, 683.307)
 scale = Vector2(2, 2)
 
+[node name="ProgressBarParent" type="Node2D" parent="FoodItem"]
+position = Vector2(-57, -70.6535)
+
+[node name="FinisherProgressBar" type="ProgressBar" parent="FoodItem/ProgressBarParent"]
+unique_name_in_owner = true
+offset_left = -2.0
+offset_top = -11.5
+offset_right = 98.0
+offset_bottom = 8.5
+theme_override_styles/background = SubResource("StyleBoxFlat_203d8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v0frx")
+value = 15.0
+show_percentage = false
+
 [node name="FoodItemSprite" type="TextureRect" parent="FoodItem"]
 clip_children = 2
 offset_left = -71.0
@@ -309,13 +363,22 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Sauce" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
+visible = false
 modulate = Color(0.926861, 0.211668, 0.420472, 1)
 position = Vector2(61.5316, 30.5201)
 texture = ExtResource("14_rbkm8")
 
 [node name="Dust" type="Sprite2D" parent="FoodItem/FoodItemSprite"]
-position = Vector2(62.5327, 30.2394)
-texture = ExtResource("14_rbkm8")
+position = Vector2(62.5327, 59.3465)
+texture = SubResource("NoiseTexture2D_nu73v")
+
+[node name="DustManager" type="Node" parent="FoodItem/FoodItemSprite/Dust"]
+unique_name_in_owner = true
+script = ExtResource("19_cg0o1")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="FoodItem/FoodItemSprite"]
+position = Vector2(14, -7.6535)
+remote_path = NodePath("../../ProgressBarParent")
 
 [node name="Area2D" type="Area2D" parent="FoodItem"]
 

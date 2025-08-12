@@ -1,4 +1,5 @@
-## Handles the `last_day_started` saved variable, and played the intro timeline on the first day
+# Handles the `last_day_started` saved variable, and 
+## played the intro timeline on the first day
 
 extends Node
 
@@ -6,9 +7,9 @@ static var last_day_started := 0
 
 @export var intro_timeline: DialogicTimeline
 
-func _init() -> void:
-	if last_day_started != PlayerData.data.day:
-		last_day_started = PlayerData.data.day
+#func _init() -> void:
+	#if last_day_started != PlayerData.data.day:
+		#last_day_started = PlayerData.data.day
 
 func _ready() -> void:
 	print("x = ", PlayerData.data.day)
