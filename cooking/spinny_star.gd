@@ -1,7 +1,7 @@
-extends Sprite2D
+extends CanvasItem
 
 func _ready() -> void:
-	rotation = randf() * TAU
+	self.rotation = randf() * TAU
 
 func _process(delta: float) -> void:
-	rotation += delta * TAU / 15
+	self.rotation += delta * TAU / 15

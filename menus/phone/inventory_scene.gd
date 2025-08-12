@@ -6,12 +6,21 @@ extends Control
 func set_selected(item: ItemInstance):
 	if item == null:
 		%SelectedItemName.text = ""
-		%SelectedItemDescription.text = ""
 		%SelectedItemIcon.texture = null
+		%SelectedItemDescription.text = ""
+		%QualityStars.visible = false
 	else:
 		%SelectedItemName.text = item.data.display_name
-		%SelectedItemDescription.text = "quality: %s" % item.quality
 		%SelectedItemIcon.texture = item.data.image
+		if item.data is IngredientData:
+			%SelectedItemDescription.text = item.data.description
+			%QualityStars.visible = false
+		else:
+			%SelectedItemDescription.text = ""
+			%QualityStars.visible = true
+			for i in range(3):
+				var is_visible = i < item.quality
+				%QualityStars.get_child(i).visible = is_visible
 
 #Call on visibility changed
 func on_app_toggle() -> void:

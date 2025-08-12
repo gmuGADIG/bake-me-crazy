@@ -15,13 +15,13 @@ func save_auxilary_data():
 
 func _ready() -> void:
 	if OS.has_feature("editor") or OS.has_feature("debug"):
+		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 1)
 		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
-		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
-		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
+		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 2)
 		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 3)
+		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 2)
 		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 3)
-		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 3)
-		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 3)
+		Inventory.add_item(load("res://items/foods/sweet_roll_orange.tres"), 1)
 		
 		data.money = 250
 	
