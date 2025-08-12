@@ -2,6 +2,7 @@ class_name ButtonHover extends BaseButton
 
 @export var hover_scale := 1.1
 @export var pressed_scale := 0.9
+@export var vertical_only := false
 @export var duration := 0.3
 
 @onready var original_scale = scale
@@ -25,3 +26,4 @@ func _process(delta: float) -> void:
 		target_scale *= hover_scale
 	
 	scale = lerp(scale, original_scale * target_scale, fac)
+	if vertical_only: scale.x = original_scale.x

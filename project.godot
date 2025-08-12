@@ -138,8 +138,8 @@ directories/dtl_directory={
 "text_8": "res://dialogue/sweet/daily_interactions/texts/text_8.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://dialogue/internal/dialogic_styles/main_style.tres"]
+layout/default_style="res://dialogue/internal/dialogic_styles/main_style.tres"
 variables={
 "coworker": {
 "investigating": "",

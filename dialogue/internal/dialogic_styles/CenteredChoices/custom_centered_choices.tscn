@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=3 uid="uid://ck4ecdp8itxgi"]
+
+[ext_resource type="Script" path="res://dialogue/internal/dialogic_styles/CenteredChoices/vn_choice_layer.gd" id="1_kurgw"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_choice_button.gd" id="1_w632k"]
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Choice/node_button_sound.gd" id="2_mgko6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkvtj"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0)
+expand_margin_left = 1000.0
+expand_margin_right = 1000.0
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23nu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np5qy"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0)
+expand_margin_left = 1000.0
+expand_margin_right = 1000.0
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_wtjs4"]
+Button/constants/outline_size = 6
+Button/styles/disabled = SubResource("StyleBoxFlat_xkvtj")
+Button/styles/focus = SubResource("StyleBoxEmpty_23nu5")
+Button/styles/hover = SubResource("StyleBoxFlat_np5qy")
+Button/styles/normal = SubResource("StyleBoxFlat_np5qy")
+Button/styles/pressed = SubResource("StyleBoxFlat_np5qy")
+
+[node name="VN_ChoiceLayer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_kurgw")
+boxes_stylebox_normal = ""
+boxes_stylebox_hovered = ""
+boxes_stylebox_focused = ""
+
+[node name="Choices" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 283.0
+offset_right = 869.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_wtjs4")
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_edit_layout_mode = 1
+
+[node name="DialogicNode_ChoiceButton1" type="Button" parent="Choices"]
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton2" type="Button" parent="Choices"]
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton3" type="Button" parent="Choices"]
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton4" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton5" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton6" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton7" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton8" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton9" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton10" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ChoiceButton11" type="Button" parent="Choices"]
+visible = false
+layout_mode = 2
+text = "Some text"
+autowrap_mode = 3
+script = ExtResource("1_w632k")
+vertical_only = true
+
+[node name="DialogicNode_ButtonSound" type="AudioStreamPlayer" parent="Choices"]
+unique_name_in_owner = true
+script = ExtResource("2_mgko6")
+
+[node name="Control" type="Control" parent="Choices"]
+layout_mode = 2

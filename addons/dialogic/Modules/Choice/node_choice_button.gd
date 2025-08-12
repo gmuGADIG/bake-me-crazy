@@ -1,5 +1,5 @@
 class_name DialogicNode_ChoiceButton
-extends Button
+extends ButtonHover
 ## The button allows the player to make a choice in the Dialogic system.
 ##
 ## This class is used in the Choice Layer. [br]
@@ -26,6 +26,7 @@ extends Button
 
 
 func _ready() -> void:
+	super._ready()
 	add_to_group('dialogic_choice_button')
 	shortcut_in_tooltip = false
 	hide()
@@ -42,4 +43,4 @@ func set_choice_text(new_text: String) -> void:
 	if text_node:
 		text_node.text = new_text
 	else:
-		text = new_text
+		self.text = new_text
