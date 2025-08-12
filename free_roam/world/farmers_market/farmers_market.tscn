@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw0pi3ksowsdr"]
+[gd_scene load_steps=13 format=3 uid="uid://cw0pi3ksowsdr"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_i1f1b"]
 [ext_resource type="Texture2D" uid="uid://b43uqlwrgdjd3" path="res://free_roam/world/farmers_market/Farmers_Market.png" id="2_p66vr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c6001qwpnnnc1" path="res://free_roam/world/sign2.svg" id="8_xpb1k"]
 [ext_resource type="Script" path="res://free_roam/world/day_starter.gd" id="9_pg7pr"]
 [ext_resource type="Resource" path="res://dialogue/narration/intro_narration.dtl" id="10_ql6aw"]
+[ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="11_rophn"]
 
 [sub_resource type="Curve2D" id="Curve2D_pds1b"]
 _data = {
@@ -66,13 +67,16 @@ limit_bottom = 648
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="TransitionTrigger" parent="." index="8" instance=ExtResource("5_htkk8")]
+[node name="PlaySongForScene" parent="." index="6" instance=ExtResource("11_rophn")]
+song_name = "morning_theme.tres"
+
+[node name="TransitionTrigger" parent="." index="9" instance=ExtResource("5_htkk8")]
 position = Vector2(1092, 560)
 collision_layer = 0
 collision_mask = 2
 target_scene_path = "res://free_roam/world/streets/streets.tscn"
 
-[node name="DayStarter" type="Node" parent="." index="9"]
+[node name="DayStarter" type="Node" parent="." index="10"]
 script = ExtResource("9_pg7pr")
 intro_timeline = ExtResource("10_ql6aw")
 
