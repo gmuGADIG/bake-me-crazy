@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Song" load_steps=5 format=3 uid="uid://cls7yjnt5esj7"]
 
 [ext_resource type="Script" path="res://music/song_res.gd" id="1_e3p3y"]
-[ext_resource type="AudioStream" uid="uid://bj2nqdx0rha0g" path="res://music/char/OST_SpicyTheme_Nathan.wav" id="2_prmh1"]
+[ext_resource type="AudioStream" uid="uid://dbj580lnlqaru" path="res://music/char/OST_SpicyTheme_Nathan.ogg" id="2_f8cjg"]
 
 [sub_resource type="Curve" id="Curve_uwpqi"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
@@ -15,7 +15,7 @@ point_count = 2
 script = ExtResource("1_e3p3y")
 loop_start = 0.0
 loop_end = 89.1429
-song_file = ExtResource("2_prmh1")
+song_file = ExtResource("2_f8cjg")
 fade_period = 0.2
 fade_in_curve = SubResource("Curve_uwpqi")
 fade_out_curve = SubResource("Curve_8piww")

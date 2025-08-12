@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Song" load_steps=5 format=3 uid="uid://dielsp5dj80dp"]
 
 [ext_resource type="Script" path="res://music/song_res.gd" id="1_iiy8r"]
-[ext_resource type="AudioStream" uid="uid://oy6h41up1jf7" path="res://music/day_themes/OST_MorningTheme_Becs.wav" id="2_fvde6"]
+[ext_resource type="AudioStream" uid="uid://vldjof6dhfhi" path="res://music/day_themes/OST_MorningTheme_Becs.ogg" id="2_1q667"]
 
 [sub_resource type="Curve" id="Curve_uwpqi"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
@@ -15,7 +15,7 @@ point_count = 2
 script = ExtResource("1_iiy8r")
 loop_start = 0.0
 loop_end = 157.0
-song_file = ExtResource("2_fvde6")
+song_file = ExtResource("2_1q667")
 fade_period = 0.2
 fade_in_curve = SubResource("Curve_uwpqi")
 fade_out_curve = SubResource("Curve_8piww")
