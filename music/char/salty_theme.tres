@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Song" load_steps=5 format=3 uid="uid://dokbpg3a45l7d"]
+
+[ext_resource type="Script" path="res://music/song_res.gd" id="1_755ss"]
+[ext_resource type="AudioStream" uid="uid://cse3qqb2iuxx3" path="res://music/char/OST_SaltyTheme_Grace.wav" id="2_rd8iw"]
+
+[sub_resource type="Curve" id="Curve_uwpqi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8piww"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[resource]
+script = ExtResource("1_755ss")
+loop_start = 5.175
+loop_end = 106.0
+song_file = ExtResource("2_rd8iw")
+fade_period = 0.2
+fade_in_curve = SubResource("Curve_uwpqi")
+fade_out_curve = SubResource("Curve_8piww")
