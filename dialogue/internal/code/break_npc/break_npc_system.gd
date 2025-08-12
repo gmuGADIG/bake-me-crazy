@@ -44,9 +44,9 @@ func start_daily_chat():
 
 func compute_gift_reward(liked: bool) -> float:
 	var quality = min(3, Dialogic.VAR.read_only.gift_quality)
-	var reward_floor := 20 if liked else 0
+	var reward_floor := 40 if liked else 0
 
-	var result = reward_floor + lerp(0, 40, quality / 3.)
+	var result = reward_floor + lerp(0, 80, quality / 3.)
 	print("[break_npc_system::compute_gift_reward] result = ", result)
 	var gift_animation: GiftAnimation = preload("res://menus/gift_animation.tscn").instantiate()
 	gift_animation.prepare(liked)
