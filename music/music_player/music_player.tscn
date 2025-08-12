@@ -13,5 +13,7 @@ song_transition_curve = SubResource("Curve_14d2t")
 song_transition_duration = 2.0
 
 [node name="AudioStreamPlayerA" type="AudioStreamPlayer" parent="."]
+playback_type = 1
 
 [node name="AudioStreamPlayerB" type="AudioStreamPlayer" parent="."]
+playback_type = 1
