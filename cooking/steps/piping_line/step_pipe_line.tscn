@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ifnm35j8kb1y"]
+[gd_scene load_steps=25 format=3 uid="uid://ifnm35j8kb1y"]
 
 [ext_resource type="PackedScene" uid="uid://chq1lkece1wur" path="res://cooking/food_step.tscn" id="1_wtsfb"]
 [ext_resource type="Script" path="res://cooking/steps/piping_line/piping_line_minigame.gd" id="2_mcpkt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ddguiyp5vl5nr" path="res://cooking/steps/piping_line/icing_layer.png" id="8_m8dr4"]
 [ext_resource type="PackedScene" uid="uid://bx3c2sms6ejy2" path="res://cooking/steps/instructions_panel.tscn" id="8_xa70s"]
 [ext_resource type="Shader" path="res://cooking/steps/piping_line/line_flash.gdshader" id="10_bym2r"]
+[ext_resource type="AudioStream" uid="uid://cio72kn10ntw0" path="res://sfx/audio/piping_bag/piping_bag_sfx.mp3" id="13_c0xih"]
 
 [sub_resource type="Curve2D" id="Curve2D_ec7wp"]
 _data = {
@@ -154,6 +155,7 @@ material = SubResource("ShaderMaterial_5enwi")
 position = Vector2(12.52, -139)
 points = PackedVector2Array(185, 645, 720, 645)
 width = 5.0
+default_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture2D_gwbps")
 texture_mode = 1
 metadata/_edit_lock_ = true
@@ -166,6 +168,7 @@ material = SubResource("ShaderMaterial_sv5fe")
 position = Vector2(12.52, -79.75)
 points = PackedVector2Array(185, 645, 720, 645)
 width = 5.0
+default_color = Color(0, 0, 0, 1)
 texture = SubResource("GradientTexture2D_gwbps")
 texture_mode = 1
 metadata/_edit_lock_ = true
@@ -180,4 +183,7 @@ grow_vertical = 2
 minigame_title = "Pipe Filling"
 instructions = "Click and drag the piping bag at the correct speed to evenly distribute the icing."
 
-[node name="StopSFXTimer" type="Timer" parent="." index="7"]
+[node name="PipingSFX" type="AudioStreamPlayer" parent="." index="7"]
+unique_name_in_owner = true
+stream = ExtResource("13_c0xih")
+volume_db = 10.0

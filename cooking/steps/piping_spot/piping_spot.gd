@@ -1,15 +1,16 @@
+class_name PipingSpot
 extends Area2D
 
 signal finished_piping(percent_of_target : float)
 
-@export var percent_gained_per_second : float = 60.0
+@onready var piping_sfx: AudioStreamPlayer = %PipingSFX
 
+@export var percent_gained_per_second : float = 35.0
 @export var target_sprite_scale : float = 0.27 ##The scale of the piped dough when at the target amount
 
 var in_area : bool = false
 var already_piped : bool = false
 var percent_piped : float = 0 ##A percentage of 100%, being the target amount piped out
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,11 +31,12 @@ func _physics_process(delta: float) -> void:
 		if !in_area || already_piped:
 			return
 		
-		## Play sound
-		var piping_spot_step = $"../.."
-		piping_spot_step.piping_bag_sfx.emit()
+		# Play sound
+		if not piping_sfx.playing:
+			piping_sfx.play()
 		
 		percent_piped += percent_gained_per_second * delta
+		print(percent_piped)
 		calculate_dough_sprite()
 	
 	if Input.is_action_just_released("minigame_interact") && in_area && !already_piped:
