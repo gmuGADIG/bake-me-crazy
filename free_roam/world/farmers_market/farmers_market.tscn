@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw0pi3ksowsdr"]
+[gd_scene load_steps=14 format=3 uid="uid://cw0pi3ksowsdr"]
 
 [ext_resource type="PackedScene" uid="uid://docgr3runo3a" path="res://free_roam/world/free_roam_base.tscn" id="1_i1f1b"]
 [ext_resource type="Texture2D" uid="uid://b43uqlwrgdjd3" path="res://free_roam/world/farmers_market/Farmers_Market.png" id="2_p66vr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://free_roam/world/day_starter.gd" id="9_pg7pr"]
 [ext_resource type="Resource" path="res://dialogue/narration/intro_narration.dtl" id="10_ql6aw"]
 [ext_resource type="PackedScene" uid="uid://x74o8rwcody2" path="res://play_song_for_scene_node.tscn" id="11_rophn"]
+[ext_resource type="PackedScene" uid="uid://blhe028i1pveq" path="res://misc/set_day_phase.tscn" id="12_yvncg"]
 
 [sub_resource type="Curve2D" id="Curve2D_pds1b"]
 _data = {
@@ -79,5 +80,7 @@ target_scene_path = "res://free_roam/world/streets/streets.tscn"
 [node name="DayStarter" type="Node" parent="." index="10"]
 script = ExtResource("9_pg7pr")
 intro_timeline = ExtResource("10_ql6aw")
+
+[node name="SetDayPhase" parent="." index="11" instance=ExtResource("12_yvncg")]
 
 [editable path="PlayerPath/Player"]
