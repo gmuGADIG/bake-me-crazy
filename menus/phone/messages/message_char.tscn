@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3hjgbyt4tc6"]
 
 [ext_resource type="Script" path="res://menus/phone/messages/message_char.gd" id="1_vb112"]
-[ext_resource type="Texture2D" uid="uid://dcyteltvlp6yf" path="res://menus/phone/messages/portraits/placeholder.png" id="2_rxtj8"]
+[ext_resource type="Texture2D" uid="uid://llwj0kl05o12" path="res://menus/phone/messages/portraits/portrait_empty.png" id="2_86v2l"]
 [ext_resource type="Texture2D" uid="uid://c81wdrdpsqjtl" path="res://menus/phone/messages/text_arrow.png" id="3_2m5df"]
 [ext_resource type="PackedScene" uid="uid://cwnhjhgmo3p32" path="res://menus/heart_display/hearts_display.tscn" id="4_bqxhe"]
 
@@ -55,7 +55,7 @@ offset_right = 58.0
 offset_bottom = -24.0
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_rxtj8")
+texture = ExtResource("2_86v2l")
 expand_mode = 1
 stretch_mode = 4
 
