@@ -2,9 +2,9 @@ do BreakNPCSystem.start_daily_chat()
 label 1
 pepper: Hey...[n+] I thought I recognized that face![n] You’re {player_name}, right?[n+] It’s Pepper, remember?[n] We used to be friends when we were kids.
 - Of course, how could I forget?
-pepper: Yeah, that’s what I’m talking about![n] It’s great to see you. I just got hit with a blast from the past!
+	pepper: Yeah, that’s what I’m talking about![n] It’s great to see you. I just got hit with a blast from the past!
 - No, sorry. Could you remind me?
-pepper: That’s fair, I guess.[n+] We were pretty little.[n] I lived down the street from you and we used to hang out after school.
+	pepper: That’s fair, I guess.[n+] We were pretty little.[n] I lived down the street from you and we used to hang out after school.
 pepper: That’s great though, I didn’t know you were back in town![n] I’ve never been here before, do you work here?
 - Yep! I’m still pretty new, though.
 pepper: Well, that’s still awesome![n+] Personally, I’m running my parents’ sports store nowadays.[n] We should try to meet up sometime![n+] Like, catch up or hang out again.
@@ -17,9 +17,9 @@ pepper: I saw a customer cry after one bite of your danish.[n]Not like, sad tear
 label 3
 pepper: Okay, be honest\: how many of those pastries do you "test" before putting them out?[n+]Like percentage-wise. I won't judge.[n]Unless it's more than 30%, then I might.
 - Only the ones that look too sad to sell.
-pepper: You're like a pastry therapist. I respect that.
+	pepper: You're like a pastry therapist. I respect that.
 - I don't eat the inventory!
-pepper: Liar. Coward. I would if I worked here.
+	pepper: Liar. Coward. I would if I worked here.
 [end_timeline]
 
 label 4
@@ -29,9 +29,9 @@ pepper: Do you think if I trained hard enough, I could throw a loaf of sourdough
 label 5
 pepper: I tried baking once. Made scones.[n+]They could legally qualify as blunt weapons.[n]My neighbor used one as a doorstop for a week.
 - I’m honored by the attempt.
-pepper: Yeah, it was kind of a tribute. Like fanart, but tragic.
+	pepper: Yeah, it was kind of a tribute. Like fanart, but tragic.
 - Maybe I can teach you sometime.
-pepper: Bold of you to assume I’m teachable, but sounds good!
+	pepper: Bold of you to assume I’m teachable, but sounds good!
 [end_timeline]
 
 label 6
@@ -41,9 +41,9 @@ pepper: If you ever hear yelling from outside it’s just me racing my own shado
 label 7
 pepper: You ever name your dough?[n]Not like... out loud. But in your head? Like, "Ah yes, this one’s Gary. He’s gonna be a croissant."
 - I absolutely do that.
-pepper: I knew it. I knew you were the dough whisperer.
+	pepper: I knew it. I knew you were the dough whisperer.
 - That is deranged.
-pepper: You say that now, but one day you’ll make a muffin that looks like a Harold.
+	pepper: You say that now, but one day you’ll make a muffin that looks like a Harold.
 [end_timeline]
 
 label 8
@@ -53,9 +53,9 @@ pepper: Okay, serious emergency. I forgot what I came in here for.[n]I walked in
 label 9
 pepper: You ever feel like you’ve got too many feelings and nowhere to put ’em?[n]Like you try to say something nice and it comes out as a wrestling threat.
 - I feel that all the time.
-pepper: Good. We can be aggressively kind together.
+	pepper: Good. We can be aggressively kind together.
 - You threaten people a lot, huh?
-pepper: Only the ones I like.
+	pepper: Only the ones I like.
 [end_timeline]
 
 label 10
@@ -65,9 +65,9 @@ pepper: I tried recreating your cinnamon rolls at home.[n]They came out...[n+]co
 label 11
 pepper: Hey. I was thinking about that story you told the other day.[n+]The one about the burnt pie?[n]I keep coming back to it. Not sure why.
 - It’s a dumb story.
-pepper: Nah. Dumb things stick with us for a reason.
+	pepper: Nah. Dumb things stick with us for a reason.
 - Glad you remembered it.
-pepper: Couldn’t forget if I tried.
+	pepper: Couldn’t forget if I tried.
 [end_timeline]
 
 label 12
@@ -77,7 +77,7 @@ pepper: You know how some people talk to their plants, or their fish?[n]I do tha
 label 13
 pepper: Do you ever get tired of people asking you if you’re okay when you’re just thinking?[n]Like, no, I’m not having a breakdown.[n]I’m just thinking about pastries with faces in a soap opera.[n+]Flour opera?
 - Maybe you just look dramatic while you zone out.
-pepper: I have been known to look like I’m plotting while thinking about stuff...
+	pepper: I have been known to look like I’m plotting while thinking about stuff...
 - What kind of drama would pastries have?
-pepper: Well you see, this croissant saw their sweet tart getting too sweet with the sourdough.[n]Now they’re reconsidering the engagement, and the family’s getting involved.
+	pepper: Well you see, this croissant saw their sweet tart getting too sweet with the sourdough.[n]Now they’re reconsidering the engagement, and the family’s getting involved.
 [end_timeline]

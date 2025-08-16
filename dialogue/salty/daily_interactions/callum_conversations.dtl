@@ -1,3 +1,4 @@
+do BreakNPCSystem.start_daily_chat()
 label 1
 callum: Hey, what are the perks of working here? Is it true that you guys get the leftovers at closing?
 	- “It’s all donated to charities.”
@@ -63,4 +64,3 @@ callum: Hey! Mind if I share a fun fact about computers?[n]The average computer 
 label 13
 callum: You know, {player_name}, you have spoken to me EVERY. DAY. for the last two weeks.[n]Think we can keep it up at tomorrow’s culture festival? I’d love to see you there!
 [end_timeline]
-
