@@ -153,7 +153,7 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Finch Spear
 		Jesse P
 		Liam Tikoyan
-		Nicole Tiongon (ThermiteFe8)
+		Nicole Tiongson (ThermiteFe8)
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Character Artist[/wave][/font_size]
 		Ally Estabillo
@@ -162,13 +162,13 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Liam Tikoyan
 		Maya Banks 
 		Nathan Caruso
-		Nicole Tiongon (ThermiteFe8)
+		Nicole Tiongson (ThermiteFe8)
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Environmental Artist[/wave][/font_size]
 		Breeana Rivera 
 		Jordan Tatum
 		Michael Ozan Bailey
-		Nicole Tiongon (ThermiteFe8)
+		Nicole Tiongson (ThermiteFe8)
 		Ryan Cobleigh
 		Veronica Mayfield
 
@@ -183,7 +183,8 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Andrew Zhan
 		Benjamin Wall
 		Connor Harrison
-		Nicole Tiongon (ThermiteFe8)
+		Jose Semidey
+		Nicole Tiongson (ThermiteFe8)
 
 
 [font_size=75][wave amp=50.0 freq=4.0 connected=0]Design[/wave][/font_size]
@@ -199,6 +200,7 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Andrew Zhan
 		Ivory Jemmott
 		Jordan McGill
+		Jose Semidey
 		Justin Adjodha 
 		Kshaunish Shaik
 		Maya Banks 
@@ -220,6 +222,7 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 		Alex Xayavong
 		Andrew Zhan
 		Connor Harrison
+		Jose Semidey
 		Kshaunish Shaik
 
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]Relationship System [/wave][/font_size]
@@ -230,6 +233,7 @@ text = "[font_size=75][wave amp=50.0 freq=4.0 connected=0]Art[/wave][/font_size]
 	[font_size=50][wave amp=35.0 freq=4.0 connected=0]UX Design [/wave][/font_size]
 		Alex Xayavong
 		Jordan McGill
+		Jose Semidey
 		Kshaunish Shaik
 
 
@@ -360,8 +364,8 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 7780.0
-offset_bottom = 7846.0
+offset_top = 7869.0
+offset_bottom = 7935.0
 grow_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
