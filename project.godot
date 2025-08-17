@@ -197,6 +197,7 @@ text/autopauses={}
 
 window/size/mode=2
 window/stretch/mode="canvas_items"
+window/size/mode.web=4
 
 [editor]
 
