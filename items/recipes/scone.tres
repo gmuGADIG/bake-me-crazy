@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="FoodGroup" load_steps=6 format=3 uid="uid://qf8uh2b21bsx"]
+[gd_resource type="Resource" script_class="FoodGroup" load_steps=7 format=3 uid="uid://qf8uh2b21bsx"]
 
 [ext_resource type="Script" path="res://items/recipes/food_group.gd" id="1_t8yms"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="2_qyyms"]
 [ext_resource type="Resource" uid="uid://miws4erwprwt" path="res://items/foods/scone_plain.tres" id="3_hxbjt"]
 [ext_resource type="Resource" uid="uid://bkljcjpnupg3i" path="res://items/foods/scone_orange.tres" id="4_uiqsc"]
 [ext_resource type="Resource" uid="uid://iyjkshfkihu7" path="res://items/foods/scone_cherry.tres" id="5_kbxek"]
+[ext_resource type="Resource" uid="uid://boewx7x0yrhby" path="res://items/foods/scone_cheese.tres" id="6_yqndl"]
 
 [resource]
 script = ExtResource("1_t8yms")
 display_name = "Scone"
 instructions = "Similar to a biscuit, this type of pastry has a crumbly exterior with a buttery flavor, and a wide selection of toppings."
-variants = Array[ExtResource("2_qyyms")]([ExtResource("3_hxbjt"), ExtResource("4_uiqsc"), ExtResource("5_kbxek")])
+variants = Array[ExtResource("2_qyyms")]([ExtResource("3_hxbjt"), ExtResource("4_uiqsc"), ExtResource("5_kbxek"), ExtResource("6_yqndl")])

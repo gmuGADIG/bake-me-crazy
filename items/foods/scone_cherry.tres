@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://iyjkshfkihu7"]
 
 [ext_resource type="PackedScene" uid="uid://cr7epfvpohmfg" path="res://cooking/food_items_recipes/Scones.tscn" id="1_m61kq"]
-[ext_resource type="Texture2D" uid="uid://mxwb4uuaihqq" path="res://temp_art/foods/scone_fucked_up_and_evil.png" id="2_mw6x4"]
+[ext_resource type="Texture2D" uid="uid://brwyqkbc8sovu" path="res://items/foods/art/Scone_Cherry.png" id="2_jdopr"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_0l68s"]
 [ext_resource type="Resource" uid="uid://brwsfydgrpxie" path="res://items/ingredients/cherry.tres" id="3_00sek"]
 
@@ -10,4 +10,4 @@ script = ExtResource("3_0l68s")
 cooking_minigame = ExtResource("1_m61kq")
 ingredient = ExtResource("3_00sek")
 display_name = "Cherry Scone"
-image = ExtResource("2_mw6x4")
+image = ExtResource("2_jdopr")

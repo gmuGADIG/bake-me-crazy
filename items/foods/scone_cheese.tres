@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://boewx7x0yrhby"]
+
+[ext_resource type="PackedScene" uid="uid://cr7epfvpohmfg" path="res://cooking/food_items_recipes/Scones.tscn" id="1_oyk4s"]
+[ext_resource type="Texture2D" uid="uid://b2gnnq2yj4qlo" path="res://items/foods/art/Scone_Cheese.png" id="2_525sh"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="3_b8j4j"]
+[ext_resource type="Resource" uid="uid://c7qq5te66x2sh" path="res://items/ingredients/cheese.tres" id="3_db36g"]
+
+[resource]
+script = ExtResource("3_b8j4j")
+cooking_minigame = ExtResource("1_oyk4s")
+ingredient = ExtResource("3_db36g")
+display_name = "Cheese Scone"
+image = ExtResource("2_525sh")
