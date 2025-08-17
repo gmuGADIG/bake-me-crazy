@@ -20,14 +20,14 @@ if {read_only.new_phone_number} == true:
 if {read_only.possible_date} == 1:
 	- Let's hang out!
 	raymond: Uhh, whoa! TODAY? Gosh, I’m flattered![n]But I’m... I’m busy. Sorry, I don’t mean to be a letdown. I have this HUGE project that I’ve been working on, and the due date’s coming up soon. See you back here tomorrow, though?
-	set {date} = "savory1"
+	set {date} = "sweet1"
 elif {read_only.possible_date} == 2:
 	- Let's hang out!
 	Oh, thank goodness! I didn’t think you’d ask again, given how things turned out last time. I was worried you’d think I was some elaborate liar...[n]But now I totally have time! What do you say? Do you like the carnival?
-	set {date} = "savory2"
+	set {date} = "sweet2"
 elif {read_only.possible_date} == 3:
 	- Let’s hang out!
 	raymond: Of course! I—uh—have a bit of a left-field suggestion that we could try—
 	- I want to go stargazing.
 	raymond: YOU DO?! Oh, yes! That’s exactly what I was thinking! You just threw my nerves out the window![n] Meet me outside the bakery tonight and I’ll lead you to my favorite spot.
-	set {date} = "savory3"
+	set {date} = "sweet3"
