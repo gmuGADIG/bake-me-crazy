@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxtppxw1ilo0l"]
+[gd_scene load_steps=14 format=3 uid="uid://bxtppxw1ilo0l"]
 
 [ext_resource type="Texture2D" uid="uid://mh2ll1ahnsjh" path="res://menus/day_cycle/skyline.svg" id="1_e5p5n"]
 [ext_resource type="Script" path="res://menus/day_cycle/day_cycle.gd" id="1_k54ua"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dv5xiw8bm1mat" path="res://menus/day_cycle/calendar.png" id="6_b800q"]
 [ext_resource type="Texture2D" uid="uid://daefpr4wl7djf" path="res://menus/day_cycle/circle_calender.svg" id="7_flg1o"]
 [ext_resource type="Shader" path="res://menus/day_cycle/calender_circle_mask.gdshader" id="7_yvhc2"]
+[ext_resource type="Script" path="res://menus/day_cycle/reset_has_talked_set.gd" id="9_ferdu"]
 
 [sub_resource type="Animation" id="Animation_qw3xj"]
 length = 0.001
@@ -463,3 +464,6 @@ texture = ExtResource("6_b800q")
 material = SubResource("ShaderMaterial_ow33l")
 position = Vector2(-546.383, -207.086)
 texture = ExtResource("7_flg1o")
+
+[node name="ResetHasTalkedSet" type="Node" parent="."]
+script = ExtResource("9_ferdu")

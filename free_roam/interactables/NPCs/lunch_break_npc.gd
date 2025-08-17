@@ -5,8 +5,8 @@ class_name LunchBreakNPC extends Interactable
 static var latest_npc: LunchBreakNPC
 
 ## Dictionary[npc_code_name: String] -> days interacted (int)
-static var _talk_count_dict: Dictionary = {
-}
+#static var _talk_count_dict: Dictionary = {
+#}
 
 ## This variable determines which dialogic variables are read (e.g. "RP.salty", "Hearts.savory").
 ## Must be "salty", "sweet", "savory", or "sour", case-sensitive.
@@ -14,14 +14,24 @@ static var _talk_count_dict: Dictionary = {
 
 @export var main_timeline: DialogicTimeline
 
-var is_repeating := false # set by break_npc_system when a daiddly chat is started
+# set by break_npc_system when a daiddly chat is started
+var is_repeating := false:
+	set(v):
+		is_repeating = v
+		
+		if is_repeating:
+			PlayerData.data.has_talked_set[character_code_name] = null
+		else:
+			PlayerData.data.has_talked_set.erase(character_code_name)
+	get:
+		return character_code_name in PlayerData.data.has_talked_set
 
 var talk_count: int:
 	set(value):
-		_talk_count_dict[character_code_name] = value
+		PlayerData.data.talk_count_dict[character_code_name] = value
 	get():
-		if _talk_count_dict.has(character_code_name):
-			return _talk_count_dict[character_code_name]
+		if PlayerData.data.talk_count_dict.has(character_code_name):
+			return PlayerData.data.talk_count_dict[character_code_name]
 		else:
 			return 0
 

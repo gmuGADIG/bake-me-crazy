@@ -14,7 +14,7 @@ func save_auxilary_data():
 	ResourceSaver.save(auxilary_data, AUXILARY_SAVE_PATH)
 
 func _ready() -> void:
-	if OS.has_feature("editor") or OS.has_feature("debug"):
+	if OS.is_debug_build():
 		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 1)
 		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 3)
 		Inventory.add_item(load("res://items/foods/cake_vanilla.tres"), 2)
