@@ -73,7 +73,9 @@ millie (Neutral): My daughter...her name is Maisie. She's incredibly important t
 	update millie (Happy)
 	The two of you continue to walk along the pier in silence. It isn’t an uncomfortable silence; rather, it's a warm awareness of each other's company. Despite Millie’s averted gaze, she continues to wear that smile she gave you not too long ago.[n]Eventually, you reach the end of the pier, where the two of you are about to part ways.
 millie (Happy): You really are just too kind, you know that?[n]I know today went a bit off course, but you were able to just...work with me.[n+] I appreciate that.[n]I hope to see you again soon...without all the emotional baggage. Get home safe!
+do DialogueManager.end_date_pass("savory")
 [end_timeline]
 label Fail State
 millie (Pensive): Ah...I can see that I’ve been a hindrance to our time today.[n]I hope you can forget this uncomfortable night we’ve had.[n+] Please, get home safe.[n]I need to keep myself busy, so I’ll be making my way home.[n+] Goodbye.
+do DialogueManager.end_date_fail("savory")
 [end_timeline]

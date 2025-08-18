@@ -54,4 +54,6 @@ pepper: Fun! Maybe I should stop by more often... You could even make me a recom
 	Pepper thinks for a second and looks like she’s about to say something, but then changes her mind. Pepper stands up and grins.
 	pepper (Happy): Heyyy... I see what you’re doing here! You can’t distract me out of the rest of the run![n]Our break’s been long enough, so let’s get going!
 You get up and stretch, preparing for the rest of your jaunt. As Pepper takes a drink of water, you silently dread how sore you’ll be tomorrow.[n]Together, you finish your run around town, reminding yourselves of when times were simpler. In the end, you split by Pepper’s shop before heading home.
+do DialogueManager.end_date_pass("spicy")
 label DateFailState
+do DialogueManager.end_date_fail("spicy")

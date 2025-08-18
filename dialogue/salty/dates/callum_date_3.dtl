@@ -82,34 +82,35 @@ callum (neutral): By the way, I’ve been feeling better about the town.[n]Still
 	if {dateRP} == -30:
 		jump Fail State
 	
-	Callum stops to look up at the sky. After some silence, he lets out a stifled laugh.
-	
-	callum (pensive): After the pier, I couldn’t stop thinking about our conversation. I was sure I scared your pants off with my monologuing.
-	
-	- “Scared my pants off...?”
-	
-	callum (confused): Oh! Well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment.
-	
-	- “It’s hard for a moment with you to be ruined.”
-	
-	callum (flustered): Oh! Haha, well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment!
-	
-	- “Is there something I’m missing here?”
-	
-	callum (confused): Oh, umm. Missing? Did you forget to bring something?
-	
-	- “What? No, I brought everything.”
-	
-	Ah, but before you can reply, Callum jolts up.
-	
-	callum (flustered): Speaking of forgetting things, I actually have tons of stuff to do at work![n]Lots of, um, circuits to...unfry.[n+]You’d have to see it to believe it![n]Gosh, sorry to bolt, umm...see you later! Call me. If you’d like! Sorry! Bye!
-	
-	Callum rushes off, his face is noticeably flustered. He left everything he brought to the picnic behind. You wonder what must have made Callum flaky.
-	[end_timeline]
-	label Fail State
-	Unfortunately, your attempts to reconcile fail in the moment. Callum becomes noticeably more frustrated with your behavior...
-	callum (disgusted): Tsk. What’s that funny smell in the air? Must be a storm coming...guess we’d better pack up.
-	He gathers his belongings in his arms and pulls the blanket out from under you. Your baked goods tip over onto the grass... You spy a twinge of guilt on his face before he leaves.
-	leave callum
-	set {dateRP} += 10
-	[end_timeline]
+Callum stops to look up at the sky. After some silence, he lets out a stifled laugh.
+
+callum (pensive): After the pier, I couldn’t stop thinking about our conversation. I was sure I scared your pants off with my monologuing.
+
+- “Scared my pants off...?”
+
+callum (confused): Oh! Well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment.
+
+- “It’s hard for a moment with you to be ruined.”
+
+callum (flustered): Oh! Haha, well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment!
+
+- “Is there something I’m missing here?”
+
+callum (confused): Oh, umm. Missing? Did you forget to bring something?
+
+- “What? No, I brought everything.”
+
+Ah, but before you can reply, Callum jolts up.
+
+callum (flustered): Speaking of forgetting things, I actually have tons of stuff to do at work![n]Lots of, um, circuits to...unfry.[n+]You’d have to see it to believe it![n]Gosh, sorry to bolt, umm...see you later! Call me. If you’d like! Sorry! Bye!
+
+Callum rushes off, his face is noticeably flustered. He left everything he brought to the picnic behind. You wonder what must have made Callum flaky.
+do DialogueManager.end_date_pass("salty")
+[end_timeline]
+label Fail State
+Unfortunately, your attempts to reconcile fail in the moment. Callum becomes noticeably more frustrated with your behavior...
+callum (disgusted): Tsk. What’s that funny smell in the air? Must be a storm coming...guess we’d better pack up.
+He gathers his belongings in his arms and pulls the blanket out from under you. Your baked goods tip over onto the grass... You spy a twinge of guilt on his face before he leaves.
+leave callum
+do DialogueManager.end_date_fail("salty")
+[end_timeline]
