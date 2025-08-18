@@ -18,12 +18,19 @@ static var latest_npc: LunchBreakNPC
 var is_repeating := false:
 	set(v):
 		is_repeating = v
+		print("[lunch_break_npc] `is_repeating` set to ", v)
 		
-		if is_repeating:
-			PlayerData.data.has_talked_set[character_code_name] = null
+		if v:
+			PlayerData.data.has_talked_set[character_code_name] = true
+			print("[lunch_break_npc] ", PlayerData.data.has_talked_set)
 		else:
+			print("[lunch_break_npc] false!")
 			PlayerData.data.has_talked_set.erase(character_code_name)
+			print("[lunch_break_npc] ", PlayerData.data.has_talked_set)
+		
+		print("[lunch_break_npc] ", PlayerData.data.has_talked_set)
 	get:
+		print("[lunch_break_npc] `is_repeating` read as ", character_code_name in PlayerData.data.has_talked_set)
 		return character_code_name in PlayerData.data.has_talked_set
 
 var talk_count: int:
