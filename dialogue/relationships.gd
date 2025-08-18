@@ -42,6 +42,7 @@ func heart_check(character_name):
 	if hearts in [3, 6, 9]:
 		rp = 0
 	
+	#print("relationships.gd: ", Dialogic.VAR.hearts.set)
 	Dialogic.VAR.hearts.set(character_name, hearts)
 	Dialogic.VAR.rp.set(character_name, rp)
 	

@@ -22,7 +22,7 @@ config/icon="res://menus/start_menu/title_logo.png"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 SceneTransition="*res://menus/scene transition/scene_transition.tscn"
 PlayerData="*res://save/player_data.gd"
-Relationships="res://dialogue/relationships.gd"
+Relationships="*res://dialogue/relationships.gd"
 SongScanner="*res://music/song_scanner.tscn"
 MainMusicPlayer="*res://music/music_player/music_player.tscn"
 DialogueManager="*res://dialogue/dialogue_manager.gd"
@@ -33,6 +33,7 @@ BreakNPCSystem="*res://dialogue/internal/code/break_npc/break_npc_system.tscn"
 DebugMenu="res://menus/debug_menu/debug_menu.tscn"
 Fullscreenizer="*res://misc/fullscreenizer.tscn"
 TextManager="*res://dialogue/internal/code/texting/text_manager.tscn"
+HeartGainIndicator="*res://menus/heart_gain_indicator/heart_gain_indicator.tscn"
 
 [dialogic]
 

@@ -1,0 +1,265 @@
+[gd_scene load_steps=15 format=3 uid="uid://bfe6fvkssnjj0"]
+
+[ext_resource type="Script" path="res://menus/heart_gain_indicator/heart_gain_indicator.gd" id="1_habdk"]
+[ext_resource type="AudioStream" uid="uid://cg7bibstpima3" path="res://sfx/audio/heart-beat-137135.wav" id="2_vapjq"]
+[ext_resource type="Texture2D" uid="uid://fv7ylc5reuto" path="res://menus/heart.svg" id="3_2doqm"]
+[ext_resource type="Texture2D" uid="uid://dcnamp0ss32qn" path="res://dialogue/salty/callum_portraits/callum_neutral.png" id="4_genpe"]
+[ext_resource type="Texture2D" uid="uid://b3mv4kj7m4a22" path="res://dialogue/savory/vn_portraits/Neutral_Millie.png" id="5_md128"]
+[ext_resource type="Texture2D" uid="uid://cs00f0ydoed6w" path="res://dialogue/sweet/vn_portraits/raymond_neutral.png" id="6_7gkme"]
+[ext_resource type="Texture2D" uid="uid://ln60h8bblvku" path="res://dialogue/spicy/vn_portraits/pepper_happy.png" id="7_0dvfd"]
+
+[sub_resource type="Animation" id="Animation_3amam"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UberParent/spinnyboy:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.174533]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UberParent/spinnyboy/RemoteTransform2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, -45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UberParent/HeartHolder/Heart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.120248, 0.120248)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UberParent/HeartHolder/Heart:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UberParent:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wquwi"]
+resource_name = "new_animation"
+length = 4.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UberParent/spinnyboy:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.174533, -0.785398]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UberParent/spinnyboy/RemoteTransform2D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(168, -45), Vector2(168, -115)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UberParent/HeartHolder/Heart:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9, 1, 1.23333, 1.3, 1.56667, 2.86667, 2.93333, 3.16667, 3.23333, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.120248, 0.120248), Vector2(0.120248, 0.120248), Vector2(0.3, 0.3), Vector2(0.23, 0.23), Vector2(0.3, 0.3), Vector2(0.23, 0.23), Vector2(0.23, 0.23), Vector2(0.3, 0.3), Vector2(0.23, 0.23), Vector2(0.3, 0.3), Vector2(0.23, 0.23)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UberParent/HeartHolder/Heart:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.766667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -160)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UberParent:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.86667, 3.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.24, 0.24, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3na1w"]
+_data = {
+"RESET": SubResource("Animation_3amam"),
+"new_animation": SubResource("Animation_wquwi")
+}
+
+[sub_resource type="Gradient" id="Gradient_kvj6x"]
+offsets = PackedFloat32Array(0.593268, 0.619335, 0.622356, 0.650771)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ia6k6"]
+gradient = SubResource("Gradient_kvj6x")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_6epy5"]
+offsets = PackedFloat32Array(0.619335, 0.622356, 0.623482)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e7wlg"]
+gradient = SubResource("Gradient_6epy5")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="HeartGainIndicator" type="CanvasLayer"]
+script = ExtResource("1_habdk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vapjq")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_3na1w")
+}
+
+[node name="UberParent" type="Node2D" parent="."]
+
+[node name="HeartHolder" type="Node2D" parent="UberParent"]
+position = Vector2(1045.48, 551.889)
+scale = Vector2(0.626683, 0.626683)
+
+[node name="Heart" type="Sprite2D" parent="UberParent/HeartHolder"]
+unique_name_in_owner = true
+scale = Vector2(0.120248, 0.120248)
+texture = ExtResource("3_2doqm")
+
+[node name="FaceIconBorder" type="Sprite2D" parent="UberParent"]
+self_modulate = Color(0.831373, 0.0823529, 0.270588, 1)
+position = Vector2(1045.48, 551.889)
+scale = Vector2(0.890915, 0.890915)
+texture = SubResource("GradientTexture2D_ia6k6")
+
+[node name="FaceIconBorder2" type="Sprite2D" parent="UberParent/FaceIconBorder"]
+self_modulate = Color(0.31, 0.31, 0.31, 1)
+show_behind_parent = true
+clip_children = 2
+texture = SubResource("GradientTexture2D_e7wlg")
+
+[node name="Callum" type="Sprite2D" parent="UberParent/FaceIconBorder/FaceIconBorder2"]
+unique_name_in_owner = true
+position = Vector2(-8.151, 48.426)
+scale = Vector2(0.0973425, 0.0973425)
+texture = ExtResource("4_genpe")
+
+[node name="Millie" type="Sprite2D" parent="UberParent/FaceIconBorder/FaceIconBorder2"]
+unique_name_in_owner = true
+position = Vector2(0.828735, 24.8546)
+scale = Vector2(0.0713473, 0.0713473)
+texture = ExtResource("5_md128")
+
+[node name="Raymond" type="Sprite2D" parent="UberParent/FaceIconBorder/FaceIconBorder2"]
+unique_name_in_owner = true
+position = Vector2(1.95098, 38.324)
+scale = Vector2(0.177139, 0.177139)
+texture = ExtResource("6_7gkme")
+
+[node name="Pepper" type="Sprite2D" parent="UberParent/FaceIconBorder/FaceIconBorder2"]
+unique_name_in_owner = true
+position = Vector2(-8.15099, 42.8138)
+scale = Vector2(0.186066, 0.186066)
+texture = ExtResource("7_0dvfd")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="UberParent/FaceIconBorder"]
+scale = Vector2(0.703415, 0.703415)
+remote_path = NodePath("../../HeartHolder")
+update_rotation = false
+
+[node name="spinnyboy" type="Node2D" parent="UberParent"]
+position = Vector2(1008, 752)
+rotation = 0.174533
+scale = Vector2(1, 1)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="UberParent/spinnyboy"]
+position = Vector2(168, -45)
+remote_path = NodePath("../../FaceIconBorder")
+update_rotation = false
+update_scale = false
