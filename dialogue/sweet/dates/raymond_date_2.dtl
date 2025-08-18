@@ -55,9 +55,11 @@ You exit the carnival together.
 raymond (Excited): Man, that was so much fun! I’ll be sure to get my classwork done early more often if it means getting to spend more time with you![n+]I really appreciate you taking time away from the bakery, I know you’re quite a busy person, so it means a lot to see you today.
 raymond (Neutral): Anyways, I gotta start making my way back home. Hopefully I can see you sometime soon!
 You head home from your date with Raymond.
+do DialogueManager.end_date_pass("sweet")
 [end_timeline]
 label Fail State
 raymond (Pensive): Well, that was certainly...something!
 raymond (Neutral): Has today been weird for you, as well? Maybe we should try again another time! Either way, I think I should start making my way back home. I have some work to do tomorrow.
 raymond (Happy): Sorry, I hope you get home safe!
+do DialogueManager.end_date_failed("sweet")
 [end_timeline]

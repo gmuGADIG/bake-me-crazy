@@ -15,17 +15,25 @@ func _ready() -> void:
 		# plays timeline for no dates if no date is found
 		MainMusicPlayer.soft_stop()
 		start_date()
-	#Dialogic.start(no_date_timeline)
+	
 	await Dialogic.timeline_ended
+	
+	assert(not DialogueManager.mid_date, "A date wasn't properly ended! It's probably missing a call to end_date_pass or end_date_fail?")
 	
 	PlayerData.data.day += 1
 	SceneTransition.change_scene_to_packed(preload("res://menus/day_cycle/day_cycle.tscn"))
 
 func start_date():
+	# initialize some variables
+	Dialogic.VAR.date_failed = false
+	Dialogic.VAR.dateRP = 0
+	
+	# start the date
 	if datescenes.has(Dialogic.VAR.date):
 		print(datescenes[Dialogic.VAR.date])
 		Dialogic.start(datescenes[Dialogic.VAR.date])
 		Dialogic.VAR.date = ""
+		DialogueManager.mid_date = true
 	else:
 		if Dialogic.VAR.date != "":
 			print("Invalid date! Dialogic.VAR.date = '%s'. This must have a matching entry in clock_out.tscn's dictionary." % Dialogic.VAR.date)

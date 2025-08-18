@@ -10,6 +10,17 @@ class_name DialogueManagerScript
 var _current_market_ui: MarketUI = null
 var _current_recipe_pop_up: NewRecipePopUp = null
 
+var mid_date := false ## Used for debug purposes. Should be on during a date and off afterwards. If not, an assertion will fail.
+
+func end_date_pass(character: String) -> void:
+	var hearts = Dialogic.VAR.hearts.get(character)
+	Dialogic.VAR.hearts.set(character, hearts + 1)
+	mid_date = false
+
+func end_date_fail(character: String) -> void:
+	# might want to do more here eventually? idk
+	mid_date = false
+
 func is_mid_interaction() -> bool:
 	if Dialogic.current_timeline != null: return true
 	if _current_market_ui != null: return true

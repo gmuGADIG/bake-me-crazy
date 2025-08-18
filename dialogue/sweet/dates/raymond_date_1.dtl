@@ -62,9 +62,11 @@ raymond (Neutral): I don't mean to make this all about me, so...what do you like
 	raymond (Shocked): Really? I get that. I'm always wondering what it would feel like to run my hand through the gas on Jupiter or the clouds on Venus...[n]Um, scratch that last bit. I'm pretty sure my hand would dissolve.
 raymond (Happy): This has been a nice distraction![n+] Actually, hearing about your experience at the bakery helped me think of a few more analogies.[n]Phew! To think I almost missed out on this awesome conversation.[n] See you later!
 That worked out well! You wave goodbye.
+do DialogueManager.end_date_pass("sweet")
 [end_timeline]
 label Fail State
 update raymond (Pensive)
 Raymond glances down at his feet.
 raymond (Pensive): Sorry. I feel like I've been a bore.[n]Maybe it'd be better to try and clear my head somewhere quieter... See you.
+do DialogueManager.end_date_failed("sweet")
 [end_timeline]

@@ -67,4 +67,6 @@ if {dateRP} >= 20:
 	After that, Pepper sits with a small smile and eats her food. You crack a joke out of nowhere and the two of you laugh. The rest of the day is spent looking at the boats, eating dockside snacks, and even a little playing in the sand.[n]Before you know it, the sun has set and both of you have to leave before you lose sleep. You exchange an enthusiastic goodbye before strolling back up the street, a smile on your face.
 if {dateRP} < 20:
 	After that, Pepper falls quiet once again. The two of you eat in silence, and go on to spend a few more hours at the pier, but it just doesn’t feel the same. She eventually mentions she has work tomorrow, and after exchanging friendly goodbyes, heads home.
+do DialogueManager.end_date_pass("spicy")
 label DateFailState
+do DialogueManager.end_date_fail("spicy")

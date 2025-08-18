@@ -34,8 +34,10 @@ raymond (Flustered): Hey, do you think you could just... sit out here with me? L
 	raymond (Flustered): ...[n+][portrait=happy]I couldn’t dream of anything better right now.
 - I’m here with you now, aren’t I?
 	raymond (Neutral): Yes. Yes you are.
+do DialogueManager.end_date_pass("sweet")
 leave raymond
 [end_timeline]
 label Fail State
 raymond (Pensive): Oh, sorry! You seem annoyed... Maybe it was a mistake to drag you out here. Let's just call it...[n][portrait=frustrated]I thought this was going to turn out differently...
+do DialogueManager.end_date_fail("sweet")
 [end_timeline]

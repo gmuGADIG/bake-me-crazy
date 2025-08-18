@@ -64,4 +64,6 @@ if {dateRP} >= 10:
 	The day went well, but you can’t help but shake the feeling that Pepper has some personal things that are bothering her.
 if {dateRP} < 10:
 	The day could have gone better, but she doesn’t seem to hate you. It sounds like she’s got some things on her mind causing her stress.
+do DialogueManager.end_date_pass("spicy")
 label DateFailState
+do DialogueManager.end_date_fail("spicy")

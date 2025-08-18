@@ -75,8 +75,10 @@ millie (Happy): With food out of the way, let’s walk and talk for a bit! It’
 		jump Fail State
 
 millie (Neutral): Outside of butchery, I make sure  to keep my family’s farm in tip-top shape whenever possible.[n]Those old folks are starting to lose their mojo, so it just means I gotta get those hands even dirtier than they were before.[n][portrait=Pensive]Honestly, it gets pretty exhausting, but it’s honest work. [portrait=Neutral]Besides, nothing is better than a meal made entirely from ingredients grown on the field.[n][portrait=Happy]Must be why I like your bakery so much! You all clearly know what you’re doing over there.[n]It’s not often that I eat outside of my own home, so you should be proud to have caught my taste.[n]As I'll always say, there’s nothing quite like home cooking! But you guys get reaaaal close.[n][portrait=Shocked]Oh, we’ve walked for so long we’ve made it back to the exit![n][portrait=Happy]I must confess, I had a great time out here today. Thank you for this. You remind me that I ought to give myself more time to relax.[n][portrait=Neutral]But, of course, work never stops.[n]Speaking of which, I should start making my way back home. I’ll work hard out there to have another free evening with you! Stay safe, dear.
+do DialogueManager.end_date_pass("savory")
 [end_timeline]
 
 label Fail State
 Millie seems terribly offended that you insinuated she led such a murderous career... She spends the rest of the evening closed off from you...perhaps you'll get another chance some other day.
+do DialogueManager.end_date_fail("savory")
 [end_timeline]
