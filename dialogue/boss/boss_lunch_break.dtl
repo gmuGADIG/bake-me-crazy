@@ -1,11 +1,11 @@
 if DialogueManager.has_any_new_recipe():
 	jump recipe_reward_main/
-	boss: Oh, look at the time! Break’s about over!
+	ivy: Oh, look at the time! Break’s about over!
 else:
-	boss: Howdy, honey. Break time’s about over!
+	ivy: Howdy, honey. Break time’s about over!
 Do you want to start the lunch rush?\
 If you haven't talked with everyone, you should do that now.
 - “I’ll get back to work!”
 	do DialogueManager.change_scene("res://cooking/lunch_rush/lunchrush.tscn")
 - “There’s still a few minutes on the clock...”
-	boss: It took some squinting, but you’re right! I read the clock all wonky! Well, go on and enjoy the rest of your break, now.
+	ivy: It took some squinting, but you’re right! I read the clock all wonky! Well, go on and enjoy the rest of your break, now.
