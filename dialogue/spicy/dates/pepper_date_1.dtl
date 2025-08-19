@@ -1,5 +1,7 @@
-You and Pepper are on an evening run around town, seeing some of your old favorite sites together. It’s refreshing to see how some parts of the town have stayed the same, while others have changed.[n]You are holding a leisurely jogging speed while the two of you make your way through the park, when you notice Pepper is struggling to slow down and meet your pace.
-join  center
+[background arg="res://dialogue/date_backgrounds/date_park_daytime.png" fade="0.0"]
+do MainMusicPlayer.transition_to_song_by_filename("park_theme.tres")
+You and Pepper are on an evening run around town, seeing some of your old favorite sites together.[n+]It’s refreshing to see how some parts of the town have stayed the same, while others have changed.[n]You are holding a leisurely jogging speed while the two of you make your way through the park, when you notice Pepper is exceeding your pace.
+join pepper center
 - Run faster!
 	set {dateRP} += 10
 	pepper (Excited): Woah, I didn’t realize you were holding out on me! You better be able to keep that pace until we reach our halfway point!
@@ -7,11 +9,9 @@ join  center
 	set {dateRP} += 5
 	pepper (Neutral): Hold on just a little longer, slowpoke! It’s almost break time.
 - Trip and fall into Pepper.
-	set {dateRP} -= 5
-	if {dateRP} <= -30:
-		jump DateFailState
-	pepper (Frustrated): Woah, watch where you’re going! If you needed to take a break early, you could’ve just let me know.
-After that, the two of you continue running a little longer. Before long, Pepper spots a bench.
+	set {dateRP} -= 10
+	pepper (Frustrated): Woah, watch where you’re going! If you needed to take a break earlier, you could’ve just let me know.
+After that, the two of you continue running a little longer. Before long, Pepper stops at a bench.
 pepper (Happy): Hey, let’s take a break here. Good job on making it so far!
 Both of you take a moment to catch your breath before sitting on the park bench. Your legs feel a little sore, but you feel like it’s been forever since you exercised like this.
 pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, but you really surprised me. We haven’t hung out since we were kids.[n]Actually, that really takes me back. Do you remember way back when we used to play together all the time?
@@ -26,15 +26,17 @@ pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, bu
 	set {dateRP} -= 5
 	if {dateRP} <= -30:
 		jump DateFailState
-	pepper (Pensive): Well, I had fun playing with you...
-	You sit in awkward silence for a few moments. You can hear the fountain trickling nearby, and dog barks distantly.
+	else:
+		pepper (Pensive): Well, I had fun playing with you...
+		You sit in awkward silence for a few moments. You can hear the fountain trickling nearby, and dog barks distantly.
 - “What are you talking about?”
 	set {dateRP} -= 10
 	if {dateRP} <= -30:
 		jump DateFailState
-	pepper (Shocked): Huh?! You don’t remember the fun we had together as kids? I guess it just wasn’t important enough to you.
-	The pair of you are quiet for a moment before Pepper speaks up again.
-	pepper (Neutral): I suppose we were kids... Maybe you just need a little jumpstart.
+	else:
+		pepper (Shocked): Huh?! You don’t remember the fun we had together as kids? I guess it just wasn’t important enough to you.
+		The pair of you are quiet for a moment before Pepper speaks up again.
+		pepper (Neutral): I suppose we were kids... Maybe you just need a little jumpstart.
 pepper: Anyway, what about now? You, working in a bakery, huh? That’s pretty interesting.
 - "Yep, that’s me! A professional baker."
 pepper: Fun! Maybe I should stop by more often... You could even make me a recommendation.
@@ -48,7 +50,8 @@ pepper: Fun! Maybe I should stop by more often... You could even make me a recom
 	set {dateRP} -= 10
 	if {dateRP} <= -30:
 		jump DateFailState
-	pepper (Frustrated): Nah, I don’t think that’s for me. Sorry, but bland foods don’t agree with my taste buds.
+	else:
+		pepper (Frustrated): ...Nah, I don’t think that’s for me. Sorry, but bland foods don’t agree with my taste buds.
 # Choice branch break
 - "What about you? How did you end up running a sports shop?"
 	Pepper thinks for a second and looks like she’s about to say something, but then changes her mind. Pepper stands up and grins.
@@ -56,4 +59,5 @@ pepper: Fun! Maybe I should stop by more often... You could even make me a recom
 You get up and stretch, preparing for the rest of your jaunt. As Pepper takes a drink of water, you silently dread how sore you’ll be tomorrow.[n]Together, you finish your run around town, reminding yourselves of when times were simpler. In the end, you split by Pepper’s shop before heading home.
 do DialogueManager.end_date_pass("spicy")
 label DateFailState
+date failed.
 do DialogueManager.end_date_fail("spicy")
