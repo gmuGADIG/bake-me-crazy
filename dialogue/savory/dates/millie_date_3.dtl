@@ -1,4 +1,6 @@
-You approach Millie. She’s looking off into the distance, seemingly lost in thought.
+[background arg="res://dialogue/date_backgrounds/date_pier.png" fade="0.0"]
+do MainMusicPlayer.transition_to_song_by_filename("pier_theme.tres")
+You spot Millie leaning on the pier's railing. She’s looking off into the distance, seemingly lost in thought.
 
 - “Hi, Millie!”
 

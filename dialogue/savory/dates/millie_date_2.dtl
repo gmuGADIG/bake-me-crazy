@@ -1,4 +1,7 @@
+[background arg="res://dialogue/date_backgrounds/date_park_daytime.png" fade="0.0"]
+do MainMusicPlayer.transition_to_song_by_filename("park_theme.tres")
 You and Millie agree to meet at the park. This time the two of you arrive at the same time.
+join millie (Happy) center
 
 millie (Happy): It’s nice to see you.
 
@@ -12,10 +15,12 @@ As the two of you start your walk, suddenly, a man walking by flippantly throws 
 millie (Disturbed): I can’t believe people are still littering. Instead of just spending a bit of energy to trash it, you decide to make it everyone’s problem.[n]Ugh. I’m going to go pick it up
 
 - “We shouldn’t cause a commotion...”
+	set {dateRP} += -10
 	millie (Pensive): Seriously? I misjudged you.
 	Millie sighs and goes to pick up the trash herself, leaving you to stand there on your own.[n]When she comes back, the two of you begin to walk again, but now the air feels awkward...
 
 - “Let me come with you.”
+	set {dateRP} += 10
 	millie (Happy): Thank you, dear.
 	You and Millie go and pick up the trash, but as you approach the two soda cans, the man watches the two of you and scoffs. Millie glares at the man before huffing.[n]The two of you soon finish throwing away the trash, but the mood seems to be dampened. Millie seems to be upset by what the man did, but her angry gaze softens when she looks up at you.
 	millie (Unimpressed): The gall of some people, I swear! And he thought that I was the bad guy?[n]Some people just have no common sense, I swear... Sigh.[n][portrait=Neutral]Although...I’m happy that you helped me pick up the trash, dear. It gives me hope for humanity.
@@ -40,20 +45,25 @@ I got angry and lashed out at her.[n][portrait=Pensive]We haven’t spoken since
 	millie (Neutral): What a relief. Thank you for being so understanding, dear. I just wish she was still in my life... Ah, sorry. I don’t mean to make it out as if I’m not grateful enough for your friendship!
 
 - “That doesn't sound like a big deal.”
+	set {dateRP} += -10
 	millie (Confused): You... you think so, huh? I guess I’ve been overreacting. Perhaps I don’t know how friendships typically work.[n][portrait=Pensive]Well, if there’s nothing that I can do about it, then I’ll just have to live with my mistakes.[n]I just wish that I could turn back time or something- Ugh.[n]I guess there’s no use thinking about these things. Just forget that I said anything, I’m acting strange today.
 
 # SEPARATE CHOICE BRANCHES
 
-- “You should reconcile with them.” +10
+- “You should reconcile with them.”
+	set {dateRP} += 10
 	millie (Pensive): You...you think we should reconcile? I don’t know...what if she hates me now?[n]I’d just be bothering her, and I mean- I said all those awful things to her and-
 	Millie stops and takes a deep breath.
 	millie (Neutral): No, I suppose that’s silly of me to think.[n]I guess you’re right, dear. I’ve always been slow to act in situations like this... It’s difficult to take that first step when you don’t know what will happen next.[n]Fine. I’m scared, but I’ll try. I’ll reach out and see what she has to say.[n]If she doesn’t want to talk, then that’s fine. I’ll just be glad that I at least took that step.[n][portrait=Happy]Thank you for giving me the courage, [Player]. I wouldn’t have come to this decision without you.
 
 - “Just let her hate you, it’s fine.”
-	Millie clicks her tongue. For a moment, she seems ready to scold you, but that moment quickly passes.
-	millie (Disturbed): I’ve already been letting her hate me all this time. It sickens me. Oh, if only I had more restraint back then...if only I could fix this. I’m terribly sorry, dear, but I suddenly feel so unwell. I should go.
-	Millie is quick to leave...it seems her failed relationships with others are a sensitive subject. Now you know for next time, if there is one...
-	[end_timeline]
+	set {dateRP} += -10
+	if {dateRP} <= -30:
+		jump Fail State
+	else:
+		Millie clicks her tongue. For a moment, she seems ready to scold you, but that moment quickly passes.
+		millie (Disturbed): I’ve already been letting her hate me all this time. It sickens me. Oh, if only I had more restraint back then...if only I could fix this...
+		The two of you walk in silence as Millie mulls her situation over.
 
 As you and Millie approach the goldenrods, there seem to be waves of people gathered around goldenrods garden. Millie looks around.
 
@@ -89,4 +99,8 @@ millie (Flustered): Oh dear... I didn’t know that there’d be so many people 
 	I never tire of these gardens. They’re always so beautiful. It’s a shame we couldn’t see the goldenrods, but this more than makes up for it.[n][portrait=Happy]And of course, what matters most is your company. Thank you for today, {player_name}.
 
 You’re content with how the evening went. On the walk home you find yourself thinking less about the flowers, and more about Millie.
+[end_timeline]
+label Fail State
+millie (Pensive):  I’m terribly sorry, dear, but this subject suddenly has me feeling unwell. I should go.
+Millie is quick to leave...it seems her failed relationships with others are a sensitive subject. 
 [end_timeline]
