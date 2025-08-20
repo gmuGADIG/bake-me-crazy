@@ -10,7 +10,7 @@ raymond (Neutral): Thanks for meeting with me tonight... I know it’s a little 
 	raymond (Happy): Well, what kind of budding astronomer would I be if I didn’t know the best place to go stargazing?
 - "Honestly, I wouldn’t have minded dinner and a walk through town."
 	set {dateRP} -= 15
-	raymond (Pensive): I brought food, if that’s what you’re worried about. A-and if things get too boring, we’ve got the entire park to explore...![n][portrait=neutral]But don't knock it till you try it, alright? I think you’ll actually enjoy it out here.
+	raymond (Pensive): I brought food, if that’s what you’re worried about. A-and if things get too boring, we’ve got the entire park to explore...![n][portrait=Neutral]But don't knock it till you try it, alright? I think you’ll actually enjoy it out here.
 leave raymond [animation="Slide Out Down" length="1.5"]
 You take a seat next to Ray. Following his lead, you lay back and stare into the night sky.[n]After a few moments of silence, Ray takes a deep sigh before gesturing towards the stars painting the sky.
 join raymond (Stargazing) center [animation="Slide In Up" length="1.5" wait="true"]
@@ -27,7 +27,7 @@ raymond (Stargazing): With sights like this, can’t you tell how I fell in love
 - "Isn’t it kind of dangerous to be out here alone for so long?"
 	set {dateRP} -= 10
 	raymond (Frustrated): Umm. I guess? But it’s not like I’m oblivious to what’s around me.[n+]Besides, I barely ever see anyone else out here.
-raymond (Neutral): Honestly, this park is probably my favorite place around town.[n]Whenever the world stopped making sense, I’d come here to clear my head. Just me and my thoughts among the stars.[n][portrait=happy]I know, it’s kinda silly. Though I’d be lying if I said it’s ever failed to help.
+raymond (Neutral): Honestly, this park is probably my favorite place around town.[n]Whenever the world stopped making sense, I’d come here to clear my head. Just me and my thoughts among the stars.[n][portrait=Happy]I know, it’s kinda silly. Though I’d be lying if I said it’s ever failed to help.
 Ray pauses and lets out another deep sigh before turning onto his back. His blush is obvious, even in the dim moonlight.
 raymond (Flustered): I haven’t brought anyone else out here. No one’s really felt like they’d enjoy it.[n+] Well, until now. I guess that makes you the first, huh?[n][portrait=pensive]No one’s been interested in the things I like. I’ve been in this town for this long, but not many people have really shown up for me.[n]Even my own parents aren’t that involved. Sure, they’ve been nothing but supportive, but it still hurts to see how disinterested they are in my interests.[n][portrait=happy]But with you? Something about inviting you just felt right, like I could be vulnerable enough to risk you turning me down.[n]You don’t make me feel like my interests are worthless or that I’m wasting your time.[n]I feel like when we’re together, everything just makes sense. Of all the times I’ve been out here, I’ve never felt quite as peaceful as tonight.
 Ray cranes into a deep stretch, letting out a deep yawn. In the dark, the glitter of the stars is mesmerising and hypnotic. It’s obvious that  the two of you are beginning to fall asleep.
@@ -39,7 +39,7 @@ raymond (Flustered): Hey, do you think you could just... sit out here with me? L
 	if {dateRP} <= -30:
 		jump Fail State
 	else:
-		Umm, maybe.
+		raymond: Umm, maybe. I like to think that being bored helps you notice the odd little details of the sky, though...
 - I’m here with you now, aren’t I?
 	raymond (Neutral): Yes. Yes you are.
 As the two of you stare up into space, you notice a shooting star. You shake Ray by his shoulder and point at the silver thread lingering across the sky. He bolts up excitedly.
@@ -48,8 +48,10 @@ Ray closes his eyes and mutters to himself. You do the same, and the wish you mu
 - To be with someone special.
 But just in case that doesn't happen, you also wish for...
 [text_input text="Make another wish!"]
+After the shooting star is gone, Raymond talks a bit more about the night sky. You try your best to listen, but your exhaustion starts to get the better of you.
+raymond: Psst! Hey, you seem pretty sleepy. Come on, let's get you back home before you zombify.
+Ray helps you back to your apartment. The night turned out to be a great success! You feel very close with Raymond now.
 do DialogueManager.end_date_pass("sweet")
-leave raymond
 [end_timeline]
 label Fail State
 Ray stands up.
