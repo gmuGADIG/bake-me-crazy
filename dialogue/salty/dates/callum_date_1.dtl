@@ -1,7 +1,7 @@
 do MainMusicPlayer.transition_to_song_by_filename("carnival_theme.tres")
 [background arg="res://dialogue/date_backgrounds/date_carnival.png" fade="2.0"]
 You and Callum walk into the Carnival. Callum is visibly excited as he looks around. His eyes eventually land on you, and he smiles.
-join callum (excited) center [animation="Fade In" length="1.5" wait="true"]
+join callum (excited) center [animation="Fade In" length="1.0" wait="true"]
 callum (excited): I’ve never visited the carnival here. I used to go to one when I was younger back in Cali, it was great. I’m hoping this one will be just as good, but I have my doubts.
 - "Is there anything you want to do first?"
 callum (neutral): Honestly, I’m down for anything. How about this, I’ll let you choose what we do first.
@@ -19,13 +19,14 @@ callum: Are you game for the ferris wheel? I hear the view isn't half bad.
 - "I'm not sure. Heights aren't my thing."
 	Well, I’ll be there if it makes you feel better. I can cover you if we fall.
 	- "Great...that way we can die together."
+
 callum (excited): Come on already, before they start the next cycle!
 You and Callum board the ferris wheel.
 callum (neutral): Wow, look at that sky. I never got to see so many in Cali.
 callum (disgusted): Man, now I sound like that Raymond guy...
 - "How was Cali?"
-	callum (neutral): California? It was great. Everything about it was great. The crowded streets, the smooth beaches... And the food was to die for.\
-- "Why did you leave?"
+	callum (neutral): California? It was great. Everything about it was great. The crowded streets, the smooth beaches... And the food was to die for.
+	- "Why did you leave?"
 	callum (pensive): Oh, um... I’m not sure I want to go there. Just, life happened. I needed a change of scenery and stuff.
 	- Nod your head.
 	- "I doubt that."
@@ -36,7 +37,7 @@ callum (disgusted): Man, now I sound like that Raymond guy...
 - "What do you think of the town?"
 	callum (confused): The town? Really? That’s what you want to talk about?
 	callum (confused): I mean, it’s fine. A little too rocky for my liking, though.
-	This place isn’t anything like Cali. I’m not sure if I’ll ever feel comfortable here, but I’m making the best of things.\
+	This place isn’t anything like Cali. I’m not sure if I’ll ever feel comfortable here, but I’m making the best of things.
 - "How does the Leaventide carnival compare to the ones in Cali?" | [=""]
 	Oh, now that’s an easy one. This carnival, obviously. We’re having such a great time. I love to do this again sometime.
 	- "Wow. Really?" | [=""]
@@ -44,12 +45,12 @@ callum (disgusted): Man, now I sound like that Raymond guy...
 		callum (neutral): Kidding! Of course I'd come again. I had so much fun. [n+] Plus, I want to go back to the wheel of fortune once it's fixed.
 		set {dateRP} += 10
 	- "I couldn't agree more."
-		callum (confused): That's a lot of confidence. As far as I'm aware, you’ve never been to Cali.\
-- "Sure, but you're here."
+		callum (confused): That's a lot of confidence. As far as I'm aware, you’ve never been to Cali.
+		- "Sure, but you're here."
 		You try to get your words out, but your nerves stop you.
-	- Say nothing.
-- "You don't have to lie about it."
-	I’m not, though. I would love to do this again.
+	- "You don't have to lie about it."
+		I’m not, though. I would love to do this again.
+
 The ferris wheel comes to a stop. The two of you disembark.
 leave callum
 join callum center

@@ -351,6 +351,8 @@ func select_finisher_type() -> Finisher:
 
 ## This process function is only here for the timer, at least at the moment. It's not in physics process because that's bad practice, and the timer isn't directly in process because that's also bad practice.
 func _process(delta) -> void:
+	if OS.is_debug_build() and Input.is_action_just_pressed("debug_skip"):
+		SceneTransition.change_scene_to_file("res://menus/clock_out/clock_out.tscn")
 	if timer_active: processTimer(delta)
 
 func processTimer(delta) -> void:

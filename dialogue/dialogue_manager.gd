@@ -16,10 +16,14 @@ func end_date_pass(character: String) -> void:
 	var hearts = Dialogic.VAR.hearts.get(character)
 	Dialogic.VAR.hearts.set(character, hearts + 1)
 	mid_date = false
+	
+	Dialogic.end_timeline()
 
 func end_date_fail(character: String) -> void:
 	# might want to do more here eventually? idk
 	mid_date = false
+	
+	Dialogic.end_timeline()
 
 func is_mid_interaction() -> bool:
 	if Dialogic.current_timeline != null: return true

@@ -11,7 +11,7 @@ callum (neutral): Oh my gosh, I forgot about this. I was never able to play this
 	Callum looks annoyed at you...
 	set {dateRP} -= 15
 - "I get that. Balloons are scary."
-	callum (disgusted): I am not scared of balloons! I just don'’t like the loud noises they make when they pop.
+	callum (disgusted): I am not scared of balloons! I just don't like the loud noises they make when they pop.
 	set {dateRP} += 10
 Callum walks up to attempt the game. [n+] He hits... [n+] nothing.
 callum (confused): Are all of these games rigged? Oh, whatever, I should be relieved none of them popped... [n+] Go ahead, your turn. I bet you can do better.
