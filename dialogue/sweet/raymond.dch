@@ -86,6 +86,15 @@
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
+},
+"Stargazing": {
+"export_overrides": {
+"image": "\"res://dialogue/sweet/vn_portraits/raymond_stargazing.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
 }
 },
 "scale": 1.0
