@@ -28,7 +28,7 @@ You and Pepper walk around the carnival looking for things to do. As you search 
 - What about that roller coaster?
 	set {dateRP} += 5
 	pepper (Happy): A roller coaster, huh? Classic, you can’t go wrong with that. Let’s get in line!
-	You lead Pepper to the carnival’s coaster, a large track that leads up before dropping and twisting in sharp turns. As you approach it, screams can be heard from the cart rocketing past.[n] In a few minutes, you are sitting next to Pepper in the cart as it climbs its track. When you reach the top, you and Pepper glance at each other, spotting a wide grin before the cart finally lurches forward. The two of you scream shouts of joy as the coaster rockets around, but before you know it, the cart has pulled to a stop.
+	You lead Pepper to the carnival’s coaster, a large track that leads up before dropping and twisting in sharp turns. As you approach it, screams can be heard from the cart rocketing past.[n] In a few minutes, you are sitting next to Pepper in the cart as it climbs its track.[n] When you reach the top, you and Pepper glance at each other, spotting a wide grin before the cart finally lurches forward.[n] The two of you scream shouts of joy as the coaster rockets around, but before you know it, the cart has pulled to a stop.
 - I think bumper cars might be fun.
 	set {dateRP} += 10
 	pepper (Excited): Oh, sick! Bumper cars sound awesome! I hope you’re ready, cause I’m gonna get you good! Let’s go!
@@ -36,7 +36,7 @@ You and Pepper walk around the carnival looking for things to do. As you search 
 - Why don’t we go on the ferris wheel?
 	set {dateRP} -= 5
 	pepper (Neutral): The Ferris wheel, huh. I’m sure the view’s great, but all you do is sit around and wait to go a full circle, right? Doesn't seem very fun.
-	Pepper goes with you onto the ferris wheel, and you two take seats across from each other. The cabins start moving again as the ferris wheel spins. You look out the window and marvel at the sight for a minute before you realize there is an awkward quiet between you and Pepper.[n] When your cabin reaches the peak of its arc, you try to start up a conversation by commenting on the great view. Pepper agrees with you, but the rest of the ride is quiet until you reach the bottom.
+	Pepper goes with you onto the ferris wheel, and you two take seats across from each other. The cabins start moving again as the ferris wheel spins.[n] You look out the window and marvel at the sight for a minute before you realize there is an awkward quiet between you and Pepper.[n] When your cabin reaches the peak of its arc, you try to start up a conversation by commenting on the great view. Pepper agrees with you, but the rest of the ride is quiet until you reach the bottom.
 After getting out, you both sit down for a moment on a nearby bench and strike up a conversation.
 pepper (Pensive): Wow, that was... something. I haven’t done anything like this in a while, probably not since before I took over the shop. Geez, I gotta get out more.
 Pepper looks at the ground wistfully. Her eyes are forlorn, filled with regret, but trying not to show it. Whether she meant to or not, she has created an uncomfortable silence, and you feel the urge to break it.

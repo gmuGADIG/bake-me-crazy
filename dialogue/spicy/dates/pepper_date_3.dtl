@@ -20,7 +20,9 @@ The two of you find a stall to buy from, and as you stand in line you decide to 
 	pepper (Excited): I’d say Rocky is always a top pick for me. Gets the blood pumping, you know? Cop dramas are pretty fun, too.
 - "What do you usually eat besides baked goods?"
 	pepper (Happy): Uhhh, I’ll usually get a protein shake in the morning and either an egg salad sandwich or a good burger for lunch. For dinner... Oh, I really like that Thai place on the next street over.
-That sounds a lot like something Pepper would answer. You continue trading questions for a bit, then you realize the wait in line will be longer than you first thought. Before long, the two of you are playing some games while you wait.[n]After some rock, paper, scissors and a few rounds of thought experiments, you are both mauling each other’s shadow animals with your own when suddenly you hear the next person called, and realize it is you.[n]You walk up to the counter and consider your options. Would Pepper like one of these more than the others?
+That sounds a lot like something Pepper would answer. You continue trading questions for a bit, then you realize the wait in line will be longer than you first thought.[n]Before long, the two of you are playing some games while you wait.[n]After some rock, paper, scissors and a few rounds of thought experiments, you are both mauling each other’s shadow animals with your own when suddenly you hear the next person called, and realize it is you.
+
+You walk up to the counter and consider your options. Would Pepper like one of these more than the others?
 - We should get some hot dogs.
 	set {dateRP} += 0
 - A pair of giant pretzels sound good.
@@ -61,9 +63,9 @@ pepper (Pensive): Wow, I’m sorry. Is it that obvious? I didn’t mean to make 
 - "Have you talked with your parents about it, even once?"
 	pepper (Neutral): No, I haven’t. Wasn’t really planning on it either. I really would like to have enough time to play sports, to make games... to hang out with you.[n]I’m sure they’d understand if I did talk about it with them, but... I can’t just force them out of retirement, you know?[n]No, I’m too scared to talk to them about it. I feel like they’d be disappointed.
 if {dateRP} >= 20:
-	After that, Pepper sits with a small smile and eats her food. You crack a joke out of nowhere and the two of you laugh. The rest of the day is spent looking at the boats, eating dockside snacks, and even a little playing in the sand.[n]Before you know it, the sun has set and both of you have to leave before you lose sleep. You exchange an enthusiastic goodbye before strolling back up the street, a smile on your face.
+	After that, Pepper sits with a small smile and eats her food. You crack a joke out of nowhere and the two of you laugh.[n] The rest of the day is spent looking at the boats, eating dockside snacks, and even a little playing in the sand.[n]Before you know it, the sun has set and both of you have to leave before you lose sleep. You exchange an enthusiastic goodbye before strolling back up the street, a smile on your face.
 if {dateRP} < 20:
-	After that, Pepper falls quiet once again. The two of you eat in silence, and go on to spend a few more hours at the pier, but it just doesn’t feel the same. She eventually mentions she has work tomorrow, and after exchanging friendly goodbyes, heads home.
+	After that, Pepper falls quiet once again. The two of you eat in silence, and go on to spend a few more hours at the pier, but it just doesn’t feel the same.[n]She eventually mentions she has work tomorrow, and after exchanging friendly goodbyes, heads home.
 leave pepper
 do DialogueManager.end_date_pass("spicy")
 label DateFailState

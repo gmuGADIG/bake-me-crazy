@@ -1,7 +1,7 @@
 You spot Pepper out in the field. She’s running perpendicular to you. You hold your hand out to wave...
 - "Hey, Pepper!"
 Pepper holds her hand out for a high-five, and then continues running. You’re baffled that she’d run right past you.[n]You decide to chase after Pepper.[n]You run, and run, and run...until you catch up and tag Pepper on the shoulder. She stops and turns around.
-pepper (Happy): There you are, [PLAYER]! I was wondering when you’d catch up. Seemed like you were taking a cheat day for a second there.
+pepper (Happy): There you are, {player_name}! I was wondering when you’d catch up. Seemed like you were taking a cheat day for a second there.
 - "Just a cheat hour or two might be nice, right?"
 	pepper (Happy): Hmm, is that so? Let me cut you a deal, then. Let’s go all-in now, and then we can relax all evening; for the fireworks and all.
 	That seems to be as good of a deal as you’ll get from Pepper.
