@@ -33,7 +33,9 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_14d1b"]
 script = ExtResource("1_pjcat")
 scene = ExtResource("5_atvhx")
-overrides = {}
+overrides = {
+"box_animation_in": "1"
+}
 
 [sub_resource type="Resource" id="Resource_gjdwm"]
 script = ExtResource("1_pjcat")
@@ -72,4 +74,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_pjcat")]([])
-metadata/_latest_layer = "15"
+metadata/_latest_layer = "13"

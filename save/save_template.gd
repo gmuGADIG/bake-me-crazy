@@ -57,3 +57,6 @@ func get_day_phase_string() -> StringName:
 @export_storage var music_file := ""
 @export_storage var talk_count_dict := {}
 @export_storage var has_talked_set := {}
+
+# love interest codename -> array[floats between 0.0 and 1.0]
+@export_storage var hearts_ui := {}

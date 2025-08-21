@@ -3,6 +3,7 @@ class_name HeartUI extends Control
 var fill := 0.0:
 	set(value):
 		fill = value
+		print("[heart] fill set to ", value)
 		_update_fill()
 
 @onready var heart_empty: TextureRect = %HeartEmpty
@@ -21,7 +22,9 @@ func set_fill_instant(value: float) -> void:
 	fill = value
 
 func set_fill_gradual(value: float) -> void:
-	var time = value - self.fill
+	if value <= fill: return
+	
+	var time = value - fill
 	var t = create_tween()
 	t.tween_property(self, "fill", value, time)
 	await t.finished
