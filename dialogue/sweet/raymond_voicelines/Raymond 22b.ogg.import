@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgviy2t5jeb7w"
+path="res://.godot/imported/Raymond 22b.ogg-79fcff0cda3720ef21145be3e9e93dcc.oggvorbisstr"
+
+[deps]
+
+source_file="res://dialogue/sweet/raymond_voicelines/Raymond 22b.ogg"
+dest_files=["res://.godot/imported/Raymond 22b.ogg-79fcff0cda3720ef21145be3e9e93dcc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

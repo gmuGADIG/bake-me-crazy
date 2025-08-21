@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bvxclur5dbvw2"
+path="res://.godot/imported/Millie 6-4.ogg-6ae4c0ec268291be46d8d133a77c150c.oggvorbisstr"
+
+[deps]
+
+source_file="res://dialogue/savory/millie_voicelines/Millie 6-4.ogg"
+dest_files=["res://.godot/imported/Millie 6-4.ogg-6ae4c0ec268291be46d8d133a77c150c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

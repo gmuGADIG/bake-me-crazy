@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vkn2qrr1sbix"
+path="res://.godot/imported/Raymond 19-1.ogg-054341d7f104640a23a656f2d62725af.oggvorbisstr"
+
+[deps]
+
+source_file="res://dialogue/sweet/raymond_voicelines/Raymond 19-1.ogg"
+dest_files=["res://.godot/imported/Raymond 19-1.ogg-054341d7f104640a23a656f2d62725af.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
