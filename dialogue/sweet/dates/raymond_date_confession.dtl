@@ -1,72 +1,121 @@
+[background arg="res://dialogue/date_backgrounds/festival.png" fade="0.0"]
 do MainMusicPlayer.transition_to_song_by_filename("sweet_theme.tres")
 You can't see Ray from a distance. You start looking for them between the stalls and stands at the festival to no avail. You're beginning feel discouraged...
 - "Maybe I’ll just go home..."
 - "I guess I can hang out with Leslie."
 You start to walk back the way you came...
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 1.ogg" volume="6.0"]
 raymond (Happy): Hey!
 join raymond (Happy) center
-raymond: I hoped you’d be here![n+]So, great weather, isn’t it?[n+]Courtesy of our sun, hah...
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 2.ogg" volume="6.0"]
+raymond: I hoped you’d be here! So, great weather, isn’t it? Courtesy of our sun, hah...
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 3.ogg" volume="6.0"]
 raymond: Sorry! It’s just nice that we’re able to share these relaxing festivities with one another.
 - "You surprised me there..."
 - You seem a little shaky...
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 4.ogg" volume="0.0"]
 raymond (Flustered): Ah! Well, I’m just happy to see you! D-Don’t think too much of it.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 5.ogg" volume="0.0"]
 raymond (Happy): BUT, uh, I also wanted to tell you that I had a lot of fun stargazing with you. Even though you were focused on the sky, I felt seen as well.
 - I'm glad that I could be there with you.
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 6a.ogg" volume="6.0"]
 	raymond (Happy): I wouldn’t have it any other way, you know. You’re the only one I trust enough to share those moments with.
 - It was a very special moment.
 	- Maybe we can do it again another time?
+		[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 6b.ogg" volume="6.0"]
 		raymond (Excited): Special? Really? Then I’d gladly drive out there with you again!
 		# original dialogue was cut here.
+		[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 7-2.ogg" volume="6.0"]
 		raymond (Excited): I’ll bring a star chart next time! There are so many interesting patterns out there that we can discuss.
-		raymond (Happy): It pertains to my research, too, if you’d care to hear about that some more.
+		[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 7-3.ogg" volume="6.0"]
+		raymond (Happy): It pertains to my research, too, if you’d care to hear about it some more.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 8-1.ogg" volume="6.0"]
 raymond (Neutral): On the subject of our stargazing night, I’ve been thinking about it a lot lately.
-raymond (Flustered): I don’t think I’ve ever been thatcomfortable talking with someone. You really just make everything so... easy for me.
-raymond (Flustered): When I’m with you, I don’t have to worry about what I’m trying to say or how I should say it, I can just...talk. [portrait=happy]I mean, you already sit through my silly rants. That’s more than enough for me.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 8-2.ogg" volume="6.0"]
+raymond (Flustered): I don’t think I’ve ever been that comfortable talking with someone. You really just make everything so... easy for me.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 8-3.ogg" volume="6.0"]
+raymond (Flustered): When I’m with you, I don’t have to worry about what I’m trying to say or how I should say it, I can just...talk. [portrait=Happy]I mean, you already sit through my silly rants. That’s more than enough for me.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 8-4.ogg" volume="6.0"]
 raymond (Neutral): You’ve just been so caring to me, and I wanna thank you for that.
 - Your rants aren’t silly, they’re interesting.
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 9a.ogg" volume="6.0"]
 	raymond (Happy): Gosh, you’re just too nice to me, you know that?
 - Well, you’re probably my favorite person to talk to.
-	raymond (Flustered): Really? Wow, I don’t really know what to say to that...\
-raymond (Neutral): Regardless, I’m glad that we’ve been able to spend so much time together. [portrait=flustered]You, um, mean a lot to me.
-raymond (Neutral): It’s rare that I find someone willing to sit and listen to me talk about...anything, really.
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 9b.ogg" volume="6.0"]
+	raymond (Flustered): Really? Wow, I don’t really know what to say to that...
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 10-1.ogg" volume="6.0"]
+raymond (Neutral): Regardless, I’m glad we’ve been able to spend so much time together. [portrait=Flustered]You, um, mean a lot to me.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 10-2.ogg" volume="6.0"]
+raymond (Pensive): It’s rare that I find someone willing to sit and listen to me talk about...anything, really.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 10-3.ogg" volume="6.0"]
 raymond (Happy): Even when I’m talking about something you’ve never heard of before, you just seem so...invested.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 10-4.ogg" volume="6.0"]
 raymond (Flustered): I don’t think I’ve ever met anyone like that before... someone who’s interested in me.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 10-5.ogg" volume="6.0"]
 raymond (Happy): You’re a very special person in my life, and I don’t think I want to lose what we have.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 10-6.ogg" volume="6.0"]
 raymond (Pensive): So...I...ugh, I don’t know how I should say this...
 Ray seems to be at a loss for words...
 - Ray... I should tell you something.
-raymond (Shocked): Oh, please, go ahead![portrait=neutral] I’ve already talked so much, it’s only fair that you get a chance to speak.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 12.ogg" volume="6.0"]
+raymond (Shocked): Oh, please, go ahead![portrait=Neutral] I’ve already talked so much, it’s only fair that you get a chance to speak.
 - "Do you remember that shooting star we saw while we were stargazing?"
 	- "I wanna tell you what I wished for."
+		[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 13-1.ogg" volume="6.0"]
 		raymond (Neutral): What did you wish for?
 		- "I wished... that you’d be my partner."
+		[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 13-2.ogg" volume="6.0"]
 		raymond (Flustered): Really?! Oh, wow, I... didn’t think that you would really ask me...
+		[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 13-3.ogg" volume="6.0"]
 		raymond (Happy): I’d love to!
 - "I don’t think we should beat around the bush anymore."
-	raymond: Beat around the bush about what, exactly?
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 14-1.ogg" volume="6.0"]
+	raymond (Flustered): Beat around the bush about what, exactly?
 	- "Our relationship."
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 14-2.ogg" volume="6.0"]
 	raymond (Flustered): Like...to be your partner?
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 14-3.ogg" volume="6.0"]
 	raymond (Excited): Oh gosh, that would be amazing. I...I really couldn’t ask for more.
 - "...You’re a black hole."
-	raymond: Umm. I’m sorry?
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 15-1.ogg" volume="6.0"]
+	raymond (Shocked): Umm. I’m sorry?
 	- "Because I'm strongly drawn to you."
-	raymond (Happy): Oh! Well, me too! I guess that’d make us a binary black hole, then.[portrait=flustered] If that’s okay with you.
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 15-2.ogg" volume="6.0"]
+	raymond (Excited): Oh! Well, me too! I guess that’d make us a binary black hole, then.[portrait=flustered] If that’s okay with you.
 	- "I like you a lot, Ray. Really."
-raymond (Happy): I’m so glad we feel the same.
-raymond (Pensive): Gosh, I should have known I wouldn’t be able to muster the words myself...thank you for that.[portrait=happy] Honestly, I don’t know how you can do it.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 16-1.ogg" volume="6.0"]
+raymond (Flustered): I’m so glad we feel the same.
+[voice path="res://dialogue/sweet/raymond_voicelines/RAymond 16-2.ogg" volume="6.0"]
+raymond (Frustrated): Gosh, I should have known I wouldn’t be able to muster the words myself...thank you for that.[portrait=happy] Honestly, I don’t know how you can do it.
 - "It took a lot of practice in the mirror."
-raymond (Neutral): You do that too?
-raymond (Shocked): I MEAN, I DIDN’T SAY ANYTHING!
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 17-1.ogg" volume="6.0"]
+raymond (Excited): You do that too?[portrait=Shocked] UH, I MEAN, I DIDN’T SAY ANYTHING!
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 17-2.ogg" volume="6.0"]
 raymond (Neutral): You know, I didn’t originally plan on going to the festival when it was announced. I honestly only went in hopes that I could find you here...
 - "That's very sweet of you."
-	raymond (Neutral): I guess you could say that.
+	[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 18.ogg" volume="6.0"]
+	raymond (Excited): I guess you could say that.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 19-1.ogg" volume="6.0"]
 raymond (Happy): Hey, why don’t we try some of these food stalls? I saw so many sweets on my way over. I’d love to have some.
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 19-2.ogg" volume="6.0"]
 raymond (Neutral): Ah, but you’ve been in this town for so long I doubt there’s anything you haven’t tried.
 - I haven't tried many of them.
-raymond (Shocked): Really?! You’re telling me that you’re a baker and you haven’t tried all the food from the festival?		
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 20.ogg" volume="6.0"]
+raymond (Shocked): Really?! You’re telling me that you’re a baker and you haven’t tried all the food from the festival?
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 21.ogg" volume="6.0"]
 raymond (Excited): Well, you’re gonna LOVE it! There’s SO many for you to try. I’ll be your guide. C’mon, follow me!
+leave raymond [animation="Slide Out Right" length="1.0"]
 The player and Raymond start walking through the festival. Raymond points at various goods from afar.
-raymond (Excited): We can try this, those are an absolute classic, these are my favorite, ohmygosh, are those new?!
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 22a.ogg" volume="6.0"]
+raymond (Excited): We can try this...!
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 22b.ogg" volume="6.0"]
+raymond: ...those are an absolute classic!
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 22c.ogg" volume="6.0"]
+raymond: ...these are my favorite!
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 22d.ogg" volume="6.0"]
+raymond: Ohmygosh, are those new!?
+[voice path="res://dialogue/sweet/raymond_voicelines/Raymond 22f.ogg" volume="6.0"]
+raymond: Ooh, ooh, try this one!
 You smile at Raymond's starry-eyed look. It looks like he'll be this upbeat the rest of the evening. That's exactly what you want\: for him to let himself shine.
 
 do DialogueManager.end_game()

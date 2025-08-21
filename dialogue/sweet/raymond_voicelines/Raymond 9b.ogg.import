@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cq15dlko1oe22"
+path="res://.godot/imported/Raymond 9b.ogg-a5f2dbe07bd86a0acb927d7941ad68dc.oggvorbisstr"
+
+[deps]
+
+source_file="res://dialogue/sweet/raymond_voicelines/Raymond 9b.ogg"
+dest_files=["res://.godot/imported/Raymond 9b.ogg-a5f2dbe07bd86a0acb927d7941ad68dc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

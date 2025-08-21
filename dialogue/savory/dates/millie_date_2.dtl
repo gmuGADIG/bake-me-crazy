@@ -7,42 +7,49 @@ millie (Happy): It’s nice to see you.
 
 - “It’s nice to see you too, Millie.”
 
-millie (Happy): I’ve heard the seaside goldenrod is in bloom. They look so beautiful this time of year.[n+] Let’s go take a look.
+millie (Happy): I’ve heard the seaside goldenrod is in bloom. They look so beautiful this time of year.[n+][portrait=Neutral] Let’s go take a look.
 
 
 As the two of you start your walk, suddenly, a man walking by flippantly throws two empty soda cans on the ground and walks away. Millie furrows her brow.
 
-millie (Disturbed): I can’t believe people are still littering. Instead of just spending a bit of energy to trash it, you decide to make it everyone’s problem.[n]Ugh. I’m going to go pick it up
+millie (Disturbed): I can’t believe people are still littering. Instead of just spending a bit of energy to trash it, they decide to make it everyone’s problem.[n][portrait=Pensive]Ugh... It shouldn't be my problem, but I’m going to go pick it up.
 
 - “We shouldn’t cause a commotion...”
 	set {dateRP} += -10
-	millie (Pensive): Seriously? I misjudged you.
-	Millie sighs and goes to pick up the trash herself, leaving you to stand there on your own.[n]When she comes back, the two of you begin to walk again, but now the air feels awkward...
+	millie (Unimpressed): Seriously? I misjudged you.
+	leave millie
+	Millie sighs and goes to pick up the trash herself, leaving you to stand there on your own.
+	join millie (Unimpressed) center
+	When she comes back, the two of you begin to walk again, but now the air feels awkward...
 
 - “Let me come with you.”
 	set {dateRP} += 10
 	millie (Happy): Thank you, dear.
+	leave millie
 	You and Millie go and pick up the trash, but as you approach the two soda cans, the man watches the two of you and scoffs. Millie glares at the man before huffing.[n]The two of you soon finish throwing away the trash, but the mood seems to be dampened. Millie seems to be upset by what the man did, but her angry gaze softens when she looks up at you.
+	join millie (Unimpressed) center
 	millie (Unimpressed): The gall of some people, I swear! And he thought that I was the bad guy?[n]Some people just have no common sense, I swear... Sigh.[n][portrait=Neutral]Although...I’m happy that you helped me pick up the trash, dear. It gives me hope for humanity.
-	Millie smiles at you gently, and you feel your face warm up. She chuckles to herself before humming and walking on. The walk is pleasant; you feel the chirp of the birds along with the warm breeze.
+	Millie smiles at you gently, and you feel your face warm up. She chuckles to herself before humming and walking onwards. The walk is pleasant; you feel the chirp of the birds along with the warm breeze.
 
 
 - “Oh, I can pick that up for you.”
-	millie (Neutral): That’s nice of you, dear. Thank you.
+	millie (Happy): That’s nice of you, dear. Thank you.
+	update millie leftmost [move_time="2.0"]
 	Millie watches as you throw the cans away. She patiently waits for you to come back to continue walking.
+	update millie center [move_time="2.0"]
 	millie (Happy): Shall we continue our walk, then?
 The two of you start down the path again, heading to the garden of goldenrods Millie told you about. The breeze feels nice against your skin, and the mood is pleasant.
 
 
-millie (Neutral): It’s so nice to have a friend you can be so open with. I haven’t had friends like this in a long time.
+millie (Happy): It’s so nice to have a friend you can be so open with. I haven’t had friends like this in a long time.
 You look at Millie, and she seems to be relaxed and content. You feel a twinge of guilt for believing Leslie’s bizarre rumor about her being a serial killer.[n]As you and Millie continue walking, she seems to falter before coming to a standstill.
-millie (Neutral): I used to come here all the time. It was always me and—
+millie (Neutral): I used to come here all the time. It was always me and—[portrait=Pensive]
 Millie takes a deep breath before continuing.
-millie (Neutral): I had another friend before I met you. Well, she’s more of an ex-friend now, I suppose.[n]We knew each other for more than two years, and I thought we were getting along fine.[n+][portrait=Pensive] But I was wrong.[n]One day, we were talking about something—I can’t remember what—and she suddenly became bitter.[n]She told me that she still didn’t know anything about me, even after so long. To her, I was no different from a stranger.[n][portrait=Frustrated]She said that it felt like I was always trying to push her away, and that she was getting tired of it.
-I got angry and lashed out at her.[n][portrait=Pensive]We haven’t spoken since, but I sometimes wonder if she was right. Maybe I have been holding back from the ones who care for me.[n][portrait=Shocked]Ah! I’m sorry. I said too much! Please forgive me, dear. I know this isn’t something that you wanted to hear.
+millie (Neutral): I had another friend before I met you. Well, she’s more of an ex-friend now, I suppose.[n]We knew each other for more than two years, and I thought we were getting along fine.[n+][portrait=Pensive] But I was wrong.[n]One day, we were talking about something—I can’t remember what—and she suddenly became bitter.[n]She told me that she still didn’t know anything about me, even after so long. To her, I was no different from a stranger.[n][portrait=Disturbed]She said that it felt like I was always trying to push her away, and that she was getting tired of it.
+millie: I got angry and lashed out at her.[n][portrait=Pensive]We haven’t spoken since, but I sometimes wonder if she was right. Maybe I have been holding back from the ones who care for me.[n][portrait=Shocked]Ah! I’m sorry. I said too much! Please forgive me, dear. I know this isn’t something that you wanted to hear.
 
 - “It’s okay. I’m glad you told me.”
-	millie (Neutral): What a relief. Thank you for being so understanding, dear. I just wish she was still in my life... Ah, sorry. I don’t mean to make it out as if I’m not grateful enough for your friendship!
+	millie (Happy): What a relief. Thank you for being so understanding, dear. I just wish she was still in my life... Ah, sorry. I don’t mean to make it out as if I’m not grateful enough for your friendship!
 
 - “That doesn't sound like a big deal.”
 	set {dateRP} += -10
@@ -54,16 +61,15 @@ I got angry and lashed out at her.[n][portrait=Pensive]We haven’t spoken since
 	set {dateRP} += 10
 	millie (Pensive): You...you think we should reconcile? I don’t know...what if she hates me now?[n]I’d just be bothering her, and I mean- I said all those awful things to her and-
 	Millie stops and takes a deep breath.
-	millie (Neutral): No, I suppose that’s silly of me to think.[n]I guess you’re right, dear. I’ve always been slow to act in situations like this... It’s difficult to take that first step when you don’t know what will happen next.[n]Fine. I’m scared, but I’ll try. I’ll reach out and see what she has to say.[n]If she doesn’t want to talk, then that’s fine. I’ll just be glad that I at least took that step.[n][portrait=Happy]Thank you for giving me the courage, [Player]. I wouldn’t have come to this decision without you.
+	millie (Neutral): No, I suppose that’s silly of me to think.[n]I guess you’re right, dear. I’ve always been slow to act in situations like this... It’s difficult to take that first step when you don’t know what will happen next.[n]Fine. I’m scared, but I’ll try. I’ll reach out and see what she has to say.[n][portrait=Pensive]If she doesn’t want to talk, then that’s fine. I’ll just be glad that I at least took that step.[n][portrait=Happy]Thank you for giving me the courage, dear. I wouldn’t have come to this decision without you.
 
 - “Just let her hate you, it’s fine.”
-	set {dateRP} += -10
-	if {dateRP} <= -30:
-		jump Fail State
-	else:
-		Millie clicks her tongue. For a moment, she seems ready to scold you, but that moment quickly passes.
-		millie (Disturbed): I’ve already been letting her hate me all this time. It sickens me. Oh, if only I had more restraint back then...if only I could fix this...
-		The two of you walk in silence as Millie mulls her situation over.
+	jump Fail State
+	# INTENTIONAL INSTANT FAIL.
+	# PRESERVEDWRITING  IF NEEDED; SHOULD NOT PLAY DURING TIMELINE.
+	Millie clicks her tongue. For a moment, she seems ready to scold you, but that moment quickly passes.
+	millie (Disturbed): I’ve already been letting her hate me all this time. It sickens me. Oh, if only I had more restraint back then...if only I could fix this...
+	The two of you walk in silence as Millie mulls her situation over.
 
 As you and Millie approach the goldenrods, there seem to be waves of people gathered around goldenrods garden. Millie looks around.
 
@@ -75,7 +81,7 @@ millie (Flustered): Oh dear... I didn’t know that there’d be so many people 
 	The crowd begins to disperse after only a few minutes of waiting.
 	millie (Happy): Oh, finally! Let’s go see the goldenrods now, {player_name}.
 	The goldenrods look beautiful. As you look back at Millie, you see the same beauty in her\: bright and bold. She smiles as she takes in the fragrance of the garden.[n]Millie turns to you with a smile on her face, but you’re quick to look away, not wanting her to see your flustered face.[n]After plenty of perusing, the two of you exit the garden.
-	millie (Flustered): I’m glad I went with you, {player_name}. I usually see the goldenrods alone, but I’m very happy that you’re here to share this event with me now.
+	millie (Embarrassed): I’m glad I went with you, {player_name}. I usually see the goldenrods alone, but I’m very happy that you’re here to share this event with me now.
 
 
 
@@ -83,24 +89,32 @@ millie (Flustered): Oh dear... I didn’t know that there’d be so many people 
 
 - “Let’s push our way through.”
 	millie (Disturbed): Excuse me? I don’t think that’s a good idea.
+	update millie leftmost [move_time="2.0"]
 	You were getting amped up to barge through the crowds, but Millie takes a step away from you. She seems a bit irritated with your inconsiderate suggestion.[n]You, smooth as ever, scratch your head sheepishly.
 	millie (Disturbed): I want to see the goldenrods too, but pushing and shoving will disturb others.[n]Besides, it will be hard to enjoy the moment together with so many people around.[n]Let’s patiently wait our turn.
+	update millie (Neutral) center [move_time="2.0"]
 	The two of you eventually find a window to peruse the goldenrods together. Your earlier hiccup looms over you, and you struggle to spark conversation with her...[n]Still, she seems to enjoy herself.
 	millie (Happy): Thank you for waiting patiently. This turned out to be an enjoyable moment.[n]Well, let’s part ways for the evening. I’ll see you around.
 
 - “Should we look at the other gardens instead?”
-	millie (Neutral): Ah! The gardens are beautiful at this time. I’ve seen them before, but...
+	millie (Neutral): Ah! The others gardens are also beautiful around this time, especially with the sun at this angle.[n][portrait=Confused]I’ve seen them before, but...
 	She looks at the line to the Golden rods.
 	
 	millie (Happy): ...but I would love to go see them again! Hum hum, that’s a good plan.
+	update millie left [move_time="2.0"]
 	
 	The two of you begin to walk towards the gardens. The walk on the way is pleasant. The two of you feel each other’s company the further you stray from the crowd.[n]Once arrived, you and Millie peruse the flowers with smiles on your faces. The two of you even take a picture.
+	update millie center [move_time="2.0"]
 	
-	I never tire of these gardens. They’re always so beautiful. It’s a shame we couldn’t see the goldenrods, but this more than makes up for it.[n][portrait=Happy]And of course, what matters most is your company. Thank you for today, {player_name}.
+	millie: I never tire of these gardens. They’re always so beautiful. It’s a shame we couldn’t see the goldenrods, but this more than makes up for it.[n][portrait=Happy]And of course, what matters most is your company. Thank you for today, {player_name}.
+leave millie
 
-You’re content with how the evening went. On the walk home you find yourself thinking less about the flowers, and more about Millie.
+You’re content with how the evening went.[n+] On the walk home you find yourself thinking less about the flowers, and more about Millie.
 [end_timeline]
 label Fail State
-millie (Pensive):  I’m terribly sorry, dear, but this subject suddenly has me feeling unwell. I should go.
-Millie is quick to leave...it seems her failed relationships with others are a sensitive subject. 
+update millie (Unimpressed)
+Millie stares at you in surprise. There's a slight twinge in her brow that reveals a suppressed irritation.
+millie (Disturbed): I’m terribly sorry, dear, but this subject suddenly has me feeling unwell. I should go.
+leave millie [animation="Slide Out Right" length="2.0" wait="true"]
+Millie is quick to leave...it seems her failed relationships with others are a sensitive subject.
 [end_timeline]
