@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://cwjgjp65vbpiq"]
+
+[ext_resource type="PackedScene" uid="uid://df55va66pl7mq" path="res://cooking/food_items_recipes/Tart.tscn" id="1_8hc3a"]
+[ext_resource type="Texture2D" uid="uid://bwct41sil62fh" path="res://items/foods/art/Chocolate Tart.png" id="2_mo5ve"]
+[ext_resource type="Resource" uid="uid://sxpq50olci15" path="res://items/ingredients/chocolate.tres" id="3_x7lt7"]
+[ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_nhtey"]
+
+[resource]
+script = ExtResource("4_nhtey")
+cooking_minigame = ExtResource("1_8hc3a")
+ingredient = ExtResource("3_x7lt7")
+display_name = "Chocolate Tart"
+image = ExtResource("2_mo5ve")

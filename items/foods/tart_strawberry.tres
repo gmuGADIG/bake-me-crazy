@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://blnucodt8lxed"]
 
 [ext_resource type="PackedScene" uid="uid://df55va66pl7mq" path="res://cooking/food_items_recipes/Tart.tscn" id="1_fory7"]
-[ext_resource type="Texture2D" uid="uid://bbvtqnjb0wsqf" path="res://temp_art/foods/temp_tart_lemon.png" id="2_wb7hb"]
+[ext_resource type="Texture2D" uid="uid://crxhmtvx17ihk" path="res://items/foods/art/Strawberry Tart.png" id="2_dmlyv"]
 [ext_resource type="Resource" uid="uid://ncul60wovroo" path="res://items/ingredients/strawberry.tres" id="3_hq6o8"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_7j3r1"]
 
@@ -10,4 +10,4 @@ script = ExtResource("4_7j3r1")
 cooking_minigame = ExtResource("1_fory7")
 ingredient = ExtResource("3_hq6o8")
 display_name = "Strawberry Tart"
-image = ExtResource("2_wb7hb")
+image = ExtResource("2_dmlyv")

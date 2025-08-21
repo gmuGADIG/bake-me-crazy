@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FoodData" load_steps=5 format=3 uid="uid://cogi3svcx81cm"]
 
 [ext_resource type="PackedScene" uid="uid://df55va66pl7mq" path="res://cooking/food_items_recipes/Tart.tscn" id="1_rm3i7"]
-[ext_resource type="Texture2D" uid="uid://bbvtqnjb0wsqf" path="res://temp_art/foods/temp_tart_lemon.png" id="2_umf1j"]
+[ext_resource type="Texture2D" uid="uid://xjkj3q7xqmyy" path="res://items/foods/art/Orange Tart.png" id="2_mqy78"]
 [ext_resource type="Resource" uid="uid://dlcm7m0yeyb0d" path="res://items/ingredients/orange.tres" id="3_awshf"]
 [ext_resource type="Script" path="res://items/foods/food_data.gd" id="4_5o33k"]
 
@@ -10,4 +10,4 @@ script = ExtResource("4_5o33k")
 cooking_minigame = ExtResource("1_rm3i7")
 ingredient = ExtResource("3_awshf")
 display_name = "Orange Tart"
-image = ExtResource("2_umf1j")
+image = ExtResource("2_mqy78")
