@@ -262,8 +262,13 @@ func _move_character(character_node: Node2D, transform:="", time := 0.0, easing:
 	var container: DialogicNode_PortraitContainer = character_node.get_parent()
 	dialogic.PortraitContainers.move_container(container, transform, tween, time)
 
-	for portrait_node in character_node.get_children():
-		_update_portrait_transform(portrait_node, time)
+	# BUG: for whatever reason, updating a dialogic character's position sometimes
+	# causes them to get really big during the movement
+	#
+	# im just gonna comment out this code, since that seems to solve the problem
+	
+	#for portrait_node in character_node.get_children():
+		#_update_portrait_transform(portrait_node, time)
 
 
 ## Changes the given portraits z_index.
