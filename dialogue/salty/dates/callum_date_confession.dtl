@@ -1,6 +1,6 @@
+[background arg="res://dialogue/date_backgrounds/date_pier.png" fade="0.0" transition="Simple Fade"]
 do MainMusicPlayer.transition_to_song_by_filename("salty_theme.tres")
 You approach Callum to spend time at the Culture Festival. [n+] You spend a busy, blurry day together, and then retire to the pier.
-[background arg="res://dialogue/date_backgrounds/date_pier.png" fade="2.0" transition="Simple Fade"]
 join callum (neutral) center [animation="Fade In" length="1.5" wait="true"]
 - "Why are we here?"
 [voice path="res://dialogue/salty/callum_voicelines/Callum 1.wav" volume="6.0"]
@@ -53,7 +53,7 @@ update callum (flustered)
 [voice path="res://dialogue/salty/callum_voicelines/Callum 10_1.wav" volume="6.0"]
 callum (flustered): It isn’t like me to say this, but I wanted you to know how much you mean to me.
 [voice path="res://dialogue/salty/callum_voicelines/Callum 10_2.wav" volume="6.0"]
-callum (flustered): You’re kinda like my hero I guess.
+callum (flustered): You’re kinda like my hero, I guess.
 - "So, you're doing better?"
 [voice path="res://dialogue/salty/callum_voicelines/Callum 11_1.wav" volume="6.0"]
 callum (excited): I’m doing better than better. I feel like the weight of the world has been lifted off my shoulders.
@@ -95,7 +95,8 @@ callum (neutral): I can confidently say that I’m looking forward to the future
 - "So, what's the first step we'll take together?"
 [voice path="res://dialogue/salty/callum_voicelines/Callum 17_1.wav" volume="6.0"]
 callum (neutral): I want to enjoy this moment a bit longer.
+The two of you spend the rest of evening together, enjoying each other's company. You're glad to be the roots keeping Callum in Leaventide.[n]Watching him accept himself, and accept you, feels you with a fuzzy feeling.
+do DialogueManager.end_game()
+[end_timeline]
 [voice path="res://dialogue/salty/callum_voicelines/Callum 17_2.wav" volume="6.0"]
 callum (neutral): Can we watch the sunset some more?
-The two of you spend the rest of evening together, enjoying each other's company.
-do DialogueManager.end_game()
