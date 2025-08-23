@@ -1,67 +1,78 @@
 [background arg="res://dialogue/date_backgrounds/date_carnival.png" fade="0.0"]
 do MainMusicPlayer.transition_to_song_by_filename("carnival_theme.tres")
-You are waiting at the carnival for Pepper to arrive for your second meeting, though this time instead of running you both decided to have some fun at the carnival.[n] In the distance you see Pepper, but you realize she hasn’t seen you yet.
-join pepper (Pensive) center
+You're waiting at the carnival for Pepper to arrive for your second hang.[n]In the distance you see Pepper, but she hasn't noticed you yet...
+join pepper (Pensive) right
 - Go say hello.
-	pepper (Neutral): Oh, hey, there you are. I thought I might have to look for you a little more, this place is pretty busy.
+	update pepper (Neutral) center [move_time="2.0" move_ease="out"]
+	pepper (Happy): Oh hey, there you are! I thought I might have to look for you a little more. This place is pretty busy.
 - Surprise her by jumping out of a bush.
 	set {dateRP} += 5
-	You decided to hide in the bushes to give her a fun scare. As she walks by the bush you're hiding in, you jump out and shout as loud as you can.
-	pepper (Shocked): Wah! What the–? Did you hide in the bushes to get the jump on me?[n] Heh, I respect the dedication, but I’m definitely gonna get you back later!
+	You hide in the bushes to give her a fun scare. As she walks by the bush you're hiding in, you jump out and shout as loud as you can.
+	- "BOO!"
+	update pepper (Shocked) center [animation="Shake Y" wait="true" move_time="2.0" move_ease="out"]
+	pepper (Shocked): Wah! What the–?! You hide in the bushes to get the jump on me?![n][portrait=Happy]Heh, I respect the dedication, but I’m definitely gonna get you back later!
+update pepper (Neutral)
 You and Pepper walk around the carnival looking for things to do. As you search for something to start with, you decide to start some light conversation.
 - “How’s the shop?”
 	set {dateRP} -= 5
-	if {dateRP} <= -30:
-		jump DateFailState
-	else:
-		pepper (Frustrated): Ugh... Could we not talk about the shop right now? We’re supposed to be having fun, you know? Well, if you have to know, it’s doing fine.[n] Now, forget about that and help me find something fun for us to do! You were the one who invited me to hang out, remember?
+	pepper (Frustrated): Ugh... Could we not talk about the shop right now? We’re supposed to be having fun, you know?[n]If you really want to know, it’s doing fine.[n][portrait=Happy]Now, forget about that and help me find something fun for us to do! You were the one who invited me to hang out, remember?
 - “Ready to go have fun?”
 	set {dateRP} += 5
 	pepper (Excited): You bet! This looks like a good place to have some. Now, what did you have in mind?
 - “What do you want to do?”
-	pepper (Neutral): What do I want to do? Oh, well you were the one that planned to hang out here, so I thought you might already have a plan for tonight.[n] That’s alright, though. Why don’t we just pick something?
+	pepper (Neutral): What do I want to do? You seemed like you knew this place pretty well, so I thought you might already have a plan for tonight.[n]That’s alright, though. Why don’t we just pick something?
 # Choice branch break
 - Let’s check out the mirror maze.
 	set {dateRP} -= 10
-	pepper (Frustrated): Really, the mirror maze? Maybe I shouldn’t have let you pick. Well, coming to the carnival was your idea, so... let’s go.
-	Pepper reluctantly follows you towards the mirror maze. As you make your way through the maze, you notice how annoyed and frustrated Pepper gets while trying to follow you through it.[n] You even catch her bump into a few of the mirrors a couple of times while letting out a loud groan as she does. After several minutes of shared pain, you both exit the maze visibly more exhausted than you came in.
+	pepper (Frustrated): Really, the mirror maze? Maybe I shouldn’t have let you pick.[n+][portrait=Neutral] Whatever! Let's see this through to the end.
+	Pepper reluctantly follows you towards the mirror maze.
+	update pepper (Frustrated) left [wait="true" repeat="2" move_time="2.0"]
+	As you make your way through the maze, you notice how annoyed and frustrated Pepper gets while trying to follow you through it.
+	update pepper [animation="Shake X" wait="true" repeat="2" move_time="2.0"]
+	You even catch her bump into a few of the mirrors, letting out a loud groan as she does.[n]After several minutes of shared pain, you both exit the maze visibly more exhausted than when you came in.
+	update pepper (Neutral) center
 - What about that roller coaster?
 	set {dateRP} += 5
 	pepper (Happy): A roller coaster, huh? Classic, you can’t go wrong with that. Let’s get in line!
-	You lead Pepper to the carnival’s coaster, a large track that leads up before dropping and twisting in sharp turns. As you approach it, screams can be heard from the cart rocketing past.[n] In a few minutes, you are sitting next to Pepper in the cart as it climbs its track.[n] When you reach the top, you and Pepper glance at each other, spotting a wide grin before the cart finally lurches forward.[n] The two of you scream shouts of joy as the coaster rockets around, but before you know it, the cart has pulled to a stop.
+	leave pepper
+	You lead Pepper to the carnival’s coaster, a large track that leads up before dropping and twisting in sharp turns. As you approach it, screams can be heard from the cart rocketing past.[n] In a few minutes, you are sitting next to Pepper in the cart as it climbs its track.[n] When you reach the top, you and Pepper glance at each other, both sporting a wide grin before the cart finally lurches forward.[n] The two of you scream shouts of joy as the coaster rockets around, but before you know it, the ride ends.
+	join pepper (Neutral) center
 - I think bumper cars might be fun.
 	set {dateRP} += 10
 	pepper (Excited): Oh, sick! Bumper cars sound awesome! I hope you’re ready, cause I’m gonna get you good! Let’s go!
-	You and Pepper excitedly run over to the Bumper Cars, and after waiting a little bit in line, you each hop in a car. The ride beeps loudly and the two of you begin driving around the track, bumping into each other every chance you get.[n] It’s just you and her now, and no one else can get in the way of your showdown. After a session of pure bumping mayhem that seems to last forever, you both get out of your cars and run around a bit, trying to playfully shove each other around.
+	leave pepper
+	You and Pepper excitedly run over to the Bumper Cars, and after waiting a little bit in line, you each hop in a car.[n]The ride beeps loudly and the two of you begin driving around the track, bumping into each other every chance you get.[n+] No one else can get in the way of your showdown.[n]Even after the ride is over, you both the two of you run around the premises, playfully shoving each other back and forth.
+	join pepper (Neutral) center
 - Why don’t we go on the ferris wheel?
-	set {dateRP} -= 5
-	pepper (Neutral): The Ferris wheel, huh. I’m sure the view’s great, but all you do is sit around and wait to go a full circle, right? Doesn't seem very fun.
-	Pepper goes with you onto the ferris wheel, and you two take seats across from each other. The cabins start moving again as the ferris wheel spins.[n] You look out the window and marvel at the sight for a minute before you realize there is an awkward quiet between you and Pepper.[n] When your cabin reaches the peak of its arc, you try to start up a conversation by commenting on the great view. Pepper agrees with you, but the rest of the ride is quiet until you reach the bottom.
+	set {dateRP} -= 10
+	pepper (Frustrated): The ferris wheel, huh?[n+][portrait=Neutral] I’m sure the view’s great, but all you do is sit around and wait to go a full circle, right? Doesn't seem very fun...
+	update pepper (Pensive) left [move_time="2.0"]
+	Pepper boards one of the ferris wheel cabins with you and sits across from you. The wheel starts spinning.[n] You look out the window and marvel at the sight for a minute before you realize there is an awkward silence between you and Pepper.[n] When your cabin reaches the peak of its arc, you try to start up a conversation by commenting on the great view. Pepper agrees with you, but the rest of the ride is quiet until you reach the bottom.
 After getting out, you both sit down for a moment on a nearby bench and strike up a conversation.
-pepper (Pensive): Wow, that was... something. I haven’t done anything like this in a while, probably not since before I took over the shop. Geez, I gotta get out more.
-Pepper looks at the ground wistfully. Her eyes are forlorn, filled with regret, but trying not to show it. Whether she meant to or not, she has created an uncomfortable silence, and you feel the urge to break it.
-- Don’t bring it up.
-	set {dateRP} += 0
-	pepper (Happy): Wow, sorry about that. I’m just... feeling a little off today. Thanks for inviting me out, though![n]It’s been fun. Sorry for bouncing, but I’ve gotta get home soon.
-	Pepper playfully punches your shoulder before getting off the bench and strolling up the boardwalk.
+pepper (Happy): Wow, that was... something. I haven’t done anything like this in a while, probably not since before I took over the shop.[n][portrait=Pensive]Geez, I gotta get out more.
+Pepper looks at the ground wistfully. Her eyes are forlorn, filled with regret, but trying not to show it.[n]Whether she meant to or not, she has created an uncomfortable silence, and you feel the urge to break it.
+- Stay quiet.
+	pepper (Happy): Wow, sorry about that. I’m just... feeling a little off today.
+	Pepper playfully punches your shoulder.
+	jump Shared dialogue branch
 - “What are you so upset about?”
 	set {dateRP} -= 10
 	if {dateRP} <= -30:
 		jump DateFailState
 	else:
 		pepper (Shocked): Huh? I seem upset?
-		pepper (Pensive): Listen, it’s nothing. Sorry, I didn’t mean to sour the mood. I just... I don’t really feel like talking about the shop right now.[n]I just feel a little restricted, is all. I don’t get a lot of chances to do stuff like this.[n]Sorry to leave it on a bad note, but I think I have to be home in a bit. I enjoyed today.
-		Pepper waves awkwardly and walks away.
+		pepper (Pensive): Listen, it’s nothing. Sorry, I didn’t mean to sour the mood. I just... I don’t really feel like talking about the shop right now.[n]I just feel a little restricted, is all. I don’t get a lot of chances to do stuff like this.[n]Sorry to leave it on a bad note, but I think I have to be home in a bit.[n][portrait=Happy]I enjoyed today, though! A successful expedition, for sure.[portrait=Neutral]
 - “Let me know if I can do anything for you.”
 	set {dateRP} += 10
 	Pepper slowly looks up at you.
-	pepper (Pensive): Well... This is a little hard to talk about, even with you. But I feel like ever since I took over the shop for my parents, I've essentially given up on my dreams.
-	pepper (Happy): Umm... that’s all I really feel like sharing right now. Thanks for hearing me out. Sorry I’m a little emotional, but I have to be home soon.[n]It’s not because of this, to be clear! It’s just getting a little late. Today was great... We should do something like this again.
+	label Shared dialogue branch
+	pepper (Pensive): This is a little hard to talk about, even with you... But I feel like ever since I took over the shop for my parents, I've essentially given up on my dreams.
+	pepper (Neutral): Umm... that’s all I really feel like sharing right now.[n][portrait=Happy]Thanks for hearing me out.[n][portrait=Neutral]Sorry I’m a little emotional, but I have to be home soon.[n][portrait=Shocked]It’s not because of this, to be clear! It’s just getting a little late.[portrait=Happy]Today was great!
 	Pepper gets up and walks a few steps, before turning and waving goodbye. The smile on her face looks as if a weight was lifted off her shoulders. Then she turns and starts walking home.
 leave pepper
-The day went well, but you can’t help but shake the feeling that Pepper has some personal things that are bothering her.
+Despite the slightly emotional rollercoaster, Pepper seemed quite satisfied with today! You can't help but wonder a little more about how upset she seemed, though...
 do DialogueManager.end_date_pass("spicy")
 label DateFailState
 pepper (Frustrated): Why do you keep poking at me?[n+][portrait=Pensive]I'm just thinking, is all. But I think it'd be more productive if I did so on my own. Sorry, {player_name}. Maybe we should try the carnival again another day.
-Pepper leaves without a proper farewell. It seems she'd prefer if your time together was an escape from whatever's on her mind, but you've made that quite difficult this evening.
+Pepper leaves without a proper farewell. It seems she'd prefer if today was an escape from whatever's been on her mind, but you've made that quite difficult.
 do DialogueManager.end_date_fail("spicy")
