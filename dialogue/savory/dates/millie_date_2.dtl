@@ -82,6 +82,7 @@ millie (Flustered): Oh dear... I didn’t know that there’d be so many people 
 	millie (Happy): Oh, finally! Let’s go see the goldenrods now, {player_name}.
 	The goldenrods look beautiful. As you look back at Millie, you see the same beauty in her\: bright and bold. She smiles as she takes in the fragrance of the garden.[n]Millie turns to you with a smile on her face, but you’re quick to look away, not wanting her to see your flustered face.[n]After plenty of perusing, the two of you exit the garden.
 	millie (Embarrassed): I’m glad I went with you, {player_name}. I usually see the goldenrods alone, but I’m very happy that you’re here to share this event with me now.
+	Millie bids you farewell, albeit more sheepishly than usual...
 
 
 
@@ -117,4 +118,5 @@ Millie stares at you in surprise. There's a slight twinge in her brow that revea
 millie (Disturbed): I’m terribly sorry, dear, but this subject suddenly has me feeling unwell. I should go.
 leave millie [animation="Slide Out Right" length="2.0" wait="true"]
 Millie is quick to leave...it seems her failed relationships with others are a sensitive subject.
+It's concerns you that she left so abruptly after mentioning an ex-friend...but surely you're not next on the chopping block! You make a note to receive her vulnerability with more sincerity next time.
 [end_timeline]

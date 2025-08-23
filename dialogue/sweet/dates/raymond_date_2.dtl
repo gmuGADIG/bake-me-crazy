@@ -43,7 +43,7 @@ raymond (Pensive): Aw, man... It’s okay, I didn’t really need it that much..
 	raymond (Happy): Yay! I gotta bring this little guy back home safely. Let’s start making our way out!
 - I shouldn't have wasted my money...
 	set {dateRP} -= 10
-	raymond (Pensive): Ah, you’re right, I probably shouldn’t have said anything, sorry.[n+]We should probably start making our way out of here anyway...
+	raymond (Pensive): Ah, you’re right. I probably shouldn’t have said anything, sorry.[n+]We should probably start making our way out of here anyway...
 You both walk past the rest of the carnival games. Near the exit, Ray spots a group of people leaving a photo booth, all laughing together and pointing at tiny printed slips of their photographs.
 
 raymond (Excited): Hey, looks like we can take a photo on our way out!
@@ -71,8 +71,10 @@ You head home from your date with Raymond. On your walk back, you have a hard ti
 do DialogueManager.end_date_pass("sweet")
 [end_timeline]
 label Fail State
-raymond (Pensive): Well, that was certainly...something!
-raymond (Neutral): Has today been weird for you, as well? Maybe we should try again another time! Either way, I think I should start making my way back home. I have some work to do tomorrow.
+raymond (Frustrated): Umm...
+raymond (Pensive): Has today been weird for you, as well? Maybe we should try this again another time! Either way, I think I should start making my way back home. I have some work to do tomorrow.
 raymond (Happy): Sorry, I hope you get home safe!
+leave raymond
+Everything seemed to be going so well until the photograph... At least Raymond sounded like he's willing to give you a second chance.
 do DialogueManager.end_date_failed("sweet")
 [end_timeline]

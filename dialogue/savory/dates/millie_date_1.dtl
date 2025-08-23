@@ -2,9 +2,9 @@ do MainMusicPlayer.transition_to_song_by_filename("carnival_theme.tres")
 [background arg="res://dialogue/date_backgrounds/date_carnival.png" fade="0.0"]
 join millie (Pensive) left
 You arrive ten minutes early, but Millie is already waiting at the carnival entrance.
-update millie (Neutral) center [move_time="1.5" move_trans="linear"]
 - “I hope I didn’t keep you waiting.”
-millie (Neutral): You’re alright, dear. I just arrived myself. [n][portrait=confused]I haven’t been to the carnival in years...where should we start?
+update millie (Neutral) center [move_time="1.5" move_trans="linear"]
+millie (Neutral): You’re alright, dear. I just arrived myself. [n][portrait=Confused]I haven’t been to the carnival in years...where should we start?
 
 - “The Gut Twister sounds like a blast!”
 	set {dateRP} += -10
@@ -17,9 +17,11 @@ millie (Neutral): You’re alright, dear. I just arrived myself. [n][portrait=co
 - “I’ve always been good at the ring toss.”
 	set {dateRP} += 10
 	millie (Excited): Hmph! We’ll see about that.[n][portrait=Shocked] Ah, my apologies! I didn’t mean anything untoward by that.[n][portrait=Neutral]Please, let’s give it a try.
+	update millie (Happy) left [move_time="2.0"]
 	You make your way towards the carnival games and find the ring toss fairly quickly. You both buy some rings and start tossing.[n]It’s harder than you were expecting, but Millie looks like she’s having a good time.
 	millie (Neutral): Phew, this is harder than I thought...[n][portrait=Excited]Oh! I got another one!
 	It’s a hard-fought battle, but Millie just barely pulls ahead at the end.
+	update millie center [move_time="2.0"]
 	millie (Happy): Would you look at that? Well, better luck next time, dear.
 
 - “I’d love to check out the arcade.”
@@ -29,9 +31,12 @@ millie (Neutral): You’re alright, dear. I just arrived myself. [n][portrait=co
 	- “The claw machines!”
 	You walk to the claw machines. They’re full of stuffed animals, and you can spot one that’s right near the edge of the prize hole.
 	millie (Neutral): Goodness, I wouldn’t know where to start with these machines. I hope you know what you’re doing.
-You situate yourself at the claw machine, and move the claw over until it’s right on top of the loose plush. The angle is perfect. All you need to do is drop the claw. You press the button, and it goes down. The claws close on the plush. The claw starts to retract, and the plush rises with it. It’s so close... But the plush falls out of the claw, disappearing into the pile of faux fur.
-millie (Pensive): Awww... Well, that’s alright, dear. You’ll get it next time.
+	leave millie [move_time="2.0"]
+	You situate yourself at the claw machine, and move the claw over until it’s right on top of the loose plush. The angle is perfect.[n]All you need to do is drop the claw. You press the button, and it goes down.[n]The claws close on the plush![n]The claw starts to retract, and the plush rises with it. It’s so close...[n+]but the plush falls out of the claw, disappearing into the pile of faux fur.
+	join millie (Pensive) center [move_time="2.0"]
+	millie (Pensive): Awww... Well, that’s alright, dear. You’ll get it next time.
 # #Returns to the main route.
+The two of you leave your activity and continue walking through the carnival, eyeballing various points of interest as you talk.
 millie (Neutral): It’s been so nice exploring these lil’ attractions again. Do you know of any good food around here? I’m starting to feel a bit peckish.
 - “I saw funnel cakes a minute ago.”
 	set {dateRP} += 10
@@ -41,44 +46,57 @@ millie (Neutral): It’s been so nice exploring these lil’ attractions again. 
 	You get some funnel cake from the stand. It’s piping hot!
 	millie (Excited): Oh, that smells delightful! Let’s dig in!
 	You both take a bite.
-	millie (Excited): Mmmmm! Now THAT is a perfect funnel cake. Gotta say, I wasn’t expecting to find something that good at a carnival, of all places. Color me impressed!
+	millie (Excited): Mmmmm! Now THAT is a perfect funnel cake. I must say, I wasn’t expecting to find something this good at a carnival, of all places. Color me impressed!
 
 - “Corn dogs sound great right now...”
-	millie (Neutral): I agree! Although I’m a bit picky when it comes to them. Let’s see if this here stand can get it right.
+	millie (Happy): I agree! Although, I’m a bit picky when it comes to them. Let’s see if this here stand can get it right.
 	The two of you approach the corn dog stand and buy one for each other. You cover yours in ketchup and mustard, while she keeps hers plain. You both take a bite.
 	millie (Neutral): Hmm. As I suspected. Nobody can make them like they used to... Don’t get me wrong, it’s good, just not perfect.
 
 
 - “There’s shaved ice just over there!”
 	set {dateRP} += -10
-	millie (Disturbed): Ugh, I don’t really have the greatest history with shaved ice. But, yknow what? I guess it’s been a while. I’ll give it one more go-around.
-	Against your better judgement, you both make your way to the shaved ice truck.[n]You’re both given a smoothly shaven cup of ice and are prompted to the side of the truck where you can choose your own flavors.[n]You choose your favorite flavor\: nearly every flavor at once.[n]Millie covers her ice in a modest butterscotch syrup. As she takes her first bite, her face shows great disgust.
-	millie (Disturbed): Bleh! Seems not much has changed since I last had this "treat". Apologies; I didn’t think I would have that strong of a reaction. Please, take mine, it wouldn’t be wise for me to take another bite.
+	millie (Disturbed): Ugh, I don’t really have the greatest history with shaved ice.[n][portrait=Neutral]But, you know what? I guess it’s been a while. I’ll give it one more go-around.
+	update millie left [move_time="2.0"]
+	You both make your way to the shaved ice truck.[n]You’re both given a smoothly shaven cup of ice and are prompted to the side of the truck where you can choose your own flavors.[n]You choose your favorite flavor\: nearly every flavor at once.[n]Millie covers her ice in a modest butterscotch syrup. As she takes her first bite, her face shows great disgust.
+	update millie center [move_time="2.0"]
+	millie (Disturbed): Bleh! Seems not much has changed since I last had this "treat". Apologies... I didn’t think I would have that strong of a reaction. Please, take mine, it wouldn’t be wise for me to take another bite.
 	You decline out of embarrassment. You note her disdain of shaved ice for next time.
 # Returns to main route.
 millie (Happy): With food out of the way, let’s walk and talk for a bit! It’ll get us moving, and I get to learn more about you![n][portrait=Neutral]So, you’ve been helping Ivy run her bakery? I’m sure the work is delightful at such a lovely location.
 
 - “Yeah! You work somewhere on a farm, right? A farmer?”
-	millie (Neutral): You’re nearly there. I work on my family’s farm, but I’m the butcher. It’s why my style is so mess-proof.
+	millie (Neutral): You’re nearly there. I work on my family’s farm, but I’m the butcher. It’s why my apparel is often so mess-proof.
 
 
 - “It sure is! Correct me if I’m wrong, but you’re a butcher, right?”
 	set {dateRP} += 10
-	millie (Happy): You have a sharp eye! I sure am![n]It’s not much of something I try to hide—I sell plenty of meat at the farmer’s market, after all.
+	millie (Happy): You have a sharp memory! I sure am![n]It’s not much of something I try to hide—I sell plenty of meat at the farmer’s market, after all.
 
-- “Yeah! I can only assume you’re some sort of pro assassin, right?” *wink* -10
+- “Yeah! I can only assume you’re some sort of pro assassin, right?”
 	set {dateRP} += -10
 	millie (Shocked): What!?
 	She jabs your shoulder in annoyance. It was such a graceful motion, but it stings a lot.
-	millie (Disturbed): Don’t go around saying that! I’d never do something like that![n][portrait=Frustrated]Did you seriously think that I was an assassin? That’s ridiculous![n]Joking around like that is gonna get you in some serious trouble, you hear?[n]I'm a butcher! Of livestock!
-	if {dateRP} == -30:
+	millie (Disturbed): Don’t go around saying that! I’d never do something like that![n][portrait=Disturbed]Did you seriously think that I was an assassin? That’s ridiculous![n]Joking around like that is going to get you in some serious trouble, you hear?[n]I'm a butcher! O-Of livestock!
+	if {dateRP} <= -30:
 		jump Fail State
+	else:
+		Millie takes a moment to compose herself. Your joke really caught her off guard...
 
-millie (Neutral): Outside of butchery, I make sure  to keep my family’s farm in tip-top shape whenever possible.[n]Those old folks are starting to lose their mojo, so it just means I gotta get those hands even dirtier than they were before.[n][portrait=Pensive]Honestly, it gets pretty exhausting, but it’s honest work. [portrait=Neutral]Besides, nothing is better than a meal made entirely from ingredients grown on the field.[n][portrait=Happy]Must be why I like your bakery so much! You all clearly know what you’re doing over there.[n]It’s not often that I eat outside of my own home, so you should be proud to have caught my taste.[n]As I'll always say, there’s nothing quite like home cooking! But you guys get reaaaal close.[n][portrait=Shocked]Oh, we’ve walked for so long we’ve made it back to the exit![n][portrait=Happy]I must confess, I had a great time out here today. Thank you for this. You remind me that I ought to give myself more time to relax.[n][portrait=Neutral]But, of course, work never stops.[n]Speaking of which, I should start making my way back home. I’ll work hard out there to have another free evening with you! Stay safe, dear.
+millie (Neutral): Outside of butchery, I make sure to keep my family’s farm in tip-top shape whenever possible.[n]Those old folks are starting to lose their mojo, so it just means I gotta get those hands even dirtier than they were before.[n][portrait=Pensive]Honestly, it gets pretty exhausting, but it’s honest work. [portrait=Neutral]Besides, nothing is better than a meal made entirely from ingredients grown on the field.[n][portrait=Happy]Must be why I like your bakery so much! You all clearly know what you’re doing over there.[n]It’s not often that I eat outside of my own home, so you should be proud to have caught my taste.[n]As I'll always say, there’s nothing quite like home cooking! But you guys get reaaaal close.
+update millie (Shocked)
+Millie's head swivels towards the exit of the carnival.
+millie (Shocked): Oh, we’ve walked for so long we’ve made it back to the exit! I suppose that marks the end of our evening together.[n][portrait=Happy]I must confess, I had a great time out here today. Thank you for this. You remind me that I ought to give myself more time to relax![n][portrait=Neutral]But, of course, work never stops.[n]I should start making my way back home. I’ll work hard out there to have another free evening with you! Stay safe, dear.
+leave 
+You had a lot of fun with Millie at the carnival! You were worried she'd be too reserved, but you actually learned a lot about her. You circle back to get some more carnival food before returning home for the night.
 do DialogueManager.end_date_pass("savory")
 [end_timeline]
 
 label Fail State
-Millie seems terribly offended that you insinuated she led such a murderous career... She spends the rest of the evening closed off from you...perhaps you'll get another chance some other day.
+update millie left [move_time="2.0"]
+Millie seems terribly offended that you insinuated she led such a murderous career... She spends the rest of the evening closed off from you.
+You were worried she'd be too reserved during your time together, and your odd attempt at breaking the ice only guaranteed those concerns.
+leave 
+She gives you a considerate farewell at the exit of the carnival. Hopefully she'll give you another chance.[n]You circle back to get some more carnival food before returning home for the night.
 do DialogueManager.end_date_fail("savory")
 [end_timeline]

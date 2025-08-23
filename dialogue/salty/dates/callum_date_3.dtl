@@ -46,28 +46,32 @@ callum (excited): Wow. This is amazing! [n+] [portrait=neutral]How do you like t
 callum (excited): I had you in mind when I was making this blend, by the way. It’s a bit experimental, but it’s never too late to try new things.
 
 label Dialogue Skip
+There's a brief pause in your conversation...
 
 - “So what were you doing with Ray?”
 
-callum (confused): That? Oh, I was just waiting for you, and Ray came around the corner.[n] [portrait=neutral]We had a chat about astrology or astronomy or whatever it is he likes.[n]By the way, did you know that the International Space Station has a secret drive-thru?[n] [portrait=excited]Kidding! Just a little misinformation for you. It would be cool though. I could imagine Ray driving there every day.[n] [portrait=neutral]I don’t know what they would sell, probably dehydrated stuff and moon rocks, but it’s space, so he would probably love it.
+callum (confused): That? Oh, I was just waiting for you, and Ray came around the corner.[n] [portrait=neutral]We had a chat about astrology or astronomy or whatever it is he likes.[n]By the way, did you know that the International Space Station has a secret drive-thru?[n] [portrait=excited]Kidding! Just a little misinformation for you. It would be cool though. I could imagine Ray driving there every day.[n] [portrait=neutral]I don’t know what they would sell. Probably dehydrated stuff and moon rocks, but it’s space, so he would probably love it.
 
 - “So you're becoming friends?”
 	set {dateRP} += 5
-	callum (neutral): I guess so. I just kind of listen to him talk about space.[n]He was very passionately telling me about the moon’s composition and how it interacts with our ecosystem, and...[n] I don’t know, it was nice to just sit and listen to someone.
+	callum (neutral): I guess so. I just kind of listen to him talk about space.[n]He was very passionately telling me about the moon’s composition and how it interacts with our ecosystem, and...[n][portrait=confused]I don’t know, it was nice to just sit and listen to someone.
 
 - “Aren’t moon rocks toxic?”
 	callum (neutral): Actually, they are. Ray was telling me a little about the moon’s composition. It's nice to learn about it from someone so passionate. Maybe next time we talk I’ll share some fun facts about computers.
 
 - “Careful not to scare him away.”
-	set {dateRP} += -10
+	set {dateRP} += -15
 	callum (disgusted): Excuse you? I’m not a frightening person. And don’t put worries like that in my head! You know how much I’ve already struggled to make friends around here.
 	Following Callum's small outburst, you're quick to apologize.
-	if {dateRP} == -30:
+	if {dateRP} <= -30:
 		jump Fail State
+	else:
+		update callum (pensive)
+		He accepts your apology, but the livelihood of the picnic dies down for a moment after.
 
-You take a pause from conversation to enjoy some more of the picnic goods. Callum pipes up again.
+You take a pause from conversation to enjoy some more of the picnic goods. Callum eventually pipes up again.
 
-callum (neutral): By the way, I’ve been feeling better about the town.[n]Still haven’t found much of a purpose here, but Leaventide has some perks. [n]It’s a cozy spot, and it has that salty air that I love.
+callum (excited): By the way, I’ve been feeling better about the town.[n][portrait=neutral]Still haven’t found much of a purpose here, but Leaventide has some perks. [n]It’s a cozy spot, and it has that salty air that I love.
 
 - ”That’s a great start. I’ll always be here if you need someone to talk to.”
 	set {dateRP} += 10
@@ -76,32 +80,37 @@ callum (neutral): By the way, I’ve been feeling better about the town.[n]Still
 	set {dateRP} += 5
 	callum (excited): Oh, how could I? Such delicious food! And hey, it’s how I got to know you better.
 - ”Are you sure about that? You were constantly complaining last time.”
-	set {dateRP} += -10
+	set {dateRP} += -15
 	callum (shocked): Well, I’m sorry, okay?[n] [portrait=disgusted]I’m having a really hard time getting used to living here. Why don’t you try fumbling your dream job and figuring something else out?
 	You quickly apologize to Callum in an attempt to save the mood.
-	if {dateRP} == -30:
+	if {dateRP} <= -30:
 		jump Fail State
+	else:
+		update callum (pensive)
+		He accepts your apology, but the livelihood of the picnic dies down for a moment after.
+update callum (neutral)
 
-Callum stops to look up at the sky. After some silence, he lets out a stifled laugh.
+Callum looks up at the sky. After some silence, he lets out a stifled laugh.
 
 callum (pensive): After the pier, I couldn’t stop thinking about our conversation. I was sure I scared your pants off with my monologuing.
 
 - “Scared my pants off...?”
 
-callum (confused): Oh! Well, not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment.
+callum (confused): N-Not literally, I mean. Like, I just thought that I went a bit overboard and ruined the moment.
 
 - “Is there something I’m missing here?”
 
-callum (confused): Oh, umm. Missing? Did you forget to bring something?
+callum (shocked): Oh, umm. Missing? Did you forget to bring something?
 
 - “What? No, I brought everything.”
+update callum (flustered) [animation="Shake Y"]
 
-Ah, but before you can reply, Callum jolts up.
+Before you can muster your words, Callum jolts up.
 
 callum (flustered): Speaking of forgetting things, I actually have tons of stuff to do at work![n] Lots of, um, circuits to...unfry.[n+] You’d have to see it to believe it![n] Gosh, sorry to bolt, umm...see you later! Call me. If you’d like! Sorry! Bye!
-leave callum [animation="Slide Out Right"]
+leave callum [animation="Slide Out Left" length="2.0"]
 
-Callum rushes off, his face is noticeably flustered. He left everything he brought to the picnic behind. You wonder what must have made Callum flaky.
+Callum rushes off. With how flustered he looked, people might start calling him the "red blur"... He left everything he brought to the picnic behind. You wonder what must have made Callum flaky.[n]Still, your little picnic was quite enjoyable! Callum's entire haul ending up as your leftovers is a nice touch, too.
 do DialogueManager.end_date_pass("salty")
 [end_timeline]
 label Fail State
@@ -109,5 +118,6 @@ Unfortunately, your attempts to reconcile fail in the moment. Callum becomes not
 callum (disgusted): Tsk. What’s that funny smell in the air? Must be a storm coming...guess we’d better pack up.
 He gathers his belongings in his arms and pulls the blanket out from under you. Your baked goods tip over onto the grass... You spy a twinge of guilt on his face before he leaves.
 leave callum
+Callum just wants to do right by himself, but you seem to be poking fun at his progress...perhaps you should show him more sympathy next time.
 do DialogueManager.end_date_fail("salty")
 [end_timeline]

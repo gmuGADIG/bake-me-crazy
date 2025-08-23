@@ -60,7 +60,7 @@ pepper (Happy): Fun! Maybe I should stop by more often... You could even make me
 # Choice branch break
 - "What about you? How did you end up running a sports shop?"
 	update pepper (Pensive)
-	Pepper thinks for a second and looks like she’s about to say something, but then changes her mind. 
+	Pepper thinks for a second. She looks like she’s about to say something, but seeminly changes her mind.
 	update pepper (Happy)
 	Pepper stands up and grins.
 	pepper (Happy): Heyyy... I see what you’re doing here! You can’t distract me out of the rest of the run![n] Our break’s been long enough, so let’s get going!
@@ -73,7 +73,7 @@ pepper (Pensive): Uhh, hey, is it just me, or is this...pretty awkward?[n][portr
 join pepper (Happy) center
 Pepper laughs to herself.
 pepper (Neutral): Sorry to bail like this. Hey, ask me to hang out again when you feel up to it!
-She gives you an awkward salute before jogging away. 
+She gives you an awkward salute before jogging away.
 leave pepper [animation="Slide Out Right" length="2.0" wait="true"]
 Huh...it looks like you struggled to reconnect with her after so long.
 do DialogueManager.end_date_fail("spicy")

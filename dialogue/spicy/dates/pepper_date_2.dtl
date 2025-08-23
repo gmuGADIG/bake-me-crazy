@@ -74,5 +74,6 @@ Despite the slightly emotional rollercoaster, Pepper seemed quite satisfied with
 do DialogueManager.end_date_pass("spicy")
 label DateFailState
 pepper (Frustrated): Why do you keep poking at me?[n+][portrait=Pensive]I'm just thinking, is all. But I think it'd be more productive if I did so on my own. Sorry, {player_name}. Maybe we should try the carnival again another day.
+leave pepper
 Pepper leaves without a proper farewell. It seems she'd prefer if today was an escape from whatever's been on her mind, but you've made that quite difficult.
 do DialogueManager.end_date_fail("spicy")
