@@ -38,7 +38,7 @@ callum (confused): Man, now I sound like that Raymond guy...
 	- "I doubt that."
 		callum (shocked): Too bad![portrait=frustrated] That's all you're getting out of me.
 		set {dateRP} -= 20
-		if {dateRP} < -30:
+		if {dateRP} <= -30:
 			jump callum_date_1_failstate/During Ferris Wheel
 		else:
 - "What do you think of the town?"
