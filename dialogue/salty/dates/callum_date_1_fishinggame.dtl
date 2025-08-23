@@ -1,0 +1,23 @@
+You walk over to an attendant hovering over a large tub of water. Callum is fascinated by your choice.
+
+callum (confused): This is so weird. I don’t remember anything like this back in Cali.[n][portrait=neutral]I’ve done actual fishing. So, I’m guessing it works the same.
+
+- “We won’t know until we try it.
+	callum (excited): True! I’m excited.
+- “Are you worried you’ll lose?”
+	callum (confused): Umm, no. If anyone is winning, it’s me.[n+][portrait=excited] Maybe I’ll win you a prize!
+- “I actually don’t like fishing.”
+	callum (disgusted): What? Why did we come here, then?
+leave callum
+
+The attendant welcomes the two of you. She hands you fishing rods with thin magnets attached to the fishing line.[n]You position yourselves on opposite sides of a large tub full of magnetic fishies and proceed to frantically splash the magnet through the water.[n]Callum ends up with at least double the amount that you catch...[n]He turns to the attendant for his prize, but she explains that there are only participation prizes for this attraction and hands both of you oddly shaped wristbands.
+join callum (pensive) center
+
+callum (pensive): That blows that I don’t get a trophy prize, but...[n+][portrait=excited]that turned out to be really fun. I’m glad we both got something out of it!
+
+- “Maybe next time I’ll get a bigger haul.”
+	callum (neutral): Hah! Well, your form was pretty sloppy. You might want to spend some time using a legit fishing rod before you attempt it again.
+- “Bet you’re really missing Cali after that.”
+	set {dateRP} += -15
+	callum (disgusted): Hey, what? You’re bringing up sore subjects, you know.
+jump callum_date_1/ferris wheel
