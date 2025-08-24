@@ -47,7 +47,6 @@ After your activity, the two of you continue to walk along the pier. You strike 
 	millie (Flustered): Ah, I suppose I wasn’t hiding it well enough. Then again, you’ve always had a good eye for things.[portrait=Pensive][n]I appreciate the concern.
 - “What’s with that look on your face?”
 	set {dateRP} += -10
-	if :
 	millie (Pensive): Ugh, I’m so sorry. It’s nothing about you, I promise.
 
 millie (Pensive): It’s just...I’m worried.[n]Do you remember that friend we talked about on our last outing? Well, I couldn’t really get her out of my mind after we had talked about it.[n]I had always felt like that friendship was never going to be rekindled.[n][portrait=Disturbed]I truly felt like I had completely destroyed our bond.[n][portrait=Neutral]And yet, your advice just seemed to shine through all of those doubts. It was as if I was going against my better judgement, but...[n]I formally apologized to her the other day and opened the opportunity for us to spend time together again.[n][portrait=Happy]She accepted my apology. In fact, I should be seeing her in a few days![n][portrait=Neutral]Despite how hopeful things seem...[n][portrait=Pensive]It doesn’t feel right. What if I make the same mistake? I don’t want to betray her trust again.[n]I can’t help but feel like everything is just one slip away from crumbling back to how things once were.
@@ -80,7 +79,7 @@ Millie freezes. A child? You haven’t heard anything about a child before. It s
 		jump Fail State
 	else:
 		millie (Unimpressed): Gah, I was right to keep it a secret! I knew you would have reacted like that. I was so scared to admit it to you that I just held my tongue for too long.
-millie (Neutral): My daughter...her name is Maisie. She's incredibly important to me. So much so, I feel guilty spending any time away from her.[n][portrait=Pensive]Even when I can find someone to take care of her while I leave to take care of errands, this feeling of unease and anxiety digs deep into my core.[n][portrait=Neutral]Unfortunately, that feeling continues to persist even when I’m with you.[n]It’s hard for me to become so close to another person like you, especially considering my last relationship...well, it put me in this position.[n]I don’t have any disdain for them, but I don’t want to experience that ever again. So, when I spend time with you, it feels...risky.[n]It’s all too similar to the situation with my friend.[n+] All I can imagine are the worst possible outcomes, and when I think about how detrimental my life at home is...[n]I just can’t bear facing the possibility of a bad ending. I didn’t want to burden you with all of these thoughts.[n]I can understand if it’s too much to handle.
+millie (Neutral): My daughter...her name is Maisie. She's incredibly important to me. So much so, I feel guilty spending any time away from her.[n][portrait=Pensive]Even when I can find someone to take care of her while I leave to take care of errands, this feeling of unease and anxiety digs deep into my core.[n]Unfortunately, that feeling continues to persist even when I’m with you.[n]It’s hard for me to become so close to another person like you, especially considering my last relationship...well, it put me in this position.[n][portrait=Neutral]I don’t have any disdain for them, but I don’t want to experience that ever again. So, when I spend time with you, it feels...risky.[n]It’s all too similar to the situation with my friend.[n+][portrait=Pensive] All I can imagine are the worst possible outcomes, and when I think about how detrimental my life at home is...[n]I just can’t bear facing the possibility of a bad ending. I didn’t want to burden you with all of these thoughts.[n][portrait=Neutral]I can understand if it’s too much to handle.
 - "I don’t know, this is a lot to process for me..."
 	millie (Pensive): ...I'm so sorry.[n]Let's keep walking. I don't want to make you more uncomfortable.
 	The two of you continued to walk down the pier in silence. A long, uncomfortable silence.[n]She continued to avert your gaze, consistently looking down at the ground, lost in thought.[n]You couldn’t speak another word, so you followed her eyes towards the ground, as you too became lost in thought.[n]After what feels like forever, you return to where you first began the evening together.
@@ -88,15 +87,19 @@ millie (Neutral): My daughter...her name is Maisie. She's incredibly important t
 	set {dateRP} += 10
 	update millie (Shocked)
 	Millie's eyes light up.
-	millie (Embarrassed): I suppose...I'd appreciate that a great deal.
+	millie (Embarrassed): I suppose...I would appreciate that a great deal.
 	update millie (Happy)
 	The two of you continue to walk along the pier in silence. It isn’t an uncomfortable silence; rather, it's a warm awareness of each other's company.[n]Despite Millie’s averted gaze, she continues to wear that smile she gave you not too long ago.[n]Eventually, you return to where you first began the evening together.
-do DialogueManager.end_date_fail("savory")
 millie (Happy): You really are just too kind, you know that?[n]I know today went a bit off course, but you were able to just...work with me.[n+] I appreciate that.[n]I hope to see you again soon...without all the emotional baggage. Get home safe!
+leave millie
+You learned something important about Millie today. She seemed incredibly grateful to you for staying by her side for the evening, despite some of the awkward air.
 do DialogueManager.end_date_pass("savory")
 [end_timeline]
 label Fail State
 update millie (Pensive)
 Millie suddenly falters after hearing your response.
 millie (Pensive): ...I can see that I’ve been a hindrance to our time today.[n]I hope you can forget this uncomfortable night we’ve had.[n+] Please, get home safe.[n]I need to keep myself busy, so I’ll be making my way home.[n+] Goodbye.
+leave millie
+Your response seemed to discourage Millie. It seems she's trying to break out of her shell some more...it'd help if you were a little more accepting.
+do DialogueManager.end_date_fail("savory")
 [end_timeline]

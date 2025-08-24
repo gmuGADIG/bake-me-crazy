@@ -1,7 +1,7 @@
 [background arg="res://dialogue/date_backgrounds/date_pier.png" fade="0.0"]
 do MainMusicPlayer.transition_to_song_by_filename("pier_theme.tres")
 After arriving at the pier to meet Pepper, you take a look around to try and find her. The sparkling ocean gently crashes against the shore.[n]Plenty of tourists and locals are strolling up and down the pier, looking at the sights, taking pictures and buying food from stalls.[n]As you finish your slow turn of taking in the pier, you spot Pepper walking up to you from nearby.
-join pepper center
+join pepper (Happy) center
 pepper (Happy): Hey, there! Sorry I had to stay so late and lock up shop, I hope you weren’t waiting too long.
 - "I’ve only been here a few minutes."
 	pepper (Happy): Well, that’s not so bad. Are you ready to start?
@@ -10,17 +10,20 @@ pepper (Happy): Hey, there! Sorry I had to stay so late and lock up shop, I hope
 	pepper (Excited): Ohhh, been scouting ahead, have you? Let’s get to it, then!
 - "It’s about time!"
 	set {dateRP} -= 5
-	pepper (Frustrated): It’s not like I wanted to stay late, doofus. Your waiting’s over now, though!
-The two of you are taking a walk down the pier, watching the ships float up and down, when Pepper starts a conversation.
-pepper (Happy): So, are you hungry? I see quite a few pop-up snack shops we could stop at.
-The two of you find a stall to buy from, and as you stand in line you decide to strike up a conversation with Pepper.
+	pepper (Frustrated): It’s not like I wanted to stay late, doofus. [portrait=Happy]Your waiting’s over now, though!
+The two of you walk down the pier for a while, watching fishing boats bob up and down in the water.
+pepper (Neutral): So, are you hungry? I see quite a few pop-up snack shops we could stop at.
+The two of you find a vendor to buy from. As you stand in line, you strike up a conversation with Pepper.
 - "Where are some places on your bucket list?"
-	pepper (Happy): Places I’d like to go? Hmm... I’m not really sure. I’ve never thought about it, but maybe somewhere like Rome? Europe has some pretty nice places.
+	pepper (Happy): Places I’d like to go? Hmm... I’m not really sure. I’ve never thought about it, but maybe somewhere like Rome? Europe has tons of pretty nice places.
 - "Do you have a favorite movie or show?"
 	pepper (Excited): I’d say Rocky is always a top pick for me. Gets the blood pumping, you know? Cop dramas are pretty fun, too.
-- "What do you usually eat besides baked goods?"
-	pepper (Happy): Uhhh, I’ll usually get a protein shake in the morning and either an egg salad sandwich or a good burger for lunch. For dinner... Oh, I really like that Thai place on the next street over.
-That sounds a lot like something Pepper would answer. You continue trading questions for a bit, then you realize the wait in line will be longer than you first thought.[n]Before long, the two of you are playing some games while you wait.[n]After some rock, paper, scissors and a few rounds of thought experiments, you are both mauling each other’s shadow animals with your own when suddenly you hear the next person called, and realize it is you.
+- "What do you usually like to eat?"
+	pepper (Happy): The baked goods from Ivy's Southern Sweets, obviously![n][portrait=Neutra]But, uhhh, I’ll usually get a protein shake in the morning and either an egg salad sandwich or a good burger for lunch. For dinner... Oh, I really like that Thai place on the next street over.
+That sounds a lot like something Pepper would answer. You continue trading questions for a bit, and realize the line is moving pretty slowly.
+update pepper (Excited)
+Before long, the two of you are playing some games while you wait.[n]After some rock, paper, scissors and a few rounds of thought experiments, you make shadow puppets on the floor and lock them into a dramatic combat scenario.[n]Just before Pepper's shadow puppet is about to strike down your own, the vendor calls for your attention. It seems your antics with Pepper killed a lot of time.
+leave pepper
 
 You walk up to the counter and consider your options. Would Pepper like one of these more than the others?
 - We should get some hot dogs.
@@ -31,8 +34,9 @@ You walk up to the counter and consider your options. Would Pepper like one of t
 	set {dateRP} += 5
 - Let’s get a funnel cake.
 	set {dateRP} -= 5
+join pepper (Neutral) center
 Pepper is unfocused until you place the food in her hands.
-pepper (Neutral): What? Oh, thanks! This looks great.
+pepper (Neutral): What?[n]Oh, right, the food! Thanks. This looks great.
 Maybe something is wrong? She looks like she has something on her mind.
 - Let her bring it up on her own.
 	set {dateRP} += 5
@@ -43,33 +47,33 @@ Maybe something is wrong? She looks like she has something on her mind.
 - Change topics to cheer her up.
 	set {dateRP} -= 10
 	You suddenly start talking about a recent sports game. Pepper looks at you, bewildered for a moment, before chuckling and looking down.
-pepper (Pensive): Wow, I’m sorry. Is it that obvious? I didn’t mean to make you worry. I’ve just had a lot on my mind since last time. I suppose I do owe you an explanation.[n]Well, you see...[n]About a year ago, Mom and Dad went on a cruise for their anniversary. I was really happy for them, and glad to take over the shop while they were gone.[n]It was supposed to be temporary, but... well, they came back and seemed really happy not having to worry about the store, and I said they could take their time coming back.[n]Things kind of snowballed, and... they retired, thinking I’d take care of the shop. Truth be told, running the place isn’t that bad, but... it’s not what I want to do with my life.[n]Sorry for dumping it on you, but that’s what’s been on my mind recently.
-- "Wow, I can’t imagine. It must be tough."
-	set {dateRP} -= 10
-	pepper (Pensive): Eh, it’s alright. The job’s really not awful, it’s...  I just don’t want this to be the rest of my life.
+pepper (Pensive): Darn, I’m sorry. Is it that obvious? I didn’t mean to make you worry. I’ve just had a lot on my mind since last time.[n][portrait=Neutral]I suppose I do owe you an explanation.[n]Well, you see...[n]About a year ago, Mom and Dad went on a cruise for their anniversary. I was really happy for them, and glad to take over the shop while they were gone.[n][portrait=Pensive]It was supposed to be temporary, but... well, they came back and seemed really happy not having to worry about the store, and I said they could take their time coming back.[n][portrait=Neutral]Things kind of snowballed, and... they retired, thinking I’d take care of the shop. Truth be told, running the place isn’t that bad, but... it’s not what I want to do with my life.[n][portrait=Happy]Sorry for dumping it on you, but that’s what’s been on my mind recently.
 - "I’m sorry that happened to you."
 	set {dateRP} += 10
 	pepper (Neutral): Thanks, but it’s not actually that bad. I just don’t know what to do about it. I can’t keep doing this forever... right?
 - "You’re not alone. I’ll be there for you."
 	set {dateRP} += 15
 	pepper (Happy): Heh, thanks. I knew I could count on you to back me up. I’m not really sure if there’s anything you could do to help, though.
-- "That’s... a lot to deal with."
+- "That doesn't sound like a huge deal."
 	set {dateRP} -= 15
+	pepper (Shocked): What? I mean, it's [i]not[/i] a huge deal. Doesn't mean I can't be upset by it.
 	if {dateRP} <= -30:
 		jump DateFailState
 	else:
-		pepper (Pensive): No, it’s not that bad... lots of other people have worse problems. I can’t be mad I’ve got a job and don’t want it.
+		pepper (Pensive): I see your point, though, however coldly you delivered it. People go through worse...I at least have a job and a place to live. But I wanna be more like you, where my job is what I'm passionate about![n]I don't want to sell sports gear...I want to wear it myself on the field!
 # Choice branch break
 - "Have you talked with your parents about it, even once?"
-	pepper (Neutral): No, I haven’t. Wasn’t really planning on it either. I really would like to have enough time to play sports, to make games... to hang out with you.[n]I’m sure they’d understand if I did talk about it with them, but... I can’t just force them out of retirement, you know?[n]No, I’m too scared to talk to them about it. I feel like they’d be disappointed.
+pepper (Neutral): No, I haven’t. Wasn’t really planning on it either. I really would like to have enough time to play sports, to make games... to hang out with you.[n]I’m sure they’d understand if I did talk about it with them, but... I can’t just force them out of retirement, you know?[n][portrait=Pensive]No, I’m too scared to talk to them about it. I feel like they’d be disappointed.
+update pepper (Neutral)
 if {dateRP} >= 20:
 	After that, Pepper sits with a small smile and eats her food. You crack a joke out of nowhere and the two of you laugh.[n] The rest of the day is spent looking at the boats, eating dockside snacks, and even a little playing in the sand.[n]Before you know it, the sun has set and both of you have to leave before you lose sleep. You exchange an enthusiastic goodbye before strolling back up the street, a smile on your face.
-if {dateRP} < 20:
+else:
 	After that, Pepper falls quiet once again. The two of you eat in silence, and go on to spend a few more hours at the pier, but it just doesn’t feel the same.[n]She eventually mentions she has work tomorrow, and after exchanging friendly goodbyes, heads home.
+Learning about Pepper's circumstances helps you understand her strange behavior a few days ago. You're glad she finally found the courage to open up to you, and relieved that you didn't mess everything up.
 leave pepper
 do DialogueManager.end_date_pass("spicy")
 label DateFailState
 pepper: Well, duh. I know it's a lot to deal with. That's why I'm trying to share the burden with a friend.[n]Look, sorry that we got stuck on this subject. You don't seem super interested.[n]I'm going to head back a little early. See you, {player_name}.
 leave pepper
-Pepper leaves, dissatisfied with how you handled her attempt at opening up to you.
+Pepper leaves, dissatisfied with how you handled her attempt at opening up to you...
 do DialogueManager.end_date_fail("spicy")

@@ -1,3 +1,15 @@
+label Before Ferris Wheel
 update callum (frustrated)
-Your response takes Callum aback.[n+] He seems greatly dissatisfied with your time together...[n] He remains quiet for the rest of the evening...[n] You part ways earlier than expected, with an awkward wave goodbye.
+The two of you wander around the carnival some more. Following some of your recent comments, Callum seems unusually quiet.[n]He stops and stares up at the ferris wheel for a moment, before shaking his head.
+callum (frustrated): I'm, uh, getting a little tired of this place. I'm gonna bail out of here early, okay?[n]I just think we're getting started on the wrong foot right now, and I don't want that to happen.[n]Maybe another day we can come back and hit up that ferris wheel. Anyways...
+leave callum
+Callum leaves you at the carnival all alone. You must've said a few things that hurt his feelings earlier...
 do DialogueManager.end_date_fail("salty")
+[end_timeline]
+label During Ferris Wheel
+update callum (frustrated)
+Callum leans his head against the wall of the cabin and stares out the window, keen on paying you no further mind for the rest of the ride.[n]Once the two of you disembark, he gives you a lazy goodbye and leaves.
+leave callum
+It seems your skepticism about how he ended up in Leaventide struck a serious nerve...[n]There's no guarantee it will turn out well, but maybe he'll give you another chance?
+do DialogueManager.end_date_fail("salty")
+[end_timeline]

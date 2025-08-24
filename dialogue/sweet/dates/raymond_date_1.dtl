@@ -7,11 +7,11 @@ A swarm of papers fly in front of you.
 - Catch some!
 You quickly scan the pages.[n]"...All matter has mass, and all mass has gravity..." Is this Confucious?[n]More papers fly by.
 - Catch some more!
-"...These stellar nurseries contain high densities of hydron, helium, and other reactive components. For example, the Orion Nebula..."[n]You're reaching your limit for new vocabulary.[n]You turn to Raymond, and then a final paper flies right into your face.[n+] He's stifling a laugh...
+"...These stellar nurseries contain high densities of hydrogen, helium, and other reactive components. For example, the Orion Nebula..."[n]You're reaching your limit for new vocabulary.[n]You turn to Raymond, and then a final paper flies right into your face.[n+] He's stifling a laugh...
 join raymond (Happy) center
 raymond (Happy): Sorry! I didn’t expect my binder to break again. You're a lifesaver.
 As you hand over the papers, you catch a glimpse of a new body paragraph.[n]"In a way, stellar formation is a lot like baking a cookie." You suppose Raymond considers you qualified to shape the universe.
-raymond (Shocked): Uhh, wait a minute... it's you.[n+] This is awkward...[n]Sorry for declining your offer to hang out, again.[n+] I'm out here getting some fresh air while I finish my paper on stellar formation.
+raymond (Shocked): Uhh, wait a minute... it's you.[n+][portrait=pensive] This is awkward...[n]Sorry for declining your offer to hang out, again.[n+][portrait=neutral] I'm out here getting some fresh air while I finish my paper on stellar formation.
 - "That sounds incredible."
 	set {dateRP} += 5
 	raymond (Excited): Right? The formation of stars is basically the origin of everything. I mean, we’re literally stardust!
@@ -19,10 +19,11 @@ raymond (Shocked): Uhh, wait a minute... it's you.[n+] This is awkward...[n]Sorr
 	set {dateRP} -= 10
 	raymond (Pensive): Right, heh, yeah... well, I suppose it’s not for everyone. It can get really confusing, with outdated sources, conflicting theories, and all that stuff...
 - "Are you usually hungry when you write papers?"
-	raymond (Neutral): Huh? [n+][portrait=Flustered]Oh. You saw that part?[n][portrait=Neutral]I just think descriptive writing like that really helps sell an idea.
+	raymond (Neutral): Huh? [n+][portrait=Flustered]Oh. You saw that part about the cookies?[n][portrait=Neutral]I just think descriptive writing like that really helps sell an idea.
 raymond (Happy): Anyhow, my papers blasting off was quite a rush! It'll be a second before I can collect my thoughts again.[n] Care to take a walk with me?
 - Sure, I'd be happy to!
 	set {dateRP} += 5
+	raymond (Excited): Great!
 - As long as you don't quiz me on space stuff.
 	set {dateRP} += -15
 	raymond (Pensive): Hah! Um. I wasn't planning on it.[n+] Sorry if I worried you.
@@ -31,7 +32,7 @@ raymond (Happy): So yeah, astronomy’s kinda my thing. Ever since I was young. 
 - "I find it pretty fascinating."
 	set {dateRP} += 10
 	label Shared Dialogue Branch 1
-	raymond (Happy): Oh, wow! Then you’ll love this—there’s a really fascinating theory about planets that drift through space, unbound to any star\: rogue planets. [n]Some scientists think they could even support life in extreme conditions, using geothermal heat instead of sunlight. Can you imagine that?[n]A whole ecosystem thriving in eternal night—
+	raymond (Excited): Then you’ll love this—there’s a really fascinating theory about planets that drift through space, unbound to any star\: rogue planets. [n]Some scientists think they could even support life in extreme conditions, using geothermal heat instead of sunlight. Can you imagine that?[n]A whole ecosystem thriving in eternal night—
 - "I don't know much, but I'm curious."
 	set {dateRP} += 5
 	jump Shared Dialogue Branch 1
@@ -39,7 +40,8 @@ raymond (Happy): So yeah, astronomy’s kinda my thing. Ever since I was young. 
 	set {dateRP} += -5
 	if {dateRP} <= -30:
 		jump Fail State
-	raymond (Pensive): Oh, that's okay...[n][portrait=Neutral] I mean, maybe you just haven't found the right subfield yet![n]For example, you might like to know that our solar system used be made up of roughly one hundred protoplanets until they collided into the full planets we know today![n]Some protoplanets still remain in the aesteroid belt. [n+] It's highly unlikely...but wouldn't it be cool if they collided and formed a brand new planet!?
+	else:
+		raymond (Pensive): Oh, that's okay...[n] I mean, maybe you just haven't found the right subfield yet![n][portrait=Neutral]For example, you might like to know that our solar system used be made up of roughly one hundred protoplanets until they collided into the full planets we know today![n][portrait=Excited]Some protoplanets still remain in the aesteroid belt.[n+] It's highly unlikely...but wouldn't it be cool if they collided and formed a brand new planet!?
 Raymond clears his throat.
 raymond (Flustered): Sorry. I have a bad habit of going off on tangents.
 - "That actually sounded pretty cool."
@@ -52,7 +54,8 @@ raymond (Flustered): Sorry. I have a bad habit of going off on tangents.
 	set {dateRP} -= 5
 	if {dateRP} <= -30:
 		jump Fail State
-raymond (Pensive): Oh, sorry. I should've figured...
+	else:
+		raymond (Pensive): Oh, sorry. I should've figured...
 raymond (Neutral): I don't mean to make this all about me, so...what do you like about working at Ivy's?
 - "I like trying to balance the flavors."
 	raymond (Excited): Yeah? Do you have some kind of spreadsheet with exact measurements for optimal flavors?![n][portrait=Pensive]Oh...that's called a recipe, isn't it?
@@ -60,13 +63,15 @@ raymond (Neutral): I don't mean to make this all about me, so...what do you like
 	raymond (Happy): Wow, I hadn't even thought of that![n]I wish I could stare through a window and watch a whole galaxy form...[portrait=Neutral]but I'd probably be dead before it even started to give off its own warmth.
 - "I like how dough feels."
 	raymond (Shocked): Really? I get that. I'm always wondering what it would feel like to run my hand through the gas on Jupiter or the clouds on Venus...[n]Um, scratch that last bit. I'm pretty sure my hand would dissolve.
-raymond (Happy): This has been a nice distraction![n+] Actually, hearing about your experience at the bakery helped me think of a few more analogies.[n]Phew! To think I almost missed out on this awesome conversation.[n] See you later!
-That worked out well! You wave goodbye.
+raymond (Happy): This has been a nice distraction![n+] Actually, hearing about your experience at the bakery helped me think of a few more analogies for my paper.[n]Phew! To think I almost missed out on this awesome conversation.[n] See you later!
+leave raymond
+That worked out well! You wave goodbye to each other, and then Raymond hurries home.
 do DialogueManager.end_date_pass("sweet")
 [end_timeline]
 label Fail State
 update raymond (Pensive)
 Raymond glances down at his feet.
 raymond (Pensive): Sorry. I feel like I've been a bore.[n]Maybe it'd be better to try and clear my head somewhere quieter... See you.
+He slowly walks away. You didn't show much enthusiasm for his interests...
 do DialogueManager.end_date_failed("sweet")
 [end_timeline]

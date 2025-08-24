@@ -53,9 +53,12 @@ raymond: Psst! Hey, you seem pretty sleepy. Come on, let's get you back home bef
 Ray helps you back to your apartment. The night turned out to be a great success! You feel very close with Raymond now.
 do DialogueManager.end_date_pass("sweet")
 [end_timeline]
+join  center
 label Fail State
 Ray stands up.
 join raymond (Pensive) center
 raymond (Pensive): Um, sorry to be more of a bother, but... You seem annoyed. Maybe it was a mistake to drag you out here. Let's just call it a night.[n][portrait=frustrated]I thought this was going to turn out differently...
+leave raymond
+Despite his discomfort, Ray walks you back to your apartment. At the door, he offers to take you again if you're seriously interested next time.[n]It seems you weren't very grateful about Raymond revealing his secret stargazing spot to you...
 do DialogueManager.end_date_fail("sweet")
 [end_timeline]

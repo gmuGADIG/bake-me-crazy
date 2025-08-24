@@ -1,19 +1,23 @@
 [background arg="res://dialogue/date_backgrounds/date_park_daytime.png" fade="0.0"]
 do MainMusicPlayer.transition_to_song_by_filename("park_theme.tres")
-You and Pepper are on an evening run around town, seeing some of your old favorite sites together.[n+] It’s refreshing to see how some parts of the town have stayed the same, while others have changed.[n] You are holding a leisurely jogging speed while the two of you make your way through the park, when you notice Pepper is exceeding your pace.
-join pepper center
+You and Pepper are on an evening run around town, seeing some of your old favorite sites together.[n+] It’s refreshing to see how some parts of the town have stayed the same, while others have changed.[n]You're holding a leisurely jogging speed while the two of you make your way through the park. Pepper, on the other hand, is exceeding your pace.
+join pepper (Happy) rightmost
+update pepper leftmost [move_time="2.0"]
 - Run faster!
 	set {dateRP} += 10
+	update pepper center [move_time="2.0" move_ease="out"]
 	pepper (Excited): Woah, I didn’t realize you were holding out on me! You better be able to keep that pace until we reach our halfway point!
 - Keep the same pace.
 	set {dateRP} += 5
 	pepper (Neutral): Hold on just a little longer, slowpoke! It’s almost break time.
 - Trip and fall into Pepper.
 	set {dateRP} -= 10
+	update pepper (Frustrated) center [animation="Shake X" length="1.0" wait="true" move_time="2.0"]
 	pepper (Frustrated): Woah, watch where you’re going! If you needed to take a break earlier, you could’ve just let me know.
 After that, the two of you continue running a little longer. Before long, Pepper stops at a bench.
+join pepper center
 pepper (Happy): Hey, let’s take a break here. Good job on making it so far!
-Both of you take a moment to catch your breath before sitting on the park bench. Your legs feel a little sore, but you feel like it’s been forever since you exercised like this.
+Both of you take a moment to catch your breath before sitting on the park bench. Your legs feel a little sore...you feel like it’s been forever since you exercised like this.
 pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, but you really surprised me. We haven’t hung out since we were kids.[n] Actually, that really takes me back. Do you remember way back when we used to play together all the time?
 - “For sure! We had a lot of fun.”
 	set {dateRP} += 10
@@ -21,7 +25,7 @@ pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, bu
 	You sit for a while, reminiscing and laughing about some of the games you played as kids and times you hung out after school.
 - “Yeah, you made up all sorts of crazy games for us to play.”
 	set {dateRP} += 5
-	pepper (Happy): Yep. I was pretty good at coming up with stuff for us to do.[n] I wanted to go out and find new ways to entertain my overactive mind, and I’m glad you remember coming along with me.
+	pepper (Happy): Yep. I was pretty good at coming up with stuff for us to do.[n] I wanted to go out and find new ways to entertain my overactive mind. I’m glad you remember coming along with me.
 - “Ugh... Don’t remind me...”
 	set {dateRP} -= 5
 	if {dateRP} <= -30:
@@ -35,11 +39,12 @@ pepper (Neutral): So, what’s up? I mean, thanks for inviting me to meet up, bu
 		jump DateFailState
 	else:
 		pepper (Shocked): Huh?! You don’t remember the fun we had together as kids? I guess it just wasn’t important enough to you.
-		The pair of you are quiet for a moment before Pepper speaks up again.
+		update pepper (Pensive)
+		The two of you are quiet for a moment before Pepper speaks up again.
 		pepper (Neutral): I suppose we were kids... Maybe you just need a little jumpstart.
 pepper (Neutral): Anyway, what about now? You, working in a bakery, huh? That’s pretty interesting.
 - "Yep, that’s me! A professional baker."
-pepper: Fun! Maybe I should stop by more often... You could even make me a recommendation.
+pepper (Happy): Fun! Maybe I should stop by more often... You could even make me a recommendation.
 - “You seem like you’d enjoy a good strawberry cake.”
 	set {dateRP} += 0
 	pepper (Neutral): Hmm... I might like that. I’m not exactly a big sweets person, but if you recommend it, I’d love to try it.
@@ -48,16 +53,27 @@ pepper: Fun! Maybe I should stop by more often... You could even make me a recom
 	pepper (Excited): You’re right, that does sound pretty good! I think I’ll get that sometime.
 - “I think you might like a loaf of sourdough.”
 	set {dateRP} -= 10
+	pepper (Frustrated): ...Nah, I don’t think that’s for me. Sorry, but bland foods don’t agree with my taste buds.
 	if {dateRP} <= -30:
 		jump DateFailState
 	else:
-		pepper (Frustrated): ...Nah, I don’t think that’s for me. Sorry, but bland foods don’t agree with my taste buds.
 # Choice branch break
 - "What about you? How did you end up running a sports shop?"
-	Pepper thinks for a second and looks like she’s about to say something, but then changes her mind. Pepper stands up and grins.
+	update pepper (Pensive)
+	Pepper thinks for a second. She looks like she’s about to say something, but seeminly changes her mind.
+	update pepper (Happy)
+	Pepper stands up and grins.
 	pepper (Happy): Heyyy... I see what you’re doing here! You can’t distract me out of the rest of the run![n] Our break’s been long enough, so let’s get going!
-You get up and stretch, preparing for the rest of your jaunt. As Pepper takes a drink of water, you silently dread how sore you’ll be tomorrow.[n] Together, you finish your run around town, reminding yourselves of when times were simpler. In the end, you split by Pepper’s shop before heading home.
+You get up and stretch, preparing for the rest of your jaunt. As Pepper takes a drink of water, you silently dread how sore you’ll be tomorrow.
+You finish your run around town together, reminding yourselves of when times were simpler. In the end, you split at Pepper’s shop and head home.
+leave pepper [animation="Slide Out Right" length="2.0" wait="true"]
 do DialogueManager.end_date_pass("spicy")
 label DateFailState
-date failed.
+pepper (Pensive): Uhh, hey, is it just me, or is this...pretty awkward?[n][portrait=Neutral]I mean, should we try this again some other time instead? I have a lot I should get around to today, anyways.
+join pepper (Happy) center
+Pepper laughs to herself.
+pepper (Neutral): Sorry to bail like this. Hey, ask me to hang out again when you feel up to it!
+She gives you an awkward salute before jogging away.
+leave pepper [animation="Slide Out Right" length="2.0" wait="true"]
+Huh...it looks like you struggled to reconnect with her after so long.
 do DialogueManager.end_date_fail("spicy")

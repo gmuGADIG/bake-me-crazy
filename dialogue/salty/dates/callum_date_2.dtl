@@ -27,6 +27,7 @@ You and Cal wait in line; it’s taking a lot longer than Cal expected. He is no
 	You go to the bathroom, leaving Callum to wait outside. When you return, Cal gestures for you to follow him.
 [background arg="res://dialogue/date_backgrounds/date_pier.png" fade="2.0" transition="Swipe Left To Right"]
 do MainMusicPlayer.transition_to_song_by_filename("pier_theme.tres")
+update callum (pensive)
 Callum leads the way to the pier. He leans over the railing.
 - “You don’t look well. Talk to me.”
 	set {dateRP} += 10
@@ -81,5 +82,8 @@ leave callum [animation="Slide Out Left"]
 Callum walks you back to your apartment building before saying farewell. Huh...he didn’t even make a cynical comment about the town during the walk back.
 do DialogueManager.end_date_pass("salty")
 label DateFailState
-<Empty Text Event>
+update callum (pensive)
+Callum takes a deep breath and nods to himself.
+Go figure...[n]I thought this would be a nice opportunity to open up to you about a few things.[n][portrait=disgusted]But it seems like, somehow, your patience is already thinning.[n]I'm... I'm not wasting my time here right now. See ya.
+Callum turns away. He lingers for a moment, perhaps hoping you'll apologize...[n]But you're not sure how to react to his outburst.[n+] He finally departs.[n]You messed up, but maybe he'll give you another chance.
 do DialogueManager.end_date_fail("salty")

@@ -5,7 +5,7 @@ callum (excited): Now, this is my jam! I would consider myself a bit of a pro at
 - “I would appreciate that.”
 	callum (neutral): No worries! Okay, let’s do this.
 - “Give it your all!”
-callum (neutral): It will be my pleasure.
+	callum (neutral): It will be my pleasure.
 - “No need... I’m a pro, too.”
 	callum (neutral): Hah! Is that so? Let’s do this, then!
 
@@ -22,10 +22,12 @@ Your turn. How do you want to play this?
 Against your valiant efforts, Callum wins with a perfect score of 9. He wins a dolphin plushie!
 join callum (excited) center
 
-- “Congrats! You earned that plushie.” +10
+- “Congrats! You earned that plushie.”
+	set {dateRP} += 10
 	callum (excited): Thanks! Though I could say you did, too, for putting up with me thus far!
 	Callum hands you the plushie.
-- “There’s no way. You cheated!” -10
+- “There’s no way. You cheated!”
+	set {dateRP} += -15
 	callum (disgusted): Seriously? You’re gonna be a sore loser about it? Whatever.
 callum (neutral): Well, what’s next?
-jump dates/callum_date_1/next game
+jump callum_date_1/next game
