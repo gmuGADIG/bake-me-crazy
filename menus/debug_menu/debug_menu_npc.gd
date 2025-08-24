@@ -29,3 +29,13 @@ func _on_add_rp_5_pressed() -> void:
 		"variable" : "rp.%s" % npc_name,
 		"new_value" : rp
 	})
+
+func _on_add_heart_pressed() -> void:
+	var hearts = Dialogic.VAR.hearts.get(npc_name)
+	hearts = clamp(hearts + 1, 0, 999)
+	Dialogic.VAR.hearts.set(npc_name, hearts)
+	
+	Dialogic.VAR.variable_changed.emit({
+		"variable" : "hearts.%s" % npc_name,
+		"new_value" : hearts
+	})

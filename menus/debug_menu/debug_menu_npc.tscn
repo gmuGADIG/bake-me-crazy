@@ -32,5 +32,10 @@ text = "+50RP"
 layout_mode = 2
 text = "+5RP"
 
+[node name="AddHeart" type="Button" parent="."]
+layout_mode = 2
+text = "+Heart"
+
 [connection signal="pressed" from="AddRP50" to="." method="_on_add_rp_50_pressed"]
 [connection signal="pressed" from="AddRP5" to="." method="_on_add_rp_5_pressed"]
+[connection signal="pressed" from="AddHeart" to="." method="_on_add_heart_pressed"]

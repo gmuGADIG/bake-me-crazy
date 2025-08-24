@@ -33,13 +33,14 @@ func heart_check(character_name):
 	var hearts_changed = false
 		
 	# convert 100 RP to +1 heart
-	if rp >= RP_TO_HEARTS and not hearts in [3, 6, 9]:
+	if rp >= RP_TO_HEARTS and not hearts in [3, 6, 9, 10]:
 		hearts += 1
 		rp -= RP_TO_HEARTS
 		hearts_changed = true
 	
 	# lock RP gain at 3, 6, and 9 hearts, until the date is completed
-	if hearts in [3, 6, 9]:
+	# also lock it to 10 for good measure
+	if hearts in [3, 6, 9, 10]:
 		rp = 0
 	
 	#print("relationships.gd: ", Dialogic.VAR.hearts.set)
